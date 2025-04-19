@@ -6,7 +6,7 @@ return {
     {
       "<leader>fR",
       "<cmd>GrugFar<cr>",
-      desc = "GrugFar | Find And Replace",
+      desc = "Find | And Replace",
       silent = true,
     },
   },

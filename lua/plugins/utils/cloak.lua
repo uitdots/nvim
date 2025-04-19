@@ -1,22 +1,31 @@
+local ft = {
+  "yaml",
+  "json",
+  "jsonc",
+  "toml",
+  "env",
+}
+
 ---@type NvPluginSpec
 return {
   "laytan/cloak.nvim",
   keys = {
     {
-      "<leader>oH",
+      "<leader>uh",
       "<cmd>CloakToggle<cr>",
-      desc = "Cloak | Toggle Cloak",
+      desc = "Utils | Toggle Cloak",
       silent = true,
+      ft = ft,
     },
-    { "<leader>oh", "<cmd>CloakPreviewLine<cr>", desc = "Cloak | Preview Line", silent = true },
+    {
+      "<leader>uH",
+      "<cmd>CloakPreviewLine<cr>",
+      desc = "Utils | Cloak Preview Line",
+      silent = true,
+      ft = ft,
+    },
   },
-  ft = {
-    "yaml",
-    "json",
-    "jsonc",
-    "toml",
-    "env",
-  },
+  ft = ft,
   cmd = {
     "CloakToggle",
     "CloakEnable",

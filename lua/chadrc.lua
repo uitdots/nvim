@@ -91,18 +91,11 @@ M.mason = {
     "prettier",
     "tailwindcss-language-server",
     "typescript-language-server",
-    -- "vtsls",
-    -- "deno",
-    -- "vue-language-server",
-
-    -- PHP
-    -- "intelephense",
 
     -- C/C++
     "clang-format",
     "clangd",
-    "codelldb",
-    -- "cpptools",
+    -- "codelldb",
 
     -- CMake
     -- "cmake-language-server",
@@ -127,7 +120,6 @@ M.mason = {
     "basedpyright",
     "debugpy",
     "ruff",
-    -- "basedpyright",
     -- "pyright",
 
     -- C#
@@ -147,7 +139,6 @@ M.mason = {
     -- Shell
     "bash-language-server",
     "beautysh",
-    -- "powershell-editor-services",
     "shellcheck",
     "shfmt",
 
@@ -156,10 +147,10 @@ M.mason = {
     "dockerfile-language-server",
 
     -- Database
-    "sqlfluff",
     "postgrestools",
+    "sqlfluff",
+    "sqls",
     -- "sql-formatter",
-    -- "sqls",
 
     -- Others
     -- vim.fn.executable "hyprland" and "hyprls" or nil,
@@ -175,16 +166,20 @@ M.base46 = {
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
+    "avante",
+    "blankline",
     "blink",
+    "codeactionmenu",
     "dap",
     "defaults",
     "devicons",
-    "diffview",
+    "grug_far",
     "lsp",
     "markview",
     "mason",
     "notify",
     "nvimtree",
+    "nvshades",
     "rainbowdelimiters",
     "statusline",
     "telescope",
@@ -192,8 +187,6 @@ M.base46 = {
     "treesitter",
     "trouble",
     "whichkey",
-    "blankline",
-    "lspsaga", -- override NvChad's background in highlights.lua
   },
   hl_override = {
     -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.

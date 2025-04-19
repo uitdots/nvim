@@ -8,7 +8,7 @@ return {
   },
   keys = {
     {
-      "<leader><C-r>s",
+      "<leader>Rs",
       function()
         -- require("refactoring").select_refactor()
         require("telescope").extensions.refactoring.refactors()
@@ -18,52 +18,52 @@ return {
       mode = { "n", "v" },
     },
     {
-      "<leader><C-r>i",
+      "<leader>Ri",
       "<cmd>Refactor inline_var<cr>",
       desc = "Refactor | Extract Inline Variable",
       silent = true,
       mode = { "n", "v" },
     },
     {
-      "<leader><C-r>I",
+      "<leader>RI",
       "<cmd>Refactor inline_func<cr>",
       desc = "Refactor | Extract Inline Function",
       silent = true,
     },
     {
-      "<leader><C-r>b",
+      "<leader>Rb",
       "<cmd>Refactor extract_block<cr>",
       desc = "Refactor | Extract Block",
       silent = true,
     },
     {
-      "<leader><C-r>B",
+      "<leader>RB",
       "<cmd>Refactor extract_block_to_file<cr>",
       desc = "Refactor | Extract Block to File",
       silent = true,
     },
     {
-      "<leader><C-r>e",
+      "<leader>Re",
       "<cmd>Refactor extract<cr>",
       desc = "Refactor | Extract",
       silent = true,
       mode = "v",
     },
     {
-      "<leader><C-r>f",
+      "<leader>Rf",
       "<cmd>Refactor extract_to_file<cr>",
       desc = "Refactor | Extract to File",
       silent = true,
       mode = "v",
     },
     {
-      "<leader><C-r>v",
+      "<leader>Rv",
       "<cmd>Refactor extract_var<cr>",
       desc = "Refactor | Extract Variable",
       silent = true,
     },
     {
-      "<leader><C-r>n",
+      "<leader>Rn",
       "<cmd>Refactor refactor_names<cr>",
       desc = "Refactor | Names",
       silent = true,

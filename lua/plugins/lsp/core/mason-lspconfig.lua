@@ -9,7 +9,6 @@ return {
       end,
       ["rust_analyzer"] = function() end,
       ["jdtls"] = function() end,
-      ["ruff"] = function() end,
     },
   },
 }

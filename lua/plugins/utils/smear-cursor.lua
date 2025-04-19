@@ -14,5 +14,4 @@ return {
     -- Smears will blend better on all backgrounds.
     legacy_computing_symbols_support = false,
   },
-  config = true,
 }

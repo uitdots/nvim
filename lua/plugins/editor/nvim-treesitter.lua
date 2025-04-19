@@ -137,7 +137,7 @@ return {
     },
   },
   init = function()
-    vim.treesitter.language.register("bash", "env")
+    vim.treesitter.language.register("bash", "dotenv")
   end,
   config = function(_, opts)
     require("nvim-treesitter.configs").setup(opts) -- NOTE: This is trick bruh
@@ -162,7 +162,7 @@ return {
           "n",
           "<leader>oc",
           "<cmd>TSContextToggle<cr>",
-          { desc = "Treesitter | Toggle Context", silent = true }
+          { desc = "Options | Treesitter Toggle Context", silent = true }
         )
         vim.keymap.set("n", "[c", function()
           require("treesitter-context").go_to_context(vim.v.count1)

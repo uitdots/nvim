@@ -1,4 +1,4 @@
----@module 'blink-cmp'
+-- FIXME: Huhm
 
 ---@type NvPluginSpec
 return {
@@ -49,6 +49,7 @@ return {
   end,
   dependencies = {
     "saghen/blink.cmp",
+    ---@module 'blink-cmp'
     ---@type blink.cmp.Config
     opts = {
       sources = {

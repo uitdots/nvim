@@ -1,30 +1,3 @@
-local function on_attach(bufnr)
-  local api = require "nvim-tree.api"
-  local preview = require "nvim-tree-preview"
-
-  local function opts(desc)
-    return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-  end
-
-  api.config.mappings.default_on_attach(bufnr)
-
-  vim.keymap.set("n", "l", api.node.open.edit, opts "Open")
-  vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts "Up")
-  -- NOTE: Config for "b0o/nvim-tree-preview.lua"
-  vim.keymap.set("n", "P", preview.watch, opts "Preview (Watch)")
-  vim.keymap.set("n", "<Esc>", preview.unwatch, opts "Close Preview/Unwatch")
-  vim.keymap.set("n", "<Tab>", function()
-    local ok, node = pcall(api.tree.get_node_under_cursor)
-    if ok and node then
-      if node.type == "directory" then
-        api.node.open.edit()
-      else
-        preview.node(node, { toggle_focus = true })
-      end
-    end
-  end, opts "Preview")
-end
-
 ---@type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
@@ -37,9 +10,9 @@ return {
     {
       "<leader>e",
       "<cmd>NvimTreeToggle<cr>",
-      desc = "NvimTree | Toggle",
+      desc = "General | NvimTree",
       silent = true,
-    }
+    },
   },
   cmd = {
     "NvimTreeOpen",
@@ -48,8 +21,34 @@ return {
     "NvimTreeFindFile",
     "NvimTreeFindFileToggle",
   },
+  -- TODO: This opt is to many custom. Use default if possible?
   opts = {
-    on_attach = on_attach,
+    on_attach = function(bufnr)
+      local api = require("nvim-tree.api")
+      local preview = require("nvim-tree-preview")
+
+      local function opts(desc)
+        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+      end
+
+      api.config.mappings.default_on_attach(bufnr)
+
+      vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
+      vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
+      -- NOTE: Config for "b0o/nvim-tree-preview.lua"
+      vim.keymap.set("n", "P", preview.watch, opts("Preview (Watch)"))
+      vim.keymap.set("n", "<Esc>", preview.unwatch, opts("Close Preview/Unwatch"))
+      vim.keymap.set("n", "<Tab>", function()
+        local ok, node = pcall(api.tree.get_node_under_cursor)
+        if ok and node then
+          if node.type == "directory" then
+            api.node.open.edit()
+          else
+            preview.node(node, { toggle_focus = true })
+          end
+        end
+      end, opts("Preview"))
+    end,
     diagnostics = {
       enable = true,
     },
@@ -86,7 +85,7 @@ return {
       timeout = 5000,
     },
     view = {
-      cursorline = false,
+      cursorline = true,
       float = {
         enable = false,
         quit_on_focus_loss = true,

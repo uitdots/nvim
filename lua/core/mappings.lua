@@ -3,7 +3,7 @@ local map = vim.keymap.set
 map("i", "jk", "<Esc>", { desc = "General | Escape", silent = true })
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
-map("n", "<C-s>", "<cmd>silent w<cr>", { desc = "General | Write", silent = true })
+map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
 map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
 
 map("n", "<leader>ol", function()
@@ -72,7 +72,7 @@ end, { desc = "General | Close Other Buffers", silent = true })
 
 map("n", "<leader>ft", function()
   require("nvchad.themes").open()
-end, { desc = "General | Themes" })
+end, { desc = "Find | Themes" })
 
 map("n", "<Left>", "<cmd>tabprevious<CR>", { desc = "General | Go to previous tab", silent = true })
 map("n", "<Right>", "<cmd>tabnext<CR>", { desc = "General | Go to next tab", silent = true })

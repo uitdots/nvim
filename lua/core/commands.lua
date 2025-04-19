@@ -77,6 +77,7 @@ command("NvChadMasonInstallAll", function()
   require("nvchad.mason").install_all()
 end, { desc = "NvChad Mason Install All" })
 
+-- FIXME: The number registers aren't cleared?
 command("ClearRegister", function(args)
   if #args.fargs == 0 then
     local registers = {

@@ -5,14 +5,12 @@ return {
   cmd = { "VenvSelect", "VenvSelectCached" },
   keys = {
     {
-      "<leader>vs",
+      "<leader>uv",
       "<cmd>VenvSelect<cr>",
-      desc = "Venv Selector | Select Python venv",
+      desc = "Utils | Select Python venv",
       ft = "python",
       silent = true,
     },
   },
-  config = function(_, opts)
-    require("venv-selector").setup(opts)
-  end,
+  main = "venv-selector",
 }

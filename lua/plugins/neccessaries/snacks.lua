@@ -3,7 +3,6 @@
 ---@type NvPluginSpec
 return {
   "folke/snacks.nvim",
-  priority = 1000,
   lazy = false,
   init = function()
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#nvim-tree
@@ -57,7 +56,7 @@ return {
       enabled = false,
     },
     scroll = {
-      enabled = true,
+      enabled = false,
     },
     statuscolumn = {
       enabled = true,

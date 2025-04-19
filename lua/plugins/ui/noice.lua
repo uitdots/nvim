@@ -1,10 +1,10 @@
 ---@type NvPluginSpec
 return {
   "folke/noice.nvim",
-  lazy = false,
+  event = "VeryLazy",
   dependencies = {
-    { "MunifTanjim/nui.nvim" },
-    { "rcarriga/nvim-notify" },
+    "MunifTanjim/nui.nvim",
+    "rcarriga/nvim-notify",
   },
   opts = {
     cmdline = {
@@ -13,7 +13,9 @@ return {
     routes = {
       {
         view = "notify",
-        filter = { event = "msg_showmode" },
+        filter = {
+          event = "msg_showmode",
+        },
       },
       {
         filter = {
@@ -21,7 +23,9 @@ return {
           kind = "",
           find = "written",
         },
-        opts = { skip = true },
+        opts = {
+          skip = true,
+        },
       },
     },
     lsp = {
@@ -60,7 +64,17 @@ return {
     },
   },
   keys = {
-    { "<leader>ud", "<cmd>NoiceDismiss<cr>", desc = "Noice | Dismiss", silent = true },
-    { "<leader>un", "<cmd>NoiceAll<cr>", desc = "Noice | All Notification", silent = true },
+    {
+      "<leader>ud",
+      "<cmd>NoiceDismiss<cr>",
+      desc = "Utils | Dismiss Noice",
+      silent = true,
+    },
+    {
+      "<leader>un",
+      "<cmd>NoiceAll<cr>",
+      desc = "Utils | All Notification",
+      silent = true,
+    },
   },
 }

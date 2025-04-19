@@ -45,7 +45,7 @@ return {
     end,
     keys = {
       {
-        "<leader><C-d>",
+        "<leader>D",
         function()
           if vim.g.nvdash_displayed then
             require("nvchad.tabufline").close_buffer()

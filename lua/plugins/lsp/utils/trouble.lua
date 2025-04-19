@@ -6,13 +6,13 @@ return {
     {
       "<leader>lt",
       "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
-      desc = "Trouble | Buffer Diagnostics",
+      desc = "lSP | Buffer Diagnostics",
       silent = true,
     },
     {
       "<leader>lT",
       "<cmd>Trouble diagnostics toggle<cr>",
-      desc = "Trouble | Workspace Diagnostics",
+      desc = "LSP | Workspace Diagnostics",
       silent = true,
     },
   },

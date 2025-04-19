@@ -16,11 +16,11 @@ M._keymaps = function(_, bufnr)
   map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to declaration"))
   map("n", "gd", Snacks.picker.lsp_declarations, opts("Go to definition"))
   map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to type definition"))
-  map("n", "<leader>lw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
-  map("n", "<leader>lW", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
-  map("n", "<leader>ls", Snacks.picker.lsp_symbols, opts("Symbols"))
-  map("n", "<leader>ls", Snacks.picker.lsp_workspace_symbols, opts("Symbols"))
-  map("n", "<leader>w<C-l>", function()
+  map("n", "grs", Snacks.picker.lsp_symbols, opts("Symbols"))
+  map("n", "grS", Snacks.picker.lsp_workspace_symbols, opts("Workspace Symbols"))
+  map("n", "grw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
+  map("n", "grW", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
+  map("n", "gr<C-w>", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts("List workspace folders"))
   map("n", "<leader>lh", function()
@@ -28,7 +28,6 @@ M._keymaps = function(_, bufnr)
   end, opts("Toggle Inlay Hints"))
 end
 
--- export on_attach & capabilities
 M.on_attach = function(client, bufnr)
   M._keymaps(client, bufnr)
 
@@ -37,7 +36,6 @@ M.on_attach = function(client, bufnr)
   end
 end
 
--- disable semanticTokens
 M.on_init = require("nvchad.configs.lspconfig").on_init
 
 M.capabilities = require("nvchad.configs.lspconfig").capabilities
