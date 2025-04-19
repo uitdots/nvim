@@ -26,6 +26,9 @@ g.path_separator = is_windows and "\\" or "/"
 g.inlayhint_default = false
 g.use_lsp_file_operation = true
 g.use_lsp_workspace_diagnostic = false
+vim.g.health = {
+  style = nil, ---@type "float" | nil
+}
 
 g.loaded_node_provider = 0
 g.loaded_python3_provider = 0

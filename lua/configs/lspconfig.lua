@@ -8,14 +8,14 @@ M._keymaps = function(_, bufnr)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
 
-  map("n", "gri", Snacks.picker.lsp_implementations, opts("Go to definition"))
+  map("n", "gri", Snacks.picker.lsp_implementations, opts("Go to Implementations"))
   map("n", "grr", Snacks.picker.lsp_references, opts("Go to references"))
   map("n", "grn", require("nvchad.lsp.renamer"), opts("Rename"))
-  map("n", "gra", require("actions-preview").code_actions, opts("Rename"))
-  map("n", "gl", vim.diagnostic.open_float, opts("Inline diagnostic"))
-  map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to declaration"))
-  map("n", "gd", Snacks.picker.lsp_declarations, opts("Go to definition"))
-  map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to type definition"))
+  map("n", "gra", require("actions-preview").code_actions, opts("Code Action"))
+  map("n", "gl", vim.diagnostic.open_float, opts("Inline Diagnostic"))
+  map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to Declaration"))
+  map("n", "gd", Snacks.picker.lsp_declarations, opts("Go to Definition"))
+  map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to Type Definition"))
   map("n", "grs", Snacks.picker.lsp_symbols, opts("Symbols"))
   map("n", "grS", Snacks.picker.lsp_workspace_symbols, opts("Workspace Symbols"))
   map("n", "grw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
@@ -40,6 +40,16 @@ M.on_init = require("nvchad.configs.lspconfig").on_init
 
 M.capabilities = require("nvchad.configs.lspconfig").capabilities
 
+M.opts = {
+  capabilities = M.capabilities,
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+}
+
+M.old_lspconfig = function(server_name)
+  require("lspconfig")[server_name].setup(M.opts)
+end
+
 M.defaults = function()
   require("nvchad.lsp").diagnostic_config()
 
@@ -53,11 +63,7 @@ M.defaults = function()
     require("lspconfig.ui.windows").default_options.border = "rounded"
   end
 
-  vim.lsp.config("*", {
-    capabilities = M.capabilities,
-    on_init = M.on_init,
-    on_attach = M.on_attach,
-  })
+  vim.lsp.config("*", M.opts)
 end
 
 return M
