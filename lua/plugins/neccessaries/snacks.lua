@@ -87,9 +87,9 @@ return {
       desc = "Find | Smart",
     },
     {
-      "<leader><space>",
+      "<leader><leader>",
       function()
-        Snacks.picker.files()
+        Snacks.picker.files({ hidden = true })
       end,
       desc = "Find | Files",
     },
