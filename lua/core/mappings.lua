@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 
-map("i", "jk", "<Esc>", { desc = "General | Escape", silent = true })
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })

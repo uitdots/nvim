@@ -1,4 +1,3 @@
--- FIXME: Hey seem this doesn't work
 ---@type NvPluginSpec
 return {
   "max397574/better-escape.nvim",
