@@ -7,6 +7,7 @@ return {
       function(server_name)
         vim.lsp.enable(server_name)
       end,
+      ["ts_ls"] = function() end,
       ["rust_analyzer"] = function() end,
       ["jdtls"] = function() end,
     },
