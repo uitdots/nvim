@@ -1,7 +1,30 @@
 ---@type NvPluginSpec
 return {
   "nvzone/menu",
-  dependencies = { "nvzone/volt" },
-  enabled = false,
+  dependencies = {
+    "nvzone/volt",
+  },
+  enabled = true,
   event = "VeryLazy",
+  keys = {
+    {
+      "<RightMouse>",
+      function()
+        require("menu.utils").delete_old_menus()
+        vim.cmd.exec('"normal! \\<RightMouse>"')
+        local buf = vim.api.nvim_win_get_buf(vim.fn.getmousepos().winid)
+        local options = vim.bo[buf].ft == "NvimTree" and "nvimtree" or "default"
+        require("menu").open(options, { mouse = true })
+      end,
+      desc = "General | NvZone Menu",
+      mode = { "n", "v" },
+    },
+    {
+      "<C-t>",
+      function()
+        require("menu").open("default")
+      end,
+      desc = "General | NvZone Menu",
+    },
+  },
 }
