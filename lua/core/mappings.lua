@@ -120,6 +120,9 @@ vim.keymap.set("n", "<leader>np", function()
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
 -- UTILS
+vim.keymap.set("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
+vim.keymap.set("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
+
 vim.keymap.set("n", "<leader>ux", function()
   if vim.fn.has("unix") == 0 then
     return vim.notify("This isn't available for non UNIX based OS")

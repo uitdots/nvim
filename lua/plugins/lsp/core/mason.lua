@@ -11,7 +11,7 @@ return {
     {
       "<leader>lm",
       "<CMD>Mason<CR>",
-      desc = "Mason | Toggle",
+      desc = "LSP | Mason",
       silent = true,
     },
   },

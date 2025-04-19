@@ -376,7 +376,7 @@ return {
       function()
         Snacks.zen()
       end,
-      desc = "Options | Dim",
+      desc = "Options | Zen",
     },
   },
 }

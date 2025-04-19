@@ -5,6 +5,20 @@ return {
     "BufReadPost",
     "BufNewFile",
   },
+  keys = {
+    {
+      "<leader>lf",
+      "<cmd>Format<cr>",
+      desc = "LSP | Format",
+      silent = true,
+    },
+    {
+      "<leader>lF",
+      "<cmd>FormatToggle<cr>",
+      desc = "LSP | Toggle Autoformat",
+      silent = true,
+    },
+  },
   opts = function(_, opts)
     opts.formatters = {
       ["doctoc"] = {

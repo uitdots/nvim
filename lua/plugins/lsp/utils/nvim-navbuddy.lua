@@ -12,7 +12,7 @@ return {
     {
       "<leader>ln",
       "<cmd>Navbuddy<cr>",
-      desc = "Navbuddy | Open",
+      desc = "LSP | Open Navbuddy",
       silent = true,
     },
   },
