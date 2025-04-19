@@ -1,7 +1,6 @@
 ---@type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
-  event = "VeryLazy",
   dependencies = {
     "b0o/nvim-tree-preview.lua",
     "nvim-tree/nvim-web-devicons",
