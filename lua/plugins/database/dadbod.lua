@@ -1,7 +1,4 @@
----@module 'blink.cmp'
-
 ---@type NvPluginSpec
--- NOTE: For Database Querying and Processing
 return {
   {
     "kristijanhusak/vim-dadbod-ui",
@@ -19,14 +16,23 @@ return {
       },
       {
         "saghen/blink.cmp",
+        ---@module 'blink.cmp'
         ---@type blink.cmp.Config
         opts = {
           sources = {
             per_filetype = {
-              sql = { "lsp", "dadbod", "snippets", "buffer" },
+              sql = {
+                "lsp",
+                "dadbod",
+                "snippets",
+                "buffer",
+              },
             },
             providers = {
-              dadbod = { name = "Dadbod", module = "vim_dadbod_completion.blink" },
+              dadbod = {
+                name = "Dadbod",
+                module = "vim_dadbod_completion.blink",
+              },
             },
           },
         },

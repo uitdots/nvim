@@ -39,7 +39,7 @@ return {
           "path",
           "snippets",
           "buffer",
-          -- This is for custom provider
+          -- NOTE: This is for custom providers
           "lazydev",
           "emoji",
           -- "copilot",
