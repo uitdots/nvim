@@ -1,4 +1,4 @@
-local gcc_path = require("core.utils").get_path_from_executable "gcc"
+local gcc_path = require("core.utils").get_path_from_executable("gcc")
 
 return {
   cmd = {

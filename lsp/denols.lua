@@ -1,4 +1,4 @@
-local util = require "lspconfig.util"
+local util = require("lspconfig.util")
 
 local deno_matcher = function(path)
   local patterns = { "deno.json", "deno.jsonc" }

@@ -15,11 +15,13 @@ return {
       "force",
       ---@diagnostic disable-next-line: param-type-mismatch
       linters.sqlfluff,
-      { args = {
-        "lint",
-        "--format=json",
-        "--dialect=postgres",
-      } }
+      {
+        args = {
+          "lint",
+          "--format=json",
+          "--dialect=postgres",
+        },
+      }
     )
 
     require("lint").linters_by_ft = {

@@ -40,12 +40,11 @@ return {
           -- "--ignore=F401", -- Unused import
         },
       },
-      pg_sqlfluff =
-          vim.tbl_extend("force", require "conform.formatters.sqlfluff", {
-            append_args = {
-              "--dialect=postgres",
-            }
-          }),
+      pg_sqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
+        append_args = {
+          "--dialect=postgres",
+        },
+      }),
       -- ["mysql_formatter"] = {
       --   command = "sql-formatter",
       --   args = {
@@ -97,7 +96,7 @@ return {
       },
       scss = { "prettier" },
       sh = { "shfmt" },
-      env = { "shfmt" },
+      dotenv = { "shfmt" },
       postgresql = { "pg_sqlfluff" },
       -- plsql = { "plsql_formatter" },
       -- postgresql = { "postgresql_formatter" },
@@ -111,7 +110,6 @@ return {
       zsh = { "beautysh" },
     }
 
-
     opts.format_after_save = function(bufnr) -- Async format
       -- Disable with a global or buffer-local variable
       if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
@@ -119,7 +117,7 @@ return {
       end
       -- Disable autoformat for files in a certain path
       local bufname = vim.api.nvim_buf_get_name(bufnr)
-      if bufname:match "/node_modules/" then
+      if bufname:match("/node_modules/") then
         return
       end
       return {}
