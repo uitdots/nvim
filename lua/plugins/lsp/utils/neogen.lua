@@ -23,7 +23,7 @@ return {
           vim.cmd("Neogen" .. " " .. scheme)
         end)
       end,
-      desc = "Neogen | Generate Docs",
+      desc = "LSP | Generate Docs",
       silent = true,
     },
   },

@@ -154,7 +154,7 @@ return {
       function()
         Snacks.picker.grep_word()
       end,
-      desc = "Search | Visual selection or word",
+      desc = "Find | Visual Selection or Word",
       mode = { "n", "x" },
     },
 
