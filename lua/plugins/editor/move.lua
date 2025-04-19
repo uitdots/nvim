@@ -7,16 +7,59 @@ return {
     "MoveWord",
     "MoveLine",
   },
-  keys = {
-    { "<M-j>", "<cmd>MoveLine(1)<CR>", desc = "Move | Line Down", noremap = true, silent = true },
-    { "<M-k>", "<cmd>MoveLine(-1)<CR>", desc = "Move | Line Up", noremap = true, silent = true },
-    { "<M-l>", "<cmd>MoveWord(1)<CR>", desc = "Move | Word Right", noremap = true, silent = true },
-    { "<M-h>", "<cmd>MoveWord(-1)<CR>", desc = "Move | Word Left", noremap = true, silent = true },
+  -- LazyNvim keys doesn't work
+  init = function()
+    -- Normal-mode commands
+    vim.keymap.set(
+      "n",
+      "<M-j>",
+      ":MoveLine(1)<cr>",
+      { desc = "General | Move Line Down", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "n",
+      "<M-k>",
+      ":MoveLine(-1)<cr>",
+      { desc = "General | Move Line Up", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "n",
+      "<M-l>",
+      ":MoveWord(1)<cr>",
+      { desc = "General | Move Word Right", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "n",
+      "<M-h>",
+      ":MoveWord(-1)<cr>",
+      { desc = "General | Move Word Left", noremap = true, silent = true }
+    )
+
     -- Visual-mode commands
-    { "<M-j>", "<cmd>MoveBlock(1)<CR>", desc = "Move | Block Down", noremap = true, silent = true },
-    { "<M-k>", "<cmd>MoveBlock(-1)<CR>", desc = "Move | Block Up", noremap = true, silent = true },
-    { "<M-h>", "<cmd>MoveHBlock(-1)<CR>", desc = "Move | Block Left", noremap = true, silent = true },
-    { "<M-l>", "<cmd>MoveHBlock(1)<CR>", desc = "Move | Block Right", noremap = true, silent = true },
-  },
+    vim.keymap.set(
+      "v",
+      "<M-j>",
+      ":MoveBlock(1)<cr>",
+      { desc = "General | Move Block Down", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "v",
+      "<M-k>",
+      ":MoveBlock(-1)<cr>",
+      { desc = "General | Move Block Up", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "v",
+      "<M-h>",
+      ":MoveHBlock(-1)<cr>",
+      { desc = "General | Move Block Left", noremap = true, silent = true }
+    )
+    vim.keymap.set(
+      "v",
+      "<M-l>",
+      ":MoveHBlock(1)<cr>",
+      { desc = "General | Move Block Right", noremap = true, silent = true }
+    )
+  end,
   config = true,
 }
