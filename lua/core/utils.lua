@@ -1,11 +1,14 @@
 local M = {}
 
-M.get_path_from_executable = function(executable)
+---Return the full path of the executable
+---@param executable string executable file
+---@return string | nil
+function M.get_path_from_executable(executable)
   local path = vim.fn.fnamemodify(vim.fn.exepath(executable), ":h")
   return path == "." and nil or path
 end
 
-M.open_spell_sugestion = function()
+function M.open_spell_sugestion()
   local col = vim.fn.col(".")
   local line = vim.fn.getline(".")
   if col <= #line and line:sub(col, col):match("%a") then
@@ -13,12 +16,12 @@ M.open_spell_sugestion = function()
   end
 end
 
---- Return the executable path if exist in $PATH, fallback to mason package
+---Return the executable path if exist in $PATH, fallback to mason package
 ---@param path string executable file
 ---@param mason? { package: string, inner_path?: string } mason package
 ---@param opts? { full_path?: boolean }
----@return string?
-M.get_executable = function(path, mason, opts)
+---@return string | nil
+function M.get_executable(path, mason, opts)
   local full_path = vim.fn.exepath(path)
   if full_path ~= "" then
     return opts ~= nil and opts.full_path == true and full_path or path
