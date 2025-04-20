@@ -38,6 +38,22 @@ return {
         silent = true,
       },
       {
+        "<leader>nh",
+        function()
+          require("nvchad.tabufline").closeBufs_at_direction("left")
+        end,
+        desc = "General | Close Buffers from Left",
+        silent = true,
+      },
+      {
+        "<leader>nl",
+        function()
+          require("nvchad.tabufline").closeBufs_at_direction("right")
+        end,
+        desc = "Neovim | Close Buffers from Right",
+        silent = true,
+      },
+      {
         "<leader>ft",
         function()
           require("nvchad.themes").open()
