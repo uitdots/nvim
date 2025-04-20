@@ -70,6 +70,7 @@ M.modules = {
   command = function()
     local noice_ok, noice = pcall(require, "noice.api")
     if noice_ok then
+      ---@diagnostic disable-next-line: undefined-field
       return " %#St_gitIcons#" .. noice.status.command.get() .. " "
     else
       return " "
