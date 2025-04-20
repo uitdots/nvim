@@ -31,7 +31,6 @@ return {
       -- { "<leader>r", group = "Runner", icon = "" },
       -- { "<leader>s", group = "Sessions", icon = "󰔚" },
       { "<leader>s", group = "Snapshot", icon = "", mode = { "x" } },
-      { "<leader>S", group = "Search", icon = "󱈅", mode = { "n" } }, -- TODO: Merge into find later?
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
     },
   },

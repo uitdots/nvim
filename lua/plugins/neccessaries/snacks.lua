@@ -94,7 +94,7 @@ return {
       desc = "Find | Files",
     },
     {
-      "<leader>fb",
+      "<leader>fB",
       function()
         Snacks.picker.buffers()
       end,
@@ -108,7 +108,7 @@ return {
       desc = "Find | Words",
     },
     {
-      "<leader>fc",
+      "<leader>fC",
       function()
         Snacks.picker.command_history()
       end,
@@ -208,164 +208,119 @@ return {
       end,
       desc = "Git | Log File",
     },
-
-    -- Grep
     {
-      "<leader>Sb",
+      "<leader>fb",
       function()
         Snacks.picker.lines()
       end,
-      desc = "Search | Buffer Lines",
+      desc = "Find | Buffer Lines",
     },
     {
-      "<leader>SB",
-      function()
-        Snacks.picker.grep_buffers()
-      end,
-      desc = "Search | Grep Open Buffers",
-    },
-    {
-      "<leader>Sg",
-      function()
-        Snacks.picker.grep()
-      end,
-      desc = "Search | Grep",
-    },
-
-    -- search
-    {
-      '<leader>S"',
+      '<leader>f"',
       function()
         Snacks.picker.registers()
       end,
-      desc = "Search | Registers",
+      desc = "Find | Registers",
     },
     {
-      "<leader>S/",
+      "<leader>f/",
       function()
         Snacks.picker.search_history()
       end,
-      desc = "Search | Search History",
+      desc = "Find | Search History",
     },
     {
-      "<leader>Sb",
-      function()
-        Snacks.picker.lines()
-      end,
-      desc = "Search | Buffer Lines",
-    },
-    {
-      "<leader>Sc",
-      function()
-        Snacks.picker.command_history()
-      end,
-      desc = "Search | Command History",
-    },
-    {
-      "<leader>SC",
+      "<leader>fc",
       function()
         Snacks.picker.commands()
       end,
-      desc = "Search | Commands",
+      desc = "Find | Commands",
     },
     {
-      "<leader>Sd",
+      "<leader>lD",
       function()
         Snacks.picker.diagnostics()
       end,
-      desc = "Search | Diagnostics",
+      desc = "Find | Diagnostics",
     },
     {
-      "<leader>SD",
+      "<leader>ld",
       function()
         Snacks.picker.diagnostics_buffer()
       end,
-      desc = "Search | Buffer Diagnostics",
+      desc = "Find | Buffer Diagnostics",
     },
     {
-      "<leader>Sh",
+      "<leader>fh",
       function()
         Snacks.picker.help()
       end,
-      desc = "Search | Help Pages",
+      desc = "Find | Help Pages",
     },
     {
-      "<leader>SH",
+      "<leader>fH",
       function()
         Snacks.picker.highlights()
       end,
-      desc = "Search | Highlights",
+      desc = "Find | Highlights",
     },
     {
-      "<leader>Si",
+      "<leader>fi",
       function()
         Snacks.picker.icons()
       end,
-      desc = "Search | Icons",
+      desc = "Find | Icons",
     },
     {
-      "<leader>Sj",
-      function()
-        Snacks.picker.jumps()
-      end,
-      desc = "Search | Jumps",
-    },
-    {
-      "<leader>Sk",
+      "<leader>fk",
       function()
         Snacks.picker.keymaps()
       end,
-      desc = "Search | Keymaps",
+      desc = "Find | Keymaps",
     },
     {
-      "<leader>Sl",
+      "<leader>fl",
       function()
         Snacks.picker.loclist()
       end,
-      desc = "Search | Location List",
+      desc = "Find | Location List",
     },
     {
-      "<leader>Sm",
+      "<leader>fm",
       function()
         Snacks.picker.marks()
       end,
-      desc = "Search | Marks",
+      desc = "Find | Marks",
     },
     {
-      "<leader>SM",
+      "<leader>fM",
       function()
         Snacks.picker.man()
       end,
-      desc = "Search | Man Pages",
+      desc = "Find | Man Pages",
     },
     {
-      "<leader>Sp",
+      "<leader>fp",
       function()
         Snacks.picker.lazy()
       end,
-      desc = "Search | Search for Plugin Spec",
+      desc = "Find | Plugin Spec",
     },
     {
-      "<leader>Sq",
+      "<leader>fq",
       function()
         Snacks.picker.qflist()
       end,
-      desc = "Search | Quickfix List",
+      desc = "Find | Quickfix List",
     },
     {
-      "<leader>SR",
-      function()
-        Snacks.picker.resume()
-      end,
-      desc = "Search | Resume",
-    },
-    {
-      "<leader>Su",
+      "<leader>fu",
       function()
         Snacks.picker.undo()
       end,
-      desc = "Search | Undo History",
+      desc = "Find | Undo History",
     },
+
     -- Options
     {
       "<leader>od",

@@ -8,7 +8,7 @@ return {
   config = true,
   keys = {
     {
-      "<leader>ld",
+      "<leader><C-d>",
       function()
         vim.ui.select({ "auto", "func", "class", "type", "file" }, {
           prompt = "Select Neogen scheme",
