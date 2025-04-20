@@ -16,10 +16,8 @@ local headers = {
     "",
     "We're here to rescue your Neovim configurations ",
     "",
-  }
+  },
 }
-
-
 
 M.ui = {
   telescope = { style = vim.g.border_enabled and "bordered" or "borderless" },
@@ -67,7 +65,11 @@ M.nvdash = {
   load_on_startup = true,
   header = headers.default,
   buttons = {
-    { txt = "  Find File", cmd = "lua Snacks.picker.smart()" },
+    { txt = "  Find File", keys = "<Spc><Spc>", cmd = "lua Snacks.picker.files({ hidden = true })" },
+    { txt = "  Recent Files", keys = "<Spc>fr", cmd = "Snacks.picker.recent()" },
+    { txt = "󰈭  Find Word", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
+    { txt = "󱥚  Themes", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
+    { txt = "  Cheat Sheet", keys = "<Spc>nc", cmd = "NvCheatsheet" },
     { txt = "─", no_gap = true, rep = true },
     {
       txt = function()
@@ -174,7 +176,13 @@ M.mason = {
   },
 }
 
-M.lsp = { signature = true }
+M.lsp = {
+  signature = true,
+}
+
+M.cheatsheet = {
+  theme = "grid",
+}
 
 M.base46 = {
   theme = "catppuccin",
