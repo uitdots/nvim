@@ -6,7 +6,7 @@ local M = {}
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string|nil[]
 M.lsps = {
-  is_executable("postgrestools") and "postgres_ls" or nil,
+  is_executable("postgrestools") and "postgres_ls" or "",
 }
 
 ---For old lsp configurations (old nvim lsp way), and you want to enable manully
