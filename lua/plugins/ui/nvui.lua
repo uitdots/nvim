@@ -1,7 +1,56 @@
 ---@type NvPluginSpec
 return {
   {
-    "nvim-lua/plenary.nvim",
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    keys = {
+      {
+        "H",
+        function()
+          require("nvchad.tabufline").prev()
+        end,
+        desc = "General | Previous Buffer",
+        silent = true,
+      },
+      {
+        "L",
+        function()
+          require("nvchad.tabufline").next()
+        end,
+        desc = "General | Next Buffer",
+        silent = true,
+      },
+      {
+        "<leader>c",
+        function()
+          require("nvchad.tabufline").close_buffer()
+        end,
+        desc = "General | Close Buffer",
+        silent = true,
+      },
+      {
+        "<leader>C",
+        function()
+          require("nvchad.tabufline").closeAllBufs(false)
+        end,
+        desc = "General | Close Other Buffers",
+        silent = true,
+      },
+      {
+        "<leader>ft",
+        function()
+          require("nvchad.themes").open()
+        end,
+        desc = "Find | Themes",
+      },
+      {
+        "<leader>nc",
+        "<cmd>NvCheatsheet<cr>",
+        desc = "Neovim | Cheatsheet",
+        silent = true,
+      },
+    },
   },
   {
     "NvChad/ui",
@@ -10,6 +59,9 @@ return {
     config = function()
       require("nvchad")
     end,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
   },
   {
     "nvchad/base46",
