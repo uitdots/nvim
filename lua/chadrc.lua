@@ -6,7 +6,7 @@
 local M = {}
 
 M.ui = {
-  telescope = { style = "bordered" },
+  telescope = { style = vim.g.border_enabled and "bordered" or "borderless" },
   cmp = {
     lspkind_text = true,
     style = "default",
@@ -49,7 +49,7 @@ M.ui = {
 
 M.nvdash = {
   load_on_startup = true,
-  header = { 
+  header = {
     "",
     "██╗   ██╗██╗████████╗██████╗  ██████╗ ████████╗███████╗",
     "██║   ██║██║╚══██╔══╝██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝",
