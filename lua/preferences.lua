@@ -4,7 +4,7 @@ local M = {}
 
 ---Add line by line the lsp you want to enable manually here (Install yourself, or "mason lspconfig" doesn't provide it yet, but neovim must support that) (new API)
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
----@type string|nil[]
+---@type string[]
 M.lsps = {
   is_executable("postgrestools") and "postgres_ls" or "",
 }
