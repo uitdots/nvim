@@ -20,6 +20,15 @@ return {
       ---@type blink.cmp.Config
       opts = {
         sources = {
+          per_filetype = {
+            lua = {
+              "lsp",
+              "path",
+              "snippets",
+              "buffer",
+              "lazydev",
+            },
+          },
           providers = {
             lazydev = {
               name = "LazyDev",
@@ -28,6 +37,9 @@ return {
             },
           },
         },
+      },
+      opts_extend = {
+        "sources.default",
       },
     },
   },

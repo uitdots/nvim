@@ -8,6 +8,9 @@ return {
     ---@type blink.cmp.Config
     opts = {
       sources = {
+        default = {
+          "emoji",
+        },
         providers = {
           emoji = {
             module = "blink-emoji",
@@ -25,6 +28,9 @@ return {
           },
         },
       },
+    },
+    opts_extend = {
+      "sources.default",
     },
   },
 }

@@ -94,10 +94,6 @@ return {
           "path",
           "snippets",
           "buffer",
-          -- NOTE: This is for custom providers
-          "lazydev",
-          "emoji",
-          -- "copilot",
         },
       },
       signature = {
