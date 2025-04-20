@@ -18,7 +18,7 @@ return {
     spec = {
       { "<leader>D", group = "Database", icon = "" },
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
-      { "<leader><C-a>", group = "API", icon = "󱂛" },
+      { "<leader>A", group = "API", icon = "󱂛" },
       { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
       { "<leader>d", group = "Debug", icon = "" },
       { "<leader>f", group = "Find", icon = "" },
