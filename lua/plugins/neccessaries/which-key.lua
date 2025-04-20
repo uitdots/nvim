@@ -11,10 +11,6 @@ return {
     delay = function()
       return 500
     end,
-    triggers = {
-      { "<auto>", mode = "nxsot" },
-      { "s", mode = "n" }, -- Enable show menu for "s" keymap, replace default nvim's behavior
-    },
     spec = {
       { "<leader>D", group = "Database", icon = "" },
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
@@ -40,7 +36,14 @@ return {
       function()
         require("which-key").show({ global = false })
       end,
-      desc = "General | Key Help (Local)",
+      desc = "General | Local Key Help",
+    },
+    {
+      "<leader><C-?>",
+      function()
+        require("which-key").show()
+      end,
+      desc = "General | Key Help",
     },
   },
 }
