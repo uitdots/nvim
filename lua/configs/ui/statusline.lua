@@ -85,7 +85,6 @@ M.modules = {
     if venv == " " then
       return " "
     else
-      -- return "  " .. venv
       return "%#St_gitIcons# "
     end
   end,
@@ -107,7 +106,6 @@ M.modules = {
   end,
 
   lsps = function()
-    local clients = {}
     local bufnr = vim.api.nvim_get_current_buf()
     local lsps = vim.lsp.get_clients({ bufnr = bufnr })
 
@@ -119,9 +117,9 @@ M.modules = {
       return " %#St_gitIcons# "
     end
 
-    for _, lsps_names in pairs(lsps) do
-      table.insert(clients, lsps_names.name)
-    end
+    local clients = vim.tbl_map(function(client)
+      return client.name
+    end, lsps)
 
     return " %#St_gitIcons# " .. table.concat(clients, ", ") .. " "
   end,
@@ -159,11 +157,9 @@ M.modules = {
       return " %#St_gitIcons#  "
     end
 
-    local formatters_names = {}
-
-    for _, formatter in pairs(formatters) do
-      table.insert(formatters_names, formatter.name)
-    end
+    local formatters_names = vim.tbl_map(function(formatter)
+      return formatter.name
+    end, formatters)
 
     return " %#St_gitIcons# " .. table.concat(formatters_names, ", ") .. " "
   end,
