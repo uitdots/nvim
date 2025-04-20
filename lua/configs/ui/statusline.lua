@@ -107,59 +107,64 @@ M.modules = {
 
   lsps = function()
     local clients = {}
-    local buf = vim.api.nvim_get_current_buf()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local lsps = vim.lsp.get_clients({ bufnr = bufnr })
 
-    -- Iterate through all the clients for the current buffer
-    for _, client in pairs(vim.lsp.get_clients({ bufnr = buf })) do
-      -- Add the client name to the `clients` table
-      table.insert(clients, client.name)
-    end
-
-    if #clients == 0 then
+    if #lsps == 0 then
       return ""
-    else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and table.concat(clients, ", ") or "") .. " "
     end
+
+    if vim.o.columns < 100 then
+      return " %#St_gitIcons# "
+    end
+
+    for _, lsps_names in pairs(lsps) do
+      table.insert(clients, lsps_names.name)
+    end
+
+    return " %#St_gitIcons# " .. table.concat(clients, ", ") .. " "
   end,
 
   linters = function()
-    local clients = {}
-
     local lint_ok, lint = pcall(require, "lint")
-    if lint_ok then
-      local linters = {}
-      local fts = vim.split(vim.bo.filetype, ".", { plain = true, trimempty = true })
-      for _, ft in pairs(fts) do
-        vim.list_extend(linters, lint.linters_by_ft[ft] or {})
-      end
-      if #linters ~= 0 then
-        table.insert(clients, table.concat(linters, ", "))
-      end
+    if not lint_ok then
+      return ""
     end
 
-    if #clients == 0 then
+    local linters = lint._resolve_linter_by_ft(vim.bo.filetype)
+    if #linters == 0 then
       return ""
-    else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and table.concat(clients, ", ") or "") .. " "
     end
+
+    if vim.o.columns < 100 then
+      return " %#St_gitIcons#  "
+    end
+
+    return " %#St_gitIcons# " .. table.concat(linters, ", ") .. " "
   end,
 
   formatters = function()
-    local clients = {}
-
     local conform_ok, conform = pcall(require, "conform")
-    if conform_ok then
-      local formatters = conform.list_formatters(0)
-      for _, formatter in pairs(formatters) do
-        table.insert(clients, formatter.name)
-      end
+    if not conform_ok then
+      return ""
     end
 
-    if #clients == 0 then
+    local formatters = conform.list_formatters(0)
+    if #formatters == 0 then
       return ""
-    else
-      return " %#St_gitIcons# " .. (vim.o.columns > 100 and table.concat(clients, ", ") or "") .. " "
     end
+
+    if vim.o.columns < 100 then
+      return " %#St_gitIcons#  "
+    end
+
+    local formatters_names = {}
+
+    for _, formatter in pairs(formatters) do
+      table.insert(formatters_names, formatter.name)
+    end
+
+    return " %#St_gitIcons# " .. table.concat(formatters_names, ", ") .. " "
   end,
 
   flutter = function()
