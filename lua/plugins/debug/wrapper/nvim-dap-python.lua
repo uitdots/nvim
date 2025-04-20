@@ -30,6 +30,9 @@ return {
           inner_path = vim.g.is_windows and "venv/Scripts" or "/venv/bin",
         })
       end
+      if executable == nil then
+        return
+      end
       require("dap-python").setup(executable)
     end,
   },
