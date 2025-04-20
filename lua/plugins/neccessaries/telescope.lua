@@ -2,15 +2,12 @@
 return {
   "nvim-telescope/telescope.nvim",
   event = "VeryLazy",
+  optional = true,
   dependencies = {
     {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
     },
-  },
-  keys = {
-    { "<C-Space>", require("core.utils").open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
-    { "<M-;>", require("core.utils").open_spell_sugestion, desc = "Find | Spell Suggest", silent = true },
   },
   opts = {
     extensions_list = {

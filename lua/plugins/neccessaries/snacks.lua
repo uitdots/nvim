@@ -78,6 +78,15 @@ return {
     },
   },
   keys = {
+    -- General
+    {
+      "<C-Space>",
+      function()
+        Snacks.picker.spelling()
+      end,
+      desc = "General | Spelling",
+    },
+
     -- Find
     {
       "<leader>fS",
@@ -121,13 +130,6 @@ return {
       end,
       desc = "Find | Notification History",
     },
-    -- {
-    --   "<leader>e",
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = "Snack | File Explorer",
-    -- },
     {
       "<leader>fa",
       function()
