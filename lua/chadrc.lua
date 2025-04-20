@@ -77,7 +77,7 @@ M.nvdash = {
     { txt = "󰈭  Find Word", hl = "NvDashButton", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
     { txt = "󱥚  Themes", hl = "NvDashButton", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
     { txt = "  Cheat Sheet", hl = "NvDashButton", keys = "<Spc>nc", cmd = "NvCheatsheet" },
-    { txt = ">", no_gap = true, rep = true },
+    { txt = "─", no_gap = true, rep = true },
     {
       txt = function()
         local ok, stats = pcall(function()
@@ -97,7 +97,6 @@ M.nvdash = {
       hl = "NvDashFooter",
       no_gap = true,
     },
-    { txt = "<", no_gap = true, rep = true },
   },
 }
 
