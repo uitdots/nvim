@@ -237,20 +237,6 @@ return {
       desc = "Find | Commands",
     },
     {
-      "<leader>lD",
-      function()
-        Snacks.picker.diagnostics()
-      end,
-      desc = "Find | Diagnostics",
-    },
-    {
-      "<leader>ld",
-      function()
-        Snacks.picker.diagnostics_buffer()
-      end,
-      desc = "Find | Buffer Diagnostics",
-    },
-    {
       "<leader>fh",
       function()
         Snacks.picker.help()
