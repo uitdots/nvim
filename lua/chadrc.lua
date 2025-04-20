@@ -38,6 +38,7 @@ M.ui = {
       "%=",
       "lsp_msg",
       "macro_recording",
+      "command",
       "diagnostics",
       "flutter",
       "python_venv",

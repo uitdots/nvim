@@ -68,13 +68,11 @@ M.modules = {
   end,
 
   command = function()
-    local noice_ok, noice = pcall(require, "noice.api")
-    if noice_ok then
-      ---@diagnostic disable-next-line: undefined-field
-      return " %#St_gitIcons#" .. noice.status.command.get() .. " "
-    else
-      return " "
-    end
+    local ok, result = pcall(function()
+      local noice = require("noice.api")
+      return  noice.status.command.get() .. " "
+    end)
+    return ok and "󰌌 " .. result or " "
   end,
 
   python_venv = function()
