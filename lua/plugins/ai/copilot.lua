@@ -16,13 +16,13 @@ return {
     {
       "<leader>at",
       "<cmd>Copilot toggle<cr>",
-      desc = "Copilot | Toggle Completion",
+      desc = "AI | Toggle Copilot Completion",
       silent = true,
     },
     {
       "<leader>aP",
       "<cmd>Copilot panel<cr>",
-      desc = "Copilot | Toggle Panel",
+      desc = "AI | Toggle Copilot Panel",
       silent = true,
     },
   },

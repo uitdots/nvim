@@ -22,7 +22,7 @@ return {
     {
       "<leader>ur",
       "<cmd>RegexplainerShowPopup<cr>",
-      desc = "Regexplainer | Toggle",
+      desc = "Utils | Toggle Regexplainer",
       silent = true,
     },
   },
