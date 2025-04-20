@@ -3,7 +3,7 @@ local map = vim.keymap.set
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
-map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All Text", silent = true })
+map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
 
 map("n", "<leader>ol", function()
   vim.o.number = not vim.o.number
@@ -95,9 +95,9 @@ map("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Profile", silen
 map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Neovim
-vim.keymap.set("n", "<leader>nc", "<cmd>NvCheatsheet<cr>", { desc = "Neovim | Toggle Cheatsheet", silent = true })
+map("n", "<leader>nc", "<cmd>NvCheatsheet<cr>", { desc = "Neovim | Toggle Cheatsheet", silent = true })
 
-vim.keymap.set("n", "<leader>ni", function()
+map("n", "<leader>ni", function()
   if vim.version().minor >= 9 then
     vim.cmd("Inspect")
   else
@@ -105,24 +105,24 @@ vim.keymap.set("n", "<leader>ni", function()
   end
 end, { desc = "Neovim | Inspect", silent = true }) -- only available on neovim >= 0.9
 
-vim.keymap.set("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
+map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
 
-vim.keymap.set("n", "<leader>nh", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
+map("n", "<leader>nh", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
-vim.keymap.set("n", "<leader>nv", function()
+map("n", "<leader>nv", function()
   local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
   return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
 end, { desc = "Neovim | Version", silent = true })
 
-vim.keymap.set("n", "<leader>np", function()
+map("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
 -- UTILS
-vim.keymap.set("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
-vim.keymap.set("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
+map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
+map("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
 
-vim.keymap.set("n", "<leader>ux", function()
+map("n", "<leader>ux", function()
   if vim.fn.has("unix") == 0 then
     return vim.notify("This isn't available for non UNIX based OS")
   end

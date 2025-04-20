@@ -1,26 +1,17 @@
-local fts = {
-  "Avante",
-  "markdown",
-  "norg",
-  "org",
-  "rmd",
-  "vimwiki",
-}
-
 ---@type NvPluginSpec
 return {
   "OXY2DEV/markview.nvim",
   lazy = false,
   opts = {
     preview = {
-      filetypes = fts,
+      filetypes = vim.g.markdown_filetypes,
       ignore_buftypes = {},
       icon_provider = "devicons", -- "mini" or "devicons"
     },
     max_length = 99999,
   },
   -- enabled = false,
-  ft = fts,
+  ft = vim.g.markdown_filetypes,
   dependencies = {
     -- You will not need this if you installed the
     -- parsers manually
@@ -36,7 +27,7 @@ return {
       "<leader>mv",
       "<cmd>Markview<cr>",
       desc = "Markdown | Toggle View",
-      ft = fts,
+      ft = vim.g.markdown_filetypes,
       silent = true,
     },
   },

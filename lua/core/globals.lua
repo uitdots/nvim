@@ -35,6 +35,15 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
+g.markdown_filetypes = {
+  "Avante",
+  "markdown",
+  "norg",
+  "org",
+  "rmd",
+  "vimwiki",
+}
+
 if vim.g.inlayhint_default then
   vim.lsp.inlay_hint.enable(true)
 end

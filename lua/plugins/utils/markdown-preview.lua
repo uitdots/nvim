@@ -1,12 +1,3 @@
-local fts = {
-  "Avante",
-  "markdown",
-  "norg",
-  "org",
-  "rmd",
-  "vimwiki",
-}
-
 ---@type NvPluginSpec
 return {
   "iamcco/markdown-preview.nvim",
@@ -15,7 +6,7 @@ return {
       "<leader>mp",
       "<cmd>MarkdownPreviewToggle<cr>",
       desc = "Markdown Preview | Toggle",
-      ft = fts,
+      ft = vim.g.markdown_filetypes,
       silent = true,
     },
     {
@@ -30,12 +21,12 @@ return {
         end
       end,
       desc = "Markdown Preview | Toggle Theme",
-      ft = fts,
+      ft = vim.g.markdown_filetypes,
       silent = true,
     },
   },
   build = ":call mkdp#util#install()",
-  ft = fts,
+  ft = vim.g.markdown_filetypes,
   enabled = true,
   init = function()
     vim.g.mkdp_open_to_the_world = 1 -- Open for other to access
