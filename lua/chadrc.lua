@@ -36,14 +36,14 @@ M.ui = {
       "cursor",
       "total_lines",
     },
-    modules = require("configs.ui.nvui.statusline").modules,
+    modules = require("configs.ui.statusline").modules,
   },
 
   tabufline = {
     enabled = true,
     lazyload = true,
     order = { "buffers", "tabs" },
-    modules = require("configs.ui.nvui.tabufline").modules,
+    modules = require("configs.ui.tabufline").modules,
   },
 }
 
