@@ -2,7 +2,7 @@
 return {
   { import = "plugins.ai" },
   { import = "plugins.database" },
-  { import = "plugins.debug" },
+  { import = "plugins.dap" },
   { import = "plugins.editor" },
   { import = "plugins.file" },
   { import = "plugins.filetype" },

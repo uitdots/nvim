@@ -32,6 +32,7 @@ function M.setup()
   if adapter == nil then
     return
   end
+  vim.notify(adapter)
   M._setup_adapter(adapter)
   M._config()
 end

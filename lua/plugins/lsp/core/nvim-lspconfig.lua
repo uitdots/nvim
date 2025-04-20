@@ -16,4 +16,8 @@ return {
   config = function()
     require("configs.lspconfig").defaults()
   end,
+  dependencies = {
+    "folke/neoconf.nvim",
+    optional = true,
+  },
 }
