@@ -213,6 +213,9 @@ M.base46 = {
     "whichkey",
   },
   hl_override = {
+    Search = { bg = "blue" },
+    IncSearch = { bg = "blue" },
+
     -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.
     Visual = { bg = "one_bg2" },
     TelescopeSelection = { bg = "one_bg2" },
