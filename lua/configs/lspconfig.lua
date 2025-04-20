@@ -12,7 +12,7 @@ function M._keymaps(_, bufnr)
 
   map("n", "gri", Snacks.picker.lsp_implementations, opts("Go to Implementations"))
   map("n", "grr", Snacks.picker.lsp_references, opts("Go to references"))
-  map("n", "grn", require("nvchad.lsp.renamer"), opts("Rename"))
+  map("n", "grn", vim.lsp.buf.rename, opts("Rename"))
   map("n", "gra", require("actions-preview").code_actions, opts("Code Action"))
   map("n", "gl", vim.diagnostic.open_float, opts("Inline Diagnostic"))
   map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to Declaration"))

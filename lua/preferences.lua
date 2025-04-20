@@ -1,20 +1,29 @@
 local g = vim.g
 local M = {}
 
----Add line by line the lsp you want to enable manually here (Install yourself, or "mason lspconfig" doesn't provide it yet, but neovim must support that) (new API)
+---New LSP setup. If that lsp isn't in your $PATH, no problem, it won't break. If installed by Mason, yes it will be setup.
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
 M.lsps = {
   "postgres_lsp",
 }
 
----For old lsp configurations (old nvim lsp way), and you want to enable manully
----For those LSP listed here with uncheck: https://github.com/neovim/nvim-lspconfig/issues/3705
+---Like above, but for old LSP setup method.
 ---This option will be removed in the future when nvim-lspconfig support all lsp in new way
 ---@type string[]
 M.old_lsps = {
   "texlab",
   "eslint",
+}
+
+---Useful for anyone who install using Mason but doesn't want to set them up.
+---And, if you are using wrapper for LSP that require not to config it (let them handle), then put it in here.
+---@type string[]
+M.no_setup_lsps = {
+  "dartls",
+  "ts_ls",
+  "rust_analyzer",
+  "jdtls",
 }
 
 -- NOTE: Where you put our custom configurations
