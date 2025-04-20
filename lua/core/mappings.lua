@@ -52,27 +52,6 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the b
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "General | Add size at the left", silent = true })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "General | Add size at the right", silent = true })
 
-map("n", "H", function()
-  require("nvchad.tabufline").prev()
-end, { desc = "General | Go to previous buffer", silent = true })
-
--- Go to next buffer
-map("n", "L", function()
-  require("nvchad.tabufline").next()
-end, { desc = "General | Go to next buffer", silent = true })
-
-map("n", "<leader>c", function()
-  require("nvchad.tabufline").close_buffer()
-end, { desc = "General | Close Buffer", silent = true })
-
-map("n", "<leader>C", function()
-  require("nvchad.tabufline").closeAllBufs(false)
-end, { desc = "General | Close Other Buffers", silent = true })
-
-map("n", "<leader>ft", function()
-  require("nvchad.themes").open()
-end, { desc = "Find | Themes" })
-
 map("n", "<Left>", "<cmd>tabprevious<CR>", { desc = "General | Go to previous tab", silent = true })
 map("n", "<Right>", "<cmd>tabnext<CR>", { desc = "General | Go to next tab", silent = true })
 map("n", "<Up>", "<cmd>tabnew<CR>", { desc = "General | New tab", silent = true })
@@ -95,8 +74,6 @@ map("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Profile", silen
 map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Neovim
-map("n", "<leader>nc", "<cmd>NvCheatsheet<cr>", { desc = "Neovim | Toggle Cheatsheet", silent = true })
-
 map("n", "<leader>ni", function()
   if vim.version().minor >= 9 then
     vim.cmd("Inspect")
