@@ -38,6 +38,16 @@ map({ "n", "v" }, "<C-k>", "<C-w>k", { desc = "General | Go to lower window", si
 map({ "n", "v" }, "<C-h>", "<C-w>h", { desc = "General | Go to left window", silent = true })
 map({ "n", "v" }, "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
 
+-- Navigation
+for i = 1, 9, 1 do
+  map("n", string.format("<M-%s>", i), function()
+    vim.api.nvim_set_current_buf(vim.t.bufs[i])
+  end, { desc = string.format("General | Go to Buff %s", i), silent = true })
+end
+map("n", "<M-0", function()
+  vim.api.nvim_set_current_buf(vim.t.bufs[10])
+end, { desc = "General | Go to Buff 10", silent = true })
+
 map("n", "<leader>w", function()
   if vim.bo.buftype == "terminal" then
     vim.cmd("Bdelete!")
