@@ -6,6 +6,9 @@ local M = {}
 ---@type string[]
 M.lsps = {
   "postgres_lsp",
+  "lua_ls",
+  "clangd",
+  "pyright",
 }
 
 ---Like above, but for old LSP setup method.

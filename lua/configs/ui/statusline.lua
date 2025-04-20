@@ -70,9 +70,9 @@ M.modules = {
   command = function()
     local ok, result = pcall(function()
       local noice = require("noice.api")
-      return  noice.status.command.get() .. " "
+      return " 󰌌 " .. noice.status.command.get() .. " "
     end)
-    return ok and "󰌌 " .. result or " "
+    return ok and result or " "
   end,
 
   python_venv = function()
