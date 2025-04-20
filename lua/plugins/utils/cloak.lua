@@ -11,14 +11,14 @@ return {
   "laytan/cloak.nvim",
   keys = {
     {
-      "<leader>uh",
+      "<leader>oh",
       "<cmd>CloakToggle<cr>",
       desc = "Utils | Toggle Cloak",
       silent = true,
       ft = ft,
     },
     {
-      "<leader>uH",
+      "<leader>oH",
       "<cmd>CloakPreviewLine<cr>",
       desc = "Utils | Cloak Preview Line",
       silent = true,
