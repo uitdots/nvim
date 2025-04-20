@@ -7,7 +7,10 @@ return {
   -- { import = "nvchad.blink.lazysec" },
   {
     "saghen/blink.cmp",
-    event = "InsertEnter",
+    event = {
+      "InsertEnter",
+      "CmdLineEnter",
+    },
     version = "1.*",
     ---@type blink.cmp.Config
     opts = {
