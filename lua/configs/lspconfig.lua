@@ -3,6 +3,7 @@
 local M = {}
 local map = vim.keymap.set
 local is_executable = require("core.utils").is_executable
+local no_setup_lsps = require("uitvimrc").no_setup_lsps
 local lspconfig = require("lspconfig")
 
 function M._keymaps(_, bufnr)
@@ -58,7 +59,7 @@ function M.old_lspconfig(server_name)
 end
 
 function M._setup_old_lsp()
-  local server_names = require("preferences").old_lsps
+  local server_names = require("uitvimrc").old_lsps
   for _, server_name in pairs(server_names) do
     if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
       M.old_lspconfig(server_name)
@@ -67,7 +68,7 @@ function M._setup_old_lsp()
 end
 
 function M._setup_lsp()
-  local server_names = require("preferences").lsps
+  local server_names = require("uitvimrc").lsps
   for _, server_name in pairs(server_names) do
     if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
       vim.lsp.config(server_name, M.opts)

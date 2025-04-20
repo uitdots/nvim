@@ -29,7 +29,7 @@ M.no_setup_lsps = {
   "jdtls",
 }
 
--- NOTE: Where you put our custom configurations
+---Where you put our custom configurations
 function M.setup()
   g.mapleader = " "
   g.maplocalleader = "\\"
