@@ -1,5 +1,3 @@
--- FIXME: Huhm
-
 ---@type NvPluginSpec
 return {
   "zbirenbaum/copilot.lua",
@@ -19,18 +17,6 @@ return {
       "<leader>at",
       "<cmd>Copilot toggle<cr>",
       desc = "Copilot | Toggle Completion",
-      silent = true,
-    },
-    {
-      "<leader>ad",
-      "<cmd>Copilot disable<cr>",
-      desc = "Copilot | Disable Completion",
-      silent = true,
-    },
-    {
-      "<leader>ae",
-      "<cmd>Copilot enable<cr>",
-      desc = "Copilot | Enable Completion",
       silent = true,
     },
     {
