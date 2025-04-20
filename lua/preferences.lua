@@ -21,6 +21,7 @@ M.old_lsps = {}
 ---@type string[]
 M.old_lsps_mason = {
   "eslint",
+  "texlab",
 }
 
 -- NOTE: Where you put our custom configurations

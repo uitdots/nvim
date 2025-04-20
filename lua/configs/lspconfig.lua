@@ -3,7 +3,7 @@
 local M = {}
 local map = vim.keymap.set
 
-M._keymaps = function(_, bufnr)
+function M._keymaps(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
@@ -46,11 +46,23 @@ M.opts = {
   on_attach = M.on_attach,
 }
 
-M.old_lspconfig = function(server_name)
-  require("lspconfig")[server_name].setup(M.opts)
+function M.old_lspconfig(server_name)
+  local opts = M.opts
+  local require_ok, custom_opts = pcall(require, "configs.lsp." .. server_name)
+  if require_ok then
+    opts = vim.tbl_deep_extend("force", opts, custom_opts)
+  end
+  require("lspconfig")[server_name].setup(opts)
 end
 
-M.defaults = function()
+function M._setup_old_lsp()
+  local server_names = require("preferences").old_lsps
+  for _, server_name in pairs(server_names) do
+    M.old_lspconfig(server_name)
+  end
+end
+
+function M.defaults()
   require("nvchad.lsp").diagnostic_config()
 
   vim.diagnostic.config({
@@ -66,6 +78,7 @@ M.defaults = function()
   vim.lsp.config("*", M.opts)
 
   vim.lsp.enable(require("preferences").lsps)
+  M._setup_old_lsp()
 end
 
 return M
