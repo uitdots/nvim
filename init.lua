@@ -1,6 +1,7 @@
 require("core.globals")
 require("core.env")
 require("core.options")
+require("preferences").setup()
 
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

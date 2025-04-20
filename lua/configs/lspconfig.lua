@@ -64,6 +64,8 @@ M.defaults = function()
   end
 
   vim.lsp.config("*", M.opts)
+
+  vim.lsp.enable(require("preferences").lsps)
 end
 
 return M
