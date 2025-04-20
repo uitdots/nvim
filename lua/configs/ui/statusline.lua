@@ -3,16 +3,15 @@
 
 local M = {}
 
+---@param variable string
+---@return string?
 local function get_venv(variable)
   local venv = os.getenv(variable)
-  if venv ~= nil and string.find(venv, "/") then
-    local orig_venv = venv
-    for w in orig_venv:gmatch("([^/]+)") do
-      venv = w
-    end
-    venv = string.format("%s", venv)
+  if venv == nil or string.find(venv, "/") then
+    return nil
   end
-  return venv
+  local matches = venv:gmatch("([^/]+)")
+  return matches[#matches]
 end
 
 M.modules = {
@@ -78,15 +77,14 @@ M.modules = {
 
   python_venv = function()
     if vim.bo.filetype ~= "python" then
-      return " "
+      return ""
     end
 
-    local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV") or " "
-    if venv == " " then
-      return " "
-    else
-      return "%#St_gitIcons# "
+    local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV")
+    if venv == nil then
+      return ""
     end
+    return "%#St_gitIcons# "
   end,
 
   macro_recording = function()
@@ -94,7 +92,10 @@ M.modules = {
   end,
 
   auto_format = function()
-    if vim.b.disable_autoformat == false or (vim.b.disable_autoformat == nil and vim.g.disable_autoformat == false) then
+    if vim.b.disable_autoformat then
+      return "%#St_gitIcons#󰁨 "
+    end
+    if not vim.b.disable_autoformat and not vim.g.disable_autoformat then
       return "%#St_Lsp#󰁨 "
     end
     return ""
