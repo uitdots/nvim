@@ -2,6 +2,7 @@
 return {
   "luckasRanarison/tailwind-tools.nvim",
   enabled = false,
+  cond = vim.fn.executable("tailwindcss-language-server") == 1,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

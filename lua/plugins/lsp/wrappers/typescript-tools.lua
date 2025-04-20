@@ -2,6 +2,7 @@
 return {
   "pmizio/typescript-tools.nvim",
   enabled = true,
+  cond = vim.fn.executable("typescript-language-server") == 1,
   ft = {
     "javascript",
     "javascriptreact",

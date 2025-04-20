@@ -2,6 +2,7 @@
 return {
   "akinsho/flutter-tools.nvim",
   enabled = true,
+  cond = vim.fn.executable("dart") == 1,
   ft = "dart",
   dependencies = {
     "nvim-lua/plenary.nvim",
