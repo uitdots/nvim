@@ -66,9 +66,7 @@ function M.defaults()
   require("nvchad.lsp").diagnostic_config()
 
   vim.diagnostic.config({
-    virtual_text = {
-      current_line = true,
-    },
+    virtual_text = false,
   })
 
   if vim.g.border_enabled then
