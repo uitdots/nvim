@@ -1,8 +1,10 @@
+local is_executable = require("core.utils").is_executable
+
 ---@type NvPluginSpec
 return {
   "luckasRanarison/tailwind-tools.nvim",
   enabled = false,
-  cond = vim.fn.executable("tailwindcss-language-server") == 1,
+  cond = is_executable("tailwindcss-language-server"),
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

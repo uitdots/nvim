@@ -1,5 +1,6 @@
 local opt = vim.opt
 local o = vim.o
+local is_executable = require("core.utils").is_executable
 
 o.laststatus = 3 -- global statusline
 o.backup = false -- creates a backup file
@@ -58,7 +59,7 @@ opt.whichwrap:append("<>[]hl")
 -- opt.iskeyword:append "-"
 
 -- Replace builtin grep with ripgrep
-if vim.fn.executable("rg") then
+if is_executable("rg") then
   local rgignore = vim.fn.getenv("HOME") .. "/.config/ripgrep/.rgignore"
   o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
     .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/.rgignore")

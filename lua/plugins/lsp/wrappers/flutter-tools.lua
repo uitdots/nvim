@@ -1,8 +1,10 @@
+local is_executable = require("core.utils").is_executable
+
 ---@type NvPluginSpec
 return {
   "akinsho/flutter-tools.nvim",
   enabled = true,
-  cond = vim.fn.executable("dart") == 1,
+  cond = is_executable("dart"),
   ft = "dart",
   dependencies = {
     "nvim-lua/plenary.nvim",

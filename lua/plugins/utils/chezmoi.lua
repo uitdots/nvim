@@ -1,12 +1,12 @@
----@type NvPluginSpec
+local is_executable = require("core.utils").is_executable
 
-if vim.fn.executable("chezmoi") == 1 then
+if is_executable("chezmoi") then
   return {}
 end
 
+---@type NvPluginSpec
 return {
   {
-
     "xvzc/chezmoi.nvim",
     init = function()
       local exclude_patterns = {
@@ -19,6 +19,7 @@ return {
         },
         callback = function(args)
           local bufnr = args.buf
+          ---@diagnostic disable-next-line: param-type-mismatch
           local file_path = vim.fn.expand("%:p", bufnr)
           for _, pattern in ipairs(exclude_patterns) do
             if file_path:match(pattern) then
@@ -40,7 +41,6 @@ return {
     },
   },
   {
-
     "alker0/chezmoi.vim",
     lazy = false,
     init = function()

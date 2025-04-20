@@ -39,4 +39,11 @@ function M.get_executable(path, mason, opts)
   return ret
 end
 
+---Check if executable exist in PATH or Mason
+---@param executable string
+---@return boolean
+function M.is_executable(executable)
+  return vim.fn.executable(executable) == 1
+end
+
 return M

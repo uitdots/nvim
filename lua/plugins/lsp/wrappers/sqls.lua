@@ -1,8 +1,10 @@
+local is_executable = require("core.utils").is_executable
+
 ---@type NvPluginSpec
 return {
   "nanotee/sqls.nvim",
   ft = "sql",
-  cond = vim.fn.executable("sqls") == 1,
+  cond = is_executable("sqls"),
   config = function()
     local lspconfig = require("configs.lspconfig")
     require("lspconfig").sqls.setup({

@@ -170,7 +170,6 @@ M.mason = {
     -- "sql-formatter",
 
     -- Others
-    -- vim.fn.executable "hyprland" and "hyprls" or nil,
     "codespell",
   },
 }
