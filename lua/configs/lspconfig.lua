@@ -2,6 +2,8 @@
 
 local M = {}
 local map = vim.keymap.set
+local is_executable = require("core.utils").is_executable
+local lspconfig = require("lspconfig")
 
 function M._keymaps(_, bufnr)
   local function opts(desc)
@@ -52,13 +54,25 @@ function M.old_lspconfig(server_name)
   if require_ok then
     opts = vim.tbl_deep_extend("force", opts, custom_opts)
   end
-  require("lspconfig")[server_name].setup(opts)
+  lspconfig[server_name].setup(opts)
 end
 
 function M._setup_old_lsp()
   local server_names = require("preferences").old_lsps
   for _, server_name in pairs(server_names) do
-    M.old_lspconfig(server_name)
+    if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
+      M.old_lspconfig(server_name)
+    end
+  end
+end
+
+function M._setup_lsp()
+  local server_names = require("preferences").lsps
+  for _, server_name in pairs(server_names) do
+    if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
+      vim.lsp.config(server_name, M.opts)
+      vim.lsp.enable(server_name)
+    end
   end
 end
 
@@ -73,9 +87,7 @@ function M.defaults()
     require("lspconfig.ui.windows").default_options.border = "rounded"
   end
 
-  vim.lsp.config("*", M.opts)
-
-  vim.lsp.enable(require("preferences").lsps)
+  M._setup_lsp()
   M._setup_old_lsp()
 end
 
