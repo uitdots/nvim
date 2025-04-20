@@ -40,10 +40,28 @@ function M.get_executable(path, mason, opts)
 end
 
 ---Check if executable exist in PATH or Mason
----@param executable string
+---@param executable string?
 ---@return boolean
 function M.is_executable(executable)
+  if executable == nil or executable == "" then
+    return false
+  end
   return vim.fn.executable(executable) == 1
+end
+
+---Debounce from LazyVim
+---https://www.lazyvim.org/plugins/linting#nvim-lint
+---@param ms number
+---@param fn function
+function M.debounce(ms, fn)
+  local timer = vim.uv.new_timer()
+  return function(...)
+    local argv = { ... }
+    timer:start(ms, 0, function()
+      timer:stop()
+      vim.schedule_wrap(fn)(unpack(argv))
+    end)
+  end
 end
 
 return M
