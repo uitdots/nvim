@@ -80,7 +80,7 @@ return {
   keys = {
     -- General
     {
-      "<C-Space>",
+      "<M-;>",
       function()
         Snacks.picker.spelling()
       end,
