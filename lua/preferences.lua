@@ -17,7 +17,7 @@ M.old_lsps = {
 }
 
 ---Useful for anyone who install using Mason but doesn't want to set them up.
----And, if you are using wrapper for LSP that require not to config it (let them handle), then put it in here.
+---And, if you are using LSP wrappers that require not to config those LSPs (let them handle), then put those LSPs in here.
 ---@type string[]
 M.no_setup_lsps = {
   "dartls",
