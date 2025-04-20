@@ -71,12 +71,13 @@ M.nvdash = {
   header = headers.default,
   buttons = {
     { txt = "─", no_gap = true, rep = true },
-    { txt = "  Find File", keys = "<Spc><Spc>", cmd = "lua Snacks.picker.files({ hidden = true })" },
-    { txt = "  Recent Files", keys = "<Spc>fr", cmd = "Snacks.picker.recent()" },
-    { txt = "󰈭  Find Word", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
-    { txt = "󱥚  Themes", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
-    { txt = "  Cheat Sheet", keys = "<Spc>nc", cmd = "NvCheatsheet" },
-    { txt = "─", no_gap = true, rep = true },
+    { txt = "", no_gap = true, rep = true },
+    { txt = "  Find File", hl = "NvDashButton", keys = "<Spc><Spc>", cmd = "lua Snacks.picker.files({ hidden = true })" },
+    { txt = "  Recent Files", hl = "NvDashButton", keys = "<Spc>fr", cmd = "Snacks.picker.recent()" },
+    { txt = "󰈭  Find Word", hl = "NvDashButton", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
+    { txt = "󱥚  Themes", hl = "NvDashButton", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
+    { txt = "  Cheat Sheet", hl = "NvDashButton", keys = "<Spc>nc", cmd = "NvCheatsheet" },
+    { txt = ">", no_gap = true, rep = true },
     {
       txt = function()
         local ok, stats = pcall(function()
@@ -93,9 +94,10 @@ M.nvdash = {
           return "󰇸 Cannot load lazy's status"
         end
       end,
+      hl = "NvDashFooter",
       no_gap = true,
     },
-    { txt = "─", no_gap = true, rep = true },
+    { txt = "<", no_gap = true, rep = true },
   },
 }
 
