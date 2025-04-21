@@ -48,6 +48,8 @@ M.modules = {
       },
     }
 
+
+
     separators = (type(sep_style) == "table" and sep_style) or mode[theme][sep_style]
 
     local sep_l = separators["left"]
@@ -65,6 +67,51 @@ M.modules = {
     end
     return gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#")
   end,
+
+  os = function()
+    local function detectLinuxDistro()
+      local f = io.open("/etc/os-release", "r")
+      if not f then return "Unknown Linux" end
+
+      local distro = "Linux"
+      for line in f:lines() do
+          local name = line:match('^NAME="?(.-)"?$')
+          if name then
+              distro = name
+              break
+          end
+      end
+
+      f:close()
+
+      if distro:match("Arch") then
+          return "󰣇 "
+      elseif distro:match("Ubuntu") then
+          return " "
+      elseif distro:match("Nix") then
+          return "󱄅 "
+      elseif distro:match("Endeavour") then
+          return " "
+      else
+          return "󰟢 "
+      end
+    end
+
+    local raw_os_name = os.getenv("OS") or io.popen("uname -s 2>/dev/null"):read("*l")
+
+    if raw_os_name:match("Windows") then
+        return " "
+    elseif raw_os_name:match("Linux") then
+        return detectLinuxDistro()
+    elseif raw_os_name:match("Darwin") then
+        return "󰀶 "
+    elseif raw_os_name:match("BSD") then
+        return " "
+    else
+        return "󰟢 "
+    end
+  end,
+
 
   command = function()
     local ok, result = pcall(function()
