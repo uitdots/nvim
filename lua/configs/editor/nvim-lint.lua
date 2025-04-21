@@ -86,10 +86,10 @@ end
 ---@private
 function M._setup_autocommands()
   vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
-    callback = debounce(200, function()
+    callback = debounce(function()
       require("lint").try_lint(nil, { ignore_errors = true })
       -- require("lint").try_lint "codespell"
-    end),
+    end, 200),
   })
 end
 

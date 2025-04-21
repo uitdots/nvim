@@ -32,12 +32,13 @@ M.ui = {
     theme = "default",
     separator_style = "default",
     order = {
-      "os",
+      -- "os",
       "mode",
       "file",
       "git",
       "%=",
       "lsp_msg",
+      "%=",
       "macro_recording",
       "command",
       "diagnostics",
@@ -47,12 +48,12 @@ M.ui = {
       "lsps",
       "linters",
       "formatters",
-      "eol_char",
+      "end_of_line",
       "cwd",
       "cursor",
-      "total_lines",
+      "line_percentage",
     },
-    modules = require("configs.ui.statusline").modules,
+    modules = require("configs.ui.statusline"),
   },
 
   tabufline = {
@@ -63,7 +64,7 @@ M.ui = {
       "buffers",
       "tabs",
     },
-    modules = require("configs.ui.tabufline").modules,
+    modules = require("configs.ui.tabufline.tabufline"),
   },
 }
 
@@ -73,7 +74,12 @@ M.nvdash = {
   buttons = {
     { txt = "─", no_gap = true, rep = true },
     { txt = "", no_gap = true, rep = true },
-    { txt = "  Find File", hl = "NvDashButton", keys = "<Spc><Spc>", cmd = "lua Snacks.picker.files({ hidden = true })" },
+    {
+      txt = "  Find File",
+      hl = "NvDashButton",
+      keys = "<Spc><Spc>",
+      cmd = "lua Snacks.picker.files({ hidden = true })",
+    },
     { txt = "  Recent Files", hl = "NvDashButton", keys = "<Spc>fr", cmd = "Snacks.picker.recent()" },
     { txt = "󰈭  Find Word", hl = "NvDashButton", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
     { txt = "󱥚  Themes", hl = "NvDashButton", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
