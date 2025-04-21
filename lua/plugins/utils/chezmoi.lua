@@ -1,6 +1,6 @@
 local is_executable = require("core.utils").is_executable
 
-if is_executable("chezmoi") then
+if not is_executable("chezmoi") then
   return {}
 end
 
