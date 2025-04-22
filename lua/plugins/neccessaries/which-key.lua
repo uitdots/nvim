@@ -24,7 +24,7 @@ return {
       { "<leader>n", group = "Neovim", icon = "" },
       { "<leader>o", group = "Options", icon = "" },
       { "<leader>p", group = "Plugins", icon = "" },
-      -- { "<leader>r", group = "Runner", icon = "" },
+      { "<leader>r", group = "Runner", icon = "" },
       -- { "<leader>s", group = "Sessions", icon = "󰔚" },
       { "<leader>s", group = "Snapshot", icon = "", mode = { "x" } },
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
