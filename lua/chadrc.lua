@@ -32,7 +32,7 @@ M.ui = {
     theme = "default",
     separator_style = "default",
     order = {
-      -- "os",
+      "os",
       "mode",
       "file",
       "git",
