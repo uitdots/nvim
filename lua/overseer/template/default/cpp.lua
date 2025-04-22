@@ -6,7 +6,21 @@ return {
     return {
       cmd = { out },
       components = {
-        { "dependencies", task_names = { { cmd = "g++", args = { file, "-o", out } } } },
+        {
+          "dependencies",
+          task_names = {
+            {
+              cmd = "g++",
+              args = { file, "-o", out },
+            },
+          },
+        },
+        -- {
+        --   "open_output",
+        --   on_complete = "always", -- Options: "always", "never", "success", "failure"
+        --   direction = "dock", -- Options: "dock", "float", "tab", "vertical", "horizontal"
+        --   focus = true, -- Focus the output window when it opens
+        -- },
         "default",
       },
     }

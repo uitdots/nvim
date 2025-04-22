@@ -23,6 +23,30 @@ return {
   opts = {
     dap = false,
     templates = { "builtin", "default" },
+
+    -- NOTE: stolen from https://github.com/stevearc/overseer.nvim/blob/master/lua/overseer/config.lua
+    component_aliases = {
+      -- Most tasks are initialized with the default components
+      default = {
+        { "display_duration", detail_level = 2 },
+        "on_output_summarize",
+        "on_exit_set_status",
+        "on_complete_notify",
+        { "on_complete_dispose", require_view = { "SUCCESS", "FAILURE" } },
+        {
+          "open_output",
+          on_complete = "always",
+          direction = "dock",
+          focus = false,
+        },
+      },
+    },
+
+    -- Tasks from tasks.json use these components
+    default_vscode = {
+      "default",
+      "on_result_diagnostics",
+    },
   },
 
   keys = {
@@ -35,6 +59,12 @@ return {
     {
       "<leader>rt",
       "<cmd>OverseerToggle<cr>",
+      desc = "Overseer | Toggle and Focus",
+      silent = true,
+    },
+    {
+      "<leader>rT",
+      "<cmd>OverseerToggle!<cr>",
       desc = "Overseer | Toggle",
       silent = true,
     },
