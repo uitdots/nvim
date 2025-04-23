@@ -8,7 +8,9 @@ return {
         enable = true,
       },
       diagnostics = {
-        globals = { "vim" },
+        globals = {
+          "vim",
+        },
       },
       telemetry = {
         enable = false,
