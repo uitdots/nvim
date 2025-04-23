@@ -2,6 +2,7 @@
 return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",
+  enabled = not vim.g.is_windows,
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "luarocks/hererocks",
