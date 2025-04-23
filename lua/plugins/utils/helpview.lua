@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "OXY2DEV/helpview.nvim",
-  ft = "help",
+  event = "VeryLazy", -- Using ft = "help" will not start it on the first time
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

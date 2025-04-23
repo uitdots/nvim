@@ -5,8 +5,10 @@ return {
   opts = {
     preview = {
       filetypes = vim.g.markdown_filetypes,
-      ignore_buftypes = {},
-      icon_provider = "devicons", -- "mini" or "devicons"
+      ignore_buftypes = {
+        "help",
+      },
+      icon_provider = "devicons", ---@type "mini" | "devicons"
     },
     max_length = 99999,
   },
