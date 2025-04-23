@@ -182,7 +182,7 @@ M.cheatsheet = {
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = true,
+  transparency = false,
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
