@@ -38,7 +38,7 @@ function M._set_status(bufnr)
     return client.name
   end, lsps)
 
-  M.status = " %#St_gitIcons# " .. table.concat(clients, ", ") .. " "
+  M.status = "%#St_gitIcons# " .. table.concat(clients, ", ") .. " "
 end
 
 function M._setup_autocmds()

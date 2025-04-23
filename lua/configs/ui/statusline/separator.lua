@@ -1,0 +1,1 @@
+return "%#St_gitIcons#| "

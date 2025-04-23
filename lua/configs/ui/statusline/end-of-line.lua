@@ -6,13 +6,18 @@ local M = {}
 ---@type integer?
 M.current_bufnr = nil
 
+M.fileformats = {
+  unix = "",
+  dos = "",
+  mac = "",
+}
+
 ---@private
 ---@type string
 M.status = ""
 
 function M.set_current_eol()
-  local eol = vim.bo.fileformat == "unix" and "lf" or vim.bo.fileformat == "dos" and "crlf" or "cr"
-  M.status = "| %#St_gitIcons#" .. eol .. " "
+  M.status = "%#St_gitIcons#" .. M.fileformats[vim.bo.fileformat] .. " "
 end
 
 function M.render()

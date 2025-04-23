@@ -31,6 +31,7 @@ M.ui = {
       "lsps",
       "linters",
       "formatters",
+      "separator",
       "end_of_line",
       "cwd",
       "cursor",

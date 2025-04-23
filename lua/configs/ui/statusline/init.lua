@@ -1,5 +1,4 @@
--- TODO: Annotate here
-
+---@type table<string, string | fun(): string>
 local M = {
   end_of_line = require("configs.ui.statusline.end-of-line"),
   lsps = require("configs.ui.statusline.lsps"),
@@ -11,6 +10,7 @@ local M = {
   formatters = require("configs.ui.statusline.formatters"),
   python_venv = require("configs.ui.statusline.python-venv"),
   flutter = require("configs.ui.statusline.flutter"),
+  separator = require("configs.ui.statusline.separator"),
 }
 
 return M
