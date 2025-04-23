@@ -182,7 +182,7 @@ M.cheatsheet = {
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = false,
+  transparency = true,
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
@@ -227,6 +227,9 @@ M.base46 = {
     St_Percent_icon = { fg = "black", bg = "blue" },
     St_Percent_sep = { fg = "blue", bg = "lightbg" },
     St_Percent_text = { link = "St_percent_sep" },
+
+    -- visual-whitespace
+    VisualNonText = { link = "Comment" },
   },
 }
 
