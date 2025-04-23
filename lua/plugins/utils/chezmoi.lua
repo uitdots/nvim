@@ -1,13 +1,12 @@
 local is_executable = require("core.utils").is_executable
 
-if not is_executable("chezmoi") then
-  return {}
-end
+local has_chezmoi = is_executable("chezmoi")
 
 ---@type NvPluginSpec
 return {
   {
     "xvzc/chezmoi.nvim",
+    enabled = has_chezmoi,
     init = function()
       local exclude_patterns = {
         [[.*chezmoi.*chezmoi.*]],
@@ -43,6 +42,7 @@ return {
   {
     "alker0/chezmoi.vim",
     lazy = false,
+    enabled = has_chezmoi,
     init = function()
       -- This option is required.
       vim.g["chezmoi#use_tmp_buffer"] = true
