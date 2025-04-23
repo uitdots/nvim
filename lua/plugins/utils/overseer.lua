@@ -24,15 +24,24 @@ return {
     dap = false,
     templates = { "builtin", "default" },
 
-    -- NOTE: stolen from https://github.com/stevearc/overseer.nvim/blob/master/lua/overseer/config.lua
+    -- Stolen from https://github.com/stevearc/overseer.nvim/blob/master/lua/overseer/config.lua
     component_aliases = {
       -- Most tasks are initialized with the default components
       default = {
-        { "display_duration", detail_level = 2 },
+        {
+          "display_duration",
+          detail_level = 2,
+        },
         "on_output_summarize",
         "on_exit_set_status",
         "on_complete_notify",
-        { "on_complete_dispose", require_view = { "SUCCESS", "FAILURE" } },
+        {
+          "on_complete_dispose",
+          require_view = {
+            "SUCCESS",
+            "FAILURE",
+          },
+        },
         {
           "open_output",
           on_complete = "always",
