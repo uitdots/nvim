@@ -1,3 +1,5 @@
+-- NOTE: Maybe remove this plugin because we dont need it anymore
+
 ---@type NvPluginSpec
 return {
   "antosha417/nvim-lsp-file-operations",
@@ -5,6 +7,6 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-tree.lua",
   },
-  cond = vim.g.use_lsp_file_operation,
+  enabled = false,
   config = true, -- NOTE: Does this work? It will config before lsps are setup
 }

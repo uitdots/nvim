@@ -36,7 +36,6 @@ function M.setup()
   g.disable_autoformat = false
   g.border_enabled = true
   g.inlayhint_default = false
-  g.use_lsp_file_operation = true
   g.use_lsp_workspace_diagnostic = false
 end
 

@@ -16,10 +16,6 @@ local M = {}
 M.current_bufnr = nil
 
 ---@private
----@type integer
-M.clients_number = 0
-
----@private
 ---@type string
 M.status = ""
 
@@ -37,12 +33,6 @@ function M._set_status(bufnr)
     M.status = " %#St_gitIcons# "
     return
   end
-
-  if M.clients_number == #lsps then
-    return
-  end
-
-  M.clients_number = #lsps
 
   local clients = vim.tbl_map(function(client)
     return client.name

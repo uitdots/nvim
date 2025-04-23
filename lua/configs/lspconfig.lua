@@ -41,7 +41,15 @@ end
 
 M.on_init = require("nvchad.configs.lspconfig").on_init
 
-M.capabilities = require("nvchad.configs.lspconfig").capabilities
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
+M.capabilities = vim.tbl_deep_extend("force", require("nvchad.configs.lspconfig").capabilities, {
+  workspace = {
+    fileOperations = {
+      didRename = true,
+      willRename = true,
+    },
+  },
+})
 
 M.opts = {
   capabilities = M.capabilities,
