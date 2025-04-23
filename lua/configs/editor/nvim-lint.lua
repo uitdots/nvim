@@ -57,9 +57,9 @@ M._linters_by_ft = {
   github = {
     "actionlint",
   },
-  latex = {
-    "vale",
-  },
+  -- latex = {
+  --   "vale",
+  -- },
   postgresql = {
     "postgresql",
   },

@@ -1,7 +1,6 @@
 -- TODO: Annotate here
 
 local M = {
-  os = require("configs.ui.statusline.os"),
   end_of_line = require("configs.ui.statusline.end-of-line"),
   lsps = require("configs.ui.statusline.lsps"),
   line_percentage = require("configs.ui.statusline.line-percentage"),

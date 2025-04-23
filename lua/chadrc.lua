@@ -1,23 +1,7 @@
--- This file needs to have same structure as nvconfig.lua
--- https://github.com/NvChad/ui/blob/v3.0/lua/nvconfig.lua
--- Please read that file to know all available options :(
+local nvdash_config = require("configs.ui.nvdash")
 
 ---@type ChadrcConfig
 local M = {}
-
-local headers = {
-  default = {
-    "██╗   ██╗██╗████████╗    ███╗   ██╗██╗   ██╗██╗███╗   ███╗",
-    "██║   ██║██║╚══██╔══╝    ████╗  ██║██║   ██║██║████╗ ████║",
-    "██║   ██║██║   ██║       ██╔██╗ ██║██║   ██║██║██╔████╔██║",
-    "██║   ██║██║   ██║       ██║╚██╗██║╚██╗ ██╔╝██║██║╚██╔╝██║",
-    "╚██████╔╝██║   ██║   ██╗ ██║ ╚████║ ╚████╔╝ ██║██║ ╚═╝ ██║",
-    " ╚═════╝ ╚═╝   ╚═╝   ╚═╝ ╚═╝  ╚═══╝  ╚═══╝  ╚═╝╚═╝     ╚═╝",
-    "",
-    "We're here to rescue your Neovim configurations ",
-    "",
-  },
-}
 
 M.ui = {
   telescope = { style = vim.g.border_enabled and "bordered" or "borderless" },
@@ -32,7 +16,6 @@ M.ui = {
     theme = "default",
     separator_style = "default",
     order = {
-      "os",
       "mode",
       "file",
       "git",
@@ -64,13 +47,13 @@ M.ui = {
       "buffers",
       "tabs",
     },
-    modules = require("configs.ui.tabufline.tabufline"),
+    modules = require("configs.ui.tabufline"),
   },
 }
 
 M.nvdash = {
   load_on_startup = true,
-  header = headers.default,
+  header = nvdash_config.headers.uitvim,
   buttons = {
     { txt = "─", no_gap = true, rep = true },
     { txt = "", no_gap = true, rep = true },
@@ -167,7 +150,6 @@ M.mason = {
     "doctoc",
     "markdownlint",
     -- "marksman",
-    -- "vale_ls",
 
     -- Shell
     "bash-language-server",
