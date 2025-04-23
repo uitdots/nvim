@@ -27,7 +27,7 @@ return {
       local preview = require("nvim-tree-preview")
 
       local function opts(desc)
-        return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        return { desc = "NvimTree | " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
       end
 
       api.config.mappings.default_on_attach(bufnr)
