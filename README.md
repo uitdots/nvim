@@ -1,18 +1,12 @@
-<!-- START doctoc generated TOC please keep comment here to allow auto update -->
-<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-
-- [NOTE](#note)
-- [REF](#ref)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-Perquisite:
+## Prerequisite:
 
 - Neovim >= 0.11
 - Make
 - Delta
 
-Utils:
+---
+
+## Utils:
 
 - Wakatime
 - Chezmoi
@@ -21,7 +15,7 @@ Utils:
 
 ## NOTE
 
-Sometimes NvChad ui broken, use `:NvChadBase46LoadAllHighLights`
+if NvChad ui's color is broken, use `:NvChadBase46LoadAllHighLights`
 
 ---
 
