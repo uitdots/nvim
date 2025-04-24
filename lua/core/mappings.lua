@@ -14,7 +14,7 @@ map("n", "<leader>or", function()
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
 map("n", "<leader>os", function()
-  vim.o.laststatus = vim.o.laststatus == 3 and 3 or 0
+  vim.o.laststatus = vim.o.laststatus == 3 and 0 or 3
 end, { desc = "Options | Toggle Statusline", silent = true })
 
 map("n", "<leader>oS", function()
