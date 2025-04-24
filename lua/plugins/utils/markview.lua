@@ -1,26 +1,21 @@
 ---@type NvPluginSpec
 return {
   "OXY2DEV/markview.nvim",
-  lazy = false,
+  lazy = false, -- Author require this load before nvim-treesitter
+  ---@module 'markview'
+  ---@type mkv.config
   opts = {
     preview = {
+      enable = false,
       filetypes = vim.g.markdown_filetypes,
       ignore_buftypes = {
         "help",
       },
-      icon_provider = "devicons", ---@type "mini" | "devicons"
+      icon_provider = "devicons",
     },
     max_length = 99999,
   },
-  -- enabled = false,
   ft = vim.g.markdown_filetypes,
-  dependencies = {
-    -- You will not need this if you installed the
-    -- parsers manually
-    -- Or if the parsers are in your $RUNTIMEPATH
-    "nvim-treesitter/nvim-treesitter",
-    "nvim-tree/nvim-web-devicons",
-  },
   cmd = {
     "Markview",
   },
@@ -31,6 +26,13 @@ return {
       desc = "Markdown | Toggle View",
       ft = vim.g.markdown_filetypes,
       silent = true,
+    },
+  },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    {
+      "saghen/blink.cmp",
+      optional = true,
     },
   },
 }
