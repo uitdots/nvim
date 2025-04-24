@@ -90,20 +90,15 @@ map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent 
 
 -- Neovim
 map("n", "<leader>ni", function()
-  if vim.version().minor >= 9 then
-    vim.cmd("Inspect")
-  else
-    vim.notify("Inspect isn't available in this neovim version", vim.log.levels.WARN, { title = "Inspect" })
-  end
-end, { desc = "Neovim | Inspect", silent = true }) -- only available on neovim >= 0.9
+  vim.cmd("Inspect")
+end, { desc = "Neovim | Inspect", silent = true })
 
 map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
 
 map("n", "<leader>nh", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
 map("n", "<leader>nv", function()
-  local version = vim.version().major .. "." .. vim.version().minor .. "." .. vim.version().patch
-  return vim.notify(version, vim.log.levels.INFO, { title = "Neovim Version" })
+  return vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version" })
 end, { desc = "Neovim | Version", silent = true })
 
 map("n", "<leader>np", function()
