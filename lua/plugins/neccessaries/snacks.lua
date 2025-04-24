@@ -98,7 +98,30 @@ return {
     {
       "<leader><leader>",
       function()
-        Snacks.picker.files({ hidden = true })
+        Snacks.picker.files({
+          hidden = true,
+          ignored = true,
+          exclude = {
+            "node_modules",
+            ".git",
+            ".egg-info",
+            "*bin*",
+            "*cache*",
+            "*debug*",
+            "*obj*",
+            ".dart_tool",
+            ".git",
+            ".husky/_",
+            ".idea",
+            ".next",
+            ".venv*",
+            ".vs",
+            "__pycache__",
+            "build",
+            "dist",
+            "node_modules",
+          },
+        })
       end,
       desc = "Find | Files",
     },
