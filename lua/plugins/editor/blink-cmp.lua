@@ -99,6 +99,11 @@ return {
           "snippets",
           "buffer",
         },
+        providers = {
+          lsp = {
+            fallbacks = {}, -- declare empty table will force show buffer text even lsp has suggestions
+          },
+        },
       },
       signature = {
         enabled = false,
