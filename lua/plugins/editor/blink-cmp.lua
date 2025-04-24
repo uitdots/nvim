@@ -1,4 +1,5 @@
 -- NOTE: https://github.com/NvChad/ui/tree/v3.0/lua/nvchad/blink
+local uitvim_options = require("uitvimrc").options
 
 ---@module 'blink.cmp'
 
@@ -87,7 +88,7 @@ return {
           auto_show = true,
           auto_show_delay_ms = 200,
           window = {
-            border = vim.g.border_enabled and "rounded" or "none",
+            border = uitvim_options.border_enabled and "rounded" or "none",
           },
         },
       },

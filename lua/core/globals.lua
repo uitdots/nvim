@@ -1,3 +1,5 @@
+-- TODO: May cleanup this later
+local uitvim_options = require("uitvimrc").options
 local g = vim.g
 
 local sysname = vim.uv.os_uname().sysname
@@ -23,6 +25,8 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
+g.autoformat_enabled = uitvim_options.autoformat_enabled
+
 g.markdown_filetypes = {
   "Avante",
   "markdown",
@@ -32,6 +36,4 @@ g.markdown_filetypes = {
   "vimwiki",
 }
 
-if vim.g.inlayhint_default then
-  vim.lsp.inlay_hint.enable(true)
-end
+vim.lsp.inlay_hint.enable(uitvim_options.inlayhint_enabled)

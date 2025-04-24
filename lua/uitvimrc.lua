@@ -1,4 +1,5 @@
-local g = vim.g
+-- TODO: Change global to inside the module. Use it as module (import)
+
 local M = {}
 
 ---New LSP setup. If that lsp isn't in your $PATH, no problem, it won't break. If installed by Mason, yes it will be setup.
@@ -29,14 +30,19 @@ M.no_setup_lsps = {
   "jdtls",
 }
 
----Where you put our custom configurations
-function M.setup()
-  g.mapleader = " "
-  g.maplocalleader = "\\"
-  g.disable_autoformat = false
-  g.border_enabled = true
-  g.inlayhint_default = false
-  g.use_lsp_workspace_diagnostic = false
-end
+M.options = {
+  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available, then those plugin won't complain about avaibility of those. This may cause [plugin's] startup slower (but nah)
+  ---@type boolean
+  filter_availabled_external = true,
+  ---Use inlayhint by default. This may cause lagging in neovim. But you can still enable inlayhint using keymap while using.
+  ---@type boolean
+  inlayhint_enabled = true,
+  ---Use border for... most of the thing related to UI. You can search for which use this options
+  ---@type boolean
+  border_enabled = true,
+  ---Enable autoformat
+  ---@type boolean
+  autoformat_enabled = true,
+}
 
 return M

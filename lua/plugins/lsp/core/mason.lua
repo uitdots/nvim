@@ -1,3 +1,5 @@
+local uitvim_options = require("uitvimrc").options
+
 ---@type NvPluginSpec
 -- NOTE: This is temporary because mason is unmtained
 return {
@@ -26,7 +28,7 @@ return {
   },
   opts = {
     ui = {
-      border = vim.g.border_enabled and "rounded" or "none",
+      border = uitvim_options.border_enabled and "rounded" or "none",
       check_outdated_packages_on_open = false,
       icons = {
         package_pending = " ",

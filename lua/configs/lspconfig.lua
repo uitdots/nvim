@@ -5,6 +5,7 @@ local map = vim.keymap.set
 local is_executable = require("core.utils").is_executable
 local no_setup_lsps = require("uitvimrc").no_setup_lsps
 local lspconfig = require("lspconfig")
+local uitvim_options = require("uitvimrc").options
 
 function M._keymaps(_, bufnr)
   local function opts(desc)
@@ -34,9 +35,9 @@ end
 M.on_attach = function(client, bufnr)
   M._keymaps(client, bufnr)
 
-  if vim.g.use_lsp_workspace_diagnostic then
+  pcall(function()
     require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-  end
+  end)
 end
 
 M.on_init = require("nvchad.configs.lspconfig").on_init
@@ -95,7 +96,7 @@ function M.defaults()
     },
   })
 
-  if vim.g.border_enabled then
+  if uitvim_options.border_enabled then
     require("lspconfig.ui.windows").default_options.border = "rounded"
   end
 

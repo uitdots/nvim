@@ -1,3 +1,5 @@
+local uitvim_options = require("uitvimrc").options
+
 ---@type NvPluginSpec
 return {
   "bennypowers/nvim-regexplainer",
@@ -10,7 +12,7 @@ return {
       enter = true,
       focusable = true,
       border = {
-        style = vim.g.border_enabled and "rounded" or "single",
+        style = uitvim_options.border_enabled and "rounded" or "single",
       },
     },
   },

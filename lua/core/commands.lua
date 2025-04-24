@@ -15,36 +15,36 @@ end, { nargs = "*", desc = "Code Format", range = true })
 
 command("FormatDisable", function(args)
   if args.bang then
-    vim.g.disable_autoformat = true
+    vim.g.autoformat_enabled = false
     vim.notify("Disable Autoformat", vim.log.levels.INFO, { title = "Format" })
   else
-    vim.b.disable_autoformat = true
+    vim.b.autoformat_enabled = false
     vim.notify("Disable Local Autoformat", vim.log.levels.INFO, { title = "Format" })
   end
 end, { desc = "Disable Autoformat", bang = true })
 
 command("FormatEnable", function(args)
   if args.bang then
-    vim.g.disable_autoformat = false
+    vim.g.autoformat_enabled = true
     vim.notify("Enable Autoformat", vim.log.levels.INFO, { title = "Format" })
   else
-    vim.b.disable_autoformat = false
+    vim.b.autoformat_enabled = true
     vim.notify("Enable Local Autoformat", vim.log.levels.INFO, { title = "Format" })
   end
 end, { desc = "Enable Autoformat", bang = true })
 
 command("FormatToggle", function(args)
   if args.bang then
-    if vim.b.disable_autoformat then
-      vim.cmd("FormatEnable!")
-    else
+    if vim.b.autoformat_enabled then
       vim.cmd("FormatDisable!")
+    else
+      vim.cmd("FormatEnable!")
     end
   else
-    if vim.g.disable_autoformat then
-      vim.cmd("FormatEnable")
-    else
+    if vim.g.autoformat_enabled then
       vim.cmd("FormatDisable")
+    else
+      vim.cmd("FormatEnable")
     end
   end
 end, { desc = "Toggle Autoformat", bang = true })
@@ -94,14 +94,14 @@ command("ClearRegister", function(args)
       end)), -- a-z
     }
     -- Clear each register
-    for _, reg in ipairs(registers) do
+    for _, reg in pairs(registers) do
       vim.fn.setreg(reg, "")
     end
 
     vim.notify("All registers have been cleared")
     return
   end
-  for _, reg in ipairs(args.fargs) do
+  for _, reg in pairs(args.fargs) do
     if vim.fn.getreg(reg) ~= nil then
       vim.fn.setreg(reg, "")
       print("Cleared register: " .. reg)

@@ -1,3 +1,5 @@
+local uitvim_options = require("uitvimrc").options
+
 ---@type NvPluginSpec
 return {
   "folke/noice.nvim",
@@ -60,7 +62,7 @@ return {
       command_palette = true,
       long_message_to_split = true,
       inc_rename = false,
-      lsp_doc_border = vim.g.border_enabled and "rounded" or "none",
+      lsp_doc_border = uitvim_options.border_enabled and "rounded" or "none",
     },
   },
   keys = {

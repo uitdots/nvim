@@ -1,5 +1,7 @@
 ---@module 'conform'
 
+local filter_availabled_external = require("uitvimrc").options.filter_availabled_external
+
 local M = {}
 
 ---@private
@@ -131,7 +133,7 @@ M.opts.formatters_by_ft = {
 
 M.opts.format_after_save = function(bufnr) -- Async format
   -- Disable with a global or buffer-local variable
-  if vim.g.disable_autoformat or vim.b[bufnr].disable_autoformat then
+  if not vim.g.autoformat_enabled or vim.b[bufnr].autoformat_enabled then
     return
   end
   -- Disable autoformat for files in a certain path
@@ -142,7 +144,21 @@ M.opts.format_after_save = function(bufnr) -- Async format
   return {}
 end
 
+function M.filter_availabled_formatters()
+  for filetype, formatters in pairs(M.opts.formatters_by_ft) do
+    ---@cast formatters string[]
+    M.opts.formatters_by_ft[filetype] = function(bufnr)
+      return vim.tbl_filter(function(formatter)
+        return require("conform").get_formatter_info(formatter, bufnr).available
+      end, formatters)
+    end
+  end
+end
+
 function M.setup()
+  if filter_availabled_external then
+    M.filter_availabled_formatters()
+  end
   require("conform").setup(M.opts)
   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 end
