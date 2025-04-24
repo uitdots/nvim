@@ -4,6 +4,7 @@ local ft = {
   "jsonc",
   "toml",
   "env",
+  "dotenv",
 }
 
 ---@type NvPluginSpec
@@ -13,14 +14,14 @@ return {
     {
       "<leader>oh",
       "<cmd>CloakToggle<cr>",
-      desc = "Utils | Toggle Cloak",
+      desc = "Cloak | Toggle",
       silent = true,
       ft = ft,
     },
     {
       "<leader>oH",
       "<cmd>CloakPreviewLine<cr>",
-      desc = "Utils | Cloak Preview Line",
+      desc = "Cloak | Preview Line",
       silent = true,
       ft = ft,
     },
