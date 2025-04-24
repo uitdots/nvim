@@ -13,7 +13,6 @@ return {
       },
       icon_provider = "devicons",
     },
-    max_length = 99999,
   },
   ft = vim.g.markdown_filetypes,
   cmd = {
