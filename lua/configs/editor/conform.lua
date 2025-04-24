@@ -9,44 +9,42 @@ M.opts = {
 }
 
 M.opts.formatters = {
-  {
-    doctoc = {
-      append_args = {
-        "--update-only",
-      },
+  doctoc = {
+    append_args = {
+      "--update-only",
     },
-    ["markdown-toc"] = {
-      append_args = {
-        "--bullets=-",
-      },
-    },
-    prettier = {
-      append_args = {
-        "--ignore-gitignore", -- Format file which ignored by .gitignore
-      },
-    },
-    beautysh = {
-      append_args = {
-        "--indent-size=2",
-      },
-    },
-    clang_format = {
-      append_args = {
-        "--fallback-style=Microsoft",
-      },
-    },
-    ruff_fix = {
-      append_args = {
-        "--select=I",
-        -- "--ignore=F401", -- Unused import
-      },
-    },
-    pg_sqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
-      append_args = {
-        "--dialect=postgres",
-      },
-    }),
   },
+  ["markdown-toc"] = {
+    append_args = {
+      "--bullets=-",
+    },
+  },
+  prettier = {
+    append_args = {
+      "--ignore-gitignore", -- Format file which ignored by .gitignore
+    },
+  },
+  beautysh = {
+    append_args = {
+      "--indent-size=2",
+    },
+  },
+  clang_format = {
+    append_args = {
+      "--fallback-style=Microsoft",
+    },
+  },
+  ruff_fix = {
+    append_args = {
+      "--select=I",
+      -- "--ignore=F401", -- Unused import
+    },
+  },
+  pg_sqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
+    append_args = {
+      "--dialect=postgres",
+    },
+  }),
 }
 
 M.opts.formatters_by_ft = {
