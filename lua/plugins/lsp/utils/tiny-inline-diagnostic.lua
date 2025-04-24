@@ -2,8 +2,13 @@
 -- NOTE: Show Better Diagnostic Inline
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
-  enabled = true,
+  enabled = false,
   event = "LspAttach",
+  init = function()
+    vim.diagnostic.config({
+      virtual_text = false,
+    })
+  end,
   opts = {
     options = {
       overflow = {
