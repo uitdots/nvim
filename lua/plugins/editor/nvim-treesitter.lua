@@ -172,5 +172,9 @@ return {
         enable = false,
       },
     },
+    {
+      "OXY2DEV/markview.nvim",
+      optional = true,
+    },
   },
 }
