@@ -8,9 +8,15 @@ return {
   config = true,
   keys = {
     {
-      "<leader><C-d>",
+      "<leader>l<C-d>",
       function()
-        vim.ui.select({ "auto", "func", "class", "type", "file" }, {
+        vim.ui.select({
+          "auto",
+          "func",
+          "class",
+          "type",
+          "file",
+        }, {
           prompt = "Select Neogen scheme",
           telescope = require("telescope.themes").get_dropdown(),
         }, function(scheme)
