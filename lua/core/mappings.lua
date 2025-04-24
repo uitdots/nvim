@@ -17,6 +17,11 @@ map("n", "<leader>os", function()
   vim.o.laststatus = vim.o.laststatus == 3 and 0 or 3
 end, { desc = "Options | Toggle Statusline", silent = true })
 
+map("n", "<leader>o<C-t>", function()
+  local tabline_enabled = { 1, 2 }
+  vim.o.showtabline = tabline_enabled[vim.o.showtabline] ~= nil and 0 or 3
+end, { desc = "Options | Toggle Tabline", silent = true })
+
 map("n", "<leader>oS", function()
   vim.wo.spell = not vim.wo.spell
 end, { desc = "Options | Toggle Spell Check", silent = true })
