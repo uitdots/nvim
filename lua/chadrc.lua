@@ -204,6 +204,7 @@ M.base46 = {
     "rainbowdelimiters",
     "statusline",
     "telescope",
+    "tiny-inline-diagnostic",
     "todo",
     "treesitter",
     "trouble",
