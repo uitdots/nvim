@@ -1,5 +1,3 @@
-local conform = require("conform")
-
 local M = {}
 
 ---@private
@@ -11,6 +9,8 @@ M.current_bufnr = nil
 M.status = ""
 
 function M.set_status()
+  local conform = require("conform")
+
   local formatters = conform.list_formatters(0)
   if #formatters == 0 then
     M.status = ""

@@ -1,4 +1,3 @@
-local lint = require("lint")
 local M = {}
 
 ---@private
@@ -10,6 +9,7 @@ M.current_bufnr = nil
 M.status = ""
 
 function M.set_status()
+  local lint = require("lint")
   local linters = lint._resolve_linter_by_ft(vim.bo.filetype)
   if #linters == 0 then
     M.status = ""
