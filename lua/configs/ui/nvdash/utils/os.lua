@@ -2,11 +2,22 @@ local M = {}
 
 M.icon = nil
 
+M.os_map = {
+  Linux = "linux",
+  Windows_NT = "windows",
+  Darwin = "apple",
+}
+
 function M.set_icon()
-  local os = vim.loop.os_uname().sysname
   local nvim_web_devicons = require("nvim-web-devicons")
 
-  if os:match("Linux") then
+  ---@type string
+  local os = vim.loop.os_uname().sysname
+
+  ---@type string
+  local os_icon_name
+
+  if os == "Linux" then
     local f = io.open("/etc/os-release", "r")
     if f == nil then
       M.icon = nvim_web_devicons.get_icons_by_operating_system().linux.icon .. " "
@@ -14,21 +25,24 @@ function M.set_icon()
     end
 
     for line in f:lines() do
+      ---@type string?
       local line_value = line:match([[^ID=(%w*)$]])
       if line_value then
-        os = line_value
+        os_icon_name = line_value:lower()
         break
       end
     end
+  else
+    os_icon_name = M.os_map[os]
   end
 
-  os = os:lower()
-  local os_object = nvim_web_devicons.get_icons_by_operating_system()[os]
+  local os_object = nvim_web_devicons.get_icons_by_operating_system()[os_icon_name]
   if os_object == nil then
     M.icon = ""
     return
   end
-  M.icon = nvim_web_devicons.get_icons_by_operating_system()[os].icon .. " " or ""
+
+  M.icon = os_object.icon .. " " or ""
 end
 
 function M.render()
