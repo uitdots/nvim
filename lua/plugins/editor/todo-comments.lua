@@ -9,6 +9,20 @@ return {
       desc = "Find | Todo",
       silent = true,
     },
+    {
+      "]t",
+      function()
+        require("todo-comments").jump_next()
+      end,
+      desc = "Todo | Next",
+    },
+    {
+      "[t",
+      function()
+        require("todo-comments").jump_prev()
+      end,
+      desc = "Todo | Prev",
+    },
   },
   config = true,
 }
