@@ -1,10 +1,6 @@
 ---@type NvPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter-context",
-  event = {
-    "BufReadPost",
-    "BufNewFile",
-  },
   cmd = {
     "TSContextToggle",
   },
@@ -17,7 +13,7 @@ return {
     },
   },
   opts = {
-    enable = true,
+    enable = false,
   },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
