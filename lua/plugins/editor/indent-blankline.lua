@@ -1,3 +1,4 @@
+---@module "ibl"
 ---@type NvPluginSpec
 return {
   "lukas-reineke/indent-blankline.nvim",
@@ -5,10 +6,7 @@ return {
     "BufReadPost",
     "BufNewFile",
   },
-  opts = {
-    scope = {
-      show_start = false,
-    },
-  },
+  ---@type ibl.config
+  opts = {},
   main = "ibl",
 }
