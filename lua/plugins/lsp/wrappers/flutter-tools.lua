@@ -1,3 +1,4 @@
+local lspconfig = require("configs.lspconfig")
 local is_executable = require("core.utils").is_executable
 
 ---@type NvPluginSpec
@@ -19,15 +20,9 @@ return {
   opts = {
     border = "rounded",
     lsp = {
-      on_attach = function(client, bufnr)
-        require("configs.lspconfig").on_attach(client, bufnr)
-      end,
-      capabilities = function(client, bufnr)
-        require("configs.lspconfig").capabilities(client, bufnr)
-      end,
-      on_init = function(client, bufnr)
-        require("configs.lspconfig").on_init(client, bufnr)
-      end,
+      capabilities = lspconfig.capabilities,
+      on_init = lspconfig.on_init,
+      on_attach = lspconfig.on_attach,
     },
     setting = {
       analysisExcludedFolders = {

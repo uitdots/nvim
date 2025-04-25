@@ -1,3 +1,4 @@
+local lspconfig = require("configs.lspconfig")
 local is_executable = require("core.utils").is_executable
 
 ---@type NvPluginSpec
@@ -14,9 +15,9 @@ return {
     "typescript.tsx",
   },
   opts = {
-    capabilities = require("configs.lspconfig").capabilities,
-    on_init = require("configs.lspconfig").on_init,
-    on_attach = require("configs.lspconfig").on_attach,
+    capabilities = lspconfig.capabilities,
+    on_init = lspconfig.on_init,
+    on_attach = lspconfig.on_attach,
     settings = {
       expose_as_code_action = "all", ---@type "fix_all" | "add_missing_imports" | "remove_unused" | "remove_unused_imports" | "organize_imports" | "all"
       separate_diagnostic_server = true,
