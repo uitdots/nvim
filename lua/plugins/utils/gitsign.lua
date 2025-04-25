@@ -7,7 +7,7 @@ return {
       function()
         require("gitsigns").preview_hunk()
       end,
-      desc = "Gitsigns | Preview Hunk",
+      desc = "Git | Preview Hunk",
       silent = true,
     },
     {
@@ -15,7 +15,7 @@ return {
       function()
         require("gitsigns").nav_hunk("next")
       end,
-      desc = "Gitsigns | Next Hunk",
+      desc = "Git | Next Hunk",
       silent = true,
     },
     {
@@ -23,7 +23,7 @@ return {
       function()
         require("gitsigns").nav_hunk("prev")
       end,
-      desc = "Gitsigns | Prev Hunk",
+      desc = "Git | Prev Hunk",
       silent = true,
     },
     {
@@ -31,7 +31,7 @@ return {
       function()
         require("gitsigns").blame_line()
       end,
-      desc = "Gitsigns | Blame Line",
+      desc = "Git | Blame Line",
       silent = true,
     },
   },
