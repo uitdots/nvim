@@ -27,6 +27,11 @@ return {
           "show_documentation",
           "hide_documentation",
         },
+        ["<M-;>"] = { -- For windows terminal because <C-Space> is bruh?
+          "show",
+          "show_documentation",
+          "hide_documentation",
+        },
         ["<C-e>"] = {
           "hide",
           "fallback",
