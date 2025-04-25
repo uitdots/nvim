@@ -16,7 +16,6 @@ function M._keymaps(_, bufnr)
   map("n", "grr", Snacks.picker.lsp_references, opts("Go to references"))
   map("n", "grn", vim.lsp.buf.rename, opts("Rename"))
   map("n", "gra", require("actions-preview").code_actions, opts("Code Action"))
-  map("n", "gl", vim.diagnostic.open_float, opts("Inline Diagnostic"))
   map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to Declaration"))
   map("n", "gd", Snacks.picker.lsp_declarations, opts("Go to Definition"))
   map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to Type Definition"))
@@ -91,9 +90,7 @@ function M.defaults()
 
   vim.diagnostic.config({
     virtual_text = false,
-    virtual_lines = {
-      current_line = true,
-    },
+    virtual_lines = false,
   })
 
   if uitvim_options.border_enabled then
