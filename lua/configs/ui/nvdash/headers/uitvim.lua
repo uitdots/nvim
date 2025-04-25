@@ -8,7 +8,7 @@ local header = {
   "╚██████╔╝██║   ██║    ╚████╔╝ ██║██║ ╚═╝ ██║",
   " ╚═════╝ ╚═╝   ╚═╝     ╚═══╝  ╚═╝╚═╝     ╚═╝",
   "",
-  os() .. "Rescue your Neovim configurations ",
+  os(),
   "",
 }
 
