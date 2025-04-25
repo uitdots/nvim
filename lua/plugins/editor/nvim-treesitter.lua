@@ -1,4 +1,5 @@
-local func = require("vim.func")
+-- TODO: Clean this up?
+
 ---@type NvPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -140,7 +141,7 @@ return {
     vim.treesitter.language.register("bash", "dotenv")
   end,
   config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts) -- NOTE: This is trick bruh
+    require("nvim-treesitter.configs").setup(opts)
   end,
   dependencies = {
     {
