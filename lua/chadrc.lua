@@ -195,6 +195,8 @@ M.base46 = {
     "dap",
     "defaults",
     "devicons",
+    "git",
+    "git-conflict",
     "grug_far",
     "lsp",
     "markview",

@@ -44,10 +44,10 @@ M._linters_by_ft = {
     "commitlint",
   },
   javascript = {
-    "eslint",
+    -- "eslint",
   },
   javascriptreact = {
-    "eslint",
+    -- "eslint",
   },
   markdown = {
     "markdownlint",
@@ -59,10 +59,10 @@ M._linters_by_ft = {
     "sqlfluff",
   },
   typescript = {
-    "eslint",
+    -- "eslint",
   },
   typescriptreact = {
-    "eslint",
+    -- "eslint",
   },
   bash = {
     "shellcheck",

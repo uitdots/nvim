@@ -3,7 +3,6 @@
 local M = {}
 local map = vim.keymap.set
 local is_executable = require("core.utils").is_executable
-local no_setup_lsps = require("uitvimrc").no_setup_lsps
 local lspconfig = require("lspconfig")
 local uitvim_options = require("uitvimrc").options
 

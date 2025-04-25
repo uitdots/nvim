@@ -4,7 +4,7 @@ local is_executable = require("core.utils").is_executable
 ---@type NvPluginSpec
 return {
   "pmizio/typescript-tools.nvim",
-  enabled = true,
+  enabled = false,
   cond = is_executable("typescript-language-server"),
   ft = {
     "javascript",
