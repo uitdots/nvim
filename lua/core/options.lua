@@ -50,6 +50,7 @@ o.ruler = false -- show the line and column number of the cursor position``
 o.cmdheight = 0 -- height of the command line
 o.helpheight = 10 -- height of the help window
 o.shortmess = "AcqFI"
+o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
 
 -- Uncomment these options to enable pwsh for Windows
 -- o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
