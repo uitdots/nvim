@@ -8,10 +8,6 @@ local is_windows = os == "Windows"
 
 vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
 g.markdown_recommended_style = 0
-g.mkdp_auto_close = false
-g.snipmate_snippets_path = vim.fn.stdpath("config") .. "/snippets/snipmate"
-g.vscode_snippets_path = vim.fn.stdpath("config") .. "/snippets/vscode"
-g.skip_ts_context_commentstring_module = true
 g.os = os
 g.is_windows = is_windows
 g.path_delimiter = is_windows and ";" or ":"

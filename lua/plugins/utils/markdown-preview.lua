@@ -29,6 +29,7 @@ return {
   ft = vim.g.markdown_filetypes,
   enabled = true,
   init = function()
+    vim.g.mkdp_auto_close = false
     vim.g.mkdp_open_to_the_world = 1 -- Open for other to access
     vim.g.mkdp_port = 65530
   end,
