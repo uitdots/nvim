@@ -4,7 +4,7 @@ local is_executable = require("core.utils").is_executable
 ---@type NvPluginSpec
 return {
   "pmizio/typescript-tools.nvim",
-  enabled = false,
+  enabled = true,
   cond = is_executable("typescript-language-server"),
   ft = {
     "javascript",
@@ -37,8 +37,8 @@ return {
         includeInlayPropertyDeclarationTypeHints = true,
         includeInlayFunctionLikeReturnTypeHints = true,
         includeInlayEnumMemberValueHints = true,
+        importModuleSpecifierPreference = "non-relative", ---@type "shortest" | "project-relative" | "relative" | "non-relative"
       },
     },
   },
-  -- config = nil,
 }

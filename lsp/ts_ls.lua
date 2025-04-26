@@ -3,6 +3,7 @@ return {
     javascript = {
       preferences = {
         useAliasesForRenames = false,
+        importModuleSpecifierPreference = "non-relative", ---@type "shortest" | "project-relative" | "relative" | "non-relative"
       },
       inlayHints = {
         allowRenameOfImportPath = true,
@@ -24,6 +25,7 @@ return {
     typescript = {
       preferences = {
         useAliasesForRenames = false,
+        importModuleSpecifierPreference = "non-relative", ---@type "shortest" | "project-relative" | "relative" | "non-relative"
       },
       inlayHints = {
         includeInlayEnumMemberValueHints = true,

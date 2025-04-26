@@ -25,7 +25,7 @@ M.old_lsps = {
 ---And, if you are using LSP wrappers that require not to config those LSPs (let them handle), then put those LSPs in here.
 ---@type string[]
 M.no_setup_lsps = {
-  -- "ts_ls",
+  "ts_ls",
   "dartls",
   "rust_analyzer",
   "jdtls",

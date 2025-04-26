@@ -105,8 +105,13 @@ return {
           "buffer",
         },
         providers = {
+          -- https://cmp.saghen.dev/configuration/reference.html#providers
+          -- Allow buffer even LSP has suggestions
           lsp = {
-            fallbacks = {}, -- declare empty table will force show buffer text even lsp has suggestions
+            fallbacks = {},
+          },
+          buffer = {
+            score_offset = -5,
           },
         },
       },
