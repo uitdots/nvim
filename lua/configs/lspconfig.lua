@@ -29,9 +29,6 @@ function M._keymaps(_, bufnr)
   map("n", "gr<C-w>", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
   end, opts("List workspace folders"))
-  map("n", "<leader>lh", function()
-    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-  end, opts("Toggle Inlay Hints"))
 end
 
 M.on_attach = function(client, bufnr)

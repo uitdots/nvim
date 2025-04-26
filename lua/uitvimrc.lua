@@ -28,6 +28,7 @@ M.no_setup_lsps = {
   "dartls",
   "rust_analyzer",
   "jdtls",
+  "sqls",
 }
 
 M.options = {

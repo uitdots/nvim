@@ -7,7 +7,7 @@ local M = {}
 
 ---@private
 function M._config_linters()
-  lint.linters.sqlfluff_pg = vim.tbl_deep_extend(
+  lint.linters.pg_sqlfluff = vim.tbl_deep_extend(
     "force",
     ---@diagnostic disable-next-line: param-type-mismatch
     lint.linters.sqlfluff,
@@ -74,7 +74,7 @@ M._linters_by_ft = {
   --   "vale",
   -- },
   postgresql = {
-    "postgresql",
+    "pg_sqlfluff",
   },
   sh = {
     "shellcheck",

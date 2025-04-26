@@ -7,9 +7,17 @@ return {
   },
   keys = {
     {
-      "<leader>i",
+      "<leader>li",
       "<cmd>LspInfo<cr>",
       desc = "LSP | Info",
+      silent = true,
+    },
+    {
+      "<leader>lh",
+      function()
+        vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+      end,
+      desc = "LSP | Toggle InlayHint",
       silent = true,
     },
   },
