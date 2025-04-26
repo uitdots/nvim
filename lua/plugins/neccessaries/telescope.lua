@@ -241,7 +241,7 @@ return {
 
     -- Git
     {
-      "<leader>fc",
+      "<leader>gc",
       function()
         require("telescope.builtin").git_commits()
       end,
