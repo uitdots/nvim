@@ -36,7 +36,7 @@ M.options = {
   filter_availabled_external = true,
   ---Use inlayhint by default. This may cause lagging in neovim. But you can still enable inlayhint using keymap while using.
   ---@type boolean
-  inlayhint_enabled = true,
+  inlayhint_enabled = false,
   ---Use border for... most of the thing related to UI. You can search for which use this options
   ---@type boolean
   border_enabled = true,

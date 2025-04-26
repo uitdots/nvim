@@ -1,6 +1,9 @@
+-- TODO: Not use this?
+
 ---@type NvPluginSpec
 return {
   "rcarriga/nvim-notify",
+  enabled = false,
   event = "VeryLazy",
   opts = {
     level = 2,

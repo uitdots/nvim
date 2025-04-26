@@ -10,6 +10,7 @@ return {
     {
       "<leader>u<C-s>",
       "<cmd>SudaWrite<cr>",
+      desc = "Utils | SudaWrite",
     },
   },
 }

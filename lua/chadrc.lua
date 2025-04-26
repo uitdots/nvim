@@ -175,7 +175,7 @@ M.mason = {
 }
 
 M.lsp = {
-  signature = true,
+  signature = false,
 }
 
 M.cheatsheet = {
@@ -189,7 +189,6 @@ M.base46 = {
   -- TODO: Check this later to remove
   integrations = {
     "avante",
-    "blankline",
     "blink",
     "codeactionmenu",
     "dap",
@@ -201,7 +200,6 @@ M.base46 = {
     "lsp",
     "markview",
     "mason",
-    "notify",
     "nvimtree",
     "nvshades",
     "rainbowdelimiters",
@@ -235,6 +233,10 @@ M.base46 = {
 
     -- visual-whitespace
     VisualNonText = { link = "Comment" },
+
+    -- Snacks
+    SnacksIndent = { fg = "line" },
+    SnacksIndentScope = { fg = "grey" },
   },
 }
 

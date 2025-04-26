@@ -67,9 +67,9 @@ return {
           ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
         },
         selection_modes = {
-          ["@parameter.outer"] = "v", -- charwise
-          ["@function.outer"] = "V", -- linewise
-          ["@class.outer"] = "V", -- linewise
+          ["@parameter.outer"] = "v",
+          ["@function.outer"] = "V",
+          ["@class.outer"] = "V",
         },
         include_surrounding_whitespace = true,
       },

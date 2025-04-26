@@ -3,8 +3,10 @@ local uitvim_options = require("uitvimrc").options
 ---@type NvPluginSpec
 return {
   "folke/noice.nvim",
+  enabled = true,
   event = "VeryLazy",
   dependencies = {
+    "folke/snacks.nvim",
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
@@ -12,71 +14,29 @@ return {
     cmdline = {
       enabled = true,
     },
-    routes = {
-      {
-        view = "notify",
-        filter = {
-          event = "msg_showmode",
-        },
-      },
-      {
-        filter = {
-          event = "msg_show",
-          kind = "",
-          find = "written",
-        },
-        opts = {
-          skip = true,
-        },
-      },
+    messages = {
+      enabled = true,
+    },
+    notify = {
+      enabled = false,
     },
     lsp = {
-      progress = {
-        enabled = false,
-        format = "lsp_progress",
-        format_done = "lsp_progress_done",
-        throttle = 1000 / 30, -- frequency to update lsp progress message
-        view = "mini",
-      },
-      override = {
-        ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-        ["vim.lsp.util.stylize_markdown"] = true,
-        ["cmp.entry.get_documentation"] = true,
-      },
       hover = {
         enabled = true,
-        silent = true,
       },
       signature = {
-        enabled = false,
-        auto_open = {
-          enabled = true,
-        },
+        enabled = true, -- FIXME: This may overlap current line
       },
-      message = {
-        enabled = true,
+      progress = {
+        enabled = false,
       },
     },
     presets = {
-      bottom_search = true,
+      bottom_search = false,
       command_palette = true,
-      long_message_to_split = true,
+      long_message_to_split = false,
       inc_rename = false,
       lsp_doc_border = uitvim_options.border_enabled and "rounded" or "none",
-    },
-  },
-  keys = {
-    {
-      "<leader>ud",
-      "<cmd>NoiceDismiss<cr>",
-      desc = "Utils | Dismiss Noice",
-      silent = true,
-    },
-    {
-      "<leader>un",
-      "<cmd>NoiceAll<cr>",
-      desc = "Utils | All Notification",
-      silent = true,
     },
   },
 }

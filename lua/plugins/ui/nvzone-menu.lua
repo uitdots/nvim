@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nvzone/volt",
   },
-  enabled = true,
+  enabled = false,
   event = "VeryLazy",
   keys = {
     {
