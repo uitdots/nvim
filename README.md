@@ -1,26 +1,22 @@
-## Prerequisite:
+# Project Configuration
 
-- Neovim >= 0.11
-- Make
-- Delta
-- ripgrep (telescope, good for vimgrep replacement)
-- fd (telescope)
+## Prerequisites
 
----
+- **Neovim** >= 0.11
+- **Make**
+- **Delta**
+- **ripgrep** (telescope, good for vimgrep replacement)
+- **fd** (telescope)
 
-## Utils:
+## Utilities
 
-- Wakatime
-- Chezmoi
+- **Wakatime**
+- **Chezmoi**
 
----
+## Note
 
-## NOTE
+If NvChad UI's color is broken, use the command: `:NvChadBase46LoadAllHighLights`
 
-if NvChad ui's color is broken, use `:NvChadBase46LoadAllHighLights`
-
----
-
-## REF
+## References
 
 - Special thanks to [Alexis](https://github.com/Alexis12119/) for his [nvim-config](https://github.com/Alexis12119/nvim-config)
