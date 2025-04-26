@@ -5,21 +5,25 @@ local map = vim.keymap.set
 local is_executable = require("core.utils").is_executable
 local lspconfig = require("lspconfig")
 local uitvim_options = require("uitvimrc").options
+local telescope_builtin = require("telescope.builtin")
 
 function M._keymaps(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
 
-  map("n", "gri", Snacks.picker.lsp_implementations, opts("Go to Implementations"))
-  map("n", "grr", Snacks.picker.lsp_references, opts("Go to references"))
+  map("n", "gri", telescope_builtin.lsp_outgoing_calls, opts("Outgoing Calls"))
+  map("n", "grI", telescope_builtin.lsp_incoming_calls, opts("Incoming Calls"))
+  map("n", "gri", telescope_builtin.lsp_implementations, opts("Go to Implementations"))
+  map("n", "grr", telescope_builtin.lsp_references, opts("Go to references"))
   map("n", "grn", vim.lsp.buf.rename, opts("Rename"))
   map("n", "gra", require("actions-preview").code_actions, opts("Code Action"))
-  map("n", "gD", Snacks.picker.lsp_definitions, opts("Go to Declaration"))
-  map("n", "gd", Snacks.picker.lsp_declarations, opts("Go to Definition"))
-  map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to Type Definition"))
-  map("n", "grs", Snacks.picker.lsp_symbols, opts("Symbols"))
-  map("n", "grS", Snacks.picker.lsp_workspace_symbols, opts("Workspace Symbols"))
+  map("n", "gD", Snacks.picker.lsp_declarations, opts("Go to Declarations"))
+  map("n", "gd", telescope_builtin.lsp_definitions, opts("Go to Definitions"))
+  map("n", "g<C-d>", telescope_builtin.lsp_type_definitions, opts("Go to Type Definitions"))
+  map("n", "grs", telescope_builtin.lsp_document_symbols, opts("Document Symbols"))
+  map("n", "grS", telescope_builtin.lsp_workspace_symbols, opts("Workspace Symbols"))
+  map("n", "gr<C-s>", telescope_builtin.lsp_dynamic_workspace_symbols, opts("Dynamic Workspace Symbols"))
   map("n", "grw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
   map("n", "grW", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
   map("n", "gr<C-w>", function()
