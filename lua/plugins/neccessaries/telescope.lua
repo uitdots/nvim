@@ -58,8 +58,6 @@ return {
         "v",
       },
     },
-
-    -- Find
     {
       "<leader><leader>",
       function()
@@ -68,9 +66,11 @@ return {
           no_ignore = true,
         })
       end,
-      desc = "Find | Files",
+      desc = "General | Find Files",
       silent = true,
     },
+
+    -- Find
     {
       "<leader>fa",
       function()

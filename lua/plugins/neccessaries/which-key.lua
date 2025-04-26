@@ -14,7 +14,6 @@ return {
       return 500
     end,
     spec = {
-      { "<leader>D", group = "Database", icon = "" },
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
       { "<leader>A", group = "API", icon = "󱂛" },
       { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
@@ -27,8 +26,7 @@ return {
       { "<leader>o", group = "Options", icon = "" },
       { "<leader>p", group = "Plugins", icon = "" },
       { "<leader>r", group = "Runner", icon = "" },
-      -- { "<leader>s", group = "Sessions", icon = "󰔚" },
-      { "<leader>s", group = "Snapshot", icon = "", mode = { "x" } },
+      { "<leader>s", group = "Snapshot", icon = "", mode = "x" },
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
     },
   },

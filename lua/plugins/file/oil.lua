@@ -2,7 +2,12 @@
 return {
   "stevearc/oil.nvim",
   keys = {
-    { "<leader>O", "<CMD>Oil --float<CR>", desc = "Oil | Toggle", silent = true },
+    {
+      "<leader>O",
+      "<CMD>Oil --float<CR>",
+      desc = "General | Toggle Oil",
+      silent = true,
+    },
   },
   cmd = "Oil",
   opts = {

@@ -58,7 +58,7 @@ return {
           end
           vim.cmd("DBUIToggle")
         end,
-        desc = "Dadbod | Toggle UI",
+        desc = "General | Toggle DBUI",
         silent = true,
       },
     },

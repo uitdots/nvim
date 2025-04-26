@@ -9,7 +9,7 @@ return {
     {
       "<leader>e",
       "<cmd>NvimTreeToggle<cr>",
-      desc = "General | NvimTree",
+      desc = "General | Toggle NvimTree",
       silent = true,
     },
   },

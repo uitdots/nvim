@@ -1,3 +1,11 @@
+local function ask_ext(cmd)
+  vim.ui.input({
+    prompt = "Specify Code Extension (optional)",
+  }, function(ext)
+    vim.cmd(cmd .. " " .. ext)
+  end)
+end
+
 ---@type NvPluginSpec
 return {
   "mistricky/codesnap.nvim",
@@ -10,38 +18,62 @@ return {
     "CodeSnapHighlight",
     "CodeSnapSaveHighlight",
   },
-  init = function()
-    local ask_ext = function(cmd)
-      vim.ui.input({ prompt = "Specify Code Extension (optional)" }, function(ext)
-        vim.cmd(cmd .. " " .. ext)
-      end)
-    end
-
-    vim.keymap.set("x", "<leader>sS", function()
-      ask_ext("CodeSnap")
-    end, { desc = "CodeSnap | Save to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>ss", function()
-      ask_ext("CodeSnapSave")
-    end, { desc = "CodeSnap | Save", silent = true })
-    vim.keymap.set("x", "<leader>sa", function()
-      ask_ext("CodeSnapASCII")
-    end, { desc = "CodeSnap | Save ASCII to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>sh", function()
-      ask_ext("CodeSnapHighlight")
-    end, { desc = "CodeSnap | Save Highlight to Clipboard", silent = true })
-    vim.keymap.set("x", "<leader>sH", function()
-      ask_ext("CodeSnapSaveHighlight")
-    end, { desc = "CodeSnap | Save Highlight", silent = true })
-  end,
+  keys = {
+    {
+      "<leader>sS",
+      function()
+        ask_ext("CodeSnap")
+      end,
+      desc = "Snap | Save to Clipboard",
+      silent = true,
+      mode = "x",
+    },
+    {
+      "<leader>ss",
+      function()
+        ask_ext("CodeSnapSave")
+      end,
+      desc = "Snap | Save",
+      silent = true,
+      mode = "x",
+    },
+    {
+      "<leader>sa",
+      function()
+        ask_ext("CodeSnapASCII")
+      end,
+      desc = "Snap | Save ASCII to Clipboard",
+      silent = true,
+      mode = "x",
+    },
+    {
+      "<leader>sh",
+      function()
+        ask_ext("CodeSnapHighlight")
+      end,
+      desc = "Snap | Save Highlight to Clipboard",
+      silent = true,
+      mode = "x",
+    },
+    {
+      "<leader>sH",
+      function()
+        ask_ext("CodeSnapSaveHighlight")
+      end,
+      desc = "Snap | Save Highlight",
+      silent = true,
+      mode = "x",
+    },
+  },
   opts = {
     bg_theme = "summer",
-    bg_x_padding = 54,
-    bg_y_padding = 40,
+    bg_x_padding = 10,
+    bg_y_padding = 8,
     code_font_family = "JetBrainsMono Nerd Font",
     mac_window_bar = true,
-    save_path = "~/Pictures",
     title = "",
     watermark = "",
+    has_line_number = true,
     watermark_font_family = "JetBrainsMono Nerd Font",
   },
 }
