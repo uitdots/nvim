@@ -4,7 +4,7 @@ return {
   dependencies = {
     "nvzone/volt",
   },
-  enabled = false,
+  enabled = true,
   event = "VeryLazy",
   keys = {
     {
@@ -27,4 +27,14 @@ return {
       desc = "General | NvZone Menu",
     },
   },
+  config = function()
+    local default_menu = require("menus.default")
+
+    vim.list_extend(default_menu, {
+      {
+        name = "  Inspect",
+        cmd = "Inspect",
+      },
+    })
+  end,
 }
