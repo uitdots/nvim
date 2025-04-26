@@ -18,4 +18,17 @@ return {
     require("notify").setup(opts)
     vim.notify = require("notify")
   end,
+  dependencies = {
+    {
+      "nvim-telescope/telescope.nvim",
+      opts = {
+        extensions_list = {
+          "notify",
+        },
+      },
+      opts_extend = {
+        "extensions_list",
+      },
+    },
+  },
 }

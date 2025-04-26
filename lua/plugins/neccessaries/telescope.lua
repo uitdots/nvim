@@ -3,38 +3,32 @@ return {
   "nvim-telescope/telescope.nvim",
   event = "VeryLazy",
   optional = true,
-  dependencies = {
-    {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-    },
-  },
   opts = {
-    extensions_list = {
-      "fzf",
-      "notify",
-    },
     defaults = {
-      path_display = { "smart" },
+      layout_config = {
+        prompt_position = "top", ---@type "top" | "bottom"
+      },
+      sorting_strategy = "ascending", ---@type "ascending" | "descending"
+      path_display = {
+        "smart", ---@type "hidden" | "tail" | "absolute" | "smart" | "shorten" | "truncate" | "filename_first"
+      },
       file_ignore_patterns = {
-        "node_modules",
-        ".git",
-        ".egg-info",
-        "*bin*",
-        "*cache*",
-        "*debug*",
-        "*obj*",
-        ".dart_tool",
-        ".git",
-        ".husky/_",
-        ".idea",
-        ".next",
-        ".venv*",
-        ".vs",
-        "__pycache__",
-        "build",
-        "dist",
-        "node_modules",
+        "%.egg-info/",
+        "^%.dart_tool/",
+        "^%.git/",
+        "^%.idea/",
+        "^%.next/",
+        "^%.venv/",
+        "^%.vs/",
+        "^.husky/_/",
+        "^node_modules/",
+        "__pycache__/",
+        "bin/",
+        "build/",
+        "cache/",
+        "debug/",
+        "dist/",
+        "obj/",
       },
     },
   },
@@ -69,7 +63,10 @@ return {
     {
       "<leader><leader>",
       function()
-        require("telescope.builtin").find_files()
+        require("telescope.builtin").find_files({
+          hidden = true,
+          no_ignore = true,
+        })
       end,
       desc = "Find | Files",
       silent = true,
@@ -178,11 +175,19 @@ return {
       silent = true,
     },
     {
-      "<leader>fr",
+      "<leader>fR",
       function()
         require("telescope.builtin").oldfiles()
       end,
       desc = "Find | Recent Files",
+      silent = true,
+    },
+    {
+      "<leader>fr",
+      function()
+        require("telescope.builtin").resume()
+      end,
+      desc = "Find | Resume",
       silent = true,
     },
     {
