@@ -104,6 +104,14 @@ return {
       silent = true,
     },
     {
+      "<leader>fW",
+      function()
+        require("telescope.builtin").grep_string()
+      end,
+      desc = "Find | Word Under Cursor",
+      silent = true,
+    },
+    {
       "<leader>ft",
       "<cmd>Find themes<cr>", -- what is this?
       desc = "Find | Themes",
