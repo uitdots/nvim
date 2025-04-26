@@ -28,7 +28,7 @@ return {
   },
   config = function(_, opts)
     require("copilot").setup(opts)
-    vim.cmd("Copilot disable")
+    require("copilot.command").disable()
   end,
   dependencies = {
     "saghen/blink.cmp",
