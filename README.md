@@ -3,6 +3,8 @@
 - Neovim >= 0.11
 - Make
 - Delta
+- ripgrep (telescope, good for vimgrep replacement)
+- fd (telescope)
 
 ---
 
