@@ -137,9 +137,25 @@ return {
     },
   },
   keys = {
+    -- General
+    {
+      "<M-;>",
+      function()
+        Snacks.picker.spelling()
+      end,
+      desc = "General | Spelling",
+    },
+
     -- Find
     {
-      "<leader>ff",
+      "<leader>fS",
+      function()
+        Snacks.picker.smart()
+      end,
+      desc = "Find | Smart",
+    },
+    {
+      "<leader><leader>",
       function()
         Snacks.picker.files({
           hidden = true,
@@ -166,7 +182,106 @@ return {
           },
         })
       end,
-      desc = "Find | Files (Snacks)",
+      desc = "Find | Files",
+    },
+    {
+      "<leader>fB",
+      function()
+        Snacks.picker.buffers()
+      end,
+      desc = "Find | Buffers",
+    },
+    {
+      "<leader>fw",
+      function()
+        Snacks.picker.grep()
+      end,
+      desc = "Find | Words",
+    },
+    {
+      "<leader>fC",
+      function()
+        Snacks.picker.command_history()
+      end,
+      desc = "Find | Command History",
+    },
+    {
+      "<leader>fn",
+      function()
+        Snacks.picker.notifications()
+      end,
+      desc = "Find | Notification History",
+    },
+    {
+      "<leader>fa",
+      function()
+        Snacks.picker.autocmds()
+      end,
+      desc = "Find | Autocommands",
+    },
+    {
+      "<leader>fg",
+      function()
+        Snacks.picker.git_files()
+      end,
+      desc = "Find | Git Files",
+    },
+    {
+      "<leader>fr",
+      function()
+        Snacks.picker.recent()
+      end,
+      desc = "Find | Recent",
+    },
+    {
+      "<leader>fW",
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = "Find | Visual Selection or Word",
+      mode = { "n", "x" },
+    },
+    {
+      "<leader>fb",
+      function()
+        Snacks.picker.lines()
+      end,
+      desc = "Find | Buffer Lines",
+    },
+    {
+      '<leader>f"',
+      function()
+        Snacks.picker.registers()
+      end,
+      desc = "Find | Registers",
+    },
+    {
+      "<leader>f/",
+      function()
+        Snacks.picker.search_history()
+      end,
+      desc = "Find | Search History",
+    },
+    {
+      "<leader>fc",
+      function()
+        Snacks.picker.commands()
+      end,
+      desc = "Find | Commands",
+    },
+    {
+      "<leader>fh",
+      function()
+        Snacks.picker.help()
+      end,
+      desc = "Find | Help Pages",
+    },
+    {
+      "<leader>fH",
+      function()
+        Snacks.picker.highlights()
+      end,
+      desc = "Find | Highlights",
     },
     {
       "<leader>fi",
@@ -174,6 +289,55 @@ return {
         Snacks.picker.icons()
       end,
       desc = "Find | Icons",
+    },
+    {
+      "<leader>fk",
+      function()
+        Snacks.picker.keymaps()
+      end,
+      desc = "Find | Keymaps",
+    },
+    {
+      "<leader>fl",
+      function()
+        Snacks.picker.loclist()
+      end,
+      desc = "Find | Location List",
+    },
+    {
+      "<leader>fm",
+      function()
+        Snacks.picker.marks()
+      end,
+      desc = "Find | Marks",
+    },
+    {
+      "<leader>fM",
+      function()
+        Snacks.picker.man()
+      end,
+      desc = "Find | Man Pages",
+    },
+    {
+      "<leader>fp",
+      function()
+        Snacks.picker.lazy()
+      end,
+      desc = "Find | Plugin Spec",
+    },
+    {
+      "<leader>fq",
+      function()
+        Snacks.picker.qflist()
+      end,
+      desc = "Find | Quickfix List",
+    },
+    {
+      "<leader>fu",
+      function()
+        Snacks.picker.undo()
+      end,
+      desc = "Find | Undo History",
     },
 
     -- Git
@@ -183,6 +347,13 @@ return {
         Snacks.gitbrowse()
       end,
       desc = "Git | Browse",
+    },
+    {
+      "<leader>gB",
+      function()
+        Snacks.picker.git_branches()
+      end,
+      desc = "Git | Branches",
     },
     {
       "<leader>gL",
@@ -197,6 +368,13 @@ return {
         Snacks.picker.git_log_line()
       end,
       desc = "Git | Log Line",
+    },
+    {
+      "<leader>gs",
+      function()
+        Snacks.picker.git_status()
+      end,
+      desc = "Git | Status",
     },
     {
       "<leader>gd",
