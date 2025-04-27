@@ -184,7 +184,7 @@ M.cheatsheet = {
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = false,
+  transparency = true,
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
@@ -221,6 +221,9 @@ M.base46 = {
     TelescopeMatching = { bg = "NONE" },
   },
   hl_add = {
+    FloatBorder = { fg = "grey_fg" },
+    NormalFloat = { fg = "NONE", bg = "NONE", link = "Normal" },
+
     -- Dadbod UI
     NotificationInfo = { fg = "green", bg = "one_bg" },
     NotificationWarning = { fg = "yellow", bg = "one_bg" },
@@ -237,6 +240,16 @@ M.base46 = {
     -- Snacks
     SnacksIndent = { fg = "line" },
     SnacksIndentScope = { fg = "grey" },
+    SnacksPickerDimmed = { link = "NONE" },
+    SnacksPickerDir = { fg = "light_grey" },
+    SnacksPickerTitle = { fg = "black", bg = "red" },
+    SnacksPickerPreviewTitle = { fg = "black", bg = "blue" },
+    SnacksInputBorder = { fg = "one_bg3" },
+    SnacksPickerListTitle = { fg = "black", bg = "green" },
+    SnacksPickerMatch = { fg = "blue" },
+    SnacksPickerPrompt = { fg = "red" },
+    SnacksPickerToggle = { fg = "black", bg = "red" },
+    SnacksPickerIdx = { fg = "yellow" },
   },
 }
 

@@ -35,6 +35,7 @@ return {
         package_installed = " ",
         package_uninstalled = " ",
       },
+      backdrop = 100,
     },
     registries = {
       "github:nvim-java/mason-registry",

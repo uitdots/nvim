@@ -7,6 +7,7 @@ return {
   },
 
   ui = {
+    backdrop = 100,
     border = "rounded",
     icons = {
       ft = "",
