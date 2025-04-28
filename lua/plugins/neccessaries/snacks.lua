@@ -411,7 +411,7 @@ return {
 
     -- Neovim
     {
-      "<leader>nn",
+      "<leader>nN",
       function()
         Snacks.notifier.show_history()
       end,
@@ -419,7 +419,7 @@ return {
       silent = true,
     },
     {
-      "<leader>nh",
+      "<leader>nn",
       function()
         Snacks.notifier.hide()
       end,
