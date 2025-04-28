@@ -2,9 +2,8 @@
 return {
   "VidocqH/lsp-lens.nvim",
   enabled = true,
-  event = "LspAttach",
   opts = {
-    enabled = true,
+    enabled = false,
   },
   cmd = {
     "LspLensToggle",
