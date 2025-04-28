@@ -1,18 +1,19 @@
+---@module 'which-key'
+
 local uitvim_options = require("uitvimrc").options
 
 ---@type NvPluginSpec
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
+  ---@type wk.Opts
   opts = {
     preset = "modern",
     win = {
       no_overlap = false,
       border = uitvim_options.border_enabled and "rounded" or "none",
     },
-    delay = function()
-      return 500
-    end,
+    delay = 500,
     spec = {
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
       { "<leader>A", group = "API", icon = "󱂛" },
