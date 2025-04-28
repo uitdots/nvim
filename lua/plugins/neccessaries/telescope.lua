@@ -1,7 +1,9 @@
 ---@type NvPluginSpec
 return {
   "nvim-telescope/telescope.nvim",
-  event = "VeryLazy",
+  keys = {
+    "Telescope",
+  },
   optional = true,
   opts = {
     defaults = {

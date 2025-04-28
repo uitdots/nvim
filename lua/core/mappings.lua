@@ -95,7 +95,7 @@ end, { desc = "Neovim | Inspect", silent = true })
 
 map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
 
-map("n", "<leader>nh", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
+map("n", "<leader>nH", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
 map("n", "<leader>nv", function()
   return vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version" })
