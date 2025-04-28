@@ -192,6 +192,7 @@ M.base46 = {
     "blink",
     "codeactionmenu",
     "dap",
+    "blankline",
     "defaults",
     "devicons",
     "git",
@@ -211,46 +212,47 @@ M.base46 = {
     "trouble",
     "whichkey",
   },
-  hl_override = {
-    Search = { bg = "blue" },
-    IncSearch = { bg = "blue" },
+}
 
-    -- WARN: Only suitable while using catppuccin with transparent. Consider to remove if use another theme.
-    Visual = { bg = "one_bg2" },
-    TelescopeSelection = { bg = "one_bg2" },
-    TelescopeMatching = { bg = "NONE" },
-  },
-  hl_add = {
-    FloatBorder = { fg = "grey_fg" },
-    NormalFloat = { fg = "NONE", bg = "NONE", link = "Normal" },
+M.base46.hl_override = {
+  Search = { bg = "blue" },
+  IncSearch = { bg = "blue" },
 
-    -- Dadbod UI
-    NotificationInfo = { fg = "green", bg = "one_bg" },
-    NotificationWarning = { fg = "yellow", bg = "one_bg" },
-    NotificationError = { fg = "red", bg = "one_bg" },
+  Visual = M.base46.transparency and vim.list_contains({ "catppuccin" }, M.base46.theme) and { bg = "one_bg3" } or {},
+}
 
-    -- For statusline
-    St_Percent_icon = { fg = "black", bg = "blue" },
-    St_Percent_sep = { fg = "blue", bg = "lightbg" },
-    St_Percent_text = { link = "St_percent_sep" },
+M.base46.hl_add = {
+  FloatBorder = { fg = "grey_fg" },
+  NormalFloat = { fg = "NONE", bg = "NONE", link = "Normal" },
 
-    -- visual-whitespace
-    VisualNonText = { link = "Comment" },
+  -- Dadbod UI
+  NotificationInfo = { fg = "green", bg = "one_bg" },
+  NotificationWarning = { fg = "yellow", bg = "one_bg" },
+  NotificationError = { fg = "red", bg = "one_bg" },
 
-    -- Snacks
-    SnacksIndent = { fg = "line" },
-    SnacksIndentScope = { fg = "grey" },
-    SnacksPickerDimmed = { link = "NONE" },
-    SnacksPickerDir = { fg = "light_grey" },
-    SnacksPickerTitle = { fg = "black", bg = "red" },
-    SnacksPickerPreviewTitle = { fg = "black", bg = "blue" },
-    SnacksInputBorder = { fg = "one_bg3" },
-    SnacksPickerListTitle = { fg = "black", bg = "green" },
-    SnacksPickerMatch = { fg = "blue" },
-    SnacksPickerPrompt = { fg = "red" },
-    SnacksPickerToggle = { fg = "black", bg = "red" },
-    SnacksPickerIdx = { fg = "yellow" },
-  },
+  -- For statusline
+  St_Percent_icon = { fg = "black", bg = "blue" },
+  St_Percent_sep = { fg = "blue", bg = "lightbg" },
+  St_Percent_text = { link = "St_percent_sep" },
+
+  -- visual-whitespace
+  VisualNonText = { link = "Comment" },
+
+  -- Snacks
+  SnacksIndent = { link = "IblChar" },
+  SnacksIndentScope = { link = "IblScopeChar" },
+  SnacksInputBorder = { link = "TelescopePromptBorder" },
+
+  SnacksNormal = { link = "TelescopeNormal" },
+
+  SnacksPickerDir = { fg = "light_grey" },
+  SnacksPickerListTitle = { link = "TelescopeResultsTitle" },
+  SnacksPickerMatch = { link = "TelescopeMatching" },
+  SnacksPickerPreviewTitle = { link = "TelescopePreviewTitle" },
+  SnacksPickerPrompt = { link = "TelescopePromptPrefix" },
+  SnacksPickerSelect = { link = "TelescopeSelection" },
+  SnacksPickerTitle = { link = "TelescopePromptTitle" },
+  SnacksPickerToggle = { fg = "black", bg = "red" },
 }
 
 return M
