@@ -104,6 +104,11 @@ return {
     },
     picker = {
       enabled = true,
+      layout = {
+        layout = {
+          backdrop = false,
+        },
+      },
     },
     notifier = {
       enabled = true,
