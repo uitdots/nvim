@@ -1,9 +1,9 @@
 ---@module 'snacks'
 
 local map = vim.keymap.set
-local is_executable = require("core.utils").is_executable
+local is_executable = require("utils.executable").is_executable
 local lspconfig = require("lspconfig")
-local uitvim_options = require("uitvimrc").options
+local uitvim_options = require("uitvim").options
 local telescope_builtin = require("telescope.builtin")
 local lsp_action = require("utils.lsp").action
 
@@ -73,7 +73,7 @@ function M.old_lspconfig(server_name)
 end
 
 function M._setup_old_lsp()
-  local server_names = require("uitvimrc").old_lsps
+  local server_names = require("uitvim").old_lsps
   for _, server_name in pairs(server_names) do
     if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
       M.old_lspconfig(server_name)
@@ -82,7 +82,7 @@ function M._setup_old_lsp()
 end
 
 function M._setup_lsp()
-  local server_names = require("uitvimrc").lsps
+  local server_names = require("uitvim").lsps
   for _, server_name in pairs(server_names) do
     if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
       vim.lsp.config(server_name, M.opts)

@@ -1,17 +1,20 @@
-local util = require("lspconfig.util")
+-- TODO: cleanup this, or make it work. Found upward for root markers idk how to set it up
 
-local deno_matcher = function(path)
-  local patterns = { "deno.json", "deno.jsonc" }
-  for _, pattern in ipairs(patterns) do
-    local f = vim.fn.glob(table.concat({ path, pattern }, "/"))
-    if f ~= "" then
-      return path
-    end
-  end
+local search_ancestors = require("lspconfig.util").search_ancestors
+
+local has_deno_config = function(path)
+  local fnlpath = vim.fs.joinpath(path, "deno.json")
+  return (vim.uv.fs_stat(fnlpath) or {}).type == "file"
 end
 
 return {
-  root_dir = function(fname)
-    return util.search_ancestors(fname, deno_matcher)
-  end,
+  -- root_dir = function(bufnr, on_dir)
+  --   local fname = vim.api.nvim_buf_get_name(bufnr)
+  --   on_dir(vim.fs.dirname(vim.fs.find("deno.json", { path = fname, upward = true })[1]))
+  -- end,
+  root_markers = {
+    "deno.json",
+    "deno.jsonc",
+  },
+  workspace_required = true,
 }

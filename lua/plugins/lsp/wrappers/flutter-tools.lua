@@ -1,5 +1,5 @@
-local lspconfig = require("configs.lspconfig")
-local is_executable = require("core.utils").is_executable
+local lspconfig = require("configs.lsp.lspconfig")
+local is_executable = require("utils.executable").is_executable
 
 ---@type NvPluginSpec
 return {

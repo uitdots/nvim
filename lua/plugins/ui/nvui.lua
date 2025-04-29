@@ -86,6 +86,7 @@ return {
   },
   {
     "nvchad/base46",
+    lazy = false,
     build = function()
       require("base46").load_all_highlights()
     end,
@@ -93,6 +94,11 @@ return {
       vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
         require("base46").load_all_highlights()
       end, { desc = "NvChad | NvChad Load All Highlights" })
+    end,
+    config = function()
+      for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
+        dofile(vim.g.base46_cache .. v)
+      end
     end,
   },
 }

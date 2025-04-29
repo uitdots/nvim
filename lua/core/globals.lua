@@ -1,5 +1,5 @@
 -- TODO: May cleanup this later
-local uitvim_options = require("uitvimrc").options
+local uitvim_options = require("uitvim").options
 local g = vim.g
 
 local sysname = vim.uv.os_uname().sysname

@@ -28,7 +28,7 @@ function M._config()
 end
 
 function M.setup()
-  local adapter = require("core.utils").get_executable("js-debug-adapter", { package = "js-debug-adapter" })
+  local adapter = require("utils.executable").get_executable("js-debug-adapter", { package = "js-debug-adapter" })
   if adapter == nil then
     return
   end

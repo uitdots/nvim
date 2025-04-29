@@ -1,6 +1,6 @@
 local lint = require("lint")
-local is_executable = require("core.utils").is_executable
-local debounce = require("core.utils").debounce
+local is_executable = require("utils.executable").is_executable
+local debounce = require("utils.helpers").debounce
 
 ---@class nvim_lint_config
 local M = {}

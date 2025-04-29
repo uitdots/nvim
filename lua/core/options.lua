@@ -1,7 +1,7 @@
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
-local is_executable = require("core.utils").is_executable
+local is_executable = require("utils.executable").is_executable
 
 g.mapleader = " "
 g.maplocalleader = "\\"

@@ -1,6 +1,12 @@
 return {
-  defaults = { lazy = true },
-  install = { colorscheme = { "nvchad" } },
+  defaults = {
+    lazy = true,
+  },
+  install = {
+    colorscheme = {
+      "nvchad",
+    },
+  },
 
   rock = {
     hererocks = true,

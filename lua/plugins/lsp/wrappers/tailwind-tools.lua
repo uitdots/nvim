@@ -1,4 +1,4 @@
-local is_executable = require("core.utils").is_executable
+local is_executable = require("utils.executable").is_executable
 
 ---@type NvPluginSpec
 return {

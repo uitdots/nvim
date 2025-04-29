@@ -23,9 +23,9 @@ return {
       },
     },
     config = function()
-      local executable = require("core.utils").get_executable("uv")
+      local executable = require("utils.executable").get_executable("uv")
       if executable == nil then
-        executable = require("core.utils").get_executable("python", {
+        executable = require("utils.executable").get_executable("python", {
           package = "debugpy",
           inner_path = vim.g.is_windows and "venv/Scripts" or "/venv/bin",
         })

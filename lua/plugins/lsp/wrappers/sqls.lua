@@ -1,4 +1,4 @@
-local is_executable = require("core.utils").is_executable
+local is_executable = require("utils.executable").is_executable
 
 ---@type NvPluginSpec
 return {
@@ -6,7 +6,7 @@ return {
   ft = "sql",
   cond = is_executable("sqls"),
   config = function()
-    local lspconfig = require("configs.lspconfig")
+    local lspconfig = require("configs.lsp.lspconfig")
     require("lspconfig").sqls.setup({
       on_attach = function(client, bufnr)
         require("sqls").on_attach(client, bufnr)

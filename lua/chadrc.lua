@@ -1,4 +1,4 @@
-local uitvim_options = require("uitvimrc").options
+local uitvim_options = require("uitvim").options
 local nvdash_config = require("configs.ui.nvdash")
 
 ---@type ChadrcConfig
@@ -184,7 +184,7 @@ M.cheatsheet = {
 
 M.base46 = {
   theme = "catppuccin",
-  transparency = true,
+  transparency = false,
   theme_toggle = { "catppuccin", "one_light" },
   -- TODO: Check this later to remove
   integrations = {
@@ -245,7 +245,6 @@ M.base46.hl_add = {
   -- Snacks
   SnacksIndent = { link = "IblChar" },
   SnacksIndentScope = { link = "IblScopeChar" },
-  SnacksInputBorder = { link = "TelescopePromptBorder" },
 
   SnacksNormal = { link = "TelescopeNormal" },
 

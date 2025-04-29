@@ -1,6 +1,6 @@
 ---@module 'which-key'
 
-local uitvim_options = require("uitvimrc").options
+local uitvim_options = require("uitvim").options
 
 ---@type NvPluginSpec
 return {

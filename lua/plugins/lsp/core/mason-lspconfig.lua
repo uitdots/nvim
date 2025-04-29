@@ -7,8 +7,8 @@ return {
   },
   -- NOTE: Change this to normal table when lsp is fully supported
   opts = function(_, opts)
-    local old_server_names = require("uitvimrc").old_lsps
-    local no_setup_server_names = require("uitvimrc").no_setup_lsps
+    local old_server_names = require("uitvim").old_lsps
+    local no_setup_server_names = require("uitvim").no_setup_lsps
     local mason_available_server_names = require("mason-lspconfig.mappings.server").lspconfig_to_package
 
     opts = opts or {}

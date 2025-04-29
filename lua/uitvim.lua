@@ -1,5 +1,3 @@
--- TODO: Change global to inside the module. Use it as module (import)
-
 local M = {}
 
 ---New LSP setup. If that lsp isn't in your $PATH, no problem, it won't break. If installed by Mason, yes it will be setup.

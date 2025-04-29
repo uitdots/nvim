@@ -1,6 +1,6 @@
 ---@module 'conform'
 
-local filter_availabled_external = require("uitvimrc").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 
 local M = {}
 

@@ -16,7 +16,7 @@ return {
           vim.cmd("CellularAutomaton " .. selection)
         end)
       end,
-      desc = "CellularAutomaton | Select",
+      desc = "Utils | Select CellularAutomaton",
       silent = true,
     },
   },

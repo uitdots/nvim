@@ -9,6 +9,7 @@ return {
       "lazy.nvim",
       "ui/nvchad_types",
       "luvit-meta/library",
+      -- { path = "snacks.nvim", words = { "Snacks" } },
     },
   },
   dependencies = {

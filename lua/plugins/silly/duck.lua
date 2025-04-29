@@ -15,7 +15,7 @@ return {
           vim.cmd('lua require("duck").' .. selection .. "()")
         end)
       end,
-      desc = "Duck | Select",
+      desc = "Utils | Select Duck",
       silent = true,
     },
   },
