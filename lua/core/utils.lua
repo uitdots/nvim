@@ -1,3 +1,5 @@
+-- TODO: May refactor this to organise it
+
 local M = {}
 
 ---Return the full path of the executable

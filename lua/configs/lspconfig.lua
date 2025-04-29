@@ -1,16 +1,22 @@
 ---@module 'snacks'
 
-local M = {}
 local map = vim.keymap.set
 local is_executable = require("core.utils").is_executable
 local lspconfig = require("lspconfig")
 local uitvim_options = require("uitvimrc").options
 local telescope_builtin = require("telescope.builtin")
+local lsp_action = require("utils.lsp").action
+
+local M = {}
 
 function M._keymaps(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
+
+  map("n", "<leader>lo", lsp_action["source.organizeImports"], opts("Organise Imports"))
+  map("n", "<leader>ls", lsp_action["source.sortImports"], opts("Sort Imports"))
+  map("n", "<leader>lr", lsp_action["source.removeUnusedImports"], opts("Remove Unused Imports"))
 
   map("n", "gri", telescope_builtin.lsp_outgoing_calls, opts("Outgoing Calls"))
   map("n", "grI", telescope_builtin.lsp_incoming_calls, opts("Incoming Calls"))
