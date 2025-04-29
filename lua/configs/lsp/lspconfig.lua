@@ -6,9 +6,11 @@ local lspconfig = require("lspconfig")
 local uitvim_options = require("uitvim").options
 local telescope_builtin = require("telescope.builtin")
 local lsp_action = require("utils.lsp").action
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 
 local M = {}
 
+---@private
 function M._keymaps(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
@@ -63,6 +65,7 @@ M.opts = {
   on_attach = M.on_attach,
 }
 
+---@private
 function M.old_lspconfig(server_name)
   local opts = M.opts
   local require_ok, custom_opts = pcall(require, "configs.lsp.configs." .. server_name)
@@ -72,26 +75,35 @@ function M.old_lspconfig(server_name)
   lspconfig[server_name].setup(opts)
 end
 
-function M._setup_old_lsp()
+---@private
+---This will be removed when neovim lspconfig support for all lsps
+function M.setup_old_lsp()
   local server_names = require("uitvim").old_lsps
   for _, server_name in pairs(server_names) do
-    if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
+    if
+      filter_availabled_external == false
+      or is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1])
+    then
       M.old_lspconfig(server_name)
     end
   end
 end
 
-function M._setup_lsp()
+---@private
+function M.setup_lsp()
   local server_names = require("uitvim").lsps
   for _, server_name in pairs(server_names) do
-    if is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1]) then
+    if
+      filter_availabled_external == false
+      or is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1])
+    then
       vim.lsp.config(server_name, M.opts)
       vim.lsp.enable(server_name)
     end
   end
 end
 
-function M.defaults()
+function M.setup()
   require("nvchad.lsp").diagnostic_config()
 
   vim.diagnostic.config({
@@ -103,8 +115,8 @@ function M.defaults()
     require("lspconfig.ui.windows").default_options.border = "rounded"
   end
 
-  M._setup_lsp()
-  M._setup_old_lsp()
+  M.setup_lsp()
+  M.setup_old_lsp()
 end
 
 return M

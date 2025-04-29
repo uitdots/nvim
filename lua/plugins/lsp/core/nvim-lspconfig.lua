@@ -22,7 +22,7 @@ return {
     },
   },
   config = function()
-    require("configs.lsp.lspconfig").defaults()
+    require("configs.lsp.lspconfig").setup()
   end,
   dependencies = {
     "folke/neoconf.nvim",
