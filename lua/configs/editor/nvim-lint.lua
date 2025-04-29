@@ -56,7 +56,7 @@ M._linters_by_ft = {
     "ruff", -- don't use this, use ruff lsp instead
   },
   sql = {
-    "sqlfluff",
+    -- "sqlfluff", -- TODO: choose another way to setup lint for sql later
   },
   typescript = {
     -- "eslint",
