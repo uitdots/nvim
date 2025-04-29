@@ -1,12 +1,13 @@
 local lint = require("lint")
 local is_executable = require("utils.executable").is_executable
 local debounce = require("utils.helpers").debounce
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 
 ---@class nvim_lint_config
 local M = {}
 
 ---@private
-function M._config_linters()
+function M.config_linters()
   lint.linters.pg_sqlfluff = vim.tbl_deep_extend(
     "force",
     ---@diagnostic disable-next-line: param-type-mismatch
@@ -23,9 +24,9 @@ end
 
 ---If this is used, it will not have ability to live reload (we called it, not actually right...)
 ---@private
-function M._filter_linters_by_ft()
-  for filetype, linters in pairs(M._linters_by_ft) do
-    M._linters_by_ft[filetype] = vim.tbl_filter(function(linter)
+function M.filter_linters_by_ft()
+  for filetype, linters in pairs(M.linters_by_ft) do
+    M.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
       if lint.linters[linter] == nil then
         return false
       end
@@ -36,7 +37,7 @@ end
 
 ---@private
 ---@type table<string, string[]>
-M._linters_by_ft = {
+M.linters_by_ft = {
   cpp = {
     "cpplint",
   },
@@ -84,12 +85,13 @@ M._linters_by_ft = {
   },
 }
 
-function M._config_linters_by_ft()
-  lint.linters_by_ft = M._linters_by_ft
+---@private
+function M.config_linters_by_ft()
+  lint.linters_by_ft = M.linters_by_ft
 end
 
 ---@private
-function M._setup_autocommands()
+function M.setup_autocommands()
   vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
     callback = debounce(function()
       require("lint").try_lint(nil, { ignore_errors = true })
@@ -99,11 +101,12 @@ function M._setup_autocommands()
 end
 
 function M.setup()
-  M._config_linters()
-  -- FIXME: Currently use ignore_errors = true to ignore those linter doesn't exist. But we want to filter those first for runtime perf
-  -- M._filter_linters_by_ft()
-  M._config_linters_by_ft()
-  M._setup_autocommands()
+  M.config_linters()
+  if filter_availabled_external then
+    M.filter_linters_by_ft()
+  end
+  M.config_linters_by_ft()
+  M.setup_autocommands()
 end
 
 return M

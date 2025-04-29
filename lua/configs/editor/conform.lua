@@ -144,6 +144,7 @@ M.opts.format_after_save = function(bufnr) -- Async format
   return {}
 end
 
+---@private
 function M.filter_availabled_formatters()
   for filetype, formatters in pairs(M.opts.formatters_by_ft) do
     ---@cast formatters string[]
