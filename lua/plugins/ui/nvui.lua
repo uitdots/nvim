@@ -3,6 +3,11 @@ return {
   {
     "NvChad/NvChad",
     branch = "v2.5",
+    init = function()
+      vim.api.nvim_create_user_command("NvChadMasonInstallAll", function()
+        require("nvchad.mason").install_all()
+      end, { desc = "NvChad Mason Install All" })
+    end,
     keys = {
       {
         "H",
@@ -55,7 +60,7 @@ return {
       {
         "<leader>ft",
         function()
-          require("telescope.themes").themes.themes()
+          require("telescope").extensions.themes.themes()
           -- require("nvchad.themes").open()
         end,
         desc = "Find | Themes",
@@ -85,9 +90,9 @@ return {
       require("base46").load_all_highlights()
     end,
     init = function()
-      vim.api.nvim_create_user_command("NvChadBase46LoadAllHighLights", function()
+      vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
         require("base46").load_all_highlights()
-      end, { desc = "NvChad | Base46 Load All Highlights" })
+      end, { desc = "NvChad | NvChad Load All Highlights" })
     end,
   },
 }
