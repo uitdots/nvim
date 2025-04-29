@@ -65,7 +65,7 @@ M.opts = {
 
 function M.old_lspconfig(server_name)
   local opts = M.opts
-  local require_ok, custom_opts = pcall(require, "configs.lsp." .. server_name)
+  local require_ok, custom_opts = pcall(require, "configs.lsp.configs." .. server_name)
   if require_ok then
     opts = vim.tbl_deep_extend("force", opts, custom_opts)
   end
