@@ -66,9 +66,16 @@ M.nvdash = {
       keys = "<Spc><Spc>",
       cmd = "lua Snacks.picker.files({ hidden = true })",
     },
-    { txt = "  Recent Files", hl = "NvDashButton", keys = "<Spc>fr", cmd = "Snacks.picker.recent()" },
+    { txt = "  Recent Files", hl = "NvDashButton", keys = "<Spc>fr", cmd = "lua Snacks.picker.recent()" },
     { txt = "󰈭  Find Word", hl = "NvDashButton", keys = "<Spc>fw", cmd = "lua Snacks.picker.grep()" },
-    { txt = "󱥚  Themes", hl = "NvDashButton", keys = "<Spc>ft", cmd = 'lua require("nvchad.themes").open()' },
+    {
+      txt = "󱥚  Themes",
+      hl = "NvDashButton",
+      keys = "<Spc>ft",
+      cmd = function()
+        require("telescope").extensions.themes.themes()
+      end,
+    },
     { txt = "  Cheat Sheet", hl = "NvDashButton", keys = "<Spc>nc", cmd = "NvCheatsheet" },
     { txt = "─", no_gap = true, rep = true },
     {
