@@ -48,6 +48,7 @@ M.ui = {
       -- "treeOffset",
       "buffers",
       "tabs",
+      "btns",
     },
     modules = require("configs.ui.tabufline"),
   },
