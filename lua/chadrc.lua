@@ -72,9 +72,7 @@ M.nvdash = {
       txt = "󱥚  Themes",
       hl = "NvDashButton",
       keys = "<Spc>ft",
-      cmd = function()
-        require("telescope").extensions.themes.themes()
-      end,
+      cmd = 'lua require("telescope").extensions.themes.themes()',
     },
     { txt = "  Cheat Sheet", hl = "NvDashButton", keys = "<Spc>nc", cmd = "NvCheatsheet" },
     { txt = "─", no_gap = true, rep = true },
