@@ -202,6 +202,7 @@ M.base46 = {
     "defaults",
     "devicons",
     "diffview",
+    "flash",
     "git",
     "git-conflict",
     "grug_far",
