@@ -1,7 +1,5 @@
 ---@module 'which-key'
 
-local uitvim_options = require("uitvim").options
-
 ---@type NvPluginSpec
 return {
   "folke/which-key.nvim",
@@ -11,7 +9,6 @@ return {
     preset = "modern",
     win = {
       no_overlap = false,
-      border = uitvim_options.border_enabled and "rounded" or "none",
     },
     delay = 500,
     spec = {

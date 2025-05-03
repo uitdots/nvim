@@ -1,5 +1,3 @@
-local uitvim_options = require("uitvim").options
-
 ---@type NvPluginSpec
 -- NOTE: This is temporary because mason is unmtained
 return {
@@ -33,7 +31,6 @@ return {
     local _opts = {
       PATH = "skip",
       ui = {
-        border = uitvim_options.border_enabled and "rounded" or "none",
         check_outdated_packages_on_open = true,
         backdrop = 100,
       },

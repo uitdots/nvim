@@ -1,18 +1,12 @@
-local uitvim_options = require("uitvim").options
-
 ---@type NvPluginSpec
 return {
   "bennypowers/nvim-regexplainer",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    "MunifTanjim/nui.nvim",
-  },
   opts = {
     popup = {
       enter = true,
       focusable = true,
       border = {
-        style = uitvim_options.border_enabled and "rounded" or "single",
+        style = vim.o.winborder, -- it use nui.nvim so...
       },
     },
   },
@@ -27,5 +21,9 @@ return {
       desc = "Utils | Toggle Regexplainer",
       silent = true,
     },
+  },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    "MunifTanjim/nui.nvim",
   },
 }
