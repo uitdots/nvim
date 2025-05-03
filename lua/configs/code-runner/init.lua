@@ -16,7 +16,10 @@ M.substitute = function(cmd)
   return cmd
 end
 
----@param open_term fun(cmd:string)
+---@private
+M.term_cmd = "bot 20 new | term "
+
+---@param open_term fun(cmd:string)?
 function M.run(open_term)
   local supported, cmds = pcall(function()
     return require("configs.code-runner." .. vim.bo.ft)
@@ -24,11 +27,19 @@ function M.run(open_term)
 
   if not supported then
     vim.notify("Unsupported filetype for code runner", vim.log.levels.ERROR, { title = "Code Runner" })
+    return
   end
 
   ---@cast cmds table<string,string>
   local choices = vim.tbl_keys(cmds)
   ---@cast choices string[]
+
+  if open_term == nil then
+    open_term = function(cmd)
+      vim.cmd(M.term_cmd .. cmd)
+    end
+  end
+
   if #choices == 1 then
     local cmd = cmds[choices[1]]
     local parsed_cmd = M.substitute(cmd)

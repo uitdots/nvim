@@ -76,7 +76,11 @@ map("v", "p", '"_dP', { desc = "General | Better Paste", silent = true })
 map("v", "<", "<gv", { desc = "General | Indent backward", silent = true })
 map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
--- Lazy
+-- Terminal
+map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
+map("n", "<leader>tr", require("configs.code-runner").run, { desc = "Terminal | Code Runner", silent = true })
+
+-- Plugins
 map("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = false })
 map("n", "<leader>pC", "<cmd>Lazy check<cr>", { desc = "Lazy | Check", silent = true })
 map("n", "<leader>pd", "<cmd>Lazy debug<cr>", { desc = "Lazy | Debug", silent = true })

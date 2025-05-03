@@ -73,22 +73,23 @@ return {
         desc = "Terminal | Float New",
         silent = true,
       },
-      {
-        "<leader>tr",
-        function()
-          local open_term = function(cmd)
-            require("nvchad.term").runner({
-              pos = "float",
-              cmd = cmd,
-              id = "float-code-runner",
-              clear_cmd = false,
-            })
-          end
-          require("configs.code-runner").run(open_term)
-        end,
-        desc = "Terminal | Code Runner",
-        silent = true,
-      },
+      -- Use builtin runner, because this is suck
+      -- {
+      --   "<leader>tr",
+      --   function()
+      --     local open_term = function(cmd)
+      --       require("nvchad.term").runner({
+      --         pos = "sp",
+      --         cmd = cmd,
+      --         id = "code-runner",
+      --         clear_cmd = false,
+      --       })
+      --     end
+      --     require("configs.code-runner").run(open_term)
+      --   end,
+      --   desc = "Terminal | Code Runner",
+      --   silent = true,
+      -- },
     },
   },
 }
