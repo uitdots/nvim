@@ -112,10 +112,6 @@ function M.setup()
     virtual_lines = false,
   })
 
-  if uitvim_options.border_enabled then
-    require("lspconfig.ui.windows").default_options.border = "rounded"
-  end
-
   M.setup_lsp()
   M.setup_old_lsp()
 end

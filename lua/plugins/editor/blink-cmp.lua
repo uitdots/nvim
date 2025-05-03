@@ -88,13 +88,6 @@ return {
           "fallback",
         },
       },
-      completion = {
-        documentation = {
-          window = {
-            border = uitvim_options.border_enabled and "rounded" or "none",
-          },
-        },
-      },
       sources = {
         default = {
           "lsp",
@@ -113,8 +106,11 @@ return {
           },
         },
       },
-      signature = {
-        enabled = false,
+      signature = { -- use blink's signature beside of noice. Triggered by <C-k>
+        enabled = true,
+        trigger = {
+          show_on_insert = false,
+        },
       },
     },
     opts_extend = {
@@ -122,6 +118,7 @@ return {
     },
     ---@param opts blink.cmp.Config
     config = function(_, opts)
+      opts.completion = opts.completion or {}
       opts.completion.menu = require("nvchad.blink").menu
       require("blink.cmp").setup(opts)
     end,

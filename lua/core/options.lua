@@ -2,6 +2,7 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 local is_executable = require("utils.executable").is_executable
+local uitvim_options = require("uitvim").options
 
 g.mapleader = " "
 g.maplocalleader = "\\"
@@ -51,6 +52,7 @@ o.cmdheight = 0 -- height of the command line
 o.helpheight = 10 -- height of the help window
 o.shortmess = "AcqFI"
 o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
+o.winborder = uitvim_options.border_enabled and "rounded" or "none"
 
 -- Uncomment these options to enable pwsh for Windows
 -- o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
