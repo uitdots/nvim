@@ -1,9 +1,6 @@
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
-  --@module 'flash'
-  --@type Flash.Config
-  -- This opts doesn't have partial type, so...
   opts = {},
   keys = {
     {
