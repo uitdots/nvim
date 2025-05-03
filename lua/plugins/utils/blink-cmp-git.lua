@@ -1,3 +1,5 @@
+---@module 'blink-cmp'
+
 ---@type NvPluginSpec
 return {
   "saghen/blink.cmp",
@@ -7,11 +9,8 @@ return {
     sources = {
       per_filetype = {
         gitcommit = {
-          "lsp",
-          "path",
-          "snippets",
-          "buffer",
           "git",
+          inherit_defaults = true,
         },
       },
       providers = {
@@ -25,8 +24,12 @@ return {
       },
     },
   },
-  dependencies = {
+  opts_extend = {
+    "sources.per_filetype.gitcommit",
+  },
+  {
     "Kaiser-Yang/blink-cmp-git",
+    ft = "gitcommit",
     dependencies = {
       "nvim-lua/plenary.nvim",
     },

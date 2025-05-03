@@ -1,43 +1,9 @@
+-- TODO: refactor this? split into multiple files
+
 ---@type NvPluginSpec
 return {
   {
     "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      {
-        "tpope/vim-dadbod",
-      },
-      {
-        "kristijanhusak/vim-dadbod-completion",
-        ft = {
-          "sql",
-          "mysql",
-          "plsql",
-        },
-      },
-      {
-        "saghen/blink.cmp",
-        ---@module 'blink.cmp'
-        ---@type blink.cmp.Config
-        opts = {
-          sources = {
-            per_filetype = {
-              sql = {
-                "lsp",
-                "dadbod",
-                "snippets",
-                "buffer",
-              },
-            },
-            providers = {
-              dadbod = {
-                name = "Dadbod",
-                module = "vim_dadbod_completion.blink",
-              },
-            },
-          },
-        },
-      },
-    },
     cmd = {
       "DBUI",
       "DBUIToggle",
@@ -60,6 +26,42 @@ return {
         end,
         desc = "General | Toggle DBUI",
         silent = true,
+      },
+    },
+    dependencies = {
+      {
+        "tpope/vim-dadbod",
+      },
+      {
+        "kristijanhusak/vim-dadbod-completion",
+        ft = {
+          "sql",
+          "mysql",
+          "plsql",
+        },
+      },
+      {
+        "saghen/blink.cmp",
+        ---@module 'blink.cmp'
+        ---@type blink.cmp.Config
+        opts = {
+          sources = {
+            per_filetype = {
+              sql = {
+                "dadbod",
+              },
+            },
+            providers = {
+              dadbod = {
+                name = "Dadbod",
+                module = "vim_dadbod_completion.blink",
+              },
+            },
+          },
+        },
+      },
+      opts_extend = {
+        "sources.per_filetype.sql",
       },
     },
   },

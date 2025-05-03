@@ -27,9 +27,10 @@ return {
     "MasonLog",
   },
   ---@type function:MasonSettings
-  opts = function()
+  ---@param opts MasonSettings?
+  opts = function(_, opts)
     ---@type MasonSettings
-    local opts = {
+    local _opts = {
       PATH = "skip",
       ui = {
         border = uitvim_options.border_enabled and "rounded" or "none",
@@ -41,9 +42,7 @@ return {
         "github:mason-org/mason-registry",
       },
     }
-    vim.tbl_deep_extend("keep", opts, require("nvchad.configs.mason"))
-
-    return opts
+    return vim.tbl_deep_extend("keep", _opts, require("nvchad.configs.mason"), opts or {})
   end,
   -- https://www.lazyvim.org/plugins/lsp#masonnvim-1
   config = function(_, opts)

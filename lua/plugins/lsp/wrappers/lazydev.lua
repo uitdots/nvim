@@ -23,11 +23,8 @@ return {
         sources = {
           per_filetype = {
             lua = {
-              "lsp",
-              "path",
-              "snippets",
-              "buffer",
               "lazydev",
+              inherit_defaults = true,
             },
           },
           providers = {
@@ -40,7 +37,7 @@ return {
         },
       },
       opts_extend = {
-        "sources.default",
+        "sources.per_filetype.lua",
       },
     },
   },
