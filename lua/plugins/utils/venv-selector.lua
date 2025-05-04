@@ -2,12 +2,15 @@
 return {
   "linux-cultist/venv-selector.nvim",
   branch = "regexp",
-  cmd = { "VenvSelect", "VenvSelectCached" },
+  cmd = {
+    "VenvSelect",
+    "VenvSelectCached",
+  },
   keys = {
     {
       "<leader>uv",
       "<cmd>VenvSelect<cr>",
-      desc = "Utils | Select Python venv",
+      desc = "Utils | Select Python Venv",
       ft = "python",
       silent = true,
     },

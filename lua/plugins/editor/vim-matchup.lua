@@ -6,7 +6,7 @@ return {
     "nvim-treesitter/nvim-treesitter",
     opts = {
       matchup = {
-        enable = true, -- mandatory, false will disable the whole extension
+        enable = true,
         enable_quotes = true,
       },
     },
@@ -16,6 +16,8 @@ return {
     "BufNewFile",
   },
   init = function()
-    vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    vim.g.matchup_matchparen_offscreen = {
+      method = "", ---@type "status" | "popup" | "status_manual" | "scrolloff" | ""
+    }
   end,
 }

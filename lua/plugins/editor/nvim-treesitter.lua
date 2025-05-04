@@ -18,6 +18,8 @@ return {
     "TSToggle",
     "TSBufToggle",
   },
+  ---@type TSConfig
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
     ensure_installed = {
       "bash",
@@ -37,7 +39,6 @@ return {
       "markdown_inline",
       "powershell",
       "python",
-      "regex",
       "scss",
       "sql",
       "tsx",
@@ -51,9 +52,6 @@ return {
       enable = true,
       disable = {
         "markdown", -- indentation at bullet points is worse
-        -- "javascript", -- some wrong indentation when using `o`
-        -- "typescript",
-        "yaml", -- wrong indentation in list continuation
         "dart", -- dart delay: https://github.com/NvChad/NvChad/issues/2237#issuecomment-1653019941
       },
     },
@@ -75,6 +73,9 @@ return {
         scope_incremental = "gss",
       },
     },
+  },
+  opts_extend = {
+    "ensure_installed",
   },
   init = function()
     vim.treesitter.language.register("bash", "dotenv")

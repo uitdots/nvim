@@ -23,7 +23,17 @@ return {
     },
   },
   dependencies = {
-    "nvim-treesitter/nvim-treesitter",
     "MunifTanjim/nui.nvim",
+    {
+      "nvim-treesitter/nvim-treesitter",
+      opts = {
+        ensure_installed = {
+          "regex",
+        },
+      },
+      opts_extend = {
+        "ensure_installed",
+      },
+    },
   },
 }
