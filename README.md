@@ -15,7 +15,7 @@
 
 ## Note
 
-If NvChad UI's color is broken, use the command: `:NvChadBase46LoadAllHighLights`
+If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
 
 ## References
 
