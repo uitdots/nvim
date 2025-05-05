@@ -15,8 +15,11 @@ return {
         sources = {
           per_filetype = {
             gitcommit = {
+              "lsp",
+              "path",
+              "snippets",
+              "buffer",
               "git",
-              inherit_defaults = true,
             },
           },
           providers = {

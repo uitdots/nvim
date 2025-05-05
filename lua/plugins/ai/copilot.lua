@@ -39,6 +39,11 @@ return {
         default = {
           "copilot",
         },
+        -- NOTE: If you custom blink source for more per_filetype, you have to declare here, and below "opts_extend"
+        per_filetype = {
+          lua = { "copilot" },
+          sql = { "copilot" },
+        },
         providers = {
           copilot = {
             name = "copilot",
@@ -51,6 +56,8 @@ return {
     },
     opts_extend = {
       "sources.default",
+      "sources.per_filetype.lua",
+      "sources.per_filetype.sql",
     },
     dependencies = {
       "fang2hou/blink-copilot",

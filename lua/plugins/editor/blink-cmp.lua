@@ -1,5 +1,4 @@
 -- NOTE: https://github.com/NvChad/ui/tree/v3.0/lua/nvchad/blink
-local uitvim_options = require("uitvim").options
 
 ---@module 'blink.cmp'
 

@@ -4,8 +4,14 @@ return {
   optional = true,
   opts = {
     sources = {
-      default = {
-        "sql",
+      per_filetype = {
+        go = {
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
+          "sql",
+        },
       },
       providers = {
         sql = {
