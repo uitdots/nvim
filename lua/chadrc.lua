@@ -5,7 +5,9 @@ local nvdash_config = require("configs.ui.nvdash")
 local M = {}
 
 M.ui = {
-  telescope = { style = uitvim_options.border_enabled and "bordered" or "borderless" },
+  telescope = {
+    style = uitvim_options.border_enabled and "bordered" or "borderless",
+  },
   cmp = {
     lspkind_text = true,
     style = "default",
@@ -192,12 +194,10 @@ M.base46 = {
   theme = "catppuccin",
   transparency = false,
   theme_toggle = { "catppuccin", "one_light" },
-  -- TODO: Check this later to remove
   integrations = {
     "avante",
     "blankline",
     "blink",
-    "codeactionmenu",
     "dap",
     "defaults",
     "devicons",
