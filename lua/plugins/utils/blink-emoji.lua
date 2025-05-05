@@ -8,13 +8,28 @@ return {
     ---@type blink.cmp.Config
     opts = {
       sources = {
-        default = {
-          "emoji",
-        },
         per_filetype = {
-          markdown = { "emoji" },
-          gitcommit = { "emoji" },
-          latex = { "emoji" },
+          markdown = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+            "emoji",
+          },
+          gitcommit = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+            "emoji",
+          },
+          latex = {
+            "lsp",
+            "path",
+            "snippets",
+            "buffer",
+            "emoji",
+          },
         },
         providers = {
           emoji = {
@@ -27,7 +42,6 @@ return {
       },
     },
     opts_extend = {
-      "sources.default",
       "sources.per_filetype.markdown",
       "sources.per_filetype.gitcommit",
       "sources.per_filetype.latex",

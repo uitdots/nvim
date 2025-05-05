@@ -23,9 +23,10 @@ return {
             per_filetype = {
               sql = {
                 "lsp",
-                "dadbod",
+                "path",
                 "snippets",
                 "buffer",
+                "dadbod",
               },
             },
             providers = {

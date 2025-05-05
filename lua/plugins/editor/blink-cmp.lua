@@ -112,9 +112,6 @@ return {
         },
       },
     },
-    opts_extend = {
-      "sources.default",
-    },
     ---@param opts blink.cmp.Config
     config = function(_, opts)
       opts.completion = opts.completion or {}

@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   "OXY2DEV/markview.nvim",
-  lazy = false, -- Author require this load before nvim-treesitter
+  lazy = true, -- Should be lazy to lazyloading blink.cmp
   ---@module 'markview'
   ---@type mkv.config
   opts = {

@@ -22,9 +22,6 @@ return {
       },
     },
   },
-  opts_extend = {
-    "sources.default",
-  },
   dependencies = {
     "ray-x/cmp-sql",
     enabled = true,
