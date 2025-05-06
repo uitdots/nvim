@@ -4,7 +4,7 @@ return {
   cmd = "GrugFar",
   keys = {
     {
-      "<leader>fR",
+      "<leader>f<C-r>",
       "<cmd>GrugFar<cr>",
       desc = "Find | And Replace",
       silent = true,

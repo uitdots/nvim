@@ -237,6 +237,13 @@ return {
       desc = "Find | Recent",
     },
     {
+      "<leader>fR",
+      function()
+        Snacks.picker.resume()
+      end,
+      desc = "Find | Resume",
+    },
+    {
       "<leader>fW",
       function()
         Snacks.picker.grep_word()
