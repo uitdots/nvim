@@ -1,3 +1,5 @@
+local uitvim_options = require("uitvim").options
+
 ---@type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
@@ -85,23 +87,10 @@ return {
     },
     view = {
       cursorline = true,
-      float = {
-        enable = false,
-        quit_on_focus_loss = true,
-        open_win_config = {
-          relative = "editor",
-          border = "rounded",
-          width = 30,
-          height = 30,
-          row = 1,
-          col = 1,
-        },
-      },
       number = true,
       relativenumber = true,
       width = 40,
     },
-
     renderer = {
       highlight_git = false,
       root_folder_label = ":~:s?$?",
@@ -111,6 +100,13 @@ return {
           folder = true,
           folder_arrow = true,
           git = true,
+        },
+      },
+    },
+    actions = {
+      file_popup = {
+        open_win_config = {
+          border = uitvim_options.border_enabled and "rounded" or "none",
         },
       },
     },
