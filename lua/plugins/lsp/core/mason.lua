@@ -31,7 +31,7 @@ return {
     local _opts = {
       PATH = "skip",
       ui = {
-        check_outdated_packages_on_open = true,
+        check_outdated_packages_on_open = false,
         backdrop = 100,
       },
       registries = {
@@ -41,8 +41,8 @@ return {
     }
     return vim.tbl_deep_extend("keep", _opts, require("nvchad.configs.mason"), opts or {})
   end,
-  -- https://www.lazyvim.org/plugins/lsp#masonnvim-1
   config = function(_, opts)
+    -- https://www.lazyvim.org/plugins/lsp#masonnvim-1
     require("mason").setup(opts)
     local mr = require("mason-registry")
     mr:on("package:install:success", function()
