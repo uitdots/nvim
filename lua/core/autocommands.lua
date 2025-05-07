@@ -95,6 +95,7 @@ autocmd("FileType", {
     "cpp",
     "cs",
     "py",
+    "kotlin",
   },
   command = "set tabstop=4 shiftwidth=4 expandtab",
   group = general,
