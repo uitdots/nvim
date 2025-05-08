@@ -1,3 +1,5 @@
+local is_windows = require("utils.os").is_windows
+
 ---@type NvPluginSpec
 return {
   "L3MON4D3/LuaSnip",
@@ -6,8 +8,7 @@ return {
     "rafamadriz/friendly-snippets",
   },
   version = "v2.*",
-  build = not vim.g.is_windows and "make install_jsregexp"
-    or "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c",
+  build = not is_windows and "make install_jsregexp" or "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c",
   config = function(_, opts)
     require("luasnip").config.set_config(opts)
 

@@ -1,7 +1,9 @@
+local is_windows = require("utils.os").is_windows
+
 ---@type NvPluginSpec
 return {
   "lambdalisue/vim-suda",
-  cond = not vim.is_windows,
+  cond = not is_windows,
   cmd = {
     "SudaWrite",
     "SudaRead",

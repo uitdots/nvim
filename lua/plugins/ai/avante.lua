@@ -1,3 +1,5 @@
+local is_windows = require("utils.os").is_windows
+
 ---@type NvPluginSpec
 return {
   "yetone/avante.nvim",
@@ -32,7 +34,7 @@ return {
       silent = true,
     },
   },
-  build = vim.is_windows and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or "make",
+  build = is_windows and "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" or "make",
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     "stevearc/dressing.nvim",

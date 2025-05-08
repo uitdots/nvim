@@ -1,8 +1,10 @@
+local is_windows = require("utils.os").is_windows
+
 ---@type NvPluginSpec
 return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",
-  enabled = not vim.g.is_windows,
+  enabled = not is_windows,
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "luarocks/hererocks",
