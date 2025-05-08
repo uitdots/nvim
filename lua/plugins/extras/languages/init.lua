@@ -15,6 +15,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.github",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.go",
     enabled = false,
   },
@@ -41,6 +45,10 @@ return {
   {
     import = "plugins.extras.languages.kotlin",
     enabled = true,
+  },
+  {
+    import = "plugins.extras.languages.latex",
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.lua",

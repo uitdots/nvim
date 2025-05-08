@@ -1,5 +1,7 @@
 local M = {}
 
+---TODO: Watchout, if mason has setup, declaring like this may setup again (twice)
+
 ---New LSP setup. If that lsp isn't in your $PATH, no problem, it won't break. If installed by Mason, yes it will be setup.
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
