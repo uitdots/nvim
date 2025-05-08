@@ -33,10 +33,6 @@ return {
         check_outdated_packages_on_open = false,
         backdrop = 100,
       },
-      registries = {
-        "github:nvim-java/mason-registry",
-        "github:mason-org/mason-registry",
-      },
     }
     return vim.tbl_deep_extend("keep", _opts, require("nvchad.configs.mason"), opts or {})
   end,

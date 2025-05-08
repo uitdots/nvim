@@ -3,8 +3,12 @@ local is_executable = require("utils.executable").is_executable
 ---@type NvPluginSpec
 return {
   {
-    "JavaHello/spring-boot.nvim",
+    "nvim-java/nvim-java",
     cond = is_executable("jdtls"),
+  },
+  {
+    "JavaHello/spring-boot.nvim",
+    cond = vim.fn.glob("~/.vscode/extensions/vmware.vscode-spring-boot*") ~= "",
     ft = "java",
     opts = function()
       local opts = {
@@ -15,11 +19,15 @@ return {
       return opts
     end,
     dependencies = {
-      "mfussenegger/nvim-jdtls",
-      {
-        "ibhagwan/fzf-lua",
-        optional = true,
-      },
+      "nvim-java/nvim-java",
+      optional = true,
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    dependencies = {
+      "nvim-java/nvim-java",
+      optional = true,
     },
   },
 }
