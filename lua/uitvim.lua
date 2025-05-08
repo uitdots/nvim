@@ -15,8 +15,6 @@ M.lsps = {
 ---@type string[]
 M.old_lsps = {
   "texlab",
-  "eslint",
-  "gh_actions_ls",
 }
 
 ---Useful for anyone who install using Mason but doesn't want to set them up.

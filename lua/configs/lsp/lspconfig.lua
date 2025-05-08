@@ -3,7 +3,6 @@
 local map = vim.keymap.set
 local is_executable = require("utils.executable").is_executable
 local lspconfig = require("lspconfig")
-local uitvim_options = require("uitvim").options
 local telescope_builtin = require("telescope.builtin")
 local lsp_action = require("utils.lsp").action
 local filter_availabled_external = require("uitvim").options.filter_availabled_external
