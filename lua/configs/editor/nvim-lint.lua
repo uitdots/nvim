@@ -22,19 +22,6 @@ function M.config_linters()
   )
 end
 
----If this is used, it will not have ability to live reload (we called it, not actually right...)
----@private
-function M.filter_linters_by_ft()
-  for filetype, linters in pairs(M.linters_by_ft) do
-    M.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
-      if lint.linters[linter] == nil then
-        return false
-      end
-      return is_executable(lint.linters[linter].cmd)
-    end, linters)
-  end
-end
-
 ---@private
 ---@type table<string, string[]>
 M.linters_by_ft = {
@@ -85,6 +72,33 @@ M.linters_by_ft = {
   },
 }
 
+---If this is used, it will not have ability to live reload (we called it, not actually right...)
+---@private
+function M.filter_linters_by_ft()
+  for filetype, linters in pairs(M.linters_by_ft) do
+    M.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
+      if lint.linters[linter] == nil then
+        return false
+      end
+      return is_executable(lint.linters[linter].cmd)
+    end, linters)
+  end
+end
+
+---@private
+function M.extend_global_linters()
+  if vim.g.nvimlint_linters_by_ft then
+    for k, v in pairs(vim.g.nvimlint_linters_by_ft) do
+      M.linters_by_ft[k] = vim.tbl_deep_extend("force", M.linters_by_ft[k] or {}, v)
+    end
+  end
+  if vim.g.nvimlint_linters then
+    for k, v in pairs(vim.g.nvimlint_linters) do
+      lint.linters[k] = vim.tbl_deep_extend("force", lint.linters()[k], v)
+    end
+  end
+end
+
 ---@private
 function M.config_linters_by_ft()
   lint.linters_by_ft = M.linters_by_ft
@@ -102,6 +116,7 @@ end
 
 function M.setup()
   M.config_linters()
+  M.extend_global_linters()
   if filter_availabled_external then
     M.filter_linters_by_ft()
   end

@@ -156,7 +156,17 @@ function M.filter_availabled_formatters()
   end
 end
 
+---@private
+function M.extend_global_formatters()
+  if vim.g.conform_formatters then
+    for k, v in pairs(vim.g.conform_formatters) do
+      M.opts.formatters[k] = vim.tbl_deep_extend("force", M.opts.formatters[k] or {}, v)
+    end
+  end
+end
+
 function M.setup()
+  M.extend_global_formatters()
   if filter_availabled_external then
     M.filter_availabled_formatters()
   end
