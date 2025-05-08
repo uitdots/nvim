@@ -11,6 +11,10 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.env",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.dart",
     enabled = true,
   },

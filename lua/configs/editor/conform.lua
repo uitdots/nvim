@@ -160,6 +160,7 @@ end
 function M.extend_global_formatters()
   if vim.g.conform_formatters then
     for k, v in pairs(vim.g.conform_formatters) do
+      ---@diagnostic disable-next-line: param-type-mismatch due to
       M.opts.formatters[k] = vim.tbl_deep_extend("force", M.opts.formatters[k] or {}, v)
     end
   end
