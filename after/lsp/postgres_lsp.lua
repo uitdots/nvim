@@ -1,5 +1,5 @@
 return {
   filetypes = {
-    "postgresql",
+    "sql.postgresql",
   },
 }

@@ -4,16 +4,9 @@ local M = {}
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
 M.lsps = {
-  "postgres_lsp",
-  "lua_ls",
   "clangd",
+  "lua_ls",
   "pyright",
-}
-
----Like above, but for old LSP setup method.
----This option will be removed in the future when nvim-lspconfig support all lsp in new way
----@type string[]
-M.old_lsps = {
   "texlab",
 }
 

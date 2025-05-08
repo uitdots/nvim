@@ -101,7 +101,7 @@ M.nvdash = {
 }
 
 M.mason = {
-  cmd = true,
+  cmd = false,
   pkgs = {
     -- Lua
     "lua-language-server",
