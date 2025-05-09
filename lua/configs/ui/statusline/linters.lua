@@ -17,9 +17,7 @@ function M.set_status()
   end
   local lint_ok, lint
   if M.lint == nil then
-    lint_ok, lint = pcall(function()
-      return require("lint")
-    end)
+    lint_ok, lint = pcall(require, "lint")
     if not lint_ok then
       M.lint = false
       return

@@ -17,15 +17,13 @@ function M.set_status()
   end
   local conform_ok, conform
   if M.conform == nil then
-     conform_ok, conform = pcall(function ()
-      return require("conform")
-    end)
+    conform_ok, conform = pcall(require, "conform")
     if not conform_ok then
       M.conform = false
       return
     end
     M.conform = conform
-    else
+  else
     conform = M.conform
   end
 
