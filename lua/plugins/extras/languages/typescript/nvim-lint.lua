@@ -2,6 +2,8 @@
 return {
   "mfussenegger/nvim-lint",
   optional = true,
+  -- Because we should use eslint lsp :P
+  --[[
   opts = function()
     local lint = require("lint")
 
@@ -13,4 +15,5 @@ return {
       }
     end
   end,
+  ]]
 }
