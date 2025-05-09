@@ -72,7 +72,7 @@ function M.get_child_folders(path, opts)
     if type == "directory" then
       local full_path = path .. "/" .. name
       local stat = vim.uv.fs_stat(full_path)
-      if stat and (follow_symlink and stat.type == "link" or true) then -- TODO: Is this logic bruh?
+      if stat and (follow_symlink or not stat.type == "link") then
         table.insert(folders, full_path)
       end
     end
