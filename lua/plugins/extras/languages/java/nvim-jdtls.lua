@@ -29,12 +29,12 @@ return {
       table.insert(bundles, spring_boot_bundle)
     end
 
-    local java_debug_bundle = vim.fn.globpath("$MASON/share/java-debug-adapter", "*.jar", true)
+    local java_debug_bundle = vim.fn.glob("$MASON/share/java-debug-adapter/*.jar")
     if java_debug_bundle ~= "" then
       table.insert(bundles, java_debug_bundle)
     end
 
-    local lombok_bundle = vim.fn.globpath("$MASON/share/lombok-nightly", "*.jar", true)
+    local lombok_bundle = vim.fn.glob("$MASON/share/lombok-nightly/*.jar")
     if lombok_bundle ~= "" then
       table.insert(bundles, lombok_bundle)
     end
@@ -110,6 +110,7 @@ return {
   dependencies = {
     {
       "mason-org/mason.nvim",
+      optional = true,
       opts = function(_, opts)
         opts = opts or {}
         if opts.registries ~= nil then
