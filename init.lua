@@ -23,6 +23,7 @@ require("lazy").setup({
 }, lazy_config)
 
 require("nvchad.autocmds")
+require("core.highlight")
 require("core.filetypes")
 require("core.mappings")
 require("core.commands")
