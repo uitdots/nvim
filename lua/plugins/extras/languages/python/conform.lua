@@ -4,6 +4,14 @@ return {
   ---@module 'conform'
   ---@type conform.setupOpts
   opts = {
+    formatters = {
+      ruff_fix = {
+        append_args = {
+          "--select=I",
+          -- "--ignore=F401", -- Unused import
+        },
+      },
+    },
     formatters_by_ft = {
       python = {
         "ruff_fix",
