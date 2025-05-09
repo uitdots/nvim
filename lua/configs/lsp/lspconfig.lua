@@ -62,6 +62,8 @@ function M.setup()
     virtual_text = false,
     virtual_lines = false,
   })
+
+  vim.lsp.config("*", M.opts)
 end
 
 return M
