@@ -28,8 +28,9 @@ function M.extend_global_formatters(opts)
   end
 end
 
----@param opts conform.setupOpts
+---@param opts? conform.setupOpts
 function M.setup(opts)
+  opts = opts or {}
   M.extend_global_formatters(opts)
   if filter_availabled_external then
     M.filter_availabled_formatters(opts)
