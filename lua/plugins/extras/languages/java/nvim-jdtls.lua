@@ -17,7 +17,7 @@ return {
       config_dir,
     }
     -- TODO: Add lombok later bruh
-    -- require("mason-registry").get_package("jdtls")
+    require("mason-registry").get_package("jdtls")
 
     local opts = {
       cmd = cmd,
@@ -36,6 +36,7 @@ return {
       },
       capabilities = require("configs.lsp.nvim-lspconfig").capabilities,
       on_attach = require("configs.lsp.nvim-lspconfig").on_attach,
+      on_init = require("configs.lsp.nvim-lspconfig").on_init,
     }
 
     return opts
