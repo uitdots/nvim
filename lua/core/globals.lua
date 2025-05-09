@@ -15,13 +15,4 @@ g.loaded_ruby_provider = 0
 
 g.autoformat_enabled = uitvim_options.autoformat_enabled
 
-g.markdown_filetypes = {
-  "Avante",
-  "markdown",
-  "norg",
-  "org",
-  "rmd",
-  "vimwiki",
-}
-
 vim.lsp.inlay_hint.enable(uitvim_options.inlayhint_enabled)

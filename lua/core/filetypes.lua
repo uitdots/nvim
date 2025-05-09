@@ -1,3 +1,4 @@
+-- TODO: move this to lang setup
 vim.filetype.add({
   extension = {
     ["templ"] = "templ",

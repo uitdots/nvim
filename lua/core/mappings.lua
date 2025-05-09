@@ -5,6 +5,7 @@ map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", sil
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
 map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
 
+-- Options
 map("n", "<leader>ol", function()
   vim.o.number = not vim.o.number
 end, { desc = "Options | Toggle Line Number", silent = true })
@@ -38,12 +39,12 @@ map("n", "<leader>ow", function()
   vim.wo.wrap = not vim.wo.wrap
 end, { desc = "Options | Toggle Wrap", silent = true })
 
+-- Navigation
 map({ "n", "v" }, "<C-j>", "<C-w>j", { desc = "General | Go to upper window", silent = true })
 map({ "n", "v" }, "<C-k>", "<C-w>k", { desc = "General | Go to lower window", silent = true })
 map({ "n", "v" }, "<C-h>", "<C-w>h", { desc = "General | Go to left window", silent = true })
 map({ "n", "v" }, "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
 
--- Navigation
 for i = 1, 9, 1 do
   map("n", string.format("<M-%s>", i), function()
     vim.api.nvim_set_current_buf(vim.t.bufs[i])
@@ -75,6 +76,11 @@ map("n", "<Down>", "<cmd>tabclose<CR>", { desc = "General | Close tab", silent =
 map("v", "p", '"_dP', { desc = "General | Better Paste", silent = true })
 map("v", "<", "<gv", { desc = "General | Indent backward", silent = true })
 map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
+
+-- LSP
+map("n", "<leader>lh", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { desc = "LSP | Toggle InlayHint", silent = true })
 
 -- Terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })

@@ -1,16 +1,11 @@
----@module 'snacks'
-
 local map = vim.keymap.set
-local is_executable = require("utils.executable").is_executable
-local lspconfig = require("lspconfig")
-local telescope_builtin = require("telescope.builtin")
-local lsp_action = require("utils.lsp").action
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
 
 local M = {}
 
 ---@private
-function M._keymaps(_, bufnr)
+function M.keymaps(_, bufnr)
+  local telescope_builtin = require("telescope.builtin")
+  local lsp_action = require("utils.lsp").action
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
@@ -39,11 +34,7 @@ function M._keymaps(_, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  M._keymaps(client, bufnr)
-
-  pcall(function()
-    require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-  end)
+  M.keymaps(client, bufnr)
 end
 
 M.on_init = require("nvchad.configs.lspconfig").on_init
@@ -64,44 +55,6 @@ M.opts = {
   on_attach = M.on_attach,
 }
 
----@private
-function M.old_lspconfig(server_name)
-  local opts = M.opts
-  local require_ok, custom_opts = pcall(require, "configs.lsp.configs." .. server_name)
-  if require_ok then
-    opts = vim.tbl_deep_extend("force", opts, custom_opts)
-  end
-  lspconfig[server_name].setup(opts)
-end
-
----@private
----This will be removed when neovim lspconfig support for all lsps
-function M.setup_old_lsp()
-  local server_names = require("uitvim").old_lsps
-  for _, server_name in pairs(server_names) do
-    if
-      filter_availabled_external == false
-      or is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1])
-    then
-      M.old_lspconfig(server_name)
-    end
-  end
-end
-
----@private
-function M.setup_lsp()
-  local server_names = require("uitvim").lsps
-  for _, server_name in pairs(server_names) do
-    if
-      filter_availabled_external == false
-      or is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1])
-    then
-      vim.lsp.config(server_name, M.opts)
-      vim.lsp.enable(server_name)
-    end
-  end
-end
-
 function M.setup()
   require("nvchad.lsp").diagnostic_config()
 
@@ -109,9 +62,6 @@ function M.setup()
     virtual_text = false,
     virtual_lines = false,
   })
-
-  M.setup_lsp()
-  M.setup_old_lsp()
 end
 
 return M

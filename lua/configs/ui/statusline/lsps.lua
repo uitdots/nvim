@@ -19,8 +19,9 @@ M.current_bufnr = nil
 ---@type string
 M.status = ""
 
+---@private
 ---@param bufnr number?
-function M._set_status(bufnr)
+function M.set_status(bufnr)
   bufnr = bufnr or vim.api.nvim_get_current_buf()
   local lsps = vim.lsp.get_clients({ bufnr = bufnr })
 
@@ -41,19 +42,18 @@ function M._set_status(bufnr)
   M.status = "%#St_gitIcons# " .. table.concat(clients, ", ") .. " "
 end
 
-function M._setup_autocmds()
+function M.setup_autocmds()
   vim.api.nvim_create_autocmd({ "LspAttach", "LspDetach" }, {
     pattern = "*",
     callback = function()
-      M._set_status()
+      M.set_status()
     end,
     group = vim.api.nvim_create_augroup("LspStatusLineAttachDetach", {}),
   })
 
   vim.api.nvim_create_autocmd({ "VimResized" }, {
     pattern = "*",
-    callback = debounce(M._set_status, 500),
-    500,
+    callback = debounce(M.set_status, 500),
     group = vim.api.nvim_create_augroup("LspStatusLineVimResize", {}),
   })
 end
@@ -62,7 +62,7 @@ function M.render()
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
-    M._set_status(bufnr)
+    M.set_status(bufnr)
   end
 
   return M.status

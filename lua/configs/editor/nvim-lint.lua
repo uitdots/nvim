@@ -6,81 +6,17 @@ local filter_availabled_external = require("uitvim").options.filter_availabled_e
 ---@class nvim_lint_config
 local M = {}
 
----@private
-function M.config_linters()
-  lint.linters.pg_sqlfluff = vim.tbl_deep_extend(
-    "force",
-    ---@diagnostic disable-next-line: param-type-mismatch
-    lint.linters.sqlfluff,
-    {
-      args = {
-        "lint",
-        "--format=json",
-        "--dialect=postgres",
-      },
-    }
-  )
-end
-
----@private
----@type table<string, string[]>
-M.linters_by_ft = {
-  cpp = {
-    "cpplint",
-  },
-  gitcommit = {
-    "commitlint",
-  },
-  javascript = {
-    -- "eslint",
-  },
-  javascriptreact = {
-    -- "eslint",
-  },
-  markdown = {
-    "markdownlint",
-  },
-  python = {
-    "ruff", -- don't use this, use ruff lsp instead
-  },
-  sql = {
-    -- "sqlfluff", -- TODO: choose another way to setup lint for sql later
-  },
-  typescript = {
-    -- "eslint",
-  },
-  typescriptreact = {
-    -- "eslint",
-  },
-  bash = {
-    "shellcheck",
-  },
-  github = {
-    "actionlint",
-  },
-  -- latex = {
-  --   "vale",
-  -- },
-  postgresql = {
-    "pg_sqlfluff",
-  },
-  sh = {
-    "shellcheck",
-  },
-  ["*"] = {
-    "codespell",
-  },
-}
-
 ---If this is used, it will not have ability to live reload (we called it, not actually right...)
 ---@private
 function M.filter_linters_by_ft()
-  for filetype, linters in pairs(M.linters_by_ft) do
-    M.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
-      if lint.linters[linter] == nil then
-        return false
+  for filetype, linters in pairs(lint.linters_by_ft or {}) do
+    lint.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
+      local cmd = lint.linters[linter].cmd
+      -- This because nvim lint has some..., but seem that string is more used than func so prefer string first
+      if type(cmd) == "string" then
+        return is_executable(lint.linters[linter].cmd)
       end
-      return is_executable(lint.linters[linter].cmd)
+      return is_executable(lint.linters[linter].cmd())
     end, linters)
   end
 end
@@ -89,7 +25,7 @@ end
 function M.extend_global_linters()
   if vim.g.nvimlint_linters_by_ft then
     for k, v in pairs(vim.g.nvimlint_linters_by_ft) do
-      M.linters_by_ft[k] = vim.tbl_deep_extend("force", M.linters_by_ft[k] or {}, v)
+      lint.linters_by_ft[k] = vim.tbl_deep_extend("force", lint.linters_by_ft[k] or {}, v)
     end
   end
   if vim.g.nvimlint_linters then
@@ -100,27 +36,19 @@ function M.extend_global_linters()
 end
 
 ---@private
-function M.config_linters_by_ft()
-  lint.linters_by_ft = M.linters_by_ft
-end
-
----@private
 function M.setup_autocommands()
   vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
     callback = debounce(function()
       require("lint").try_lint(nil, { ignore_errors = true })
-      -- require("lint").try_lint "codespell"
     end, 1000),
   })
 end
 
 function M.setup()
-  M.config_linters()
   M.extend_global_linters()
   if filter_availabled_external then
     M.filter_linters_by_ft()
   end
-  M.config_linters_by_ft()
   M.setup_autocommands()
 end
 

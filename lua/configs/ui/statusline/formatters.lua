@@ -8,8 +8,24 @@ M.current_bufnr = nil
 ---@type string
 M.status = ""
 
+---@type nil | false | any
+M.conform = nil
+
 function M.set_status()
-  local conform = require("conform")
+  if M.conform == false then
+    return
+  end
+  local conform_ok, conform
+  if M.conform == nil then
+    conform_ok, conform = pcall(require, "conform")
+    if not conform_ok then
+      M.conform = false
+      return
+    end
+    M.conform = conform
+  else
+    conform = M.conform
+  end
 
   local formatters = conform.list_formatters(0)
   if #formatters == 0 then

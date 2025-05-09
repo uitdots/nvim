@@ -1,23 +1,26 @@
-local inlayhint_opts = {
-  parameterNames = {
-    enabled = "all", ---@type 'none' | 'literals' | 'all'
-  },
-  parameterTypes = {
-    enabled = true,
-  },
-  variableTypes = {
-    enabled = true,
-  },
-  propertyDeclarationTypes = {
-    enabled = true,
-  },
-  functionLikeReturnTypes = {
-    enabled = true,
-  },
-  enumMemberValues = {
-    enabled = true,
-  },
-}
+local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
+local inlayhint_opts = inlayhint_enabled
+    and {
+      parameterNames = {
+        enabled = "all", ---@type 'none' | 'literals' | 'all'
+      },
+      parameterTypes = {
+        enabled = true,
+      },
+      variableTypes = {
+        enabled = true,
+      },
+      propertyDeclarationTypes = {
+        enabled = true,
+      },
+      functionLikeReturnTypes = {
+        enabled = true,
+      },
+      enumMemberValues = {
+        enabled = true,
+      },
+    }
+  or {}
 
 return {
   settings = {
