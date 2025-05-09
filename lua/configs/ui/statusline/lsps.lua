@@ -54,7 +54,6 @@ function M.setup_autocmds()
   vim.api.nvim_create_autocmd({ "VimResized" }, {
     pattern = "*",
     callback = debounce(M.set_status, 500),
-    500,
     group = vim.api.nvim_create_augroup("LspStatusLineVimResize", {}),
   })
 end
