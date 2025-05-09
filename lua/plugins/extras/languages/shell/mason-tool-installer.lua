@@ -6,6 +6,7 @@ return {
     ensure_installed = {
       "bash-language-server",
       "beautysh",
+      "shfmt"
     },
   },
   opts_extend = {
