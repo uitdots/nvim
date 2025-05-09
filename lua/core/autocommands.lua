@@ -1,9 +1,36 @@
 local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local indent = require "uitvim".indent
 
 -- General Settings
 local general = augroup("General", { clear = true })
+
+for chars, fts in pairs(indent.space or {}) do
+autocmd("FileType", {
+  desc = string.format(  "Tab to space with %s spaces", chars),
+  pattern = fts,
+  command = string.format("set tabstop=%s shiftwidth=%s expandtab", chars, chars),
+  group = general,
+})
+end
+
+for chars, fts in pairs(indent.tab or {}) do
+autocmd("FileType", {
+  desc = string.format(  "Tab to space with %s spaces", chars),
+  pattern = fts,
+  command = string.format("set tabstop=%s shiftwidth=%s noexpandtab", chars, chars),
+  group = general,
+})
+end
+
+autocmd("FileType", {
+  desc = "Set tab width to 4 for specific filetypes",
+  pattern = require("uitvim").indent.space[4],
+  command = "set tabstop=4 shiftwidth=4 expandtab",
+  group = general,
+})
+
 
 autocmd("BufReadPost", {
   callback = function()
@@ -86,13 +113,6 @@ autocmd("FileType", {
   end,
   group = general,
   desc = "Disable Wrap in these filetypes",
-})
-
-autocmd("FileType", {
-  desc = "Set tab width to 4 for specific filetypes",
-  pattern = require("uitvim").indent.space[4],
-  command = "set tabstop=4 shiftwidth=4 expandtab",
-  group = general,
 })
 
 autocmd("BufReadPre", {

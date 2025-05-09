@@ -2,7 +2,7 @@ local M = {}
 
 ---TODO: Watchout, if mason has setup, declaring like this may setup again (twice)
 
----New LSP setup. If that lsp isn't in your $PATH, no problem, it won't break. If installed by Mason, yes it will be setup.
+---External lsp you want to setup.
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
 M.lsps = {
@@ -12,8 +12,7 @@ M.lsps = {
   "texlab",
 }
 
----Useful for anyone who install using Mason but doesn't want to set them up.
----And, if you are using LSP wrappers that require not to config those LSPs (let them handle), then put those LSPs in here.
+---For having lsp setup by mason (exclude these)
 ---@type string[]
 M.no_setup_lsps = {
   "ts_ls",
@@ -23,6 +22,7 @@ M.no_setup_lsps = {
   "sqls",
 }
 
+---@type {space: table<number, string[]>, tab: table<number, string[]>}
 M.indent = {
   space = {
     [4] = {
@@ -37,17 +37,23 @@ M.indent = {
 }
 
 M.options = {
-  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available, then those plugin won't complain about avaibility of those. This may cause [plugin's] startup slower (but nah)
+  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower
   ---@type boolean
   filter_availabled_external = true,
+
+  ---Let some language server enable inlayhint.
   ---@type boolean
   lsp_inlayhint_enabled = true,
-  ---Use inlayhint by default. This need  "lsp_inlayhint_enabled"! This may cause lagging in neovim. But you can still enable inlayhint using keymap while using.
+
+  ---Enable inlayhint in neovim
+  ---This needs "lsp_inlayhint_enabled" (above).
   ---@type boolean
   inlayhint_enabled = false,
+
   ---Use border for... most of the thing related to UI. You can search for which use this options
   ---@type boolean
   border_enabled = true,
+
   ---Enable autoformat
   ---@type boolean
   autoformat_enabled = true,

@@ -8,11 +8,6 @@
 - **ripgrep** (telescope, good for vimgrep replacement)
 - **fd** (telescope)
 
-## Utilities
-
-- **Wakatime**
-- **Chezmoi**
-
 ## Note
 
 If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
