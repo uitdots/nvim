@@ -32,7 +32,7 @@ return {
     },
     format_after_save = function(bufnr) -- Async format
       -- Disable with a global or buffer-local variable
-      if not vim.g.autoformat_enabled or vim.b[bufnr].autoformat_enabled then
+      if not vim.g.autoformat_enabled or not vim.b[bufnr].autoformat_enabled then
         return
       end
       -- Disable autoformat for files in a certain path
