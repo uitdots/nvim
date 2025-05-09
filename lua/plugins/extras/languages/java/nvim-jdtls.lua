@@ -50,7 +50,7 @@ return {
       get_child_folders(home .. "/.local/share/mise/installs/java", { follow_symlink = false }) or {}
     )
     if os == "Linux" then
-      vim.list_extend(runtime_paths, get_child_folders(home .. "/usr/lib/jvm", { follow_symlink = false }) or {})
+      vim.list_extend(runtime_paths, get_child_folders("/usr/lib/jvm", { follow_symlink = false }) or {})
     elseif os == "Windows" then
       -- TODO: Windows later, please contribute :P
     end
