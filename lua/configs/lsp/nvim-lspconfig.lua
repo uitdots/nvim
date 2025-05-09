@@ -1,3 +1,5 @@
+-- TODO: move those opts capabilities, bla bla to lspconfig
+
 ---@module 'snacks'
 
 local map = vim.keymap.set
