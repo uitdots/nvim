@@ -1,4 +1,7 @@
 local is_executable = require("utils.executable").is_executable
+local os = require("utils.os").os
+local home = require("utils.os").home
+local get_child_folders = require("utils.helpers").get_child_folders
 
 ---@type NvPluginSpec
 return {
@@ -16,14 +19,57 @@ return {
       "-configuration",
       config_dir,
     }
-    -- TODO: Add lombok later bruh
-    require("mason-registry").get_package("jdtls")
+
+    local bundles = {} -- Later for dap and test
+
+    local spring_boot_bundle_ok, spring_boot_bundle = pcall(function()
+      return require("spring_boot").java_extensions()
+    end)
+    if spring_boot_bundle_ok then
+      table.insert(bundles, spring_boot_bundle)
+    end
+
+    local java_debug_bundle = vim.fn.globpath("$MASON/share/java-debug-adapter", "*.jar", true)
+    if java_debug_bundle ~= "" then
+      table.insert(bundles, java_debug_bundle)
+    end
+
+    local lombok_bundle = vim.fn.globpath("$MASON/share/lombok-nightly", "*.jar", true)
+    if lombok_bundle ~= "" then
+      table.insert(bundles, lombok_bundle)
+    end
+
+    ---@type {name: string, path: string}[]
+    local runtimes = {}
+    ---@type string[]
+    local runtime_paths = {}
+
+    vim.list_extend(
+      runtime_paths,
+      get_child_folders(home .. "/.local/share/mise/installs/java", { follow_symlink = false }) or {}
+    )
+    if os == "Linux" then
+      vim.list_extend(runtime_paths, get_child_folders(home .. "/usr/lib/jvm", { follow_symlink = false }) or {})
+    elseif os == "Windows" then
+      -- TODO: Windows later, please contribute :P
+    end
+
+    vim.list_extend(
+      runtimes,
+      vim.tbl_map(function(path)
+        vim.print(path)
+        return {
+          name = "mise " .. vim.fn.fnamemodify(path, ":t"),
+          path = path,
+        }
+      end, runtime_paths)
+    )
 
     local opts = {
       cmd = cmd,
       root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
       init_options = {
-        bundle = {}, -- Later for dap and test
+        bundle = bundles,
       },
       settings = {
         java = {
@@ -31,6 +77,16 @@ return {
             parameterNames = {
               enabled = require("uitvim").options.lsp_inlayhint_enabled and "all" or "none", ---@type "none" | "literals" | "all"
             },
+          },
+          format = {
+            enabled = true,
+            settings = {
+              url = vim.fn.stdpath("data") .. "/lazy/google-styleguide/intellij-java-google-style.xml",
+              name = "GoogleStyle",
+            },
+          },
+          configuration = {
+            runtimes = runtimes,
           },
         },
       },
@@ -52,18 +108,27 @@ return {
     })
   end,
   dependencies = {
-    "mason-org/mason.nvim",
-    opts = function(_, opts)
-      opts = opts or {}
-      if opts.registries ~= nil then
-        opts.registries[#opts.registries + 1] = "github:nvim-java/mason-registry"
-      else
-        opts.registries = {
-          "github:mason-org/mason-registry",
-          "github:nvim-java/mason-registry",
-        }
-      end
-      return opts
-    end,
+    {
+      "mason-org/mason.nvim",
+      opts = function(_, opts)
+        opts = opts or {}
+        if opts.registries ~= nil then
+          opts.registries[#opts.registries + 1] = "github:nvim-java/mason-registry"
+        else
+          opts.registries = {
+            "github:mason-org/mason-registry",
+            "github:nvim-java/mason-registry",
+          }
+        end
+        return opts
+      end,
+    },
+    {
+      "google/styleguide",
+      name = "google-styleguide",
+    },
+    {
+      "JavaHello/spring-boot.nvim",
+    },
   },
 }

@@ -5,7 +5,7 @@ return {
   opts = {
     ensure_installed = {
       "jdtls",
-      "google-java-format",
+      "java-debug-adapter",
     },
   },
   opts_extend = {

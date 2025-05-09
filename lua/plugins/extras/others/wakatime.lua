@@ -1,3 +1,5 @@
+local home = require("utils.os").home
+
 ---@type NvPluginSpec
 -- NOTE:
 -- Type ":Lazy load vim-wakatime" to generate ".wakatime.cfg".
@@ -5,5 +7,5 @@
 -- To disable, remove "~./wakatime.cfg".
 return {
   "wakatime/vim-wakatime",
-  event = vim.fn.filereadable(vim.fn.getenv("HOME") .. "/.wakatime.cfg") == 1 and "VeryLazy" or nil,
+  event = vim.fn.filereadable(home .. "/.wakatime.cfg") == 1 and "VeryLazy" or nil,
 }

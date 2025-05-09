@@ -3,6 +3,7 @@ local o = vim.o
 local g = vim.g
 local is_executable = require("utils.executable").is_executable
 local uitvim_options = require("uitvim").options
+local home = require("utils.os").home
 
 g.mapleader = " "
 g.maplocalleader = "\\"
@@ -67,7 +68,7 @@ opt.whichwrap:append("<>[]hl")
 
 -- Replace builtin grep with ripgrep
 if is_executable("rg") then
-  local rgignore = vim.env.HOME .. "/.config/ripgrep/.rgignore"
+  local rgignore = home .. "/.config/ripgrep/.rgignore"
   o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file "
     .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/ignore")
 end

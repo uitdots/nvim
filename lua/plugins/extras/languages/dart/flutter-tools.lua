@@ -1,6 +1,7 @@
 local lspconfig = require("configs.lsp.lspconfig")
 local is_executable = require("utils.executable").is_executable
 local is_windows = require("utils.os").is_windows
+local home = require("utils.os").home
 
 ---@type NvPluginSpec
 return {
@@ -28,7 +29,7 @@ return {
     },
     setting = {
       analysisExcludedFolders = {
-        is_windows and vim.fn.expand("$HOME/AppData/Local/Pub/Cache") or nil,
+        is_windows and home .. "/AppData/Local/Pub/Cache" or nil,
       },
     },
     decorations = {

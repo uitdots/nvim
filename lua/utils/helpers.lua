@@ -52,4 +52,33 @@ function M.open_spell_sugestion()
   end
 end
 
+---@param path string absolute path
+---@param opts? {follow_symlink: boolean}
+function M.get_child_folders(path, opts)
+  local follow_symlink = opts and opts.follow_symlink or false
+  local folders = {}
+  local scan = vim.uv.fs_scandir(path)
+
+  if not scan then
+    return nil
+  end
+
+  while true do
+    local name, type = vim.uv.fs_scandir_next(scan)
+    if not name then
+      break
+    end
+
+    if type == "directory" then
+      local full_path = path .. "/" .. name
+      local stat = vim.uv.fs_stat(full_path)
+      if stat and (follow_symlink and stat.type == "link" or true) then -- TODO: Is this logic bruh?
+        table.insert(folders, full_path)
+      end
+    end
+  end
+
+  return folders
+end
+
 return M

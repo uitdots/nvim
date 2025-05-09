@@ -1,18 +1,12 @@
 ---@type NvPluginSpec
 return {
   "JavaHello/spring-boot.nvim",
+  optional = true,
   cond = vim.fn.glob("~/.vscode/extensions/vmware.vscode-spring-boot*") ~= "",
-  ft = "java",
-  opts = function()
-    local opts = {
-      init_options = {
-        bundles = vim.list_extend({}, require("spring_boot").java_extensions()),
-      },
-    }
-    return opts
-  end,
-  dependencies = {
-    "mfussenegger/nvim-jdtls",
-    optional = true,
+  ft = {
+    "java",
+    "yaml",
+    "jproperties",
   },
+  config = function() end, -- TODO: when lazynvim fix the type of false...
 }
