@@ -2,6 +2,7 @@ local is_executable = require("utils.executable").is_executable
 local os = require("utils.os").os
 local home = require("utils.os").home
 local get_child_folders = require("utils.helpers").get_child_folders
+local lspconfig = require("configs.lsp.nvim-lspconfig")
 
 ---@type NvPluginSpec
 return {
@@ -90,9 +91,9 @@ return {
           },
         },
       },
-      capabilities = require("configs.lsp.nvim-lspconfig").capabilities,
-      on_attach = require("configs.lsp.nvim-lspconfig").on_attach,
-      on_init = require("configs.lsp.nvim-lspconfig").on_init,
+      capabilities = lspconfig.capabilities,
+      on_attach = lspconfig.on_attach,
+      on_init = lspconfig.on_init,
     }
 
     return opts
