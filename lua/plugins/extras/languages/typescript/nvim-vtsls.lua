@@ -4,14 +4,11 @@ local is_executable = require("utils.executable").is_executable
 return {
   "yioneko/nvim-vtsls",
   enabled = is_executable("vtsls"),
+  -- TODO: check, does it need nvim-lspconfig
   dependencies = {
     {
       "neovim/nvim-lspconfig",
       optional = true,
-      opts = function(_, opts)
-        require("lspconfig.configs").vtsls = require("vtsls").lspconfig
-        return opts
-      end,
     },
   },
 }
