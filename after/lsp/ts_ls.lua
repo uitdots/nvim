@@ -1,3 +1,5 @@
+-- TODO: Inlayhint bruh this and... fix this?
+
 return {
   settings = {
     javascript = {

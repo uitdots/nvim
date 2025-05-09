@@ -23,11 +23,26 @@ M.no_setup_lsps = {
   "sqls",
 }
 
+M.indent = {
+  space = {
+    [4] = {
+      "c",
+      "cpp",
+      "cs",
+      "py",
+      "kotlin",
+      "java",
+    },
+  },
+}
+
 M.options = {
   ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available, then those plugin won't complain about avaibility of those. This may cause [plugin's] startup slower (but nah)
   ---@type boolean
   filter_availabled_external = true,
-  ---Use inlayhint by default. This may cause lagging in neovim. But you can still enable inlayhint using keymap while using.
+  ---@type boolean
+  lsp_inlayhint_enabled = true,
+  ---Use inlayhint by default. This need  "lsp_inlayhint_enabled"! This may cause lagging in neovim. But you can still enable inlayhint using keymap while using.
   ---@type boolean
   inlayhint_enabled = false,
   ---Use border for... most of the thing related to UI. You can search for which use this options

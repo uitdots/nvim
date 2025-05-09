@@ -90,13 +90,7 @@ autocmd("FileType", {
 
 autocmd("FileType", {
   desc = "Set tab width to 4 for specific filetypes",
-  pattern = {
-    "c",
-    "cpp",
-    "cs",
-    "py",
-    "kotlin",
-  },
+  pattern = require("uitvim").indent.space[4],
   command = "set tabstop=4 shiftwidth=4 expandtab",
   group = general,
 })

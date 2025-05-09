@@ -11,7 +11,7 @@ local filter_availabled_external = require("uitvim").options.filter_availabled_e
 local M = {}
 
 ---@private
-function M._keymaps(_, bufnr)
+function M.keymaps(_, bufnr)
   local function opts(desc)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
@@ -40,7 +40,7 @@ function M._keymaps(_, bufnr)
 end
 
 M.on_attach = function(client, bufnr)
-  M._keymaps(client, bufnr)
+  M.keymaps(client, bufnr)
 
   pcall(function()
     require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)

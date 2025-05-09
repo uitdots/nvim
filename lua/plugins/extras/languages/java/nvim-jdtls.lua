@@ -29,12 +29,13 @@ return {
         java = {
           inlayHints = {
             parameterNames = {
-              enabled = "all",
+              enabled = require("uitvim").options.lsp_inlayhint_enabled and "all" or "none", ---@type "none" | "literals" | "all"
             },
           },
         },
       },
       capabilities = require("configs.lsp.nvim-lspconfig").capabilities,
+      on_attach = require("configs.lsp.nvim-lspconfig").on_attach,
     }
 
     return opts
@@ -51,5 +52,17 @@ return {
   end,
   dependencies = {
     "mason-org/mason.nvim",
+    opts = function(_, opts)
+      opts = opts or {}
+      if opts.registries ~= nil then
+        opts.registries[#opts.registries + 1] = "github:nvim-java/mason-registry"
+      else
+        opts.registries = {
+          "github:mason-org/mason-registry",
+          "github:nvim-java/mason-registry",
+        }
+      end
+      return opts
+    end,
   },
 }
