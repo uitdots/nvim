@@ -31,11 +31,6 @@ M.opts.formatters = {
       "--indent-size=2",
     },
   },
-  clang_format = {
-    append_args = {
-      "--fallback-style=Microsoft",
-    },
-  },
   ruff_fix = {
     append_args = {
       "--select=I",
@@ -50,84 +45,11 @@ M.opts.formatters = {
 }
 
 M.opts.formatters_by_ft = {
-  c = {
-    "clang_format",
-  },
-  cpp = {
-    "clang_format",
-  },
-  cs = {
-    "clang_format",
-  },
-  css = {
-    "prettier",
-  },
-  graphql = {
-    "prettier",
-  },
-  html = {
-    "prettier",
-  },
-  javascript = {
-    "prettier",
-  },
-  javascriptreact = {
-    "prettier",
-  },
-  json = {
-    "prettier",
-  },
-  jsonc = {
-    "prettier",
-  },
-  less = {
-    "prettier",
-  },
-  lua = {
-    "stylua",
-  },
-  ["markdown.mdx"] = {
-    "prettier",
-    "doctoc",
-  },
-  markdown = {
-    "prettier",
-    "doctoc",
-  },
   mysql = {
     "mysql_formatter",
   },
-  python = {
-    "ruff_fix",
-    "ruff_format",
-    -- "ruff_organize_imports", -- Should be set in config, so that ruff_fix can do that
-  },
-  scss = {
-    "prettier",
-  },
-  sh = {
-    "shfmt",
-  },
-  dotenv = {
-    "shfmt",
-  },
   postgresql = {
     "pg_sqlfluff",
-  },
-  typescript = {
-    "prettier",
-  },
-  typescriptreact = {
-    "prettier",
-  },
-  vue = {
-    "prettier",
-  },
-  yaml = {
-    "prettier",
-  },
-  zsh = {
-    "beautysh",
   },
 }
 

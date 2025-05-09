@@ -11,6 +11,14 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.cs",
+    enabled = false,
+  },
+  {
+    import = "plugins.extras.languages.css",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.env",
     enabled = true,
   },
@@ -68,6 +76,10 @@ return {
   },
   {
     import = "plugins.extras.languages.python",
+    enabled = true,
+  },
+  {
+    import = "plugins.extras.languages.react",
     enabled = true,
   },
   {
