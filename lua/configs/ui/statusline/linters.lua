@@ -8,8 +8,27 @@ M.current_bufnr = nil
 ---@type string
 M.status = ""
 
+---@type nil | false | any
+M.lint = nil
+
 function M.set_status()
-  local lint = require("lint")
+  if M.lint == false then
+    return
+  end
+  local lint_ok, lint
+  if M.lint == nil then
+    lint_ok, lint = pcall(function()
+      return require("lint")
+    end)
+    if not lint_ok then
+      M.lint = false
+      return
+    end
+    M.lint = lint
+  else
+    lint = M.lint
+  end
+
   local linters = lint._resolve_linter_by_ft(vim.bo.filetype)
   if #linters == 0 then
     M.status = ""
