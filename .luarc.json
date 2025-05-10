@@ -1,0 +1,21 @@
+{
+  "$schema": "https://raw.githubusercontent.com/LuaLS/vscode-lua/master/setting/schema.json",
+  "runtime.version": "Lua 5.1",
+  "hint.enable": true,
+  "diagnostics": {
+    "groupSeverity": {
+      "strict": "Warning",
+      "codestyle": "Warning",
+      "await": "Hint",
+      "type-check": "Warning",
+      "conventions": "Warning",
+      "strong": "Warning"
+    },
+    "severity": {
+      "lowercase-global": "Warning",
+      "name-style-check": "Warning",
+      "no-unknown": "Warning",
+      "trailing-space": "Warning"
+    }
+  }
+}
