@@ -3,7 +3,7 @@ local map = vim.keymap.set
 local M = {}
 
 ---@private
-function M.keymaps(_, bufnr)
+function M.setup_keymaps(_, bufnr)
   local telescope_builtin = require("telescope.builtin")
   local lsp_action = require("utils.lsp").action
   local function opts(desc)
@@ -33,22 +33,30 @@ function M.keymaps(_, bufnr)
   end, opts("List workspace folders"))
 end
 
+---@type elem_or_list<fun(client: vim.lsp.Client, bufnr: integer)>
 M.on_attach = function(client, bufnr)
-  M.keymaps(client, bufnr)
+  M.setup_keymaps(client, bufnr)
 end
 
+---@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
 M.on_init = require("nvchad.configs.lspconfig").on_init
 
--- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
-M.capabilities = vim.tbl_deep_extend("force", require("nvchad.configs.lspconfig").capabilities, {
+---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
+---@type lsp.ClientCapabilities
+M.capabilities = {
   workspace = {
     fileOperations = {
       didRename = true,
       willRename = true,
     },
   },
-})
+}
 
+---@type lsp.ClientCapabilities
+M.capabilities = vim.tbl_deep_extend("keep", M.capabilities, require("nvchad.configs.lspconfig").capabilities)
+
+---@type vim.lsp.ClientConfig
+---@diagnostic disable-next-line: missing-fields
 M.opts = {
   capabilities = M.capabilities,
   on_init = M.on_init,
