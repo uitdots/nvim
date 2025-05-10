@@ -22,7 +22,7 @@ return {
         enabled = true,
       },
       signature = {
-        enabled = true, -- FIXME: This may overlap current line
+        enabled = false, -- FIXME: This may overlap current line
       },
       progress = {
         enabled = false,
