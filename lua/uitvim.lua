@@ -33,6 +33,9 @@ M.indent = {
       "kotlin",
       "java",
     },
+    [2] = {
+      "just",
+    },
   },
 }
 
