@@ -1,19 +1,25 @@
 ---@type NvPluginSpec
 return {
-  "mason-org/mason.nvim",
-  optional = true,
-  dependencies = {
-    "mason-org/mason-lspconfig.nvim",
-    event = {
-      "BufReadPost",
-      "BufNewFile",
+  "mason-org/mason-lspconfig.nvim",
+  event = {
+    "BufReadPost",
+    "BufNewFile",
+  },
+  ---@module 'mason-lspconfig'
+  ---@type MasonLspconfigSettings
+  opts = {
+    automatic_enable = {
+      exclude = require("uitvim").no_setup_lsps,
     },
-    ---@module 'mason-lspconfig'
-    ---@type MasonLspconfigSettings
-    opts = {
-      automatic_enable = {
-        exclude = require("uitvim").no_setup_lsps,
-      },
+  },
+  dependencies = {
+    {
+      "neovim/nvim-lspconfig",
+      optional = true,
+    },
+    {
+      "mason-org/mason.nvim",
+      optional = true,
     },
   },
 }
