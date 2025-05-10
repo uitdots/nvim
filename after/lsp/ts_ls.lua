@@ -1,5 +1,7 @@
 -- TODO: Inlayhint bruh this and... fix this?
 
+---@type vim.lsp.ClientConfig
+---@diagnostic disable-next-line: missing-fields
 return {
   settings = {
     javascript = {

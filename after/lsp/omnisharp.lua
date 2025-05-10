@@ -1,3 +1,5 @@
+---@type vim.lsp.ClientConfig
+---@diagnostic disable-next-line: missing-fields
 return {
   cmd = { "dotnet", vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll" },
 

@@ -7,6 +7,8 @@ local has_deno_config = function(path)
   return (vim.uv.fs_stat(fnlpath) or {}).type == "file"
 end
 
+---@type vim.lsp.ClientConfig
+---@diagnostic disable-next-line: missing-fields
 return {
   -- root_dir = function(bufnr, on_dir)
   --   local fname = vim.api.nvim_buf_get_name(bufnr)

@@ -22,6 +22,8 @@ local inlayhint_opts = inlayhint_enabled
     }
   or {}
 
+---@type vim.lsp.ClientConfig
+---@diagnostic disable-next-line: missing-fields
 return {
   settings = {
     javascript = {
