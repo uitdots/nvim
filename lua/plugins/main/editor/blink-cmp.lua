@@ -105,11 +105,8 @@ return {
           },
         },
       },
-      signature = { -- use blink's signature beside of noice. Triggered by <C-k>
+      signature = {
         enabled = true,
-        trigger = {
-          show_on_insert = false,
-        },
       },
     },
     ---@param opts blink.cmp.Config
