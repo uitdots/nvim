@@ -94,6 +94,7 @@ return {
           "snippets",
           "buffer",
         },
+        --[[
         providers = {
           -- https://cmp.saghen.dev/configuration/reference.html#providers
           -- Allow buffer even LSP has suggestions
@@ -104,6 +105,7 @@ return {
             score_offset = -5,
           },
         },
+        ]]
       },
       signature = {
         enabled = true,

@@ -55,7 +55,7 @@ M.capabilities = {
 ---@type lsp.ClientCapabilities
 M.capabilities = vim.tbl_deep_extend("keep", M.capabilities, require("nvchad.configs.lspconfig").capabilities)
 
----@type vim.lsp.ClientConfig
+---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
 M.opts = {
   capabilities = M.capabilities,

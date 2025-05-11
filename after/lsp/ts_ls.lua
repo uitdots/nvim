@@ -1,6 +1,6 @@
 -- TODO: Inlayhint bruh this and... fix this?
 
----@type vim.lsp.ClientConfig
+---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
 return {
   settings = {

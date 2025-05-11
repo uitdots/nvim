@@ -1,4 +1,4 @@
----@type vim.lsp.ClientConfig
+---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
 return {
   on_attach = function(client, bufnr)
