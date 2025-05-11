@@ -20,7 +20,7 @@ local inlayhint_opts = inlayhint_enabled
         enabled = true,
       },
     }
-  or {}
+  or nil
 
 ---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
