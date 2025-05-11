@@ -7,7 +7,6 @@ return {
     "groovy",
     "kotlin",
   },
-  workspace_required = true,
   init_options = {
     gradle = {
       nestedProjects = true,
