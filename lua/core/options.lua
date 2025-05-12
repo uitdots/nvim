@@ -55,6 +55,10 @@ o.shortmess = "AcqFI"
 o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
 o.winborder = uitvim_options.border_enabled and "rounded" or "none"
 
+if vim.fn.filereadable(vim.fn.stdpath("config") .. "/spell/vi.utf-8.spl") == 1 then
+  o.spelllang = "en,vi"
+end
+
 -- Uncomment these options to enable pwsh for Windows
 -- o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
 -- o.shellcmdflag = "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"

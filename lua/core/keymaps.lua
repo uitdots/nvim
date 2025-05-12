@@ -1,4 +1,5 @@
 local map = vim.keymap.set
+local o = vim.o
 
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
@@ -17,6 +18,20 @@ end, { desc = "Options | Toggle Relative Number", silent = true })
 map("n", "<leader>os", function()
   vim.o.laststatus = vim.o.laststatus == 3 and 0 or 3
 end, { desc = "Options | Toggle Statusline", silent = true })
+
+map("n", "<leader>oi", function()
+  if o.keymap == "" then
+    o.keymap = "vietnamese-telex_utf-8"
+    vim.notify("Method input changed to Custom: " .. o.keymap, vim.log.levels.INFO, {
+      title = "Options",
+    })
+  else
+    o.keymap = ""
+    vim.notify("Method input changed to Default", vim.log.levels.INFO, {
+      title = "Options",
+    })
+  end
+end, { desc = "Options | Toggle Input Method", silent = true })
 
 map("n", "<leader>o<C-t>", function()
   local tabline_enabled = { 1, 2 }
