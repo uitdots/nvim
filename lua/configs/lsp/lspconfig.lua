@@ -10,6 +10,7 @@ function M.setup_keymaps(_, bufnr)
     return { buffer = bufnr, desc = "LSP | " .. desc }
   end
 
+  ---@module 'snacks'
   map("n", "<leader>lo", lsp_action["source.organizeImports"], opts("Organise Imports"))
   map("n", "<leader>ls", lsp_action["source.sortImports"], opts("Sort Imports"))
   map("n", "<leader>lr", lsp_action["source.removeUnusedImports"], opts("Remove Unused Imports"))
@@ -39,7 +40,7 @@ M.on_attach = function(client, bufnr)
 end
 
 ---@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
-M.on_init = require("nvchad.configs.lspconfig").on_init
+M.on_init = function() end
 
 ---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
 ---@type lsp.ClientCapabilities

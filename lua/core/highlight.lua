@@ -1,3 +1,3 @@
-local hl = vim.highlight
+-- local hl = vim.highlight
 
-hl.priorities.semantic_tokens = 95
+-- hl.priorities.semantic_tokens = 95

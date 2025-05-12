@@ -136,6 +136,7 @@ M.base46 = {
     "nvimtree",
     "nvshades",
     "rainbowdelimiters",
+    "semantic_tokens",
     "statusline",
     "syntax",
     "telescope",
