@@ -25,6 +25,6 @@ require("lazy").setup({
 require("nvchad.autocmds")
 require("core.highlight")
 require("core.filetypes")
-require("core.mappings")
+require("core.keymaps")
 require("core.commands")
-require("core.autocommands")
+require("core.autocmds")
