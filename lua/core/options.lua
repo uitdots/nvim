@@ -54,6 +54,7 @@ o.helpheight = 10 -- height of the help window
 o.shortmess = "AcqFI"
 o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
 o.winborder = uitvim_options.border_enabled and "rounded" or "none"
+o.spelloptions = "camel"
 
 if vim.fn.filereadable(vim.fn.stdpath("config") .. "/spell/vi.utf-8.spl") == 1 then
   o.spelllang = "en,vi"
