@@ -8,20 +8,21 @@ return {
     {
       "<leader>f<C-y>",
       "<cmd>Yazi<cr>",
-      desc = "Files | Yazi Current File",
+      desc = "File | Yazi Current File",
       mode = { "n", "v" },
     },
     {
       "<leader>fY",
       "<cmd>Yazi cwd<cr>",
-      desc = "Files | Yazi Current Dir",
+      desc = "File | Yazi Current Dir",
     },
     {
       "<leader>fy",
       "<cmd>Yazi toggle<cr>",
-      desc = "Files | Yazi",
+      desc = "File | Yazi",
     },
   },
+  ---@module 'yazi'
   ---@type YaziConfig
   ---@diagnostic disable-next-line: missing-fields
   opts = {},
