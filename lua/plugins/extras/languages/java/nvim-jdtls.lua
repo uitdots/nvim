@@ -94,6 +94,9 @@ return {
       capabilities = lspconfig.capabilities,
       on_attach = lspconfig.on_attach,
       on_init = lspconfig.on_init,
+      cmd_env = {
+        JAVA_OPTS = vim.env.JAVA_OPTS or "-Xmx8g", -- For 8GB of ram? :P
+      },
     }
 
     return opts
