@@ -3,9 +3,9 @@ return {
   "stevearc/oil.nvim",
   keys = {
     {
-      "<leader>O",
+      "<leader>fo",
       "<CMD>Oil --float<CR>",
-      desc = "General | Toggle Oil",
+      desc = "Files | Toggle Oil",
       silent = true,
     },
   },

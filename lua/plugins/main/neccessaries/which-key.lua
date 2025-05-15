@@ -16,7 +16,7 @@ return {
       { "<leader>A", group = "API", icon = "󱂛" },
       { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
       { "<leader>d", group = "Debug", icon = "" },
-      { "<leader>f", group = "Find", icon = "" },
+      { "<leader>f", group = "Find & Files", icon = "" },
       { "<leader>g", group = "Git", icon = "󰊢" },
       { "<leader>l", group = "LSP", icon = "", mode = { "n", "v" } },
       { "<leader>m", group = "Markdown", icon = "" },
