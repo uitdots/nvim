@@ -185,7 +185,17 @@ return {
           },
         })
       end,
-      desc = "Find | Files",
+      desc = "General | Find Files",
+    },
+    {
+      "<leader>ff",
+      function()
+        Snacks.picker.files({
+          hidden = true,
+          ignored = true,
+        })
+      end,
+      desc = "Find | All Files",
     },
     {
       "<leader>fB",
