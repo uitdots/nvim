@@ -88,7 +88,7 @@ map("n", "<Right>", "<cmd>tabnext<CR>", { desc = "General | Go to next tab", sil
 map("n", "<Up>", "<cmd>tabnew<CR>", { desc = "General | New tab", silent = true })
 map("n", "<Down>", "<cmd>tabclose<CR>", { desc = "General | Close tab", silent = true })
 
-map("v", "p", '"_dP', { desc = "General | Better Paste", silent = true })
+-- map("v", "p", '"_dP', { desc = "General | Better Paste", silent = true })
 map("v", "<", "<gv", { desc = "General | Indent backward", silent = true })
 map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
