@@ -11,7 +11,7 @@ return {
       silent = true,
     },
     {
-      "<leader>g]",
+      "<leader>gj",
       function()
         require("gitsigns").nav_hunk("next")
       end,
@@ -19,7 +19,7 @@ return {
       silent = true,
     },
     {
-      "<leader>g[",
+      "<leader>gk",
       function()
         require("gitsigns").nav_hunk("prev")
       end,
