@@ -56,7 +56,7 @@ return {
   },
   {
     import = "plugins.extras.languages.kotlin",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.latex",
