@@ -20,7 +20,7 @@ return {
       mode = { "n", "v" },
     },
     {
-      "<C-t>",
+      "<M-t>",
       function()
         require("menu").open("default")
       end,
