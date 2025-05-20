@@ -23,20 +23,24 @@ return {
     "MasonUninstallAll",
     "MasonLog",
   },
-  ---@type function:MasonSettings
-  ---@param opts MasonSettings?
-  opts = function(_, opts)
-    ---@type MasonSettings
-    local _opts = {
-      PATH = "skip",
-      ui = {
-        check_outdated_packages_on_open = false,
-        backdrop = 100,
-      },
-    }
-    return vim.tbl_deep_extend("keep", _opts, require("nvchad.configs.mason"), opts or {})
-  end,
+  ---@module 'mason'
+  ---@type MasonSettings
+  opts = {
+    PATH = "skip",
+    ui = {
+      check_outdated_packages_on_open = false,
+      backdrop = 100,
+    },
+    registries = {
+      "github:mason-org/mason-registry",
+    },
+  },
+  opts_extend = {
+    "registeries",
+  },
   config = function(_, opts)
+    -- TODO: Idk does this work?
+
     -- https://www.lazyvim.org/plugins/lsp#masonnvim-1
     require("mason").setup(opts)
     local mr = require("mason-registry")

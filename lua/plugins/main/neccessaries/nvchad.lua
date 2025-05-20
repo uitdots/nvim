@@ -73,4 +73,13 @@ return {
       },
     },
   },
+  {
+    "mason-org/mason.nvim",
+    ---@module 'mason'
+    ---@param opts MasonSettings?
+    ---@return MasonSettings
+    opts = function(_, opts)
+      return vim.tbl_deep_extend("keep", opts, require("nvchad.configs.mason"))
+    end,
+  },
 }

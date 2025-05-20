@@ -115,18 +115,14 @@ return {
     {
       "mason-org/mason.nvim",
       optional = true,
-      opts = function(_, opts)
-        opts = opts or {}
-        if opts.registries ~= nil then
-          opts.registries[#opts.registries + 1] = "github:nvim-java/mason-registry"
-        else
-          opts.registries = {
-            "github:mason-org/mason-registry",
-            "github:nvim-java/mason-registry",
-          }
-        end
-        return opts
-      end,
+      opts = {
+        registeries = {
+          "github:nvim-java/mason-registry",
+        },
+      },
+      opts_extend = {
+        "registeries",
+      },
     },
     {
       "google/styleguide",
