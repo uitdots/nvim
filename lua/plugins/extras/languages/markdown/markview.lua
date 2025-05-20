@@ -4,7 +4,8 @@ local ft = require("utils.filetypes").markdown
 return {
   {
     "OXY2DEV/markview.nvim",
-    lazy = false, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
+    lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
+    event = "VeryLazy",
     ---@module 'markview'
     ---@type mkv.config
     opts = {
