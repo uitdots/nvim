@@ -36,13 +36,13 @@ return {
     },
   },
   opts_extend = {
-    "registeries",
+    "registries",
   },
   config = function(_, opts)
-    -- TODO: Idk does this work?
-
-    -- https://www.lazyvim.org/plugins/lsp#masonnvim-1
     require("mason").setup(opts)
+
+    -- TODO: Idk does this work?
+    ---https://www.lazyvim.org/plugins/lsp#masonnvim-1
     local mr = require("mason-registry")
     mr:on("package:install:success", function()
       vim.defer_fn(function()

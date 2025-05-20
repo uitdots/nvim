@@ -116,12 +116,12 @@ return {
       "mason-org/mason.nvim",
       optional = true,
       opts = {
-        registeries = {
+        registries = {
           "github:nvim-java/mason-registry",
         },
       },
       opts_extend = {
-        "registeries",
+        "registries",
       },
     },
     {

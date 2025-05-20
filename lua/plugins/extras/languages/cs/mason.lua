@@ -9,6 +9,6 @@ return {
     },
   },
   opts_extend = {
-    "registeries",
+    "registries",
   },
 }
