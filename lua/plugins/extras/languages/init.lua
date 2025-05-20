@@ -8,7 +8,7 @@ return {
   },
   {
     import = "plugins.extras.languages.c",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.cs",
@@ -32,7 +32,7 @@ return {
   },
   {
     import = "plugins.extras.languages.go",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.html",
