@@ -1,9 +1,10 @@
 -- NOTE: I haven't setup it yet. Just put it here
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 
 return {
   "ray-x/go.nvim",
-  enabled = is_executable("go"),
+  enabled = not filter_availabled_external or is_executable("go"),
   event = {
     "CmdlineEnter",
   },

@@ -1,9 +1,10 @@
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 
 ---@type NvPluginSpec
 return {
   "mikavilpas/yazi.nvim",
-  enabled = is_executable("yazi"),
+  enabled = not filter_availabled_external or is_executable("yazi"),
   keys = {
     {
       "<leader>f<C-y>",

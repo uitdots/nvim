@@ -1,7 +1,5 @@
 local M = {}
 
----TODO: Watchout, if mason has setup, declaring like this may setup again (twice)
-
 ---External lsp you want to setup.
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
@@ -20,6 +18,7 @@ M.no_setup_lsps = {
   "rust_analyzer",
   "jdtls",
   "sqls",
+  "kotlin_language_server",
 }
 
 ---@type {space: table<number, string[]>, tab: table<number, string[]>}
@@ -29,7 +28,7 @@ M.indent = {
       "c",
       "cpp",
       "cs",
-      "py",
+      "python",
       "kotlin",
       "java",
     },
@@ -40,7 +39,7 @@ M.indent = {
 }
 
 M.options = {
-  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower
+  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower but not really much, for about few milliseconds.
   ---@type boolean
   filter_availabled_external = true,
 

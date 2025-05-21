@@ -1,10 +1,11 @@
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
 
 ---@type NvPluginSpec
 return {
   "seblyng/roslyn.nvim",
-  enabled = is_executable("dotnet"),
+  enabled = not filter_availabled_external or is_executable("dotnet"),
   ft = "cs",
   cmd = "Roslyn",
   ---@module 'roslyn.config'
