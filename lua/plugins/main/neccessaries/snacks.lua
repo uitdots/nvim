@@ -198,7 +198,7 @@ return {
       desc = "Find | All Files",
     },
     {
-      "<leader>fB",
+      "<leader>fb",
       function()
         Snacks.picker.buffers()
       end,
@@ -270,7 +270,7 @@ return {
       mode = { "n", "x" },
     },
     {
-      "<leader>fb",
+      "<leader>fB",
       function()
         Snacks.picker.lines()
       end,
