@@ -1,4 +1,10 @@
-local ft = require("utils.filetypes").markdown
+local ft = vim.list_extend({
+  "html",
+  "xhtml",
+  "tex",
+  "typst",
+  "yaml",
+}, require("utils.filetypes").markdown)
 
 ---@type NvPluginSpec
 return {
@@ -6,6 +12,7 @@ return {
     "OXY2DEV/markview.nvim",
     lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
     event = "VeryLazy",
+    -- ft = ft,
     ---@module 'markview'
     ---@type mkv.config
     opts = {
@@ -13,12 +20,11 @@ return {
         enable = false,
         filetypes = ft,
         ignore_buftypes = {
-          "help",
+          "help", -- using helpview
         },
         icon_provider = "devicons",
       },
     },
-    ft = ft,
     cmd = {
       "Markview",
     },
