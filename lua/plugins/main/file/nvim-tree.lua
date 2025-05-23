@@ -1,4 +1,4 @@
-local uitvim_options = require("uitvim").options
+local uitvim_options = UitVim.config
 
 ---@type NvPluginSpec
 return {

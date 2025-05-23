@@ -1,7 +1,7 @@
 local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local indent = require("uitvim").indent
+local indent = UitVim.config.indent
 
 -- General Settings
 local general = augroup("General", { clear = true })

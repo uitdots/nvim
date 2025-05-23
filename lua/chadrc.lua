@@ -1,4 +1,4 @@
-local uitvim_options = require("uitvim").options
+local uitvim_options = UitVim.config
 local nvdash_config = require("configs.ui.nvdash")
 
 ---@type ChadrcConfig

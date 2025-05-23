@@ -1,4 +1,4 @@
-local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
+local inlayhint_enabled = UitVim.config.lsp_inlayhint_enabled
 local inlayhint_opts = inlayhint_enabled
     and {
       parameterNames = {

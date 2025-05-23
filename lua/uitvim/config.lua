@@ -1,6 +1,6 @@
 -- WARN: This is core options. Do not modify it for preferences
 
----@class UitVimOptions
+---@class UitVimConfig
 local M = {}
 
 ---External lsp you want to setup.

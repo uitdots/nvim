@@ -7,10 +7,10 @@ M.json = {
   ---@private
   path = vim.fn.stdpath("config") .. "/uitvim.json",
   ---@type UitVimOptions
-  data = require("uitvim.options"),
+  data = require("uitvim.config"),
 }
 
-function M.load_options()
+function M.load_config()
   local f = io.open(M.json.path, "r")
 
   if not f then
@@ -33,7 +33,7 @@ function M.load_options()
   M.json.data = vim.tbl_deep_extend("force", M.json.data, json or {})
 end
 
-function M.save_options()
+function M.save_config()
   local f = io.open(M.json.path, "w")
 
   if not f then
@@ -43,3 +43,5 @@ function M.save_options()
   f:write(json_encode(M.json.data))
   f:close()
 end
+
+return M

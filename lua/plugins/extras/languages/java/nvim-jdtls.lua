@@ -76,7 +76,7 @@ return {
         java = {
           inlayHints = {
             parameterNames = {
-              enabled = require("uitvim").options.lsp_inlayhint_enabled and "all" or "none", ---@type "none" | "literals" | "all"
+              enabled = UitVim.config.lsp_inlayhint_enabled and "all" or "none", ---@type "none" | "literals" | "all"
             },
           },
           format = {

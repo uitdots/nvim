@@ -1,6 +1,6 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = UitVim.config.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
-local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
+local inlayhint_enabled = UitVim.config.lsp_inlayhint_enabled
 
 ---@type NvPluginSpec
 return {

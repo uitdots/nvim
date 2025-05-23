@@ -9,7 +9,7 @@ return {
   ---@type MasonLspconfigSettings
   opts = {
     automatic_enable = {
-      exclude = require("uitvim").no_setup_lsps,
+      exclude = UitVim.config.no_setup_lsps,
     },
   },
   dependencies = {

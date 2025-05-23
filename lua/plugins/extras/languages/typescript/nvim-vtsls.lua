@@ -1,4 +1,4 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = UitVim.config.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 
 ---@type NvPluginSpec
