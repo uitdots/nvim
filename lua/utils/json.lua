@@ -1,0 +1,47 @@
+local check_is_list = require("utils.types").is_list
+
+local M = {}
+
+---Source from LazyVim.
+--- https://github.com/LazyVim/LazyVim/lua/lazyvim/util/json.lua
+---@param value any
+---@param indent? string Actually it's from lazyvim and idk what does it do
+function M.encode(value, indent)
+  indent = indent or ""
+  local t = type(value)
+
+  if t == "string" then
+    return string.format("%q", value)
+  elseif t == "number" or t == "boolean" then
+    return tostring(value)
+  elseif t == "table" then
+    ---@diagnostic disable-next-line: param-type-mismatch idk why it still complains!!
+    local is_list = check_is_list(t)
+    local parts = {}
+    local next_indent = indent .. "  "
+
+    if is_list then
+      ---@diagnostic disable-next-line: no-unknown
+      for _, v in ipairs(value) do
+        local e = M.encode(v, next_indent)
+        if e then
+          table.insert(parts, next_indent .. e)
+        end
+      end
+      return "[\n" .. table.concat(parts, ",\n") .. "\n" .. indent .. "]"
+    else
+      local keys = vim.tbl_keys(value)
+      table.sort(keys)
+      ---@diagnostic disable-next-line: no-unknown
+      for _, k in ipairs(keys) do
+        local e = M.encode(value[k], next_indent)
+        if e then
+          table.insert(parts, next_indent .. string.format("%q", k) .. ": " .. e)
+        end
+      end
+      return "{\n" .. table.concat(parts, ",\n") .. "\n" .. indent .. "}"
+    end
+  end
+end
+
+return M
