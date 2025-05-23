@@ -41,4 +41,17 @@ function M.is_executable(executable)
   return vim.fn.executable(executable) == 1
 end
 
+local executable_cache = {} ---@type table<(string), boolean>
+
+function M.is_executable_cache(executable)
+  ---@type boolean | nil
+  local is_executable = executable_cache[executable]
+  if is_executable ~= nil then
+    return is_executable
+  end
+  is_executable = M.is_executable(executable)
+  executable_cache[executable] = is_executable
+  return is_executable
+end
+
 return M
