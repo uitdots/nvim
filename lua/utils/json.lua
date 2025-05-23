@@ -15,8 +15,7 @@ function M.encode(value, indent)
   elseif t == "number" or t == "boolean" then
     return tostring(value)
   elseif t == "table" then
-    ---@diagnostic disable-next-line: param-type-mismatch idk why it still complains!!
-    local is_list = check_is_list(t)
+    local is_list = check_is_list(value)
     local parts = {}
     local next_indent = indent .. "  "
 

@@ -17,7 +17,7 @@ end
 ---@return boolean
 function M.loose_is_list(t)
   for k in pairs(t) do
-    return type(k) == "number"
+    return k == 1
   end
 end
 

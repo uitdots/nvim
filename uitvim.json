@@ -1,0 +1,38 @@
+{
+  "indent": {
+    "space": {
+      "2": [
+        "just"
+      ],
+      "4": [
+        "c",
+        "cpp",
+        "cs",
+        "python",
+        "kotlin",
+        "java"
+      ]
+    }
+  },
+  "lsps": [
+    "clangd",
+    "lua_ls",
+    "pyright",
+    "texlab"
+  ],
+  "no_setup_lsps": [
+    "ts_ls",
+    "dartls",
+    "rust_analyzer",
+    "jdtls",
+    "sqls",
+    "kotlin_language_server"
+  ],
+  "options": {
+    "autoformat_enabled": true,
+    "border_enabled": true,
+    "filter_availabled_external": true,
+    "inlayhint_enabled": false,
+    "lsp_inlayhint_enabled": true
+  }
+}

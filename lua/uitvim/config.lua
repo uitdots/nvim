@@ -24,10 +24,10 @@ M.no_setup_lsps = {
   "kotlin_language_server",
 }
 
----@type {space: table<number, string[]>, tab: table<number, string[]>}
+---@type {space: table<string, string[]>, tab: table<string, string[]>}
 M.indent = {
   space = {
-    [4] = {
+    ["4"] = {
       "c",
       "cpp",
       "cs",
@@ -35,7 +35,7 @@ M.indent = {
       "kotlin",
       "java",
     },
-    [2] = {
+    ["2"] = {
       "just",
     },
   },
