@@ -6,7 +6,7 @@ local M = {}
 M.json = {
   ---@private
   path = vim.fn.stdpath("config") .. "/uitvim.json",
-  ---@type UitVimOptions
+  ---@type UitVimConfig?
   data = require("uitvim.config"),
 }
 

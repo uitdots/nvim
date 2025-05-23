@@ -1,4 +1,4 @@
--- WARN: This is core options. Do not modify it for preferences
+-- WARN: This is default config. Do not modify it for preferences
 
 ---@class UitVimConfig
 local M = {}
