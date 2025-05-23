@@ -32,6 +32,7 @@ function M.set_icon()
         break
       end
     end
+    f:close()
   else
     os_icon_name = M.os_map[os]
   end
