@@ -19,6 +19,7 @@ return {
       { "<leader>f", group = "Find & File", icon = "" },
       { "<leader>g", group = "Git", icon = "󰊢" },
       { "<leader>l", group = "LSP", icon = "", mode = { "n", "v" } },
+      { "<leader>la", group = "LSP Action", icon = "" },
       { "<leader>m", group = "Markdown", icon = "" },
       { "<leader>n", group = "Neovim", icon = "" },
       { "<leader>o", group = "Options", icon = "" },

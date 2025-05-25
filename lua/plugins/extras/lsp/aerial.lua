@@ -3,7 +3,7 @@ return {
   "stevearc/aerial.nvim",
   keys = {
     {
-      "<leader>lO",
+      "<leader>lo",
       "<cmd>AerialToggle<cr>",
       desc = "LSP | Outline",
       silent = true,

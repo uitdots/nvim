@@ -6,32 +6,30 @@ local M = {}
 function M.setup_keymaps(_, bufnr)
   local telescope_builtin = require("telescope.builtin")
   local lsp_action = require("utils.lsp").action
-  local function opts(desc)
-    return { buffer = bufnr, desc = "LSP | " .. desc }
-  end
+
+  map("n", "<leader>lao", lsp_action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
+  map("n", "<leader>las", lsp_action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
+  map("n", "<leader>lar", lsp_action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
 
   ---@module 'snacks'
-  map("n", "<leader>lo", lsp_action["source.organizeImports"], opts("Organise Imports"))
-  map("n", "<leader>ls", lsp_action["source.sortImports"], opts("Sort Imports"))
-  map("n", "<leader>lr", lsp_action["source.removeUnusedImports"], opts("Remove Unused Imports"))
 
-  map("n", "gro", telescope_builtin.lsp_outgoing_calls, opts("Outgoing Calls"))
-  map("n", "grI", telescope_builtin.lsp_incoming_calls, opts("Incoming Calls"))
-  map("n", "gri", Snacks.picker.lsp_implementations, opts("Go to Implementations"))
-  map("n", "grr", Snacks.picker.lsp_references, opts("Go to references"))
-  map("n", "grn", vim.lsp.buf.rename, opts("Rename"))
-  map("n", "gra", require("actions-preview").code_actions, opts("Code Action"))
-  map("n", "gD", Snacks.picker.lsp_declarations, opts("Go to Declarations"))
-  map("n", "gd", Snacks.picker.lsp_definitions, opts("Go to Definition"))
-  map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, opts("Go to Type Definition"))
-  map("n", "grs", Snacks.picker.lsp_symbols, opts("Symbols"))
-  map("n", "grS", Snacks.picker.lsp_workspace_symbols, opts("Workspace Symbols"))
-  map("n", "gr<C-s>", telescope_builtin.lsp_dynamic_workspace_symbols, opts("Dynamic Workspace Symbols"))
-  map("n", "grw", vim.lsp.buf.add_workspace_folder, opts("Add workspace folder"))
-  map("n", "grW", vim.lsp.buf.remove_workspace_folder, opts("Remove workspace folder"))
+  map("n", "gro", telescope_builtin.lsp_outgoing_calls, { desc = "LSP | Outgoing Calls", buffer = bufnr })
+  map("n", "grI", telescope_builtin.lsp_incoming_calls, { desc = "LSP | Incoming Calls", buffer = bufnr })
+  map("n", "gri", Snacks.picker.lsp_implementations, { desc = "LSP | Go to Implementations", buffer = bufnr })
+  map("n", "grr", Snacks.picker.lsp_references, { desc = "LSP | Go to references", buffer = bufnr })
+  map("n", "grn", vim.lsp.buf.rename, { desc = "LSP | Rename", buffer = bufnr })
+  map("n", "gra", require("actions-preview").code_actions, { desc = "LSP | Code Action", buffer = bufnr })
+  map("n", "gD", Snacks.picker.lsp_declarations, { desc = "LSP | Go to Declarations", buffer = bufnr })
+  map("n", "gd", Snacks.picker.lsp_definitions, { desc = "LSP | Go to Definition", buffer = bufnr })
+  map("n", "g<C-d>", Snacks.picker.lsp_type_definitions, { desc = "LSP | Go to Type Definition", buffer = bufnr })
+  map("n", "grs", Snacks.picker.lsp_symbols, { desc = "LSP | Symbols", buffer = bufnr })
+  map("n", "grS", Snacks.picker.lsp_workspace_symbols, { desc = "LSP | Workspace Symbols", buffer = bufnr })
+  map("n", "gr<C-s>", telescope_builtin.lsp_dynamic_workspace_symbols, { desc = "LSP | Dynamic Workspace Symbols", buffer = bufnr })
+  map("n", "grw", vim.lsp.buf.add_workspace_folder, { desc = "LSP | Add workspace folder", buffer = bufnr })
+  map("n", "grW", vim.lsp.buf.remove_workspace_folder, { desc = "LSP | Remove workspace folder", buffer = bufnr })
   map("n", "gr<C-w>", function()
     print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
-  end, opts("List workspace folders"))
+  end, { desc = "LSP | List workspace folders", buffer = bufnr })
 end
 
 ---@type elem_or_list<fun(client: vim.lsp.Client, bufnr: integer)>
@@ -53,9 +51,6 @@ M.capabilities = {
   },
 }
 
----@type lsp.ClientCapabilities
-M.capabilities = vim.tbl_deep_extend("keep", M.capabilities, require("nvchad.configs.lspconfig").capabilities)
-
 ---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
 M.opts = {
@@ -65,8 +60,6 @@ M.opts = {
 }
 
 function M.setup()
-  require("nvchad.lsp").diagnostic_config()
-
   vim.diagnostic.config({
     virtual_text = false,
     virtual_lines = false,

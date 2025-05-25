@@ -1,3 +1,5 @@
+local lspconfig = require("configs.lsp.lspconfig")
+
 ---@type NvPluginSpec
 return {
   {
@@ -7,6 +9,15 @@ return {
       vim.api.nvim_create_user_command("NvChadMasonInstallAll", function()
         require("nvchad.mason").install_all()
       end, { desc = "NvChad Mason Install All" })
+
+      lspconfig.capabilities = vim.tbl_deep_extend("keep", lspconfig.capabilities, require("nvchad.configs.lspconfig").capabilities)
+
+      local original_lspconfig_setup = lspconfig.setup
+      ---@diagnostic disable-next-line: duplicate-set-field This is intentional
+      function lspconfig.setup()
+        require("nvchad.lsp").diagnostic_config()
+        original_lspconfig_setup()
+      end
     end,
     keys = {
       {
