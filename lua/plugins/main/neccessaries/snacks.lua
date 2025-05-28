@@ -48,11 +48,7 @@ return {
           if i == #p + 1 or p[i].token == ev.data.params.token then
             p[i] = {
               token = ev.data.params.token,
-              msg = ("[%3d%%] %s%s"):format(
-                value.kind == "end" and 100 or value.percentage or 100,
-                value.title or "",
-                value.message and (" **%s**"):format(value.message) or ""
-              ),
+              msg = ("[%3d%%] %s%s"):format(value.kind == "end" and 100 or value.percentage or 100, value.title or "", value.message and (" **%s**"):format(value.message) or ""),
               done = value.kind == "end",
             }
             break
@@ -69,8 +65,7 @@ return {
           id = "lsp_progress",
           title = client.name,
           opts = function(notif)
-            notif.icon = #progress[client.id] == 0 and ""
-              or spinners[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinners + 1]
+            notif.icon = #progress[client.id] == 0 and "" or spinners[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinners + 1]
           end,
         })
       end,
@@ -166,21 +161,22 @@ return {
           hidden = true,
           ignored = true,
           exclude = {
-            "%.egg-info/",
             "%.dart_tool/",
+            "%.egg-info/",
             "%.git/",
+            "%.gradle/",
             "%.idea/",
             "%.next/",
             "%.venv/",
             "%.vs/",
             ".husky/_/",
-            "node_modules/",
             "__pycache__/",
             "bin/",
             "build/",
             "cache/",
             "debug/",
             "dist/",
+            "node_modules/",
             "obj/",
           },
         })
