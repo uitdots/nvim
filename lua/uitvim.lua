@@ -8,6 +8,7 @@ M.lsps = {
   "lua_ls",
   "pyright",
   "texlab",
+  "kotlin_lsp",
 }
 
 ---For having lsp setup by mason (exclude these)
