@@ -257,14 +257,6 @@ return {
       desc = "Find | Visual Selection or Word",
       mode = { "n", "x" },
     },
-    { -- For sth like,... <C-]> for tag/lsp, then this will find word :))
-      "<C-[>",
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = "Find | Visual Selection or Word",
-      mode = { "n", "x" },
-    },
     {
       "<leader>fB",
       function()
