@@ -5,6 +5,7 @@ return {
   opts = {
     ensure_installed = {
       "xmlformatter",
+      "lemminx",
     },
   },
   opts_extend = {
