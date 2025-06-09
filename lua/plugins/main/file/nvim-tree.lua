@@ -17,8 +17,8 @@ return {
     },
     {
       "<leader>uf",
-      "<cmd>NvimTreeFocus<cr>",
-      desc = "Utils | NvimTree Focus",
+      "<cmd>NvimTreeFindFile<cr>",
+      desc = "Utils | NvimTree Find",
       silent = true,
     },
   },
