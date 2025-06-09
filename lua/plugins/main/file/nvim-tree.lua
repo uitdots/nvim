@@ -1,4 +1,5 @@
 local uitvim_options = require("uitvim").options
+local map = vim.keymap.set
 
 ---@type NvPluginSpec
 return {
@@ -12,6 +13,12 @@ return {
       "<leader>e",
       "<cmd>NvimTreeToggle<cr>",
       desc = "General | Toggle NvimTree",
+      silent = true,
+    },
+    {
+      "<leader>uf",
+      "<cmd>NvimTreeFocus<cr>",
+      desc = "Utils | NvimTree Focus",
       silent = true,
     },
   },
@@ -34,12 +41,12 @@ return {
 
       api.config.mappings.default_on_attach(bufnr)
 
-      vim.keymap.set("n", "l", api.node.open.edit, opts("Open"))
-      vim.keymap.set("n", "u", api.tree.change_root_to_parent, opts("Up"))
+      map("n", "l", api.node.open.edit, opts("Open"))
+      map("n", "u", api.tree.change_root_to_parent, opts("Up"))
       -- NOTE: Config for "b0o/nvim-tree-preview.lua"
-      vim.keymap.set("n", "P", preview.watch, opts("Preview (Watch)"))
-      vim.keymap.set("n", "<Esc>", preview.unwatch, opts("Close Preview/Unwatch"))
-      vim.keymap.set("n", "<Tab>", function()
+      map("n", "P", preview.watch, opts("Preview (Watch)"))
+      map("n", "<Esc>", preview.unwatch, opts("Close Preview/Unwatch"))
+      map("n", "<Tab>", function()
         local ok, node = pcall(api.tree.get_node_under_cursor)
         if ok and node then
           if node.type == "directory" then
@@ -74,7 +81,7 @@ return {
     },
     sync_root_with_cwd = true,
     update_focused_file = {
-      enable = true,
+      enable = false,
       update_cwd = false,
       ignore_list = {},
     },

@@ -28,7 +28,7 @@ return {
           end)
         end)
       end,
-      desc = "Lorem | Generate",
+      desc = "Utils | Generate Lorem",
       silent = true,
     },
   },

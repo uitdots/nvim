@@ -11,7 +11,7 @@ return {
     {
       "<leader>ut",
       "<cmd>TSJToggle<cr>",
-      desc = "TreeSJ | Toggle",
+      desc = "Utils | Toggle TreeSJ",
       silent = true,
     },
   },
