@@ -1,11 +1,9 @@
 local uitvim_options = require("uitvim").options
-local map = vim.keymap.set
 
 ---@type NvPluginSpec
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = {
-    "b0o/nvim-tree-preview.lua",
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
@@ -31,32 +29,6 @@ return {
   },
   -- TODO: This opt is to many custom. Use default if possible?
   opts = {
-    on_attach = function(bufnr)
-      local api = require("nvim-tree.api")
-      local preview = require("nvim-tree-preview")
-
-      local function opts(desc)
-        return { desc = "NvimTree | " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
-      end
-
-      api.config.mappings.default_on_attach(bufnr)
-
-      map("n", "l", api.node.open.edit, opts("Open"))
-      map("n", "u", api.tree.change_root_to_parent, opts("Up"))
-      -- NOTE: Config for "b0o/nvim-tree-preview.lua"
-      map("n", "P", preview.watch, opts("Preview (Watch)"))
-      map("n", "<Esc>", preview.unwatch, opts("Close Preview/Unwatch"))
-      map("n", "<Tab>", function()
-        local ok, node = pcall(api.tree.get_node_under_cursor)
-        if ok and node then
-          if node.type == "directory" then
-            api.node.open.edit()
-          else
-            preview.node(node, { toggle_focus = true })
-          end
-        end
-      end, opts("Preview"))
-    end,
     diagnostics = {
       enable = true,
     },
