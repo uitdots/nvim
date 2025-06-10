@@ -14,7 +14,7 @@ return {
       silent = true,
     },
     {
-      "<leader>uf",
+      "<leader><Tab>",
       "<cmd>NvimTreeFindFile<cr>",
       desc = "Utils | NvimTree Find",
       silent = true,
