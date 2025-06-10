@@ -62,6 +62,14 @@ return {
         },
       },
     },
-    "OXY2DEV/markview.nvim",
+    {
+      "OXY2DEV/markview.nvim",
+      init = function()
+        vim.api.nvim_create_autocmd("FileType", {
+          pattern = "Avante",
+          command = "Markview enable",
+        })
+      end,
+    },
   },
 }
