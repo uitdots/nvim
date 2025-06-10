@@ -1,8 +1,9 @@
 local ft = vim.list_extend({
+  "codecompanion",
   "html",
-  "xhtml",
   "tex",
   "typst",
+  "xhtml",
   "yaml",
 }, require("utils.filetypes").markdown)
 
@@ -14,7 +15,7 @@ return {
     event = "VeryLazy",
     -- ft = ft,
     ---@module 'markview'
-    ---@type mkv.config
+    ---@type markview.config
     opts = {
       preview = {
         enable = false,

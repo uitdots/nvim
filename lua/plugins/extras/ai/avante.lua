@@ -3,6 +3,7 @@ local is_windows = require("utils.os").is_windows
 ---@type NvPluginSpec
 return {
   "yetone/avante.nvim",
+  enabled = false,
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = "copilot", ---@type "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
@@ -64,6 +65,7 @@ return {
     },
     {
       "OXY2DEV/markview.nvim",
+      optional = true,
       init = function()
         vim.api.nvim_create_autocmd("FileType", {
           pattern = "Avante",
