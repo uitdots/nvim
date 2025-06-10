@@ -2,6 +2,9 @@ local lspconfig = require("configs.lsp.lspconfig")
 local is_executable = require("utils.executable").is_executable
 local is_windows = require("utils.os").is_windows
 local home = require("utils.os").home
+local uitvim = require("uitvim")
+
+table.insert(uitvim.no_setup_lsps, "dartls")
 
 ---@type NvPluginSpec
 return {

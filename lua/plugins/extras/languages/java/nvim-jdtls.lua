@@ -3,6 +3,9 @@ local os = require("utils.os").os
 local home = require("utils.os").home
 local get_child_folders = require("utils.helpers").get_child_folders
 local lspconfig = require("configs.lsp.lspconfig")
+local uitvim = require("uitvim")
+
+table.insert(uitvim.no_setup_lsps, "jdtls")
 
 ---@type NvPluginSpec
 return {
@@ -45,10 +48,7 @@ return {
     ---@type string[]
     local runtime_paths = {}
 
-    vim.list_extend(
-      runtime_paths,
-      get_child_folders(home .. "/.local/share/mise/installs/java", { follow_symlink = false }) or {}
-    )
+    vim.list_extend(runtime_paths, get_child_folders(home .. "/.local/share/mise/installs/java", { follow_symlink = false }) or {})
     if os == "Linux" then
       vim.list_extend(runtime_paths, get_child_folders("/usr/lib/jvm", { follow_symlink = false }) or {})
     elseif os == "Windows" then
