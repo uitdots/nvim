@@ -11,10 +11,14 @@ M.lsps = {
   "kotlin_lsp",
 }
 
----For excluding these lsps to be setup.
----Recommend to add them in the lua/plugins/extras/ai/languages. This is for your custom lsp
+---For having lsp setup by mason (exclude these)
 ---@type string[]
 M.no_setup_lsps = {
+  "ts_ls",
+  "dartls",
+  "rust_analyzer",
+  "jdtls",
+  "sqls",
   "kotlin_language_server",
 }
 

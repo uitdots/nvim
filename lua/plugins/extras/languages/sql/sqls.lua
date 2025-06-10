@@ -1,7 +1,4 @@
 local is_executable = require("utils.executable").is_executable
-local uitvim = require("uitvim")
-
-table.insert(uitvim.no_setup_lsps, "sqls")
 
 ---@type NvPluginSpec
 return {
