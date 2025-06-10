@@ -87,6 +87,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.rust",
+    enabled = false,
+  },
+  {
     import = "plugins.extras.languages.shell",
     enabled = true,
   },
