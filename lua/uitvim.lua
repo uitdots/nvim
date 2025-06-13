@@ -60,6 +60,10 @@ M.options = {
   ---Enable autoformat
   ---@type boolean
   autoformat_enabled = true,
+
+  ---Enable AI suggestion
+  ---@type boolean
+  ai_suggestion_enabled = false,
 }
 
 return M

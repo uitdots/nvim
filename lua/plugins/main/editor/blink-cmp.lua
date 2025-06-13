@@ -36,6 +36,13 @@ return {
           "fallback",
         },
         ["<Tab>"] = {
+          function()
+            if vim.g.copilot_enabled then
+              if require("copilot.suggestion").is_visible() then
+                return require("copilot.suggestion").accept()
+              end
+            end
+          end,
           function(cmp)
             if cmp.is_active() then
               return cmp.select_next({ auto_insert = false })
