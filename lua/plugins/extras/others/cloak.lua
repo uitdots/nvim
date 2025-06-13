@@ -37,7 +37,7 @@ return {
       {
         file_pattern = {
           ".env*",
-          "*{account,credential,password,config}*.{json,jsonc,yml,yaml,toml,env}",
+          "*{account,credential,password}*.{json,jsonc,yml,yaml,toml,env}",
         },
         cloak_pattern = {
           "=.+",
