@@ -39,6 +39,9 @@ return {
   },
   init = function()
     vim.cmd("cab cc CodeCompanion")
+    vim.cmd("cab cca CodeCompanionActions")
+    vim.cmd("cab ccc CodeCompanionChat")
+    vim.cmd("cab cccc CodeCompanionCmd")
   end,
   opts = {},
   dependencies = {
@@ -57,7 +60,6 @@ return {
           callback = function()
             vim.schedule(function()
               vim.cmd("Markview enable")
-              vim.cmd("Markview hybridEnable")
             end)
           end,
         })
