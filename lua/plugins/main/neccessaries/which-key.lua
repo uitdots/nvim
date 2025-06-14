@@ -13,13 +13,11 @@ return {
     delay = 500,
     spec = {
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
-      { "<leader>A", group = "API", icon = "󱂛" },
       { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
       { "<leader>d", group = "Debug", icon = "" },
       { "<leader>f", group = "Find & File", icon = "" },
       { "<leader>g", group = "Git", icon = "󰊢" },
       { "<leader>l", group = "LSP", icon = "", mode = { "n", "v" } },
-      { "<leader>la", group = "LSP Action", icon = "" },
       { "<leader>m", group = "Markdown", icon = "" },
       { "<leader>n", group = "Neovim", icon = "" },
       { "<leader>o", group = "Options", icon = "" },
@@ -29,6 +27,9 @@ return {
       { "<leader>s", group = "Snapshot", icon = "", mode = "x" },
       { "<leader>t", group = "Terminal", icon = "" },
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
+      { "<localleader>\\", group = "Multi Cursor", icon = "󰗧" },
+      { "<localleader>l", group = "LSP", icon = "" },
+      { "<localleader>r", group = "Rest API", icon = "󱂛" },
     },
   },
   keys = {

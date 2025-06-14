@@ -49,12 +49,6 @@ return {
       silent = true,
     },
     {
-      "<leader>as",
-      "<cmd>Copilot suggestion<cr>",
-      desc = "AI | Toggle Copilot Sugesstion",
-      silent = true,
-    },
-    {
       "<leader>ap",
       "<cmd>Copilot panel<cr>",
       desc = "AI | Toggle Copilot Panel",

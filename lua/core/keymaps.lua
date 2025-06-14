@@ -4,7 +4,7 @@ local o = vim.o
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
-map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
+map("n", "<localleader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
 
 -- Options
 map("n", "<leader>ol", function()

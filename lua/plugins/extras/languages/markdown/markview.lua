@@ -1,4 +1,4 @@
-local ft = vim.list_extend({
+local fts = vim.list_extend({
   "codecompanion",
   "html",
   "tex",
@@ -18,12 +18,14 @@ return {
     ---@type markview.config
     opts = {
       preview = {
-        enable = false,
-        filetypes = ft,
+        enable = true,
+        enable_hybrid_mode = true,
+        filetypes = fts,
         ignore_buftypes = {
           "help", -- using helpview
         },
         icon_provider = "devicons",
+        hybrid_modes = { "i" },
       },
     },
     cmd = {
@@ -34,7 +36,7 @@ return {
         "<leader>mv",
         "<cmd>Markview<cr>",
         desc = "Markdown | Toggle View",
-        ft = ft,
+        ft = fts,
         silent = true,
       },
     },

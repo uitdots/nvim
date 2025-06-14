@@ -16,7 +16,7 @@ return {
     {
       "<leader><Tab>",
       "<cmd>NvimTreeFindFile<cr>",
-      desc = "Utils | NvimTree Find",
+      desc = "General | NvimTree Find Current",
       silent = true,
     },
   },

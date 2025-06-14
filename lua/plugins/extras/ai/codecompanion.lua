@@ -9,7 +9,7 @@ return {
   },
   keys = {
     {
-      "<leader>aA",
+      "<leader>aa",
       "<cmd>CodeCompanionActions<CR>",
       desc = "AI | Actions",
       mode = { "n", "v" },
@@ -18,30 +18,27 @@ return {
     {
       "<leader>aa",
       "<cmd>CodeCompanionChat Add<CR>",
-      desc = "AI | Add",
+      desc = "AI | Add Current to Chat",
       mode = "v",
       silent = true,
     },
     {
-      "<leader>aa",
+      "<leader>ac",
       "<cmd>CodeCompanionChat Toggle<CR>",
-      desc = "AI | Toggle",
-      mode = { "n", "v" },
+      desc = "AI | Toggle Chat",
+      mode = "n",
       silent = true,
     },
     {
       "<leader>ai",
       "<cmd>CodeCompanion<CR>",
       desc = "AI | Inline Chat",
-      mode = "v",
+      mode = { "n", "v" },
       silent = true,
     },
   },
   init = function()
     vim.cmd("cab cc CodeCompanion")
-    vim.cmd("cab cca CodeCompanionActions")
-    vim.cmd("cab ccc CodeCompanionChat")
-    vim.cmd("cab cccc CodeCompanionCmd")
   end,
   opts = {},
   dependencies = {
@@ -49,6 +46,10 @@ return {
     "nvim-treesitter/nvim-treesitter",
     {
       "ravitemer/mcphub.nvim",
+      optional = true,
+    },
+    {
+      "echasnovski/mini.diff",
       optional = true,
     },
     {
@@ -60,6 +61,7 @@ return {
           callback = function()
             vim.schedule(function()
               vim.cmd("Markview enable")
+              vim.cmd("Markview hybridEnable")
             end)
           end,
         })
