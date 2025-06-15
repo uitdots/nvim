@@ -126,7 +126,6 @@ M.base46 = {
     "diffview",
     "flash",
     "git",
-    "git-conflict",
     "grug_far",
     "lsp",
     "markview",
