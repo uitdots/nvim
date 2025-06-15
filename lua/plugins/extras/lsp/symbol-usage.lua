@@ -19,7 +19,7 @@ return {
   },
   keys = {
     {
-      "<leader>lS",
+      "<leader>ls",
       function()
         require("symbol-usage").toggle_globally()
       end,
