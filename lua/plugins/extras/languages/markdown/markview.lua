@@ -25,7 +25,17 @@ return {
           "help", -- using helpview
         },
         icon_provider = "devicons",
-        hybrid_modes = { "i" },
+        modes = {
+          "n",
+          "no",
+          "c",
+          "v",
+          "V",
+          "i",
+        },
+        hybrid_modes = {
+          "i",
+        },
       },
     },
     cmd = {
