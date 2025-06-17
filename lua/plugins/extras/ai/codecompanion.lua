@@ -24,7 +24,12 @@ return {
     },
     {
       "<leader>ac",
-      "<cmd>CodeCompanionChat Toggle<CR>",
+      function()
+        if vim.g.nvdash_displayed then
+          require("nvchad.tabufline").close_buffer(vim.g.nvdash_buf)
+        end
+        vim.cmd("CodeCompanionChat Toggle")
+      end,
       desc = "AI | Toggle Chat",
       mode = "n",
       silent = true,
@@ -40,7 +45,13 @@ return {
   init = function()
     vim.cmd("cab cc CodeCompanion")
   end,
-  opts = {},
+  opts = {
+    display = {
+      chat = {
+        separator = "---", -- TODO: Check this, this doesn't work
+      },
+    },
+  },
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",

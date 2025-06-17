@@ -55,7 +55,7 @@ return {
         "<leader>D",
         function()
           if vim.g.nvdash_displayed then
-            require("nvchad.tabufline").close_buffer()
+            require("nvchad.tabufline").close_buffer(vim.g.nvdash_buf)
           end
           vim.cmd("DBUIToggle")
         end,
