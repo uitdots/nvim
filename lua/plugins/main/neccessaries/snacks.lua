@@ -137,18 +137,24 @@ return {
     },
   },
   keys = {
-    -- General
+    -- Find
     {
-      "<M-;>",
+      "<leader>fs",
+      function()
+        Snacks.picker.grep_word()
+      end,
+      desc = "Find | Visual Selection or Word",
+      mode = { "n", "x" },
+    },
+    {
+      "<leader>fS",
       function()
         Snacks.picker.spelling()
       end,
       desc = "General | Spelling",
     },
-
-    -- Find
     {
-      "<leader>fS",
+      "<leader>f<C-s>",
       function()
         Snacks.picker.smart()
       end,
@@ -248,14 +254,6 @@ return {
         Snacks.picker.resume()
       end,
       desc = "Find | Resume",
-    },
-    {
-      "<leader>fW",
-      function()
-        Snacks.picker.grep_word()
-      end,
-      desc = "Find | Visual Selection or Word",
-      mode = { "n", "x" },
     },
     {
       "<leader>fB",
