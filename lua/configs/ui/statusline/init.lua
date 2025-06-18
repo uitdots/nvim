@@ -1,4 +1,4 @@
----@type table<string, string | fun(): string? | nil>
+---@type table<string, string | fun(): string?>
 local M = {
   end_of_line = require("configs.ui.statusline.end-of-line"),
   lsps = require("configs.ui.statusline.lsps"),
