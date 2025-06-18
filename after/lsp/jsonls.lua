@@ -1,9 +1,11 @@
+---@diagnostic disable: missing-fields
+
 ---@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
 return {
   init_options = {
     provideFormatter = false,
   },
+  ---@type lspconfig.settings.jsonls
   settings = {
     json = {
       schemas = require("schemastore").json.schemas(),

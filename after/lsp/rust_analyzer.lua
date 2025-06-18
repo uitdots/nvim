@@ -1,3 +1,5 @@
+---@diagnostic disable: missing-fields
+
 local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
 local inlayhint_opts = inlayhint_enabled
     and {
@@ -31,8 +33,8 @@ local inlayhint_opts = inlayhint_enabled
   or nil
 
 ---@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
 return {
+  ---@type lspconfig.settings.rust_analyzer
   settings = {
     inlayHints = inlayhint_opts,
   },

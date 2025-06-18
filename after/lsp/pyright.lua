@@ -1,6 +1,8 @@
+---@diagnostic disable: missing-fields
+
 ---@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
 return {
+  ---@type lspconfig.settings.pyright
   settings = {
     python = {
       analysis = {

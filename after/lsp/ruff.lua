@@ -1,5 +1,6 @@
+---@diagnostic disable: missing-fields
+
 ---@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
 return {
   on_attach = function(client, bufnr)
     require("configs.lsp.lspconfig").on_attach(client, bufnr)

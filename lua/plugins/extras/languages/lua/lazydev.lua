@@ -8,6 +8,7 @@ return {
     library = {
       "lazy.nvim",
       "ui/nvchad_types",
+      "neoconf.nvim/types/lsp.lua",
       "luvit-meta/library",
       -- { path = "snacks.nvim", words = { "Snacks" } },
     },

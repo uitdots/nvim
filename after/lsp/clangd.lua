@@ -1,7 +1,8 @@
+---@diagnostic disable: missing-fields
+
 local gcc_path = require("utils.executable").get_path_from_executable("gcc")
 
 ---@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
 return {
   cmd = {
     "clangd",
