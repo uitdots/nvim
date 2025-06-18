@@ -23,8 +23,9 @@ M.ui = {
       "file",
       "git",
       "%=",
-      "lsp_msg",
+      -- "lsp_msg", -- Yeah I use snacks already?
       "%=",
+      "codecompanion",
       "macro_recording",
       "command",
       "diagnostics",

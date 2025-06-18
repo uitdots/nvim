@@ -44,6 +44,17 @@ return {
   },
   init = function()
     vim.cmd("cab cc CodeCompanion")
+
+    vim.api.nvim_create_autocmd({ "User" }, {
+      pattern = "CodeCompanionRequest*",
+      callback = function(request)
+        if request.match == "CodeCompanionRequestStarted" then
+          vim.g.codecompanion_requesting = true
+        elseif request.match == "CodeCompanionRequestFinished" then
+          vim.g.codecompanion_requesting = nil
+        end
+      end,
+    })
   end,
   opts = {
     display = {

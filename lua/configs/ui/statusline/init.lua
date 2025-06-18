@@ -4,6 +4,7 @@ local M = {
   lsps = require("configs.ui.statusline.lsps"),
   line_percentage = require("configs.ui.statusline.line-percentage"),
   macro_recording = require("configs.ui.statusline.macro-recording"),
+  codecompanion = require("configs.ui.statusline.codecompanion"),
   command = require("configs.ui.statusline.command"),
   auto_format = require("configs.ui.statusline.auto-format"),
   linters = require("configs.ui.statusline.linters"),
