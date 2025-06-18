@@ -2,6 +2,7 @@
 return {
   {
     "folke/neoconf.nvim",
+    enabled = false,
     opts = {
       live_reload = false,
     },
