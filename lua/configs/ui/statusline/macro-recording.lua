@@ -1,5 +1,9 @@
 local function render()
-  return vim.fn.reg_recording() ~= "" and "%#St_cwd_sep# " or ""
+  if vim.fn.reg_recording() == "" then
+    return
+  end
+
+  return "%#St_cwd_sep# "
 end
 
 return render

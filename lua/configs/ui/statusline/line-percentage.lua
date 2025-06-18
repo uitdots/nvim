@@ -59,6 +59,7 @@ function M.render()
   if M.status == nil then
     M.set_status()
   end
+
   return M.status
 end
 

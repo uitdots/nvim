@@ -5,8 +5,8 @@ local M = {}
 M.current_bufnr = nil
 
 ---@private
----@type string
-M.status = ""
+---@type string?
+M.status = nil
 
 ---@type nil | false | any
 M.conform = nil
@@ -29,7 +29,7 @@ function M.set_status()
 
   local formatters = conform.list_formatters(0)
   if #formatters == 0 then
-    M.status = ""
+    M.status = nil
     return
   end
 
@@ -46,6 +46,10 @@ function M.set_status()
 end
 
 function M.render()
+  if package.loaded["conform"] == nil then
+    return
+  end
+
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then

@@ -16,13 +16,13 @@ local M = {}
 M.current_bufnr = nil
 
 ---@private
----@type string
-M.status = ""
+---@type string?
+M.status = nil
 
 function M.set_status()
   local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV")
   if venv == nil then
-    M.status = ""
+    M.status = nil
     return
   end
   M.status = "%#St_gitIcons# "

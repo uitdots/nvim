@@ -16,8 +16,8 @@ local M = {}
 M.current_bufnr = nil
 
 ---@private
----@type string
-M.status = ""
+---@type string?
+M.status = nil
 
 ---@private
 ---@param bufnr number?
@@ -26,7 +26,7 @@ function M.set_status(bufnr)
   local lsps = vim.lsp.get_clients({ bufnr = bufnr })
 
   if #lsps == 0 then
-    M.status = ""
+    M.status = nil
     return
   end
 
