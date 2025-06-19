@@ -6,10 +6,6 @@ return {
     "NvChad/NvChad",
     branch = "v2.5",
     init = function()
-      vim.api.nvim_create_user_command("NvChadMasonInstallAll", function()
-        require("nvchad.mason").install_all()
-      end, { desc = "NvChad Mason Install All" })
-
       lspconfig.capabilities = vim.tbl_deep_extend("keep", lspconfig.capabilities, require("nvchad.configs.lspconfig").capabilities)
 
       local original_lspconfig_setup = lspconfig.setup
@@ -50,6 +46,14 @@ return {
           require("nvchad.tabufline").closeAllBufs(false)
         end,
         desc = "General | Close Other Buffers",
+        silent = true,
+      },
+      {
+        "<leader><M-c>",
+        function()
+          require("nvchad.tabufline").closeAllBufs(true)
+        end,
+        desc = "General | Close Buffers",
         silent = true,
       },
       {
