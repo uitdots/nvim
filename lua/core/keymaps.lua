@@ -92,11 +92,6 @@ map("n", "<Down>", "<cmd>tabclose<CR>", { desc = "General | Close tab", silent =
 map("v", "<", "<gv", { desc = "General | Indent backward", silent = true })
 map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
--- LSP
-map("n", "<leader>lh", function()
-  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
-end, { desc = "LSP | Toggle InlayHint", silent = true })
-
 -- Terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
 map("n", "<leader>tr", require("configs.code-runner").run, { desc = "Terminal | Code Runner", silent = true })

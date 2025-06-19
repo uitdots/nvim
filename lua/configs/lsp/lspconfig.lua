@@ -1,15 +1,29 @@
 local map = vim.keymap.set
+local lsp_utils = require("utils.lsp")
 
 local M = {}
 
 ---@private
-function M.setup_keymaps(_, bufnr)
+---@param client vim.lsp.Client
+---@param bufnr integer
+---@diagnostic disable-next-line: unused-local
+function M.setup_keymaps(client, bufnr)
   local telescope_builtin = require("telescope.builtin")
   local lsp_action = require("utils.lsp").action
 
   map("n", "<localleader>lo", lsp_action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
   map("n", "<localleader>ls", lsp_action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
   map("n", "<localleader>lr", lsp_action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
+
+  map("n", "<leader>lS", function()
+    lsp_utils.toggle_semantic_tokens(bufnr)
+  end, { desc = "LSP | Toggle Semantic Tokens", silent = true })
+  map("n", "<leader>ll", function()
+    vim.lsp.codelens.run()
+  end, { desc = "LSP | Run Codelens", silent = true })
+  map("n", "<leader>lc", function()
+    vim.lsp.codelens.clear()
+  end, { desc = "LSP | Clear Codelens", silent = true })
 
   ---@module 'snacks'
 
@@ -32,17 +46,27 @@ function M.setup_keymaps(_, bufnr)
   end, { desc = "LSP | List workspace folders", buffer = bufnr })
 end
 
+---@private
+function M.setup_global_keymap()
+  map("n", "<leader>lh", function()
+    vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+  end, { desc = "LSP | Toggle InlayHint", silent = true })
+end
+
 ---@type elem_or_list<fun(client: vim.lsp.Client, bufnr: integer)>
-M.on_attach = function(client, bufnr)
+function M.on_attach(client, bufnr)
   M.setup_keymaps(client, bufnr)
 end
 
 ---@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
-M.on_init = function() end
+function M.on_init() end
 
 ---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
 ---@type lsp.ClientCapabilities
 M.capabilities = {
+  textDocument = {
+    semanticTokens = nil,
+  },
   workspace = {
     fileOperations = {
       didRename = true,
@@ -65,6 +89,7 @@ function M.setup()
     virtual_lines = false,
   })
 
+  M.setup_global_keymap()
   vim.lsp.config("*", M.opts)
 end
 
