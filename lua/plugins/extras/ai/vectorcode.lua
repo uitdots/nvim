@@ -2,6 +2,7 @@
 return {
   {
     "Davidyz/VectorCode",
+    version = "*",
     build = "uv tool upgrade 'vectorcode[lsp]'",
     ---@module 'vectorcode'
     ---@type VectorCode.Opts
