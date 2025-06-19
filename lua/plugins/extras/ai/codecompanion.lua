@@ -26,7 +26,7 @@ return {
       "<leader>ac",
       function()
         if vim.g.nvdash_displayed then
-          require("nvchad.tabufline").close_buffer(vim.g.nvdash_buf)
+          vim.cmd("NvDash")
         end
         vim.cmd("CodeCompanionChat Toggle")
       end,
@@ -66,10 +66,6 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
-    {
-      "ravitemer/mcphub.nvim",
-      optional = true,
-    },
     {
       "echasnovski/mini.diff",
       optional = true,
