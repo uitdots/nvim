@@ -4,7 +4,6 @@ local ai_suggestion_enabled = require("uitvim").options.ai_suggestion_enabled
 ---@type NvPluginSpec
 return {
   "zbirenbaum/copilot.lua",
-  enabled = true,
   cmd = "Copilot",
   opts = {
     panel = {
@@ -57,6 +56,7 @@ return {
   },
   config = function(_, opts)
     require("copilot").setup(opts)
+
     if not ai_suggestion_enabled then
       vim.g.copilot_enabled = false
       pcall(function()
@@ -65,50 +65,47 @@ return {
     else
       vim.g.copilot_enabled = true
     end
+
+    autocmd("User", {
+      pattern = "BlinkCmpMenuOpen",
+      callback = function()
+        require("copilot.suggestion").dismiss()
+        vim.b.copilot_suggestion_hidden = true
+      end,
+    })
+
+    autocmd("User", {
+      pattern = "BlinkCmpMenuClose",
+      callback = function()
+        vim.b.copilot_suggestion_hidden = false
+      end,
+    })
   end,
   dependencies = {
     "saghen/blink.cmp",
     optional = true,
-    ------TODO: Maybe should... check the disable diagnostic here
-    ------
-    ------@module 'blink.cmp'
-    ------@param opts blink.cmp.Config?
-    ------@return blink.cmp.Config
-    ---opts = function(_, opts)
-    ---  opts = opts or {}
-    ---  opts.keymap = opts.keymap or {}
-    ---
-    ---  local copilot = {
-    ---    function()
-    ---      if not require("copilot.suggestion").is_visible() then
-    ---        return require("copilot.suggestion").accept()
-    ---      end
-    ---    end,
-    ---  }
-    ---
-    ---  if opts.keymap["<Tab>"] == nil then
-    ---    opts.keymap["<Tab>"] = copilot
-    ---  else
-    ---    vim.list_extend(opts.keymap["<Tab>"], copilot, 1)
-    ---  end
-    ---
-    ---  vim.print(opts)
-    ---  return opts
-    ---end,
-    init = function()
-      autocmd("User", {
-        pattern = "BlinkCmpMenuOpen",
-        callback = function()
-          vim.b.copilot_suggestion_hidden = true
-        end,
-      })
+    ---@module 'blink.cmp'
+    ---@param opts blink.cmp.Config?
+    ---@return blink.cmp.Config
+    opts = function(_, opts)
+      opts = opts or {}
+      opts.keymap = opts.keymap or {}
 
-      autocmd("User", {
-        pattern = "BlinkCmpMenuClose",
-        callback = function()
-          vim.b.copilot_suggestion_hidden = false
+      local copilot = {
+        function()
+          if vim.g.copilot_enabled and require("copilot.suggestion").is_visible() then
+            return require("copilot.suggestion").accept()
+          end
         end,
-      })
+      }
+
+      if opts.keymap["<Tab>"] == nil then
+        opts.keymap["<Tab>"] = copilot
+      else
+        vim.list_extend(opts.keymap["<Tab>"], copilot, 1)
+      end
+
+      return opts
     end,
   },
 }
