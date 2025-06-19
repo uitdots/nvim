@@ -112,7 +112,6 @@ return {
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)
-    vim.print(vim.inspect(opts.keymap["<Tab>"][1]))
     opts.completion = opts.completion or {}
     opts.completion.menu = require("nvchad.blink").menu
     require("blink.cmp").setup(opts)
