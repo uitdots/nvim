@@ -43,5 +43,9 @@ return {
         },
       },
     },
+    dependencies = {
+      "ravitemer/mcphub.nvim",
+    },
+    optional = true,
   },
 }

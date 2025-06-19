@@ -1,7 +1,7 @@
 ---@type NvPluginSpec
 return {
   {
-    import = "plugins.extras.ai",
+    import = "plugins.extras.ai.init",
     enabled = true,
   },
   {
