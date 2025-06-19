@@ -27,7 +27,6 @@ return {
       },
     },
     build = "npm install -g mcp-hub@latest",
-    main = "mcphub",
   },
   {
     "olimorris/codecompanion.nvim",
