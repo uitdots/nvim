@@ -13,11 +13,6 @@ return {
     "groovy",
     "kotlin",
   },
-  init_options = {
-    gradle = {
-      nestedProjects = true,
-    },
-  },
   root_dir = function(_, on_dir)
     local fname = vim.fn.expand("%:t")
     if vim.tbl_contains(root_markers, fname) then
