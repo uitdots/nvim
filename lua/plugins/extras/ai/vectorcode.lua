@@ -8,7 +8,7 @@ return {
     ---@type VectorCode.Opts
     ---@diagnostic disable-next-line: missing-fields
     opts = {
-      async_backend = "lsp",
+      async_backend = "default",
     },
     dependencies = {
       "nvim-lua/plenary.nvim",
