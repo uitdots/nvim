@@ -13,7 +13,7 @@ return {
     o.foldenable = true
   end,
   opts = {
-    provider_selector = function(_, _, _)
+    provider_selector = function()
       return { "treesitter", "indent" }
     end,
   },
