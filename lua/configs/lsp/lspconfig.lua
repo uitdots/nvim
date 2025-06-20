@@ -61,14 +61,15 @@ function M.on_attach(client, bufnr)
 end
 
 ---@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
-function M.on_init() end
+function M.on_init(client)
+  if client:supports_method("textDocument/semanticTokens") then
+    client.server_capabilities.semanticTokensProvider = nil
+  end
+end
 
 ---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
 ---@type lsp.ClientCapabilities
 M.capabilities = {
-  textDocument = {
-    semanticTokens = false,
-  },
   workspace = {
     fileOperations = {
       didRename = true,
