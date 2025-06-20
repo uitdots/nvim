@@ -48,7 +48,7 @@ return {
   },
   {
     import = "plugins.extras.languages.java",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.json",
