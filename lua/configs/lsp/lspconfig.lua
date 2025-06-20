@@ -1,5 +1,7 @@
 local map = vim.keymap.set
+local autocmd = vim.api.nvim_create_autocmd
 local lsp_utils = require("utils.lsp")
+local notify_utils = require("utils.notify")
 
 local M = {}
 
@@ -83,12 +85,51 @@ M.opts = {
   on_attach = M.on_attach,
 }
 
+---@private
+function M.setup_auto_cmds()
+  -- https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md#-examples
+  ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
+  local progress = vim.defaulttable()
+
+  autocmd("LspProgress", {
+    ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
+    callback = function(ev)
+      local client = vim.lsp.get_client_by_id(ev.data.client_id)
+      local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
+      if not client or type(value) ~= "table" then
+        return
+      end
+      local p = progress[client.id]
+
+      for i = 1, #p + 1 do
+        if i == #p + 1 or p[i].token == ev.data.params.token then
+          p[i] = {
+            token = ev.data.params.token,
+            msg = ("[%3d%%] %s%s"):format(value.kind == "end" and 100 or value.percentage or 100, value.title or "", value.message and (" **%s**"):format(value.message) or ""),
+            done = value.kind == "end",
+          }
+          break
+        end
+      end
+
+      local messages = {} ---@type string[]
+      progress[client.id] = vim.tbl_filter(function(v)
+        return table.insert(messages, v.msg) or not v.done
+      end, p)
+      local message = table.concat(messages, "\n")
+
+      notify_utils.processing({ id = "lsp_progress", message = message, title = client.name, is_done = #progress[client.id] == 0 })
+    end,
+  })
+end
+
 function M.setup()
   vim.diagnostic.config({
     virtual_text = false,
     virtual_lines = false,
   })
 
+  M.setup_auto_cmds()
   M.setup_global_keymap()
   vim.lsp.config("*", M.opts)
 end
