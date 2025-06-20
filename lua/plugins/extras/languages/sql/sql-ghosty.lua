@@ -5,9 +5,8 @@ return {
     "SqlInlayHintsToggle",
   },
   opts = {
-    show_hints_by_default = true,
+    show_hints_by_default = require("uitvim").options.lsp_inlayhint_enabled,
   },
-  cond = require("uitvim").options.lsp_inlayhint_enabled,
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
   },

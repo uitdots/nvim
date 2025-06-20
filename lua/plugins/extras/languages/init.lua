@@ -75,6 +75,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.mssql",
+    enabled = false,
+  },
+  {
     import = "plugins.extras.languages.powershell",
     enabled = is_windows,
   },

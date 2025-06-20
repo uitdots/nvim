@@ -30,6 +30,7 @@ return {
       { "<localleader>\\", group = "Multi Cursor", icon = "󰗧" },
       { "<localleader>l", group = "LSP", icon = "" },
       { "<localleader>r", group = "Rest API", icon = "󱂛" },
+      { "<localleader>s", group = "SQL", icon = "" },
     },
   },
   keys = {
