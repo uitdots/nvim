@@ -67,7 +67,7 @@ function M.on_init() end
 ---@type lsp.ClientCapabilities
 M.capabilities = {
   textDocument = {
-    semanticTokens = nil,
+    semanticTokens = false,
   },
   workspace = {
     fileOperations = {
