@@ -25,6 +25,7 @@ o.pumblend = 0 -- transparency of pop-up menu
 o.showmode = false -- we don't need to see things like -- INSERT -- anymore
 o.smartcase = true -- smart case
 o.smartindent = false -- make indenting smarter again
+o.autoindent = false -- no indent when pasting from register in insert mode https://github.com/neovim/neovim/issues/30007
 o.splitbelow = true -- force all horizontal splits to go below current window
 o.splitright = true -- force all vertical splits to go to the right of current window
 o.swapfile = true -- creates a swapfile
@@ -47,7 +48,14 @@ o.scrolloff = 4 -- minimal number of columns to scroll horizontally.
 o.sidescrolloff = 8 -- minimal number of screen columns
 o.lazyredraw = false -- Won't be redrawn while executing macros, register and other commands.
 o.termguicolors = true -- Enables 24-bit RGB color in the TUI
-opt.fillchars = { eob = " ", fold = " ", foldopen = "", foldsep = " ", foldclose = "", lastline = " " } -- make EndOfBuffer invisible
+opt.fillchars = {
+  eob = " ",
+  fold = " ",
+  foldopen = "",
+  foldsep = " ",
+  foldclose = "",
+  lastline = " ",
+} -- make EndOfBuffer invisible
 o.ruler = false -- show the line and column number of the cursor position``
 o.cmdheight = 0 -- height of the command line
 o.helpheight = 10 -- height of the help window
