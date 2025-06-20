@@ -15,5 +15,7 @@ return {
       silent = true,
     },
   },
-  config = true,
+  opts = {
+    use_default_keymaps = false,
+  },
 }
