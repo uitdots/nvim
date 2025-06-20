@@ -6,9 +6,9 @@ return {
   },
   keys = {
     {
-      "<leader>oc",
+      "<leader>tc",
       "<cmd>TSContextToggle<cr>",
-      desc = "Options | Toggle TS Context",
+      desc = "Treesitter | Toggle Context",
       silent = true,
     },
   },

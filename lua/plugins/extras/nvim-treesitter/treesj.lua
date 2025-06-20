@@ -9,9 +9,9 @@ return {
   },
   keys = {
     {
-      "<leader>ut",
+      "<leader>ts",
       "<cmd>TSJToggle<cr>",
-      desc = "Utils | Toggle TreeSJ",
+      desc = "Treesitter | Toggle Split",
       silent = true,
     },
   },

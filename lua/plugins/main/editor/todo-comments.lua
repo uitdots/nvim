@@ -10,14 +10,14 @@ return {
       silent = true,
     },
     {
-      "]t",
+      "]<M-t>",
       function()
         require("todo-comments").jump_next()
       end,
       desc = "Todo | Next",
     },
     {
-      "[t",
+      "[<M-t>",
       function()
         require("todo-comments").jump_prev()
       end,

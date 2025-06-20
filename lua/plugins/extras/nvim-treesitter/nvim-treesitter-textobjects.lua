@@ -9,10 +9,10 @@ return {
       swap = {
         enable = true,
         swap_next = {
-          ["gn"] = "@parameter.inner",
+          ["<leader>tn"] = "@parameter.inner",
         },
         swap_previous = {
-          ["gp"] = "@parameter.inner",
+          ["<leader>tp"] = "@parameter.inner",
         },
       },
       move = {

@@ -18,7 +18,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tn",
+        "<leader>Tn",
         function()
           require("nvchad.term").new()
         end,
@@ -26,7 +26,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tv",
+        "<leader>Tv",
         function()
           require("nvchad.term").toggle({ pos = "vsp", id = "veritcal" })
         end,
@@ -34,7 +34,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tV",
+        "<leader>TV",
         function()
           require("nvchad.term").new({ pos = "vsp" })
         end,
@@ -42,7 +42,7 @@ return {
         silent = true,
       },
       {
-        "<leader>th",
+        "<leader>Th",
         function()
           require("nvchad.term").toggle({ pos = "sp", id = "horizontal" })
         end,
@@ -50,7 +50,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tH",
+        "<leader>TH",
         function()
           require("nvchad.term").new({ pos = "sp" })
         end,
@@ -58,7 +58,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tf",
+        "<leader>Tf",
         function()
           require("nvchad.term").toggle({ pos = "float", id = "float" })
         end,
@@ -66,7 +66,7 @@ return {
         silent = true,
       },
       {
-        "<leader>tF",
+        "<leader>TF",
         function()
           require("nvchad.term").new({ pos = "float" })
         end,
@@ -75,7 +75,7 @@ return {
       },
       -- Use builtin runner, because this is suck
       -- {
-      --   "<leader>tr",
+      --   "<leader>Tr",
       --   function()
       --     local open_term = function(cmd)
       --       require("nvchad.term").runner({
