@@ -5,7 +5,7 @@ return {
   cmd = { "Gradle", "GradleExec", "GradleInit" },
   keys = {
     {
-      "<Leader>lg",
+      "<localleader>lg",
       "<cmd>Gradle<CR>",
       desc = "LPS | Gradle",
     },

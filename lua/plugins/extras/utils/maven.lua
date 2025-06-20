@@ -9,7 +9,7 @@ return {
   },
   keys = {
     {
-      "<Leader>lM",
+      "<localleader>lm",
       "<cmd>Maven<CR>",
       desc = "LPS | Maven",
     },
