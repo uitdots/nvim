@@ -121,11 +121,7 @@ return {
       "<leader>oa",
       function()
         vim.b.completion = not vim.b.completion
-        if vim.b.completion then
-          vim.notify("Completion Disabled", vim.log.levels.INFO, { title = "Completion" })
-        else
-          vim.notify("Completion Enabled", vim.log.levels.INFO, { title = "Completion" })
-        end
+        vim.notify("Completion " .. vim.b.completion("Enabled") and "Disabled", vim.log.levels.INFO, { title = "Completion" })
       end,
       desc = "Options | Toggle Completion",
     },

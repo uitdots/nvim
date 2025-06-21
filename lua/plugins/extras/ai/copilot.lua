@@ -15,6 +15,9 @@ return {
     },
     server_opts_overrides = {
       settings = {
+        advanced = {
+          inlineSuggestCount = 1, -- Hehe I dont need it to generate more, just be fast
+        },
         telemetry = {
           telemetryLevel = "off",
         },
