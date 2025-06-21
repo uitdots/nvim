@@ -111,7 +111,7 @@ return {
       function()
         Snacks.picker.spelling()
       end,
-      desc = "General | Spelling",
+      desc = "Find | Spelling",
     },
     {
       "<leader>f<C-s>",
