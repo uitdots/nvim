@@ -3,7 +3,8 @@ return {
   {
     "Davidyz/VectorCode",
     version = "*",
-    build = "uv tool upgrade 'vectorcode[lsp]'",
+    -- build = "uv tool upgrade 'vectorcode[lsp]'",
+    build = "uv tool upgrade vectorcode",
     ---@module 'vectorcode'
     ---@type VectorCode.Opts
     ---@diagnostic disable-next-line: missing-fields
