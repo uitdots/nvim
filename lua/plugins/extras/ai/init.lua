@@ -22,6 +22,6 @@ return {
   },
   {
     import = "plugins.extras.ai.vectorcode",
-    enabled = true,
+    enabled = false,
   },
 }
