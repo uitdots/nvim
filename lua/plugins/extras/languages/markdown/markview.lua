@@ -18,7 +18,7 @@ return {
     ---@type markview.config
     opts = {
       preview = {
-        enable = true,
+        enable = false,
         enable_hybrid_mode = true,
         filetypes = fts,
         ignore_buftypes = {
