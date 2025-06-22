@@ -1,6 +1,6 @@
 ---@diagnostic disable: missing-fields
 
-local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
+local lsp_utils = require("utils.lsp")
 
 ---@type vim.lsp.Config
 return {
@@ -11,7 +11,7 @@ return {
         enable = false,
       },
       hint = {
-        enable = inlayhint_enabled,
+        enable = lsp_utils.is_inlay_hint_enabled("lua_ls"),
       },
       diagnostics = {
         globals = {

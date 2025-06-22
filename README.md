@@ -16,6 +16,10 @@ If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
 
 - Special thanks to [Alexis](https://github.com/Alexis12119/) for his [nvim-config](https://github.com/Alexis12119/nvim-config)
 
+- <https://github.com/nikolovlazar/dotfiles/blob/main/.config/nvim/>
+- <https://github.com/Integralist/nvim>
+  > Has ghostty type
+
 ## Tips & Tricks
 
 - Typing VNI, Telex, VIQR, set

@@ -2,7 +2,7 @@
 return {
   {
     "rcarriga/nvim-dap-ui",
-    enabled = false,
+    enabled = true,
     keys = {
       {
         "<leader>dd",
@@ -34,8 +34,11 @@ return {
     end,
     dependencies = {
       "nvim-neotest/nvim-nio",
-      "mfussenegger/nvim-dap",
     },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = "rcarriga/nvim-dap-ui",
   },
   {
     "folke/lazydev.nvim",

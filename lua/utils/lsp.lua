@@ -1,6 +1,9 @@
--- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/lsp.lua
+local inlay_hint = require("uitvim").options.inlay_hint
+local semantic_tokens = require("uitvim").options.semantic_tokens
+
 local M = {}
 
+-- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/lsp.lua
 M.action = setmetatable({}, {
   __index = function(tbl, action)
     local fn = function()
@@ -29,6 +32,38 @@ function M.toggle_semantic_tokens(bufnr)
     end
   end
   vim.notify("Semantic tokens " .. (vim.b[bufnr].semantic_tokens and "enabled" or "disabled"), vim.log.levels.INFO, { title = "LSP" })
+end
+
+---Check if inlay hints should be enabled for a specific server
+---@param server_name string
+---@return boolean
+function M.is_inlay_hint_enabled(server_name)
+  if inlay_hint.servers == true then
+    return true
+  end
+
+  local server_setting = inlay_hint.servers[server_name]
+  if server_setting ~= nil then
+    return server_setting
+  end
+
+  return inlay_hint.server_default or false
+end
+
+---Check if semantic tokens should be enabled for a specific server
+---@param server_name string
+---@return boolean
+function M.is_semantic_tokens_enabled(server_name)
+  if semantic_tokens.servers == true then
+    return true
+  end
+
+  local server_setting = semantic_tokens.servers[server_name]
+  if server_setting ~= nil then
+    return server_setting
+  end
+
+  return semantic_tokens.server_default or false
 end
 
 return M

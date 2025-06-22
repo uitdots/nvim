@@ -4,7 +4,7 @@
 return {
   "folke/snacks.nvim",
   enabled = true,
-  event = "VeryLazy",
+  lazy = false, -- Because we use in lspconfig (global Snacks so we shouldn't lazy it)
   init = function()
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#nvim-tree
     local prev = { new_name = "", old_name = "" } -- Prevents duplicate events

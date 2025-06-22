@@ -14,5 +14,3 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 g.autoformat_enabled = uitvim_options.autoformat_enabled
-
-vim.lsp.inlay_hint.enable(uitvim_options.inlayhint_enabled)

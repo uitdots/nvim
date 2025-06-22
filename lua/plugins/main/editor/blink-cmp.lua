@@ -84,12 +84,13 @@ return {
       },
     },
     sources = {
-      default = {
-        "lsp",
-        "path",
-        "snippets",
-        "buffer",
-      },
+      default = function()
+        local success, node = pcall(vim.treesitter.get_node)
+        if success and node and node:type() == "string" then
+          return { "sql", "lsp", "path", "snippets", "buffer" }
+        end
+        return { "lsp", "path", "snippets", "buffer" }
+      end,
       --[[
         providers = {
           -- https://cmp.saghen.dev/configuration/reference.html#providers

@@ -2,6 +2,8 @@ local map = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 local lsp_utils = require("utils.lsp")
 local notify_utils = require("utils.notify")
+local inlay_hint_enabled = require("uitvim").options.inlay_hint.client
+local semantic_tokens_enabled = require("uitvim").options.semantic_tokens.client
 
 local M = {}
 
@@ -62,7 +64,7 @@ end
 
 ---@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
 function M.on_init(client)
-  if client:supports_method("textDocument/semanticTokens") then
+  if not semantic_tokens_enabled and client:supports_method("textDocument/semanticTokens") then
     client.server_capabilities.semanticTokensProvider = nil
   end
 end
@@ -130,6 +132,7 @@ function M.setup()
     virtual_lines = false,
   })
 
+  vim.lsp.inlay_hint.enable(inlay_hint_enabled)
   M.setup_auto_cmds()
   M.setup_global_keymap()
   vim.lsp.config("*", M.opts)

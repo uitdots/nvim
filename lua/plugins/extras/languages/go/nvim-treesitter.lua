@@ -9,6 +9,7 @@ return {
       "go",
       "gomod",
       "gosum",
+      "gowork",
       "gotmpl",
     },
   },

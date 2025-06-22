@@ -4,15 +4,6 @@ return {
   optional = true,
   opts = {
     sources = {
-      per_filetype = {
-        go = {
-          "lsp",
-          "path",
-          "snippets",
-          "buffer",
-          "sql",
-        },
-      },
       providers = {
         sql = {
           name = "sql",

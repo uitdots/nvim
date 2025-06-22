@@ -1,4 +1,3 @@
-local lsp_inlay_hints = require("uitvim").options.lsp_inlayhint_enabled
 local filter_availabled_external = require("uitvim").options.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 local autocmd = vim.api.nvim_create_autocmd

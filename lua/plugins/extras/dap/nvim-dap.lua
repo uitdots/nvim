@@ -61,10 +61,71 @@ return {
       desc = "Debug | Run Last",
       silent = true,
     },
+    {
+      "<leader>de",
+      function()
+        require("dapui").eval()
+      end,
+      desc = "Debug | Evaluate",
+    },
+    {
+      "<leader>dg",
+      function()
+        require("dap").goto_()
+      end,
+      desc = "Debug | Go to Line (No Execute)",
+    },
+    {
+      "<leader>dj",
+      function()
+        require("dap").down()
+      end,
+      desc = "Debug | Down",
+    },
+    {
+      "<leader>dk",
+      function()
+        require("dap").up()
+      end,
+      desc = "Debug | Up",
+    },
+    {
+      "<leader>dp",
+      function()
+        require("dap").pause()
+      end,
+      desc = "Debug | Pause",
+    },
+    {
+      "<leader>dr",
+      function()
+        require("dap").repl.toggle()
+      end,
+      desc = "Debug | Toggle REPL",
+    },
+    {
+      "<leader>ds",
+      function()
+        require("dap").session()
+      end,
+      desc = "Debug | Session",
+    },
+    {
+      "<leader>dt",
+      function()
+        require("dap").terminate()
+      end,
+      desc = "Debug | Terminate",
+    },
+    {
+      "<leader>dw",
+      function()
+        require("dap.ui.widgets").hover()
+      end,
+      desc = "Debug | Widgets",
+    },
   },
-  config = function()
-    require("configs.dap.javascripts-node").setup()
-  end,
+  config = function() end,
   dependencies = {
     {
       "jay-babu/mason-nvim-dap.nvim",

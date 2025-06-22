@@ -44,14 +44,36 @@ M.options = {
   ---@type boolean
   filter_availabled_external = true,
 
-  ---Let some language server enable inlayhint.
-  ---@type boolean
-  lsp_inlayhint_enabled = true,
+  inlay_hint = {
+    ---Fallback for those language server that isn't declared in "servers" field below
+    ---@type boolean
+    server_default = true,
 
-  ---Enable inlayhint in neovim
-  ---This needs "lsp_inlayhint_enabled" (above).
-  ---@type boolean
-  inlayhint_enabled = false,
+    ---Let some language server enable inlayhint.
+    ---@type boolean | table<string, boolean> the key is the name of the lsp, and includes "sql"
+    servers = true,
+
+    ---Enable inlay hint in neovim (client)
+    ---@type boolean
+    client = false,
+  },
+
+  semantic_tokens = {
+    ---Fallback for those language server that isn't declared in "servers" field below
+    ---@type boolean
+    server_default = true,
+
+    ---Semantic tokens enabled or not for language server
+    ---@type boolean | table<string, boolean> the key is the name of the lsp
+    servers = {
+      gopls = true,
+      vtsls = false,
+    },
+
+    ---Enable semantic tokens for neovim
+    ---@type boolean
+    client = true,
+  },
 
   ---Use border for... most of the thing related to UI. You can search for which use this options
   ---@type boolean

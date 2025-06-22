@@ -4,9 +4,10 @@ return {
   optional = true,
   opts = {
     ensure_installed = {
-      "typescript-language-server",
       "eslint-lsp",
+      "js-debug-adapter",
       "prettier",
+      "typescript-language-server",
     },
   },
   opts_extend = {

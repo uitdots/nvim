@@ -1,3 +1,5 @@
+local inlay_hint = require("uitvim").options.inlay_hint
+
 ---@type NvPluginSpec
 return {
   "pmouraguedes/sql-ghosty.nvim",
@@ -5,7 +7,7 @@ return {
     "SqlInlayHintsToggle",
   },
   opts = {
-    show_hints_by_default = require("uitvim").options.lsp_inlayhint_enabled,
+    show_hints_by_default = inlay_hint.servers == true or (inlay_hint.servers.sql ~= nil and inlay_hint.servers.sql) or inlay_hint.server_default,
   },
   dependencies = {
     "nvim-treesitter/nvim-treesitter",

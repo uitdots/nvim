@@ -1,26 +1,21 @@
 local M = {}
 
 ---Return the executable path if exist in $PATH, fallback to mason package
----@param path string executable file
----@param mason? { package: string, inner_path?: string } mason package
----@param opts? { full_path?: boolean }
+---@param path string executable file, can be glob
+---@param mason string? the glob pattern to the file from $MASON you need
 ---@return string | nil
-function M.get_executable(path, mason, opts)
-  local full_path = vim.fn.exepath(path)
+function M.get_executable(path, mason)
+  ---@type string
+  local full_path = vim.fn.globpath(vim.o.runtimepath, path, false, false)
   if full_path ~= "" then
-    return opts ~= nil and opts.full_path == true and full_path or path
+    return full_path
   end
   if mason == nil then
     return nil
   end
-  local mason_root = vim.env.MASON or (vim.fn.stdpath("data") .. "/mason")
-  local ret = mason_root .. "/packages/" .. mason.package .. "/" .. mason.inner_path ~= nil and (mason.inner_path .. "/")
-    or "" .. path
-  if not vim.loop.fs_stat(ret) then
-    vim.notify("Exetable not found: " .. mason.package, vim.log.levels.WARN)
-    return
-  end
-  return ret
+  local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path))
+  vim.print(mason_file)
+  return mason_file ~= "" and mason_file or nil
 end
 
 ---Return the full path of the executable

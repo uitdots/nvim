@@ -1,5 +1,6 @@
 -- TODO: This is ... when dap is not enabled. This will not work?
 local is_windows = require("utils.os").is_windows
+local get_executable = require("utils.executable").get_executable
 
 ---@type NvPluginSpec
 return {
@@ -23,12 +24,9 @@ return {
     },
   },
   config = function()
-    local executable = require("utils.executable").get_executable("uv")
+    local executable = get_executable("uv")
     if executable == nil then
-      executable = require("utils.executable").get_executable("python", {
-        package = "debugpy",
-        inner_path = is_windows and "venv/Scripts" or "/venv/bin",
-      })
+      executable = get_executable("python", string.format("debugpy/%s", is_windows and "venv/Scripts" or "/venv/bin"))
     end
     if executable == nil then
       return

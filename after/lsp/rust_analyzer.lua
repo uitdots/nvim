@@ -1,36 +1,39 @@
 ---@diagnostic disable: missing-fields
 
-local inlayhint_enabled = require("uitvim").options.lsp_inlayhint_enabled
-local inlayhint_opts = inlayhint_enabled
-    and {
-      bindingModeHints = { enable = true },
-      chainingHints = { enable = true },
-      closingBraceHints = { enable = true },
-      closureCaptureHints = { enable = true },
-      closureReturnTypeHints = { enable = true },
-      closureStyle = "impl_fn",
-      discriminantHints = { enable = true },
-      expressionAdjustmentHints = { enable = true },
-      genericParameterHints = {
-        const = { enable = true },
-        lifetime = { enable = true },
-        type = { enable = true },
-      },
-      implicitDrops = { enable = true },
-      implicitSizedBoundHints = { enable = true },
-      lifetimeElisionHints = { enable = true, useParameterNames = true },
-      parameterHints = { enable = true },
-      rangeExclusiveHints = { enable = true },
-      reborrowHints = { enable = true },
-      renderColons = true,
-      typeHints = {
-        enable = true,
-        hideClosureInitialization = false,
-        hideClosureParameter = false,
-        hideNamedConstructor = false,
-      },
-    }
-  or nil
+local lsp_utils = require("utils.lsp")
+
+---@type _.lspconfig.settings.rust_analyzer.InlayHints
+local inlayhint_opts
+if lsp_utils.is_inlay_hint_enabled("rust_analyzer") then
+  inlayhint_opts = {
+    bindingModeHints = { enable = true },
+    chainingHints = { enable = true },
+    closingBraceHints = { enable = true },
+    closureCaptureHints = { enable = true },
+    closureReturnTypeHints = { enable = "always" },
+    closureStyle = "impl_fn",
+    discriminantHints = { enable = "always" },
+    expressionAdjustmentHints = { enable = "always" },
+    genericParameterHints = {
+      const = { enable = true },
+      lifetime = { enable = true },
+      type = { enable = true },
+    },
+    implicitDrops = { enable = true },
+    implicitSizedBoundHints = { enable = true },
+    lifetimeElisionHints = { enable = "always", useParameterNames = true },
+    parameterHints = { enable = true },
+    rangeExclusiveHints = { enable = true },
+    reborrowHints = { enable = "always" },
+    renderColons = true,
+    typeHints = {
+      enable = true,
+      hideClosureInitialization = false,
+      hideClosureParameter = false,
+      hideNamedConstructor = false,
+    },
+  }
+end
 
 ---@type vim.lsp.Config
 return {
