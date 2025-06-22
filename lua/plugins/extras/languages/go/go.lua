@@ -16,6 +16,9 @@ return {
     "gomod",
   },
   opts = {
+    lsp_inlay_hints = {
+      enable = false,
+    },
     diagnostic = false,
     null_ls = {
       golangci_lint = false,
