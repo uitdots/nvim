@@ -2,6 +2,7 @@
 return {
   {
     "rcarriga/nvim-dap-ui",
+    enabled = false,
     keys = {
       {
         "<leader>dd",
@@ -39,8 +40,13 @@ return {
   {
     "folke/lazydev.nvim",
     optional = true,
-    opts = function(_, opts)
-      opts.library = vim.list_extend(opts.library or {}, { "nvim-dap-ui" })
-    end,
+    opts = {
+      library = {
+        "nvim-dap-ui",
+      },
+    },
+    opts_extend = {
+      "library",
+    },
   },
 }

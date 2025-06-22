@@ -13,6 +13,9 @@ return {
       -- { path = "snacks.nvim", words = { "Snacks" } },
     },
   },
+  opts_extend = {
+    "library",
+  },
   dependencies = {
     "Bilal2453/luvit-meta", -- optional `vim.uv` typings
     {
