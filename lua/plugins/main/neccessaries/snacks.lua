@@ -316,7 +316,7 @@ return {
 
     -- Git
     {
-      "<leader>gb",
+      "<leader>g<C-b>",
       function()
         Snacks.gitbrowse()
       end,
