@@ -1,4 +1,11 @@
 local lspconfig = require("configs.lsp.lspconfig")
+local ft_no_navigate = {
+  "dap-view",
+  "dbui",
+  "dbout",
+  "codecompanion",
+  "avante",
+}
 
 ---@type NvPluginSpec
 return {
@@ -19,6 +26,9 @@ return {
       {
         "H",
         function()
+          if vim.tbl_contains(ft_no_navigate, vim.bo.filetype) then
+            return
+          end
           require("nvchad.tabufline").prev()
         end,
         desc = "General | Previous Buffer",
@@ -27,6 +37,9 @@ return {
       {
         "L",
         function()
+          if vim.tbl_contains(ft_no_navigate, vim.bo.filetype) then
+            return
+          end
           require("nvchad.tabufline").next()
         end,
         desc = "General | Next Buffer",
