@@ -128,6 +128,7 @@ return {
     },
     {
       "JavaHello/spring-boot.nvim",
+      optional = true,
     },
   },
 }
