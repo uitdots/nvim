@@ -44,8 +44,15 @@ return {
     keys = {
       {
         "<leader>mv",
-        "<cmd>Markview<cr>",
-        desc = "Markdown | Toggle View",
+        "<cmd>Markview toggle<cr>",
+        desc = "Markdown | Toggle View (local)",
+        ft = fts,
+        silent = true,
+      },
+      {
+        "<leader>mV",
+        "<cmd>Markview Toggle<cr>",
+        desc = "Markdown | Toggle View (all)",
         ft = fts,
         silent = true,
       },
