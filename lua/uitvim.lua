@@ -8,7 +8,6 @@ M.lsps = {
   "lua_ls",
   "pyright",
   "texlab",
-  "kotlin_lsp",
 }
 
 ---For having lsp setup by mason (exclude these)
@@ -19,7 +18,6 @@ M.no_setup_lsps = {
   "rust_analyzer",
   "jdtls",
   "sqls",
-  "kotlin_language_server",
 }
 
 ---@type {space: table<number, string[]>, tab: table<number, string[]>}
