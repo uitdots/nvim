@@ -70,7 +70,7 @@ function M.get_child_folders(path, opts)
     end
 
     if type == "directory" then
-      local full_path = path .. "/" .. name
+      local full_path = string.format("%s/%s", path, name)
       local stat = vim.uv.fs_stat(full_path)
       if stat and (follow_symlink or not stat.type == "link") then
         table.insert(folders, full_path)

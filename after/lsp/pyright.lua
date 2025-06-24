@@ -11,7 +11,7 @@ return {
         typeCheckingMode = "standard",
         diagnosticMode = "workspace",
       },
-      typeshedPath = vim.fn.stdpath("data") .. "/lazy/typeshed",
+      typeshedPath = string.format("%s/lazy/typeshed", vim.fn.stdpath("data")),
     },
     pyright = {
       -- If use Ruff's import organizer, uncomment

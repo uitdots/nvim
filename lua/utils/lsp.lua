@@ -31,7 +31,7 @@ function M.toggle_semantic_tokens(bufnr)
       vim.lsp.semantic_tokens.force_refresh(bufnr)
     end
   end
-  vim.notify("Semantic tokens " .. (vim.b[bufnr].semantic_tokens and "enabled" or "disabled"), vim.log.levels.INFO, { title = "LSP" })
+  vim.notify(string.format("Semantic tokens %s", vim.b[bufnr].semantic_tokens and "enabled" or "disabled"), vim.log.levels.INFO, { title = "LSP" })
 end
 
 ---Check if inlay hints should be enabled for a specific server

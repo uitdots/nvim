@@ -2,7 +2,7 @@
 local uitvim_options = require("uitvim").options
 local g = vim.g
 
-vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46/"
+vim.g.base46_cache = string.format("%s/base46/", vim.fn.stdpath("data"))
 g.markdown_recommended_style = 0
 vim.g.health = {
   style = nil, ---@type "float" | nil

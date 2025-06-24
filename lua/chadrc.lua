@@ -86,11 +86,11 @@ M.nvdash = {
           return {
             loaded = lazy_stats.loaded,
             count = lazy_stats.count,
-            milliseconds = math.floor(lazy_stats.startuptime) .. " ms",
+            milliseconds = math.floor(lazy_stats.startuptime),
           }
         end)
         if ok then
-          return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. stats.milliseconds
+          return string.format("  Loaded %d/%d plugins in %d ms", stats.loaded, stats.count, stats.milliseconds)
         else
           return "󰇸 Cannot load lazy's status"
         end

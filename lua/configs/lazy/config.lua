@@ -28,8 +28,6 @@ return {
     notify = false,
   },
 
-  lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json",
-
   performance = {
     rtp = {
       disabled_plugins = {

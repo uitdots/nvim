@@ -1,10 +1,11 @@
 ---@diagnostic disable: missing-fields
+local get_executable = require("utils.executable")
 
 ---@type vim.lsp.Config
 return {
   cmd = {
     "dotnet",
-    vim.fn.stdpath("data") .. "/mason/packages/omnisharp/libexec/OmniSharp.dll",
+    get_executable("OmniSharp.dll", "packages/omnisharp/libexec"),
   },
   ---@type lspconfig.settings.omnisharp
   settings = {

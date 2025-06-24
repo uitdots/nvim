@@ -1,1 +1,1 @@
-dofile(vim.fn.stdpath("config") .. "/ftplugin/json.lua")
+dofile(string.format("%s/ftplugin/json.lua", vim.fn.stdpath("config")))

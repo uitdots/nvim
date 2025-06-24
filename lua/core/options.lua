@@ -64,7 +64,8 @@ o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
 o.winborder = uitvim_options.border_enabled and "rounded" or "none"
 o.spelloptions = "camel"
 
-if vim.fn.filereadable(vim.fn.stdpath("config") .. "/spell/vi.utf-8.spl") == 1 then
+-- TODO: Refactor this to ... later?
+if vim.fn.filereadable(string.format("%s/spell/vi.utf-8.spl", vim.fn.stdpath("config"))) == 1 then
   o.spelllang = "en,vi"
 end
 
@@ -81,6 +82,6 @@ opt.whichwrap:append("<>[]hl")
 
 -- Replace builtin grep with ripgrep
 if is_executable("rg") then
-  local rgignore = home .. "/.config/ripgrep/.rgignore"
+  local rgignore = string.format("%s/.config/ripgrep/.rgignore", home)
   o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file " .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/ignore")
 end

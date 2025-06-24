@@ -23,8 +23,9 @@ return {
       end, { desc = "NvChad | NvChad Load All Highlights" })
     end,
     config = function()
-      for _, v in ipairs(vim.fn.readdir(vim.g.base46_cache)) do
-        dofile(vim.g.base46_cache .. v)
+      local base46_cache = vim.g.base46_cache
+      for _, v in ipairs(vim.fn.readdir(base46_cache)) do
+        dofile(string.format("%s/%s", base46_cache, v))
       end
     end,
   },

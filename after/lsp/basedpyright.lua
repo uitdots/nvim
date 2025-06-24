@@ -12,7 +12,7 @@ return {
         -- ignore = { "*" },
         typeCheckingMode = "standard",
         diagnosticMode = "workspace",
-        typeshedPath = vim.fn.stdpath("data") .. "/lazy/typeshed",
+        typeshedPath = string.format("%s/lazy/typeshed", vim.fn.stdpath("data")),
       },
     },
   },
