@@ -18,7 +18,7 @@ local allowed_ts_types = {
 ---@type NvPluginSpec
 return {
   "moyiz/blink-emoji.nvim",
-  enabled = true,
+  enabled = false,
   event = {
     "InsertEnter",
   },
