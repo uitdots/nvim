@@ -77,6 +77,8 @@ end
 -- o.shellxquote = ""
 
 opt.whichwrap:append("<>[]hl")
+opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline
+
 -- opt.iskeyword:append "-"
 
 -- Replace builtin grep with ripgrep
