@@ -9,13 +9,21 @@ return {
     {
       "<leader>lo",
       "<cmd>AerialToggle<cr>",
-      desc = "LSP | Outline",
+      desc = "LSP | Symbol Outline",
       silent = true,
     },
     {
       "<leader>ln",
       "<cmd>AerialNavToggle<cr>",
-      desc = "LSP | Nav",
+      desc = "LSP | Symbol Nav",
+      silent = true,
+    },
+    {
+      "<leader>l<C-f>",
+      function()
+        require("aerial").snacks_picker()
+      end,
+      desc = "LSP | Find Sybol",
       silent = true,
     },
   },
