@@ -14,10 +14,7 @@ return {
         sources = {
           per_filetype = {
             gitcommit = {
-              "lsp",
-              "path",
-              "snippets",
-              "buffer",
+              inherit_defaults = true,
               "git",
             },
           },
@@ -27,13 +24,10 @@ return {
               name = "Git",
               --- @module 'blink-cmp-git'
               --- @type blink-cmp-git.Options
-              opts = {},
+              opts = nil,
             },
           },
         },
-      },
-      opts_extend = {
-        "sources.per_filetype.gitcommit",
       },
     },
     {
