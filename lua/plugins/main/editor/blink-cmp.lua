@@ -1,5 +1,3 @@
----@module 'blink.cmp'
-
 ---@type NvPluginSpec
 return {
   "saghen/blink.cmp",
@@ -8,6 +6,7 @@ return {
     "CmdLineEnter",
   },
   version = "1.*",
+  ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
     snippets = {
@@ -84,13 +83,12 @@ return {
       },
     },
     sources = {
-      default = function()
-        local success, node = pcall(vim.treesitter.get_node)
-        if success and node and node:type() == "string" then
-          return { "sql", "lsp", "path", "snippets", "buffer" }
-        end
-        return { "lsp", "path", "snippets", "buffer" }
-      end,
+      default = {
+        "lsp",
+        "path",
+        "snippets",
+        "buffer",
+      },
       --[[
         providers = {
           -- https://cmp.saghen.dev/configuration/reference.html#providers
@@ -109,6 +107,7 @@ return {
     },
   },
   opts_extend = {
+    "sources.default",
     "keymap.<Tab>", -- NOTE: For other specs to add into the tab keymap like AI suggestion
   },
   ---@param opts blink.cmp.Config
