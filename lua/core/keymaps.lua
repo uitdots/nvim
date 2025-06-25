@@ -94,7 +94,8 @@ map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
 -- Terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
-map("n", "<leader>tr", require("configs.code-runner").run, { desc = "Terminal | Code Runner", silent = true })
+-- Later when configured oversea
+map("n", "<leader>1", require("configs.code-runner").run, { desc = "General | Code Runner", silent = true })
 
 -- Plugins
 map("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = false })
@@ -124,6 +125,9 @@ end, { desc = "Neovim | Version", silent = true })
 map("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
+
+-- Command
+map("c", "<C-p>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
 
 -- UTILS
 map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
