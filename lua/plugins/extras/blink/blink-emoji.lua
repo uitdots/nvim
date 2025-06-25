@@ -1,50 +1,48 @@
+local fts = {
+  markdown = true,
+  gitcommit = true,
+  latex = true,
+}
+local allowed_ts_types = {
+  string = true,
+  string_literal = true,
+  raw_string_literal = true,
+  template_string = true,
+}
+
 ---@type NvPluginSpec
 return {
   "moyiz/blink-emoji.nvim",
   enabled = true,
+  ft = fts,
   dependencies = {
     "saghen/blink.cmp",
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
       sources = {
-        per_filetype = {
-          markdown = {
-            "lsp",
-            "path",
-            "snippets",
-            "buffer",
-            "emoji",
-          },
-          gitcommit = {
-            "lsp",
-            "path",
-            "snippets",
-            "buffer",
-            "emoji",
-          },
-          latex = {
-            "lsp",
-            "path",
-            "snippets",
-            "buffer",
-            "emoji",
-          },
-        },
         providers = {
           emoji = {
             module = "blink-emoji",
             name = "Emoji",
             score_offset = 15,
-            opts = { insert = true },
+            should_show_items = function()
+              if fts[vim.bo.filetype] then
+                return true
+              end
+              local ok, node = pcall(vim.treesitter.get_node)
+              return ok and node and allowed_ts_types[node:type()] or false
+            end,
+            opts = {
+              insert = true,
+            },
           },
         },
+        default = { "emoji" },
       },
     },
     opts_extend = {
-      "sources.per_filetype.markdown",
-      "sources.per_filetype.gitcommit",
-      "sources.per_filetype.latex",
+      "sources.default",
     },
   },
 }

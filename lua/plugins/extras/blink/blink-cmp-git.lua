@@ -6,7 +6,6 @@ return {
   enabled = true,
   ft = "gitcommit",
   dependencies = {
-    "nvim-lua/plenary.nvim",
     {
       "saghen/blink.cmp",
       optional = true,
@@ -36,6 +35,9 @@ return {
       opts_extend = {
         "sources.per_filetype.gitcommit",
       },
+    },
+    {
+      "nvim-lua/plenary.nvim",
     },
   },
 }
