@@ -3,8 +3,10 @@ return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   optional = true,
   opts = {
-    -- TODO: What should I install?
-    ensure_installed = {},
+    ensure_installed = {
+      "delve",
+      "gopls",
+    },
   },
   opts_extend = {
     "ensure_installed",

@@ -14,7 +14,6 @@ function M.get_executable(path, mason)
     return nil
   end
   local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path))
-  vim.print(mason_file)
   return mason_file ~= "" and mason_file or nil
 end
 

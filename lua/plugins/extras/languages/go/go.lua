@@ -1,12 +1,15 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
-local is_executable = require("utils.executable").is_executable
+-- I disable this plugin because I think it's enough to use normally :v
+
+-- local filter_availabled_external = require("uitvim").options.filter_availabled_external
+-- local is_executable = require("utils.executable").is_executable
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 ---@type NvPluginSpec
 return {
   "ray-x/go.nvim",
-  enabled = not filter_availabled_external or is_executable("go"),
+  enabled = false,
+  -- enabled = not filter_availabled_external or is_executable("go"),
   event = {
     "CmdlineEnter",
   },
