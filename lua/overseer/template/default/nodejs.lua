@@ -1,14 +1,14 @@
 ---@module 'overseer'
 ---@type overseer.TemplateDefinition
 return {
-  name = "Go Default",
-  desc = "Run go file directly",
+  name = "NodeJS Default",
+  desc = "Run JS file with Node",
   builder = function()
     local file = vim.fn.expand("%:p")
 
     ---@type overseer.TaskDefinition
     return {
-      cmd = { "go", "run", file },
+      cmd = { "node", file },
       components = {
         "default",
         "output",
@@ -16,7 +16,7 @@ return {
     }
   end,
   condition = {
-    filetype = { "go" },
+    filetype = { "javascript" },
   },
   priority = -1,
 }

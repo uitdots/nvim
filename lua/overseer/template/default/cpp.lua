@@ -1,31 +1,37 @@
+local os_utils = require("utils.os")
+
+---@module 'overseer'
+---@type overseer.TemplateDefinition
 return {
-  name = "c++ default runner",
+  name = "C++ Default",
+  desc = "Compile C++ to executable and run",
   builder = function()
     local file = vim.fn.expand("%:p")
-    local out = vim.fn.expand("%:p:r")
+    local executable = vim.fn.expand("%:p:r")
+    if os_utils.is_windows then
+      executable = executable .. ".exe"
+    end
+
+    ---@type overseer.TaskDefinition
     return {
-      cmd = { out },
+      cmd = executable,
       components = {
         {
           "dependencies",
           task_names = {
             {
               cmd = "g++",
-              args = { file, "-o", out },
+              args = { file, "-o", executable },
             },
           },
         },
-        -- {
-        --   "open_output",
-        --   on_complete = "always", -- Options: "always", "never", "success", "failure"
-        --   direction = "dock", -- Options: "dock", "float", "tab", "vertical", "horizontal"
-        --   focus = true, -- Focus the output window when it opens
-        -- },
         "default",
+        "output",
       },
     }
   end,
   condition = {
     filetype = { "cpp" },
   },
+  priority = -1,
 }

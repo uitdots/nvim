@@ -19,45 +19,22 @@ return {
     "OverseerTaskAction",
     "OverseerClearCache",
   },
-
+  ---@module 'overseer'
+  ---@type overseer.Config
   opts = {
-    dap = false,
+    dap = true,
     templates = { "builtin", "default" },
-
-    -- Stolen from https://github.com/stevearc/overseer.nvim/blob/master/lua/overseer/config.lua
     component_aliases = {
-      -- Most tasks are initialized with the default components
-      default = {
-        {
-          "display_duration",
-          detail_level = 2,
-        },
-        "on_output_summarize",
-        "on_exit_set_status",
-        "on_complete_notify",
-        {
-          "on_complete_dispose",
-          require_view = {
-            "SUCCESS",
-            "FAILURE",
-          },
-        },
+      output = {
         {
           "open_output",
           on_complete = "always",
           direction = "dock",
-          focus = false,
+          focus = true,
         },
       },
     },
-
-    -- Tasks from tasks.json use these components
-    default_vscode = {
-      "default",
-      "on_result_diagnostics",
-    },
   },
-
   keys = {
     {
       "<leader>rr",
@@ -68,25 +45,7 @@ return {
     {
       "<leader>rt",
       "<cmd>OverseerToggle<cr>",
-      desc = "Overseer | Toggle and Focus",
-      silent = true,
-    },
-    {
-      "<leader>rT",
-      "<cmd>OverseerToggle!<cr>",
       desc = "Overseer | Toggle",
-      silent = true,
-    },
-    {
-      "<leader>ro",
-      "<cmd>OverseerOpen<cr>",
-      desc = "Overseer | Open",
-      silent = true,
-    },
-    {
-      "<leader>rc",
-      "<cmd>OverseerClose<cr>",
-      desc = "Overseer | Close",
       silent = true,
     },
     {
@@ -104,7 +63,7 @@ return {
     {
       "<leader>rA",
       "<cmd>OverseerTaskAction<cr>",
-      desc = "Overseer | Run task action",
+      desc = "Overseer | Run Task Action",
       silent = true,
     },
     {

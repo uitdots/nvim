@@ -125,10 +125,13 @@ return {
       desc = "Debug | Widgets",
     },
   },
-  config = function() end,
   dependencies = {
     {
       "jay-babu/mason-nvim-dap.nvim",
+      optional = true,
+    },
+    {
+      "stevearc/overseer.nvim",
       optional = true,
     },
   },
