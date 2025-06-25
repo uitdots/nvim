@@ -1,12 +1,13 @@
 local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local indent = require("uitvim").indent
+local uitvim = require("uitvim")
 
 -- General Settings
 local general = augroup("General", { clear = true })
 
-for chars, fts in pairs(indent.space or {}) do
+local indent_opts = uitvim.options.indent
+for chars, fts in pairs(indent_opts.space or {}) do
   autocmd("FileType", {
     desc = string.format("Tab to space with %s spaces", chars),
     pattern = fts,
@@ -15,7 +16,7 @@ for chars, fts in pairs(indent.space or {}) do
   })
 end
 
-for chars, fts in pairs(indent.tab or {}) do
+for chars, fts in pairs(indent_opts.tab or {}) do
   autocmd("FileType", {
     desc = string.format("Tab to space with %s spaces", chars),
     pattern = fts,
@@ -84,17 +85,14 @@ autocmd("FileType", {
   desc = "Enable Spell check in these filetypes",
 })
 
+local wrap_opts = uitvim.options.wrap
 autocmd("FileType", {
-  pattern = {
-    "log",
-    "markdown",
-    "grug-far",
-  },
+  pattern = wrap_opts.others,
   callback = function()
-    vim.opt_local.wrap = false
+    vim.opt_local.wrap = not wrap_opts.default
   end,
   group = general,
-  desc = "Disable Wrap in these filetypes",
+  desc = string.format("%s Wrap in these filetypes", wrap_opts.default and "Disable" or "Enable"),
 })
 
 autocmd("BufReadPre", {

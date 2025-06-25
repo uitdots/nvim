@@ -20,24 +20,39 @@ M.no_setup_lsps = {
   "sqls",
 }
 
----@type {space: table<number, string[]>, tab: table<number, string[]>}
-M.indent = {
-  space = {
-    [4] = {
-      "c",
-      "cpp",
-      "cs",
-      "python",
-      "kotlin",
-      "java",
-    },
-    [2] = {
-      "just",
+M.options = {
+  ---@type {default: number, space: table<number, string[]>, tab: table<number, string[]>}
+  indent = {
+    default = 2,
+    space = {
+      [4] = {
+        "c",
+        "cpp",
+        "cs",
+        "python",
+        "kotlin",
+        "java",
+      },
+      [2] = {
+        "just",
+      },
     },
   },
-}
 
-M.options = {
+  wrap = {
+    default = true,
+
+    ---Filetypes to be revert with default
+    ---@type string[]
+    others = {
+      "grug-far",
+      "lazy",
+      "log",
+      "markdown",
+      "mason",
+    },
+  },
+
   ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower but not really much, for about few milliseconds.
   ---@type boolean
   filter_availabled_external = true,

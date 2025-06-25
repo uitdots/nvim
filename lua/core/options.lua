@@ -35,15 +35,14 @@ o.updatetime = 100 -- faster completion (4000ms default)
 o.winblend = 0 -- make transparency for floating window (cmp,...)
 o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 o.expandtab = true -- convert tabs to spaces
-o.shiftwidth = 2 -- the number of spaces inserted for each indentation
-o.tabstop = 2 -- insert 2 spaces for a tab
+o.shiftwidth = uitvim_options.indent.default -- the number of spaces inserted for each indentation
+o.tabstop = uitvim_options.indent.default -- insert 2 spaces for a tab
 o.cursorline = true -- highlight the current line
 o.cursorlineopt = "number" -- highlight number only
 o.number = true -- set numbered lines
 o.relativenumber = true -- set relative numbered lines
-o.numberwidth = 5 -- set number column width to 4 {default 4}
 o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-o.wrap = true -- display lines as one long line
+o.wrap = uitvim_options.wrap.default -- display lines as one long line
 o.scrolloff = 4 -- minimal number of columns to scroll horizontally.
 o.sidescrolloff = 8 -- minimal number of screen columns
 o.lazyredraw = false -- Won't be redrawn while executing macros, register and other commands.
@@ -62,7 +61,7 @@ o.helpheight = 10 -- height of the help window
 o.shortmess = "AcqFI"
 o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
 o.winborder = uitvim_options.border_enabled and "rounded" or "none"
-o.spelloptions = "camel"
+-- o.spelloptions = "camel"
 
 -- TODO: Refactor this to ... later?
 if vim.fn.filereadable(string.format("%s/spell/vi.utf-8.spl", vim.fn.stdpath("config"))) == 1 then
