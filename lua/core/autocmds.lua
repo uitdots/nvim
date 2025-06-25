@@ -25,7 +25,7 @@ for chars, fts in pairs(indent.tab or {}) do
 end
 
 local exclude_last_cur_pos_fts = {
-  "gitcommit",
+  gitcommit = true,
 }
 
 autocmd("BufReadPost", {
