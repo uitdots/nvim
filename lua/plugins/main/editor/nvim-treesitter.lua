@@ -32,12 +32,6 @@ return {
     },
     highlight = {
       enable = true,
-      disable = function()
-        -- Disable for chezmoi template file: https://github.com/alker0/chezmoi.vim#-can-i-use-nvim-treesitter-for-my-chezmoi-template
-        if string.find(vim.bo.filetype, "chezmoitmpl") then
-          return true
-        end
-      end,
     },
     incremental_selection = {
       enable = true,
