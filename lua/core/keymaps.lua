@@ -127,7 +127,7 @@ map("n", "<leader>np", function()
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
 -- Command
-map("c", "<C-p>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
+map("c", "<C-x>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
 
 -- UTILS
 map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
