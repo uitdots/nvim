@@ -1,7 +1,7 @@
 local allowed_ts_types = {
+  raw_string_literal = true,
   string = true,
   string_literal = true,
-  raw_string_literal = true,
   template_string = true,
 }
 
