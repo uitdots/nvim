@@ -24,15 +24,14 @@ for chars, fts in pairs(indent.tab or {}) do
   })
 end
 
+local exclude_last_cur_pos_fts = {
+  "gitcommit",
+}
+
 autocmd("BufReadPost", {
   callback = function()
-    local exclude_fts = {
-      "gitcommit",
-    }
-    for _, ft in pairs(exclude_fts) do
-      if ft == vim.bo.filetype then
-        return
-      end
+    if exclude_last_cur_pos_fts[vim.bo.filetype] then
+      return
     end
     if fn.line("'\"") > 1 and fn.line("'\"") <= fn.line("$") then
       vim.cmd('normal! g`"')
@@ -63,15 +62,6 @@ autocmd("ModeChanged", {
   desc = "Highlighting matched words when searching",
 })
 ]]
-
-autocmd("FileType", {
-  pattern = "*",
-  callback = function()
-    vim.opt.formatoptions:remove({ "c", "r", "o" })
-  end,
-  group = general,
-  desc = "Disable New Line Comment",
-})
 
 autocmd("FocusGained", {
   callback = function()
