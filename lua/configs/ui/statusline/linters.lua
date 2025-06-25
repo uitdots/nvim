@@ -38,7 +38,7 @@ function M.set_status()
     return
   end
 
-  M.status = string.format(" %#St_gitIcons# %s ", table.concat(linters, ", "))
+  M.status = string.format(" %%#St_gitIcons# %s ", table.concat(linters, ", "))
 end
 
 function M.render()
