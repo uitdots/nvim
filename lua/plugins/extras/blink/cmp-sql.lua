@@ -3,6 +3,7 @@ local allowed_ts_types = {
   string = true,
   string_literal = true,
   template_string = true,
+  interpreted_string_literal = true,
 }
 
 ---@type NvPluginSpec
