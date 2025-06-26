@@ -76,7 +76,7 @@ end
 -- o.shellquote = ""
 -- o.shellxquote = ""
 
--- opt.whichwrap:append("<>[]hl") -- Let those keys (need to convert) to go to nextline when the end of line
+opt.whichwrap:append("<>[]hl") -- Let those keys (need to convert) to go to nextline when the end of line
 opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline
 
 -- opt.iskeyword:append "-"
