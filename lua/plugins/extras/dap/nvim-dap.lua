@@ -125,6 +125,8 @@ return {
       desc = "Debug | Widgets",
     },
   },
+  ---This plugin doesn't have setup
+  config = function() end,
   dependencies = {
     {
       "jay-babu/mason-nvim-dap.nvim",
