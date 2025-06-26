@@ -73,6 +73,15 @@ autocmd("FocusGained", {
 })
 
 autocmd("FileType", {
+  pattern = "*",
+  callback = function()
+    vim.opt.formatoptions:remove({ "c", "r", "o" })
+  end,
+  group = general,
+  desc = "Disable New Line Comment",
+})
+
+autocmd("FileType", {
   pattern = {
     "gitcommit",
     "markdown",
