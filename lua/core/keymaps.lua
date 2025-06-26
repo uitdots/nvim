@@ -126,6 +126,11 @@ map("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
+-- Treesitter
+map("n", "<leader>ti", function()
+  vim.treesitter.inspect_tree()
+end, { desc = "Treesitter | Inspect", silent = true })
+
 -- Command
 map("c", "<C-x>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
 
