@@ -48,4 +48,23 @@ function M.is_executable_cache(executable)
   return is_executable
 end
 
+---@param prompt string
+---@param callback fun(selected_executable: string)
+function M.executable_picker(prompt, callback)
+  local executables = vim.fn.systemlist({ "fd", "--hidden", "--no-ignore", "--type", "x" })
+
+  if #executables == 0 then
+    vim.notify("No executable files found", vim.log.levels.WARN)
+    return
+  end
+
+  vim.ui.select(executables, {
+    prompt = prompt,
+  }, function(choice)
+    if choice then
+      callback(choice)
+    end
+  end)
+end
+
 return M

@@ -5,6 +5,7 @@ return {
     ensure_installed = {
       "clang-format",
       "clangd",
+      "cpptools",
     },
   },
   opts_extend = {
