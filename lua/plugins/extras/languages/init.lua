@@ -31,6 +31,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.git",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.github",
     enabled = true,
   },
@@ -55,6 +59,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.just",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.kbd",
     enabled = true,
   },
@@ -71,12 +79,20 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.make",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.markdown",
     enabled = true,
   },
   {
     import = "plugins.extras.languages.mssql",
     enabled = false,
+  },
+  {
+    import = "plugins.extras.languages.nginx",
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.powershell",

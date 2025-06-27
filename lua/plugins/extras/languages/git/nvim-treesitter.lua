@@ -6,9 +6,11 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     ensure_installed = {
-      "json",
-      "jsonc",
-      "json5",
+      "gitcommit",
+      "gitignore",
+      "gitattributes",
+      "git_config",
+      "git_rebase",
     },
   },
   opts_extend = {
