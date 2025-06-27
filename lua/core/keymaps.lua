@@ -1,5 +1,8 @@
 local map = vim.keymap.set
 local o = vim.o
+local api = vim.api
+local t = vim.t
+local cmd = vim.cmd
 
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
@@ -8,15 +11,15 @@ map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = tr
 
 -- Options
 map("n", "<leader>ol", function()
-  vim.o.number = not vim.o.number
+  o.number = not o.number
 end, { desc = "Options | Toggle Line Number", silent = true })
 
 map("n", "<leader>or", function()
-  vim.o.relativenumber = not vim.o.relativenumber
+  o.relativenumber = not o.relativenumber
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
 map("n", "<leader>os", function()
-  vim.o.laststatus = vim.o.laststatus == 3 and 0 or 3
+  o.laststatus = o.laststatus == 3 and 0 or 3
 end, { desc = "Options | Toggle Statusline", silent = true })
 
 map("n", "<leader>oi", function()
@@ -35,7 +38,7 @@ end, { desc = "Options | Toggle Input Method", silent = true })
 
 map("n", "<leader>o<C-t>", function()
   local tabline_enabled = { 1, 2 }
-  vim.o.showtabline = tabline_enabled[vim.o.showtabline] ~= nil and 0 or 3
+  o.showtabline = tabline_enabled[o.showtabline] ~= nil and 0 or 3
 end, { desc = "Options | Toggle Tabline", silent = true })
 
 map("n", "<leader>oS", function()
@@ -62,19 +65,19 @@ map({ "n", "v" }, "<C-l>", "<C-w>l", { desc = "General | Go to right window", si
 
 for i = 1, 9, 1 do
   map("n", string.format("<M-%s>", i), function()
-    vim.api.nvim_set_current_buf(vim.t.bufs[i])
+    api.nvim_set_current_buf(t.bufs[i])
   end, { desc = string.format("General | Go to Buff %s", i), silent = true })
 end
 map("n", "<M-0", function()
-  vim.api.nvim_set_current_buf(vim.t.bufs[10])
+  api.nvim_set_current_buf(t.bufs[10])
 end, { desc = "General | Go to Buff 10", silent = true })
 
 map("n", "<leader>w", function()
   if vim.bo.buftype == "terminal" then
-    vim.cmd("Bdelete!")
-    vim.cmd("silent! close")
-  elseif #vim.api.nvim_list_wins() > 1 then
-    vim.cmd("silent! close")
+    cmd("Bdelete!")
+    cmd("silent! close")
+  elseif #api.nvim_list_wins() > 1 then
+    cmd("silent! close")
   end
 end, { desc = "General | Close window", silent = true })
 
@@ -111,7 +114,7 @@ map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent 
 
 -- Neovim
 map("n", "<leader>ni", function()
-  vim.cmd("Inspect")
+  cmd("Inspect")
 end, { desc = "Neovim | Inspect", silent = true })
 
 map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
@@ -139,13 +142,10 @@ map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = tru
 map("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
 
 map("n", "<leader>ux", function()
-  if vim.fn.has("unix") == 0 then
-    return vim.notify("This isn't available for non UNIX based OS")
-  end
   vim.ui.input({ prompt = "Enter filename", default = "%" }, function(filename)
     if filename == nil then
       return
     end
-    vim.cmd("!chmod +x " .. filename)
+    cmd("!chmod +x " .. filename)
   end)
 end, { desc = "Utils | Add Executable Permission", silent = true })
