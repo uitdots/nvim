@@ -11,4 +11,5 @@ return {
   opts_extend = {
     "registries",
   },
+  optional = true,
 }

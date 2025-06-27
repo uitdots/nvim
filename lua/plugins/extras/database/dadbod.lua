@@ -39,6 +39,12 @@ return {
     },
     {
       "saghen/blink.cmp",
+      optional = true,
+    },
+  },
+  specs = {
+    {
+      "saghen/blink.cmp",
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {

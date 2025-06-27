@@ -1,7 +1,6 @@
 ---@type NvPluginSpec
 return {
   "mfussenegger/nvim-lint",
-  optional = true,
   opts = function()
     local lint = require("lint")
 
@@ -13,4 +12,5 @@ return {
       }
     end
   end,
+  optional = true,
 }

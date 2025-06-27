@@ -20,7 +20,5 @@ return {
   opts_extend = {
     "ensure_installed",
   },
-  dependencies = {
-    "mason-org/mason.nvim",
-  },
+  dependencies = "mason-org/mason.nvim",
 }

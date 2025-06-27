@@ -16,4 +16,5 @@ return {
   opts_extend = {
     "ensure_installed",
   },
+  optional = true,
 }

@@ -49,10 +49,16 @@ return {
     },
     {
       "HakonHarnes/img-clip.nvim",
+      optional = true,
     },
     {
       "OXY2DEV/markview.nvim",
       optional = true,
+    },
+  },
+  specs = {
+    {
+      "OXY2DEV/markview.nvim",
       init = function()
         vim.api.nvim_create_autocmd("FileType", {
           pattern = "Avante",

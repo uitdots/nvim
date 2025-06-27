@@ -5,10 +5,9 @@ return {
   "Kaiser-Yang/blink-cmp-git",
   enabled = true,
   ft = "gitcommit",
-  dependencies = {
+  specs = {
     {
       "saghen/blink.cmp",
-      optional = true,
       ---@type blink.cmp.Config
       opts = {
         sources = {
@@ -30,8 +29,9 @@ return {
         },
       },
     },
-    {
-      "nvim-lua/plenary.nvim",
-    },
+  },
+  dependencies = {
+    "saghen/blink.cmp",
+    "nvim-lua/plenary.nvim",
   },
 }

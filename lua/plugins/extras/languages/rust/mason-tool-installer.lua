@@ -1,31 +1,14 @@
 ---@type NvPluginSpec
 return {
-  {
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
-    optional = true,
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
-    opts_extend = {
-      "ensure_installed",
+  "WhoIsSethDaniel/mason-tool-installer.nvim",
+  opts = {
+    ensure_installed = {
+      "rust-analyzer",
+      "codelldb",
     },
   },
-  {
-    "mfussenegger/nvim-dap",
-    optional = true,
-    dependencies = {
-      "WhoIsSethDaniel/mason-tool-installer.nvim",
-      optional = true,
-      opts = {
-        ensure_installed = {
-          "codelldb",
-        },
-      },
-      opts_extend = {
-        "ensure_installed",
-      },
-    },
+  opts_extend = {
+    "ensure_installed",
   },
+  optional = true,
 }

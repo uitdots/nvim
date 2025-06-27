@@ -1,7 +1,6 @@
 ---@type NvPluginSpec
 return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
-  optional = true,
   opts = {
     ensure_installed = {
       "xmlformatter",
@@ -11,4 +10,5 @@ return {
   opts_extend = {
     "ensure_installed",
   },
+  optional = true,
 }

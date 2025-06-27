@@ -73,6 +73,15 @@ return {
     {
       "OXY2DEV/markview.nvim",
       optional = true,
+    },
+    {
+      "HakonHarnes/img-clip.nvim",
+      optional = true,
+    },
+  },
+  specs = {
+    {
+      "OXY2DEV/markview.nvim",
       init = function()
         vim.api.nvim_create_autocmd("FileType", {
           pattern = "codecompanion",
@@ -87,7 +96,6 @@ return {
     },
     {
       "HakonHarnes/img-clip.nvim",
-      optional = true,
       opts = {
         filetypes = {
           codecompanion = {

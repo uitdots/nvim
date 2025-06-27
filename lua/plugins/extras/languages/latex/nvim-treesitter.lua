@@ -6,10 +6,11 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     ensure_installed = {
-      -- TODO: What, latex use what?
+      "bibtext",
     },
   },
   opts_extend = {
     "ensure_installed",
   },
+  optional = true,
 }

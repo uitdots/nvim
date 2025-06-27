@@ -13,10 +13,9 @@ return {
   event = {
     "InsertEnter",
   },
-  dependencies = {
+  specs = {
     {
       "Saghen/blink.cmp",
-      optional = true,
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
@@ -31,6 +30,12 @@ return {
                 local ok, node = pcall(vim.treesitter.get_node)
                 return ok and node and allowed_ts_types[node:type()] or false
               end,
+              transform_items = function(_, items)
+                for _, item in ipairs(items) do
+                  item.kind_name = "Table"
+                end
+                return items
+              end,
             },
           },
           default = {
@@ -42,8 +47,9 @@ return {
         "sources.default",
       },
     },
-    {
-      "Saghen/blink.compat",
-    },
+  },
+  dependencies = {
+    "Saghen/blink.cmp",
+    "Saghen/blink.compat",
   },
 }

@@ -39,3 +39,7 @@ If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
   ```vim
   :set spell spellang=vi
   ```
+
+## TODO
+
+- [ ] Check again the telescope integration deps hell

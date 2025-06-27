@@ -18,4 +18,5 @@ return {
     "ensure_installed",
     "indent.disable",
   },
+  optional = true,
 }

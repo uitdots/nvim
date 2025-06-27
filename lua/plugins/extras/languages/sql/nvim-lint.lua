@@ -1,7 +1,6 @@
 ---@type NvPluginSpec
 return {
   "mfussenegger/nvim-lint",
-  optional = true,
   opts = function()
     local lint = require("lint")
 
@@ -22,4 +21,5 @@ return {
       "pg_sqlfluff",
     }
   end,
+  optional = true,
 }

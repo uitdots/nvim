@@ -4,45 +4,54 @@ local get_executable = require("utils.executable").get_executable
 
 ---@type NvPluginSpec
 return {
-  "mfussenegger/nvim-dap-python",
-  keys = {
-    {
-      "<leader>dt",
-      function()
-        require("dap-python").test_method()
-      end,
-      desc = "Debug | Test Method",
-      ft = "python",
+  {
+    "mfussenegger/nvim-dap-python",
+    enabled = true,
+    keys = {
+      {
+        "<leader>dt",
+        function()
+          require("dap-python").test_method()
+        end,
+        desc = "Debug | Test Method",
+        ft = "python",
+      },
+      {
+        "<leader>dC",
+        function()
+          require("dap-python").test_class()
+        end,
+        desc = "Debug | Test Class",
+        ft = "python",
+      },
     },
-    {
-      "<leader>dC",
-      function()
-        require("dap-python").test_class()
-      end,
-      desc = "Debug | Test Class",
-      ft = "python",
-    },
-  },
-  config = function()
-    local executable = get_executable("uv")
-    if executable == nil then
-      executable = get_executable("python", string.format("debugpy/%s", is_windows and "venv/Scripts" or "/venv/bin"))
-    end
-    if executable == nil then
-      return
-    end
-    require("dap-python").setup(executable)
-  end,
-  dependencies = {
-    "mfussenegger/nvim-dap",
-    {
-      "jay-babu/mason-nvim-dap.nvim",
-      optional = true,
-      opts = {
-        handlers = {
-          python = function() end,
+    config = function()
+      local executable = get_executable("uv")
+      if executable == nil then
+        executable = get_executable("python", string.format("debugpy/%s", is_windows and "venv/Scripts" or "/venv/bin"))
+      end
+      if executable == nil then
+        return
+      end
+      require("dap-python").setup(executable)
+    end,
+    specs = {
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        optional = true,
+        opts = {
+          handlers = {
+            python = function() end,
+          },
         },
       },
+    },
+  },
+  {
+    "mfussenegger/nvim-dap",
+    dependencies = {
+      "mfussenegger/nvim-dap-python",
+      optional = true,
     },
   },
 }
