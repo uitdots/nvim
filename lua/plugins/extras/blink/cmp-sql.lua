@@ -6,6 +6,8 @@ local allowed_ts_types = {
   interpreted_string_literal = true,
 }
 
+local kind_name = "Table" -- Because idk how to customise this, pick table
+
 ---@type NvPluginSpec
 return {
   "ray-x/cmp-sql",
@@ -32,7 +34,7 @@ return {
               end,
               transform_items = function(_, items)
                 for _, item in ipairs(items) do
-                  item.kind_name = "Table"
+                  item.kind_name = kind_name
                 end
                 return items
               end,
