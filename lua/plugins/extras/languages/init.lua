@@ -11,6 +11,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.config",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.cs",
     enabled = false,
   },
@@ -121,6 +125,10 @@ return {
   {
     import = "plugins.extras.languages.tailwind",
     enabled = false,
+  },
+  {
+    import = "plugins.extras.languages.toml",
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.typescript",

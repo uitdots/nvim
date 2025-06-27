@@ -1,0 +1,17 @@
+---@type NvPluginSpec
+return {
+  "nvim-treesitter/nvim-treesitter",
+  optional = true,
+  ---@module 'nvim-treesitter'
+  ---@type TSConfig
+  ---@diagnostic disable-next-line: missing-fields
+  opts = {
+    ensure_installed = {
+      "ssh_config",
+      "tmux",
+    },
+  },
+  opts_extend = {
+    "ensure_installed",
+  },
+}
