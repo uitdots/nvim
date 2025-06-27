@@ -92,26 +92,26 @@ M.nvdash = {
       keys = "<Spc>nc",
       cmd = "NvCheatsheet",
     },
-    -- { txt = "─", no_gap = true, rep = true },
-    -- {
-    --   txt = function()
-    --     local ok, stats = pcall(function()
-    --       local lazy_stats = require("lazy").stats()
-    --       return {
-    --         loaded = lazy_stats.loaded,
-    --         count = lazy_stats.count,
-    --         milliseconds = math.floor(lazy_stats.startuptime),
-    --       }
-    --     end)
-    --     if ok then
-    --       return string.format("  Loaded %d/%d plugins in %d ms", stats.loaded, stats.count, stats.milliseconds)
-    --     else
-    --       return "󰇸 Cannot load lazy's status"
-    --     end
-    --   end,
-    --   hl = "NvDashFooter",
-    --   no_gap = true,
-    -- },
+    { txt = "─", no_gap = true, rep = true },
+    {
+      txt = function()
+        local ok, stats = pcall(function()
+          local lazy_stats = require("lazy").stats()
+          return {
+            loaded = lazy_stats.loaded,
+            count = lazy_stats.count,
+            milliseconds = math.floor(lazy_stats.startuptime),
+          }
+        end)
+        if ok then
+          return string.format("  Loaded %d/%d plugins in %d ms", stats.loaded, stats.count, stats.milliseconds)
+        else
+          return "󰇸 Cannot load lazy's status"
+        end
+      end,
+      hl = "NvDashFooter",
+      no_gap = true,
+    },
   },
 }
 
