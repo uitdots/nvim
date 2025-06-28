@@ -1,3 +1,17 @@
+local filter_availabled_external = require("uitvim").options.filter_availabled_external
+
+---@param opts conform.setupOpts
+local function filter_available(opts)
+  for filetype, formatters in pairs(opts.formatters_by_ft) do
+    ---@cast formatters string[]
+    opts.formatters_by_ft[filetype] = function(bufnr)
+      return vim.tbl_filter(function(formatter)
+        return require("conform").get_formatter_info(formatter, bufnr).available
+      end, formatters)
+    end
+  end
+end
+
 ---@type NvPluginSpec
 return {
   "stevearc/conform.nvim",
@@ -22,7 +36,9 @@ return {
   ---@module 'conform'
   ---@type conform.setupOpts
   opts = {
-    lsp_format = "fallback",
+    default_format_opts = {
+      lsp_format = "fallback",
+    },
     formatters = {
       prettier = {
         append_args = {
@@ -44,6 +60,11 @@ return {
     end,
   },
   config = function(_, opts)
-    require("configs.editor.conform").setup(opts)
+    if filter_availabled_external then
+      filter_available(opts)
+    end
+
+    require("conform").setup(opts)
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
   end,
 }
