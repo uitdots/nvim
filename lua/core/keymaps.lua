@@ -110,7 +110,7 @@ map("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Lazy | Profile", silen
 map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Lazy | Update", silent = true })
 
 -- Neovim
-map("n", "<leader>ni", function()
+map("n", "<leader>nI", function()
   cmd("Inspect")
 end, { desc = "Neovim | Inspect", silent = true })
 

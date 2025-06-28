@@ -50,6 +50,9 @@ return {
     },
     image = {
       enabled = true,
+      doc = {
+        enabled = false,
+      },
     },
     indent = {
       enabled = true,
@@ -400,6 +403,14 @@ return {
         Snacks.notifier.hide()
       end,
       desc = "Neovim | Hide Notification",
+      silent = true,
+    },
+    {
+      "<leader>ni",
+      function()
+        Snacks.image.hover()
+      end,
+      desc = "Neovim | Show Current Image",
       silent = true,
     },
   },
