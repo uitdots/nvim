@@ -37,6 +37,7 @@ end
 
 local executable_cache = {} ---@type table<(string), boolean>
 
+---@param executable string
 function M.is_executable_cache(executable)
   ---@type boolean | nil
   local is_executable = executable_cache[executable]

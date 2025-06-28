@@ -21,9 +21,7 @@ M.term_cmd = "bot 20 new | term "
 
 ---@param open_term fun(cmd:string)?
 function M.run(open_term)
-  local supported, cmds = pcall(function()
-    return require("configs.code-runner." .. vim.bo.ft)
-  end)
+  local supported, cmds = pcall(require, "configs.code-runner." .. vim.bo.ft)
 
   if not supported then
     vim.notify("Unsupported filetype for code runner", vim.log.levels.ERROR, { title = "Code Runner" })
