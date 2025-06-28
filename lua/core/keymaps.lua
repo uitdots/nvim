@@ -97,9 +97,6 @@ map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
 -- Terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
--- Later when configured oversea
-map("n", "<leader>1", require("configs.code-runner").run, { desc = "General | Code Runner", silent = true })
-
 -- Plugins
 map("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = false })
 map("n", "<leader>pC", "<cmd>Lazy check<cr>", { desc = "Lazy | Check", silent = true })
@@ -128,6 +125,8 @@ end, { desc = "Neovim | Version", silent = true })
 map("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
+
+map("n", "<leader>nr", require("configs.code-runner").run, { desc = "Neovim | Runner", silent = true })
 
 -- Treesitter
 map("n", "<leader>ti", function()
