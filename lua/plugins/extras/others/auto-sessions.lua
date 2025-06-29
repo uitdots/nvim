@@ -4,8 +4,6 @@ local auto_session = false
 return {
   "rmagatti/auto-session",
   lazy = not auto_session,
-  ---@module "auto-session"
-  ---@type AutoSession.Config
   cmds = not auto_session and {
     "Autosession",
     "SessionDelete",
@@ -47,6 +45,8 @@ return {
       desc = "Session | Toggle Autosave",
     },
   },
+  ---@module "auto-session"
+  ---@type AutoSession.Config
   opts = {
     enabled = auto_session,
   },
