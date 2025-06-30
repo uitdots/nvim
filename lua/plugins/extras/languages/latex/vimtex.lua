@@ -1,14 +1,15 @@
----@type NvPluginSpec
+local is_executable = require("utils.executable").is_executable
 ---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/tex.lua
-
+---@type NvPluginSpec
 return {
   "lervag/vimtex",
-  lazy = false, -- lazy-loading will disable inverse search
+  lazy = false,
   config = function()
-    vim.g.vimtex_mappings_disable = { ["n"] = { "K" } } -- disable `K` as it conflicts with LSP hover
-    vim.g.vimtex_quickfix_method = vim.fn.executable("pplatex") == 1 and "pplatex" or "latexlog"
+    vim.g.vimtex_mappings_disable = { ["n"] = { "K" } }
+    vim.g.vimtex_quickfix_method = is_executable("pplatex") and "pplatex" or "latexlog" ---@type "pplatex" | "latexlog" | "pulp"
+    vim.g.vimtex_view_method = "zathura" ---@type "general" | "mupdf" | "skim" | "zathura" | "zathura_simple"
   end,
   keys = {
-    { "<localLeader>l", "", desc = "+vimtex", ft = "tex" },
+    { "<localLeader>l", ft = "tex" },
   },
 }

@@ -6,7 +6,7 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     ensure_installed = {
-      "bibtext",
+      "bibtex",
     },
   },
   opts_extend = {

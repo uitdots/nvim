@@ -29,7 +29,7 @@ return {
       { "<leader>t", group = "Treesitter", icon = "" },
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
       { "<localleader>\\", group = "Multi Cursor", icon = "󰗧" },
-      { "<localleader>l", group = "LSP", icon = "" },
+      { "<localleader>l", group = "Latex", icon = "" },
       { "<localleader>r", group = "Rest API", icon = "󱂛" },
       { "<localleader>s", group = "SQL", icon = "" },
     },

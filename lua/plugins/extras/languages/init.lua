@@ -76,7 +76,7 @@ return {
   },
   {
     import = "plugins.extras.languages.latex",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.lua",
