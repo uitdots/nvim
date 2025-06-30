@@ -14,6 +14,14 @@ return {
       silent = true,
     },
     {
+      "<leader>dC",
+      function()
+        require("dap").clear_breakpoints()
+      end,
+      desc = "Debug | Clear Breakpoints",
+      silent = true,
+    },
+    {
       "<leader>do",
       function()
         require("dap").step_over()
@@ -43,6 +51,14 @@ return {
         require("dap").toggle_breakpoint()
       end,
       desc = "Debug | Breakpoint",
+      silent = true,
+    },
+    {
+      "<leader>dD",
+      function()
+        require("dap").disconnect()
+      end,
+      desc = "Debug | Disconnect",
       silent = true,
     },
     {
