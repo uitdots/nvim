@@ -9,6 +9,7 @@ vim.filetype.add({
     ["plist"] = "xml",
   },
   pattern = {
+    [".*/Jenkinsfile"] = "groovy",
     [".*/%.env"] = "dotenv",
     [".*/.*%.env"] = "dotenv",
     [".*/%.env%..*"] = "dotenv",

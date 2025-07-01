@@ -47,6 +47,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.groovy",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.html",
     enabled = true,
   },
