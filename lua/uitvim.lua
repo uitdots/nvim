@@ -29,9 +29,11 @@ M.options = {
         "c",
         "cpp",
         "cs",
-        "python",
-        "kotlin",
+        "groovy",
         "java",
+        "jenkins",
+        "kotlin",
+        "python",
       },
       [2] = {
         "just",

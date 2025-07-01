@@ -87,6 +87,7 @@ And much more!
   - Vim
   - YAML
   - XML
+  - Groovy (Jenkinsfile)
 - Others that have configured:
   - Config (tmux, sshconfig)
   - C# (cs)
@@ -105,7 +106,6 @@ And much more!
   - Powershell
   - Rust
   - Tailwind
-  - Groovy (Jenkinsfile)
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail

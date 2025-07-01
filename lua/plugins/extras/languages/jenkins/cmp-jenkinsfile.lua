@@ -15,10 +15,10 @@ return {
               module = "blink.compat.source",
               opts = {
                 ---This is based on your jenkins server you write.
-                jenkins_url = "http://localhost:8080",
+                jenkins_url = vim.env.JENKINS_URL,
                 ---This is required if ...
                 http = {
-                  basic_auth_user = vim.env.JENKINS_USER,
+                  basic_auth_user = vim.env.JENKINS_USER_ID,
                   basic_auth_password = vim.env.JENKINS_PASSWORD,
                   ca_cert = vim.env.JENKINS_CA_CERT,
                   proxy = vim.env.JENKINS_PROXY,
