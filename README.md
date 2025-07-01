@@ -57,6 +57,12 @@ From UIT, for UIT (and others :v)
   - [flash.nvim](https://github.com/folke/flash.nvim)
   - [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
   - [markview.nvim](https://github.com/OXY2DEV/markview.nvim)
+- AI:
+  - [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
+    > Tab completion with blink
+  - [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim)
+  - [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim)
+  - [VectorCode](https://github.com/Davidyz/VectorCode)
 - Others:
   - [snacks.nvim](https://github.com/folke/snacks.nvim)
     > Support image viewer, fast file picker
@@ -99,6 +105,7 @@ And much more!
   - Powershell
   - Rust
   - Tailwind
+  - Groovy (Jenkinsfile)
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
