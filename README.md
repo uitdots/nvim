@@ -154,3 +154,4 @@ If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
 - [nikolovlazar](https://github.com/nikolovlazar/dotfiles/blob/main/.config/nvim/)
 - [Integralist](https://github.com/Integralist/nvim)
   > Has ghostty type
+- [catgoose](https://github.com/catgoose/nvim)
