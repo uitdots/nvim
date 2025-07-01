@@ -1,6 +1,8 @@
 ---@type NvPluginSpec
 return {
   "joshzcold/cmp-jenkinsfile",
+  enabled = false,
+  cond = vim.env.JENKINS_URL ~= nil,
   ft = "jenkins",
   specs = {
     {

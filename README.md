@@ -13,8 +13,8 @@ From UIT, for UIT (and others :v)
   - [Languages](#languages)
   - [Others](#others)
 - [Prerequisites](#prerequisites)
+- [Install note](#install-note)
 - [Others](#others-1)
-  - [Note](#note)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
 
@@ -126,13 +126,21 @@ And much more!
 - ripgrep: telescope, vimgrep replacement
 - fd: telescope
 
+## Install note
+
+- Use mason tools to install all packages that enabled in [`lua/plugins/extras/languages/init.lua`](lua/plugins/extras/languages/init.lua)
+  ```
+  MasonToolsInstall
+  ```
+- With groovy language server, ensure you are using java 18 or so...
+- If NvChad UI's color is broken, use the command:
+  ```
+  NvChadLoadAllHighlights
+  ```
+
 ---
 
 ## Others
-
-### Note
-
-If NvChad UI's color is broken, use the command: `:NvChadLoadAllHighlights`
 
 ### Tips & Tricks
 

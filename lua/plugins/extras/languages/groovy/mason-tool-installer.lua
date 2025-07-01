@@ -3,6 +3,7 @@ return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   opts = {
     ensure_installed = {
+      "groovy-language-server",
       "npm-groovy-lint",
     },
   },
