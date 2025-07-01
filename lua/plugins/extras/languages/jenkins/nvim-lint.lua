@@ -1,0 +1,14 @@
+---@type NvPluginSpec
+return {
+  "mfussenegger/nvim-lint",
+  optional = true,
+  opts = function()
+    local lint = require("lint")
+
+    lint.linters["npm-groovy-lint"].ignore_exitcode = true
+
+    lint.linters_by_ft.jenkins = {
+      "npm-groovy-lint",
+    }
+  end,
+}

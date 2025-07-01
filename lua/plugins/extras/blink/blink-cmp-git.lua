@@ -11,12 +11,6 @@ return {
       ---@type blink.cmp.Config
       opts = {
         sources = {
-          per_filetype = {
-            gitcommit = {
-              inherit_defaults = true,
-              "git",
-            },
-          },
           providers = {
             git = {
               module = "blink-cmp-git",
@@ -24,6 +18,12 @@ return {
               --- @module 'blink-cmp-git'
               --- @type blink-cmp-git.Options
               opts = nil,
+            },
+          },
+          per_filetype = {
+            gitcommit = {
+              inherit_defaults = true,
+              "git",
             },
           },
         },

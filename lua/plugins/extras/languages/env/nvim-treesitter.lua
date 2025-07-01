@@ -12,8 +12,5 @@ return {
   opts_extend = {
     "ensure_installed",
   },
-  init = function()
-    vim.treesitter.language.register("bash", "dotenv")
-  end,
   optional = true,
 }

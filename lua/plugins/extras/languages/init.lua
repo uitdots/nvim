@@ -63,6 +63,10 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.jenkins",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.json",
     enabled = true,
   },
