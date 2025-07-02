@@ -11,10 +11,9 @@ From UIT, for UIT (and others :v)
 - [Supports](#supports)
   - [Plugins](#plugins)
   - [Languages](#languages)
-  - [Others](#others)
 - [Prerequisites](#prerequisites)
-- [Install note](#install-note)
-- [Others](#others-1)
+- [Note](#note)
+- [Others](#others)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
 
@@ -67,20 +66,24 @@ From UIT, for UIT (and others :v)
   - [snacks.nvim](https://github.com/folke/snacks.nvim)
     > Support image viewer, fast file picker
   - [auto-session](https://github.com/rmagatti/auto-session)
+  - chezmoi:
+    - [chezmoi.nvim](https://github.com/xvzc/chezmoi.nvim)
+    - [chezmoi.vim](https://github.com/alker0/chezmoi.vim)
+  - [vim-wakatime](https://github.com/wakatime/vim-wakatime)
 
-And much more!
+> [!NOTE]
+> And much more...!
 
 ### Languages
 
-- For developing _(as I'm using them)_:
+- Well configured _(as I'm using them)_:
   - JavaScript, TypeScript (NodeJS)
     > No deno
   - Go
   - Python
   - SQL (postgres)
-    > Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
-    >
-    > With postgres, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
+    > - Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
+    > - With postgres, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
   - C/C++
   - Shell
   - TOML
@@ -112,11 +115,6 @@ And much more!
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
 
-### Others
-
-- chezmoi
-- wakatime
-
 ---
 
 ## Prerequisites
@@ -128,17 +126,27 @@ And much more!
 - ripgrep: telescope, vimgrep replacement
 - fd: telescope
 
-## Install note
+---
 
-- Use mason tools to install all packages that enabled in [`lua/plugins/extras/languages/init.lua`](lua/plugins/extras/languages/init.lua)
+## Note
+
+- Enable languages you want to use in [`lua/plugins/extras/languages/init.lua`](lua/plugins/extras/languages/init.lua)
+- Use mason tools to install all packages (Language servers, linters, formatters, runtime)
   ```
-  MasonToolsInstall
+  :MasonToolsInstall
   ```
 - With groovy language server, ensure you are using java 18 or so...
-- If NvChad UI's color is broken, use the command:
+- If NvChad UI's color is broken, run:
   ```
-  NvChadLoadAllHighlights
+  :NvChadLoadAllHighlights
   ```
+- These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
+  - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
+  - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
+- Working with SQL:
+  - Use composite filetype
+  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it (for linter and formatter attach to)
+    > Ex: `sql.postgresql`, `plsql.postgresql`
 
 ---
 

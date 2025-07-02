@@ -2,7 +2,7 @@
 return {
   "eatgrass/maven.nvim",
   optional = true,
-  opts = {},
+  config = true,
   cmd = {
     "Maven",
     "MavenExec",

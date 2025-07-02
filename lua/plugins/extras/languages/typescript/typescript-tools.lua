@@ -1,3 +1,5 @@
+---TODO: remove this plugin when typescript go is done!!!!!
+
 local lspconfig = require("configs.lsp.lspconfig")
 local is_executable = require("utils.executable").is_executable
 

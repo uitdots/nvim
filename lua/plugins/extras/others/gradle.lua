@@ -10,7 +10,7 @@ return {
       desc = "LPS | Gradle",
     },
   },
-  opts = {},
+  config = true,
   dependencies = {
     "nvim-lua/plenary.nvim",
     "MunifTanjim/nui.nvim",

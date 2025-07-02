@@ -1,11 +1,7 @@
 ---@type NvPluginSpec
 return {
   "nvzone/menu",
-  dependencies = {
-    "nvzone/volt",
-  },
   enabled = true,
-  event = "VeryLazy",
   keys = {
     {
       "<RightMouse>",
@@ -37,4 +33,7 @@ return {
       },
     })
   end,
+  dependencies = {
+    "nvzone/volt",
+  },
 }
