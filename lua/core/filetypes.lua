@@ -9,6 +9,8 @@ vim.filetype.add({
     ["plist"] = "xml",
   },
   pattern = {
+    [".*/Chart.ya?ml"] = "helmchart", -- Custom type because helm vim cannot set it
+    [".*/values.ya?ml"] = "yaml.helm-values", -- Custom type because helm vim cannot set it
     [".*/Jenkinsfile"] = "jenkins",
     [".*/%.env"] = "dotenv",
     [".*/.*%.env"] = "dotenv",

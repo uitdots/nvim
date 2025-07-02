@@ -51,6 +51,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.helm",
+    enabled = false,
+  },
+  {
     import = "plugins.extras.languages.html",
     enabled = true,
   },
