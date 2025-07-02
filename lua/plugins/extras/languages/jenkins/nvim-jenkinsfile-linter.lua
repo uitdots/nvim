@@ -13,7 +13,10 @@ return {
     end
 
     ---This is really like the way I config nvim lint
-    vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
+    vim.api.nvim_create_autocmd({
+      "BufWritePost",
+      -- "BufWinEnter",
+    }, {
       pattern = "*",
       callback = debounce(function()
         if vim.bo.filetype ~= "jenkins" then

@@ -40,7 +40,10 @@ return {
       filter_avaiable()
     end
 
-    vim.api.nvim_create_autocmd({ "BufWritePost", "BufWinEnter" }, {
+    vim.api.nvim_create_autocmd({
+      "BufWritePost",
+      -- "BufWinEnter",
+    }, {
       callback = debounce(function()
         require("lint").try_lint(nil, { ignore_errors = true })
       end, 1000),
