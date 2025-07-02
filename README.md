@@ -106,6 +106,8 @@ And much more!
   - Powershell
   - Rust
   - Tailwind
+  - Terraform
+  - Helm (kubernetes)
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
