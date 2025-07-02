@@ -135,6 +135,10 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.terraform",
+    enabled = false,
+  },
+  {
     import = "plugins.extras.languages.toml",
     enabled = true,
   },
