@@ -8,6 +8,7 @@ M.lsps = {
   "lua_ls",
   "pyright",
   "texlab",
+  "sonarlint", -- NOTE: Neovim lsp doesn't support it yet
 }
 
 ---For having lsp setup by mason (exclude these)
