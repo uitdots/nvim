@@ -25,7 +25,11 @@ From UIT, for UIT (and others :v)
 
 | Dashboard                                                                                     | Editor                                                                                     |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Dashboard](https://github.com/user-attachments/assets/3affbe03-ee4b-421f-a455-5931cb996c75) | ![Editor](https://github.com/user-attachments/assets/f51e91e5-6af5-47a7-b354-35c52352ecea) |
+| ![Dashboard](https://github.com/user-attachments/assets/71ca08b3-8a52-403e-8d4b-804b11e4fca9) | ![Editor](https://github.com/user-attachments/assets/77cc3e3f-7b73-4b83-acc2-8b96faf81c3a) |
+
+| Debugging                                                                                     | AI                                                                                     |
+| --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| ![Debugging](https://github.com/user-attachments/assets/5705f91b-ac87-4de1-b509-dfe0ebeed6b2) | ![AI](https://github.com/user-attachments/assets/dff7a7aa-a3d3-468a-a986-8ee9beb4eecf) |
 
 ---
 
