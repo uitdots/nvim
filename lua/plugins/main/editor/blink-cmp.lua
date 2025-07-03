@@ -33,7 +33,7 @@ return {
       ["<Tab>"] = {
         function(cmp)
           if cmp.is_active() then
-            return cmp.select_next({ auto_insert = false })
+            return cmp.select_next({ auto_insert = true })
           end
         end,
         "snippet_forward",
@@ -42,7 +42,7 @@ return {
       ["<S-Tab>"] = {
         function(cmp)
           if cmp.is_active() then
-            return cmp.select_prev({ auto_insert = false })
+            return cmp.select_prev({ auto_insert = true })
           end
         end,
         "snippet_backward",
