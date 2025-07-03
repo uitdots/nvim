@@ -12,7 +12,9 @@ return {
     },
     delay = 500,
     spec = {
+      { "<leader><C-t>", group = "Terminal", icon = "" },
       { "<leader>R", group = "Refactor", icon = "󰮓", mode = { "n", "v" } },
+      { "<leader>T", group = "Test", icon = "󰙨" },
       { "<leader>a", group = "AI", icon = "", mode = { "n", "v" } },
       { "<leader>d", group = "Debug", icon = "" },
       { "<leader>f", group = "Find & File", icon = "" },
@@ -25,7 +27,6 @@ return {
       { "<leader>r", group = "Runner", icon = "" },
       { "<leader>s", group = "Session", icon = "󰔚", mode = "n" },
       { "<leader>s", group = "Snapshot", icon = "", mode = "x" },
-      { "<leader>T", group = "Terminal", icon = "" },
       { "<leader>t", group = "Treesitter", icon = "" },
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
       { "<localleader>\\", group = "Multi Cursor", icon = "󰗧" },

@@ -53,6 +53,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.test",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.utils",
     enabled = true,
   },

@@ -10,6 +10,7 @@ return {
       "ui/nvchad_types",
       "neoconf.nvim/types/lsp.lua",
       "luvit-meta/library",
+      string.format("%s/lua/types", vim.fn.stdpath("config")),
       -- { path = "snacks.nvim", words = { "Snacks" } },
     },
   },

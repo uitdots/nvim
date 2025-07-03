@@ -18,7 +18,7 @@ return {
         silent = true,
       },
       {
-        "<leader>Tn",
+        "<leader><C-t>n",
         function()
           require("nvchad.term").new()
         end,
@@ -26,7 +26,7 @@ return {
         silent = true,
       },
       {
-        "<leader>Tv",
+        "<leader><C-t>v",
         function()
           require("nvchad.term").toggle({ pos = "vsp", id = "veritcal" })
         end,
@@ -34,7 +34,7 @@ return {
         silent = true,
       },
       {
-        "<leader>TV",
+        "<leader><C-t>V",
         function()
           require("nvchad.term").new({ pos = "vsp" })
         end,
@@ -42,7 +42,7 @@ return {
         silent = true,
       },
       {
-        "<leader>Th",
+        "<leader><C-t>h",
         function()
           require("nvchad.term").toggle({ pos = "sp", id = "horizontal" })
         end,
@@ -50,7 +50,7 @@ return {
         silent = true,
       },
       {
-        "<leader>TH",
+        "<leader><C-t>H",
         function()
           require("nvchad.term").new({ pos = "sp" })
         end,
@@ -58,7 +58,7 @@ return {
         silent = true,
       },
       {
-        "<leader>Tf",
+        "<leader><C-t>f",
         function()
           require("nvchad.term").toggle({ pos = "float", id = "float" })
         end,
@@ -66,7 +66,7 @@ return {
         silent = true,
       },
       {
-        "<leader>TF",
+        "<leader><C-t>F",
         function()
           require("nvchad.term").new({ pos = "float" })
         end,
