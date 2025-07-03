@@ -45,8 +45,26 @@ return {
       -- "BufWinEnter",
     }, {
       callback = debounce(function()
-        require("lint").try_lint(nil, { ignore_errors = true })
+        require("lint").try_lint(nil, {
+          ignore_errors = true,
+        })
       end, 1000),
     })
   end,
+  keys = {
+    ---This is for manually triggering checking (spell, security check,...)
+    {
+      "<leader>ll",
+      function()
+        require("lint").try_lint({
+          "codespell",
+          "cspell",
+          "trivy",
+        }, {
+          ignore_errors = true,
+        })
+      end,
+      desc = "LSP | Lint Others",
+    },
+  },
 }
