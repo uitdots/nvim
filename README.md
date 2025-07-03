@@ -66,6 +66,7 @@ From UIT, for UIT (and others :v)
   - [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim)
   - [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim)
   - [VectorCode](https://github.com/Davidyz/VectorCode)
+- Testing: [neotest](https://github.com/nvim-neotest/neotest)
 - Others:
   - [snacks.nvim](https://github.com/folke/snacks.nvim)
     > Support image viewer, fast file picker
