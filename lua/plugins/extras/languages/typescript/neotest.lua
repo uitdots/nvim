@@ -18,4 +18,5 @@ return {
     "marilari88/neotest-vitest",
     "nvim-neotest/neotest-jest",
   },
+  optional = true,
 }

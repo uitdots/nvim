@@ -12,11 +12,27 @@ return {
   },
   keys = {
     {
+      "<leader>Ta",
+      function()
+        require("neotest").run.attach()
+      end,
+      desc = "Test | Attach",
+    },
+    {
       "<leader>TF",
       function()
         require("neotest").run.run(vim.uv.cwd())
       end,
       desc = "Test | All Files",
+    },
+    {
+      "<leader>Ts",
+      function()
+        require("neotest").run.run({
+          suite = true,
+        })
+      end,
+      desc = "Test | Suite",
     },
     {
       "<leader>TO",
@@ -56,7 +72,10 @@ return {
     {
       "<leader>To",
       function()
-        require("neotest").output.open({ enter = true, auto_close = true })
+        require("neotest").output.open({
+          enter = true,
+          auto_close = true,
+        })
       end,
       desc = "Test | Output",
     },
@@ -73,6 +92,27 @@ return {
         require("neotest").watch.toggle(vim.fn.expand("%"))
       end,
       desc = "Test | Toggle Watch",
+    },
+    {
+      "<leader>Td",
+      function()
+        require("neotest").run.run({
+          suite = false,
+          strategy = "dap",
+        })
+      end,
+      desc = "Test | Debug Nearest",
+    },
+    {
+      "<leader>Td",
+      function()
+        require("neotest").run.run({
+          vim.fn.expand("%"),
+          suite = false,
+          strategy = "dap",
+        })
+      end,
+      desc = "Test | Debug Current File",
     },
   },
   ---@module 'neotest'
