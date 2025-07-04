@@ -1,10 +1,7 @@
 ---@type NvPluginSpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = {
-    "BufReadPost",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   cmd = {
     "TSInstall",
     "TSUninstall",
