@@ -57,9 +57,15 @@ return {
     })
   end,
   opts = {
-    display = {
+    strategies = {
       chat = {
-        separator = "---", -- TODO: Check this, this doesn't work
+        keymaps = {
+          regenerate = {
+            modes = {
+              n = "g<M-r>", -- Because this conflict with lsp action
+            },
+          },
+        },
       },
     },
   },
