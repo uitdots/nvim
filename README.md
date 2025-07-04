@@ -152,6 +152,7 @@ From UIT, for UIT (and others :v)
   - Use composite filetype
   - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it (for linter and formatter attach to)
     > Ex: `sql.postgresql`, `plsql.postgresql`
+- Lazy only run `config` and `init` once. Not like `opts`
 
 ---
 
