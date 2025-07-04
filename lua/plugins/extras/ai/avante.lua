@@ -1,8 +1,10 @@
+local autocmd = vim.api.nvim_create_autocmd
 local is_windows = require("utils.os").is_windows
 
 ---@type NvPluginSpec
 return {
   "yetone/avante.nvim",
+  enabled = false,
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = "copilot", ---@type "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
@@ -59,11 +61,12 @@ return {
   specs = {
     {
       "OXY2DEV/markview.nvim",
-      init = function()
-        vim.api.nvim_create_autocmd("FileType", {
+      opts = function(_, opts)
+        autocmd("FileType", {
           pattern = "Avante",
           command = "Markview enable",
         })
+        return opts
       end,
     },
   },

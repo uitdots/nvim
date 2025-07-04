@@ -5,9 +5,6 @@ local border_enabled = require("uitvim").options.border_enabled
 return {
   "ravitemer/mcphub.nvim",
   cond = is_executable("npm"),
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
   keys = {
     {
       "<leader>am",
@@ -26,6 +23,7 @@ return {
     },
   },
   build = "npm install -g mcp-hub@latest",
+  dependencies = "nvim-lua/plenary.nvim",
   specs = {
     {
       "olimorris/codecompanion.nvim",

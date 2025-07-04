@@ -9,66 +9,64 @@ local fts = vim.list_extend({
 
 ---@type NvPluginSpec
 return {
-  {
-    "OXY2DEV/markview.nvim",
-    lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
-    event = "VeryLazy",
-    -- ft = ft,
-    ---@module 'markview'
-    ---@type markview.config
-    opts = {
-      preview = {
-        enable = false,
-        enable_hybrid_mode = true,
-        filetypes = fts,
-        ignore_buftypes = {
-          "help", -- using helpview
-        },
-        icon_provider = "devicons",
-        modes = {
-          "n",
-          "no",
-          "c",
-          "v",
-          "V",
-          "i",
-        },
-        hybrid_modes = {
-          "i",
-        },
+  "OXY2DEV/markview.nvim",
+  lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
+  event = "VeryLazy",
+  -- ft = ft,
+  ---@module 'markview'
+  ---@type markview.config
+  opts = {
+    preview = {
+      enable = false,
+      enable_hybrid_mode = true,
+      filetypes = fts,
+      ignore_buftypes = {
+        "help", -- using helpview
       },
-    },
-    cmd = {
-      "Markview",
-    },
-    keys = {
-      {
-        "<leader>mv",
-        "<cmd>Markview toggle<cr>",
-        desc = "Markdown | Toggle View (local)",
-        ft = fts,
-        silent = true,
+      icon_provider = "devicons",
+      modes = {
+        "n",
+        "no",
+        "c",
+        "v",
+        "V",
+        "i",
       },
-      {
-        "<leader>mV",
-        "<cmd>Markview Toggle<cr>",
-        desc = "Markdown | Toggle View (all)",
-        ft = fts,
-        silent = true,
-      },
-    },
-    dependencies = {
-      "nvim-tree/nvim-web-devicons",
-      {
-        "saghen/blink.cmp",
-        optional = true,
+      hybrid_modes = {
+        "i",
       },
     },
   },
-  {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = {
-      "OXY2DEV/markview.nvim",
+  cmd = {
+    "Markview",
+  },
+  keys = {
+    {
+      "<leader>mv",
+      "<cmd>Markview toggle<cr>",
+      desc = "Markdown | Toggle View (local)",
+      ft = fts,
+      silent = true,
+    },
+    {
+      "<leader>mV",
+      "<cmd>Markview Toggle<cr>",
+      desc = "Markdown | Toggle View (all)",
+      ft = fts,
+      silent = true,
+    },
+  },
+  dependencies = {
+    "nvim-tree/nvim-web-devicons",
+    {
+      "saghen/blink.cmp",
+      optional = true,
+    },
+  },
+  specs = {
+    {
+      "nvim-treesitter/nvim-treesitter",
+      dependencies = "OXY2DEV/markview.nvim",
     },
   },
 }

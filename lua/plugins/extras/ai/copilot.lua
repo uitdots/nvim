@@ -85,10 +85,8 @@ return {
     })
   end,
   dependencies = {
-    {
-      "saghen/blink.cmp",
-      optional = true,
-    },
+    "saghen/blink.cmp",
+    optional = true,
   },
   specs = {
     {
@@ -116,6 +114,7 @@ return {
 
         return opts
       end,
+      optional = true,
     },
   },
 }

@@ -1,6 +1,7 @@
 ---@type NvPluginSpec
 return {
   "Davidyz/VectorCode",
+  enabled = false,
   version = "*",
   -- build = "uv tool upgrade 'vectorcode[lsp]'",
   build = "uv tool upgrade vectorcode",
@@ -10,9 +11,7 @@ return {
   opts = {
     async_backend = "default",
   },
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-  },
+  dependencies = "nvim-lua/plenary.nvim",
   specs = {
     {
       "olimorris/codecompanion.nvim",

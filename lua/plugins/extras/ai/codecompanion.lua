@@ -1,3 +1,5 @@
+local autocmd = vim.api.nvim_create_autocmd
+
 ---@type NvPluginSpec
 return {
   "olimorris/codecompanion.nvim",
@@ -45,7 +47,7 @@ return {
   init = function()
     vim.cmd("cab cc CodeCompanion")
 
-    vim.api.nvim_create_autocmd({ "User" }, {
+    autocmd({ "User" }, {
       pattern = "CodeCompanionRequest*",
       callback = function(request)
         if request.match == "CodeCompanionRequestStarted" then
@@ -88,8 +90,8 @@ return {
   specs = {
     {
       "OXY2DEV/markview.nvim",
-      init = function()
-        vim.api.nvim_create_autocmd("FileType", {
+      opts = function(_, opts)
+        autocmd("FileType", {
           pattern = "codecompanion",
           callback = function()
             vim.schedule(function()
@@ -98,6 +100,7 @@ return {
             end)
           end,
         })
+        return opts
       end,
     },
     {
