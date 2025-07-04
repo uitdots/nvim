@@ -58,10 +58,15 @@ return {
   },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    "nvim-treesitter/nvim-treesitter",
     {
       "saghen/blink.cmp",
       optional = true,
+    },
+  },
+  specs = {
+    {
+      "nvim-treesitter/nvim-treesitter",
+      dependencies = "OXY2DEV/markview.nvim",
     },
   },
 }
