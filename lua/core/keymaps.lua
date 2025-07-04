@@ -79,7 +79,7 @@ map("n", "<leader>w", function()
   elseif #api.nvim_list_wins() > 1 then
     cmd("silent! close")
   end
-end, { desc = "General | Close window", silent = true })
+end, { desc = "General | Safe Close Window", silent = true })
 
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the bottom", silent = true })
