@@ -2,7 +2,7 @@
 return {
   "echasnovski/mini.diff",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   opts = {},

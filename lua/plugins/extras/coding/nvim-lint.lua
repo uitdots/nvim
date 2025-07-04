@@ -21,7 +21,7 @@ return {
   "mfussenegger/nvim-lint",
   enabled = true,
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   opts = function()

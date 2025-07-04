@@ -36,7 +36,7 @@ return {
     },
   },
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   opts = {

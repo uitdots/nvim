@@ -3,7 +3,7 @@ return {
   "Bekaboo/dropbar.nvim",
   enabled = true,
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   ---@module 'dropbar'

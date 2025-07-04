@@ -2,7 +2,7 @@
 return {
   "mason-org/mason-lspconfig.nvim",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   ---@module 'mason-lspconfig'

@@ -2,7 +2,7 @@
 return {
   "mg979/vim-visual-multi",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   init = function()

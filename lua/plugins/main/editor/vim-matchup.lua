@@ -3,7 +3,7 @@ return {
   "andymass/vim-matchup",
   enabled = true,
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   init = function()

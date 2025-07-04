@@ -2,7 +2,7 @@
 return {
   "echasnovski/mini.ai",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   config = true,

@@ -2,7 +2,7 @@
 return {
   "HiPhish/rainbow-delimiters.nvim",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
 }

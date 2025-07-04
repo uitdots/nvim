@@ -2,7 +2,7 @@
 return {
   "kylechui/nvim-surround",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   config = true,

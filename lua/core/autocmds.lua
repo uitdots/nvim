@@ -29,7 +29,7 @@ local exclude_last_cur_pos_fts = {
   gitcommit = true,
 }
 
-autocmd("BufReadPost", {
+autocmd("BufRead", {
   callback = function()
     if exclude_last_cur_pos_fts[vim.bo.filetype] then
       return

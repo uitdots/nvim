@@ -2,7 +2,7 @@
 return {
   "echasnovski/mini.align",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   config = true,

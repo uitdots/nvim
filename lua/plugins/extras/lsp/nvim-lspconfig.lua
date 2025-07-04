@@ -24,7 +24,7 @@ end
 return {
   "neovim/nvim-lspconfig",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   keys = {

@@ -3,7 +3,7 @@
 return {
   "mason-org/mason.nvim",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   keys = {

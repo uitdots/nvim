@@ -2,7 +2,7 @@
 return {
   "folke/todo-comments.nvim",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   keys = {

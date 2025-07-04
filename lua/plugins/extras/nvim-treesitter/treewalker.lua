@@ -2,7 +2,7 @@
 return {
   "aaronik/treewalker.nvim",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   keys = {

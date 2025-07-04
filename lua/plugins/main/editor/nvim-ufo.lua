@@ -2,7 +2,7 @@
 return {
   "kevinhwang91/nvim-ufo",
   event = {
-    "BufReadPost",
+    "BufRead",
     "BufNewFile",
   },
   init = function()
