@@ -1,12 +1,5 @@
 -- TODO: cleanup this, or make it work. Found upward for root markers idk how to set it up
 
-local search_ancestors = require("lspconfig.util").search_ancestors
-
-local has_deno_config = function(path)
-  local fnlpath = vim.fs.joinpath(path, "deno.json")
-  return (vim.uv.fs_stat(fnlpath) or {}).type == "file"
-end
-
 ---@type vim.lsp.Config
 ---@diagnostic disable-next-line: missing-fields
 return {

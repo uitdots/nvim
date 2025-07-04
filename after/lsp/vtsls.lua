@@ -32,6 +32,17 @@ local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("vtsls")
 
 ---@type vim.lsp.Config
 return {
+  root_dir = function(bufnr, on_dir)
+    local fname = vim.api.nvim_buf_get_name(bufnr)
+    local deno_config = vim.fs.dirname(vim.fs.find({
+      "deno.json",
+      "deno.jsonc",
+    }, { path = fname, upward = true })[1])
+    if deno_config then
+      return
+    end
+    on_dir()
+  end,
   on_init = function(client, init_result)
     lspconfig.on_init(client, init_result)
 
