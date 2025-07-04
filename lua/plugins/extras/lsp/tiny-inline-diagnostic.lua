@@ -3,8 +3,6 @@
 return {
   "rachartier/tiny-inline-diagnostic.nvim",
   enabled = true,
-  ---https://github.com/rachartier/tiny-inline-diagnostic.nvim/issues/112
-  event = "VeryLazy",
   opts = {
     options = {
       overflow = {
@@ -12,7 +10,10 @@ return {
       },
     },
   },
-  dependencies = {
-    "neovim/nvim-lspconfig",
+  specs = {
+    {
+      "neovim/nvim-lspconfig",
+      dependencies = "rachartier/tiny-inline-diagnostic.nvim",
+    },
   },
 }

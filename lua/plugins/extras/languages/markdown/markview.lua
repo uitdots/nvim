@@ -11,7 +11,7 @@ local fts = vim.list_extend({
 return {
   "OXY2DEV/markview.nvim",
   lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
-  event = "VeryLazy",
+  event = "BufReadPre",
   -- ft = ft,
   ---@module 'markview'
   ---@type markview.config
