@@ -158,6 +158,11 @@ From UIT, for UIT (and others :v)
     ```sh
     pacman -Sy texlive-binextra texlive-latex
     ```
+- Some `languages` pack require others, you must enable yourself:
+  - rest: http
+  - jenkins: groovy
+  - mssql: sql
+  - react: typescript
 
 ---
 
