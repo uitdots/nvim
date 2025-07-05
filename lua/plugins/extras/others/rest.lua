@@ -7,58 +7,56 @@ return {
   enabled = not is_windows,
   keys = {
     {
-      "<localleader>rL",
+      "<leader>qL",
       "<cmd>Rest log<cr>",
-      desc = "Rest API | Log",
+      desc = "Query API | Rest Log",
       ft = "http",
       silent = true,
     },
     {
-      "<localleader>rl",
+      "<leader>ql",
       "<cmd>Rest last<cr>",
-      desc = "Rest API | Last",
+      desc = "Query API | Rest Last",
       ft = "http",
       silent = true,
     },
     {
-      "<localleader>rE",
+      "<leader>qE",
       "<cmd>Rest env<cr>",
-      desc = "Rest API | Env",
+      desc = "Query API | Rest Env",
       ft = "http",
       silent = true,
     },
     {
-      "<localleader>re",
+      "<leader>qe",
       "<cmd>Telescope rest select_env<cr>",
-      desc = "Rest API | Telescope Env",
+      desc = "Query API | Rest Telescope Env",
       ft = "http",
       silent = true,
     },
     {
-      "<localleader>rr",
+      "<leader>qr",
       "<cmd>Rest run<cr>",
-      desc = "Rest API | Run",
+      desc = "Query API | Rest Run",
       ft = "http",
       silent = true,
     },
     {
-      "<localleader>rR",
+      "<leader>qR",
       "<cmd>Rest result<cr>",
-      desc = "Rest API | Result",
+      desc = "Query API | Rest Result",
       ft = "http",
       silent = true,
     },
   },
-  -- init = function()
-  --   require("telescope").load_extension "rest"
-  -- end,
-  config = true,
+  config = function()
+    require("telescope").load_extension("rest")
+    ---@module 'rest-nvim'
+    ---@type rest.Opts
+    vim.g.rest_nvim = {}
+  end,
   dependencies = {
     "nvim-telescope/telescope.nvim",
     "luarocks/hererocks",
-    {
-      import = "plugins.extras.languages.http",
-      enabled = true,
-    },
   },
 }
