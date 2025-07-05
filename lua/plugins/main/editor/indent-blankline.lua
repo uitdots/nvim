@@ -1,4 +1,4 @@
--- TODO: If not use this... maybe remove this
+---NOTE: Use snacks already
 
 ---@module "ibl"
 ---@type NvPluginSpec

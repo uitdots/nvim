@@ -1,5 +1,25 @@
 ---@module 'snacks'
 
+local exclude_find = {
+  "%.dart_tool/",
+  "%.egg-info/",
+  "%.git/",
+  "%.gradle/",
+  "%.idea/",
+  "%.next/",
+  "%.venv/",
+  "%.vs/",
+  ".husky/_/",
+  "__pycache__/",
+  "bin/",
+  "build/",
+  "cache/",
+  "debug/",
+  "dist/",
+  "node_modules/",
+  "obj/",
+}
+
 ---@type NvPluginSpec
 return {
   "folke/snacks.nvim",
@@ -129,25 +149,7 @@ return {
         Snacks.picker.files({
           hidden = true,
           ignored = true,
-          exclude = {
-            "%.dart_tool/",
-            "%.egg-info/",
-            "%.git/",
-            "%.gradle/",
-            "%.idea/",
-            "%.next/",
-            "%.venv/",
-            "%.vs/",
-            ".husky/_/",
-            "__pycache__/",
-            "bin/",
-            "build/",
-            "cache/",
-            "debug/",
-            "dist/",
-            "node_modules/",
-            "obj/",
-          },
+          exclude = exclude_find,
         })
       end,
       desc = "General | Find Files",
