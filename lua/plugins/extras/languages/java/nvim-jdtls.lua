@@ -33,12 +33,12 @@ return {
     end
 
     local java_debug_bundle = get_executable("*.jar", "share/java-debug-adapter")
-    if java_debug_bundle ~= "" then
+    if java_debug_bundle then
       table.insert(bundles, java_debug_bundle)
     end
 
     local lombok_bundle = get_executable("*.jar", "share/lombok-nightly")
-    if lombok_bundle ~= "" then
+    if lombok_bundle then
       table.insert(bundles, lombok_bundle)
     end
 
@@ -64,6 +64,7 @@ return {
       end, runtime_paths)
     )
 
+    ---@type vim.lsp.Config
     local opts = {
       cmd = cmd,
       root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
