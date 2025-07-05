@@ -55,5 +55,5 @@ return {
       silent = true,
     },
   },
-  opts = {},
+  config = true,
 }

@@ -1,10 +1,6 @@
 ---@type NvPluginSpec
 return {
   "Wansmer/treesj",
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    optional = true,
-  }, -- if you install parsers with "nvim-treesitter"
   cmd = {
     "TSJToggle",
   },
@@ -19,4 +15,8 @@ return {
   opts = {
     use_default_keymaps = false,
   },
+  dependencies = {
+    "nvim-treesitter/nvim-treesitter",
+    optional = true,
+  }, -- if you install parsers with "nvim-treesitter"
 }

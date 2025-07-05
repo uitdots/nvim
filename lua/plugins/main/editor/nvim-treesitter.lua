@@ -21,7 +21,6 @@ return {
   opts = {
     ensure_installed = {
       "vimdoc",
-      "just",
       "markdown_inline",
     },
     indent = {
