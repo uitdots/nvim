@@ -1,6 +1,6 @@
 ---@diagnostic disable: missing-fields
 
-local root_markers = {
+local allow_filenames = {
   "build.gradle",
   "build.gradle.kts",
   "settings.gradle",
@@ -15,8 +15,8 @@ return {
   },
   root_dir = function(_, on_dir)
     local fname = vim.fn.expand("%:t")
-    if vim.tbl_contains(root_markers, fname) then
-      on_dir(vim.fn.expand("%:h"))
+    if vim.tbl_contains(allow_filenames, fname) then
+      on_dir()
     end
   end,
 }
