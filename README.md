@@ -82,8 +82,8 @@ From UIT, for UIT (and others :v)
 ### Languages
 
 - Well configured _(as I'm using them)_:
-  - JavaScript, TypeScript (NodeJS)
-    > No deno
+  - JavaScript, TypeScript (NodeJS, Deno)
+    > Deno install mason yourself :P
   - Go
   - Python
   - SQL (postgres)
