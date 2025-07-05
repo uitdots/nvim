@@ -1,3 +1,4 @@
+local get_executable = require("utils.executable").get_executable
 local is_executable = require("utils.executable").is_executable
 local os = require("utils.os").os
 local home = require("utils.os").home
@@ -27,6 +28,11 @@ return {
       "-configuration",
       config_dir,
     }
+
+    local lombok_jar = get_executable("lombok.jar", { mason = "share/lombok-nightly" })
+    if lombok_jar then
+      table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
+    end
 
     ---@type {name: string, path: string}[]
     local runtimes = {}
