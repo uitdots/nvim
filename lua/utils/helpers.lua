@@ -54,13 +54,14 @@ end
 
 ---@param path string absolute path
 ---@param opts? {follow_symlink: boolean}
+---@return table | nil
 function M.get_child_folders(path, opts)
   local follow_symlink = opts and opts.follow_symlink or false
   local folders = {}
   local scan = vim.uv.fs_scandir(path)
 
   if not scan then
-    return nil
+    return
   end
 
   while true do

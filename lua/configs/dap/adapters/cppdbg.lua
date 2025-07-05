@@ -13,7 +13,7 @@ function M.setup()
     return M.status
   end
 
-  local adapter = get_executable("OpenDebugAD7", "packages/cpptools/extension/debugAdapters/bin")
+  local adapter = get_executable("OpenDebugAD7", { mason = "packages/cpptools/extension/debugAdapters/bin" })
 
   if adapter == nil then
     M.status = false

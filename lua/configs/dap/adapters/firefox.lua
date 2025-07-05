@@ -14,7 +14,7 @@ function M.setup()
   end
 
   -- TODO: Check later
-  local adapter = get_executable("adapter.bundle.js", "vscode-firefox-debug/dist")
+  local adapter = get_executable("adapter.bundle.js", { mason = "vscode-firefox-debug/dist" })
 
   if adapter == nil then
     M.status = false

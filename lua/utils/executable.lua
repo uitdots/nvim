@@ -1,20 +1,25 @@
 local M = {}
 
----Return the executable path if exist in $PATH, fallback to mason package
+---Return the full executable path if exist in $PATH, fallback to mason package
 ---@param path string executable file, can be glob
----@param mason string? the glob pattern to the file from $MASON you need
----@return string | nil
-function M.get_executable(path, mason)
-  ---@type string
-  local full_path = vim.fn.globpath(vim.o.runtimepath, path, false, false)
-  if full_path ~= "" then
+---@param opts? {mason: string?, list: boolean?} options table containing `mason` (string) and `list` (boolean)
+---@return string | string[] | nil
+function M.get_executable(path, opts)
+  opts = opts or {}
+  local mason = opts.mason
+  local list = opts.list or false
+
+  if mason then
+    local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
+    if mason_file ~= "" or #mason_file ~= 0 then
+      return mason_file
+    end
+  end
+
+  local full_path = vim.fn.globpath(vim.o.runtimepath, path, false, list)
+  if full_path ~= "" or #full_path ~= 0 then
     return full_path
   end
-  if mason == nil then
-    return nil
-  end
-  local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path))
-  return mason_file ~= "" and mason_file or nil
 end
 
 ---Return the full path of the executable
@@ -35,7 +40,7 @@ function M.is_executable(executable)
   return vim.fn.executable(executable) == 1
 end
 
-local executable_cache = {} ---@type table<(string), boolean>
+local executable_cache = {} ---@type table<string, boolean>
 
 ---@param executable string
 function M.is_executable_cache(executable)

@@ -43,17 +43,17 @@ return {
   specs = {
     {
       "mfussenegger/nvim-jdtls",
-      opts = function(_, opts) ---@cast opts NvimJdtlsOpts
-        opts = opts or {}
-        opts.lspconfig = opts.lspconfig or {}
-        opts.lspconfig.init_options = opts.lspconfig.init_options or {}
-        opts.lspconfig.init_options.bundles = opts.lspconfig.init_options.bundles or {}
-
-        ---@diagnostic disable-next-line: param-type-mismatch
-        table.insert(opts.lspconfig.init_options.bundles, require("spring_boot").java_extensions())
-
-        return opts
-      end,
+      ---@type PluginsOpts.NvimJdtlsOpts
+      opts = {
+        bundles = {
+          function()
+            return require("spring_boot").java_extensions()
+          end,
+        },
+      },
+      opts_extend = {
+        "bundles",
+      },
       dependencies = "JavaHello/spring-boot.nvim",
     },
   },

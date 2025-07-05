@@ -17,7 +17,7 @@ function M.setup_keymaps(client, bufnr)
 
   map("n", "<leader>lao", lsp_action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
   map("n", "<leader>las", lsp_action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
-  map("n", "<leader>lar", lsp_action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
+  map("n", "<leader>lau", lsp_action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
 
   map("n", "<leader>lS", function()
     lsp_utils.toggle_semantic_tokens(bufnr)

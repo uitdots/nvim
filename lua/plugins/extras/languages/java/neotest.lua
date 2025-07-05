@@ -2,7 +2,7 @@ local get_executable = require("utils.executable").get_executable
 
 ---@type NvPluginSpec
 return {
-  "mfussenegger/nvim-dap",
+  "nvim-neotest/neotest",
   specs = {
     {
       "mfussenegger/nvim-jdtls",
@@ -10,7 +10,7 @@ return {
       opts = {
         bundles = {
           function()
-            return get_executable("com.microsoft.java.debug.plugin.jar", { mason = "share/java-debug-adapter" })
+            return get_executable("com.microsoft.java.test.plugin.jar", { mason = "share/java-test" })
           end,
         },
       },
@@ -19,4 +19,5 @@ return {
       },
     },
   },
+  optional = true,
 }

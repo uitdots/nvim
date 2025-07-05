@@ -115,8 +115,7 @@ return {
       desc = "Test | Debug Current File",
     },
   },
-  ---@module 'neotest'
-  ---@param opts neotest.Config
+  ---@param opts PluginsOpts.NeotestOpts
   config = function(_, opts)
     ---Taken from lazyvim
     if opts.adapters then

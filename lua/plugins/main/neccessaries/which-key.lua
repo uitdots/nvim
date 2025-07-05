@@ -31,6 +31,7 @@ return {
       { "<leader>u", group = "Utils", icon = "", mode = { "n", "v" } },
       { "<localleader>\\", group = "Multi Cursor", icon = "󰗧" },
       { "<localleader>l", group = "Latex", icon = "" },
+      { "<leader>la", group = "LSP Action", icon = "" },
       { "<localleader>r", group = "Rest API", icon = "󱂛" },
       { "<localleader>s", group = "SQL", icon = "" },
     },

@@ -12,7 +12,7 @@ function M.setup()
     return M.status
   end
 
-  local adapter = get_executable("dapDebugServer.js", "packages/js-debug-adapter/js-debug/src")
+  local adapter = get_executable("dapDebugServer.js", { mason = "packages/js-debug-adapter/js-debug/src" })
 
   if adapter == nil then
     M.status = false

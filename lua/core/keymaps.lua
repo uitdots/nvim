@@ -134,7 +134,7 @@ map("n", "<leader>ti", function()
 end, { desc = "Treesitter | Inspect", silent = true })
 
 -- Command
-map("c", "<C-x>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
+map("c", "<M-p>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
 
 -- UTILS
 map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })

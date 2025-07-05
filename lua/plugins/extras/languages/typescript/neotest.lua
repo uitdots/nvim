@@ -1,8 +1,7 @@
 ---@type NvPluginSpec
 return {
   "nvim-neotest/neotest",
-  ---@module 'neotest'
-  ---@type neotest.Config
+  ---@type PluginsOpts.NeotestOpts
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     adapters = {

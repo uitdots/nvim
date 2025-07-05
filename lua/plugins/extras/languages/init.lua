@@ -64,7 +64,7 @@ return {
   },
   {
     import = "plugins.extras.languages.java",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.jenkins",

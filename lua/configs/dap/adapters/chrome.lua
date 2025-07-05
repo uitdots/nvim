@@ -14,7 +14,7 @@ function M.setup()
   end
 
   -- TODO: I don't know where it out, currently I cannot download it from mason
-  local adapter = get_executable("chromeDebug.js", "packages/vscode-chrome-debug/out/src")
+  local adapter = get_executable("chromeDebug.js", { mason = "packages/vscode-chrome-debug/out/src" })
 
   if adapter == nil then
     M.status = false
