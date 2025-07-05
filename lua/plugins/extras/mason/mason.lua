@@ -1,5 +1,4 @@
 ---@type NvPluginSpec
--- NOTE: This is temporary because mason is unmtained
 return {
   "mason-org/mason.nvim",
   event = {

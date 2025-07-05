@@ -7,3 +7,6 @@
 ---If the value is a table, will pass the table into setup
 ---If the value is a function, will call it and pass its return into setup. Use this for lazy loading!
 ---@field adapters? table<string, boolean | table | fun():table>
+
+---@class NvimJdtlsOpts
+---@field lspconfig? vim.lsp.Config

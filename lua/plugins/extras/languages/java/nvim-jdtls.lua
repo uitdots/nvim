@@ -3,7 +3,6 @@ local os = require("utils.os").os
 local home = require("utils.os").home
 local get_child_folders = require("utils.helpers").get_child_folders
 local lspconfig = require("configs.lsp.lspconfig")
-local get_executable = require("utils.executable").get_executable
 local lsp_utils = require("utils.lsp")
 
 ---@type NvPluginSpec
@@ -11,36 +10,20 @@ return {
   "mfussenegger/nvim-jdtls",
   ft = "java",
   cond = is_executable("jdtls"),
-  opts = function()
+  opts = function(_, opts) ---@cast opts NvimJdtlsOpts?
+    opts = opts or {}
+    opts.lspconfig = opts.lspconfig or {}
+
     local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
-    local workspace_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
-    local config_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
-    local cmd = {
+    local workspace_dir = string.format("%s/jdtls/%s/workspace", vim.fn.stdpath("cache"), project_name)
+    local config_dir = string.format("%s/jdtls/%s/config", vim.fn.stdpath("cache"), project_name)
+    opts.lspconfig.cmd = {
       "jdtls",
       "-data",
       workspace_dir,
       "-configuration",
       config_dir,
     }
-
-    local bundles = {} -- Later for dap and test
-
-    local spring_boot_bundle_ok, spring_boot_bundle = pcall(function()
-      return require("spring_boot").java_extensions()
-    end)
-    if spring_boot_bundle_ok then
-      table.insert(bundles, spring_boot_bundle)
-    end
-
-    local java_debug_bundle = get_executable("*.jar", "share/java-debug-adapter")
-    if java_debug_bundle then
-      table.insert(bundles, java_debug_bundle)
-    end
-
-    local lombok_bundle = get_executable("*.jar", "share/lombok-nightly")
-    if lombok_bundle then
-      table.insert(bundles, lombok_bundle)
-    end
 
     ---@type {name: string, path: string}[]
     local runtimes = {}
@@ -64,12 +47,12 @@ return {
       end, runtime_paths)
     )
 
-    ---@type vim.lsp.Config
-    local opts = {
-      cmd = cmd,
-      root_dir = vim.fs.dirname(vim.fs.find({ "gradlew", ".git", "mvnw" }, { upward = true })[1]),
-      init_options = {
-        bundles = bundles,
+    opts.lspconfig = vim.tbl_deep_extend("force", opts.lspconfig, {
+      workspace_required = true,
+      root_markers = {
+        "gradlew",
+        ".git",
+        "mvnw",
       },
       settings = {
         java = {
@@ -80,10 +63,6 @@ return {
           },
           format = {
             enabled = true,
-            settings = {
-              url = vim.fn.stdpath("data") .. "/lazy/google-styleguide/intellij-java-google-style.xml",
-              name = "GoogleStyle",
-            },
           },
           configuration = {
             runtimes = runtimes,
@@ -96,19 +75,20 @@ return {
       cmd_env = {
         JAVA_OPTS = vim.env.JAVA_OPTS or "-Xmx8g", -- For 8GB of ram? :P
       },
-    }
+    })
 
     return opts
   end,
+  ---@param opts NvimJdtlsOpts
   config = function(_, opts)
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "java" },
       callback = function()
-        require("jdtls").start_or_attach(opts)
+        require("jdtls").start_or_attach(opts.lspconfig)
       end,
     })
   end,
-  dependencies = {
+  specs = {
     {
       "mason-org/mason.nvim",
       optional = true,
@@ -120,14 +100,6 @@ return {
       opts_extend = {
         "registries",
       },
-    },
-    {
-      "google/styleguide",
-      name = "google-styleguide",
-    },
-    {
-      "JavaHello/spring-boot.nvim",
-      optional = true,
     },
   },
 }
