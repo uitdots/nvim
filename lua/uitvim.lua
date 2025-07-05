@@ -4,11 +4,7 @@ local M = {}
 ---Name taken from https://github.com/neovim/nvim-lspconfig/tree/master/lsp
 ---@type string[]
 M.lsps = {
-  "clangd",
-  "lua_ls",
-  "pyright",
-  "texlab",
-  "sonarlint", -- NOTE: Neovim lsp doesn't support it yet
+  -- "sonarlint", -- NOTE: Neovim lsp doesn't support it yet
 }
 
 ---For having lsp setup by mason (exclude these)
@@ -22,6 +18,10 @@ M.no_setup_lsps = {
 }
 
 M.options = {
+  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower but not really much, for about few milliseconds.
+  ---@type boolean
+  filter_availabled_external = true,
+
   ---@type {default: number, space: table<number, string[]>, tab: table<number, string[]>}
   indent = {
     default = 2,
@@ -55,10 +55,6 @@ M.options = {
       "mason",
     },
   },
-
-  ---Check lsp, linter, formatter avaibility. This is idea when you want to add many external stuff but filter out which is not available. This may cause [plugin's] startup slower but not really much, for about few milliseconds.
-  ---@type boolean
-  filter_availabled_external = true,
 
   inlay_hint = {
     ---Fallback for those language server that isn't declared in "servers" field below
