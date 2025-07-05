@@ -16,7 +16,7 @@ return {
     local workspace_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/workspace"
     local config_dir = vim.fn.stdpath("cache") .. "/jdtls/" .. project_name .. "/config"
     local cmd = {
-      vim.fn.exepath("jdtls"),
+      "jdtls",
       "-data",
       workspace_dir,
       "-configuration",
@@ -100,13 +100,11 @@ return {
     return opts
   end,
   config = function(_, opts)
-    local function attach_jdtls()
-      require("jdtls").start_or_attach(opts)
-    end
-
     vim.api.nvim_create_autocmd("FileType", {
       pattern = { "java" },
-      callback = attach_jdtls,
+      callback = function()
+        require("jdtls").start_or_attach(opts)
+      end,
     })
   end,
   dependencies = {
