@@ -9,8 +9,7 @@ vim.filetype.add({
     ["plist"] = "xml",
   },
   pattern = {
-    [".*/Chart.ya?ml"] = "helmchart", -- Custom type because helm vim cannot set it
-    [".*/values.ya?ml"] = "yaml.helm-values", -- Custom type because helm vim cannot set it
+    ["Chart.ya?ml"] = "helm", ---TODO: Until qvalentin/helm-ls.nvim support this
     [".*/Jenkinsfile"] = "jenkins",
     [".*/%.env"] = "dotenv",
     [".*/.*%.env"] = "dotenv",
