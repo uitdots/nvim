@@ -7,9 +7,7 @@ return {
     config = function()
       require("nvchad")
     end,
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-    },
+    dependencies = "nvim-lua/plenary.nvim",
   },
   {
     "nvchad/base46",

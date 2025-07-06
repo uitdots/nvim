@@ -33,10 +33,6 @@ return {
     enabled = true,
   },
   {
-    import = "plugins.extras.mason",
-    enabled = true,
-  },
-  {
     import = "plugins.extras.motion",
     enabled = true,
   },
@@ -62,10 +58,6 @@ return {
   },
   {
     import = "plugins.extras.ui",
-    enabled = true,
-  },
-  {
-    import = "plugins.extras.utils",
     enabled = true,
   },
 }

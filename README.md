@@ -12,6 +12,7 @@ From UIT, for UIT (and others :v)
   - [Plugins](#plugins)
   - [Languages](#languages)
 - [Prerequisites](#prerequisites)
+- [Structure](#structure)
 - [Note](#note)
 - [Others](#others)
   - [Tips & Tricks](#tips--tricks)
@@ -89,38 +90,41 @@ From UIT, for UIT (and others :v)
   - SQL (postgres)
     > - Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
     > - With postgres, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
-  - C/C++
+  - Github Action
   - Shell
-  - TOML
-  - Vim
-  - YAML
-  - XML
+  - Latex
+  - Docker
   - Groovy (Jenkinsfile)
-- Others that have configured:
-  - Config (tmux, sshconfig)
-  - C# (cs)
+- Others:
+  - Java
+  - C/C++
+  - HTML
   - CSS
   - React
-  - Flutter (Dart)
-  - Docker
-  - Github Action
-  - HTML
-  - Java
-  - Kotlin
-  - Latex
-  - SQL (MSSQL)
-    > It's here because I haven't test it yet
-  - Nginx
-  - Powershell
-  - Rust
   - Tailwind
+  - C# (cs)
+  - Flutter (Dart)
+  - Vim
+  - Nginx
+  - Rust
   - Terraform
   - Helm (kubernetes)
-    > This include yaml_ls already, not need to use it
   - Ansible
+  - Kotlin
+  - Powershell
+  - SQL (MSSQL)
+    > It's here because I haven't test it yet
+- Configuring languages:
+  - TOML
+  - YAML
+  - XML
+  - tmux
+  - sshconfig
 
 > [!NOTE]
-> See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
+>
+> - The higher order, the well configured
+> - See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
 
 ---
 
@@ -135,37 +139,132 @@ From UIT, for UIT (and others :v)
 
 ---
 
+## Structure
+
+```
+lua
+├── configs                 Extendable settings for builtin, plugins options
+│   ├── code-runner         Builtin code runner
+│   ├── dap                 nvim-dap config
+│   │   ├── adapters
+│   │   └── configurations
+│   ├── lazy                lazy.nvim config
+│   ├── lsp                 Neovim's lsp setting
+│   └── ui                  UI (mostly for nvchad)
+│       ├── nvdash
+│       │   ├── headers
+│       │   └── utils
+│       ├── statusline
+│       └── tabufline
+├── core                    (Neo)vim native settings
+├── overseer                overseer.nvim templates
+│   └── template
+│       └── default
+├── plugins                 lazy.nvim plugins specs
+│   ├── extras              Plugins can be toggle
+│   │   ├── ai              AI integration
+│   │   ├── blink           blink.cmp extensions
+│   │   ├── coding          Package manager, lint, format
+│   │   ├── dap             Debug
+│   │   ├── database        Database
+│   │   ├── git             Easier to interact with git
+│   │   ├── languages       User's preference to enable
+│   │   │   ├── ansible
+│   │   │   ├── assembly
+│   │   │   ├── c
+│   │   │   ├── config
+│   │   │   ├── cs
+│   │   │   ├── css
+│   │   │   ├── dart
+│   │   │   ├── docker
+│   │   │   ├── env
+│   │   │   ├── git
+│   │   │   ├── github
+│   │   │   ├── go
+│   │   │   ├── graphql
+│   │   │   ├── groovy
+│   │   │   ├── helm
+│   │   │   ├── html
+│   │   │   ├── http
+│   │   │   ├── java
+│   │   │   ├── jenkins
+│   │   │   ├── json
+│   │   │   ├── just
+│   │   │   ├── kbd
+│   │   │   ├── kotlin
+│   │   │   ├── latex
+│   │   │   ├── lua
+│   │   │   ├── make
+│   │   │   ├── markdown
+│   │   │   ├── mssql
+│   │   │   ├── nginx
+│   │   │   ├── powershell
+│   │   │   ├── python
+│   │   │   ├── react
+│   │   │   ├── rust
+│   │   │   ├── shell
+│   │   │   ├── sql
+│   │   │   ├── tailwind
+│   │   │   ├── terraform
+│   │   │   ├── toml
+│   │   │   ├── typescript
+│   │   │   ├── vim
+│   │   │   ├── xml
+│   │   │   └── yaml
+│   │   ├── lsp             Enhance LSP usage
+│   │   ├── motion          Extend neovim motions
+│   │   ├── nvim-treesitter Treesitter extensions
+│   │   ├── others          Others
+│   │   ├── silly           When you are stress
+│   │   ├── telescope       Telescope extensions
+│   │   ├── test            Testing
+│   │   ├── ui              Extend UI things
+│   └── main                Shouldn't disable, it's is the culture hehe
+│       ├── editor
+│       ├── file            File navigation, manipulation
+│       ├── neccessaries    You don't wanna break this neovim config
+│       └── ui              Make neovim pretty
+├── types                   Custom types for lua annotating
+└── utils                   Utilities, no rewriting again and again
+```
+
+---
+
 ## Note
 
-- Enable languages you want to use in [`lua/plugins/extras/languages/init.lua`](lua/plugins/extras/languages/init.lua)
+- Setting up new lsp in [`after/lsp/`](./after/lsp/)
+  > For better overriding
+- Enable languages you want to use in [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)
 - Use mason tools to install all packages (Language servers, linters, formatters, runtime)
   ```
   :MasonToolsInstall
   ```
-- With groovy language server, ensure you are using java 18 or so...
 - If NvChad UI's color is broken, run:
   ```
   :NvChadLoadAllHighlights
   ```
-- These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
-  - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
-  - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
-- Working with SQL:
-  - Use composite filetype
-  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it (for linter and formatter attach to)
-    > Ex: `sql.postgresql`, `plsql.postgresql`
-- Lazy only run `config` and `init` once. Not like `opts`
-- Working with latex:
-  - on Arch:
-    ```sh
-    pacman -Sy texlive-binextra texlive-latex
-    ```
 - Some `languages` pack require others, you must enable yourself:
   - rest: http
   - jenkins: groovy
   - mssql: sql
   - react: typescript
   - ansible: yaml (for yaml syntax highlighting)
+- These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
+  - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
+  - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
+- Working with SQL:
+  - Use compound filetype
+  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it (for linter and formatter attach to)
+    > Ex: `sql.postgresql`, `plsql.postgresql`
+- `lazy.nvim` only run `config` and `init` once. Not like `opts`
+- Working with latex:
+  - on Arch:
+    ```sh
+    pacman -Sy texlive-binextra texlive-latex
+    ```
+  - other: idk
+- `helm_ls` include `yaml_ls` already, no need to run `yaml_ls`
+- With groovy language server, ensure you are using java 18 or so...
 
 ---
 
@@ -194,7 +293,7 @@ From UIT, for UIT (and others :v)
 ### References
 
 - [Alexis12119](https://github.com/Alexis12119/nvim-config)
-  > Special thanks to Alexis!
+  > Special thanks to Alexis!!! He helps me mature
 - [nikolovlazar](https://github.com/nikolovlazar/dotfiles/blob/main/.config/nvim/)
 - [Integralist](https://github.com/Integralist/nvim)
   > Has ghostty type
