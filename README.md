@@ -1,6 +1,6 @@
 # UIT - Neovim
 
-An Neovim IDE, fast with lazy loading, use best trending plugin _(not FOMO)_.
+A fast and highly customizable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
 
 > From [UITer](https://uit.edu.vn/) :(
 
