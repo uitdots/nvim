@@ -90,14 +90,14 @@ A fast and highly customizable Neovim IDE with lazy loading, featuring the best 
     > `deno`: Install from mason or external yourself
   - `go`
   - `python`
-  - `sql` (`postgresql`)
+  - `sql` _(postgresql)_
     > - Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
-    > - With `postgres`, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
-  - `github` (`github_action`)
+    > - With postgresql, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
+  - `github` _(github_action)_
   - `shell`
   - `latex`
   - `docker`
-  - `groovy` (`jenkinsfile`)
+  - `groovy` + `jenkinsfile`
 - Others:
   - `java`
   - `c`, `cpp`
@@ -106,17 +106,17 @@ A fast and highly customizable Neovim IDE with lazy loading, featuring the best 
   - `react`
   - `tailwind`
   - `c#`/`cs`
-  - `dart` (`flutter`)
+  - `flutter` _(dart)_
   - `vim`
   - `nginx`
   - `rust`
   - `terraform`
-  - `helm` (`kubernetes`)
-  - `Ansible`
+  - `helm` _(kubernetes)_
+  - `ansible`
   - `kotlin`
   - `powershell`
   - `sql`
-    > `mssql`: Haven't test
+    > mssql: Haven't test
 - Configuring languages:
   - `toml`
   - `yaml`
