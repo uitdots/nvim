@@ -37,6 +37,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.motion",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.nvim-treesitter",
     enabled = true,
   },
@@ -54,6 +58,10 @@ return {
   },
   {
     import = "plugins.extras.test",
+    enabled = true,
+  },
+  {
+    import = "plugins.extras.ui",
     enabled = true,
   },
   {
