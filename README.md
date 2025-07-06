@@ -236,11 +236,11 @@ lua
   > For better overriding
 - Enable languages you want to use in [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)
 - Use mason tools to install all packages (Language servers, linters, formatters, runtime)
-  ```
+  ```vim
   :MasonToolsInstall
   ```
 - If NvChad UI's color is broken, run:
-  ```
+  ```vim
   :NvChadLoadAllHighlights
   ```
 - Some `languages` pack require others, you must enable yourself:
