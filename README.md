@@ -1,6 +1,6 @@
 # UIT - Neovim
 
-A fast and highly customizable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
+A fast and highly customisable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
 
 > From [UITer](https://uit.edu.vn/) :(
 
@@ -41,51 +41,26 @@ A fast and highly customizable Neovim IDE with lazy loading, featuring the best 
 
 ### Plugins
 
-- Plugin manager: [lazy.nvim](https://github.com/folke/lazy.nvim)
-- Package manager _(optional, you can disable this, and install package yourself)_:
-  - [mason.nvim](https://github.com/mason-org/mason.nvim)
-  - [mason-tool-installer](https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim)
-- UI: [NvChad](https://github.com/NvChad/)
-- Formatting: [conform.nvim](https://github.com/stevearc/conform.nvim)
-- Linting: [nvim-lint.nvim](https://github.com/mfussenegger/nvim-lint)
-- Debugging:
-  - [nvim-dap](https://github.com/mfussenegger/nvim-dap/)
-  - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
-- Database:
-  - [vim-dadbod](https://github.com/tpope/vim-dadbod)
-  - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui)
-- Task runner: [overseer.nvim](https://github.com/stevearc/overseer.nvim/)
-- Completion engine:
-  - [blink.cmp](https://github.com/Saghen/blink.cmp)
-  - [cmp-sql](https://github.com/ray-x/cmp-sql)
-    > Suggest SQL keyword when in string
-  - [blink-cmp-git](https://github.com/Kaiser-Yang/blink-cmp-git/)
-- Editing:
-  - [flash.nvim](https://github.com/folke/flash.nvim)
-  - [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
-  - [markview.nvim](https://github.com/OXY2DEV/markview.nvim)
-- AI:
-  - [copilot.lua](https://github.com/zbirenbaum/copilot.lua)
-    > Tab completion with blink
-  - [codecompanion.nvim](https://github.com/olimorris/codecompanion.nvim)
-  - [mcphub.nvim](https://github.com/ravitemer/mcphub.nvim)
-  - [VectorCode](https://github.com/Davidyz/VectorCode)
-- Testing: [neotest](https://github.com/nvim-neotest/neotest)
+- Highly customisable plugin manager with [lazy.nvim](https://github.com/folke/lazy.nvim)
+- Package manager with [mason.nvim](https://github.com/mason-org/mason.nvim)
+  > optional, you can disable this, and install package yourself
+- [NvChad](https://github.com/NvChad/) UI
+- Task runner, builtin code runner
+- Formatting, linting, debugging, testing
+- Querying database, rest api, json, yaml
+- AI integration with tab completion, MCP, VectorCode
+- Fast find files, image viewer with [snacks.nvim](https://github.com/folke/snacks.nvim)
 - Others:
-  - [snacks.nvim](https://github.com/folke/snacks.nvim)
-    > Support image viewer, fast file picker
-  - [auto-session](https://github.com/rmagatti/auto-session)
-  - chezmoi:
-    - [chezmoi.nvim](https://github.com/xvzc/chezmoi.nvim)
-    - [chezmoi.vim](https://github.com/alker0/chezmoi.vim)
-  - [vim-wakatime](https://github.com/wakatime/vim-wakatime)
+  - Save session
+  - chezmoi
+  - wakatime
 
 > [!NOTE]
-> And much more...!
+> And much more...! You will get lost in this config.
 
 ### Languages
 
-- Well configured _(as I'm using them)_:
+- Author using:
   - `javascript`, `typescript` (`nodejs`, `deno`)
     > `deno`: Install from mason or external yourself
   - `go`
@@ -95,9 +70,7 @@ A fast and highly customizable Neovim IDE with lazy loading, featuring the best 
     > - With postgresql, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
   - `github` _(github_action)_
   - `shell`
-  - `latex`
   - `docker`
-  - `groovy` + `jenkinsfile`
 - Others:
   - `java`
   - `c`, `cpp`
@@ -108,21 +81,28 @@ A fast and highly customizable Neovim IDE with lazy loading, featuring the best 
   - `c#`/`cs`
   - `flutter` _(dart)_
   - `vim`
-  - `nginx`
   - `rust`
-  - `terraform`
-  - `helm` _(kubernetes)_
-  - `ansible`
   - `kotlin`
   - `powershell`
   - `sql`
     > mssql: Haven't test
+  - `lua`
+    > Just for configuring neovim :((
 - Configuring languages:
   - `toml`
   - `yaml`
   - `xml`
   - `tmux`
   - `sshconfig`
+- Ops:
+  - `groovy` + `jenkinsfile`
+  - `terraform`
+  - `helm` _(kubernetes)_
+  - `nginx`
+  - `ansible`
+- Writing:
+  - `markdown`
+  - `latex`
 
 > [!NOTE]
 >
