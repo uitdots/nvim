@@ -5,6 +5,22 @@ local has_chezmoi = is_executable("chezmoi")
 ---@type NvPluginSpec
 return {
   {
+    "alker0/chezmoi.vim",
+    lazy = false,
+    enabled = has_chezmoi,
+    init = function()
+      -- This option is required.
+      vim.g["chezmoi#use_tmp_buffer"] = true
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = "chezmoitmpl",
+        callback = function()
+          vim.cmd("TSBufDisable highlight")
+        end,
+      })
+    end,
+  },
+  {
     "xvzc/chezmoi.nvim",
     enabled = has_chezmoi,
     init = function()
@@ -32,27 +48,11 @@ return {
         end,
       })
     end,
-    dependencies = { "nvim-lua/plenary.nvim" },
     opts = {
       edit = {
         watch = true,
       },
     },
-  },
-  {
-    "alker0/chezmoi.vim",
-    lazy = false,
-    enabled = has_chezmoi,
-    init = function()
-      -- This option is required.
-      vim.g["chezmoi#use_tmp_buffer"] = true
-
-      vim.api.nvim_create_autocmd("FileType", {
-        pattern = "chezmoitmpl",
-        callback = function()
-          vim.cmd("TSBufDisable highlight")
-        end,
-      })
-    end,
+    dependencies = "nvim-lua/plenary.nvim",
   },
 }
