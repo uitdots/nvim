@@ -1,23 +1,25 @@
-# UIT - Neovim
+# 💫 UIT - Neovim
 
 A fast and highly customisable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
 
 > From [UITer](https://uit.edu.vn/) :(
 
-## ToC
+---
+
+## 📑 ToC
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Showcase](#showcase)
-- [Supports](#supports)
+- [📸 Showcase](#-showcase)
+- [🔥 Supports](#-supports)
   - [Plugins](#plugins)
   - [Languages](#languages)
-- [Usage](#usage)
+- [🥴 Usage](#-usage)
   - [Prerequisites](#prerequisites)
   - [Structure](#structure)
   - [Notes](#notes)
-- [Others](#others)
+- [✏️ Others](#-others)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
 
@@ -25,7 +27,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 
 ---
 
-## Showcase
+## 📸 Showcase
 
 | Dashboard                                                                                     | Editor                                                                                     |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
@@ -37,7 +39,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 
 ---
 
-## Supports
+## 🔥 Supports
 
 ### Plugins
 
@@ -59,6 +61,9 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 > And much more...! You will get lost in this config.
 
 ### Languages
+
+> [!NOTE]
+> The higher order, the well configured
 
 - Author using:
   - `javascript`, `typescript` (`nodejs`, `deno`)
@@ -105,13 +110,11 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
   - `latex`
 
 > [!NOTE]
->
-> - The higher order, the well configured
-> - See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
+> See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
 
 ---
 
-## Usage
+## 🥴 Usage
 
 ### Prerequisites
 
@@ -255,7 +258,7 @@ lua
 
 ---
 
-## Others
+## ✏️ Others
 
 ### Tips & Tricks
 
