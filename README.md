@@ -117,6 +117,7 @@ From UIT, for UIT (and others :v)
   - Terraform
   - Helm (kubernetes)
     > This include yaml_ls already, not need to use it
+  - Ansible
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
@@ -164,6 +165,7 @@ From UIT, for UIT (and others :v)
   - jenkins: groovy
   - mssql: sql
   - react: typescript
+  - ansible: yaml (for yaml syntax highlighting)
 
 ---
 
