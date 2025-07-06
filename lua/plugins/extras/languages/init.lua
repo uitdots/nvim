@@ -3,6 +3,10 @@ local is_windows = require("utils.os").is_windows
 ---@type NvPluginSpec
 return {
   {
+    import = "plugins.extras.languages.ansible",
+    enabled = false,
+  },
+  {
     import = "plugins.extras.languages.assembly",
     enabled = false,
   },
