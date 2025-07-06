@@ -116,6 +116,7 @@ From UIT, for UIT (and others :v)
   - Tailwind
   - Terraform
   - Helm (kubernetes)
+    > This include yaml_ls already, not need to use it
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail
