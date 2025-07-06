@@ -249,7 +249,7 @@ lua
     pacman -Sy texlive-binextra texlive-latex
     ```
   - other: idk
-- `helm_ls` include `yaml_ls` already, no need to run `yaml_ls`
+- `helm_ls` includes `yaml_ls` already, no need to run `yaml_ls`
 - With `groovy-language-server`, ensure you are using `java@18` or so...
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
 
