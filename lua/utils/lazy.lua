@@ -1,4 +1,7 @@
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/init.lua
+local autocmd = vim.api.nvim_create_autocmd
+local augroup = vim.api.nvim_create_augroup
+local delaugroup = vim.api.nvim_del_augroup_by_id
 
 local M = {}
 
@@ -18,6 +21,28 @@ function M.get_plugin_path(name, path)
   local plugin = M.get_plugin(name)
   path = path and "/" .. path or ""
   return plugin and (plugin.dir .. path)
+end
+
+---For those plugins you need to use it's vim stuff like ftdetect, syntax...
+---But you still want to lazy load it on filetypes
+---@param main string The plugin name (not the repo name bruh)
+---@param fts string | string[]
+---@param opts table?
+function M.lazy_load_on_fts(main, fts, opts)
+  if type(fts) == "string" then
+    fts = { fts }
+  end
+  local id = augroup(string.format("%sLazyLoad", main), {
+    clear = true,
+  })
+  autocmd("FileType", {
+    group = id,
+    pattern = fts,
+    callback = function()
+      require(main).setup(opts)
+      delaugroup(id)
+    end,
+  })
 end
 
 return M
