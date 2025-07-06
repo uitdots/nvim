@@ -1,6 +1,8 @@
 # UIT - Neovim
 
-From UIT, for UIT (and others :v)
+An Neovim IDE, fast with lazy loading, use best trending plugin _(not FOMO)_.
+
+> From [UITer](https://uit.edu.vn/) :(
 
 ## ToC
 
@@ -11,9 +13,10 @@ From UIT, for UIT (and others :v)
 - [Supports](#supports)
   - [Plugins](#plugins)
   - [Languages](#languages)
-- [Prerequisites](#prerequisites)
-- [Structure](#structure)
-- [Note](#note)
+- [Usage](#usage)
+  - [Prerequisites](#prerequisites)
+  - [Structure](#structure)
+  - [Notes](#notes)
 - [Others](#others)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
@@ -83,43 +86,43 @@ From UIT, for UIT (and others :v)
 ### Languages
 
 - Well configured _(as I'm using them)_:
-  - JavaScript, TypeScript (NodeJS, Deno)
-    > Deno install mason yourself :P
-  - Go
-  - Python
-  - SQL (postgres)
+  - `javascript`, `typescript` (`nodejs`, `deno`)
+    > `deno`: Install from mason or external yourself
+  - `go`
+  - `python`
+  - `sql` (`postgresql`)
     > - Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
-    > - With postgres, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
-  - Github Action
-  - Shell
-  - Latex
-  - Docker
-  - Groovy (Jenkinsfile)
+    > - With `postgres`, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
+  - `github` (`github_action`)
+  - `shell`
+  - `latex`
+  - `docker`
+  - `groovy` (`jenkinsfile`)
 - Others:
-  - Java
-  - C/C++
-  - HTML
-  - CSS
-  - React
-  - Tailwind
-  - C# (cs)
-  - Flutter (Dart)
-  - Vim
-  - Nginx
-  - Rust
-  - Terraform
-  - Helm (kubernetes)
-  - Ansible
-  - Kotlin
-  - Powershell
-  - SQL (MSSQL)
-    > It's here because I haven't test it yet
+  - `java`
+  - `c`, `cpp`
+  - `html`
+  - `css`
+  - `react`
+  - `tailwind`
+  - `c#`/`cs`
+  - `dart` (`flutter`)
+  - `vim`
+  - `nginx`
+  - `rust`
+  - `terraform`
+  - `helm` (`kubernetes`)
+  - `Ansible`
+  - `kotlin`
+  - `powershell`
+  - `sql`
+    > `mssql`: Haven't test
 - Configuring languages:
-  - TOML
-  - YAML
-  - XML
-  - tmux
-  - sshconfig
+  - `toml`
+  - `yaml`
+  - `xml`
+  - `tmux`
+  - `sshconfig`
 
 > [!NOTE]
 >
@@ -128,18 +131,18 @@ From UIT, for UIT (and others :v)
 
 ---
 
-## Prerequisites
+## Usage
+
+### Prerequisites
 
 - neovim:
   > version \>= 0.11
-- make: Some plugins require this
-- delta
-- ripgrep: telescope, vimgrep replacement
-- fd: telescope
+- `make`: Some plugins require this
+- `delta`
+- `ripgrep`: telescope, vimgrep replacement
+- `fd`: telescope
 
----
-
-## Structure
+### Structure
 
 ```
 lua
@@ -228,13 +231,11 @@ lua
 └── utils                   Utilities, no rewriting again and again
 ```
 
----
+### Notes
 
-## Note
-
-- Setting up new lsp in [`after/lsp/`](./after/lsp/)
+- Setting up new LSP in [`after/lsp/`](./after/lsp/)
   > For better overriding
-- Enable languages you want to use in [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)
+- Enable languages packs you want to use in [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)
 - Use mason tools to install all packages (Language servers, linters, formatters, runtime)
   ```vim
   :MasonToolsInstall
@@ -244,27 +245,33 @@ lua
   :NvChadLoadAllHighlights
   ```
 - Some `languages` pack require others, you must enable yourself:
-  - rest: http
-  - jenkins: groovy
-  - mssql: sql
-  - react: typescript
-  - ansible: yaml (for yaml syntax highlighting)
+  - `rest`: `http`
+  - `jenkins`: `groovy`
+  - `mssql`: `sql`
+  - `react`: `typescript`
+  - `ansible`: `yaml` (for yaml syntax highlighting)
 - These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
   - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
   - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
-- Working with SQL:
+- Working with `sql`:
   - Use compound filetype
-  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it (for linter and formatter attach to)
-    > Ex: `sql.postgresql`, `plsql.postgresql`
-- `lazy.nvim` only run `config` and `init` once. Not like `opts`
-- Working with latex:
+  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it _(for linter and formatter attach to)_
+    > Ex:
+    >
+    > - `sql.postgresql`, `plsql.postgresql`
+    >
+    > ```yaml
+    > # vim: set ft=sql.postgresql:
+    > ```
+- Working with `latex`:
   - on Arch:
     ```sh
     pacman -Sy texlive-binextra texlive-latex
     ```
   - other: idk
 - `helm_ls` include `yaml_ls` already, no need to run `yaml_ls`
-- With groovy language server, ensure you are using java 18 or so...
+- With `groovy-language-server`, ensure you are using `java@18` or so...
+- `lazy.nvim` only run `config` and `init` once. Not like `opts`
 
 ---
 
