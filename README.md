@@ -256,6 +256,21 @@ lua
 - `helm_ls` includes `yaml_ls` already, no need to run `yaml_ls`
 - With `groovy-language-server`, ensure you are using `java@18` or so...
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
+- On windows terminal which cannot send <kbd>Ctrl</kbd> + <kbd>Space</kbd> into shell, you can send <kbd>Ctrl</kbd> + <kbd>Space</kbd> as <kbd>Alt</kbd> + <kbd>;</kbd> by editing windows terminal config json _(`LocalState/settings.json`)_:
+  ```json
+  {
+    "actions": [
+      {
+        "command": {
+          "action": "sendInput",
+          "input": "\u001b;"
+        },
+        "id": "User.sendInput.63E68121",
+        "keys": "ctrl+space"
+      }
+    ]
+  }
+  ```
 
 ---
 
