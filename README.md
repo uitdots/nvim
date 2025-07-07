@@ -17,6 +17,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
   - [Languages](#languages)
 - [🥴 Usage](#-usage)
   - [Prerequisites](#prerequisites)
+  - [Install](#install)
   - [Structure](#structure)
   - [Notes](#notes)
 - [✏️ Others](#-others)
@@ -124,6 +125,15 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 - `delta`
 - `ripgrep`: telescope, vimgrep replacement
 - `fd`: telescope
+
+### Install
+
+```sh
+# rm -rf ./
+```
+
+> [!WARNING]
+> We all know how to do that
 
 ### Structure
 
