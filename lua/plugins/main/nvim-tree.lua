@@ -3,9 +3,6 @@ local uitvim_options = require("uitvim").options
 ---@type LazySpec
 return {
   "nvim-tree/nvim-tree.lua",
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
   keys = {
     {
       "<leader>e",
@@ -55,7 +52,6 @@ return {
     update_focused_file = {
       enable = false,
       update_cwd = false,
-      ignore_list = {},
     },
     git = {
       enable = true,
@@ -90,4 +86,5 @@ return {
       },
     },
   },
+  dependencies = "nvim-tree/nvim-web-devicons",
 }

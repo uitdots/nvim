@@ -46,7 +46,5 @@ return {
     vim.treesitter.language.register("groovy", "jenkins")
     vim.treesitter.language.register("bash", "dotenv")
   end,
-  config = function(_, opts)
-    require("nvim-treesitter.configs").setup(opts)
-  end,
+  main = "nvim-treesitter.configs",
 }
