@@ -4,7 +4,7 @@ return {
   opts = {
     ensure_installed = {
       "ansible-language-server",
-      "ansible-lint",
+      -- "ansible-lint",
     },
   },
   opts_extend = {
