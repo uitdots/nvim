@@ -20,6 +20,8 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
   - [Install](#install)
   - [Structure](#structure)
 - [📒 Notes](#-notes)
+  - [Keymaps](#keymaps)
+  - [Should read](#should-read)
   - [For configuring](#for-configuring)
 - [✏️ Others](#-others)
   - [Questions](#questions)
@@ -236,6 +238,35 @@ lua
 ---
 
 ## 📒 Notes
+
+### Keymaps
+
+There are some keymaps in **Normal Mode** you should know in this config (and native neovim keymaps)
+
+> [!NOTE]
+>
+> - `leader` is <kbd>Space</kbd>
+> - Buffer and tab are different in vim
+> - You should learn how to use vim register
+
+| Keymap             | Descriptions                              |
+| ------------------ | ----------------------------------------- |
+| `<leader><leader>` | Find Files                                |
+| `<leader>e`        | Toggle File Tree                          |
+| `<leader>Tab`      | Open File Tree and Focus Current File     |
+| `<leader>c`        | Close Buffer                              |
+| `<leader>y`        | Yank all into System Clipboard            |
+| `H`                | Navigate Left Buffer in NvChad Tabufline  |
+| `L`                | Navigate Right Buffer in NvChad Tabufline |
+| `Left`             | Go to Previous Tab                        |
+| `Left`             | Go to Next Tab                            |
+| `Up`               | New Tab                                   |
+| `Down`             | Close Tab                                 |
+| `<C-s>`            | Save Buffer                               |
+| `ZZ`               | Write Quit                                |
+| `ZQ`               | Quit                                      |
+
+### Should read
 
 - Setting up new LSP in [`after/lsp/`](./after/lsp/)
   > For better overriding
