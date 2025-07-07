@@ -35,7 +35,7 @@ function M.toggle_semantic_tokens(bufnr)
 end
 
 ---Check if inlay hints should be enabled for a specific server
----@param server_name string
+---@param server_name Lsp
 ---@return boolean
 function M.is_inlay_hint_enabled(server_name)
   if inlay_hint.servers == true then
@@ -51,7 +51,7 @@ function M.is_inlay_hint_enabled(server_name)
 end
 
 ---Check if semantic tokens should be enabled for a specific server
----@param server_name string
+---@param server_name Lsp
 ---@return boolean
 function M.is_semantic_tokens_enabled(server_name)
   if semantic_tokens.servers == true then

@@ -4,9 +4,9 @@
 
 ---@class (exact) Preferences.Lsp
 ---External LSPs to setup
----@field force string[]
+---@field force Lsp[]
 ---Exclude those LSPs (from Mason auto setup)
----@field exclude string[]
+---@field exclude Lsp[]
 
 ---@class (exact) Preferences.Options
 ---@field indent Preferences.Options.Indent
