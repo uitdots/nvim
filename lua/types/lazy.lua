@@ -7,7 +7,8 @@
 ---@field opts_extend? string[]
 
 ---Override from this https://github.com/folke/lazy.nvim/blob/main/lua/lazy/core/handler/event.lua
----@alias LazyEventSpec vim.Event|{event?:vim.Event|vim.Event[], pattern?:string|string[]}|vim.Event[]
+---@alias _LazyEvent string|"VeryLazy"|vim.VimEvent
+---@alias LazyEventSpec _LazyEvent|{event?:_LazyEvent|_LazyEvent[], pattern?:string|string[]}|_LazyEvent[]
 
 ---@class LazyPluginSpecHandlers
----@field event? vim.Event[]|vim.Event|LazyEventSpec[]|fun(self:LazyPlugin, event:vim.Event[]):vim.Event[]
+---@field event? _LazyEvent[]|_LazyEvent|LazyEventSpec[]|fun(self:LazyPlugin, event:_LazyEvent[]):_LazyEvent[]
