@@ -1,4 +1,6 @@
 ---@diagnostic disable: missing-fields
+---@module 'neoconf'
+
 local get_executable = require("utils.executable")
 
 ---@type vim.lsp.Config

@@ -1,4 +1,5 @@
 ---@diagnostic disable: missing-fields
+---@module 'neoconf'
 
 ---@type vim.lsp.Config
 return {

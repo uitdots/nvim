@@ -3,15 +3,24 @@ return {
   "folke/lazydev.nvim",
   enabled = true,
   ft = "lua",
-  ---@class lazydev.Config
+  ---@module 'lazydev'
+  ---@type lazydev.Config
   opts = {
     library = {
-      "lazy.nvim",
-      "ui/nvchad_types",
-      "neoconf.nvim/types/lsp.lua",
-      "luvit-meta/library",
       string.format("%s/lua/types", vim.fn.stdpath("config")),
-      -- { path = "snacks.nvim", words = { "Snacks" } },
+      "lazy.nvim",
+      {
+        path = "ui/nvchad_types",
+        mods = { "ui" },
+      },
+      {
+        path = "neoconf.nvim/types/lsp.lua",
+        mods = { "neoconf" },
+      },
+      {
+        path = "snacks.nvim",
+        words = { "Snacks" },
+      },
     },
   },
   opts_extend = {

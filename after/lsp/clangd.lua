@@ -1,4 +1,5 @@
 ---@diagnostic disable: missing-fields
+---@module 'neoconf'
 
 local gcc_path = require("utils.executable").get_path_from_executable("gcc")
 

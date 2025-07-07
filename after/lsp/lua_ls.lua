@@ -1,4 +1,5 @@
 ---@diagnostic disable: missing-fields
+---@module 'neoconf'
 
 local lsp_utils = require("utils.lsp")
 
