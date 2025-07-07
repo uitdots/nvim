@@ -1,26 +1,17 @@
 local os_utils = require("utils.os")
 local get_executable = require("utils.executable").get_executable
-local dap = require("dap")
+local DapAdapter = require("configs.dap.dap_adapter")
 
-local M = {}
+local M = DapAdapter.new()
 
----@type boolean?
-M.status = nil
-
----@return boolean
-function M.setup()
-  if M.status ~= nil then
-    return M.status
-  end
-
+function M:get_adapter()
   local adapter = get_executable("OpenDebugAD7", { mason = "packages/cpptools/extension/debugAdapters/bin" })
+  ---@cast adapter string?
+  self.adapter = adapter
+end
 
-  if adapter == nil then
-    M.status = false
-    return M.status
-  end
-
-  dap.adapters.cppdbg = {
+function M:setup(adapter)
+  self.dap.adapters.cppdbg = {
     id = "cppdbg",
     type = "executable",
     command = adapter,
@@ -28,9 +19,6 @@ function M.setup()
       detached = os_utils.is_windows and false or nil,
     },
   }
-
-  M.status = true
-  return M.status
 end
 
 return M

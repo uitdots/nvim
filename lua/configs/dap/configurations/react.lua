@@ -4,6 +4,10 @@ local dap_firefox = require("configs.dap.adapters.firefox")
 
 local M = {}
 
+---@alias browser
+---| '"chrome"'
+---| '"firefox"'
+---@type table<browser, dap.Configuration[]>
 M.configurations = {}
 
 M.configurations.chrome = {
@@ -32,9 +36,9 @@ M.configurations.firefox = {
   },
 }
 
-function M.setup()
-  local chrome_status = dap_chrome.setup()
-  local firefox_status = dap_firefox.setup()
+function M.__call()
+  local chrome_status = dap_chrome()
+  local firefox_status = dap_firefox()
 
   local configs = {}
 
@@ -48,6 +52,7 @@ function M.setup()
 
   if #configs > 0 then
     dap.configurations.javascriptreact = configs
+    dap.configurations.typescriptreact = configs
   end
 end
 

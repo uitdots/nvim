@@ -126,7 +126,7 @@ map("n", "<leader>np", function()
   vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
-map("n", "<leader>nr", require("configs.code-runner").run, { desc = "Neovim | Runner", silent = true })
+map("n", "<leader>nr", require("configs.runner.init").run, { desc = "Neovim | Runner", silent = true })
 
 -- Treesitter
 map("n", "<leader>ti", function()

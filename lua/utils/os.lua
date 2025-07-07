@@ -4,7 +4,7 @@ local os = sysname:match("Windows") and "Windows" or sysname:match("Linux") and 
 local is_windows = os == "Windows"
 local M = {}
 
----@type "Windows" | "Linux" | string
+---@type string | "Windows" | "Linux"
 M.os = os
 
 ---@type boolean

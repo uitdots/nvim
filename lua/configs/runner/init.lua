@@ -1,6 +1,6 @@
 local M = {}
 
----@private
+---@package
 --- Source:
 --- - https://github.com/hown3d
 --- - https://github.com/Alexis12119/nvim-config
@@ -16,7 +16,7 @@ M.substitute = function(cmd)
   return cmd
 end
 
----@private
+---@package
 M.term_cmd = "bot 20 new | term "
 
 ---@param open_term fun(cmd:string)?
@@ -44,6 +44,10 @@ function M.run(open_term)
     open_term(parsed_cmd)
   else
     vim.ui.select(choices, { prompt = "Choose a command to run code" }, function(choice)
+      if not choice then
+        vim.notify("No cmd was choosen to run file", vim.log.levels.INFO, { title = "Runner" })
+        return
+      end
       local cmd = cmds[choice]
       local parsed_cmd = M.substitute(cmd)
       open_term(parsed_cmd)

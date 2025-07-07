@@ -1,25 +1,16 @@
 local get_executable = require("utils.executable").get_executable
-local dap = require("dap")
+local DapAdapter = require("configs.dap.dap_adapter")
 
-local M = {}
+local M = DapAdapter.new()
 
----@type boolean?
-M.status = nil
-
----@return boolean
-function M.setup()
-  if M.status ~= nil then
-    return M.status
-  end
-
+function M:get_adapter()
   local adapter = get_executable("dapDebugServer.js", { mason = "packages/js-debug-adapter/js-debug/src" })
+  ---@cast adapter string?
+  self.adapter = adapter
+end
 
-  if adapter == nil then
-    M.status = false
-    return M.status
-  end
-
-  dap.adapters["pwa-node"] = {
+function M:setup(adapter)
+  self.dap.adapters["pwa-node"] = {
     type = "server",
     host = "localhost",
     port = "${port}",
@@ -31,9 +22,6 @@ function M.setup()
       },
     },
   }
-
-  M.status = true
-  return M.status
 end
 
 return M

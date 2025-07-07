@@ -1,25 +1,17 @@
 local dap = require("dap")
 local cppdbg = require("configs.dap.adapters.cppdbg")
 local is_executable = require("utils.executable").is_executable_cache
-local executable_picker = require("utils.executable").executable_picker
+local dap_utils = require("configs.dap.utils")
 
 local M = {}
 
----@private
-function M.executable_picker()
-  return coroutine.create(function(coro)
-    executable_picker("Select executable to debug", function(selected_executable)
-      coroutine.resume(coro, selected_executable)
-    end)
-  end)
-end
-
+---@type dap.Configuration[]
 M.configurations = {
   {
     name = "Launch file",
     type = "cppdbg",
     request = "launch",
-    program = M.executable_picker,
+    program = dap_utils.executable_picker,
     cwd = "${workspaceFolder}",
     stopAtEntry = true,
   },
@@ -31,15 +23,15 @@ M.configurations = {
     miDebuggerServerAddress = "localhost:1234",
     miDebuggerPath = "gdb", -- TODO: Check does it need full path
     cwd = "${workspaceFolder}",
-    program = M.executable_picker,
+    program = dap_utils.executable_picker,
   },
 }
 
-function M.setup()
+function M.__call()
   if not is_executable("gdb") then
     return
   end
-  local status = cppdbg.setup()
+  local status = cppdbg()
   if status then
     dap.configurations.c = M.configurations
     dap.configurations.cpp = M.configurations

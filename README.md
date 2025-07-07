@@ -47,7 +47,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 - Package manager with [mason.nvim](https://github.com/mason-org/mason.nvim)
   > optional, you can disable this, and install package yourself
 - [NvChad](https://github.com/NvChad/) UI
-- Task runner, builtin code runner
+- Task runner, builtin file runner
 - Formatting, linting, debugging, testing
 - Querying database, rest api, json, yaml
 - AI integration with tab completion, MCP, VectorCode
@@ -130,10 +130,11 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 ```
 lua
 ├── configs                 Extendable settings for builtin, plugins options
-│   ├── code-runner         Builtin code runner
+│   ├── runner              Builtin file runner
 │   ├── dap                 nvim-dap config
 │   │   ├── adapters
 │   │   └── configurations
+│   │   └── utils
 │   ├── lazy                lazy.nvim config
 │   ├── lsp                 Neovim's lsp setting
 │   └── ui                  UI (mostly for nvchad)
