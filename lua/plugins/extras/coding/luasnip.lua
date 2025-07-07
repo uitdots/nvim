@@ -23,4 +23,24 @@ return {
     })
   end,
   dependencies = "rafamadriz/friendly-snippets",
+  specs = {
+    {
+      "saghen/blink.cmp",
+      ---@module 'blink.cmp'
+      ---@type blink.cmp.Config
+      opts = {
+        snippets = {
+          preset = "luasnip",
+        },
+      },
+      optional = true,
+    },
+    {
+      "danymat/neogen",
+      opts = {
+        snippet_engine = "luasnip",
+      },
+      optional = true,
+    },
+  },
 }

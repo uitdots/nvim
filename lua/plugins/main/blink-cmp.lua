@@ -9,9 +9,6 @@ return {
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
   opts = {
-    snippets = {
-      preset = "luasnip",
-    },
     appearance = {
       nerd_font_variant = "normal",
     },
