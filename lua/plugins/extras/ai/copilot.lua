@@ -1,5 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
-local ai_suggestion_enabled = require("uitvim").options.others.ai_suggestion_enabled
+local ai_suggestion_enabled = require("preferences").options.others.ai_suggestion_enabled
 
 ---@type LazySpec
 return {

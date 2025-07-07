@@ -1,4 +1,4 @@
-local uitvim_options = require("uitvim").options
+local preferences_options = require("preferences").options
 local nvdash_config = require("configs.ui.nvdash")
 
 ---@module 'ui'
@@ -7,7 +7,7 @@ local M = {}
 
 M.ui = {
   telescope = {
-    style = uitvim_options.ui.border_enabled and "bordered" or "borderless",
+    style = preferences_options.ui.border_enabled and "bordered" or "borderless",
   },
   cmp = {
     lspkind_text = true,

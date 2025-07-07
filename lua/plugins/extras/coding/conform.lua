@@ -1,4 +1,4 @@
-local filter_availabled_external = require("uitvim").options.others.filter_availabled_external
+local filter_availabled_external = require("preferences").options.others.filter_availabled_external
 
 ---@param opts conform.setupOpts
 local function filter_available(opts)

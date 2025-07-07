@@ -1,4 +1,4 @@
-require("uitvim")
+require("preferences")
 require("core.globals")
 require("core.env")
 require("core.options")

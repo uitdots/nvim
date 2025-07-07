@@ -1,5 +1,5 @@
 -- TODO: May cleanup this later
-local uitvim_options = require("uitvim").options
+local preferences_options = require("preferences").options
 local g = vim.g
 
 vim.g.base46_cache = string.format("%s/base46/", vim.fn.stdpath("data"))
@@ -13,4 +13,4 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-g.auto_format_enabled = uitvim_options.others.auto_format_enabled
+g.auto_format_enabled = preferences_options.others.auto_format_enabled

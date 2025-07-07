@@ -1,4 +1,4 @@
-local inlay_hint = require("uitvim").options.inlay_hint
+local inlay_hint = require("preferences").options.inlay_hint
 
 ---@type LazySpec
 return {

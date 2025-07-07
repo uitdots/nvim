@@ -1,7 +1,7 @@
-local uitvim = require("uitvim")
+local preferences = require("preferences")
 local lspconfig = require("configs.lsp.lspconfig")
 
-table.insert(uitvim.no_setup_lsps, "rust-analyzer")
+table.insert(preferences.no_setup_lsps, "rust-analyzer")
 
 ---@type LazySpec
 return {

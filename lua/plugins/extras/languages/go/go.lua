@@ -1,6 +1,6 @@
 -- I disable this plugin because I think it's enough to use normally :v
 
--- local filter_availabled_external = require("uitvim").options.others.
+-- local filter_availabled_external = require("preferences").options.others.
 -- local is_executable = require("utils.executable").is_executable
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup

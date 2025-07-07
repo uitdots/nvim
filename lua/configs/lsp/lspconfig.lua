@@ -2,8 +2,8 @@ local map = vim.keymap.set
 local autocmd = vim.api.nvim_create_autocmd
 local lsp_utils = require("utils.lsp")
 local notify_utils = require("utils.notify")
-local inlay_hint_enabled = require("uitvim").options.inlay_hint.client
-local semantic_tokens_enabled = require("uitvim").options.semantic_tokens.client
+local inlay_hint_enabled = require("preferences").options.inlay_hint.client
+local semantic_tokens_enabled = require("preferences").options.semantic_tokens.client
 
 local M = {}
 

@@ -1,4 +1,4 @@
-local uitvim_options = require("uitvim").options
+local preferences_options = require("preferences").options
 
 ---@type LazySpec
 return {
@@ -81,7 +81,7 @@ return {
     actions = {
       file_popup = {
         open_win_config = {
-          border = uitvim_options.ui.border_enabled and "rounded" or "none",
+          border = preferences_options.ui.border_enabled and "rounded" or "none",
         },
       },
     },

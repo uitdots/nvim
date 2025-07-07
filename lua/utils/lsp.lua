@@ -1,5 +1,5 @@
-local inlay_hint = require("uitvim").options.inlay_hint
-local semantic_tokens = require("uitvim").options.semantic_tokens
+local inlay_hint = require("preferences").options.inlay_hint
+local semantic_tokens = require("preferences").options.semantic_tokens
 
 local M = {}
 

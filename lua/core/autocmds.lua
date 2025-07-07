@@ -1,12 +1,12 @@
 local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local uitvim = require("uitvim")
+local preferences = require("preferences")
 
 -- General Settings
 local general = augroup("General", { clear = true })
 
-local indent_opts = uitvim.options.indent
+local indent_opts = preferences.options.indent
 for chars, fts in pairs(indent_opts.space) do
   autocmd("FileType", {
     desc = string.format("Tab to space with %s spaces", chars),
@@ -94,7 +94,7 @@ autocmd("FileType", {
   desc = "Enable Spell check in these filetypes",
 })
 
-local wrap_opts = uitvim.options.wrap
+local wrap_opts = preferences.options.wrap
 autocmd("FileType", {
   pattern = wrap_opts.revert,
   callback = function()

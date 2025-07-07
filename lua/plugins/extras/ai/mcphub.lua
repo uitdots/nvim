@@ -1,5 +1,5 @@
 local is_executable = require("utils.executable").is_executable_cache
-local border_enabled = require("uitvim").options.ui.border_enabled
+local border_enabled = require("preferences").options.ui.border_enabled
 
 ---@type LazySpec
 return {

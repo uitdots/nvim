@@ -1,6 +1,6 @@
-local filter_availabled_external = require("uitvim").options.others.
+local filter_availabled_external = require("preferences").options.others.
 local is_executable = require("utils.executable").is_executable
-local inlay_hint = require("uitvim").options.inlay_hint
+local inlay_hint = require("preferences").options.inlay_hint
 
 local inlayhint_opts
 if inlay_hint.servers == true or inlay_hint.servers.roslyn or inlay_hint.server_default then
