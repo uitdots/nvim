@@ -2,7 +2,7 @@
 
 A fast and highly customisable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
 
-> From [UITer](https://uit.edu.vn/) :(
+> Heavy bloat Neovim :(
 
 ---
 
@@ -19,8 +19,13 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
   - [Prerequisites](#prerequisites)
   - [Install](#install)
   - [Structure](#structure)
-  - [Notes](#notes)
+- [📒 Notes](#-notes)
+  - [For configuring](#for-configuring)
 - [✏️ Others](#-others)
+  - [Questions](#questions)
+    - [Control space in Windows Terminal doesn't work?](#control-space-in-windows-terminal-doesnt-work)
+    - [How to change the behavior of completion?](#how-to-change-the-behavior-of-completion)
+    - [Possible to change the NvChad UI to another?](#possible-to-change-the-nvchad-ui-to-another)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
 
@@ -135,6 +140,8 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 
 > [!WARNING]
 > We all know how to do that
+>
+> You shouldn't entering nvim for now. Use another edit to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
 
 ### Structure
 
@@ -224,20 +231,17 @@ lua
 ```
 
 > [!NOTE]
-> Extra plugins in [lua/plugins/extras](lua/plugins/extras) are (may) safely disabled. You should disable by group in [lua/plugins/extras/init.lua](lua/plugins/extras/init.lua) _(except others)_
+> Extra plugins in [lua/plugins/extras](lua/plugins/extras) are (may) safely disabled. You should disable by group in [lua/plugins/extras/init.lua](lua/plugins/extras/init.lua) _(except others, disable them individually)_
 
-### Notes
+---
+
+## 📒 Notes
 
 - Setting up new LSP in [`after/lsp/`](./after/lsp/)
   > For better overriding
-- Enable languages packs you want to use in [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)
 - Use mason tools to install all packages (Language servers, linters, formatters, runtime)
   ```vim
   :MasonToolsInstall
-  ```
-- If NvChad UI's color is broken, run:
-  ```vim
-  :NvChadLoadAllHighlights
   ```
 - Some `languages` pack require others, you must enable yourself:
   - `rest`: `http`
@@ -254,10 +258,9 @@ lua
     > Ex:
     >
     > - `sql.postgresql`, `plsql.postgresql`
-    >
-    > ```yaml
-    > # vim: set ft=sql.postgresql:
-    > ```
+    > - ```yaml
+    >   # vim: set ft=sql.postgresql:
+    >   ```
 - Working with `latex`:
   - on Arch:
     ```sh
@@ -266,26 +269,50 @@ lua
   - other: idk
 - `helm_ls` includes `yaml_ls` already, no need to run `yaml_ls`
 - With `groovy-language-server`, ensure you are using `java@18` or so...
+
+### For configuring
+
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
-- On windows terminal which cannot send <kbd>Ctrl</kbd> + <kbd>Space</kbd> into shell, you can send <kbd>Ctrl</kbd> + <kbd>Space</kbd> as <kbd>Alt</kbd> + <kbd>;</kbd> by editing windows terminal config json _(`LocalState/settings.json`)_:
-  ```json
-  {
-    "actions": [
-      {
-        "command": {
-          "action": "sendInput",
-          "input": "\u001b;"
-        },
-        "id": "User.sendInput.63E68121",
-        "keys": "ctrl+space"
-      }
-    ]
-  }
+- If NvChad UI's color is broken, use `<leader>ur>` or run:
+  ```vim
+  :NvChadLoadAllHighlights
   ```
+- lsp currently not enabled by compound filetype?
+- nvim-lint can lint the compound filetype, async?
+- conform format the last filetype in the compound file, one by one?
 
 ---
 
 ## ✏️ Others
+
+### Questions
+
+#### Control space in Windows Terminal doesn't work?
+
+On windows terminal which cannot send <kbd>Ctrl</kbd> + <kbd>Space</kbd> into shell, you can send <kbd>Ctrl</kbd> + <kbd>Space</kbd> as <kbd>Alt</kbd> + <kbd>;</kbd> by editing windows terminal config json _(`LocalState/settings.json`)_:
+
+```json
+{
+  "actions": [
+    {
+      "command": {
+        "action": "sendInput",
+        "input": "\u001b;"
+      },
+      "id": "User.sendInput.63E68121",
+      "keys": "ctrl+space"
+    }
+  ]
+}
+```
+
+#### How to change the behavior of completion?
+
+See <https://cmp.saghen.dev/configuration/keymap.html> and change [lua/plugins/main/blink-cmp.lua](lua/plugins/main/blink-cmp.lua). You should read all the docs.
+
+#### Possible to change the NvChad UI to another?
+
+It may be possible. But it may require times to config.
 
 ### Tips & Tricks
 

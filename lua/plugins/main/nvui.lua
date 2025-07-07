@@ -15,6 +15,16 @@ return {
     build = function()
       require("base46").load_all_highlights()
     end,
+    keys = {
+      {
+        "<leader>ur",
+        function()
+          require("base46").load_all_highlights()
+        end,
+        desc = "Utils | Refresh UI (NvChad)",
+        silent = true,
+      },
+    },
     init = function()
       vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
         require("base46").load_all_highlights()

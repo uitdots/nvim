@@ -16,7 +16,7 @@ return {
   },
   keys = {
     {
-      "<leader>ur",
+      "<leader>uR",
       "<cmd>RegexplainerShowPopup<cr>",
       desc = "Utils | Toggle Regexplainer",
       silent = true,
