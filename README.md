@@ -133,7 +133,7 @@ lua
 │   ├── runner              Builtin file runner
 │   ├── dap                 nvim-dap config
 │   │   ├── adapters
-│   │   └── configurations
+│   │   ├── configurations
 │   │   └── utils
 │   ├── lazy                lazy.nvim config
 │   ├── lsp                 Neovim's lsp setting
@@ -206,11 +206,7 @@ lua
 │   │   ├── telescope       Telescope extensions
 │   │   ├── test            Testing
 │   │   ├── ui              Extend UI things
-│   └── main                Shouldn't disable, it's is the culture hehe
-│       ├── editor
-│       ├── file            File navigation, manipulation
-│       ├── neccessaries    You don't wanna break this neovim config
-│       └── ui              Make neovim pretty
+│   └── main                Shouldn't disable, you don't want to break the config
 ├── types                   Custom types for lua annotating
 └── utils                   Utilities, no rewriting again and again
 ```
