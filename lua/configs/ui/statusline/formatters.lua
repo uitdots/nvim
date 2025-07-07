@@ -42,7 +42,7 @@ function M.set_status()
     return formatter.name
   end, formatters)
 
-  M.status = " %#St_gitIcons# " .. table.concat(formatters_names, ", ") .. " "
+  M.status = string.format(" %%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
 end
 
 function M.render()
