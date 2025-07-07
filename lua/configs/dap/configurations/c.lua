@@ -21,7 +21,7 @@ M.configurations = {
     request = "launch",
     MIMode = "gdb",
     miDebuggerServerAddress = "localhost:1234",
-    miDebuggerPath = "gdb", -- TODO: Check does it need full path
+    miDebuggerPath = "gdb",
     cwd = "${workspaceFolder}",
     program = dap_utils.executable_picker,
   },
