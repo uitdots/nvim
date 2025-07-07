@@ -45,7 +45,7 @@ function M.set_status()
   M.status = string.format(" %%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
 end
 
-function M.render()
+return function()
   if package.loaded["conform"] == nil then
     return
   end
@@ -58,5 +58,3 @@ function M.render()
   end
   return M.status
 end
-
-return M.render

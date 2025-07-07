@@ -14,13 +14,13 @@ M.fileformats = {
 
 ---@private
 ---@type string
-M.status = ""
+M.status = nil
 
 function M.set_current_eol()
-  M.status = "%#St_gitIcons#" .. M.fileformats[vim.bo.fileformat] .. " "
+  M.status = string.format(" %%#St_gitIcons# %s ", M.fileformats[vim.bo.fileformat])
 end
 
-function M.render()
+return function()
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
@@ -29,5 +29,3 @@ function M.render()
 
   return M.status
 end
-
-return M.render

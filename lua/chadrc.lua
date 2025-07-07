@@ -19,6 +19,7 @@ M.ui = {
   statusline = {
     theme = "default",
     separator_style = "default",
+    ---NOTE: The more modules, the more it run everytime neovim rerender. use only you need
     order = {
       "mode",
       "file",
@@ -30,8 +31,8 @@ M.ui = {
       "macro_recording",
       "command",
       "diagnostics",
-      "flutter",
-      "python_venv",
+      -- "flutter",
+      -- "python_venv",
       "auto_format",
       "lsps",
       "linters",

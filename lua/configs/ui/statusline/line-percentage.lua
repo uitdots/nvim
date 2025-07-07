@@ -55,12 +55,10 @@ function M.set_status()
   M.status = gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#", sep_l, sep_end)
 end
 
-function M.render()
+return function()
   if M.status == nil then
     M.set_status()
   end
 
   return M.status
 end
-
-return M.render

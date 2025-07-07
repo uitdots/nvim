@@ -39,7 +39,7 @@ function M.set_status(bufnr)
     return client.name
   end, lsps)
 
-  M.status = string.format("%%#St_gitIcons# %s ", table.concat(clients, ", "))
+  M.status = string.format(" %%#St_gitIcons# %s ", table.concat(clients, ", "))
 end
 
 function M.setup_autocmds()
@@ -58,7 +58,7 @@ function M.setup_autocmds()
   })
 end
 
-function M.render()
+return function()
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
@@ -67,5 +67,3 @@ function M.render()
 
   return M.status
 end
-
-return M.render

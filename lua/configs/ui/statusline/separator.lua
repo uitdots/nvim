@@ -1,1 +1,1 @@
-return "%#St_gitIcons#| "
+return "%#St_gitIcons#|"

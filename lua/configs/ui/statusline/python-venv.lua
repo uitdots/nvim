@@ -25,10 +25,10 @@ function M.set_status()
     M.status = nil
     return
   end
-  M.status = "%#St_gitIcons# "
+  M.status = " %#St_gitIcons# "
 end
 
-function M.render()
+return function()
   if vim.bo.filetype ~= "python" then
     return ""
   end
@@ -42,5 +42,3 @@ function M.render()
 
   return M.status
 end
-
-return M.render

@@ -41,7 +41,7 @@ function M.set_status()
   M.status = string.format(" %%#St_gitIcons# %s ", table.concat(linters, ", "))
 end
 
-function M.render()
+return function()
   if package.loaded["lint"] == nil then
     return
   end
@@ -54,5 +54,3 @@ function M.render()
   end
   return M.status
 end
-
-return M.render

@@ -1,6 +1,6 @@
 local noice = nil
 
-local function render()
+return function()
   if package.loaded["noice"] == nil then
     return
   end
@@ -10,7 +10,5 @@ local function render()
   end
 
   ---@diagnostic disable-next-line: undefined-field
-  return " %#St_gitIcons#󰌌 " .. (noice.status.command.get() or "") .. " "
+  return string.format(" %%#St_gitIcons#󰌌 %s ", noice.status.command.get() or "")
 end
-
-return render

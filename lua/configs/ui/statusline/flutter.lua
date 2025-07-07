@@ -1,7 +1,5 @@
-local function render()
+return function()
   if vim.g.flutter_tools_decorations and vim.g.flutter_tools_decorations.app_version then
-    return "%#St_gitIcons# " .. (vim.o.columns > 100 and vim.g.flutter_tools_decorations.app_version or "") .. " "
+    return string.format(" %%#St_gitIcons# %s ", vim.o.columns > 100 and vim.g.flutter_tools_decorations.app_version or "")
   end
 end
-
-return render
