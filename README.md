@@ -304,7 +304,7 @@ There are some keymaps in **Normal Mode** you should know in this config (and na
 ### For configuring
 
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
-- If NvChad UI's color is broken, use `<leader>ur>` or run:
+- If NvChad UI's color is broken, use `<leader>ur` or run:
   ```vim
   :NvChadLoadAllHighlights
   ```
