@@ -3,10 +3,6 @@ local is_windows = require("utils.os").is_windows
 ---@type LazySpec
 return {
   "L3MON4D3/LuaSnip",
-  enabled = true,
-  dependencies = {
-    "rafamadriz/friendly-snippets",
-  },
   version = "v2.*",
   build = not is_windows and "make install_jsregexp" or "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c",
   config = function(_, opts)
@@ -26,4 +22,5 @@ return {
       },
     })
   end,
+  dependencies = "rafamadriz/friendly-snippets",
 }

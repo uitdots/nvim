@@ -1,9 +1,7 @@
 ---@type LazySpec
 return {
   "danymat/neogen",
-  dependencies = {
-    "L3MON4D3/LuaSnip",
-  },
+  dependencies = "L3MON4D3/LuaSnip",
   cmd = "Neogen",
   config = true,
   keys = {
@@ -18,7 +16,6 @@ return {
           "file",
         }, {
           prompt = "Select Neogen scheme",
-          telescope = require("telescope.themes").get_dropdown(),
         }, function(scheme)
           if scheme == nil then
             return
