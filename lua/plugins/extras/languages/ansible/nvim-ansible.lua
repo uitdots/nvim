@@ -23,5 +23,4 @@ return {
       mode = "v",
     },
   },
-  config = true,
 }
