@@ -1,6 +1,6 @@
 ---@diagnostic disable: duplicate-doc-field, duplicate-doc-alias
 
----@meta lazy
+---@meta _
 ---@module 'lazy'
 
 ---@class LazyPluginHooks

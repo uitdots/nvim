@@ -1,3 +1,5 @@
+---@meta _
+
 ---Taken from https://github.com/neovim/neovim/blob/master/src/nvim/auevents.lua
 ---@alias vim.Event vim.VimEvent|vim.NeovimEvent
 

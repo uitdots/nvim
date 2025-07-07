@@ -1,3 +1,5 @@
+---@meta _
+
 ---@class (exact) Preferences
 ---@field lsp Preferences.Lsp
 ---@field options Preferences.Options Options for configuration

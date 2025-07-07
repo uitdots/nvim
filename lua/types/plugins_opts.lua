@@ -1,3 +1,5 @@
+---@meta _
+
 ---@class PluginsOpts
 
 ---@class PluginsOpts.NvimJdtlsOpts

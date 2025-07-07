@@ -1,3 +1,5 @@
+---@meta _
+
 ---lua_ls check type for first type?? so we must let `string` before anything else
 ---@alias Lsp string | Lsp.NvimLspconfig | Lsp.Others
 

@@ -1,4 +1,4 @@
----WARN: You need to fill all of them. Even empty list/table
+-- WARN: You need to fill all of them. Even empty list/table
 
 ---@type Preferences
 local M = {
