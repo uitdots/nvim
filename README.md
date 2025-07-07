@@ -259,7 +259,7 @@ There are some keymaps in **Normal Mode** you should know in this config (and na
 | `H`                | Navigate Left Buffer in NvChad Tabufline  |
 | `L`                | Navigate Right Buffer in NvChad Tabufline |
 | `Left`             | Go to Previous Tab                        |
-| `Left`             | Go to Next Tab                            |
+| `Right`            | Go to Next Tab                            |
 | `Up`               | New Tab                                   |
 | `Down`             | Close Tab                                 |
 | `<C-s>`            | Save Buffer                               |
