@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
 local is_windows = require("utils.os").is_windows
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "yetone/avante.nvim",
   enabled = false,

@@ -1,6 +1,6 @@
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mfussenegger/nvim-dap",
   enabled = true,

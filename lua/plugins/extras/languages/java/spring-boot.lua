@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "JavaHello/spring-boot.nvim",
   cond = vim.fn.glob("~/.vscode/extensions/vmware.vscode-spring-boot*") ~= "",

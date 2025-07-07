@@ -1,6 +1,6 @@
 local is_windows = require("utils.os").is_windows
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "rest-nvim/rest.nvim",
   name = "rest-nvim",

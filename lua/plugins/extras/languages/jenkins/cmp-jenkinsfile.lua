@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "joshzcold/cmp-jenkinsfile",
   enabled = false,

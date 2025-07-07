@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "monaqa/dial.nvim",
   -- Seem that cannot config with lazynvim keymap

@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter-context",
   cmd = {

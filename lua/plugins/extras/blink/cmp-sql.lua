@@ -8,7 +8,7 @@ local allowed_ts_types = {
 
 local kind_name = "Table" -- Because idk how to customise this, pick table
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "ray-x/cmp-sql",
   enabled = true,

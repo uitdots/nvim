@@ -1,6 +1,6 @@
 local is_windows = require("utils.os").is_windows
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "L3MON4D3/LuaSnip",
   enabled = true,

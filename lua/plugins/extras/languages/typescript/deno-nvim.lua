@@ -1,6 +1,6 @@
 local lspconfig = require("configs.lsp.lspconfig")
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "sigmaSd/deno-nvim",
   enabled = false, -- TODO: Check this when it support neovim 0.11 API

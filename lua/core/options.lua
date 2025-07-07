@@ -60,7 +60,7 @@ o.cmdheight = 0 -- height of the command line
 o.helpheight = 10 -- height of the help window
 o.shortmess = "AcqFI"
 o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
-o.winborder = uitvim_options.border_enabled and "rounded" or "none"
+o.winborder = uitvim_options.ui.border_enabled and "rounded" or "none"
 -- o.spelloptions = "camel"
 
 -- TODO: Refactor this to ... later?

@@ -15,7 +15,7 @@ local allowed_ts_types = {
   line_comment = true,
 }
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "moyiz/blink-emoji.nvim",
   enabled = false,

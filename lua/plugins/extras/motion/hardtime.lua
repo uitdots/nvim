@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "m4xshen/hardtime.nvim",
   enabled = false,

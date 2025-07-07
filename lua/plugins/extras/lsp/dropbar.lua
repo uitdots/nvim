@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "Bekaboo/dropbar.nvim",
   enabled = true,

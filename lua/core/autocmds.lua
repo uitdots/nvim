@@ -7,7 +7,7 @@ local uitvim = require("uitvim")
 local general = augroup("General", { clear = true })
 
 local indent_opts = uitvim.options.indent
-for chars, fts in pairs(indent_opts.space or {}) do
+for chars, fts in pairs(indent_opts.space) do
   autocmd("FileType", {
     desc = string.format("Tab to space with %s spaces", chars),
     pattern = fts,
@@ -16,7 +16,7 @@ for chars, fts in pairs(indent_opts.space or {}) do
   })
 end
 
-for chars, fts in pairs(indent_opts.tab or {}) do
+for chars, fts in pairs(indent_opts.tab) do
   autocmd("FileType", {
     desc = string.format("Tab to space with %s spaces", chars),
     pattern = fts,
@@ -96,7 +96,7 @@ autocmd("FileType", {
 
 local wrap_opts = uitvim.options.wrap
 autocmd("FileType", {
-  pattern = wrap_opts.others,
+  pattern = wrap_opts.revert,
   callback = function()
     vim.opt_local.wrap = not wrap_opts.default
   end,

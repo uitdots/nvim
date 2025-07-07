@@ -1,6 +1,6 @@
 local debounce = require("utils.helpers").debounce
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "ckipp01/nvim-jenkinsfile-linter",
   ft = "jenkins",

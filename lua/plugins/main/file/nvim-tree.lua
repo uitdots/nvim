@@ -1,6 +1,6 @@
 local uitvim_options = require("uitvim").options
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nvim-tree/nvim-tree.lua",
   dependencies = {
@@ -85,7 +85,7 @@ return {
     actions = {
       file_popup = {
         open_win_config = {
-          border = uitvim_options.border_enabled and "rounded" or "none",
+          border = uitvim_options.ui.border_enabled and "rounded" or "none",
         },
       },
     },

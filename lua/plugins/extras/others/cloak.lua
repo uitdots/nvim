@@ -7,7 +7,7 @@ local ft = {
   "dotenv",
 }
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "laytan/cloak.nvim",
   keys = {

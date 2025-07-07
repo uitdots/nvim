@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "stevearc/quicker.nvim",
   event = "FileType qf",

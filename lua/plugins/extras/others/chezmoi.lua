@@ -2,7 +2,7 @@ local is_executable = require("utils.executable").is_executable
 
 local has_chezmoi = is_executable("chezmoi")
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     "alker0/chezmoi.vim",

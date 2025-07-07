@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "folke/lazydev.nvim",
   enabled = true,
@@ -21,6 +21,10 @@ return {
         path = "snacks.nvim",
         words = { "Snacks" },
       },
+      {
+        path = "luvit-meta/library",
+        words = { "vim%.uv" },
+      },
     },
   },
   opts_extend = {
@@ -31,16 +35,19 @@ return {
     {
       "saghen/blink.cmp",
       optional = true,
+    },
+  },
+  specs = {
+    {
+      "saghen/blink.cmp",
+      optional = true,
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
         sources = {
           per_filetype = {
             lua = {
-              "lsp",
-              "path",
-              "snippets",
-              "buffer",
+              inherit_defaults = true,
               "lazydev",
             },
           },

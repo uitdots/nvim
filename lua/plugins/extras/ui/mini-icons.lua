@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "echasnovski/mini.icons",
   event = "VeryLazy",

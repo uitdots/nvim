@@ -1,6 +1,6 @@
 local inlay_hint = require("uitvim").options.inlay_hint
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "pmouraguedes/sql-ghosty.nvim",
   cmd = {

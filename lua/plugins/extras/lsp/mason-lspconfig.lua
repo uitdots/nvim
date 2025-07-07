@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mason-org/mason-lspconfig.nvim",
   event = {
@@ -9,7 +9,7 @@ return {
   ---@type MasonLspconfigSettings
   opts = {
     automatic_enable = {
-      exclude = require("uitvim").no_setup_lsps,
+      exclude = require("uitvim").lsp.exclude,
     },
   },
   dependencies = {

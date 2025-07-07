@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "dstein64/nvim-scrollview",
   enabled = false,

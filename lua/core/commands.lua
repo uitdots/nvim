@@ -15,33 +15,33 @@ end, { nargs = "*", desc = "Code Format", range = true })
 
 command("FormatDisable", function(args)
   if args.bang then
-    vim.g.autoformat_enabled = false
+    vim.g.auto_format_enabled = false
     vim.notify("Autoformat Disabled", vim.log.levels.INFO, { title = "Format" })
   else
-    vim.b.autoformat_enabled = false
+    vim.b.auto_format_enabled = false
     vim.notify("Autoformat Disabled (Local)", vim.log.levels.INFO, { title = "Format" })
   end
 end, { desc = "Disable Autoformat", bang = true })
 
 command("FormatEnable", function(args)
   if args.bang then
-    vim.g.autoformat_enabled = true
+    vim.g.auto_format_enabled = true
     vim.notify("Autoformat Enabled", vim.log.levels.INFO, { title = "Format" })
   else
-    vim.b.autoformat_enabled = true
+    vim.b.auto_format_enabled = true
     vim.notify("Autoformat Enabled (Local)", vim.log.levels.INFO, { title = "Format" })
   end
 end, { desc = "Enable Autoformat", bang = true })
 
 command("FormatToggle", function(args)
   if args.bang then
-    if vim.b.autoformat_enabled then
+    if vim.b.auto_format_enabled then
       vim.cmd("FormatDisable!")
     else
       vim.cmd("FormatEnable!")
     end
   else
-    if vim.g.autoformat_enabled then
+    if vim.g.auto_format_enabled then
       vim.cmd("FormatDisable")
     else
       vim.cmd("FormatEnable")

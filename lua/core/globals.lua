@@ -13,4 +13,4 @@ g.loaded_python3_provider = 0
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
-g.autoformat_enabled = uitvim_options.autoformat_enabled
+g.auto_format_enabled = uitvim_options.others.auto_format_enabled

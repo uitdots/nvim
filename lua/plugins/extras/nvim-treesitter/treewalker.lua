@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "aaronik/treewalker.nvim",
   event = {

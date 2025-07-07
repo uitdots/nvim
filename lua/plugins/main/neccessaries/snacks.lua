@@ -20,7 +20,7 @@ local exclude_find = {
   "obj/",
 }
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "folke/snacks.nvim",
   enabled = true,

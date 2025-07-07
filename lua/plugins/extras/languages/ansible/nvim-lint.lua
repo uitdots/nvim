@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mfussenegger/nvim-lint",
   ---NOTE: Use language server it has linter already

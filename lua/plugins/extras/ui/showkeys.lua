@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nvzone/showkeys",
   dependencies = { "nvzone/volt" },

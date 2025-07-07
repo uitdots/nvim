@@ -1,7 +1,7 @@
 local autocmd = vim.api.nvim_create_autocmd
-local ai_suggestion_enabled = require("uitvim").options.ai_suggestion_enabled
+local ai_suggestion_enabled = require("uitvim").options.others.ai_suggestion_enabled
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "zbirenbaum/copilot.lua",
   cmd = "Copilot",

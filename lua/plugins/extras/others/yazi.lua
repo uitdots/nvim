@@ -1,7 +1,7 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.others.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mikavilpas/yazi.nvim",
   enabled = not filter_availabled_external or is_executable("yazi"),

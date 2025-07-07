@@ -4,5 +4,5 @@ vim.filetype.add({
   },
 })
 
----@type NvPluginSpec
+---@type LazySpec
 return {}

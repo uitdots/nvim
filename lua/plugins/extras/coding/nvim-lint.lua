@@ -1,6 +1,6 @@
 local is_executable = require("utils.executable").is_executable
 local debounce = require("utils.helpers").debounce
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.others.filter_availabled_external
 
 local function filter_avaiable()
   local lint = require("lint")
@@ -16,7 +16,7 @@ local function filter_avaiable()
   end
 end
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mfussenegger/nvim-lint",
   enabled = true,

@@ -1,4 +1,4 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.others.
 local is_executable = require("utils.executable").is_executable
 local inlay_hint = require("uitvim").options.inlay_hint
 
@@ -20,7 +20,7 @@ if inlay_hint.servers == true or inlay_hint.servers.roslyn or inlay_hint.server_
   }
 end
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "seblyng/roslyn.nvim",
   enabled = not filter_availabled_external or is_executable("dotnet"),

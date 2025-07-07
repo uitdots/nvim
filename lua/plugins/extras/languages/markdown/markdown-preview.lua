@@ -1,6 +1,6 @@
 local ft = require("utils.filetypes").markdown
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "iamcco/markdown-preview.nvim",
   keys = {

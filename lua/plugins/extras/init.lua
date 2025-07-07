@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     import = "plugins.extras.ai",

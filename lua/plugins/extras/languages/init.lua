@@ -1,10 +1,10 @@
 local is_windows = require("utils.os").is_windows
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     import = "plugins.extras.languages.ansible",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.assembly",
@@ -144,7 +144,7 @@ return {
   },
   {
     import = "plugins.extras.languages.terraform",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.toml",

@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "max397574/better-escape.nvim",
   event = "InsertEnter",

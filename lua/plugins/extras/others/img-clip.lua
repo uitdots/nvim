@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "HakonHarnes/img-clip.nvim",
   event = "VeryLazy",

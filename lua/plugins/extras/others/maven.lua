@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "eatgrass/maven.nvim",
   optional = true,

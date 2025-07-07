@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "Davidyz/VectorCode",
   enabled = false,

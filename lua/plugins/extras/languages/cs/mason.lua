@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mason-org/mason.nvim",
   ---@module 'mason'

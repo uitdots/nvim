@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "cappyzawa/telescope-terraform.nvim",
   specs = {

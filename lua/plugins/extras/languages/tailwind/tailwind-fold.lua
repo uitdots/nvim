@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "razak17/tailwind-fold.nvim",
   enabled = true,

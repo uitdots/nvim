@@ -1,6 +1,6 @@
 local map = vim.keymap.set
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "b0o/nvim-tree-preview.lua",
   specs = {

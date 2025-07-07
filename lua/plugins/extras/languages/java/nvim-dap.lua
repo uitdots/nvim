@@ -1,6 +1,6 @@
 local get_executable = require("utils.executable").get_executable
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mfussenegger/nvim-dap",
   specs = {

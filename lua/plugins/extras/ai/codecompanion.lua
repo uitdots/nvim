@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "olimorris/codecompanion.nvim",
   cmd = {

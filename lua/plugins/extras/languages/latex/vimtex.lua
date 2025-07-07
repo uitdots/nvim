@@ -1,6 +1,6 @@
 local is_executable = require("utils.executable").is_executable
 ---https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/lang/tex.lua
----@type NvPluginSpec
+---@type LazySpec
 return {
   "lervag/vimtex",
   lazy = false,

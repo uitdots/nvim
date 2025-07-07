@@ -3,7 +3,7 @@
 local lspconfig = require("configs.lsp.lspconfig")
 local is_executable = require("utils.executable").is_executable
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "pmizio/typescript-tools.nvim",
   enabled = false,

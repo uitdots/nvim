@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "kmonad/kmonad-vim",
   enabled = true,

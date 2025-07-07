@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 -- NOTE: For generating Lorem
 return {
   "derektata/lorem.nvim",

@@ -1,7 +1,7 @@
 local is_executable = require("utils.executable").is_executable_cache
-local border_enabled = require("uitvim").options.border_enabled
+local border_enabled = require("uitvim").options.ui.border_enabled
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "ravitemer/mcphub.nvim",
   cond = is_executable("npm"),

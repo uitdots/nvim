@@ -1,6 +1,6 @@
 -- NOTE: Remove this later if using snacks
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "debugloop/telescope-undo.nvim",
   enabled = false,

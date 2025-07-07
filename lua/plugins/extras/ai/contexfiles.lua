@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 ---NOTE: This plugin doesn't work for /context :v?
 return {
   "banjo/contextfiles.nvim",

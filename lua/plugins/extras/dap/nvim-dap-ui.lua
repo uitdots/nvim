@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "rcarriga/nvim-dap-ui",
   enabled = true,

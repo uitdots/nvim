@@ -1,7 +1,7 @@
 local is_executable = require("utils.executable").is_executable
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.others.filter_availabled_external
 local lspconfig = require("configs.lsp.lspconfig")
-local lsps = require("uitvim").lsps
+local lsps = require("uitvim").lsp.force
 
 ---@param server_name string
 local function filter_executable(server_name)
@@ -20,7 +20,7 @@ local function setup_custom_lsps()
   end
 end
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "neovim/nvim-lspconfig",
   event = {

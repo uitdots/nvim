@@ -1,6 +1,6 @@
 -- FIXME: What the deps hell
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "theHamsta/nvim-dap-virtual-text",
   enabled = true,

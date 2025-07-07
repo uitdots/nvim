@@ -1,6 +1,6 @@
 local lazy_load_on_fts = require("utils.lazy").lazy_load_on_fts
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "qvalentin/helm-ls.nvim",
   lazy = false,

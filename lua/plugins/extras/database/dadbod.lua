@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "kristijanhusak/vim-dadbod-ui",
   cmd = {

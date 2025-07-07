@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   cmd = {

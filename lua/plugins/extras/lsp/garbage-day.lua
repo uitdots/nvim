@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "Zeioth/garbage-day.nvim",
   config = true,

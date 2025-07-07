@@ -1,4 +1,4 @@
-local filter_availabled_external = require("uitvim").options.filter_availabled_external
+local filter_availabled_external = require("uitvim").options.others.filter_availabled_external
 
 ---@param opts conform.setupOpts
 local function filter_available(opts)
@@ -12,7 +12,7 @@ local function filter_available(opts)
   end
 end
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "stevearc/conform.nvim",
   event = {
@@ -48,10 +48,10 @@ return {
     },
     format_after_save = function(bufnr) -- Async format
       -- Disable with a global or buffer-local variable
-      if not vim.g.autoformat_enabled or vim.b[bufnr].autoformat_enabled == false then
+      if not vim.g.auto_format_enabled or vim.b[bufnr].auto_format_enabled == false then
         return
       end
-      -- Disable autoformat for files in a certain path
+      -- Disable auto_format for files in a certain path
       local bufname = vim.api.nvim_buf_get_name(bufnr)
       if bufname:match("/node_modules/") then
         return

@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "kevinhwang91/nvim-ufo",
   event = {

@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "lewis6991/gitsigns.nvim",
   keys = {

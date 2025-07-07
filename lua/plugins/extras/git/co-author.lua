@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "2kabhishek/co-author.nvim",
   cmd = {

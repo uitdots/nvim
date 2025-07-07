@@ -7,7 +7,7 @@ local lspconfig = require("configs.lsp.lspconfig")
 local lsp_utils = require("utils.lsp")
 local map = vim.keymap.set
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mfussenegger/nvim-jdtls",
   ft = "java",

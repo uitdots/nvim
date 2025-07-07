@@ -2,7 +2,7 @@
 local is_windows = require("utils.os").is_windows
 local get_executable = require("utils.executable").get_executable
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     "mfussenegger/nvim-dap-python",

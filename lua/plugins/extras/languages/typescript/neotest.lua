@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nvim-neotest/neotest",
   ---@type PluginsOpts.NeotestOpts

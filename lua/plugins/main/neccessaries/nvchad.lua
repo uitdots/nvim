@@ -7,7 +7,7 @@ local ft_no_navigate = {
   "avante",
 }
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   {
     "NvChad/NvChad",

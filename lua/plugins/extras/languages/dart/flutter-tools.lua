@@ -3,7 +3,7 @@ local is_executable = require("utils.executable").is_executable
 local is_windows = require("utils.os").is_windows
 local home = require("utils.os").home
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "akinsho/flutter-tools.nvim",
   enabled = true,

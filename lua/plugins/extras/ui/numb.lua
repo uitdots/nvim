@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nacro90/numb.nvim",
   event = "CmdlineEnter",

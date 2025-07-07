@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "igorlfs/nvim-dap-view",
   enabled = false,

@@ -1,6 +1,6 @@
 local auto_session = false
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "rmagatti/auto-session",
   lazy = not auto_session,

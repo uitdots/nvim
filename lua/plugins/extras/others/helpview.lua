@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "OXY2DEV/helpview.nvim",
   event = "VeryLazy", -- Using ft = "help" will not start it on the first time

@@ -1,6 +1,6 @@
 ---@module 'blink-cmp'
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "Kaiser-Yang/blink-cmp-git",
   enabled = true,

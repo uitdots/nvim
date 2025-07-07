@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "stevearc/conform.nvim",
   ---@module 'conform'

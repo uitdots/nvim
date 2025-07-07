@@ -1,7 +1,7 @@
 ---NOTE: Use snacks already
 
 ---@module "ibl"
----@type NvPluginSpec
+---@type LazySpec
 return {
   "lukas-reineke/indent-blankline.nvim",
   enabled = false,

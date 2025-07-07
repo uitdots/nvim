@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "Wansmer/symbol-usage.nvim",
   event = "LspAttach",

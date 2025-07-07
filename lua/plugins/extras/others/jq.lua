@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "cenk1cenk2/jq.nvim",
   dependencies = {

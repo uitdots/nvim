@@ -1,6 +1,6 @@
 local is_windows = require("utils.os").is_windows
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "lambdalisue/vim-suda",
   cond = not is_windows,

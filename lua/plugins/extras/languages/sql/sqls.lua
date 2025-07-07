@@ -1,6 +1,6 @@
 local is_executable = require("utils.executable").is_executable
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "nanotee/sqls.nvim",
   ft = "sql",

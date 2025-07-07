@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "stevearc/aerial.nvim",
   cmd = {

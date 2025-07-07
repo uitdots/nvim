@@ -3,7 +3,7 @@ local lspconfig = require("configs.lsp.lspconfig")
 
 table.insert(uitvim.no_setup_lsps, "rust-analyzer")
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "mrcjkb/rustaceanvim",
   version = "^6",

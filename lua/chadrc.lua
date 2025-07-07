@@ -1,12 +1,13 @@
 local uitvim_options = require("uitvim").options
 local nvdash_config = require("configs.ui.nvdash")
 
+---@module 'ui'
 ---@type ChadrcConfig
 local M = {}
 
 M.ui = {
   telescope = {
-    style = uitvim_options.border_enabled and "bordered" or "borderless",
+    style = uitvim_options.ui.border_enabled and "bordered" or "borderless",
   },
   cmp = {
     lspkind_text = true,

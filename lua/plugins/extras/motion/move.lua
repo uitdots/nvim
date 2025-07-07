@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "fedepujol/move.nvim",
   cmd = {

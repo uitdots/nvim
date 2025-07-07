@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "ANGkeith/telescope-terraform-doc.nvim",
   specs = {

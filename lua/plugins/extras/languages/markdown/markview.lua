@@ -7,7 +7,7 @@ local fts = vim.list_extend({
   "yaml",
 }, require("utils.filetypes").markdown)
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "OXY2DEV/markview.nvim",
   lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading

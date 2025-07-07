@@ -1,5 +1,5 @@
 -- I don't know how to config this :v Maybe we should manully custom our dap
----@type NvPluginSpec
+---@type LazySpec
 return {
   "jay-babu/mason-nvim-dap.nvim",
   enabled = true,

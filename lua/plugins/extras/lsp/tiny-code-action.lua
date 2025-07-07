@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 return {
   "rachartier/tiny-code-action.nvim",
   opts = {

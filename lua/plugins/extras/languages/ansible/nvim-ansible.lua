@@ -1,4 +1,4 @@
----@type NvPluginSpec
+---@type LazySpec
 ---NOTE: Don't early load this. Use syntax highlight, ft detection from ansible-vim already
 return {
   "mfussenegger/nvim-ansible",

@@ -1,6 +1,6 @@
 -- NOTE: Maybe remove this plugin because we dont need it anymore
 
----@type NvPluginSpec
+---@type LazySpec
 return {
   "antosha417/nvim-lsp-file-operations",
   dependencies = {
