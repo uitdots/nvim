@@ -2,10 +2,8 @@ local dap = require("dap")
 local dap_utils = require("dap.utils")
 local pwa_node = require("configs.dap.adapters.pwa-node")
 
-local M = {}
-
 ---@type dap.Configuration[]
-M.configurations = {
+local configurations = {
   {
     type = "pwa-node",
     request = "launch",
@@ -22,11 +20,9 @@ M.configurations = {
   },
 }
 
-function M.__call()
+return function()
   local status = pwa_node()
   if status then
-    dap.configurations.javascript = M.configurations
+    dap.configurations.javascript = configurations
   end
 end
-
-return M

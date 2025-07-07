@@ -2,15 +2,13 @@ local dap = require("dap")
 local dap_chrome = require("configs.dap.adapters.chrome")
 local dap_firefox = require("configs.dap.adapters.firefox")
 
-local M = {}
-
 ---@alias browser
 ---| '"chrome"'
 ---| '"firefox"'
 ---@type table<browser, dap.Configuration[]>
-M.configurations = {}
+local configurations = {}
 
-M.configurations.chrome = {
+configurations.chrome = {
   {
     type = "chrome",
     request = "attach",
@@ -24,7 +22,7 @@ M.configurations.chrome = {
   },
 }
 
-M.configurations.firefox = {
+configurations.firefox = {
   {
     name = "React Firefox",
     type = "firefox",
@@ -36,18 +34,18 @@ M.configurations.firefox = {
   },
 }
 
-function M.__call()
+return function()
   local chrome_status = dap_chrome()
   local firefox_status = dap_firefox()
 
   local configs = {}
 
   if chrome_status then
-    vim.list_extend(configs, M.configurations.chrome)
+    vim.list_extend(configs, configurations.chrome)
   end
 
   if firefox_status then
-    vim.list_extend(configs, M.configurations.firefox)
+    vim.list_extend(configs, configurations.firefox)
   end
 
   if #configs > 0 then
@@ -55,5 +53,3 @@ function M.__call()
     dap.configurations.typescriptreact = configs
   end
 end
-
-return M

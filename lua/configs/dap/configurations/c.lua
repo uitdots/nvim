@@ -3,10 +3,8 @@ local cppdbg = require("configs.dap.adapters.cppdbg")
 local is_executable = require("utils.executable").is_executable_cache
 local dap_utils = require("configs.dap.utils")
 
-local M = {}
-
 ---@type dap.Configuration[]
-M.configurations = {
+local configurations = {
   {
     name = "Launch file",
     type = "cppdbg",
@@ -27,15 +25,13 @@ M.configurations = {
   },
 }
 
-function M.__call()
+return function()
   if not is_executable("gdb") then
     return
   end
   local status = cppdbg()
   if status then
-    dap.configurations.c = M.configurations
-    dap.configurations.cpp = M.configurations
+    dap.configurations.c = configurations
+    dap.configurations.cpp = configurations
   end
 end
-
-return M
