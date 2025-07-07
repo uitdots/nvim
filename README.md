@@ -66,8 +66,8 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 > The higher order, the well configured
 
 - Author using:
-  - `javascript`, `typescript` (`nodejs`, `deno`)
-    > `deno`: Install from mason or external yourself
+  - `javascript`, `typescript` _(nodejs, deno)_
+    > deno: Install from mason or external yourself
   - `go`
   - `python`
   - `sql` _(postgresql)_
@@ -93,18 +93,18 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
     > mssql: Haven't test
   - `lua`
     > Just for configuring neovim :((
-- Configuring languages:
-  - `toml`
-  - `yaml`
-  - `xml`
-  - `tmux`
-  - `sshconfig`
 - Ops:
   - `groovy` + `jenkinsfile`
   - `terraform`
   - `helm` _(kubernetes)_
   - `nginx`
   - `ansible`
+- Configuring languages:
+  - `toml`
+  - `yaml`
+  - `xml`
+  - `config` _(sshconfig, tmux)_
+  - `kmonad`
 - Writing:
   - `markdown`
   - `latex`
