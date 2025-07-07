@@ -7,7 +7,7 @@ return {
     formatters_by_ft = {
       ansible = {
         "prettier",
-        "ansible_lint",
+        "ansible-lint",
       },
     },
   },
