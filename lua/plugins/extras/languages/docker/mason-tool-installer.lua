@@ -4,7 +4,7 @@ return {
   opts = {
     ensure_installed = {
       "docker-compose-language-service",
-      "docker-language-service",
+      "dockerfile-language-server",
       "hadolint",
     },
   },

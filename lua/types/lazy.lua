@@ -12,3 +12,7 @@
 
 ---@class LazyPluginSpecHandlers
 ---@field event? _LazyEvent[]|_LazyEvent|LazyEventSpec[]|fun(self:LazyPlugin, event:_LazyEvent[]):_LazyEvent[]
+
+---Override from this https://github.com/folke/lazy.nvim/blob/main/lua/lazy/core/handler/keys.lua
+---@class LazyKeys
+---@field silent boolean?

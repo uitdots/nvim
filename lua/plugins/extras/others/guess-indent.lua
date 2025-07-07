@@ -15,5 +15,7 @@ return {
       silent = true,
     },
   },
-  config = true,
+  opts = {
+    auto_cmd = false,
+  },
 }

@@ -14,55 +14,26 @@ return {
   end,
   keys = {
     {
-      "<leader>D",
+      "<leader>qd",
       function()
         if vim.g.nvdash_displayed then
           require("nvchad.tabufline").close_buffer(vim.g.nvdash_buf)
         end
         vim.cmd("DBUIToggle")
       end,
-      desc = "General | Toggle DBUI",
+      desc = "Query | Toggle DBUI",
       silent = true,
     },
   },
   dependencies = {
-    {
-      "tpope/vim-dadbod",
-    },
+    "tpope/vim-dadbod",
     {
       "kristijanhusak/vim-dadbod-completion",
-      ft = {
-        "sql",
-        "mysql",
-        "plsql",
-      },
+      optional = true,
     },
     {
       "saghen/blink.cmp",
       optional = true,
-    },
-  },
-  specs = {
-    {
-      "saghen/blink.cmp",
-      ---@module 'blink.cmp'
-      ---@type blink.cmp.Config
-      opts = {
-        sources = {
-          per_filetype = {
-            sql = {
-              inherit_defaults = true,
-              "dadbod",
-            },
-          },
-          providers = {
-            dadbod = {
-              name = "Dadbod",
-              module = "vim_dadbod_completion.blink",
-            },
-          },
-        },
-      },
     },
   },
 }

@@ -1,11 +1,6 @@
 ---@type LazySpec
 return {
   "cenk1cenk2/jq.nvim",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "MunifTanjim/nui.nvim",
-    "grapp-dev/nui-components.nvim",
-  },
   keys = {
     {
       "<leader>qq",
@@ -14,7 +9,7 @@ return {
           toggle = true,
         })
       end,
-      desc = "Query API | Query",
+      desc = "Query | Query",
       ft = {
         "bigfile", -- Bruh
         "helm",
@@ -30,13 +25,11 @@ return {
   opts = {
     {
       toggle = true,
-      commands = {
-        {
-          command = "jq",
-          filetype = "json",
-          arguments = "-r",
-        },
-      },
     },
+  },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "grapp-dev/nui-components.nvim",
   },
 }

@@ -33,6 +33,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.mason",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.motion",
     enabled = true,
   },

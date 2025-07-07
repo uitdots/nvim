@@ -199,6 +199,7 @@ lua
 │   │   │   ├── xml
 │   │   │   └── yaml
 │   │   ├── lsp             Enhance LSP usage
+│   │   ├── mason           Mason package manager
 │   │   ├── motion          Extend neovim motions
 │   │   ├── nvim-treesitter Treesitter extensions
 │   │   ├── others          Others
@@ -210,6 +211,9 @@ lua
 ├── types                   Custom types for lua annotating
 └── utils                   Utilities, no rewriting again and again
 ```
+
+> [!NOTE]
+> Extra plugins in [lua/plugins/extras](lua/plugins/extras) are (may) safely disabled. You should disable by group in [lua/plugins/extras/init.lua](lua/plugins/extras/init.lua) _(except others)_
 
 ### Notes
 
