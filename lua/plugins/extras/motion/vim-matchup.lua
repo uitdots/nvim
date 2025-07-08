@@ -9,7 +9,7 @@ return {
     vim.g.matchup_matchparen_offscreen = {
       method = "", ---@type "status" | "popup" | "status_manual" | "scrolloff" | ""
     }
-    vim.g.matchup_matchparen_enabled = 1 ---@type 0 | 1 Toggle highlight
+    vim.g.matchup_matchparen_enabled = 0 ---@type 0 | 1 Toggle highlight
   end,
   dependencies = "nvim-treesitter/nvim-treesitter",
   specs = {

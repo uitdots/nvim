@@ -41,13 +41,7 @@ return {
           })
         end
       end,
-      desc = "AI | Toggle Copilot",
-      silent = true,
-    },
-    {
-      "<leader>aT",
-      "<cmd>Copilot toggle<cr>",
-      desc = "AI | Toggle Copilot Current Buf",
+      desc = "AI | Toggle Completion (Copilot)",
       silent = true,
     },
     {

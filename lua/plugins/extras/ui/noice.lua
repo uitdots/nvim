@@ -3,10 +3,9 @@ return {
   "folke/noice.nvim",
   enabled = true,
   event = "VeryLazy",
-  dependencies = {
-    "folke/snacks.nvim",
-    "MunifTanjim/nui.nvim",
-  },
+  ---@module 'noice'
+  ---@type NoiceConfig
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
     cmdline = {
       enabled = true,
@@ -34,6 +33,13 @@ return {
       long_message_to_split = false,
       inc_rename = false,
       lsp_doc_border = vim.o.winborder, -- May remove this in the future if noice use vim.o.winborder by default
+    },
+  },
+  dependencies = {
+    "MunifTanjim/nui.nvim",
+    {
+      "folke/snacks.nvim",
+      optional = true,
     },
   },
 }

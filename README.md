@@ -143,7 +143,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 > [!WARNING]
 > We all know how to do that
 >
-> You shouldn't entering nvim for now. Use another edit to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
+> You shouldn't entering nvim for now. Use another editor to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
 
 ### Structure
 
@@ -241,30 +241,36 @@ lua
 
 ### Keymaps
 
-There are some keymaps in **Normal Mode** you should know in this config (and native neovim keymaps)
+There are some keymaps you should know in this config (and native neovim keymaps)
 
 > [!NOTE]
 >
 > - `leader` is <kbd>Space</kbd>
 > - Buffer and tab are different in vim
 > - You should learn how to use vim register
+> - Neovim's LSP keymaps styles with `gr*`. When having LSP attached, you can go to definition with `<C-]>`
 
-| Keymap             | Descriptions                              |
-| ------------------ | ----------------------------------------- |
-| `<leader><leader>` | Find Files                                |
-| `<leader>e`        | Toggle File Tree                          |
-| `<leader>Tab`      | Open File Tree and Focus Current File     |
-| `<leader>c`        | Close Buffer                              |
-| `<leader>y`        | Yank all into System Clipboard            |
-| `H`                | Navigate Left Buffer in NvChad Tabufline  |
-| `L`                | Navigate Right Buffer in NvChad Tabufline |
-| `Left`             | Go to Previous Tab                        |
-| `Right`            | Go to Next Tab                            |
-| `Up`               | New Tab                                   |
-| `Down`             | Close Tab                                 |
-| `<C-s>`            | Save Buffer                               |
-| `ZZ`               | Write Quit                                |
-| `ZQ`               | Quit                                      |
+| Mode | Keymap             | Descriptions                              |
+| ---- | ------------------ | ----------------------------------------- |
+| `n`  | `<leader><leader>` | Find Files                                |
+| `n`  | `<leader>e`        | Toggle File Tree                          |
+| `n`  | `<leader>Tab`      | Open File Tree and Focus Current File     |
+| `n`  | `<leader>c`        | Close Buffer                              |
+| `n`  | `<leader>y`        | Yank all into System Clipboard            |
+| `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline  |
+| `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline |
+| `n`  | `Left`             | Go to Previous Tab                        |
+| `n`  | `Right`            | Go to Next Tab                            |
+| `n`  | `Up`               | New Tab                                   |
+| `n`  | `Down`             | Close Tab                                 |
+| `n`  | `<C-s>`            | Save Buffer                               |
+| `n`  | `ZZ`               | Write Quit                                |
+| `n`  | `ZQ`               | Quit                                      |
+| `i`  | `<C-k>`            | LSP Show Signature                        |
+| `n`  | `<leader>at`       | Toggle AI Completion Suggestion           |
+
+> [!WARNING]
+> With completion behavior, see [questions](#questions) below
 
 ### Should read
 

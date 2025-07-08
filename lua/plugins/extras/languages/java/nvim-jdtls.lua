@@ -12,7 +12,9 @@ return {
   "mfussenegger/nvim-jdtls",
   ft = "java",
   cond = is_executable("jdtls"),
-  opts = function(_, opts) ---@cast opts PluginsOpts.NvimJdtlsOpts?
+  ---@param opts PluginsOpts.NvimJdtlsOpts?
+  ---@return PluginsOpts.NvimJdtlsOpts
+  opts = function(_, opts)
     opts = opts or {}
     opts.lspconfig = opts.lspconfig or {}
     opts.lspconfig.init_options = opts.lspconfig.init_options or {}

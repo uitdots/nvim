@@ -6,6 +6,6 @@ return {
   event = "VeryLazy",
   opts = {
     hide_cursor = false,
-    easing = "linear", ---@type 'linear'| 'quadratic'| 'cubic'| 'quartic'| 'quintic'| 'circular'| 'sine'
+    easing = "linear", ---@type "linear" | "quadratic" | "cubic" | "quartic" | "quintic" | "circular" | "sine"
   },
 }
