@@ -6,7 +6,7 @@ local lsps = require("preferences").lsp.force
 ---@param server_name string
 local function filter_executable(server_name)
   local success, result = pcall(function()
-    is_executable(require("lspconfig.configs." .. server_name).default_config.cmd[1])
+    is_executable(vim.lsp.config[server_name].cmd[1])
   end)
   return not success or result
 end

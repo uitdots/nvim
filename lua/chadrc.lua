@@ -27,7 +27,7 @@ M.ui = {
       "%=",
       -- "lsp_msg", -- Yeah I use snacks already?
       "%=",
-      "codecompanion",
+      -- "codecompanion",
       "macro_recording",
       "command",
       "diagnostics",

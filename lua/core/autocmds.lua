@@ -30,8 +30,9 @@ local exclude_last_cur_pos_fts = {
 }
 
 autocmd("BufRead", {
-  callback = function()
-    if exclude_last_cur_pos_fts[vim.bo.filetype] then
+  callback = function(args)
+    local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
+    if exclude_last_cur_pos_fts[buftype] then
       return
     end
     if fn.line("'\"") > 1 and fn.line("'\"") <= fn.line("$") then
@@ -136,19 +137,19 @@ vim.api.nvim_create_autocmd("FileType", {
     "startuptime",
     "tsplayground",
   },
-  callback = function(event)
-    vim.bo[event.buf].buflisted = false
-    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = event.buf, silent = true })
+  callback = function(args)
+    vim.bo[args.buf].buflisted = false
+    vim.keymap.set("n", "q", "<cmd>close<cr>", { buffer = args.buf, silent = true })
   end,
   group = general,
 })
 
 autocmd({ "BufWritePre" }, {
-  callback = function(event)
-    if event.match:match("^%w%w+:[\\/][\\/]") then
+  callback = function(args)
+    if args.match:match("^%w%w+:[\\/][\\/]") then
       return
     end
-    local file = vim.uv.fs_realpath(event.match) or event.match
+    local file = vim.uv.fs_realpath(args.match) or args.match
     fn.mkdir(vim.fn.fnamemodify(file, ":p:h"), "p")
   end,
   group = general,

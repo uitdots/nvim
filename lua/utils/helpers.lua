@@ -2,9 +2,10 @@ local M = {}
 
 ---Debounce from LazyVim
 ---https://www.lazyvim.org/plugins/linting#nvim-lint
----@async ya is it async?
----@param fn function
+---@generic T : function
+---@param fn T
 ---@param ms number
+---@return T
 function M.debounce(fn, ms)
   local timer = vim.uv.new_timer()
   return function(...)

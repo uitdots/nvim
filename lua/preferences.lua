@@ -4,7 +4,7 @@
 local M = {
   lsp = {
     force = {
-      -- "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
+      "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
     },
     exclude = {
       "ts_ls",

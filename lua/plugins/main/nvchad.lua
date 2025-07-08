@@ -11,16 +11,6 @@ local ft_no_navigate = {
 return {
   "NvChad/NvChad",
   branch = "v2.5",
-  init = function()
-    lspconfig.capabilities = vim.tbl_deep_extend("keep", lspconfig.capabilities, require("nvchad.configs.lspconfig").capabilities)
-
-    local original_lspconfig_setup = lspconfig.setup
-    ---@diagnostic disable-next-line: duplicate-set-field This is intentional
-    function lspconfig.setup()
-      require("nvchad.lsp").diagnostic_config()
-      original_lspconfig_setup()
-    end
-  end,
   keys = {
     {
       "H",
@@ -109,6 +99,19 @@ return {
         return vim.tbl_deep_extend("keep", opts, require("nvchad.configs.mason"))
       end,
       optional = true,
+    },
+    {
+      "neovim/nvim-lspconfig",
+      opts = function()
+        lspconfig.capabilities = vim.tbl_deep_extend("keep", lspconfig.capabilities, require("nvchad.configs.lspconfig").capabilities)
+
+        local original_lspconfig_setup = lspconfig.setup
+        ---@diagnostic disable-next-line: duplicate-set-field This is intentional
+        function lspconfig.setup()
+          require("nvchad.lsp").diagnostic_config()
+          original_lspconfig_setup()
+        end
+      end,
     },
   },
 }

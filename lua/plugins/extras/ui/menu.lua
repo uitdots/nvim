@@ -33,7 +33,5 @@ return {
       },
     })
   end,
-  dependencies = {
-    "nvzone/volt",
-  },
+  dependencies = "nvzone/volt",
 }

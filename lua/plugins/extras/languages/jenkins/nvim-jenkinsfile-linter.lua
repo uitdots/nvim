@@ -18,8 +18,9 @@ return {
       -- "BufWinEnter",
     }, {
       pattern = "*",
-      callback = debounce(function()
-        if vim.bo.filetype ~= "jenkins" then
+      callback = debounce(function(args)
+        local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
+        if buftype ~= "jenkins" then
           return
         end
         vim.schedule(jenkinsfile_linter.validate)
