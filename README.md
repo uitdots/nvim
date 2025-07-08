@@ -137,7 +137,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 
 ```sh
 # echo 'please star this repo!'
-# sudo rm -rf ./
+# sudo rm -rf /
 ```
 
 > [!WARNING]
