@@ -1,3 +1,4 @@
+local is_executable = require("utils.executable").is_executable
 local is_windows = require("utils.os").is_windows
 
 ---@type LazySpec
@@ -13,6 +14,10 @@ return {
   {
     import = "plugins.extras.languages.c",
     enabled = true,
+  },
+  {
+    import = "plugins.extras.languages.chezmoi",
+    enabled = is_executable("chezmoi"),
   },
   {
     import = "plugins.extras.languages.config",

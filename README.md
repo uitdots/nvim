@@ -179,6 +179,7 @@ lua
 │   │   │   ├── ansible
 │   │   │   ├── assembly
 │   │   │   ├── c
+│   │   │   ├── chezmoi
 │   │   │   ├── config
 │   │   │   ├── cs
 │   │   │   ├── css
@@ -249,26 +250,29 @@ There are some keymaps you should know in this config (and native neovim keymaps
 > - `leader` is <kbd>Space</kbd>
 > - Buffer and tab are different in vim
 > - You should learn how to use vim register
-> - Neovim's LSP keymaps styles with `gr*`. When having LSP attached, you can go to definition with `<C-]>`
+> - Neovim's LSP keymaps styles: <https://neovim.io/doc/user/lsp.html#lsp-defaults>
 
-| Mode | Keymap             | Descriptions                              |
-| ---- | ------------------ | ----------------------------------------- |
-| `n`  | `<leader><leader>` | Find Files                                |
-| `n`  | `<leader>e`        | Toggle File Tree                          |
-| `n`  | `<leader>Tab`      | Open File Tree and Focus Current File     |
-| `n`  | `<leader>c`        | Close Buffer                              |
-| `n`  | `<leader>y`        | Yank all into System Clipboard            |
-| `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline  |
-| `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline |
-| `n`  | `Left`             | Go to Previous Tab                        |
-| `n`  | `Right`            | Go to Next Tab                            |
-| `n`  | `Up`               | New Tab                                   |
-| `n`  | `Down`             | Close Tab                                 |
-| `n`  | `<C-s>`            | Save Buffer                               |
-| `n`  | `ZZ`               | Write Quit                                |
-| `n`  | `ZQ`               | Quit                                      |
-| `i`  | `<C-k>`            | LSP Show Signature                        |
-| `n`  | `<leader>at`       | Toggle AI Completion Suggestion           |
+| Mode | Keymap             | Descriptions                                                                 |
+| ---- | ------------------ | ---------------------------------------------------------------------------- |
+| `n`  | `<leader><leader>` | Find Files                                                                   |
+| `n`  | `<leader>e`        | Toggle File Tree                                                             |
+| `n`  | `<leader>Tab`      | Open File Tree and Focus Current File                                        |
+| `n`  | `<leader>c`        | Close Buffer                                                                 |
+| `n`  | `<leader>y`        | Yank all into System Clipboard                                               |
+| `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline                                     |
+| `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline                                    |
+| `n`  | `Left`             | Go to Previous Tab                                                           |
+| `n`  | `Right`            | Go to Next Tab                                                               |
+| `n`  | `Up`               | New Tab                                                                      |
+| `n`  | `Down`             | Close Tab                                                                    |
+| `n`  | `<C-s>`            | Save Buffer                                                                  |
+| `n`  | `ZZ`               | Write Quit                                                                   |
+| `n`  | `ZQ`               | Quit                                                                         |
+| `i`  | `<C-k>`            | LSP Show Signature                                                           |
+| `n`  | `<C-w><C-d>`       | LSP Float Diagnostic                                                         |
+| `n`  | `K`                | LSP Hover Documentation                                                      |
+| `n`  | `<leader>at`       | Toggle AI Completion Suggestion                                              |
+| `n`  | `<leader>oH`       | Uncloak The File [`laytan/cloak.nvim`](https://github.com/laytan/cloak.nvim) |
 
 > [!WARNING]
 > With completion behavior, see [questions](#questions) below
