@@ -187,6 +187,7 @@ lua
 │   │   │   ├── env
 │   │   │   ├── git
 │   │   │   ├── github
+│   │   │   ├── gitlab
 │   │   │   ├── go
 │   │   │   ├── graphql
 │   │   │   ├── groovy
