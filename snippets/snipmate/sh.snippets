@@ -1,0 +1,20 @@
+snippet disable-shellcheck Disable shellcheck
+  # shellcheck disable=${0:SC1,SC2}
+
+snippet #! Shebang env sh
+	#!/usr/bin/env sh
+
+snippet s#! Shebang env sh and safe
+	#!/usr/bin/env sh
+	set -eu
+
+snippet safe
+	set -eu
+
+snippet bash Shebang env bash
+	#!/usr/bin/env bash
+
+snippet sbash Shang env bash and safe
+	#!/usr/bin/env bash
+	set -euo pipefail
+	IFS=$'\n\t'
