@@ -7,5 +7,5 @@ local home = require("utils.os").home
 -- To disable, remove "~./wakatime.cfg".
 return {
   "wakatime/vim-wakatime",
-  event = vim.fn.filereadable(home .. "/.wakatime.cfg") == 1 and "VeryLazy" or nil,
+  event = vim.fn.filereadable(string.format("%s/.wakatime.cfg", home)) == 1 and "VeryLazy" or nil,
 }

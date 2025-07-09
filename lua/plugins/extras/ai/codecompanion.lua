@@ -90,6 +90,7 @@ return {
   specs = {
     {
       "OXY2DEV/markview.nvim",
+      optional = true,
       opts = function(_, opts)
         autocmd("FileType", {
           pattern = "codecompanion",
@@ -105,6 +106,7 @@ return {
     },
     {
       "HakonHarnes/img-clip.nvim",
+      optional = true,
       opts = {
         filetypes = {
           codecompanion = {
