@@ -20,6 +20,12 @@ M.current_bufnr = nil
 M.status = nil
 
 function M.set_status()
+  local bufnr = vim.api.nvim_get_current_buf()
+  if bufnr == M.current_bufnr then
+    return
+  end
+  M.current_bufnr = bufnr
+
   local venv = get_venv("CONDA_DEFAULT_ENV") or get_venv("VIRTUAL_ENV")
   if venv == nil then
     M.status = nil
@@ -28,17 +34,11 @@ function M.set_status()
   M.status = " %#St_gitIcons# "
 end
 
+---@return string?
 return function()
   if vim.bo.filetype ~= "python" then
-    return ""
+    return
   end
-
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  if bufnr ~= M.current_bufnr then
-    M.current_bufnr = bufnr
-    M.set_status()
-  end
-
+  M.set_status()
   return M.status
 end

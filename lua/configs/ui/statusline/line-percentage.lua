@@ -1,12 +1,14 @@
 local M = {}
 
-M.status = nil
+---@private
+---@type string?
+M.state = nil
 
 local function gen_block(icon, txt, sep_l_hlgroup, iconHl_group, txt_hl_group, sep_l, sep_end)
   return sep_l_hlgroup .. sep_l .. iconHl_group .. icon .. " " .. txt_hl_group .. " " .. txt .. sep_end
 end
 
-function M.set_status()
+local function set_state()
   local config = require("nvconfig").ui.statusline
   local theme = config.theme
 
@@ -45,20 +47,21 @@ function M.set_status()
   local sep_end = "%#St_sep_r#" .. separators["right"]
 
   if theme == "default" then
-    M.status = "%#St_Percent_sep#" .. sep_l .. "%#St_Percent_icon# %#St_Percent_text# %p %% "
+    M.state = "%#St_Percent_sep#" .. sep_l .. "%#St_Percent_icon# %#St_Percent_text# %p %% "
     return
   elseif theme == "vscode" or theme == "vscode_colored" then
-    M.status = "%#StText# %L"
+    M.state = "%#StText# %L"
     return
   end
 
-  M.status = gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#", sep_l, sep_end)
+  M.state = gen_block("", "%L", "%#St_Percent_sep#", "%#St_Percent_bg#", "%#St_Percent_txt#", sep_l, sep_end)
 end
 
+---@return string?
 return function()
-  if M.status == nil then
-    M.set_status()
+  if M.state == nil then
+    set_state()
   end
 
-  return M.status
+  return M.state
 end

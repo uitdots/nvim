@@ -6,55 +6,61 @@ M.current_bufnr = nil
 
 ---@private
 ---@type string?
-M.status = nil
+M.state = nil
 
----@type nil | false | any
+---@type boolean?
+M.ok = nil
+
+---@module 'conform'
 M.conform = nil
 
-function M.set_status()
-  if M.conform == false then
+---@return nil
+function M.set_state()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  if bufnr == M.current_bufnr then
     return
   end
-  local conform_ok, conform
-  if M.conform == nil then
-    conform_ok, conform = pcall(require, "conform")
-    if not conform_ok then
-      M.conform = false
-      return
-    end
-    M.conform = conform
-  else
-    conform = M.conform
-  end
+  M.current_bufnr = bufnr
 
-  local formatters = conform.list_formatters(0)
+  local formatters = M.conform.list_formatters(0)
+
   if #formatters == 0 then
-    M.status = nil
+    M.state = nil
     return
   end
 
   if vim.o.columns < 100 then
-    M.status = " %#St_gitIcons#  "
+    M.state = " %#St_gitIcons#  "
     return
   end
 
+  ---@param formatter conform.FormatterInfo
   local formatters_names = vim.tbl_map(function(formatter)
     return formatter.name
   end, formatters)
-
-  M.status = string.format(" %%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
+  M.state = string.format(" %%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
 end
 
+---@return string|nil
 return function()
-  if package.loaded["conform"] == nil then
+  if M.ok then
+    M.set_state()
+    return M.state
+  end
+
+  if M.ok == nil then
+    if package.loaded["conform"] == nil then
+      return
+    else
+      M.ok, M.conform = pcall(require, "conform")
+    end
+  end
+
+  if M.ok == false then
     return
   end
 
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  if bufnr ~= M.current_bufnr then
-    M.current_bufnr = bufnr
-    M.set_status()
-  end
-  return M.status
+  M.set_state()
+  return M.state
 end

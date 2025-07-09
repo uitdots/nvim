@@ -1,14 +1,3 @@
-local function debounce(fn, ms)
-  local timer = vim.uv.new_timer()
-  return function(...)
-    local argv = { ... }
-    timer:start(ms, 0, function()
-      timer:stop()
-      vim.schedule_wrap(fn)(unpack(argv))
-    end)
-  end
-end
-
 local M = {}
 
 ---@private
@@ -17,53 +6,40 @@ M.current_bufnr = nil
 
 ---@private
 ---@type string?
-M.status = nil
+M.state = nil
 
 ---@private
----@param bufnr number?
-function M.set_status(bufnr)
-  bufnr = bufnr or vim.api.nvim_get_current_buf()
+---@return nil
+function M.set_status()
+  local bufnr = vim.api.nvim_get_current_buf()
+
+  if bufnr == M.current_bufnr then
+    return
+  end
+  M.current_bufnr = bufnr
+
   local lsps = vim.lsp.get_clients({ bufnr = bufnr })
 
   if #lsps == 0 then
-    M.status = nil
+    M.state = nil
     return
   end
 
   if vim.o.columns < 100 then
-    M.status = " %#St_gitIcons# "
+    M.state = " %#St_gitIcons# "
     return
   end
 
+  ---@param client vim.lsp.Client
   local clients = vim.tbl_map(function(client)
     return client.name
   end, lsps)
 
-  M.status = string.format(" %%#St_gitIcons# %s ", table.concat(clients, ", "))
+  M.state = string.format(" %%#St_gitIcons# %s ", table.concat(clients, ", "))
 end
 
-function M.setup_autocmds()
-  vim.api.nvim_create_autocmd({ "LspAttach", "LspDetach" }, {
-    pattern = "*",
-    callback = function()
-      M.set_status()
-    end,
-    group = vim.api.nvim_create_augroup("LspStatusLineAttachDetach", {}),
-  })
-
-  vim.api.nvim_create_autocmd({ "VimResized" }, {
-    pattern = "*",
-    callback = debounce(M.set_status, 500),
-    group = vim.api.nvim_create_augroup("LspStatusLineVimResize", {}),
-  })
-end
-
+---@return string?
 return function()
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  if bufnr ~= M.current_bufnr then
-    M.set_status(bufnr)
-  end
-
-  return M.status
+  M.set_status()
+  return M.state
 end

@@ -6,6 +6,7 @@ local M = {}
 ---@type integer?
 M.current_bufnr = nil
 
+---@private
 M.fileformats = {
   unix = "",
   dos = "",
@@ -14,18 +15,15 @@ M.fileformats = {
 
 ---@private
 ---@type string
-M.status = nil
+M.state = nil
 
-function M.set_current_eol()
-  M.status = string.format(" %%#St_gitIcons# %s ", M.fileformats[vim.bo.fileformat])
-end
-
+---@return string?
 return function()
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
-    M.set_current_eol()
+    M.state = string.format(" %%#St_gitIcons# %s ", M.fileformats[vim.bo.fileformat])
   end
 
-  return M.status
+  return M.state
 end
