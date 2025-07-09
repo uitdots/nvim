@@ -1,9 +1,6 @@
 ---@type LazySpec
 return {
   "folke/ts-comments.nvim",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   config = true,
 }

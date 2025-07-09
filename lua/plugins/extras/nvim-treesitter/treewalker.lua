@@ -1,10 +1,7 @@
 ---@type LazySpec
 return {
   "aaronik/treewalker.nvim",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  cmd = "Treewalker",
   keys = {
     {
       "<M-S-k>",

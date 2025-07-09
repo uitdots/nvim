@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "monaqa/dial.nvim",
+  event = "VeryLazy",
   -- Seem that cannot config with lazynvim keymap
   init = function()
     vim.keymap.set("n", "<C-a>", function()

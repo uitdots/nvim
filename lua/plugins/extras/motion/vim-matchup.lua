@@ -1,10 +1,7 @@
 ---@type LazySpec
 return {
   "andymass/vim-matchup",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   init = function()
     vim.g.matchup_matchparen_offscreen = {
       method = "", ---@type "status" | "popup" | "status_manual" | "scrolloff" | ""

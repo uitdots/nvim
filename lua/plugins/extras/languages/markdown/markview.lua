@@ -20,9 +20,6 @@ return {
       enable = false,
       enable_hybrid_mode = true,
       filetypes = fts,
-      ignore_buftypes = {
-        "help", -- using helpview
-      },
       icon_provider = "devicons",
       modes = {
         "n",

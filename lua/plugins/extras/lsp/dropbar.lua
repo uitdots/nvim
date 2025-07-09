@@ -1,11 +1,7 @@
 ---@type LazySpec
 return {
   "Bekaboo/dropbar.nvim",
-  enabled = true,
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   ---@module 'dropbar'
   ---@type dropbar_configs_t
   opts = {

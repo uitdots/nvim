@@ -4,7 +4,7 @@ return {
   cmd = "GuessIndent",
   ---TODO: Still not know make it run when entering file with `nvim file_name`
   event = {
-    "BufAdd",
+    "BufReadPre",
     "BufNewFile",
   },
   keys = {

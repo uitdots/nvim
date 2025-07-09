@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "lewis6991/gitsigns.nvim",
+  event = "VeryLazy",
   keys = {
     {
       "<leader>gp",
@@ -34,10 +35,6 @@ return {
       desc = "Git | Blame Line",
       silent = true,
     },
-  },
-  event = {
-    "BufRead",
-    "BufNewFile",
   },
   opts = {
     current_line_blame_opts = {

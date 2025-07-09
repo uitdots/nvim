@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   "nvzone/showkeys",
-  dependencies = { "nvzone/volt" },
+  dependencies = "nvzone/volt",
   cmd = "ShowkeysToggle",
   keys = {
     {

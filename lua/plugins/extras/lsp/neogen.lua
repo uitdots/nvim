@@ -30,4 +30,18 @@ return {
     },
   },
   config = true,
+  specs = {
+    {
+      "L3MON4D3/LuaSnip",
+      specs = {
+        {
+          "danymat/neogen",
+          opts = {
+            snippet_engine = "luasnip",
+          },
+          optional = true,
+        },
+      },
+    },
+  },
 }

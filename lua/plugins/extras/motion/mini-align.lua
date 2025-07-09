@@ -1,9 +1,6 @@
 ---@type LazySpec
 return {
   "echasnovski/mini.align",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   config = true,
 }

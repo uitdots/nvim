@@ -18,7 +18,5 @@ return {
       return package.loaded["nvim-web-devicons"]
     end
   end,
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-  },
+  dependencies = "nvim-tree/nvim-web-devicons",
 }

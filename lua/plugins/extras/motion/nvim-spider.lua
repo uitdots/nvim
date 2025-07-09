@@ -2,6 +2,7 @@
 return {
   "chrisgrieser/nvim-spider",
   enabled = false,
+  event = "VeryLazy",
   keys = {
     {
       "w",

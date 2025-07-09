@@ -15,10 +15,7 @@ end
 ---@type LazySpec
 return {
   "stevearc/conform.nvim",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   keys = {
     {
       "<leader>lf",

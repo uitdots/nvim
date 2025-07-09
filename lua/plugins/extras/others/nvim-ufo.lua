@@ -1,10 +1,7 @@
 ---@type LazySpec
 return {
   "kevinhwang91/nvim-ufo",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   init = function()
     local o = vim.o
     o.foldcolumn = "1"
@@ -17,7 +14,5 @@ return {
       return { "treesitter", "indent" }
     end,
   },
-  dependencies = {
-    "kevinhwang91/promise-async",
-  },
+  dependencies = "kevinhwang91/promise-async",
 }

@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   "Wansmer/symbol-usage.nvim",
-  event = "LspAttach",
+  event = "VeryLazy",
   ---@module 'symbol-usage'
   ---@type UserOpts
   ---@diagnostic disable-next-line: missing-fields

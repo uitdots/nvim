@@ -2,10 +2,6 @@
 return {
   "ThePrimeagen/refactoring.nvim",
   cmd = "Refactor",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-treesitter/nvim-treesitter",
-  },
   keys = {
     {
       "<leader>Rs",
@@ -93,4 +89,8 @@ return {
     show_success_message = false,
   },
   main = "refactoring",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-treesitter/nvim-treesitter",
+  },
 }

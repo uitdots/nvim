@@ -1,10 +1,7 @@
 ---@type LazySpec
 return {
   "folke/todo-comments.nvim",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   keys = {
     {
       "<leader>fT",

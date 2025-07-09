@@ -1,9 +1,6 @@
 ---@type LazySpec
 return {
   "echasnovski/mini.diff",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   opts = {},
 }

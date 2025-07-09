@@ -13,13 +13,7 @@ return {
     },
   },
   dependencies = {
-    {
-      "neovim/nvim-lspconfig",
-      optional = true,
-    },
-    {
-      "mason-org/mason.nvim",
-      optional = true,
-    },
+    "neovim/nvim-lspconfig",
+    "mason-org/mason.nvim",
   },
 }

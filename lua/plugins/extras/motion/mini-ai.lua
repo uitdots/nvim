@@ -1,9 +1,6 @@
 ---@type LazySpec
 return {
   "echasnovski/mini.ai",
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
+  event = "VeryLazy",
   config = true,
 }
