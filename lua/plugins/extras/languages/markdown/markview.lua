@@ -20,6 +20,9 @@ return {
       enable = false,
       enable_hybrid_mode = true,
       filetypes = fts,
+      ignore_buftypes = {
+        -- "nofile", -- FIXME: idk but removing "nofile" makes markview work
+      },
       icon_provider = "devicons",
       modes = {
         "n",
@@ -34,9 +37,7 @@ return {
       },
     },
   },
-  cmd = {
-    "Markview",
-  },
+  cmd = "Markview",
   keys = {
     {
       "<leader>mv",
