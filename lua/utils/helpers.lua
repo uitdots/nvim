@@ -53,6 +53,19 @@ function M.open_spell_sugestion()
   end
 end
 
+---@generic T
+---@param items T[]
+---@param predicate fun(items: T):boolean
+---@result integer?
+function M.index_of(items, predicate)
+  for i, item in ipairs(items) do
+    if predicate(item) then
+      return i
+    end
+  end
+  return nil
+end
+
 ---@param path string absolute path
 ---@param opts? {follow_symlink: boolean}
 ---@return table | nil

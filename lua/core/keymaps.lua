@@ -3,6 +3,7 @@ local o = vim.o
 local api = vim.api
 local t = vim.t
 local cmd = vim.cmd
+local index_of = require("utils.helpers").index_of
 
 map("n", "<Esc>", "<cmd>noh<cr>", { desc = "General | No Search highlights", silent = true })
 
@@ -13,49 +14,55 @@ map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = tr
 -- Options
 map("n", "<leader>ol", function()
   o.number = not o.number
+  vim.notify(vim.o.number and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Number", id = "neovim_number" })
 end, { desc = "Options | Toggle Line Number", silent = true })
 
 map("n", "<leader>or", function()
   o.relativenumber = not o.relativenumber
+  vim.notify(vim.o.relativenumber and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Relative Number", id = "neovim_relative_number" })
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
 map("n", "<leader>os", function()
-  o.laststatus = o.laststatus == 3 and 0 or 3
+  local options = {
+    "Never",
+    "At lease 2 tab pages",
+    "Always",
+    "Always and only last window",
+  }
+  o.laststatus = o.laststatus % 4 + 1
+  vim.notify(options[o.laststatus], vim.log.levels.INFO, { title = "Statusline", id = "neovim_laststatus" })
 end, { desc = "Options | Toggle Statusline", silent = true })
 
 map("n", "<leader>oi", function()
-  if o.keymap == "" then
-    o.keymap = "vietnamese-telex_utf-8"
-    vim.notify("Method input changed to Custom: " .. o.keymap, vim.log.levels.INFO, {
-      title = "Options",
-    })
-  else
-    o.keymap = ""
-    vim.notify("Method input changed to Default", vim.log.levels.INFO, {
-      title = "Options",
-    })
-  end
+  local options = {
+    "",
+    "vietnamese-telex_utf-8",
+  }
+  local index = index_of(options, function(keymap)
+    return keymap == o.keymap
+  end)
+  o.keymap = options[index % #options + 1]
+  vim.notify("Changed to: " .. o.keymap, vim.log.levels.INFO, { title = "Method input", id = "input_method" })
 end, { desc = "Options | Toggle Input Method", silent = true })
 
 map("n", "<leader>o<C-t>", function()
-  local tabline_enabled = { 1, 2 }
-  o.showtabline = tabline_enabled[o.showtabline] ~= nil and 0 or 3
+  local options = {
+    "Never",
+    "At lease 2 tab pages",
+    "Always",
+  }
+  o.showtabline = o.showtabline % 3 + 1
+  vim.notify(options[o.showtabline], vim.log.levels.INFO, { title = "Tabline", id = "neovim_tabline" })
 end, { desc = "Options | Toggle Tabline", silent = true })
 
 map("n", "<leader>oS", function()
   vim.wo.spell = not vim.wo.spell
+  vim.notify(vim.wo.wrap and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Spell", id = "neovim_spell" })
 end, { desc = "Options | Toggle Spell Check", silent = true })
-
-map("n", "<leader>ot", function()
-  require("base46").toggle_theme()
-end, { desc = "Options | Toggle Theme", silent = true })
-
-map("n", "<leader>oT", function()
-  require("base46").toggle_transparency()
-end, { desc = "Options | Toggle Transparency", silent = true })
 
 map("n", "<leader>ow", function()
   vim.wo.wrap = not vim.wo.wrap
+  vim.notify(vim.wo.wrap and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Wrap", id = "neovim_wrap" })
 end, { desc = "Options | Toggle Wrap", silent = true })
 
 -- Navigation
@@ -98,6 +105,7 @@ map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
 -- Terminal
 map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
+
 -- Plugins
 map("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Lazy | Clean", silent = false })
 map("n", "<leader>pC", "<cmd>Lazy check<cr>", { desc = "Lazy | Check", silent = true })
@@ -120,15 +128,15 @@ map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent
 map("n", "<leader>nH", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
 map("n", "<leader>nv", function()
-  return vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version" })
+  vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version", id = "neovim_verion" })
 end, { desc = "Neovim | Version", silent = true })
 
 map("n", "<leader>np", function()
-  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path" })
+  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current File Path", id = "current_file_path" })
 end, { desc = "Neovim | Get Current File Path", silent = true })
 
 map("n", "<leader>nf", function()
-  vim.notify(vim.bo.filetype, vim.log.levels.INFO, { title = "Current Filetype" })
+  vim.notify(vim.bo.filetype, vim.log.levels.INFO, { title = "Current Filetype", id = "current_ft" })
 end, { desc = "Neovim | Current Filetype", silent = true })
 
 map("n", "<leader>nr", require("configs.runner.init").run, { desc = "Neovim | Runner", silent = true })

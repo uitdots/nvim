@@ -24,6 +24,24 @@ return {
         desc = "Utils | Refresh UI (NvChad)",
         silent = true,
       },
+      {
+        "<leader>ot",
+        function()
+          require("base46").toggle_theme()
+          vim.notify(vim.g.icon_toggled and "Light" or "Dark", vim.log.levels.INFO, { title = "Theme", id = "base46_theme" })
+        end,
+        desc = "Options | Toggle Theme",
+        silent = true,
+      },
+      {
+        "<leader>oT",
+        function()
+          require("base46").toggle_transparency()
+          vim.notify(require("nvconfig").base46.transparency and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Transparency", id = "base46_transparency" })
+        end,
+        desc = "Options | Toggle Theme",
+        silent = true,
+      },
     },
     init = function()
       vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
