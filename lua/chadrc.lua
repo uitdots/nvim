@@ -191,7 +191,8 @@ M.base46.hl_add = {
 
   -- Snacks
   SnacksIndent = { link = "IblChar" },
-  SnacksIndentScope = { link = "IblScopeChar" },
+  -- SnacksIndentScope = { link = "IblScopeChar" },
+  SnacksIndentScope = { fg = "light_grey" }, -- It's too dark :(
 
   SnacksNormal = { link = "TelescopeNormal" },
 
