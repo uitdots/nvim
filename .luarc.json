@@ -3,6 +3,7 @@
   "runtime.version": "Lua 5.1",
   "hint.enable": true,
   "diagnostics": {
+    "globals": ["vim"],
     "groupSeverity": {
       "strict": "Warning",
       "codestyle": "Warning",

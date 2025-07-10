@@ -14,11 +14,6 @@ return {
       hint = {
         enable = lsp_utils.is_inlay_hint_enabled("lua_ls"),
       },
-      diagnostics = {
-        globals = {
-          "vim",
-        },
-      },
       telemetry = {
         enable = false,
       },
