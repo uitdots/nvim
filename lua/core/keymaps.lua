@@ -142,8 +142,8 @@ end, { desc = "Treesitter | Inspect", silent = true })
 map("c", "<M-p>", "<C-R>=expand('%:p')<CR>", { desc = "Command | Insert Current Buffer Path", silent = true })
 
 -- UTILS
-map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
-map("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
+-- map("v", "<leader>us", ":sort<cr>gv<esc>", { desc = "Utils | Sort", silent = true })
+-- map("v", "<leader>uu", ":sort u<cr>gv<esc>", { desc = "Utils | Sort Unique", silent = true })
 
 map("n", "<leader>ux", function()
   vim.ui.input({ prompt = "Enter filename", default = "%" }, function(filename)
