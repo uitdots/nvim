@@ -2,7 +2,7 @@
 ---@type LazySpec
 return {
   "jay-babu/mason-nvim-dap.nvim",
-  enabled = true,
+  enabled = false,
   opts = {},
   dependencies = {
     "mfussenegger/nvim-dap",
