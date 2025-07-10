@@ -1,7 +1,6 @@
 ---@diagnostic disable: duplicate-doc-field, duplicate-doc-alias
 
 ---@meta _
----@module 'lazy'
 
 ---@class LazyPluginHooks
 ---@field opts_extend? string[]
