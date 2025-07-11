@@ -12,9 +12,7 @@ local kind_name = "Table" -- Because idk how to customise this, pick table
 return {
   "ray-x/cmp-sql",
   enabled = true,
-  event = {
-    "InsertEnter",
-  },
+  event = "InsertEnter",
   specs = {
     {
       "Saghen/blink.cmp",

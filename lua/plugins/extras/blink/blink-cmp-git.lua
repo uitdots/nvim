@@ -1,13 +1,11 @@
----@module 'blink-cmp'
-
 ---@type LazySpec
 return {
   "Kaiser-Yang/blink-cmp-git",
-  enabled = true,
   ft = "gitcommit",
   specs = {
     {
       "saghen/blink.cmp",
+      ---@module 'blink-cmp'
       ---@type blink.cmp.Config
       opts = {
         sources = {
