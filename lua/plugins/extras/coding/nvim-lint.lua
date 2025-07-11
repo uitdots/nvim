@@ -39,7 +39,7 @@ return {
 
     vim.api.nvim_create_autocmd({
       "BufWritePost",
-      -- "BufWinEnter",
+      "BufWinEnter",
     }, {
       callback = debounce(function()
         require("lint").try_lint(nil, {
