@@ -123,7 +123,12 @@ map("n", "<leader>nI", function()
   cmd("Inspect")
 end, { desc = "Neovim | Inspect", silent = true })
 
-map("n", "<leader>nm", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
+map("n", "<leader>nM", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent = true })
+
+map("n", "<leader>nm", function()
+  vim.bo.modifiable = not vim.bo.modifiable
+  vim.notify(vim.bo.modifiable and "True" or "False", vim.log.levels.INFO, { title = "Current file modifiability", id = "modifiability" })
+end, { desc = "Neovim | Toggle Modifiable", silent = true })
 
 map("n", "<leader>nH", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
