@@ -30,9 +30,14 @@ return {
             url = "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json",
           },
           {
-            fileMatch = {},
+            fileMatch = "",
             name = "",
             url = "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/master-standalone-strict/deployment.json",
+          },
+          {
+            fileMatch = "",
+            name = "",
+            url = "https://raw.githubusercontent.com/argoproj/argo-workflows/main/api/jsonschema/schema.json",
           },
         },
       }),
