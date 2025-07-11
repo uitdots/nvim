@@ -5,7 +5,7 @@ local is_windows = require("utils.os").is_windows
 return {
   {
     import = "plugins.extras.languages.ansible",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.assembly",
