@@ -25,7 +25,7 @@ return {
     },
     {
       "<leader>lF",
-      "<cmd>FormatToggle<cr>",
+      "<cmd>FormatToggle!<cr>",
       desc = "LSP | Toggle Autoformat",
       silent = true,
     },
