@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "MahanRahmati/blink-nerdfont.nvim",
+  enabled = false,
   event = "InsertEnter",
   specs = {
     {
@@ -16,7 +17,6 @@ return {
             nerdfont = {
               module = "blink-nerdfont",
               name = "Nerd Fonts",
-              opts = { insert = true }, -- Insert nerdfont icon (default) or complete its name
             },
           },
         },
