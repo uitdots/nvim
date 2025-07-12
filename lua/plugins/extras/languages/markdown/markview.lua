@@ -35,6 +35,7 @@ return {
       hybrid_modes = {
         "i",
       },
+      map_gx = false,
     },
   },
   cmd = "Markview",
