@@ -1,7 +1,11 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  event = "VeryLazy",
+  event = {
+    "VeryLazy",
+    "BufRead",
+    "BufNewFile",
+  },
   cmd = {
     "TSInstall",
     "TSUninstall",
