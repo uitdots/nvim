@@ -56,15 +56,15 @@ function M.setup_global_keymap()
     local enabled = not vim.diagnostic.config().underline
     vim.diagnostic.config({ underline = enabled })
     vim.notify(enabled and "Enabled" or "Disabled", vim.log.levels.INFO, {
-      title = "Underline",
-      id = "neovim_diagnostic_underline",
+      title = "LSP Diagnostic Underline",
+      id = "neovim_lsp_diagnostic_underline",
     })
   end, { desc = "LSP | Toggle Underline Diagnostic", silent = true })
   map("n", "<leader>lh", function()
     local enabled = not vim.lsp.inlay_hint.is_enabled()
     vim.lsp.inlay_hint.enable(enabled)
     vim.notify(enabled and "Enabled" or "Disabled", vim.log.levels.INFO, {
-      title = "Inlay Hint",
+      title = "LSP Inlay Hint",
       id = "neovim_lsp_inlay_hint",
     })
   end, { desc = "LSP | Toggle InlayHint", silent = true })
