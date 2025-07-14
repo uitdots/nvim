@@ -2,7 +2,7 @@
 --NOTE: Smooth scrolling neovim plugin written in lua
 return {
   "karb94/neoscroll.nvim",
-  enabled = true,
+  enabled = false,
   event = "VeryLazy",
   opts = {
     hide_cursor = false,
