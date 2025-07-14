@@ -22,7 +22,7 @@ return function()
   local bufnr = vim.api.nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
-    M.state = string.format("%%#St_gitIcons# %s ", M.fileformats[vim.bo.fileformat])
+    M.state = string.format("%%#St_gitIcons#%s ", M.fileformats[vim.bo.fileformat])
   end
 
   return M.state
