@@ -26,7 +26,7 @@ function M.set_status()
   end
 
   if vim.o.columns < 100 then
-    M.state = " %#St_gitIcons# "
+    M.state = "%#St_gitIcons# "
     return
   end
 
@@ -35,7 +35,7 @@ function M.set_status()
     return client.name
   end, lsps)
 
-  M.state = string.format(" %%#St_gitIcons# %s ", table.concat(clients, ", "))
+  M.state = string.format("%%#St_gitIcons# %s ", table.concat(clients, ", "))
 end
 
 ---@return string?

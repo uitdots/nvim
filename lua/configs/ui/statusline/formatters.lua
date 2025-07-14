@@ -31,7 +31,7 @@ function M.set_state()
   end
 
   if vim.o.columns < 100 then
-    M.state = " %#St_gitIcons#  "
+    M.state = "%#St_gitIcons#  "
     return
   end
 
@@ -39,7 +39,7 @@ function M.set_state()
   local formatters_names = vim.tbl_map(function(formatter)
     return formatter.name
   end, formatters)
-  M.state = string.format(" %%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
+  M.state = string.format("%%#St_gitIcons# %s ", table.concat(formatters_names, ", "))
 end
 
 ---@return string|nil

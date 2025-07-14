@@ -33,11 +33,11 @@ function M.set_state()
   end
 
   if vim.o.columns < 100 then
-    M.state = " %#St_gitIcons#  "
+    M.state = "%#St_gitIcons#  "
     return
   end
 
-  M.state = string.format(" %%#St_gitIcons# %s ", table.concat(linters, ", "))
+  M.state = string.format("%%#St_gitIcons# %s ", table.concat(linters, ", "))
 end
 
 ---@return string?
