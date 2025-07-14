@@ -29,15 +29,16 @@ local exclude_last_cur_pos_fts = {
   gitcommit = true,
 }
 
+---https://www.reddit.com/r/neovim/comments/1lyuz6k/autocmd_to_restore_cursor_position_after_saving/
 autocmd("BufRead", {
   callback = function(args)
     local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
     if exclude_last_cur_pos_fts[buftype] then
       return
     end
-    if fn.line("'\"") > 1 and fn.line("'\"") <= fn.line("$") then
-      vim.cmd('normal! g`"')
-    end
+    local position = vim.api.nvim_buf_get_mark(args.buf, [["]])
+    local winid = vim.fn.bufwinid(args.buf)
+    pcall(vim.api.nvim_win_set_cursor, winid, position)
   end,
   group = general,
   desc = "Go To The Last Cursor Position",
