@@ -31,12 +31,12 @@ return {
     },
     filters = {
       enable = true,
-      dotfiles = false,
-      git_ignored = false,
-      exclude = {
-        ".github",
-        ".*test.*",
-      },
+      dotfiles = true,
+      git_ignored = true,
+      -- exclude = {
+      --   ".github",
+      --   ".*test.*",
+      -- },
       custom = {
         ".*.ruff_cache$",
         ".*.spec$",
