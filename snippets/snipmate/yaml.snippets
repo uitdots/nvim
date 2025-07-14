@@ -3,3 +3,9 @@ snippet schema Schema
 
 snippet schema-k8s Schema for kubernetes
   # yaml-language-server: \$schema=https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/${1:master}-standalone${2:-strict}/${3:ResourceKind}${4:KindSuffix}.json
+
+snippet kustomization Snippet for apiVersion and kind
+  # yaml-language-server: $schema=https://www.schemastore.org/kustomization.json
+  apiVersion: kustomize.config.k8s.io/v1beta1
+  kind: Kustomization
+  ${0}
