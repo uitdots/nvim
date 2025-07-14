@@ -8,7 +8,7 @@ M.noice = nil
 
 ---@return string
 function M.render()
-  return string.format(" %%#St_gitIcons#󰌌 %s ", M.noice.status.command.get() or "")
+  return string.format(" %%#St_gitIcons#󰌌 %s", M.noice.status.command.get() or "")
 end
 
 ---@return string?
