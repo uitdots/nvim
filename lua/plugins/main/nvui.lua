@@ -43,16 +43,15 @@ return {
         silent = true,
       },
     },
-    init = function()
-      vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
-        require("base46").load_all_highlights()
-      end, { desc = "NvChad | NvChad Load All Highlights" })
-    end,
     config = function()
       local base46_cache = vim.g.base46_cache
       for _, v in ipairs(vim.fn.readdir(base46_cache)) do
         dofile(string.format("%s/%s", base46_cache, v))
       end
+
+      vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
+        require("base46").load_all_highlights()
+      end, { desc = "NvChad | NvChad Load All Highlights" })
     end,
   },
 }

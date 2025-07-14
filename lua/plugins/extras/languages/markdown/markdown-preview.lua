@@ -7,7 +7,7 @@ return {
     {
       "<leader>mp",
       "<cmd>MarkdownPreviewToggle<cr>",
-      desc = "Markdown Preview | Toggle",
+      desc = "Markdown | Toggle Preview",
       ft = ft,
       silent = true,
     },
@@ -16,13 +16,13 @@ return {
       function()
         if vim.g.mkdp_theme == "light" then
           vim.g.mkdp_theme = "dark"
-          vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Markdown Preview" })
+          vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         else
           vim.g.mkdp_theme = "light"
-          vim.notify("Light Mode", vim.log.levels.INFO, { title = "Markdown Preview" })
+          vim.notify("Light Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         end
       end,
-      desc = "Markdown Preview | Toggle Theme",
+      desc = "Markdown | Toggle Preview Theme",
       ft = ft,
       silent = true,
     },
