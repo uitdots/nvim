@@ -13,5 +13,7 @@ require("lazy").setup({
     "NvChad/NvChad",
     optional = true,
   },
-  { import = "plugins" },
+  {
+    import = "plugins.init",
+  },
 }, require("configs.lazy.config"))

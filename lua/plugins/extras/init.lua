@@ -1,3 +1,5 @@
+local is_executable = require("utils.executable").is_executable
+
 ---@type LazySpec
 return {
   {
@@ -7,6 +9,10 @@ return {
   {
     import = "plugins.extras.blink",
     enabled = true,
+  },
+  {
+    import = "plugins.extras.chezmoi",
+    enabled = is_executable("chezmoi"),
   },
   {
     import = "plugins.extras.coding",

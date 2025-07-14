@@ -171,6 +171,7 @@ lua
 │   ├── extras              Plugins can be toggle
 │   │   ├── ai              AI integration
 │   │   ├── blink           blink.cmp extensions
+│   │   ├── chezmoi         Chezmoi stuff
 │   │   ├── coding          Package manager, lint, format
 │   │   ├── dap             Debug
 │   │   ├── database        Database
@@ -179,7 +180,6 @@ lua
 │   │   │   ├── ansible
 │   │   │   ├── assembly
 │   │   │   ├── c
-│   │   │   ├── chezmoi
 │   │   │   ├── config
 │   │   │   ├── cs
 │   │   │   ├── css

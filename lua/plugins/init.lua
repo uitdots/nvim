@@ -1,5 +1,9 @@
 ---@type LazySpec
 return {
-  { import = "plugins.extras" },
-  { import = "plugins.main" },
+  {
+    import = "plugins.extras",
+  },
+  {
+    import = "plugins.main",
+  },
 }
