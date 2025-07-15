@@ -31,7 +31,7 @@ function M.set_status()
     M.status = nil
     return
   end
-  M.status = "%#St_gitIcons# "
+  M.status = "%#St_gitIcons#  "
 end
 
 ---@return string?

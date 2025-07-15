@@ -26,7 +26,7 @@ function M.set_status()
   end
 
   if vim.o.columns < 100 then
-    M.state = "%#St_gitIcons# "
+    M.state = "%#St_gitIcons#  "
     return
   end
 

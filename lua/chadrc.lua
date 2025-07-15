@@ -27,8 +27,8 @@ M.ui = {
       "%=",
       -- "lsp_msg", -- Yeah I use snacks already?
       -- "%=",
-      "command",
       "diagnostics",
+      "command",
       -- "flutter",
       "lsps",
       "linters",
