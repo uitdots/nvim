@@ -31,7 +31,7 @@ return {
     enabled = true,
   },
   {
-    import = "plugins.extras.languages",
+    import = "plugins.extras.languages.init",
     enabled = true,
   },
   {
