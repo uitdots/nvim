@@ -3,9 +3,6 @@
 return {
   "derektata/lorem.nvim",
   enabled = true,
-  dependencies = {
-    "nvim-telescope/telescope.nvim",
-  },
   cmd = "LoremIpsum",
   keys = {
     {
@@ -13,7 +10,6 @@ return {
       function()
         vim.ui.select({ "words", "paragraphs" }, {
           prompt = "Select Lorem scheme",
-          telescope = require("telescope.themes").get_dropdown(),
         }, function(scheme)
           if not scheme then
             return
