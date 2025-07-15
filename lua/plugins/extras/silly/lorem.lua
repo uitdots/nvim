@@ -28,10 +28,14 @@ return {
       silent = true,
     },
   },
+  ---@module 'lorem'
+  ---@type LoremConfig
   opts = {
     sentenceLength = "medium",
     comma_chance = 0.2,
     max_commas_per_sentence = 2,
   },
-  main = "lorem",
+  config = function(_, opts)
+    require("lorem").opts(opts)
+  end,
 }
