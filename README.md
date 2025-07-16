@@ -291,6 +291,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
   - `mssql`: `sql`
   - `react`: `typescript`
   - `ansible`: `yaml` (for yaml syntax highlighting)
+- Set `$NVIM_NO_IDE` to any value to disable lsp, format, lint (fast for quick editing)
 - These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
   - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
   - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
@@ -368,10 +369,13 @@ It may be possible. But it may require times to config.
 
 - Use spell check `vi`
   1. run
+
   ```sh
   just make-spell-vi
   ```
+
   2. Set spell lang in neovim
+
   ```vim
   :set spell spellang=vi
   ```

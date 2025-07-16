@@ -40,7 +40,8 @@ function M.is_executable(executable)
   return vim.fn.executable(executable) == 1
 end
 
-local executable_cache = {} ---@type table<string, boolean>
+---@type table<string, boolean>
+local executable_cache = {}
 
 ---@param executable string
 function M.is_executable_cache(executable)

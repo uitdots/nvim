@@ -12,6 +12,11 @@ local lua_ls_setting = {
           "vim",
         },
       },
+      ---@diagnostic disable-next-line: missing-fields
+      workspace = {
+        -- library = vim.api.nvim_get_runtime_file("", true), -- IDK this is legit but maybe we have lazydev already
+        checkThirdParty = false,
+      },
     },
   },
 }

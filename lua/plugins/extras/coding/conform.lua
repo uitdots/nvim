@@ -1,4 +1,5 @@
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
+local ide_mode = require("utils.os").ide_mode
 
 ---@param opts conform.setupOpts
 local function filter_available(opts)
@@ -15,6 +16,7 @@ end
 ---@type LazySpec
 return {
   "stevearc/conform.nvim",
+  cond = ide_mode,
   event = "VeryLazy",
   keys = {
     {

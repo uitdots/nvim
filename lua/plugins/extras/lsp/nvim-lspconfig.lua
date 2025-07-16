@@ -2,6 +2,7 @@ local is_executable = require("utils.executable").is_executable
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
 local lspconfig = require("configs.lsp.lspconfig")
 local lsps = require("preferences").lsp.force
+local ide_mode = require("utils.os").ide_mode
 
 ---@param server_name string
 local function filter_executable(server_name)
@@ -23,7 +24,11 @@ end
 ---@type LazySpec
 return {
   "neovim/nvim-lspconfig",
-  event = "VeryLazy",
+  cond = ide_mode,
+  event = {
+    "BufRead",
+    "BufNewFile",
+  },
   keys = {
     {
       "<leader>li",

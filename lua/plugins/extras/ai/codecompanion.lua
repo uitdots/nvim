@@ -70,6 +70,27 @@ return {
         },
       },
     },
+    prompt_library = {
+      ["Justfile docs"] = {
+        strategy = "chat",
+        description = "Ask about Justfile documentation",
+        references = {
+          {
+            type = "url",
+            url = "https://raw.githubusercontent.com/casey/just/refs/heads/master/README.md",
+          },
+        },
+        prompts = {
+          {
+            role = "user",
+            content = "",
+            opts = {
+              auto_submit = false,
+            },
+          },
+        },
+      },
+    },
   },
   dependencies = {
     "nvim-lua/plenary.nvim",
