@@ -81,13 +81,7 @@ return {
           },
         },
         prompts = {
-          {
-            role = "user",
-            content = "",
-            opts = {
-              auto_submit = false,
-            },
-          },
+          {},
         },
       },
     },
