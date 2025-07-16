@@ -172,18 +172,4 @@ return {
       end,
     })
   end,
-  specs = {
-    {
-      "mason-org/mason.nvim",
-      optional = true,
-      opts = {
-        registries = {
-          "github:nvim-java/mason-registry",
-        },
-      },
-      opts_extend = {
-        "registries",
-      },
-    },
-  },
 }
