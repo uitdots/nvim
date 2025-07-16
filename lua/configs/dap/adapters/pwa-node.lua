@@ -4,7 +4,7 @@ local DapAdapter = require("configs.dap.dap_adapter")
 local M = DapAdapter.new()
 
 function M:get_adapter()
-  local adapter = get_executable("dapDebugServer.js", { mason = "packages/js-debug-adapter/js-debug/src" })
+  local adapter = get_executable("dapDebugServer.js", { masons = "packages/js-debug-adapter/js-debug/src" })
   ---@cast adapter string?
   self.adapter = adapter
 end

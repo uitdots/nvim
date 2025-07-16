@@ -31,7 +31,12 @@ return {
       config_dir,
     }
 
-    local lombok_jar = get_executable("lombok.jar", { mason = "share/lombok-nightly" })
+    local lombok_jar = get_executable("lombok.jar", {
+      masons = {
+        "share/lombok-nightly",
+        "packages/jdtls",
+      },
+    })
     if lombok_jar then
       table.insert(cmd, string.format("--jvm-arg=-javaagent:%s", lombok_jar))
     end

@@ -1,18 +1,22 @@
 local M = {}
 
----Return the full executable path if exist in $PATH, fallback to mason package
+---Return the full executable path if exist in Mason path or in $PATH
 ---@param path string executable file, can be glob
----@param opts? {mason: string?, list: boolean?} options table containing `mason` (string) and `list` (boolean)
+---@param opts? {masons: (string|string[])?, list: boolean?}
 ---@return string | string[] | nil
 function M.get_executable(path, opts)
   opts = opts or {}
-  local mason = opts.mason
+  local masons = type(opts.masons) == "string" and { opts.masons } or opts.masons
+  ---@cast masons string[]?
+
   local list = opts.list or false
 
-  if mason then
-    local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
-    if mason_file ~= "" or #mason_file ~= 0 then
-      return mason_file
+  if masons then
+    for mason in masons do
+      local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
+      if mason_file ~= "" or #mason_file ~= 0 then
+        return mason_file
+      end
     end
   end
 

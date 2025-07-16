@@ -10,7 +10,7 @@ return {
       opts = {
         bundles = {
           function()
-            return get_executable("com.microsoft.java.test.plugin.jar", { mason = "share/java-test" })
+            return get_executable("com.microsoft.java.test.plugin.jar", { masons = "share/java-test" })
           end,
         },
       },

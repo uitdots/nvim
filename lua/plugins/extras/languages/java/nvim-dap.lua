@@ -10,7 +10,7 @@ return {
       opts = {
         bundles = {
           function()
-            return get_executable("com.microsoft.java.debug.plugin.jar", { mason = "share/java-debug-adapter" })
+            return get_executable("com.microsoft.java.debug.plugin.jar", { masons = "share/java-debug-adapter" })
           end,
         },
       },

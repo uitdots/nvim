@@ -5,7 +5,7 @@ local DapAdapter = require("configs.dap.dap_adapter")
 local M = DapAdapter.new()
 
 function M:get_adapter()
-  local adapter = get_executable("OpenDebugAD7", { mason = "packages/cpptools/extension/debugAdapters/bin" })
+  local adapter = get_executable("OpenDebugAD7", { masons = "packages/cpptools/extension/debugAdapters/bin" })
   ---@cast adapter string?
   self.adapter = adapter
 end

@@ -28,7 +28,7 @@ return {
     config = function()
       local executable = get_executable("uv")
       if executable == nil then
-        executable = get_executable("python", { mason = string.format("debugpy/%s", is_windows and "venv/Scripts" or "/venv/bin") })
+        executable = get_executable("python", { masons = string.format("debugpy/%s", is_windows and "venv/Scripts" or "/venv/bin") })
       end
       if executable == nil then
         return

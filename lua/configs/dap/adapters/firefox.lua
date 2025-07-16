@@ -6,7 +6,7 @@ local M = DapAdapter.new()
 
 function M:get_adapter()
   -- TODO: Check later
-  local adapter = get_executable("adapter.bundle.js", { mason = "vscode-firefox-debug/dist" })
+  local adapter = get_executable("adapter.bundle.js", { masons = "vscode-firefox-debug/dist" })
   ---@cast adapter string?
   self.adapter = adapter
 end
