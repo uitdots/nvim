@@ -84,6 +84,32 @@ return {
           {},
         },
       },
+      ["GNU Make"] = {
+        strategy = "chat",
+        description = "Ask about GNU Make documentation",
+        references = {
+          {
+            type = "url",
+            url = "https://www.gnu.org/software/make/manual/make.txt",
+          },
+        },
+        prompts = {
+          {},
+        },
+      },
+      Bash = {
+        strategy = "chat",
+        description = "Ask about GNU Bash documentation",
+        references = {
+          {
+            type = "url",
+            url = "https://www.gnu.org/software/bash/manual/bash.txt",
+          },
+        },
+        prompts = {
+          {},
+        },
+      },
     },
   },
   dependencies = {
