@@ -8,6 +8,12 @@ return {
   config = function(_, opts)
     require("luasnip").config.set_config(opts)
 
+    require("luasnip.loaders.from_lua").lazy_load({
+      lazy_paths = {
+        "snippets/luasnippets",
+      },
+    })
+
     require("luasnip.loaders.from_vscode").lazy_load({
       path = {
         "snippets/vscode",
