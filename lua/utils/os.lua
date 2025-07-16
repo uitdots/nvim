@@ -19,17 +19,6 @@ M.home = vim.fn.expand("$HOME")
 ---@type table<string, string?>
 local env_cache = {}
 
----@param variable string
-function M.getenv_cache(variable)
-  local value = env_cache[variable]
-  if value ~= nil then
-    return value
-  end
-  value = require("os").getenv(variable)
-  env_cache[variable] = value
-  return value
-end
-
-M.ide_mode = M.getenv_cache("NVIM_NO_IDE") ~= nil
+M.ide_mode = vim.env.NVIM_NO_IDE == nil
 
 return M
