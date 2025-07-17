@@ -223,15 +223,14 @@ lua
 │   │   ├── lsp             Enhance LSP usage
 │   │   ├── mason           Mason package manager
 │   │   ├── motion          Extend neovim motions
-│   │   ├── nvim-treesitter Treesitter extensions
 │   │   ├── others          Others
 │   │   ├── silly           When you are stress
 │   │   ├── telescope       Telescope extensions
 │   │   ├── test            Testing
 │   │   ├── ui              Extend UI things
 │   └── main                Shouldn't disable, you don't want to break the config
-├── types                   Custom types for lua annotating
-└── utils                   Utilities, no rewriting again and again
+├── types                   Custom types, overriding types for lua annotating
+└── utils                   Utilities
 ```
 
 > [!NOTE]
@@ -258,7 +257,6 @@ There are some keymaps you should know in this config (and native neovim keymaps
 | `n`  | `<leader>e`        | Toggle File Tree                                                             |
 | `n`  | `<leader>Tab`      | Open File Tree and Focus Current File                                        |
 | `n`  | `<leader>c`        | Close Buffer                                                                 |
-| `n`  | `<leader>y`        | Yank all into System Clipboard                                               |
 | `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline                                     |
 | `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline                                    |
 | `n`  | `Left`             | Go to Previous Tab                                                           |

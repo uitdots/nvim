@@ -9,7 +9,6 @@ map("n", "<leader><Esc>", "<cmd>noh<cr>", { desc = "General | No Highlights", si
 
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
 map("v", "<M-c>", '"+y', { desc = "General | Copy to System Register", silent = true }) -- TODO: Check this if it work on MacOS
-map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
 
 -- Options
 map("n", "<leader>ol", function()

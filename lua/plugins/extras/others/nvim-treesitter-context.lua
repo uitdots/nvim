@@ -1,11 +1,11 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter-context",
-  cmd = "TSContextToggle",
+  cmd = "TSContext",
   keys = {
     {
       "<leader>tc",
-      "<cmd>TSContextToggle<cr>",
+      "<cmd>TSContext toggle<cr>",
       desc = "Treesitter | Toggle Context",
       silent = true,
     },
@@ -13,8 +13,6 @@ return {
   opts = {
     enable = false,
   },
-  dependencies = {
-    "nvim-treesitter/nvim-treesitter",
-    optional = true,
-  },
+  main = "treesitter-context",
+  dependencies = "nvim-treesitter/nvim-treesitter",
 }

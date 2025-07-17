@@ -47,10 +47,6 @@ return {
     enabled = true,
   },
   {
-    import = "plugins.extras.nvim-treesitter",
-    enabled = true,
-  },
-  {
     import = "plugins.extras.others",
     enabled = true,
   },

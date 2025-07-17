@@ -1,9 +1,7 @@
 ---@type LazySpec
 return {
   "Wansmer/treesj",
-  cmd = {
-    "TSJToggle",
-  },
+  cmd = "TSJToggle",
   keys = {
     {
       "<leader>ts",
@@ -18,5 +16,5 @@ return {
   dependencies = {
     "nvim-treesitter/nvim-treesitter",
     optional = true,
-  }, -- if you install parsers with "nvim-treesitter"
+  },
 }

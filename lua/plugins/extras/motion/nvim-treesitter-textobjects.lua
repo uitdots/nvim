@@ -11,13 +11,13 @@ return {
             enable = true,
             lookahead = true,
             keymaps = {
-              ["aa"] = { query = "@parameter.outer", desc = "TSTextObject | Outer Param/Argument" },
+              ["aa"] = { query = "@parameter.outer", desc = "TSTextObject | Outer Argument/Parameter" },
               ["ac"] = { query = "@class.outer", desc = "TSTextObject | Arround Class" },
-              ["af"] = { query = "@function.outer", desc = "TSTextObject | Arround Function" },
+              ["af"] = { query = "@function.outer", desc = "TSTextObject | Arround Function/Method" },
               ["as"] = { query = "@local.scope", query_group = "locals", desc = "TSTextObject | Language Scope" },
-              ["ia"] = { query = "@parameter.inner", desc = "TSTextObject | Inner Param/Argument" },
+              ["ia"] = { query = "@parameter.inner", desc = "TSTextObject | Inner Argument/Parameter" },
               ["ic"] = { query = "@class.inner", desc = "TSTextObject | Inner Class" },
-              ["if"] = { query = "@function.inner", desc = "TSTextObject | Inner Function" },
+              ["if"] = { query = "@function.inner", desc = "TSTextObject | Inner Function/Method" },
             },
             selection_modes = {
               ["@class.outer"] = "V",
@@ -26,6 +26,7 @@ return {
             },
             include_surrounding_whitespace = true,
           },
+
           swap = {
             enable = true,
             swap_next = {
@@ -38,12 +39,12 @@ return {
 
           move = {
             enable = true,
-            set_jumps = true, -- whether to set jumps in the jumplist
+            set_jumps = true,
             goto_next = {
               ["]S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Next Scope Start" },
               ["]c"] = { query = "@class.outer", desc = "TSTextObject | Next Class Start" },
+              ["]f"] = { query = "@function.outer", desc = "TSTextObject | Next Function/Method Start" },
               ["]i"] = { query = "@conditional.outer", desc = "TSTextObject | Next If" },
-              ["]m"] = { query = "@function.outer", desc = "TSTextObject | Next Method/Function Start" },
               ["]o"] = { query = "@loop.*", desc = "TSTextObject | Next Loop Start" },
               ["]r"] = { query = "@return.outer", desc = "TSTextObject | Next Return" },
               ["]z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Next Fold Start" },
@@ -51,8 +52,8 @@ return {
             goto_previous = {
               ["[S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Previous Scope Start" },
               ["[c"] = { query = "@class.outer", desc = "TSTextObject | Previous Class Start" },
+              ["[f"] = { query = "@function.outer", desc = "TSTextObject | Previous Function/Method Start" },
               ["[i"] = { query = "@conditional.outer", desc = "TSTextObject | Previous If" },
-              ["[m"] = { query = "@function.outer", desc = "TSTextObject | Previous Method/Function Start" },
               ["[o"] = { query = "@loop.*", desc = "TSTextObject | Previous Loop Start" },
               ["[r"] = { query = "@return.outer", desc = "TSTextObject | Previous Return" },
               ["[z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Previous Fold Start" },
