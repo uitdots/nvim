@@ -7,72 +7,56 @@ return {
       dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
       opts = {
         textobjects = {
+          select = {
+            enable = true,
+            lookahead = true,
+            keymaps = {
+              ["aa"] = { query = "@parameter.outer", desc = "TSTextObject | Outer Param/Argument" },
+              ["ac"] = { query = "@class.outer", desc = "TSTextObject | Arround Class" },
+              ["af"] = { query = "@function.outer", desc = "TSTextObject | Arround Function" },
+              ["as"] = { query = "@local.scope", query_group = "locals", desc = "TSTextObject | Language Scope" },
+              ["ia"] = { query = "@parameter.inner", desc = "TSTextObject | Inner Param/Argument" },
+              ["ic"] = { query = "@class.inner", desc = "TSTextObject | Inner Class" },
+              ["if"] = { query = "@function.inner", desc = "TSTextObject | Inner Function" },
+            },
+            selection_modes = {
+              ["@class.outer"] = "V",
+              ["@function.outer"] = "V",
+              ["@parameter.outer"] = "v",
+            },
+            include_surrounding_whitespace = true,
+          },
           swap = {
             enable = true,
             swap_next = {
-              ["<leader>tn"] = "@parameter.inner",
+              ["<leader>tn"] = { query = "@parameter.inner", desc = "TSTextObject | Swap Params Next" },
             },
             swap_previous = {
-              ["<leader>tp"] = "@parameter.inner",
+              ["<leader>tp"] = { query = "@parameter.inner", desc = "TSTextObject | Swap Params Previous" },
             },
           },
+
           move = {
             enable = true,
             set_jumps = true, -- whether to set jumps in the jumplist
-            goto_next_start = {
-              ["]m"] = "@function.outer",
-              ["]]"] = { query = "@class.outer", desc = "Next class start" },
-              --
-              -- You can use regex matching (i.e. lua pattern) and/or pass a list in a "query" key to group multiple queires.
-              ["]o"] = "@loop.*",
-              -- ["]o"] = { query = { "@loop.inner", "@loop.outer" } }
-              --
-              -- You can pass a query group to use query from `queries/<lang>/<query_group>.scm file in your runtime path.
-              -- Below example nvim-treesitter's `locals.scm` and `folds.scm`. They also provide highlights.scm and indent.scm.
-              ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
-              ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+            goto_next = {
+              ["]S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Next Scope Start" },
+              ["]c"] = { query = "@class.outer", desc = "TSTextObject | Next Class Start" },
+              ["]i"] = { query = "@conditional.outer", desc = "TSTextObject | Next If" },
+              ["]m"] = { query = "@function.outer", desc = "TSTextObject | Next Method/Function Start" },
+              ["]o"] = { query = "@loop.*", desc = "TSTextObject | Next Loop Start" },
+              ["]r"] = { query = "@return.outer", desc = "TSTextObject | Next Return" },
+              ["]z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Next Fold Start" },
             },
-            goto_next_end = {
-              ["]M"] = "@function.outer",
-              ["]["] = "@class.outer",
+            goto_previous = {
+              ["[S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Previous Scope Start" },
+              ["[c"] = { query = "@class.outer", desc = "TSTextObject | Previous Class Start" },
+              ["[i"] = { query = "@conditional.outer", desc = "TSTextObject | Previous If" },
+              ["[m"] = { query = "@function.outer", desc = "TSTextObject | Previous Method/Function Start" },
+              ["[o"] = { query = "@loop.*", desc = "TSTextObject | Previous Loop Start" },
+              ["[r"] = { query = "@return.outer", desc = "TSTextObject | Previous Return" },
+              ["[z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Previous Fold Start" },
             },
-            goto_previous_start = {
-              ["[m"] = "@function.outer",
-              ["[["] = "@class.outer",
-            },
-            goto_previous_end = {
-              ["[M"] = "@function.outer",
-              ["[]"] = "@class.outer",
-            },
-            -- goto_next = {
-            --   ["]d"] = "@conditional.outer",
-            -- },
-            -- goto_previous = {
-            --   ["[d"] = "@conditional.outer",
-            -- },
-          },
-
-          select = {
-            enable = true,
-            disable = {
-              "dart",
-            },
-
-            lookahead = true,
-
-            keymaps = {
-              ["af"] = "@function.outer",
-              ["if"] = "@function.inner",
-              ["ac"] = "@class.outer",
-              ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
-              ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
-            },
-            selection_modes = {
-              ["@parameter.outer"] = "v",
-              ["@function.outer"] = "V",
-              ["@class.outer"] = "V",
-            },
-            include_surrounding_whitespace = true,
           },
         },
       },

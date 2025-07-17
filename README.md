@@ -388,3 +388,4 @@ It may be possible. But it may require times to config.
 - [Integralist](https://github.com/Integralist/nvim)
   > Has ghostty type
 - [catgoose](https://github.com/catgoose/nvim)
+- [cameronr](https://github.com/cameronr/dotfiles)
