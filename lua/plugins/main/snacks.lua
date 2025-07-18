@@ -53,7 +53,7 @@ return {
   ---@type snacks.Config
   opts = {
     animate = {
-      enabled = true,
+      enabled = false,
     },
     bigfile = {
       enabled = true,
@@ -104,9 +104,10 @@ return {
       folds = {
         open = true,
       },
+      refresh = "2000",
     },
     words = {
-      enabled = true,
+      enabled = false,
     },
     zen = {
       toggles = {
