@@ -1,7 +1,7 @@
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
-  optional = true,
+
   ---@module 'nvim-treesitter'
   ---@type TSConfig
   ---@diagnostic disable-next-line: missing-fields

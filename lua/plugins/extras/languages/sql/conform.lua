@@ -4,7 +4,7 @@ return {
   ---@module 'conform'
   ---@param opts? conform.setupOpts
   ---@return conform.setupOpts
-  opts = function (_, opts)
+  opts = function(_, opts)
     opts = opts or {}
     opts.formatters = opts.formatters or {}
     opts.formatters.pg_sqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
@@ -15,7 +15,7 @@ return {
 
     opts.formatters_by_ft = opts.formatters_by_ft or {}
     opts.formatters_by_ft.postgresql = {
-      "pg_sqlfluff"
+      "pg_sqlfluff",
     }
     return opts
   end,

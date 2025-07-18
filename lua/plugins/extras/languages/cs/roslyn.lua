@@ -1,4 +1,4 @@
-local filter_availabled_external = require("preferences").options.others.
+local filter_availabled_external = require("preferences").options.others.filter_availabled_external
 local is_executable = require("utils.executable").is_executable
 local inlay_hint = require("preferences").options.inlay_hint
 
