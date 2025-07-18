@@ -28,7 +28,7 @@ return {
       silent = true,
     },
     {
-      "gx",
+      "gf",
       function()
         require("various-textobjs").filepath("outer")
         local foundPath = vim.fn.mode() == "v"

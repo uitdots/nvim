@@ -1,3 +1,4 @@
+---@type LazyConfig
 return {
   defaults = {
     lazy = true,
@@ -14,7 +15,7 @@ return {
 
   ui = {
     backdrop = 100,
-    border = "rounded",
+    border = vim.o.winborder,
     icons = {
       ft = "",
       lazy = "󰂠 ",
