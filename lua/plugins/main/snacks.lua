@@ -415,4 +415,10 @@ return {
       silent = true,
     },
   },
+  specs = {
+    {
+      "neovim/nvim-lspconfig",
+      dependencies = "folke/snacks.nvim",
+    },
+  },
 }
