@@ -40,7 +40,7 @@ return {
           move = {
             enable = true,
             set_jumps = true,
-            goto_next = {
+            goto_next_start = {
               ["]S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Next Scope Start" },
               ["]c"] = { query = "@class.outer", desc = "TSTextObject | Next Class Start" },
               ["]f"] = { query = "@function.outer", desc = "TSTextObject | Next Function/Method Start" },
@@ -49,7 +49,7 @@ return {
               ["]r"] = { query = "@return.outer", desc = "TSTextObject | Next Return" },
               ["]z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Next Fold Start" },
             },
-            goto_previous = {
+            goto_previous_start = {
               ["[S"] = { query = "@scope", query_group = "locals", desc = "TSTextObject | Previous Scope Start" },
               ["[c"] = { query = "@class.outer", desc = "TSTextObject | Previous Class Start" },
               ["[f"] = { query = "@function.outer", desc = "TSTextObject | Previous Function/Method Start" },
