@@ -46,23 +46,5 @@ return {
       desc = "Various Textobjs | Smart File Opener",
       silent = true,
     },
-    {
-      "ie",
-      function()
-        require("various-textobjs").entireBuffer()
-      end,
-      desc = "Various Textobjs | Entire Buffer",
-      mode = { "x", "o" },
-      silent = true,
-    },
-    {
-      "ae",
-      function()
-        require("various-textobjs").entireBuffer()
-      end,
-      desc = "Various Textobjs | Entire Buffer",
-      mode = { "x", "o" },
-      silent = true,
-    },
   },
 }
