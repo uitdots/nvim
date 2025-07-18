@@ -6,7 +6,7 @@ local cmd = vim.cmd
 local index_of = require("utils.helpers").index_of
 
 map("n", "<leader><Esc>", "<cmd>noh<cr>", { desc = "General | No Highlights", silent = true })
-
+map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All", silent = true })
 map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
 map("v", "<M-c>", '"+y', { desc = "General | Copy to System Register", silent = true }) -- TODO: Check this if it work on MacOS
 

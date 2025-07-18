@@ -256,6 +256,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 | `n`  | `<leader><leader>` | Find Files                                                                   |
 | `n`  | `<leader>e`        | Toggle File Tree                                                             |
 | `n`  | `<leader>Tab`      | Open File Tree and Focus Current File                                        |
+| `n`  | `<leader>y`        | Yank all into System Clipboard                                               |
 | `n`  | `<leader>c`        | Close Buffer                                                                 |
 | `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline                                     |
 | `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline                                    |
