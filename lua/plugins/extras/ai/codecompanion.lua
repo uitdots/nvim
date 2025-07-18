@@ -158,5 +158,20 @@ return {
         },
       },
     },
+    {
+      "Saghen/blink.cmp",
+      ---@module 'blink.cmp'
+      ---@type blink.cmp.Config
+      opts = {
+        sources = {
+          per_filetype = {
+            codecompanion = {
+              inherit_defaults = true,
+            },
+          },
+        },
+      },
+      optional = true,
+    },
   },
 }
