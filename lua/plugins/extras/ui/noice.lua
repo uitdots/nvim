@@ -4,7 +4,6 @@ return {
   -- Temporary use another noice because Folke is offline
   "Kayzels/noice.nvim",
   branch = "fix-scrollbar",
-  enabled = true,
   event = "VeryLazy",
   ---@module 'noice'
   ---@type NoiceConfig
@@ -19,9 +18,15 @@ return {
     notify = {
       enabled = false,
     },
+    popupmenu = {
+      enabled = false,
+    },
     lsp = {
       hover = {
         enabled = true,
+      },
+      documentation = {
+        enabled = false,
       },
       signature = {
         enabled = false,
@@ -29,6 +34,12 @@ return {
       progress = {
         enabled = false,
       },
+      message = {
+        enabled = false,
+      },
+    },
+    health = {
+      checker = false,
     },
     presets = {
       bottom_search = false,
@@ -38,11 +49,5 @@ return {
       lsp_doc_border = vim.o.winborder, -- May remove this in the future if noice use vim.o.winborder by default
     },
   },
-  dependencies = {
-    "MunifTanjim/nui.nvim",
-    {
-      "folke/snacks.nvim",
-      optional = true,
-    },
-  },
+  dependencies = "MunifTanjim/nui.nvim",
 }

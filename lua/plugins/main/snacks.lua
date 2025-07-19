@@ -421,5 +421,11 @@ return {
       "neovim/nvim-lspconfig",
       dependencies = "folke/snacks.nvim",
     },
+    {
+      --TODO: Change to folke noice nvim later
+      "noice.nvim",
+      optional = true,
+      dependencies = "folke/snacks.nvim",
+    },
   },
 }

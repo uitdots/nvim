@@ -165,7 +165,7 @@ M.base46 = {
 }
 
 M.base46.hl_override = {
-  Search = { bg = "base0D" },
+  Search = { bg = "blue" },
 
   Visual = M.base46.transparency and vim.list_contains({ "catppuccin" }, M.base46.theme) and { bg = "one_bg3" } or {},
 
@@ -204,6 +204,8 @@ M.base46.hl_add = {
   SnacksPickerSelect = { link = "TelescopeSelection" },
   SnacksPickerTitle = { link = "TelescopePromptTitle" },
   SnacksPickerToggle = { fg = "black", bg = "red" },
+
+  NoiceVirtualText = { fg = "base0E" },
 }
 
 return M
