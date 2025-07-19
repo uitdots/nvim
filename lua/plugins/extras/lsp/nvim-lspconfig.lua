@@ -25,10 +25,6 @@ end
 return {
   "neovim/nvim-lspconfig",
   cond = ide_mode,
-  event = {
-    "BufRead",
-    "BufNewFile",
-  },
   keys = {
     {
       "<leader>li",

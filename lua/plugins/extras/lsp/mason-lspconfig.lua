@@ -5,7 +5,7 @@ return {
   "mason-org/mason-lspconfig.nvim",
   cond = ide_mode,
   event = {
-    "BufRead",
+    "BufReadPre",
     "BufNewFile",
   },
   ---@module 'mason-lspconfig'
