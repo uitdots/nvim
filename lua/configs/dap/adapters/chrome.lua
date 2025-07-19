@@ -8,7 +8,7 @@ function M:get_adapter()
   -- TODO: I don't know where it out, currently I cannot download it from mason
   local adapter = get_executable("chromeDebug.js", { masons = "packages/vscode-chrome-debug/out/src" })
   ---@cast adapter string?
-  self.adapter = adapter
+  return adapter
 end
 
 function M:setup(adapter)

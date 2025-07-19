@@ -8,7 +8,7 @@ function M:get_adapter()
   -- TODO: Check later
   local adapter = get_executable("adapter.bundle.js", { masons = "vscode-firefox-debug/dist" })
   ---@cast adapter string?
-  self.adapter = adapter
+  return adapter
 end
 
 function M:setup(adapter)

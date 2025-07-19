@@ -1,7 +1,7 @@
 ---@class DapAdapter
 ---@field is_setup DapAdapter.SetupStatus
 ---@field adapter string?
----@field get_adapter fun(self: DapAdapter)
+---@field get_adapter fun(self: DapAdapter):string?
 ---@field setup fun(self: DapAdapter, adapter: string)
 local M = {}
 M.__index = M
@@ -20,7 +20,7 @@ M.setup_status = {
 ---@return boolean
 function M:__call()
   if self.is_setup ~= M.setup_status.NOT_YET then
-    self:get_adapter()
+    self.adapter = self:get_adapter()
     if self.adapter == nil then
       self.is_setup = self.setup_status.FAILED
       return self.setup_status.FAILED

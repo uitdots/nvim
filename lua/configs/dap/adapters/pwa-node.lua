@@ -6,7 +6,7 @@ local M = DapAdapter.new()
 function M:get_adapter()
   local adapter = get_executable("dapDebugServer.js", { masons = "packages/js-debug-adapter/js-debug/src" })
   ---@cast adapter string?
-  self.adapter = adapter
+  return adapter
 end
 
 function M:setup(adapter)

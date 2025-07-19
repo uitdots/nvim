@@ -7,7 +7,7 @@ local M = DapAdapter.new()
 function M:get_adapter()
   local adapter = get_executable("OpenDebugAD7", { masons = "packages/cpptools/extension/debugAdapters/bin" })
   ---@cast adapter string?
-  self.adapter = adapter
+  return adapter
 end
 
 function M:setup(adapter)
