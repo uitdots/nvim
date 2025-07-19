@@ -57,6 +57,16 @@ return {
         end
       end,
     })
+    autocmd("FileType", {
+      pattern = "codecompanion",
+      callback = function()
+        vim.schedule(function()
+          vim.wo.number = false
+          vim.wo.relativenumber = false
+        end)
+      end,
+      desc = "No line number in CodeCompanion",
+    })
   end,
   opts = {
     strategies = {
