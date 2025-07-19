@@ -1,7 +1,5 @@
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/init.lua
 local autocmd = vim.api.nvim_create_autocmd
-local augroup = vim.api.nvim_create_augroup
-local delaugroup = vim.api.nvim_del_augroup_by_id
 
 local M = {}
 
@@ -32,15 +30,11 @@ function M.lazy_load_on_fts(main, fts, opts)
   if type(fts) == "string" then
     fts = { fts }
   end
-  local id = augroup(string.format("%sLazyLoad", main), {
-    clear = true,
-  })
   autocmd("FileType", {
-    group = id,
+    once = true,
     pattern = fts,
     callback = function()
       require(main).setup(opts)
-      delaugroup(id)
     end,
   })
 end
