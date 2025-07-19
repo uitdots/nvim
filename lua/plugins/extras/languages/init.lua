@@ -36,7 +36,7 @@ return {
   },
   {
     import = "plugins.extras.languages.dart",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.git",
