@@ -1,64 +1,8 @@
 local command = vim.api.nvim_create_user_command
 
-command("Format", function(args)
-  local range = nil
-  if args.count ~= -1 then
-    local end_line = vim.api.nvim_buf_get_lines(0, args.line2 - 1, args.line2, true)[1]
-    range = {
-      start = { args.line1, 0 },
-      ["end"] = { args.line2, end_line:len() },
-    }
-  end
-  require("conform").format({ async = true, lsp_format = "fallback", range = range })
-  vim.notify("Format Done", vim.log.levels.INFO, { title = "Format" })
-end, { nargs = "*", desc = "Code Format", range = true })
-
-command("FormatDisable", function(args)
-  if args.bang then
-    vim.g.auto_format_enabled = false
-    vim.notify("Autoformat Disabled", vim.log.levels.INFO, { title = "Format", id = "auto_format" })
-  else
-    vim.b.auto_format_enabled = false
-    vim.notify("Autoformat Disabled (Local)", vim.log.levels.INFO, { title = "Format", id = "local_auto_format" })
-  end
-end, { desc = "Disable Autoformat", bang = true })
-
-command("FormatEnable", function(args)
-  if args.bang then
-    vim.g.auto_format_enabled = true
-    vim.notify("Autoformat Enabled", vim.log.levels.INFO, { title = "Format", id = "auto_format" })
-  else
-    vim.b.auto_format_enabled = true
-    vim.notify("Autoformat Enabled (Local)", vim.log.levels.INFO, { title = "Format", id = "local_auto_format" })
-  end
-end, { desc = "Enable Autoformat", bang = true })
-
-command("FormatToggle", function(args)
-  if args.bang then
-    if vim.g.auto_format_enabled then
-      vim.cmd("FormatDisable!")
-    else
-      vim.cmd("FormatEnable!")
-    end
-  else
-    if vim.b.auto_format_enabled then
-      vim.cmd("FormatDisable")
-    else
-      vim.cmd("FormatEnable")
-    end
-  end
-end, { desc = "Toggle Autoformat", bang = true })
-
 command("RemoveTrailingSpaces", function()
   vim.cmd(":%s/s+$//e")
 end, { desc = "Remove all trailing spaces" })
-
-command("AppendToEnd", function(args)
-  local prefix = args.line1 .. "," .. args.line2
-  local chars = args.fargs[1] ~= nil and args.fargs[1] or ";"
-  vim.cmd(prefix .. "g/./normal A" .. chars)
-  vim.cmd("nohlsearch")
-end, { nargs = "?", desc = 'Append char(s) to end of each line (Default: ";")', range = true })
 
 command("JoinEmptyLines", function(args)
   -- We need silent! because if no match pattern, it will notify error
