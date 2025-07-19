@@ -104,7 +104,7 @@ return {
       folds = {
         open = true,
       },
-      refresh = "2000",
+      refresh = "1000",
     },
     words = {
       enabled = false,
