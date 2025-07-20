@@ -1,5 +1,3 @@
----@module 'snacks'
-
 local exclude_find = {
   "%.dart_tool/",
   "%.egg-info/",
@@ -50,6 +48,7 @@ return {
       end,
     })
   end,
+  ---@module 'snacks'
   ---@type snacks.Config
   opts = {
     animate = {
@@ -110,12 +109,31 @@ return {
       enabled = false,
     },
     zen = {
+      win = {
+        backdrop = {
+          transparent = true,
+          blend = 0,
+        },
+      },
       toggles = {
-        dim = true,
-        git_signs = false,
-        mini_diff_signs = false,
+        dim = false,
+        git_signs = true,
+        mini_diff_signs = true,
         diagnostics = true,
         inlay_hints = true,
+      },
+      zoom = {
+        show = {
+          statusline = false,
+          tabline = false,
+        },
+        toggles = {
+          dim = true,
+          git_signs = false,
+          mini_diff_signs = false,
+          diagnostics = false,
+          inlay_hints = false,
+        },
       },
     },
   },
@@ -388,6 +406,13 @@ return {
         Snacks.zen()
       end,
       desc = "Options | Zen",
+    },
+    {
+      "<leader>oZ",
+      function()
+        Snacks.zen.zoom()
+      end,
+      desc = "Options | Zoom",
     },
 
     -- Neovim
