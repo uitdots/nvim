@@ -23,8 +23,8 @@ return {
     "NvimTreeFindFileToggle",
   },
   opts = {
-    dotfiles = true,
     filters = {
+      dotfiles = true,
       custom = {
         ".*.ruff_cache$",
         ".*.spec$",
