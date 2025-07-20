@@ -34,7 +34,7 @@ return {
       silent = true,
     },
     {
-      "zR",
+      "zM",
       function()
         require("ufo").closeAllFolds()
       end,
