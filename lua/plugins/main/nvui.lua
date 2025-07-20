@@ -48,10 +48,6 @@ return {
       for _, v in ipairs(vim.fn.readdir(base46_cache)) do
         dofile(string.format("%s/%s", base46_cache, v))
       end
-
-      vim.api.nvim_create_user_command("NvChadLoadAllHighlights", function()
-        require("base46").load_all_highlights()
-      end, { desc = "NvChad | NvChad Load All Highlights" })
     end,
   },
 }

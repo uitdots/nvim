@@ -316,9 +316,6 @@ There are some keymaps you should know in this config (and native neovim keymaps
 
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
 - If NvChad UI's color is broken, use `<leader>ur` or run:
-  ```vim
-  :NvChadLoadAllHighlights
-  ```
 - lsp currently not enabled by compound filetype?
 - nvim-lint can lint the compound filetype, async?
 - conform format the last filetype in the compound file, one by one?
