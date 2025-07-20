@@ -10,6 +10,8 @@ return {
     o.foldlevelstart = 99
     o.foldenable = true
   end,
+  ---@module 'ufo'
+  ---@type UfoConfig
   opts = {
     close_fold_kinds_for_ft = {
       default = {
@@ -67,5 +69,6 @@ return {
       silent = true,
     },
   },
+  main = "ufo",
   dependencies = "kevinhwang91/promise-async",
 }
