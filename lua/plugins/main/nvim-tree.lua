@@ -1,5 +1,3 @@
-local preferences_options = require("preferences").options
-
 ---@type LazySpec
 return {
   "nvim-tree/nvim-tree.lua",
@@ -24,42 +22,20 @@ return {
     "NvimTreeFindFile",
     "NvimTreeFindFileToggle",
   },
-  -- TODO: This opt is to many custom. Use default if possible?
   opts = {
-    diagnostics = {
-      enable = true,
-    },
+    dotfiles = true,
     filters = {
-      enable = true,
-      dotfiles = true,
-      git_ignored = true,
-      -- exclude = {
-      --   ".github",
-      --   ".*test.*",
-      -- },
       custom = {
         ".*.ruff_cache$",
         ".*.spec$",
         ".*LICENSE.*",
         ".*__pycache__$",
         ".DS_Store",
-        "^\\.git$",
         "thumbs.db",
         ".*.egg-info", -- python's stuff
       },
     },
     sync_root_with_cwd = true,
-    update_focused_file = {
-      enable = false,
-      update_cwd = false,
-    },
-    git = {
-      enable = true,
-      ignore = true,
-      show_on_dirs = true,
-      show_on_open_dirs = true,
-      timeout = 5000,
-    },
     view = {
       cursorline = true,
       number = true,
@@ -69,19 +45,11 @@ return {
     renderer = {
       highlight_git = false,
       root_folder_label = ":~:s?$?",
-      icons = {
-        show = {
-          file = true,
-          folder = true,
-          folder_arrow = true,
-          git = true,
-        },
-      },
     },
     actions = {
       file_popup = {
         open_win_config = {
-          border = preferences_options.ui.border_enabled and "rounded" or "none",
+          border = vim.o.winborder,
         },
       },
     },
