@@ -176,26 +176,24 @@ M.base46.hl_add = {
   FloatBorder = { fg = "grey_fg" },
   NormalFloat = { fg = "NONE", bg = "NONE", link = "Normal" },
 
-  -- Dadbod UI
+  ---Dadbod UI
   NotificationInfo = { fg = "green", bg = "one_bg" },
   NotificationWarning = { fg = "yellow", bg = "one_bg" },
   NotificationError = { fg = "red", bg = "one_bg" },
 
-  -- For statusline
+  ---For statusline
   St_Percent_icon = { fg = "black", bg = "blue" },
   St_Percent_sep = { fg = "blue", bg = "lightbg" },
   St_Percent_text = { link = "St_percent_sep" },
 
-  -- visual-whitespace
+  ---visual-whitespace
   VisualNonText = { link = "Comment" },
 
-  -- Snacks
+  ---Snacks
   SnacksIndent = { link = "IblChar" },
   -- SnacksIndentScope = { link = "IblScopeChar" },
   SnacksIndentScope = { fg = "light_grey" }, -- It's too dark :(
-
   SnacksNormal = { link = "TelescopeNormal" },
-
   SnacksPickerDir = { fg = "light_grey" },
   SnacksPickerListTitle = { link = "TelescopeResultsTitle" },
   SnacksPickerMatch = { link = "TelescopeMatching" },
@@ -205,7 +203,11 @@ M.base46.hl_add = {
   SnacksPickerTitle = { link = "TelescopePromptTitle" },
   SnacksPickerToggle = { fg = "black", bg = "red" },
 
+  ---Noice
   NoiceVirtualText = { fg = "base0E" },
+
+  ---nvim-treesitter-context
+  TreesitterContext = { bg = "black2" },
 }
 
 return M
