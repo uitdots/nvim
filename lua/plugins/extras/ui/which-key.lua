@@ -7,6 +7,7 @@ return {
   ---@type wk.Opts
   opts = {
     preset = "modern",
+    show_help = false,
     win = {
       no_overlap = false,
     },
