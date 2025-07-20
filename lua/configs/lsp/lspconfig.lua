@@ -92,6 +92,12 @@ M.capabilities = {
       willRename = true,
     },
   },
+  textDocument = {
+    foldingRange = {
+      dynamicRegistration = false,
+      lineFoldingOnly = true,
+    },
+  },
 }
 
 ---@type vim.lsp.Config
