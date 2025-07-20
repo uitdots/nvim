@@ -284,6 +284,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
   ```vim
   :MasonToolsInstall
   ```
+- Plugins are updated every week _(set in lazy config)_
 - Some `languages` pack require others, you must enable yourself:
   - `rest`: `http`
   - `jenkins`: `groovy`

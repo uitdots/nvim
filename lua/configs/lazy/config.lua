@@ -29,6 +29,12 @@ return {
     notify = false,
   },
 
+  checker = {
+    enabled = true,
+    notify = false,
+    frequency = 604800, -- 7 days
+  },
+
   performance = {
     rtp = {
       disabled_plugins = {
