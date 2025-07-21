@@ -64,7 +64,10 @@ return {
       opts = function(_, opts)
         autocmd("FileType", {
           pattern = "Avante",
-          command = "Markview enable",
+          callback = function()
+            vim.cmd("Markview enable")
+            vim.cmd("Markview hybridEnable")
+          end,
         })
         return opts
       end,
