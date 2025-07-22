@@ -103,8 +103,8 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
     > Just for configuring neovim :((
 - Ops:
   - `groovy` + `jenkinsfile`
-  - `terraform`
-  - `helm` _(kubernetes)_
+  - `hcl`+ `terraform`
+  - `helm`
   - `nginx`
   - `ansible`
 - Configuring languages:
@@ -139,6 +139,9 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 # echo 'please star this repo!'
 # sudo rm -rf /
 ```
+
+> [!INFO]
+> I suggest forking this repo in order to up to date with the upstream (this repo)
 
 > [!WARNING]
 > We all know how to do that
@@ -177,49 +180,7 @@ lua
 │   │   ├── database        Database
 │   │   ├── git             Easier to interact with git
 │   │   ├── languages       User's preference to enable
-│   │   │   ├── ansible
-│   │   │   ├── assembly
-│   │   │   ├── c
-│   │   │   ├── config
-│   │   │   ├── cs
-│   │   │   ├── css
-│   │   │   ├── dart
-│   │   │   ├── docker
-│   │   │   ├── env
-│   │   │   ├── git
-│   │   │   ├── github
-│   │   │   ├── gitlab
-│   │   │   ├── go
-│   │   │   ├── graphql
-│   │   │   ├── groovy
-│   │   │   ├── helm
-│   │   │   ├── html
-│   │   │   ├── http
-│   │   │   ├── java
-│   │   │   ├── jenkins
-│   │   │   ├── json
-│   │   │   ├── just
-│   │   │   ├── kbd
-│   │   │   ├── kotlin
-│   │   │   ├── latex
-│   │   │   ├── lua
-│   │   │   ├── make
-│   │   │   ├── markdown
-│   │   │   ├── mssql
-│   │   │   ├── nginx
-│   │   │   ├── powershell
-│   │   │   ├── python
-│   │   │   ├── react
-│   │   │   ├── rust
-│   │   │   ├── shell
-│   │   │   ├── sql
-│   │   │   ├── tailwind
-│   │   │   ├── terraform
-│   │   │   ├── toml
-│   │   │   ├── typescript
-│   │   │   ├── vim
-│   │   │   ├── xml
-│   │   │   └── yaml
+│   │   │   ├── ...
 │   │   ├── lsp             Enhance LSP usage
 │   │   ├── mason           Mason package manager
 │   │   ├── motion          Extend neovim motions
@@ -291,7 +252,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
   - `mssql`: `sql`
   - `react`: `typescript`
   - `ansible`: `yaml` (for yaml syntax highlighting)
-- Set `$NVIM_NO_IDE` to any value to disable lsp, format, lint (fast for quick editing)
+- Set `$NVIM_NO_IDE` to any value to disable lsp, format, lint (quick editing)
 - These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
   - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
   - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)

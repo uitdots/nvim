@@ -59,6 +59,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.hcl",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.helm",
     enabled = false,
   },
