@@ -3,7 +3,6 @@ return {
   {
     "NvChad/ui",
     lazy = false,
-    branch = "v3.0",
     config = function()
       require("nvchad")
     end,
@@ -43,6 +42,9 @@ return {
         silent = true,
       },
     },
+    init = function()
+      vim.g.base46_cache = string.format("%s/base46/", vim.fn.stdpath("data"))
+    end,
     config = function()
       local base46_cache = vim.g.base46_cache
       for _, v in ipairs(vim.fn.readdir(base46_cache)) do
