@@ -167,7 +167,7 @@ M.base46 = {
 M.base46.hl_override = {
   Search = { bg = "blue" },
 
-  Visual = M.base46.transparency and vim.list_contains({ "catppuccin" }, M.base46.theme) and { bg = "one_bg3" } or {},
+  Visual = M.base46.transparency and { bg = "one_bg3" } or nil,
 
   FlashLabel = { bg = "red", fg = "black" },
 }
