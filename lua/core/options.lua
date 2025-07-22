@@ -8,60 +8,80 @@ local home = require("utils.os").home
 g.mapleader = " "
 g.maplocalleader = "\\"
 
-o.laststatus = 3 -- global statusline
-o.backup = false -- creates a backup file
+o.backup = false
 o.breakindent = true
-o.conceallevel = 0 -- so that `` is visible in markdown files
-o.fileencoding = "utf-8" -- the encoding written to a file
--- o.fileformats = "unix,dos" -- prefer file formats to read by neovim
--- o.fixendofline = false -- set to "true" to auto add endline char at the end of file
+o.conceallevel = 0
+o.fileencoding = "utf-8"
+o.fixendofline = false
 o.hidden = true -- required to keep multiple buffers and open multiple buffers
-o.ignorecase = true -- ignore case in search patterns
-o.linebreak = true -- for wrap to not break word
-o.mouse = "a" -- allow the mouse to be used in neovim
-o.confirm = true -- Confirm to save changes before exiting modified buffer
-o.pumheight = 8 -- pop up menu height
-o.pumblend = 0 -- transparency of pop-up menu
-o.showmode = false -- we don't need to see things like -- INSERT -- anymore
-o.smartcase = true -- smart case
-o.smartindent = false -- make indenting smarter again
-o.autoindent = false -- no indent when pasting from register in insert mode https://github.com/neovim/neovim/issues/30007
-o.splitbelow = true -- force all horizontal splits to go below current window
-o.splitright = true -- force all vertical splits to go to the right of current window
-o.swapfile = true -- creates a swapfile
-o.timeoutlen = 500 -- time to wait for a mapped sequence to complete (in milliseconds)
-o.undofile = true -- enable persistent undo
-o.updatetime = 100 -- faster completion (4000ms default)
-o.winblend = 0 -- make transparency for floating window (cmp,...)
-o.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-o.expandtab = true -- convert tabs to spaces
-o.shiftwidth = preferences_options.indent.default -- the number of spaces inserted for each indentation
-o.tabstop = preferences_options.indent.default -- insert 2 spaces for a tab
-o.cursorline = true -- highlight the current line
-o.cursorlineopt = "number" -- highlight number only
-o.number = true -- set numbered lines
-o.relativenumber = true -- set relative numbered lines
-o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
-o.wrap = preferences_options.wrap.default -- display lines as one long line
-o.scrolloff = 4 -- minimal number of columns to scroll horizontally.
-o.sidescrolloff = 8 -- minimal number of screen columns
-o.lazyredraw = false -- Won't be redrawn while executing macros, register and other commands.
-o.termguicolors = true -- Enables 24-bit RGB color in the TUI
+o.laststatus = 3
+
+-- Search
+o.ignorecase = true
+o.smartcase = true
+
+o.confirm = true
+o.mouse = "a"
+
+-- UI
+o.cmdheight = 0
+o.lazyredraw = false
+o.pumblend = 0
+o.pumheight = 8
+o.shortmess = "AcqFI"
+o.showmode = false
+o.termguicolors = true
+o.winblend = 0
+o.winborder = preferences_options.ui.border_enabled and "rounded" or "none" --TODO: Refactor this, remove
+
 opt.fillchars = {
   eob = " ",
   fold = " ",
+  foldclose = "",
   foldopen = "",
   foldsep = " ",
-  foldclose = "",
   lastline = " ",
-} -- make EndOfBuffer invisible
-o.ruler = false -- show the line and column number of the cursor position``
-o.cmdheight = 0 -- height of the command line
-o.helpheight = 10 -- height of the help window
-o.shortmess = "AcqFI"
-o.exrc = true -- Load .nvimrc, .nvim.lua, .exrc
-o.winborder = preferences_options.ui.border_enabled and "rounded" or "none"
--- o.spelloptions = "camel"
+}
+
+-- UI while editing
+o.cursorline = true
+o.cursorlineopt = "number"
+o.linebreak = true -- for wrap to not break word
+o.number = true
+o.relativenumber = true
+o.ruler = false
+o.scrolloff = 4
+o.sidescrolloff = 8
+o.signcolumn = "yes" -- always show the sign column, otherwise it would shift the text each time
+o.wrap = preferences_options.wrap.default
+
+-- Editing
+o.expandtab = true
+o.shiftwidth = preferences_options.indent.default
+o.tabstop = preferences_options.indent.default
+opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline, seem it doesn't work??
+
+-- Indent
+o.smartindent = false
+o.autoindent = false
+
+-- Split
+o.splitbelow = true
+o.splitright = true
+
+o.swapfile = true
+o.undofile = true
+
+-- Motion
+o.timeoutlen = 500
+o.updatetime = 100
+o.virtualedit = "block"
+opt.whichwrap:append("<>[]hl")
+-- opt.iskeyword:append("-") -- Ohm what is this
+
+-- Other
+o.exrc = true
+o.spelloptions = "camel"
 
 -- TODO: Refactor this to ... later?
 if vim.fn.filereadable(string.format("%s/spell/vi.utf-8.spl", vim.fn.stdpath("config"))) == 1 then
@@ -75,11 +95,6 @@ end
 -- o.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
 -- o.shellquote = ""
 -- o.shellxquote = ""
-
-opt.whichwrap:append("<>[]hl") -- Let those keys (need to convert) to go to nextline when the end of line
-opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline
-
--- opt.iskeyword:append "-"
 
 -- Replace builtin grep with ripgrep
 if is_executable("rg") then

@@ -5,6 +5,7 @@ local t = vim.t
 local cmd = vim.cmd
 local index_of = require("utils.helpers").index_of
 
+map("n", "<C-s>", "<cmd>w<cr>", { desc = "General | Write", silent = true })
 map("n", "<leader><Esc>", "<cmd>noh<cr>", { desc = "General | No Highlights", silent = true })
 map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All System", silent = true })
 map("v", "<leader>y", '"+y', { desc = "General | Yank System" })

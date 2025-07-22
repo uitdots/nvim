@@ -1,10 +1,8 @@
--- TODO: May cleanup this later
-local preferences_options = require("preferences").options
 local g = vim.g
+local preferences_options = require("preferences").options
 
-vim.g.base46_cache = string.format("%s/base46/", vim.fn.stdpath("data"))
 g.markdown_recommended_style = 0
-vim.g.health = {
+g.health = {
   style = nil, ---@type "float" | nil
 }
 
