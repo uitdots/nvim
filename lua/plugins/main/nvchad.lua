@@ -63,7 +63,7 @@ return {
       function()
         require("nvchad.tabufline").closeBufs_at_direction("left")
       end,
-      desc = "General | Close Buffers from Left",
+      desc = "Neovim | Close Buffers from Left",
       silent = true,
     },
     {

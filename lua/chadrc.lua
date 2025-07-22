@@ -204,7 +204,7 @@ M.base46.hl_add = {
   SnacksPickerToggle = { fg = "black", bg = "red" },
 
   ---Noice
-  NoiceVirtualText = { fg = "base0E" },
+  NoiceVirtualText = { fg = "lavender" },
 
   ---nvim-treesitter-context
   TreesitterContext = { bg = "black2" },
