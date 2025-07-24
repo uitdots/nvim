@@ -120,7 +120,7 @@ return {
   },
   {
     import = "plugins.extras.languages.nginx",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.powershell",
