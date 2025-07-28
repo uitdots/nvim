@@ -99,6 +99,10 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.kubernetes",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.latex",
     enabled = true,
   },

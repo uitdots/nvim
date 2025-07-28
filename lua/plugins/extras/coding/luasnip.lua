@@ -4,6 +4,33 @@ local is_windows = require("utils.os").is_windows
 return {
   "L3MON4D3/LuaSnip",
   version = "v2.*",
+  keys = {
+    {
+      "<C-n>",
+      "<Plug>luasnip-next-choice",
+      desc = "Insert | LuaSnip Next Choice",
+      silent = true,
+      mode = { "i", "s" },
+    },
+    {
+      "<C-p>",
+      "<Plug>luasnip-prev-choice",
+      desc = "Insert | LuaSnip Prev Choice",
+      silent = true,
+      mode = { "i", "s" },
+    },
+    {
+      "<M-c>",
+      function()
+        if require("luasnip").choice_active() then
+          require("luasnip.extras.select_choice")()
+        end
+      end,
+      desc = "Insert | LuaSnip Open Select Choice",
+      silent = true,
+      mode = { "i", "s" },
+    },
+  },
   build = not is_windows and "make install_jsregexp" or "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c",
   config = function(_, opts)
     require("luasnip").config.set_config(opts)
