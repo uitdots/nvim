@@ -20,6 +20,18 @@ return {
       mode = { "i", "s" },
     },
     {
+      "<M-e>",
+      function()
+        if require("luasnip").expand_or_jumpable() then
+          require("luasnip").expand_or_jump()
+        end
+      end,
+      desc = "Insert | LuaSnip Expand or Jump",
+      silent = true,
+      mode = { "i", "s" },
+      noremap = true,
+    },
+    {
       "<M-c>",
       function()
         if require("luasnip").choice_active() then
