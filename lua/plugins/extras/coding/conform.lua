@@ -2,6 +2,7 @@ local command = vim.api.nvim_create_user_command
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
 local ide_mode = require("utils.os").ide_mode
 local o = vim.o
+local is_executable = require("utils.executable").is_executable_cache
 
 local ignore_format_patterns = {
   "/node_modules/",
@@ -121,6 +122,15 @@ return {
     if filter_availabled_external then
       filter_available(opts)
     end
+
+    require("conform").formatters.injected = {
+      options = {
+        lang_to_formatters = {
+          json = is_executable("jq") and { "jq" } or nil,
+        },
+      },
+    }
+
     require("conform").setup(opts)
   end,
 }
