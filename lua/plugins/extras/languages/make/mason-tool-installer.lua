@@ -4,8 +4,7 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
-      "lua-language-server",
-      "stylua",
+      "checkmake",
     },
   },
   opts_extend = {
