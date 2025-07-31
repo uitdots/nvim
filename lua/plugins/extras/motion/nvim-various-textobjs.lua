@@ -5,6 +5,10 @@ return {
   opts = {
     keymaps = {
       useDefaults = true,
+      disabledDefaults = {
+        "restOfIndentation",
+        "restOfParagraph",
+      },
     },
   },
   keys = {
