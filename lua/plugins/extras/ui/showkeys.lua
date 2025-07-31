@@ -11,4 +11,7 @@ return {
       silent = true,
     },
   },
+  -- init = function()
+  --   require("showkeys").open()
+  -- end,
 }
