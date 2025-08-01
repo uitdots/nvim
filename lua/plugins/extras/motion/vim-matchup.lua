@@ -8,16 +8,4 @@ return {
     }
     vim.g.matchup_matchparen_enabled = 0 ---@type 0 | 1 Toggle highlight
   end,
-  dependencies = "nvim-treesitter/nvim-treesitter",
-  specs = {
-    {
-      "nvim-treesitter/nvim-treesitter",
-      opts = {
-        matchup = {
-          enable = true,
-          enable_quotes = true,
-        },
-      },
-    },
-  },
 }
