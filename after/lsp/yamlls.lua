@@ -3,12 +3,6 @@
 
 ---@type vim.lsp.Config
 return {
-  filetypes = {
-    "yaml",
-    "yaml.docker-compose",
-    "yaml.gitlab",
-    "yaml.github",
-  },
   ---@type lspconfig.settings.yamlls
   settings = {
     yaml = {
