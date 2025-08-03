@@ -4,7 +4,7 @@ local augroup = vim.api.nvim_create_augroup
 local preferences = require("preferences")
 
 -- General Settings
-local general = augroup("General", { clear = true })
+local general = augroup("General", {})
 
 local indent_opts = preferences.options.indent
 for chars, fts in pairs(indent_opts.space) do
