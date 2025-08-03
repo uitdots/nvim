@@ -39,7 +39,7 @@ return {
     end
 
     vim.api.nvim_create_autocmd({
-      "BufWritePost",
+      "InsertLeave",
       "BufWinEnter",
     }, {
       callback = debounce(function()
