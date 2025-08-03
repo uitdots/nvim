@@ -1,3 +1,5 @@
+-- NOTE: run `:options` to try live options
+
 local opt = vim.opt
 local o = vim.o
 local g = vim.g
@@ -57,7 +59,7 @@ o.wrap = preferences_options.wrap.default
 
 -- Editing
 o.expandtab = true
-o.shiftwidth = preferences_options.indent.default
+o.shiftwidth = 0
 o.tabstop = preferences_options.indent.default
 opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline, seem it doesn't work??
 
@@ -82,11 +84,6 @@ opt.whichwrap:append("<>[]hl")
 -- Other
 o.exrc = true
 o.spelloptions = "camel"
-
--- TODO: Refactor this to ... later?
-if vim.fn.filereadable(string.format("%s/spell/vi.utf-8.spl", vim.fn.stdpath("config"))) == 1 then
-  o.spelllang = "en,vi"
-end
 
 -- Uncomment these options to enable pwsh for Windows
 -- o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
