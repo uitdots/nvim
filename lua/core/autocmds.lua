@@ -66,14 +66,6 @@ autocmd("ModeChanged", {
 })
 ]]
 
-autocmd("FocusGained", {
-  callback = function()
-    vim.cmd("checktime")
-  end,
-  group = general,
-  desc = "Update file when there are changes",
-})
-
 autocmd("FileType", {
   pattern = "*",
   callback = function()

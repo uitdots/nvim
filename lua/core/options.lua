@@ -83,6 +83,7 @@ opt.whichwrap:append("<>[]hl")
 
 -- Other
 o.exrc = true
+o.autoread = true
 o.spelloptions = "camel"
 
 -- Uncomment these options to enable pwsh for Windows
