@@ -28,8 +28,5 @@ return {
       },
     },
   },
-  dependencies = {
-    "saghen/blink.cmp",
-    "nvim-lua/plenary.nvim",
-  },
+  dependencies = "saghen/blink.cmp",
 }
