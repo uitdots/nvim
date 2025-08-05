@@ -1,7 +1,4 @@
-local preferences = require("preferences")
-local lspconfig = require("configs.lsp.lspconfig")
-
-table.insert(preferences.no_setup_lsps, "rust-analyzer")
+local lsp = require("configs.lsp")
 
 ---@type LazySpec
 return {
@@ -14,9 +11,8 @@ return {
       tools = {},
 
       server = {
-        on_attach = lspconfig.on_attach,
-        capabilities = lspconfig.capabilities,
-        on_init = lspconfig.on_init,
+        capabilities = lsp.capabilities,
+        on_init = lsp.on_init,
       },
 
       dap = {},

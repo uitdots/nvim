@@ -1,6 +1,6 @@
 ---TODO: remove this plugin when typescript go is done!!!!!
 
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 local is_executable = require("utils.executable").is_executable
 
 ---@type LazySpec
@@ -17,9 +17,8 @@ return {
     "typescript.tsx",
   },
   opts = {
-    capabilities = lspconfig.capabilities,
-    on_init = lspconfig.on_init,
-    on_attach = lspconfig.on_attach,
+    capabilities = lsp.capabilities,
+    on_init = lsp.on_init,
     settings = {
       expose_as_code_action = "all", ---@type "fix_all" | "add_missing_imports" | "remove_unused" | "remove_unused_imports" | "organize_imports" | "all"
       separate_diagnostic_server = true,

@@ -3,7 +3,7 @@ local is_executable = require("utils.executable").is_executable
 local os = require("utils.os").os
 local home = require("utils.os").home
 local get_child_folders = require("utils.helpers").get_child_folders
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 local lsp_utils = require("utils.lsp")
 local map = vim.keymap.set
 
@@ -144,12 +144,9 @@ return {
           },
         },
       },
-      capabilities = lspconfig.capabilities,
-      on_attach = function(client, bufnr)
-        lspconfig.on_attach(client, bufnr)
-        on_attach(client, bufnr)
-      end,
-      on_init = lspconfig.on_init,
+      capabilities = lsp.capabilities,
+      on_attach = on_attach,
+      on_init = lsp.on_init,
       cmd_env = {
         JAVA_OPTS = vim.env.JAVA_OPTS or "-Xmx8g", -- For 8GB of ram? :P
       },

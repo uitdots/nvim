@@ -1,6 +1,5 @@
 ---@diagnostic disable: missing-fields
 
-local lspconfig = require("configs.lsp.lspconfig")
 local lsp_utils = require("utils.lsp")
 
 local inlayhint_opts
@@ -20,9 +19,7 @@ local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("gopls")
 
 ---@type vim.lsp.Config
 return {
-  on_attach = function(client, bufnr)
-    lspconfig.on_attach(client, bufnr)
-
+  on_attach = function(client)
     -- Idk I got from https://github.com/golang/go/issues/54531#issuecomment-1464982242
     if semantic_tokens_enabled and not client.server_capabilities.semanticTokensProvider then
       local semantic = client.config.capabilities.textDocument.semanticTokens

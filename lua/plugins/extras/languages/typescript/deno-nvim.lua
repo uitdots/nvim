@@ -1,4 +1,4 @@
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 
 ---@type LazySpec
 return {
@@ -8,9 +8,8 @@ return {
     ---@type vim.lsp.Config
     ---@diagnostic disable-next-line: missing-fields
     server = {
-      on_attach = lspconfig.on_attach,
-      capabilites = lspconfig.capabilities,
-      on_init = lspconfig.on_init,
+      capabilites = lsp.capabilities,
+      on_init = lsp.on_init,
     },
   },
 }

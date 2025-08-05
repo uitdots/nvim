@@ -1,4 +1,4 @@
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 local is_executable = require("utils.executable").is_executable
 local is_windows = require("utils.os").is_windows
 local home = require("utils.os").home
@@ -23,9 +23,8 @@ return {
     -- TODO: Do we have to declare ourselves?
     border = "rounded",
     lsp = {
-      capabilities = lspconfig.capabilities,
-      on_init = lspconfig.on_init,
-      on_attach = lspconfig.on_attach,
+      capabilities = lsp.capabilities,
+      on_init = lsp.on_init,
     },
     setting = {
       analysisExcludedFolders = {

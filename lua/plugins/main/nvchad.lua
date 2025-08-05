@@ -1,4 +1,4 @@
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 local ft_no_navigate = {
   "dap-view",
   "dbui",
@@ -178,6 +178,9 @@ return {
   init = function()
     require("nvchad.autocmds")
   end,
+  config = function()
+    require("nvchad.lsp").diagnostic_config()
+  end,
   specs = {
     {
       "mason-org/mason.nvim",
@@ -192,14 +195,8 @@ return {
     {
       "neovim/nvim-lspconfig",
       opts = function()
-        lspconfig.capabilities = vim.tbl_deep_extend("keep", lspconfig.capabilities, require("nvchad.configs.lspconfig").capabilities)
-
-        local original_lspconfig_setup = lspconfig.setup
-        ---@diagnostic disable-next-line: duplicate-set-field This is intentional
-        function lspconfig.setup()
-          require("nvchad.lsp").diagnostic_config()
-          original_lspconfig_setup()
-        end
+        local nvchad_capabilities = require("nvchad.configs.lspconfig").capabilities
+        lsp.capabilities = vim.tbl_deep_extend("keep", lsp.capabilities, nvchad_capabilities)
       end,
     },
   },

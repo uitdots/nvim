@@ -1,7 +1,7 @@
 ---@diagnostic disable: missing-fields
 ---@module 'neoconf'
 
-local lspconfig = require("configs.lsp.lspconfig")
+local lsp = require("configs.lsp")
 local lsp_utils = require("utils.lsp")
 
 ---@type _.lspconfig.settings.vtsls.InlayHints
@@ -45,7 +45,7 @@ return {
     on_dir()
   end,
   on_init = function(client, init_result)
-    lspconfig.on_init(client, init_result)
+    lsp.on_init(client, init_result)
 
     if not semantic_tokens_enabled then
       client.server_capabilities.semanticTokensProvider = nil

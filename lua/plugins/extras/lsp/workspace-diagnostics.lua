@@ -3,13 +3,13 @@ return {
   "artemave/workspace-diagnostics.nvim",
   enabled = false,
   init = function()
-    local lspconfig = require("configs.lsp.lspconfig")
-
-    local on_attach = function(client, bufnr)
-      lspconfig.on_attach(client, bufnr)
-      require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
-    end
-
-    lspconfig.on_attach = on_attach
+    vim.api.nvim_create_autocmd("LspAttach", {
+      callback = function(args)
+        local client = vim.lsp.get_client_by_id(args.data.client_id) -- TODO: Check this, AI gen for me
+        local bufnr = args.buf
+        require("workspace-diagnostics").populate_workspace_diagnostics(client, bufnr)
+      end,
+      group = vim.api.nvim_create_augroup("lsp-workspace-diagnostics", {}),
+    })
   end,
 }
