@@ -14,18 +14,8 @@ return {
       silent = true,
     },
   },
-  specs = {
-    {
-      "nvim-telescope/telescope.nvim",
-      opts = {
-        extensions_list = {
-          "undo",
-        },
-      },
-      opts_extend = {
-        "extensions_list",
-      },
-      dependencies = "debugloop/telescope-undo.nvim",
-    },
-  },
+  config = function()
+    require("telescope").load_extension("undo")
+  end,
+  dependencies = "nvim-telescope/telescope.nvim",
 }

@@ -14,18 +14,8 @@ return {
       silent = true,
     },
   },
-  specs = {
-    {
-      "nvim-telescope/telescope.nvim",
-      opts = {
-        extensions_list = {
-          "lazy_plugins",
-        },
-      },
-      opts_extend = {
-        "extensions_list",
-      },
-      dependencies = "polirritmico/telescope-lazy-plugins.nvim",
-    },
-  },
+  config = function()
+    require("telescope").load_extension("lazy_plugins")
+  end,
+  dependencies = "nvim-telescope/telescope.nvim",
 }
