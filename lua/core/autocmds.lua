@@ -32,8 +32,8 @@ local exclude_last_cur_pos_fts = {
 ---https://www.reddit.com/r/neovim/comments/1lyuz6k/autocmd_to_restore_cursor_position_after_saving/
 autocmd("BufRead", {
   callback = function(args)
-    local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
-    if exclude_last_cur_pos_fts[buftype] then
+    local filetype = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
+    if exclude_last_cur_pos_fts[filetype] then
       return
     end
     local position = vim.api.nvim_buf_get_mark(args.buf, [["]])
