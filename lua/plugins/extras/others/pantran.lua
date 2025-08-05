@@ -6,7 +6,7 @@ return {
     {
       "<leader>ut",
       function()
-        require("pantran").motion_translate()
+        return require("pantran").motion_translate()
       end,
       desc = "Utils | Translate",
       silent = true,
@@ -22,6 +22,14 @@ return {
         fallback = {
           default_target = "vi",
         },
+      },
+    },
+    command = {
+      default_mode = "hover",
+    },
+    window = {
+      window_config = {
+        border = vim.o.winborder,
       },
     },
   },
