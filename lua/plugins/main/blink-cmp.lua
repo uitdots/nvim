@@ -30,7 +30,7 @@ return {
       ["<Tab>"] = {
         function(cmp)
           if cmp.is_active() then
-            return cmp.select_next({ auto_insert = true })
+            return cmp.select_next()
           end
         end,
         "snippet_forward",
@@ -39,7 +39,7 @@ return {
       ["<S-Tab>"] = {
         function(cmp)
           if cmp.is_active() then
-            return cmp.select_prev({ auto_insert = true })
+            return cmp.select_prev()
           end
         end,
         "snippet_backward",
@@ -101,6 +101,14 @@ return {
     },
     signature = {
       enabled = true,
+    },
+    completion = {
+      list = {
+        selection = {
+          auto_insert = false,
+          preselect = true,
+        },
+      },
     },
   },
   opts_extend = {
