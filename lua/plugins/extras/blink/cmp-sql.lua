@@ -26,7 +26,10 @@ return {
               module = "blink.compat.source",
               score_offset = -5,
               max_items = 10,
-              should_show_items = function()
+              should_show_items = function(ctx)
+                if vim.bo[ctx.bufnr].filetype:match("sql") then
+                  return true
+                end
                 local ok, node = pcall(vim.treesitter.get_node)
                 return ok and node and allowed_ts_types[node:type()] or false
               end,
