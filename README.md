@@ -39,7 +39,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 
 | Dashboard                                                                                     | Editor                                                                                     |
 | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| ![Dashboard](https://github.com/user-attachments/assets/71ca08b3-8a52-403e-8d4b-804b11e4fca9) | ![Editor](https://github.com/user-attachments/assets/77cc3e3f-7b73-4b83-acc2-8b96faf81c3a) |
+| ![Dashboard](https://github.com/user-attachments/assets/bd8392bb-9af3-4d5a-8c0a-709365e4aabf) | ![Editor](https://github.com/user-attachments/assets/77cc3e3f-7b73-4b83-acc2-8b96faf81c3a) |
 
 | Debugging                                                                                     | AI                                                                                     |
 | --------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
