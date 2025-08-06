@@ -1,8 +1,8 @@
-# 💫 UIT - Neovim
+# 💫 Neovim
 
-A fast and highly customisable Neovim IDE with lazy loading, featuring the best trending plugins _(not FOMO)_, and modular configurations.
+A fast and highly customisable Neovim IDE with lazy loading, and modular configurations.
 
-> Heavy bloat Neovim :(
+> Heavy and bloated
 
 ---
 
@@ -25,9 +25,9 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
   - [For configuring](#for-configuring)
 - [✏️ Others](#-others)
   - [Questions](#questions)
-    - [Control space in Windows Terminal doesn't work?](#control-space-in-windows-terminal-doesnt-work)
-    - [How to change the behavior of completion?](#how-to-change-the-behavior-of-completion)
-    - [Possible to change the NvChad UI to another?](#possible-to-change-the-nvchad-ui-to-another)
+    - [Control space in Windows Terminal doesn't work](#control-space-in-windows-terminal-doesnt-work)
+    - [Change the behavior of completion](#change-the-behavior-of-completion)
+    - [Change the NvChad UI](#change-the-nvchad-ui)
   - [Tips & Tricks](#tips--tricks)
   - [References](#references)
 
@@ -104,6 +104,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 - Ops:
   - `groovy` + `jenkinsfile`
   - `hcl`+ `terraform`
+  - `kubernetes`
   - `helm`
   - `nginx`
   - `ansible`
@@ -129,6 +130,7 @@ A fast and highly customisable Neovim IDE with lazy loading, featuring the best 
 - neovim:
   > version \>= 0.11
 - `make`: Some plugins require this
+- `curl`
 - `delta`
 - `ripgrep`: telescope, vimgrep replacement
 - `fd`: telescope
@@ -158,6 +160,7 @@ lua
 │   │   ├── adapters
 │   │   ├── configurations
 │   │   └── utils
+│   ├── diagnostic          (Neo)vim diagnostic setup
 │   ├── lazy                lazy.nvim config
 │   ├── lsp                 Neovim's lsp setting
 │   └── ui                  UI (mostly for nvchad)
@@ -221,10 +224,6 @@ There are some keymaps you should know in this config (and native neovim keymaps
 | `n`  | `<leader>c`        | Close Buffer                                                                 |
 | `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline                                     |
 | `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline                                    |
-| `n`  | `Left`             | Go to Previous Tab                                                           |
-| `n`  | `Right`            | Go to Next Tab                                                               |
-| `n`  | `Up`               | New Tab                                                                      |
-| `n`  | `Down`             | Close Tab                                                                    |
 | `n`  | `<C-s>`            | Save Buffer                                                                  |
 | `n`  | `ZZ`               | Write Quit                                                                   |
 | `n`  | `ZQ`               | Quit                                                                         |
@@ -246,7 +245,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
   :MasonToolsInstall
   ```
 - Plugins are updated every week _(set in lazy config)_
-- Some `languages` pack require others, you must enable yourself:
+- Some `languages` pack require others, you should (or must?) enable yourself:
   - `rest`: `http`
   - `jenkins`: `groovy`
   - `mssql`: `sql`
@@ -277,10 +276,10 @@ There are some keymaps you should know in this config (and native neovim keymaps
 ### For configuring
 
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
-- If NvChad UI's color is broken, use `<leader>ur` or run:
-- lsp currently not enabled by compound filetype?
-- nvim-lint can lint the compound filetype, async?
-- conform format the last filetype in the compound file, one by one?
+- If NvChad UI's color is broken, use `<leader>ur`
+- lsp currently not enabled by compound filetype
+- nvim-lint can lint the compound filetype
+- conform format the last filetype in the compound file, one by one
 
 ---
 
@@ -288,7 +287,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 
 ### Questions
 
-#### Control space in Windows Terminal doesn't work?
+#### Control space in Windows Terminal doesn't work
 
 On windows terminal which cannot send <kbd>Ctrl</kbd> + <kbd>Space</kbd> into shell, you can send <kbd>Ctrl</kbd> + <kbd>Space</kbd> as <kbd>Alt</kbd> + <kbd>;</kbd> by editing windows terminal config json _(`LocalState/settings.json`)_:
 
@@ -307,11 +306,11 @@ On windows terminal which cannot send <kbd>Ctrl</kbd> + <kbd>Space</kbd> into sh
 }
 ```
 
-#### How to change the behavior of completion?
+#### Change the behavior of completion
 
 See <https://cmp.saghen.dev/configuration/keymap.html> and change [lua/plugins/main/blink-cmp.lua](lua/plugins/main/blink-cmp.lua). You should read all the docs.
 
-#### Possible to change the NvChad UI to another?
+#### Change the NvChad UI
 
 It may be possible. But it may require times to config.
 
@@ -324,19 +323,6 @@ It may be possible. But it may require times to config.
   ```
 
   > <https://neovim.io/doc/user/vietnamese.html>
-
-- Use spell check `vi`
-  1. run
-
-  ```sh
-  just make-spell-vi
-  ```
-
-  2. Set spell lang in neovim
-
-  ```vim
-  :set spell spellang=vi
-  ```
 
 ### References
 

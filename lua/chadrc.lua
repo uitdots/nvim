@@ -61,7 +61,7 @@ M.ui = {
 
 M.nvdash = {
   load_on_startup = true,
-  header = nvdash_config.headers.uitvim,
+  header = nvdash_config.headers.uv,
   buttons = {
     { txt = "─", no_gap = false, rep = true },
     {

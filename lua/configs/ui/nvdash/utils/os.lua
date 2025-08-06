@@ -1,7 +1,9 @@
 local M = {}
 
+---@type string?
 M.icon = nil
 
+---@type table<string, string>
 M.os_map = {
   Linux = "linux",
   Windows_NT = "windows",
@@ -9,10 +11,11 @@ M.os_map = {
 }
 
 function M.set_icon()
+  ---@module 'nvim-web-devicons'
   local nvim_web_devicons = require("nvim-web-devicons")
 
   ---@type string
-  local os = vim.loop.os_uname().sysname
+  local os = vim.uv.os_uname().sysname
 
   ---@type string
   local os_icon_name
@@ -46,12 +49,9 @@ function M.set_icon()
   M.icon = os_object.icon .. " " or ""
 end
 
-function M.render()
+return function()
   if M.icon == nil then
     M.set_icon()
   end
-
   return M.icon
 end
-
-return M.render

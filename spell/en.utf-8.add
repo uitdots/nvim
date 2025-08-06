@@ -4,6 +4,7 @@ Nvim
 ai
 api
 async
+chezmoi
 config
 ctrl
 deno
@@ -33,4 +34,5 @@ sudo
 tmux
 toc
 treesitter
+wakatime
 yaml

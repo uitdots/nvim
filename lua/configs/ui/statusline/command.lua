@@ -3,12 +3,12 @@ local M = {}
 ---@type boolean?
 M.ok = nil
 
----@module 'noice'
-M.noice = nil
+---@type (fun(): string)?
+M.get_command = nil
 
 ---@return string
 function M.render()
-  return string.format("%%#St_gitIcons#󰌌 %s ", M.noice.status.command.get() or "")
+  return string.format("%%#St_gitIcons#󰌌 %s ", M.get_command() or "")
 end
 
 ---@return string?
@@ -21,7 +21,12 @@ return function()
     if package.loaded["noice"] == nil then
       return
     else
-      M.ok, M.noice = pcall(require, "noice.api")
+      local noice
+      M.ok, noice = pcall(require, "noice.api")
+      if M.ok then
+        ---@diagnostic disable-next-line: undefined-field
+        M.get_command = noice.status.command.get
+      end
     end
   end
 
