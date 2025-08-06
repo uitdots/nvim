@@ -60,10 +60,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 - Querying database, rest api, json, yaml
 - AI integration with tab completion, MCP, VectorCode
 - Fast find files, image viewer with [snacks.nvim](https://github.com/folke/snacks.nvim)
-- Others:
-  - Save session
-  - chezmoi
-  - wakatime
+- Others: translate, session, chezmoi, wakatime
 
 > [!NOTE]
 > And much more...! You will get lost in this config.
@@ -71,7 +68,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 ### Languages
 
 > [!NOTE]
-> The higher order, the well configured
+> The higher the order, the better configured the language is
 
 - Author using:
   - `javascript`, `typescript` _(nodejs, deno)_
@@ -148,7 +145,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 > [!WARNING]
 > We all know how to do that
 >
-> You shouldn't entering nvim for now. Use another editor to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
+> You shouldn't entering nvim for now. Use `nvim --clean ./lua/plugins/extras/languages/init.lua` or another editor to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
 
 ### Structure
 
@@ -327,7 +324,7 @@ It may be possible. But it may require times to config.
 ### References
 
 - [Alexis12119](https://github.com/Alexis12119/nvim-config)
-  > Special thanks to Alexis!!! He helps me mature
+  > Special thanks to Alexis!
 - [nikolovlazar](https://github.com/nikolovlazar/dotfiles/blob/main/.config/nvim/)
 - [Integralist](https://github.com/Integralist/nvim)
   > Has ghostty type
