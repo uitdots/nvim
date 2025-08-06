@@ -20,17 +20,19 @@ return {
   opts = {
     prefix = "g<M-a>",
   },
-  config = function(_, opts)
-    require("textcase").setup(opts)
-    ---@param extension string
-    pcall(function(extension)
-      return require("telescope").load_extension(extension)
-    end, "text-case")
-  end,
   dependencies = {
     {
       "nvim-telescope/telescope.nvim",
       optional = true,
+      specs = {
+        {
+          "johmsalas/text-case.nvim",
+          opts = function(_, opts)
+            require("telescope").load_extension("text-case")
+            return opts
+          end,
+        },
+      },
     },
   },
 }
