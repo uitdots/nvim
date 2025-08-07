@@ -177,6 +177,7 @@ return {
   },
   config = function()
     require("nvchad.lsp").diagnostic_config()
+    require("configs.diagnostic")
   end,
   specs = {
     {
