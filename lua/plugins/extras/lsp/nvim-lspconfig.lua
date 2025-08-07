@@ -1,5 +1,4 @@
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
-local ide_mode = require("utils.os").ide_mode
 local is_executable = require("utils.executable").is_executable
 local lsp = require("configs.lsp")
 local lsps = require("preferences").lsp.force
@@ -24,7 +23,6 @@ end
 ---@type LazySpec
 return {
   "neovim/nvim-lspconfig",
-  cond = ide_mode,
   keys = {
     {
       "<leader>li",

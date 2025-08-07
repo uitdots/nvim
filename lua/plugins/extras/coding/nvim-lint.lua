@@ -1,7 +1,6 @@
 local is_executable = require("utils.executable").is_executable
 local debounce = require("utils.helpers").debounce
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
-local ide_mode = require("utils.os").ide_mode
 
 local function filter_avaiable()
   local lint = require("lint")
@@ -20,7 +19,6 @@ end
 ---@type LazySpec
 return {
   "mfussenegger/nvim-lint",
-  cond = ide_mode,
   event = "VeryLazy",
   opts = function()
     local lint = require("lint")

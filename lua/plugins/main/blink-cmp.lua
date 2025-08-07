@@ -131,22 +131,4 @@ return {
       desc = "Options | Toggle Completion",
     },
   },
-  specs = {
-    {
-      "L3MON4D3/LuaSnip",
-      specs = {
-        {
-          "saghen/blink.cmp",
-          ---@module 'blink.cmp'
-          ---@type blink.cmp.Config
-          opts = {
-            snippets = {
-              preset = "luasnip",
-            },
-          },
-          optional = true,
-        },
-      },
-    },
-  },
 }

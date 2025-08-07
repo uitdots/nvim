@@ -1,6 +1,5 @@
 local command = vim.api.nvim_create_user_command
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
-local ide_mode = require("utils.os").ide_mode
 local is_executable = require("utils.executable").is_executable_cache
 
 local ignore_format_patterns = {
@@ -22,7 +21,6 @@ end
 ---@type LazySpec
 return {
   "stevearc/conform.nvim",
-  cond = ide_mode,
   event = "BufWritePre",
   cmd = "ConformInfo",
   keys = {

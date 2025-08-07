@@ -1,9 +1,6 @@
-local ide_mode = require("utils.os").ide_mode
-
 ---@type LazySpec
 return {
   "mason-org/mason-lspconfig.nvim",
-  cond = ide_mode,
   event = {
     "BufReadPre",
     "BufNewFile",
