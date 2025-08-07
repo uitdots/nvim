@@ -139,7 +139,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 # sudo rm -rf /
 ```
 
-> [!INFO]
+> [!NOTE]
 >
 > I suggest forking this repo in order to up to date with the upstream (this repo)
 
