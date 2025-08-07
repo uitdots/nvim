@@ -2,7 +2,7 @@
 return {
   "mason-org/mason-lspconfig.nvim",
   event = {
-    "BufReadPre",
+    "BufReadPre", -- Must load before entering buffer, not post
     "BufNewFile",
   },
   ---@module 'mason-lspconfig'

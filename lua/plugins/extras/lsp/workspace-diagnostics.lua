@@ -2,7 +2,10 @@
 return {
   "artemave/workspace-diagnostics.nvim",
   enabled = false,
-  event = "VeryLazy",
+  event = {
+    "BufRead",
+    "BufNewFile",
+  },
   config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)

@@ -175,9 +175,6 @@ return {
     --   silent = true,
     -- },
   },
-  init = function()
-    require("nvchad.autocmds")
-  end,
   config = function()
     require("nvchad.lsp").diagnostic_config()
   end,

@@ -23,6 +23,10 @@ end
 ---@type LazySpec
 return {
   "neovim/nvim-lspconfig",
+  event = {
+    "BufRead",
+    "BufNewFile",
+  },
   keys = {
     {
       "<leader>li",
