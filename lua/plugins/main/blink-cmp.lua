@@ -102,14 +102,6 @@ return {
     signature = {
       enabled = true,
     },
-    completion = {
-      list = {
-        selection = {
-          auto_insert = false,
-          preselect = true,
-        },
-      },
-    },
   },
   opts_extend = {
     "sources.default",
