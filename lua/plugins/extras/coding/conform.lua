@@ -1,7 +1,6 @@
 local command = vim.api.nvim_create_user_command
 local filter_availabled_external = require("preferences").options.others.filter_availabled_external
 local ide_mode = require("utils.os").ide_mode
-local o = vim.o
 local is_executable = require("utils.executable").is_executable_cache
 
 local ignore_format_patterns = {
@@ -52,6 +51,13 @@ return {
           "--ignore-gitignore",
         },
       },
+      injected = {
+        options = {
+          lang_to_formatters = {
+            json = is_executable("jq") and { "jq" } or nil,
+          },
+        },
+      },
     },
     format_after_save = function(bufnr)
       if not vim.g.auto_format_enabled or vim.b[bufnr].auto_format_enabled == false then
@@ -68,7 +74,7 @@ return {
     end,
   },
   init = function()
-    o.formatexpr = "v:lua.require'conform'.formatexpr()"
+    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
     command("Format", function(args)
       local range = nil
       if args.count ~= -1 then
@@ -122,14 +128,6 @@ return {
     if filter_availabled_external then
       filter_available(opts)
     end
-
-    require("conform").formatters.injected = {
-      options = {
-        lang_to_formatters = {
-          json = is_executable("jq") and { "jq" } or nil,
-        },
-      },
-    }
 
     require("conform").setup(opts)
   end,

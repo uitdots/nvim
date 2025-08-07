@@ -2,7 +2,8 @@
 return {
   "artemave/workspace-diagnostics.nvim",
   enabled = false,
-  init = function()
+  event = "VeryLazy",
+  config = function()
     vim.api.nvim_create_autocmd("LspAttach", {
       callback = function(args)
         local client = vim.lsp.get_client_by_id(args.data.client_id) -- TODO: Check this, AI gen for me
