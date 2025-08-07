@@ -140,9 +140,11 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 ```
 
 > [!INFO]
+>
 > I suggest forking this repo in order to up to date with the upstream (this repo)
 
 > [!WARNING]
+>
 > We all know how to do that
 >
 > You shouldn't entering nvim for now. Use `nvim --clean ./lua/plugins/extras/languages/init.lua` or another editor to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
@@ -195,7 +197,7 @@ lua
 ```
 
 > [!NOTE]
-> Extra plugins in [lua/plugins/extras](lua/plugins/extras) are (may) safely disabled. You should disable by group in [lua/plugins/extras/init.lua](lua/plugins/extras/init.lua) _(except others, disable them individually)_
+> Extra plugins in [lua/plugins/extras](lua/plugins/extras) are (may) safely disabled. You should disable by group in [lua/plugins/extras/init.lua](lua/plugins/extras/init.lua), [lua/plugins/extras/languages/init.lua](./lua/plugins/extras/languages/init.lua), and individually in [lua/plugins/extras/others](./lua/plugins/extras/others).
 
 ---
 
@@ -218,9 +220,10 @@ There are some keymaps you should know in this config (and native neovim keymaps
 | `n`  | `<leader>e`        | Toggle File Tree                                                             |
 | `n`  | `<leader>Tab`      | Open File Tree and Focus Current File                                        |
 | `n`  | `<leader>y`        | Yank all into System Clipboard                                               |
-| `n`  | `<leader>c`        | Close Buffer                                                                 |
 | `n`  | `H`                | Navigate Left Buffer in NvChad Tabufline                                     |
 | `n`  | `L`                | Navigate Right Buffer in NvChad Tabufline                                    |
+| `n`  | `<leader>c`        | Close Buffer                                                                 |
+| `n`  | `<leader><Esc>`    | No Highlight Search Matches                                                  |
 | `n`  | `<C-s>`            | Save Buffer                                                                  |
 | `n`  | `ZZ`               | Write Quit                                                                   |
 | `n`  | `ZQ`               | Quit                                                                         |
