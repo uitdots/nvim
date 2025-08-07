@@ -3,7 +3,7 @@
 ---lua_ls check type for first type?? so we must let `string` before anything else
 ---@alias Lsp string | Lsp.NvimLspconfig | Lsp.Others
 
----Use `\ls /lsp -1 | sed 's/\.lua$//' | wl-copy`
+---Command: `r !curl -Ls https://api.github.com/repos/neovim/nvim-lspconfig/contents/lsp/ |  jq '.[] | select(.type == "file") | .name' -r | sort | sed "s/\.lua$//; s/.*/---| '\"&\"'/"`
 ---@alias Lsp.NvimLspconfig
 ---| '"ada_ls"'
 ---| '"agda_ls"'
@@ -48,7 +48,7 @@
 ---| '"cds_lsp"'
 ---| '"circom-lsp"'
 ---| '"clangd"'
----| '"clarity_lsp"'
+---| '"clarinet"'
 ---| '"clojure_lsp"'
 ---| '"cmake"'
 ---| '"cobol_ls"'
@@ -78,6 +78,7 @@
 ---| '"digestif"'
 ---| '"djlsp"'
 ---| '"docker_compose_language_service"'
+---| '"docker_language_server"'
 ---| '"dockerls"'
 ---| '"dolmenls"'
 ---| '"dotls"'
@@ -222,7 +223,6 @@
 ---| '"phan"'
 ---| '"phpactor"'
 ---| '"pico8_ls"'
----| '"pkgbuild_language_server"'
 ---| '"please"'
 ---| '"pli"'
 ---| '"poryscript_pls"'
@@ -313,6 +313,7 @@
 ---| '"tblgen_lsp_server"'
 ---| '"teal_ls"'
 ---| '"templ"'
+---| '"termux_language_server"'
 ---| '"terraformls"'
 ---| '"terraform_lsp"'
 ---| '"texlab"'
