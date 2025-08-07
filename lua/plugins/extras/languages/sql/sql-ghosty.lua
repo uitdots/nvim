@@ -1,13 +1,11 @@
-local inlay_hint = require("preferences").options.inlay_hint
+local lsp_utils = require("utils.lsp")
 
 ---@type LazySpec
 return {
   "pmouraguedes/sql-ghosty.nvim",
-  cmd = {
-    "SqlInlayHintsToggle",
-  },
+  cmd = "SqlInlayHintsToggle",
   opts = {
-    show_hints_by_default = inlay_hint.servers == true or (inlay_hint.servers.sql ~= nil and inlay_hint.servers.sql) or inlay_hint.server_default,
+    show_hints_by_default = lsp_utils.is_inlay_hint_enabled("sql"),
   },
   dependencies = "nvim-treesitter/nvim-treesitter",
 }

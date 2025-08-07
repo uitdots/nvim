@@ -245,7 +245,6 @@ There are some keymaps you should know in this config (and native neovim keymaps
 - Some `languages` pack require others, you should (or must?) enable yourself:
   - `rest`: `http`
   - `jenkins`: `groovy`
-  - `mssql`: `sql`
   - `react`: `typescript`
   - `ansible`: `yaml` (for yaml syntax highlighting)
 - Set `$NVIM_NO_IDE` to any value to disable lsp, format, lint (quick editing)

@@ -1,4 +1,3 @@
-local lsp = require("configs.lsp")
 local is_executable = require("utils.executable").is_executable
 
 ---@type LazySpec
@@ -7,10 +6,8 @@ return {
   ft = "sql",
   cond = is_executable("sqls"),
   config = function()
-    require("lspconfig").sqls.setup({
+    vim.lsp.config("sqls", {
       on_attach = require("sqls").on_attach,
-      on_init = lsp.on_init,
-      capabilities = lsp.capabilities,
     })
   end,
 }

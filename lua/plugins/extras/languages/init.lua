@@ -119,10 +119,6 @@ return {
     enabled = true,
   },
   {
-    import = "plugins.extras.languages.mssql",
-    enabled = false,
-  },
-  {
     import = "plugins.extras.languages.nginx",
     enabled = false,
   },

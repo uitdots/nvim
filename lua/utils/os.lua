@@ -16,9 +16,6 @@ M.path_separator = is_windows and "\\" or "/"
 
 M.home = vim.fn.expand("$HOME")
 
----@type table<string, string?>
-local env_cache = {}
-
 M.ide_mode = vim.env.NVIM_NO_IDE == nil
 
 return M

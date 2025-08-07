@@ -3,7 +3,7 @@
 local lsp_utils = require("utils.lsp")
 
 local inlayhint_opts
-if lsp_utils.is_inlay_hint_enabled("rust_analyzer") then
+if lsp_utils.is_inlay_hint_enabled("texlab") then
   inlayhint_opts = {
     labelDefinitions = true,
     labelReferences = true,
