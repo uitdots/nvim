@@ -34,7 +34,7 @@ o.shortmess = "AcqFI"
 o.showmode = false
 o.termguicolors = true
 o.winblend = 0
-o.winborder = preferences_options.ui.border_enabled and "rounded" or "none" --TODO: Refactor this, remove
+o.winborder = "rounded"
 
 opt.fillchars = {
   eob = " ",
@@ -61,7 +61,6 @@ o.wrap = preferences_options.wrap.default
 o.expandtab = true
 o.shiftwidth = 0
 o.tabstop = preferences_options.indent.default
-opt.formatoptions:remove({ "c", "r", "o" }) -- remove the comment mark on newline, seem it doesn't work??
 
 -- Indent
 o.smartindent = false

@@ -341,51 +341,51 @@ return {
     {
       "<leader>g<C-b>",
       function()
+        Snacks.picker.git_branches()
+      end,
+      desc = "Git | Find Branches",
+    },
+    {
+      "<leader>g<M-b>",
+      function()
         Snacks.gitbrowse()
       end,
       desc = "Git | Browse",
-    },
-    {
-      "<leader>gB",
-      function()
-        Snacks.picker.git_branches()
-      end,
-      desc = "Git | Branches",
     },
     {
       "<leader>gL",
       function()
         Snacks.picker.git_log()
       end,
-      desc = "Git | Log",
+      desc = "Git | Find Log",
     },
     {
       "<leader>gl",
       function()
         Snacks.picker.git_log_line()
       end,
-      desc = "Git | Log Line",
+      desc = "Git | Find Log Line",
     },
     {
-      "<leader>gs",
+      "<leader>g<C-s>",
       function()
         Snacks.picker.git_status()
       end,
-      desc = "Git | Status",
+      desc = "Git | Find Status",
     },
     {
-      "<leader>gd",
+      "<leader>g<C-d>",
       function()
         Snacks.picker.git_diff()
       end,
-      desc = "Git | Diff (Hunks)",
+      desc = "Git | Find Diff",
     },
     {
-      "<leader>gf",
+      "<leader>gL",
       function()
         Snacks.picker.git_log_file()
       end,
-      desc = "Git | Log File",
+      desc = "Git | Find Log File",
     },
 
     -- Options

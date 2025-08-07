@@ -62,10 +62,6 @@ local M = {
       client = true,
     },
 
-    ui = {
-      border_enabled = true,
-    },
-
     others = {
       auto_format_enabled = true,
       ai_suggestion_enabled = false,

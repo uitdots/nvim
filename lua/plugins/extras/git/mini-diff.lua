@@ -2,5 +2,5 @@
 return {
   "echasnovski/mini.diff",
   event = "VeryLazy",
-  opts = {},
+  config = true,
 }

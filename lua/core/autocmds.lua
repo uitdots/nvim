@@ -69,7 +69,7 @@ autocmd("ModeChanged", {
 autocmd("FileType", {
   pattern = "*",
   callback = function()
-    vim.opt.formatoptions:remove({ "c", "r", "o" })
+    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
   end,
   group = general,
   desc = "Disable New Line Comment",

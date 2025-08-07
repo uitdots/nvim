@@ -19,7 +19,7 @@ return {
       { "<leader>a", group = "AI", mode = { "n", "v" }, icon = { icon = "", color = "purple" } },
       { "<leader>d", group = "Debug", icon = { icon = "", color = "yellow" } },
       { "<leader>f", group = "Find & File", mode = { "n", "v" }, icon = { icon = "", color = "red" } },
-      { "<leader>g", group = "Git", icon = { icon = "󰊢", color = "red" } },
+      { "<leader>g", group = "Git", mode = { "n", "v" }, icon = { icon = "󰊢", color = "red" } },
       { "<leader>l", group = "LSP", mode = { "n", "v" }, icon = { icon = "", color = "yellow" } },
       { "<leader>la", group = "LSP Action", mode = { "n", "v" }, icon = { icon = "", color = "yellow" } },
       { "<leader>m", group = "Markdown", icon = { icon = "", color = "cyan" } },

@@ -1,4 +1,3 @@
-local preferences_options = require("preferences").options
 local nvdash_config = require("configs.ui.nvdash")
 
 ---@module 'ui'
@@ -7,7 +6,7 @@ local M = {}
 
 M.ui = {
   telescope = {
-    style = preferences_options.ui.border_enabled and "bordered" or "borderless",
+    style = "bordered",
   },
   cmp = {
     lspkind_text = true,

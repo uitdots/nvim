@@ -15,7 +15,6 @@
 ---@field wrap Preferences.Options.Wrap
 ---@field inlay_hint Preferences.Options.InlayHint
 ---@field semantic_tokens Preferences.Options.SemanticTokens
----@field ui Preferences.Options.Ui
 ---@field others Preferences.Options.Others
 
 -- FIXME: It's quite bruh here, how about tab instead of space (noexpandtab)
@@ -47,9 +46,6 @@
 ---@field servers table<string, boolean>
 ---Enable semantic tokens for Neovim
 ---@field client boolean
-
----@class (exact) Preferences.Options.Ui
----@field border_enabled boolean
 
 ---@class (exact) Preferences.Options.Others
 ---@field auto_format_enabled boolean
