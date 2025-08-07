@@ -2,7 +2,11 @@
 return {
   "oclay1st/gradle.nvim",
   optional = true,
-  cmd = { "Gradle", "GradleExec", "GradleInit" },
+  cmd = {
+    "Gradle",
+    "GradleExec",
+    "GradleInit",
+  },
   keys = {
     {
       "<localleader>lg",

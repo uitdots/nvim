@@ -251,9 +251,11 @@ There are some keymaps you should know in this config (and native neovim keymaps
   - `react`: `typescript`
   - `ansible`: `yaml` (for yaml syntax highlighting)
 - Set `$NVIM_NO_IDE` to any value to disable lsp, format, lint (quick editing)
-- These plugins are optional, which are tight to aspects they belong to (languages,...). Set `optional = false` to enable them independently:
-  - [`gradle.nvim`](./lua/plugins/extras/others/gradle.lua)
-  - [`maven.nvim`](./lua/plugins/extras/others/maven.lua)
+  > Ex:
+  >
+  > ```sh
+  >  NVIM_NO_IDE=1 lazygit # commit, quick edit
+  > ```
 - Working with `sql`:
   - Use compound filetype
   - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it _(for linter and formatter attach to)_
@@ -276,6 +278,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 
 - `lazy.nvim` only run `config` and `init` once. Not like `opts`
 - If NvChad UI's color is broken, use `<leader>ur`
+- Don't use NvChad's auto command
 - lsp currently not enabled by compound filetype
 - nvim-lint can lint the compound filetype
 - conform format the last filetype in the compound file, one by one
