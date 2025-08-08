@@ -131,6 +131,11 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 - `delta`
 - `ripgrep`: telescope, vimgrep replacement
 - `fd`: telescope
+- `npm`: for some plugins and stuff installed via Mason
+- `go`: Some stuff installed via Mason
+
+> [!NOTE]
+> If you don't use mason, never mind those requirements from Mason
 
 ### Install
 
@@ -268,7 +273,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 - Working with `latex`:
   - on Arch:
     ```sh
-    pacman -Sy texlive-binextra texlive-latex
+    pacman -Sy texlive-binextra texlive-latex libxcrypt-compat
     ```
   - other: idk
 - `helm_ls` includes `yaml_ls` already, no need to run `yaml_ls`

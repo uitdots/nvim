@@ -27,8 +27,6 @@ return {
         onOpenAndSave = true,
         onEdit = true,
       },
-      bibtexFormatter = "texlab", ---@type "latexindent" | "texlab"
-      latexFormatter = "latexindent", ---@type "latexindent" | "texlab"
       inlayHints = inlayhint_opts,
     },
   },
