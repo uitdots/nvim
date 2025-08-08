@@ -38,6 +38,17 @@ return {
         enabled = false,
       },
     },
+    routes = {
+      {
+        filter = { event = "msg_show" },
+        view = "notify",
+        opts = {
+          level = "info",
+          skip = false,
+          replace = false,
+        },
+      },
+    },
     health = {
       checker = false,
     },
