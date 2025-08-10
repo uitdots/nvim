@@ -79,6 +79,7 @@ autocmd("FileType", {
   pattern = {
     "gitcommit",
     "markdown",
+    "tex",
     "text",
   },
   callback = function()

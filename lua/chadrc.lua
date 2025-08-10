@@ -185,9 +185,6 @@ M.base46.hl_add = {
   St_Percent_sep = { fg = "blue", bg = "lightbg" },
   St_Percent_text = { link = "St_percent_sep" },
 
-  ---visual-whitespace
-  VisualNonText = { link = "Comment" },
-
   ---Snacks
   SnacksIndent = { link = "IblChar" },
   -- SnacksIndentScope = { link = "IblScopeChar" },

@@ -59,6 +59,11 @@ map("n", "<leader>oS", function()
   vim.notify(vim.wo.spell and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Spell", id = "neovim_spell" })
 end, { desc = "Options | Toggle Spell Check", silent = true })
 
+map("n", "<leader>oc", function()
+  vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0
+  vim.notify("Conceal Level: " .. vim.wo.conceallevel, vim.log.levels.INFO, { title = "Conceal Level", id = "neovim_conceallevel" })
+end, { desc = "Options | Toggle Conceal Level", silent = true })
+
 map("n", "<leader>ow", function()
   vim.wo.wrap = not vim.wo.wrap
   vim.notify(vim.wo.wrap and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Wrap", id = "neovim_wrap" })

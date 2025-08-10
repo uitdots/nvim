@@ -39,8 +39,12 @@ return {
       },
     },
     routes = {
+      -- https://github.com/folke/noice.nvim/issues/1097
       {
-        filter = { event = "msg_show" },
+        filter = {
+          event = "msg_show",
+          kind = { "shell_out", "shell_err" },
+        },
         view = "notify",
         opts = {
           level = "info",

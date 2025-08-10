@@ -46,10 +46,5 @@ return {
   opts_extend = {
     "ensure_installed",
   },
-  init = function()
-    vim.treesitter.language.register("groovy", "jenkins")
-    vim.treesitter.language.register("bash", "dotenv")
-    vim.treesitter.language.register("bash", "zsh")
-  end,
   main = "nvim-treesitter.configs",
 }

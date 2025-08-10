@@ -11,9 +11,7 @@ return {
       end,
       desc = "Query | Query",
       ft = {
-        "bigfile", -- Bruh
-        "helm",
-        "helmchart",
+        "bigfile",
         "json",
         "jsonc",
         "yaml",

@@ -35,6 +35,7 @@ o.showmode = false
 o.termguicolors = true
 o.winblend = 0
 o.winborder = "rounded"
+o.list = true
 
 opt.fillchars = {
   eob = " ",
@@ -44,6 +45,9 @@ opt.fillchars = {
   foldsep = " ",
   lastline = " ",
 }
+opt.listchars:append({
+  trail = "·",
+})
 
 -- UI while editing
 o.cursorline = true

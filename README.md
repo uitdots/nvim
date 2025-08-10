@@ -273,7 +273,8 @@ There are some keymaps you should know in this config (and native neovim keymaps
 - Working with `latex`:
   - on Arch:
     ```sh
-    pacman -Sy texlive-binextra texlive-latex libxcrypt-compat
+    pacman -Sy texlive-latex texlive-latexextra texlive-binextra texlive-langother libxcrypt-compat
+    pacman -S texlive-fontextra # For fonts...
     ```
   - other: idk
 - `helm_ls` includes `yaml_ls` already, no need to run `yaml_ls`

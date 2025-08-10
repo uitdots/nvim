@@ -5,7 +5,7 @@ return {
   ---@param opts TSConfig?
   ---@return TSConfig?
   opts = function(_, opts)
-    vim.treesitter.language.register("bash", "dotenv")
+    vim.treesitter.language.register("groovy", "jenkins")
     return opts
   end,
 }
