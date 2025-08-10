@@ -8,8 +8,14 @@ return {
     ensure_installed = {
       "yaml",
     },
+    indent = {
+      disable = {
+        "yaml", -- https://github.com/nvim-treesitter/nvim-treesitter/issues/1377
+      },
+    },
   },
   opts_extend = {
     "ensure_installed",
+    "indent.disable",
   },
 }
