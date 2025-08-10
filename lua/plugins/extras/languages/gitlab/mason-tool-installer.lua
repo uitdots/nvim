@@ -3,7 +3,9 @@ return {
   "WhoIsSethDaniel/mason-tool-installer.nvim",
   opts = {
     ---@type Mason.Package[]
-    ensure_installed = {},
+    ensure_installed = {
+      "gitlab-ci-ls",
+    },
   },
   opts_extend = {
     "ensure_installed",

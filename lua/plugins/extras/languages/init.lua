@@ -48,7 +48,7 @@ return {
   },
   {
     import = "plugins.extras.languages.gitlab",
-    enabled = false,
+    enabled = true,
   },
   {
     import = "plugins.extras.languages.go",

@@ -79,6 +79,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
     > - Use [vim-dadbod](https://github.com/tpope/vim-dadbod)
     > - With postgresql, use [postgrestools](https://github.com/supabase-community/postgres-language-server)
   - `github` _(github_action)_
+  - `gitlab`
   - `shell`
   - `docker`
 - Others:
