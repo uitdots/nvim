@@ -13,23 +13,17 @@ map("v", "<leader>y", '"+y', { desc = "General | Yank System" })
 -- Options
 map("n", "<leader>ol", function()
   o.number = not o.number
-  vim.notify(vim.o.number and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Number", id = "neovim_number" })
+  vim.notify(vim.o.number and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Number", id = "neovim_number", icon = "" })
 end, { desc = "Options | Toggle Line Number", silent = true })
 
 map("n", "<leader>or", function()
   o.relativenumber = not o.relativenumber
-  vim.notify(vim.o.relativenumber and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Relative Number", id = "neovim_relative_number" })
+  vim.notify(vim.o.relativenumber and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Relative Number", id = "neovim_relative_number", icon = "󰉻" })
 end, { desc = "Options | Toggle Relative Number", silent = true })
 
 map("n", "<leader>os", function()
-  local options = {
-    "Never",
-    "At lease 2 tab pages",
-    "Always",
-    "Always and only last window",
-  }
-  o.laststatus = o.laststatus % 4 + 1
-  vim.notify(options[o.laststatus], vim.log.levels.INFO, { title = "Statusline", id = "neovim_laststatus" })
+  o.laststatus = o.laststatus == 0 and 3 or 0
+  vim.notify(o.laststatus == 0 and "Hide" or "Show", vim.log.levels.INFO, { title = "Statusline", id = "neovim_laststatus", icon = "" })
 end, { desc = "Options | Toggle Statusline", silent = true })
 
 map("n", "<leader>oi", function()
@@ -41,32 +35,27 @@ map("n", "<leader>oi", function()
     return keymap == o.keymap
   end)
   o.keymap = options[index % #options + 1]
-  vim.notify("Changed to: " .. o.keymap, vim.log.levels.INFO, { title = "Method input", id = "input_method" })
+  vim.notify("Changed to: " .. o.keymap, vim.log.levels.INFO, { title = "Method input", id = "input_method", icon = "" })
 end, { desc = "Options | Toggle Input Method", silent = true })
 
 map("n", "<leader>o<C-t>", function()
-  local options = {
-    "Never",
-    "At lease 2 tab pages",
-    "Always",
-  }
-  o.showtabline = o.showtabline % 3 + 1
-  vim.notify(options[o.showtabline], vim.log.levels.INFO, { title = "Tabline", id = "neovim_tabline" })
+  o.showtabline = o.showtabline == 1 and 2 or 1
+  vim.notify(o.showtabline == 0 and "Hide" or "Show", vim.log.levels.INFO, { title = "Tabline", id = "neovim_tabline", icon = "󰖯" })
 end, { desc = "Options | Toggle Tabline", silent = true })
 
 map("n", "<leader>oS", function()
   vim.wo.spell = not vim.wo.spell
-  vim.notify(vim.wo.spell and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Spell", id = "neovim_spell" })
+  vim.notify(vim.wo.spell and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Spell", id = "neovim_spell", icon = "" })
 end, { desc = "Options | Toggle Spell Check", silent = true })
 
 map("n", "<leader>oc", function()
-  vim.wo.conceallevel = vim.wo.conceallevel == 0 and 2 or 0
-  vim.notify("Conceal Level: " .. vim.wo.conceallevel, vim.log.levels.INFO, { title = "Conceal Level", id = "neovim_conceallevel" })
-end, { desc = "Options | Toggle Conceal Level", silent = true })
+  vim.wo.conceallevel = vim.wo.conceallevel == 0 and 3 or 0
+  vim.notify(vim.wo.conceallevel == 0 and "Off" or "On", vim.log.levels.INFO, { title = "Conceal", id = "neovim_conceallevel", icon = "" })
+end, { desc = "Options | Toggle Conceal", silent = true })
 
 map("n", "<leader>ow", function()
   vim.wo.wrap = not vim.wo.wrap
-  vim.notify(vim.wo.wrap and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Wrap", id = "neovim_wrap" })
+  vim.notify(vim.wo.wrap and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Wrap", id = "neovim_wrap", icon = "󰖶" })
 end, { desc = "Options | Toggle Wrap", silent = true })
 
 -- Navigation
@@ -131,21 +120,21 @@ map("n", "<leader>nM", "<cmd>messages<cr>", { desc = "Neovim | Messages", silent
 
 map("n", "<leader>nm", function()
   vim.bo.modifiable = not vim.bo.modifiable
-  vim.notify(vim.bo.modifiable and "True" or "False", vim.log.levels.INFO, { title = "Current file modifiability", id = "modifiability" })
+  vim.notify(vim.bo.modifiable and "True" or "False", vim.log.levels.INFO, { title = "Current file modifiability", id = "modifiability", icon = "" })
 end, { desc = "Neovim | Toggle Modifiable", silent = true })
 
 map("n", "<leader>nH", "<cmd>checkhealth<cr>", { desc = "Neovim | Health", silent = true })
 
 map("n", "<leader>nv", function()
-  vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version", id = "neovim_verion" })
+  vim.notify(tostring(vim.version()), vim.log.levels.INFO, { title = "Neovim Version", id = "neovim_verion", icon = "" })
 end, { desc = "Neovim | Version", silent = true })
 
 map("n", "<leader>np", function()
-  vim.notify(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":."), vim.log.levels.INFO, { title = "Current File Path", id = "current_file_path" })
+  vim.notify(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":."), vim.log.levels.INFO, { title = "Current File Path", id = "current_file_path", icon = "" })
 end, { desc = "Neovim | Current File Path", silent = true })
 
 map("n", "<leader>nP", function()
-  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current Absolute File Path", id = "current_absolute_file_path" })
+  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current Absolute File Path", id = "current_absolute_file_path", icon = "" })
 end, { desc = "Neovim | Current Absolute File Path", silent = true })
 
 map("n", "<leader>nf", function()

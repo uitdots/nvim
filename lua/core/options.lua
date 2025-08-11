@@ -12,6 +12,7 @@ g.maplocalleader = "\\"
 
 o.backup = false
 o.breakindent = true
+o.concealcursor = "nv"
 o.conceallevel = 0
 o.fileencoding = "utf-8"
 o.fixendofline = false

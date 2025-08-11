@@ -27,7 +27,7 @@ return {
         "<leader>ot",
         function()
           require("base46").toggle_theme()
-          vim.notify(vim.g.icon_toggled and "Light" or "Dark", vim.log.levels.INFO, { title = "Theme", id = "base46_theme" })
+          vim.notify(vim.g.icon_toggled and "Light" or "Dark", vim.log.levels.INFO, { title = "Theme", id = "base46_theme", icon = "󰔎" })
         end,
         desc = "Options | Toggle Theme",
         silent = true,
@@ -36,9 +36,9 @@ return {
         "<leader>oT",
         function()
           require("base46").toggle_transparency()
-          vim.notify(require("nvconfig").base46.transparency and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Transparency", id = "base46_transparency" })
+          vim.notify(require("nvconfig").base46.transparency and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Transparency", id = "base46_transparency", icon = "󰗌" })
         end,
-        desc = "Options | Toggle Theme",
+        desc = "Options | Toggle Transparency",
         silent = true,
       },
     },
