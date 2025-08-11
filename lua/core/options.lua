@@ -48,6 +48,8 @@ opt.fillchars = {
 }
 opt.listchars:append({
   trail = "·",
+  nbsp = "•",
+  tab = "→ ",
 })
 
 -- UI while editing
