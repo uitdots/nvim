@@ -160,20 +160,15 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 ```
 lua
 ├── configs                 Extendable settings for builtin, plugins options
-│   ├── runner              Builtin file runner
 │   ├── dap                 nvim-dap config
-│   │   ├── adapters
-│   │   ├── configurations
-│   │   └── utils
+│   │   └── ...
 │   ├── diagnostic          (Neo)vim diagnostic setup
 │   ├── lazy                lazy.nvim config
+│   ├── mason               Mason's config (custom registries)
 │   ├── lsp                 Neovim's lsp setting
+│   ├── runner              Builtin file runner
 │   └── ui                  UI (mostly for nvchad)
-│       ├── nvdash
-│       │   ├── headers
-│       │   └── utils
-│       ├── statusline
-│       └── tabufline
+│       └── ...
 ├── core                    (Neo)vim native settings
 ├── overseer                overseer.nvim templates
 │   └── template
@@ -188,7 +183,7 @@ lua
 │   │   ├── database        Database
 │   │   ├── git             Easier to interact with git
 │   │   ├── languages       User's preference to enable
-│   │   │   ├── ...
+│   │   │   └── ...
 │   │   ├── lsp             Enhance LSP usage
 │   │   ├── mason           Mason package manager
 │   │   ├── motion          Extend neovim motions
