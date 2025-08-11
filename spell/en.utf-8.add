@@ -1,6 +1,7 @@
 LazyVim
 NvChad
 PostgreSQL
+TOEIC
 ai
 api
 async
@@ -12,6 +13,7 @@ doctoc
 filetype
 github
 grafana
+homelab
 idk
 js
 json
@@ -44,4 +46,3 @@ treesitter
 ts
 wakatime
 yaml
-TOEIC
