@@ -1,25 +1,29 @@
 ---@type LazySpec
 return {
-  "micangl/cmp-vimtex",
+  "erooke/blink-cmp-latex",
+  enabled = false,
   specs = {
     {
-      "Saghen/blink.cmp",
+      "saghen/blink.cmp",
       ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
         sources = {
           providers = {
-            vimtex = {
-              name = "vimtex",
-              module = "blink.compat.source",
-              score_offset = 10,
+            latex = {
+              name = "Latex",
+              module = "blink-cmp-latex",
               max_items = 10,
+              opts = {
+                -- set to true to insert the latex command instead of the symbol
+                insert_command = true,
+              },
             },
           },
           per_filetype = {
             tex = {
               inherit_defaults = true,
-              "vimtex",
+              "latex",
             },
           },
         },
@@ -29,8 +33,5 @@ return {
       },
     },
   },
-  dependencies = {
-    "Saghen/blink.cmp",
-    "Saghen/blink.compat",
-  },
+  dependencies = "saghen/blink.cmp",
 }

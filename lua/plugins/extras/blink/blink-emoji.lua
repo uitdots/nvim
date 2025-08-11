@@ -19,9 +19,7 @@ local allowed_ts_types = {
 return {
   "moyiz/blink-emoji.nvim",
   enabled = false,
-  event = {
-    "InsertEnter",
-  },
+  event = "InsertEnter",
   specs = {
     {
       "saghen/blink.cmp",
