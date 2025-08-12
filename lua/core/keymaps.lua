@@ -11,6 +11,11 @@ map("n", "<leader>y", "<cmd>%y+<cr>", { desc = "General | Yank All System", sile
 map("v", "<leader>y", '"+y', { desc = "General | Yank System" })
 
 -- Options
+map("n", "<leader>om", function()
+  o.mouse = o.mouse == "a" and "" or "a"
+  vim.notify(vim.o.mouse == "a" and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Mouse", id = "neovim_mouse", icon = "󰇀" })
+end, { desc = "Options | Toggle Mouse", silent = true })
+
 map("n", "<leader>ol", function()
   o.number = not o.number
   vim.notify(vim.o.number and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Number", id = "neovim_number", icon = "" })

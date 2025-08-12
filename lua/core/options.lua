@@ -23,9 +23,6 @@ o.laststatus = 3
 o.ignorecase = true
 o.smartcase = true
 
-o.confirm = true
-o.mouse = "a"
-
 -- UI
 o.cmdheight = 0
 o.lazyredraw = false
@@ -88,8 +85,9 @@ opt.whichwrap:append("<>[]hl")
 -- opt.iskeyword:append("-") -- Ohm what is this
 
 -- Other
-o.exrc = true
 o.autoread = true
+o.confirm = true
+o.exrc = true
 o.spelloptions = "camel"
 
 -- Uncomment these options to enable pwsh for Windows
