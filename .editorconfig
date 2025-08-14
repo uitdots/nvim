@@ -7,3 +7,8 @@ trim_trailing_whitespace = true
 trim_trailing_whitespace = true
 indent_style=space
 indent_size=2
+
+[*.scm]
+trim_trailing_whitespace = true
+indent_style=space
+indent_size=2

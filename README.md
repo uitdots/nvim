@@ -338,3 +338,5 @@ It may be possible. But it may require times to config.
 - [catgoose](https://github.com/catgoose/nvim)
 - [cameronr](https://github.com/cameronr/dotfiles)
 - [dynamo](https://gitlab.com/dynamo-config/neovim)
+- [zlkn](https://github.com/zlkn/dotfiles/tree/main/vim/.config/nvim)
+  > Stole the treesitter highlight injection
