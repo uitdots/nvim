@@ -135,12 +135,12 @@ map("n", "<leader>nv", function()
 end, { desc = "Neovim | Version", silent = true })
 
 map("n", "<leader>np", function()
-  vim.notify(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":."), vim.log.levels.INFO, { title = "Current File Path", id = "current_file_path", icon = "" })
-end, { desc = "Neovim | Current File Path", silent = true })
+  vim.notify(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":."), vim.log.levels.INFO, { title = "Relative File Path", id = "relative_file_path", icon = "" })
+end, { desc = "Neovim | Relative File Path", silent = true })
 
 map("n", "<leader>nP", function()
-  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Current Absolute File Path", id = "current_absolute_file_path", icon = "" })
-end, { desc = "Neovim | Current Absolute File Path", silent = true })
+  vim.notify(vim.api.nvim_buf_get_name(0), vim.log.levels.INFO, { title = "Absolute File Path", id = "absolute_file_path", icon = "" })
+end, { desc = "Neovim | Absolute File Path", silent = true })
 
 map("n", "<leader>nf", function()
   vim.notify(vim.bo.filetype, vim.log.levels.INFO, { title = "Current Filetype", id = "current_ft" })

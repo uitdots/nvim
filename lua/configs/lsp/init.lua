@@ -13,7 +13,7 @@ function M.global_keymaps()
       title = "LSP Diagnostic Underline",
       id = "neovim_lsp_diagnostic_underline",
     })
-  end, { desc = "LSP | Toggle Underline Diagnostic", silent = true })
+  end, { desc = "LSP | Toggle Underline", silent = true })
   map("n", "<leader>lh", function()
     local enabled = not vim.lsp.inlay_hint.is_enabled()
     vim.lsp.inlay_hint.enable(enabled)
