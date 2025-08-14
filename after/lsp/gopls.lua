@@ -35,15 +35,6 @@ return {
       end
     end
   end,
-  capabilities = {
-    textDocument = {
-      completion = {
-        completionItem = {
-          snippetSupport = false,
-        },
-      },
-    },
-  },
   settings = {
     gopls = {
       hints = inlayhint_opts,
