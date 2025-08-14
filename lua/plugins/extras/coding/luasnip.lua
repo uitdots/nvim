@@ -22,7 +22,7 @@ return {
     {
       "<M-e>",
       function()
-        if require("luasnip").expand_or_jumpable() then
+        if require("luasnip").expand_or_locally_jumpable() then
           require("luasnip").expand_or_jump()
         end
       end,
@@ -44,6 +44,10 @@ return {
     },
   },
   build = not is_windows and "make install_jsregexp" or "make install_jsregexp CC=gcc.exe SHELL=sh.exe .SHELLFLAGS=-c",
+  opts = {
+    region_check_events = "InsertEnter",
+    delete_check_events = "InsertLeave",
+  },
   config = function(_, opts)
     require("luasnip").config.set_config(opts)
 
