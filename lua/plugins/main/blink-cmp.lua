@@ -85,6 +85,7 @@ return {
         "path",
         "snippets",
         "buffer",
+        "omni",
       },
       --[[
         providers = {
