@@ -84,7 +84,7 @@ return {
       ["Justfile docs"] = {
         strategy = "chat",
         description = "Ask about Justfile documentation",
-        references = {
+        context = {
           {
             type = "url",
             url = "https://raw.githubusercontent.com/casey/just/refs/heads/master/README.md",
@@ -97,7 +97,7 @@ return {
       ["GNU Make"] = {
         strategy = "chat",
         description = "Ask about GNU Make documentation",
-        references = {
+        context = {
           {
             type = "url",
             url = "https://www.gnu.org/software/make/manual/make.txt",
@@ -110,7 +110,7 @@ return {
       Bash = {
         strategy = "chat",
         description = "Ask about GNU Bash documentation",
-        references = {
+        context = {
           {
             type = "url",
             url = "https://www.gnu.org/software/bash/manual/bash.txt",
