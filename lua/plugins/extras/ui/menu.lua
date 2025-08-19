@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "nvzone/menu",
-  enabled = true,
   keys = {
     {
       "<RightMouse>",

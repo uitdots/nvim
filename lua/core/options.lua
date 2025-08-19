@@ -18,6 +18,7 @@ o.fileencoding = "utf-8"
 o.fixendofline = false
 o.hidden = true -- required to keep multiple buffers and open multiple buffers
 o.laststatus = 3
+o.mouse = ""
 
 -- Search
 o.ignorecase = true
