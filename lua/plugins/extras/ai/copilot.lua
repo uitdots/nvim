@@ -30,11 +30,13 @@ return {
           require("copilot.command").enable()
           vim.notify("Copilot completion is enabled", vim.log.levels.INFO, {
             title = "Copilot",
+            icon = "",
           })
         else
           require("copilot.command").disable()
           vim.notify("Copilot completion is disabled", vim.log.levels.INFO, {
             title = "Copilot",
+            icon = "",
           })
         end
       end,
