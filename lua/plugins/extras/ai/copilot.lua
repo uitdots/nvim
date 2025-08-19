@@ -15,9 +15,6 @@ return {
     },
     server_opts_overrides = {
       settings = {
-        advanced = {
-          inlineSuggestCount = 1, -- Hehe I dont need it to generate more, just be fast
-        },
         telemetry = {
           telemetryLevel = "off",
         },
@@ -81,34 +78,5 @@ return {
   dependencies = {
     "saghen/blink.cmp",
     optional = true,
-  },
-  specs = {
-    {
-      "saghen/blink.cmp",
-      ---@module 'blink.cmp'
-      ---@param opts blink.cmp.Config?
-      ---@return blink.cmp.Config
-      opts = function(_, opts)
-        opts = opts or {}
-        opts.keymap = opts.keymap or {}
-
-        local copilot = {
-          function()
-            if vim.g.copilot_enabled and require("copilot.suggestion").is_visible() then
-              return require("copilot.suggestion").accept()
-            end
-          end,
-        }
-
-        if opts.keymap["<Tab>"] == nil then
-          opts.keymap["<Tab>"] = copilot
-        else
-          vim.list_extend(opts.keymap["<Tab>"], copilot, 1)
-        end
-
-        return opts
-      end,
-      optional = true,
-    },
   },
 }

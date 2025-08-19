@@ -13,6 +13,7 @@ return {
       nerd_font_variant = "normal",
     },
     keymap = {
+      preset = "none",
       ["<C-space>"] = {
         "show",
         "show_documentation",
@@ -45,14 +46,6 @@ return {
         "snippet_backward",
         "fallback",
       },
-      ["<Up>"] = {
-        "select_prev",
-        "fallback",
-      },
-      ["<Down>"] = {
-        "select_next",
-        "fallback",
-      },
       ["<C-p>"] = {
         "select_prev",
         "fallback_to_mappings",
@@ -67,11 +60,6 @@ return {
       },
       ["<C-f>"] = {
         "scroll_documentation_down",
-        "fallback",
-      },
-      ["<C-k>"] = {
-        "show_signature",
-        "hide_signature",
         "fallback",
       },
       ["<CR>"] = {
@@ -100,13 +88,9 @@ return {
         },
         ]]
     },
-    signature = {
-      enabled = true,
-    },
   },
   opts_extend = {
     "sources.default",
-    "keymap.<Tab>", -- NOTE: For other specs to add into the tab keymap like AI suggestion
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)
