@@ -5,6 +5,7 @@ return {
     ---@type Mason.Package[]
     ensure_installed = {
       "gopls",
+      "staticcheck",
     },
   },
   opts_extend = {
