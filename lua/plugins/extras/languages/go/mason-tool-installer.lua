@@ -5,7 +5,7 @@ return {
     ---@type Mason.Package[]
     ensure_installed = {
       "gopls",
-      "staticcheck",
+      "golangci-lint-langserver",
     },
   },
   opts_extend = {
