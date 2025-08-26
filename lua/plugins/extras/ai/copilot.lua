@@ -12,6 +12,10 @@ return {
     suggestion = {
       enabled = true,
       auto_trigger = true,
+      keymap = {
+        accept_word = "<M-w>",
+        accept_line = "<M-S-l>",
+      },
     },
     server_opts_overrides = {
       settings = {
