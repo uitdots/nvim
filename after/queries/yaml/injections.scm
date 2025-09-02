@@ -10,7 +10,7 @@
     value: (block_node
       (block_scalar) @injection.content))]
   (#offset! @injection.content 0 1 0 0)
-  (#gsub! @injection.language "#%s*language=%s*([%w%p]+)%s*" "%1")
+  (#gsub! @injection.language "%s*language=%s*([%w%p]+)%s*" "%1")
   (#set! "priority" 110))
 
 ((comment) @injection.language [
@@ -24,7 +24,7 @@
     value: (flow_node
       (plain_scalar
         (string_scalar) @injection.content)))]
-  (#gsub! @injection.language "#%s*language=%s*([%w%p]+)%s*" "%1")
+  (#gsub! @injection.language "%s*language=%s*([%w%p]+)%s*" "%1")
   (#set! "priority" 110))
 
 (block_mapping_pair
