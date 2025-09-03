@@ -228,7 +228,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 | `n`  | `<C-s>`            | Save Buffer                                                                  |
 | `n`  | `ZZ`               | Write Quit                                                                   |
 | `n`  | `ZQ`               | Quit                                                                         |
-| `i`  | `<C-k>`            | LSP Show Signature                                                           |
+| `i`  | `<C-s>`            | LSP Show Signature                                                           |
 | `n`  | `<C-w><C-d>`       | LSP Float Diagnostic                                                         |
 | `n`  | `K`                | LSP Hover Documentation                                                      |
 | `n`  | `<leader>at`       | Toggle AI Completion Suggestion                                              |
