@@ -23,7 +23,7 @@ return {
     },
     lsp = {
       hover = {
-        enabled = false,
+        enabled = true,
       },
       documentation = {
         enabled = false,
