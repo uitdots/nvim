@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "echasnovski/mini.align",
+  "nvim-mini/mini.align",
   event = "VeryLazy",
   config = true,
 }

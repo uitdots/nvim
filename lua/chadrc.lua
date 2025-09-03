@@ -204,6 +204,9 @@ M.base46.hl_add = {
 
   ---nvim-treesitter-context
   TreesitterContext = { bg = "black2" },
+
+  ---Mini
+  MiniIndentscopeSymbol = { link = "IblChar" },
 }
 
 return M
