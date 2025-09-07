@@ -7,7 +7,6 @@ return {
     formatters_by_ft = {
       yaml = {
         "prettier",
-        "injected",
       },
     },
   },
