@@ -142,7 +142,11 @@ return {
     {
       "<leader>fs",
       function()
-        Snacks.picker.grep_word()
+        Snacks.picker.grep_word({
+          layout = {
+            preset = "dropdown",
+          },
+        })
       end,
       desc = "Find | Visual Selection or Word",
       mode = { "n", "x" },
@@ -192,7 +196,11 @@ return {
     {
       "<leader>fw",
       function()
-        Snacks.picker.grep()
+        Snacks.picker.grep({
+          layout = {
+            preset = "dropdown",
+          },
+        })
       end,
       desc = "Find | Words",
     },
