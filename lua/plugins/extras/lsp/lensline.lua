@@ -9,6 +9,11 @@ return {
       silent = true,
     },
   },
-  config = true,
+  opts = {
+    style = {
+      prefix = "",
+      placement = "inline",
+    },
+  },
   event = "LspAttach",
 }
