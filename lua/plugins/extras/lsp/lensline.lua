@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "oribarilan/lensline.nvim",
+  tag = "1.1.2",
   keys = {
     {
       "<leader>l<C-l>",
