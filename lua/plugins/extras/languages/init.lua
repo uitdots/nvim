@@ -12,7 +12,7 @@ return {
   },
   {
     import = "plugins.extras.languages.c",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.config",
@@ -48,10 +48,14 @@ return {
   },
   {
     import = "plugins.extras.languages.gitlab",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.go",
+    enabled = true,
+  },
+  {
+    import = "plugins.extras.languages.grafana",
     enabled = true,
   },
   {
@@ -76,11 +80,11 @@ return {
   },
   {
     import = "plugins.extras.languages.java",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.jenkins",
-    enabled = true,
+    enabled = false,
   },
   {
     import = "plugins.extras.languages.json",
