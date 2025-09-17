@@ -24,6 +24,7 @@ local M = {
           "cpp",
           "cs",
           "groovy",
+          "hyprland",
           "java",
           "jenkins",
           "kotlin",
