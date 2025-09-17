@@ -9,18 +9,18 @@ local general = augroup("General", {})
 local indent_opts = preferences.options.indent
 for chars, fts in pairs(indent_opts.space) do
   autocmd("FileType", {
-    desc = string.format("Tab to space with %s spaces", chars),
+    desc = string.format("Space %s", chars),
     pattern = fts,
-    command = string.format("set tabstop=%s expandtab", chars, chars),
+    command = string.format("setlocal tabstop=%s expandtab", chars, chars),
     group = general,
   })
 end
 
 for chars, fts in pairs(indent_opts.tab) do
   autocmd("FileType", {
-    desc = string.format("Tab to space with %s spaces", chars),
+    desc = string.format("Tab %s", chars),
     pattern = fts,
-    command = string.format("set tabstop=%s noexpandtab", chars, chars),
+    command = string.format([[setlocal tabstop=%s noexpandtab listchars=tab:\ \ ,lead:·]], chars, chars),
     group = general,
   })
 end
@@ -82,9 +82,7 @@ autocmd("FileType", {
     "tex",
     "text",
   },
-  callback = function()
-    vim.opt_local.spell = true
-  end,
+  command = "setlocal spell",
   group = general,
   desc = "Enable Spell check in these filetypes",
 })
