@@ -37,8 +37,9 @@ return {
     end
 
     vim.api.nvim_create_autocmd({
-      "InsertLeave",
       "BufWinEnter",
+      "BufWritePost",
+      "InsertLeave",
     }, {
       callback = debounce(function()
         require("lint").try_lint(nil, {
