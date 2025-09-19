@@ -78,14 +78,14 @@ map("n", "<M-0>", function()
   api.nvim_set_current_buf(t.bufs[10])
 end, { desc = "General | Go to Buff 10", silent = true })
 
-map("n", "<leader>w", function()
-  if vim.bo.buftype == "terminal" then
-    cmd("Bdelete!")
-    cmd("silent! close")
-  elseif #api.nvim_list_wins() > 1 then
-    cmd("silent! close")
-  end
-end, { desc = "General | Safe Close Window", silent = true })
+-- map("n", "<leader>w", function()
+--   if vim.bo.buftype == "terminal" then
+--     cmd("Bdelete!")
+--     cmd("silent! close")
+--   elseif #api.nvim_list_wins() > 1 then
+--     cmd("silent! close")
+--   end
+-- end, { desc = "General | Safe Close Window", silent = true })
 
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the bottom", silent = true })
