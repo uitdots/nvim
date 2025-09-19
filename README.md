@@ -112,9 +112,11 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
   - `xml`
   - `config` _(sshconfig, tmux)_
   - `kmonad`
+  - `grafana` _(alloy)_
 - Writing:
   - `markdown`
   - `latex`
+  - `plantuml`
 
 > [!NOTE]
 > See [`lua/plugins/extras/languages/`](lua/plugins/extras/languages) for more detail

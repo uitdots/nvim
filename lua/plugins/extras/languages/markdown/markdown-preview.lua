@@ -5,14 +5,14 @@ return {
   "iamcco/markdown-preview.nvim",
   keys = {
     {
-      "<leader>mp",
+      "<leader>wp",
       "<cmd>MarkdownPreviewToggle<cr>",
-      desc = "Markdown | Toggle Preview",
+      desc = "Writing | Toggle Markdown Preview",
       ft = ft,
       silent = true,
     },
     {
-      "<leader>mt",
+      "<leader>wt",
       function()
         if vim.g.mkdp_theme == "light" then
           vim.g.mkdp_theme = "dark"
@@ -22,7 +22,7 @@ return {
           vim.notify("Light Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         end
       end,
-      desc = "Markdown | Toggle Preview Theme",
+      desc = "Writing | Toggle Markdown Preview Theme",
       ft = ft,
       silent = true,
     },

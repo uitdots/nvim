@@ -127,6 +127,10 @@ return {
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.plantuml",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.powershell",
     enabled = is_windows,
   },
