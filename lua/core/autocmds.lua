@@ -11,7 +11,7 @@ for chars, fts in pairs(indent_opts.space) do
   autocmd("FileType", {
     desc = string.format("Space %s", chars),
     pattern = fts,
-    command = string.format("setlocal tabstop=%s expandtab", chars, chars),
+    command = string.format("setlocal tabstop=%s shiftwidth=%s expandtab", chars, chars, chars),
     group = general,
   })
 end
@@ -20,7 +20,7 @@ for chars, fts in pairs(indent_opts.tab) do
   autocmd("FileType", {
     desc = string.format("Tab %s", chars),
     pattern = fts,
-    command = string.format([[setlocal tabstop=%s noexpandtab listchars=tab:\ \ ,lead:·]], chars, chars),
+    command = string.format([[setlocal tabstop=%s shiftwidth=%s noexpandtab listchars=tab:\ \ ,lead:·]], chars, chars, chars),
     group = general,
   })
 end
