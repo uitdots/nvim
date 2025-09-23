@@ -27,6 +27,10 @@ return {
     enabled = true,
   },
   {
+    import = "plugins.extras.languages.d2",
+    enabled = true,
+  },
+  {
     import = "plugins.extras.languages.docker",
     enabled = true,
   },

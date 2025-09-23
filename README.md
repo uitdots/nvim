@@ -116,6 +116,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 - Writing:
   - `markdown`
   - `latex`
+  - `d2`
   - `plantuml`
 
 > [!NOTE]
