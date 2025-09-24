@@ -84,6 +84,7 @@ return {
       ["Justfile docs"] = {
         strategy = "chat",
         description = "Ask about Justfile documentation",
+        opts = {},
         context = {
           {
             type = "url",
@@ -97,6 +98,7 @@ return {
       ["GNU Make"] = {
         strategy = "chat",
         description = "Ask about GNU Make documentation",
+        opts = {},
         context = {
           {
             type = "url",
@@ -110,6 +112,7 @@ return {
       Bash = {
         strategy = "chat",
         description = "Ask about GNU Bash documentation",
+        opts = {},
         context = {
           {
             type = "url",
