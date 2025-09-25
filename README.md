@@ -287,6 +287,7 @@ There are some keymaps you should know in this config (and native neovim keymaps
 - lsp currently not enabled by compound filetype
 - nvim-lint can lint the compound filetype
 - conform format the last filetype in the compound file, one by one
+- [PlantUML tree-sitter](https://github.com/Decodetalkers/tree_sitter_plantuml) queries from [here](https://github.com/Decodetalkers/tree_sitter_plantuml/tree/master/test/queries)
 
 ---
 
