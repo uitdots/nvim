@@ -33,39 +33,6 @@
 (uniquevar
   (identifier) @type.definition)
 
-(command
- . (identifier) @keyword
- . (_)* @string
- (#any-of? @keyword
-   "actor"
-   "alt"
-   "as"
-   "boundary"
-   "break"
-   "class"
-   "collections"
-   "control"
-   "critical"
-   "database"
-   "else"
-   "end"
-   "entity"
-   "group"
-   "json"
-   "loop"
-   "note"
-   "object"
-   "package"
-   "par"
-   "participant"
-   "queue"
-   "rectangle"))
-
-((identifier) @boolean
-  (#any-of? @boolean
-    "true"
-    "false"))
-
 (block_style
   head: (identifier) @type.definition
   end: (identifier) @type.definition)
@@ -86,14 +53,17 @@
   ]
   . [
       (
+        (identifier) @punctuation.arrow
+        (uniqkey)+ @punctuation.arrow
+      )
+      (
         (uniqkey)+ @punctuation.arrow
         (identifier) @punctuation.arrow
-        (uniqkey)* @punctuation.arrow
       )
       (
         (uniqkey)* @punctuation.arrow
         (identifier) @punctuation.arrow
-        (uniqkey)+ @punctuation.arrow
+        (uniqkey)* @punctuation.arrow
       )
       (uniqkey)+ @punctuation.arrow
   ]
@@ -140,14 +110,25 @@
 
 ; actor a as A
 (command
-  . (identifier) @keyword
+  . (identifier) @class
   . (identifier) @variable
-  . (identifier) @keyword.as
-  . [
-    (identifier) @variable
-    (block
-      (identifier) @variable)
-  ] (#eq? @keyword.as "as"))
+  . (
+      (identifier) @keyword.as
+      . [
+          (identifier) @variable
+          (string) @string
+      ]
+  )?
+  (#any-of? @class
+   "actor"
+   "boundary"
+   "collections"
+   "control"
+   "entity"
+   "participant"
+   "queue"
+   "usecase")
+  (#eq? @keyword.as "as"))
 
 ; activate a
 ; deactivate a
@@ -161,3 +142,33 @@
   (#any-of? @keyword
     "activate"
     "deactivate"))
+
+(command
+ . (identifier) @keyword
+ . (_)* @string
+ (#any-of? @keyword
+   "alt"
+   "as"
+   "break"
+   "class"
+   "critical"
+   "database"
+   "else"
+   "end"
+   "group"
+   "json"
+   "loop"
+   "note"
+   "object"
+   "par"))
+
+(command
+ . (identifier) @keyword
+ (#any-of? @keyword
+   "package"
+   "rectangle"))
+
+((identifier) @boolean
+  (#any-of? @boolean
+    "true"
+    "false"))
