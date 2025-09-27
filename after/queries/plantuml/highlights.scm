@@ -168,7 +168,29 @@
    "package"
    "rectangle"))
 
+(command
+ (identifier) @keyword
+ (#any-of? @keyword
+   "again"
+   "elseif"
+   "end"
+   "endif"
+   "equals"
+   "if"
+   "split"
+   "start"
+   "then"
+   "stop"))
+
 ((identifier) @boolean
   (#any-of? @boolean
     "true"
     "false"))
+
+; : hehe ;
+(command
+  (uniqkey) @punctuation.colon
+  (_)*
+  (uniqkey) @punctuation.semicolon
+  (#eq? @punctuation.colon ":")
+  (#eq? @punctuation.semicolon ";"))
