@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "oribarilan/lensline.nvim",
-  tag = "1.1.2",
   keys = {
     {
       "<leader>l<C-l>",
@@ -11,9 +10,19 @@ return {
     },
   },
   opts = {
-    style = {
-      prefix = "",
-      placement = "inline",
+    profiles = {
+      {
+        name = "minimal",
+        style = {
+          placement = "inline",
+          prefix = "",
+        },
+      },
+    },
+    limits = {
+      exclude_append = {
+        "*.lua",
+      },
     },
   },
   event = "LspAttach",
