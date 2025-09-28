@@ -8,7 +8,7 @@
  "@endyaml"
  "@endmindmap"
  "$"
-] @keyword
+] @module
 
 [
   "("
@@ -80,24 +80,6 @@
     "remove"
     "stereotype"
     "struct"))
-
-; for keyword and string after it
-(command
-  . (identifier) @keyword
-  . (_)* @string
-  (#any-of? @keyword
-    "alt"
-    "break"
-    "opt"
-    "critical"
-    "database"
-    "else"
-    "end"
-    "group"
-    "json"
-    "loop"
-    "object"
-    "par"))
 
 (command
  . (identifier) @keyword
@@ -254,3 +236,21 @@
         (identifier) @class)]
   (uniqkey) @punctuation.bracket
   (#eq? @punctuation.bracket "|"))
+
+; for keyword and string after it
+(command
+  . (identifier) @keyword
+  . (_)* @string
+  (#any-of? @keyword
+    "alt"
+    "break"
+    "opt"
+    "critical"
+    "database"
+    "else"
+    "end"
+    "group"
+    "json"
+    "loop"
+    "object"
+    "par"))
