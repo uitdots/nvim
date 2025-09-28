@@ -42,42 +42,6 @@
 
 (comment) @comment
 
-; a -- b
-; a --> b: bla
-; and more
-(command
-  . [
-      (identifier) @variable
-      (block
-        (identifier) @variable)
-  ]
-  . [
-      (
-        (identifier) @punctuation.arrow
-        (uniqkey)+ @punctuation.arrow
-      )
-      (
-        (uniqkey)+ @punctuation.arrow
-        (identifier) @punctuation.arrow
-      )
-      (
-        (uniqkey)* @punctuation.arrow
-        (identifier) @punctuation.arrow
-        (uniqkey)* @punctuation.arrow
-      )
-      (uniqkey)+ @punctuation.arrow
-  ]
-  . [
-      (identifier) @variable
-      (block
-        (identifier) @variable)
-  ]
-  . (
-      (uniqkey) @punctuation.delimiter
-      (_)+ @string
-      (#eq? @punctuation.delimiter ":"))?
-  (#not-any-of? @punctuation.arrow ":"))
-
 ; left to right direction
 (command
   . (identifier) @constant
@@ -86,50 +50,6 @@
   . (identifier) @keyword.direction
   (#eq? @keyword.direction "direction"))
 
-; note
-(command
-  . (identifier) @keyword.note
-  . (identifier) @constant.direction
-  . (identifier) @keyword.of
-  . [
-      (string) @vairable
-      (identifier) @variable
-      (block
-        (identifier) @variable)
-  ]
-  . (
-      (uniqkey)? @punctuation.delimiter
-      (_)* @string
-      (#eq? @punctuation.delimiter ":"))?
-  (#eq? @keyword.note "note")
-  (#any-of? @constant.direction
-    "down"
-    "left"
-    "right"
-    "top"))
-
-; actor a as A
-(command
-  . (identifier) @class
-  . (identifier) @variable
-  . (
-      (identifier) @keyword.as
-      . [
-          (identifier) @variable
-          (string) @string
-      ]
-  )?
-  (#any-of? @class
-   "actor"
-   "boundary"
-   "collections"
-   "control"
-   "entity"
-   "participant"
-   "queue"
-   "usecase")
-  (#eq? @keyword.as "as"))
-
 ; activate a
 ; deactivate a
 (command
@@ -137,8 +57,7 @@
   . [
       (identifier) @variable
       (block
-        (identifier) @variable)
-  ]
+        (identifier) @variable)]
   (#any-of? @keyword
     "activate"
     "deactivate"))
@@ -148,9 +67,9 @@
  . (_)* @string
  (#any-of? @keyword
    "alt"
-   "as"
    "break"
    "class"
+   "opt"
    "critical"
    "database"
    "else"
@@ -158,7 +77,6 @@
    "group"
    "json"
    "loop"
-   "note"
    "object"
    "par"))
 
@@ -172,15 +90,18 @@
  (identifier) @keyword
  (#any-of? @keyword
    "again"
+   "as"
    "elseif"
    "end"
    "endif"
    "equals"
    "if"
+   "over"
+   "ref"
    "split"
    "start"
-   "then"
-   "stop"))
+   "stop"
+   "then"))
 
 ((identifier) @boolean
   (#any-of? @boolean
@@ -194,3 +115,100 @@
   (uniqkey) @punctuation.semicolon
   (#eq? @punctuation.colon ":")
   (#eq? @punctuation.semicolon ";"))
+
+; a -- b
+; a --> b: bla
+; and more
+(command
+  . [
+      (identifier) @variable
+      (block
+        (identifier) @variable)]
+  . [
+      (
+        (identifier) @operator
+        (uniqkey)+ @operator
+      )
+      (
+        (uniqkey)+ @operator
+        (identifier) @operator
+      )
+      (
+        (uniqkey)* @operator
+        (identifier) @operator
+        (uniqkey)* @operator
+      )
+      (uniqkey)+ @operator]
+  . [
+      (identifier) @variable
+      (block
+        (identifier) @variable)]
+  . (
+      (uniqkey) @punctuation.delimiter
+      (_)+ @string
+      (#eq? @punctuation.delimiter ":"))?
+  (#not-any-of? @operator ":"))
+
+; note, ref over, with direction
+(command
+  . (identifier) @keyword
+  . [
+      (
+        (identifier) @constant.direction
+        . (identifier) @keyword.of
+        . [
+            (string) @variable
+            (identifier) @variable
+            (block
+              (identifier) @variable)]
+        (#any-of? @constant.direction
+           "down"
+           "left"
+           "right"
+           "top")
+        (#eq? @keyword.of "of"))
+      (
+        (identifier) @keyword.over
+        . [
+            (string) @variable
+            (identifier) @variable
+            (block
+              (identifier) @variable)]
+        . (
+            (uniqkey) @punctuation.comma
+            . [
+                (string) @variable
+                (identifier) @variable
+                (block
+                  (identifier) @variable)]
+            (#eq? @punctuation.comma ","))?
+        (#eq? @keyword.over "over"))]
+  . (
+      (uniqkey) @punctuation.delimiter
+      . (_)+ @string
+      (#eq? @punctuation.delimiter ":"))?
+  (#any-of? @keyword
+    "note"
+    "ref"))
+
+; actor a as A
+(command
+  . (identifier) @type
+  . [
+      (identifier) @variable
+      (string) @variable]
+  . (
+      (identifier) @keyword.as
+      . [
+          (identifier) @variable
+          (string) @variable])?
+  (#any-of? @type
+   "actor"
+   "boundary"
+   "collections"
+   "control"
+   "entity"
+   "participant"
+   "queue"
+   "usecase")
+  (#eq? @keyword.as "as"))
