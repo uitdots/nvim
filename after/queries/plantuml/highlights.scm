@@ -51,8 +51,8 @@
   . (identifier) @keyword.direction
   (#eq? @keyword.direction "direction"))
 
-; activate a
-; deactivate a
+; for declare, doing sth with a target
+; but not all of the class type
 (command
   . (identifier) @keyword
   . [
@@ -60,26 +60,44 @@
       (block
         (identifier) @variable)]
   (#any-of? @keyword
+    "abstract"
     "activate"
-    "deactivate"))
+    "annotation"
+    "circle"
+    "class"
+    "class"
+    "class"
+    "dataclass"
+    "deactivate"
+    "diamond"
+    "entity"
+    "enum"
+    "exception"
+    "interface"
+    "metaclass"
+    "protocol"
+    "record"
+    "remove"
+    "stereotype"
+    "struct"))
 
+; for keyword and string after it
 (command
- . (identifier) @keyword
- . (_)* @string
- (#any-of? @keyword
-   "alt"
-   "break"
-   "class"
-   "opt"
-   "critical"
-   "database"
-   "else"
-   "end"
-   "group"
-   "json"
-   "loop"
-   "object"
-   "par"))
+  . (identifier) @keyword
+  . (_)* @string
+  (#any-of? @keyword
+    "alt"
+    "break"
+    "opt"
+    "critical"
+    "database"
+    "else"
+    "end"
+    "group"
+    "json"
+    "loop"
+    "object"
+    "par"))
 
 (command
  . (identifier) @keyword
