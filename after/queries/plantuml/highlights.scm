@@ -118,8 +118,9 @@
 (command
   (identifier) @keyword
   . (block
-      (identifier) @string)
+      (_)* @string)
   (#any-of? @keyword
+    "else"
     "elseif"
     "if"
     "then"))
