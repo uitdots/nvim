@@ -45,10 +45,16 @@
 
 ; left to right direction
 (command
-  . (identifier) @constant
-  . (identifier) @keyword
-  . (identifier) @constant
+  . (identifier) @constant.direction
+  . (identifier) @keyword.to
+  . (identifier) @constant.direction
   . (identifier) @keyword.direction
+  (#any-of? @constant.direction
+     "down"
+     "left"
+     "right"
+     "top")
+  (#eq? @keyword.to "to")
   (#eq? @keyword.direction "direction"))
 
 ; for declare, doing sth with a target
