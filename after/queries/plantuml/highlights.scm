@@ -19,6 +19,7 @@
   "]"
   "<"
   ">"
+  "|"
 ] @punctuation.bracket
 
 (uniqkey) @variable
@@ -91,17 +92,31 @@
  (#any-of? @keyword
    "again"
    "as"
-   "elseif"
    "end"
    "endif"
    "equals"
-   "if"
    "over"
    "ref"
    "split"
    "start"
    "stop"
    "then"))
+
+; for if elseif with empty ()
+(method
+ (identifier) @keyword
+ (#any-of? @keyword
+   "elseif"
+   "if"))
+
+(command
+  (identifier) @keyword
+  . (block
+      (identifier) @string)
+  (#any-of? @keyword
+    "elseif"
+    "if"
+    "then"))
 
 ((identifier) @boolean
   (#any-of? @boolean
@@ -111,7 +126,7 @@
 ; : hehe ;
 (command
   (uniqkey) @punctuation.colon
-  (_)*
+  (_)* @string
   (uniqkey) @punctuation.semicolon
   (#eq? @punctuation.colon ":")
   (#eq? @punctuation.semicolon ";"))
@@ -212,3 +227,12 @@
    "queue"
    "usecase")
   (#eq? @keyword.as "as"))
+
+(command
+  (uniqkey) @punctuation.bracket
+  . [
+      (identifier) @class
+      (block
+        (identifier) @class)]
+  (uniqkey) @punctuation.bracket
+  (#eq? @punctuation.bracket "|"))
