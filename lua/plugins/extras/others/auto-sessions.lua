@@ -4,44 +4,36 @@ local auto_session = false
 return {
   "rmagatti/auto-session",
   lazy = not auto_session,
-  cmds = not auto_session and {
-    "Autosession",
-    "SessionDelete",
-    "SessionPurgeOrphaned",
-    "SessionRestore",
-    "SessionSave",
-    "SessionSearch",
-    "SessionToggleAutoSave",
-  } or nil,
+  cmds = not auto_session and "Autosession" or nil,
   keys = {
     {
-      "<leader>sf",
-      "<cmd>SessionSearch<CR>",
-      desc = "Session | Find",
+      "<leader>sS",
+      "<cmd>AutoSession search<CR>",
+      desc = "Session | Search",
     },
     {
       "<leader>ss",
-      "<cmd>SessionSave<CR>",
+      "<cmd>AutoSession save<CR>",
       desc = "Session | Save",
     },
     {
       "<leader>sr",
-      "<cmd>SessionRestore<CR>",
+      "<cmd>AutoSession restore<CR>",
       desc = "Session | Restore",
     },
     {
       "<leader>sd",
-      "<cmd>SessionDelete<CR>",
+      "<cmd>AutoSession delete<CR>",
       desc = "Session | Delete",
     },
     {
       "<leader>sp",
-      "<cmd>SessionPurgeOrphaned<CR>",
+      "<cmd>AutoSession purgeOrphaned<CR>",
       desc = "Session | Purge Orphaned",
     },
     {
       "<leader>st",
-      "<cmd>SessionToggleAutoSave<CR>",
+      "<cmd>AutoSession toggle<CR>",
       desc = "Session | Toggle Autosave",
     },
   },
