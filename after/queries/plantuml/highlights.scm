@@ -57,24 +57,32 @@
   (#eq? @keyword.to "to")
   (#eq? @keyword.direction "direction"))
 
-; for declare, doing sth with a target
-; but not all of the class type
+; doing something with var
 (command
-  . (identifier) @keyword
+  . (identifier) @function.cal
   . [
       (identifier) @variable
       (block
         (identifier) @variable)]
-  (#any-of? @keyword
-    "abstract"
+  (#any-of? @function.cal
     "activate"
+    "deactivate"
+    "remove"))
+
+; for declare, doing sth with a target
+; but not all of the class type
+(command
+  . (identifier) @type
+  . [
+      (identifier) @variable
+      (block
+        (identifier) @variable)]
+  (#any-of? @type
+    "abstract"
     "annotation"
     "circle"
     "class"
-    "class"
-    "class"
     "dataclass"
-    "deactivate"
     "diamond"
     "entity"
     "enum"
@@ -83,13 +91,12 @@
     "metaclass"
     "protocol"
     "record"
-    "remove"
     "stereotype"
     "struct"))
 
 (command
- . (identifier) @keyword
- (#any-of? @keyword
+ . (identifier) @keyword.type
+ (#any-of? @keyword.type
    "package"
    "rectangle"))
 
@@ -214,13 +221,14 @@
     "ref"))
 
 ; actor a as A
+; FIXME: nah this is bad
 (command
   . (identifier) @type
   . [
-      (identifier) @variable
-      (string) @variable]
+      (identifier) @string @spell
+      (string)]
   . (
-      (identifier) @keyword.as
+      (identifier) @keyword
       . [
           (identifier) @variable
           (string) @variable])?
@@ -233,7 +241,7 @@
    "participant"
    "queue"
    "usecase")
-  (#eq? @keyword.as "as"))
+  (#eq? @keyword "as"))
 
 ; usecase
 (command
