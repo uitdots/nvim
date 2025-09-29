@@ -1,8 +1,12 @@
 ---@diagnostic disable: duplicate-doc-field
 ---@meta _
 
----@class TSConfig
----@field ensure_installed string|string[]|TS.Language|TS.Language[]
+---@class PluginsOpts.TSConfig
+---@field install_dir? string
+---@field ensure_installed? string|string[]|TS.Language|TS.Language[]
+---@field highlight? {enabled: boolean, disable?: {string: true}}
+---@field indent? {enabled: boolean, disable?: {string: true}}
+---@field fold? {enabled: boolean, disable?: {string: true}}
 
 ---`:TSModuleInfo`
 ---@alias TS.Language

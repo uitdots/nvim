@@ -68,8 +68,8 @@ o.shiftwidth = 0
 o.tabstop = preferences_options.indent.default
 
 -- Indent
-o.smartindent = false
-o.autoindent = false
+o.smartindent = true
+o.autoindent = true
 
 -- Split
 o.splitbelow = true
