@@ -135,7 +135,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 - `delta`
 - `ripgrep`: telescope, vimgrep replacement
 - `fd`: telescope
-- `npm`: for some plugins and stuff installed via Mason
+- `npm`, `npx`: for some plugins and stuff installed via Mason, treesitter generate
 - `go`: Some stuff installed via Mason
 - `treesitter cli`: to use treesitter
 
