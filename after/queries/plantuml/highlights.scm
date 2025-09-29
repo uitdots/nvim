@@ -8,7 +8,7 @@
  "@endyaml"
  "@endmindmap"
  "$"
-] @module
+] @keyword.directive
 
 [
   "("
@@ -24,7 +24,7 @@
 
 (uniqkey) @variable
 
-(string) @string
+(string) @string @spell
 
 ((identifier) @function
   . (#any-of? @function
@@ -110,16 +110,16 @@
 
 ; for if elseif with empty ()
 (method
- (identifier) @keyword
- (#any-of? @keyword
+ (identifier) @keyword.conditional
+ (#any-of? @keyword.conditional
    "elseif"
    "if"))
 
 (command
-  (identifier) @keyword
+  (identifier) @keyword.conditional
   . (block
-      (_)* @string)
-  (#any-of? @keyword
+      (_)* @string @spell)
+  (#any-of? @keyword.conditional
     "else"
     "elseif"
     "if"
@@ -132,11 +132,11 @@
 
 ; : hehe ;
 (command
-  (uniqkey) @punctuation.colon
-  (_)* @string
-  (uniqkey) @punctuation.semicolon
-  (#eq? @punctuation.colon ":")
-  (#eq? @punctuation.semicolon ";"))
+  (uniqkey) @punctuation.delimiter.colon
+  (_)* @string @spell
+  (uniqkey) @punctuation.delimiter.semicolon
+  (#eq? @punctuation.delimiter.colon ":")
+  (#eq? @punctuation.delimiter.semicolon ";"))
 
 ; a -- b
 ; a --> b: bla
@@ -167,7 +167,7 @@
         (identifier) @variable)]
   . (
       (uniqkey) @punctuation.delimiter
-      (_)+ @string
+      (_)+ @string @spell
       (#eq? @punctuation.delimiter ":"))?
   (#not-any-of? @operator ":"))
 
@@ -207,7 +207,7 @@
         (#eq? @keyword.over "over"))]
   . (
       (uniqkey) @punctuation.delimiter
-      . (_)+ @string
+      . (_)+ @string @spell
       (#eq? @punctuation.delimiter ":"))?
   (#any-of? @keyword
     "note"
@@ -235,6 +235,30 @@
    "usecase")
   (#eq? @keyword.as "as"))
 
+; usecase
+(command
+  . (identifier) @type
+  . [
+      (
+        [
+          (string)+ @string @spell
+          (identifier)+ @string @spell
+          (block
+            (identifier)* @string @spell)
+        ]
+        . (identifier) @keyword.as
+        . [
+            (identifier) @variable
+            (string) @variable
+        ])
+      (
+        (identifier) @variable
+        . (identifier) @keyword.as
+        . (string) @string @spell)
+  ]
+  (#eq? @type "usecase")
+  (#eq? @keyword.as "as"))
+
 (command
   (uniqkey) @punctuation.bracket
   . [
@@ -247,17 +271,36 @@
 ; for keyword and string after it
 (command
   . (identifier) @keyword
-  . (_)* @string
+  . (_)* @string @spell
   (#any-of? @keyword
-    "alt"
     "break"
-    "opt"
     "critical"
     "database"
-    "else"
     "end"
     "group"
     "json"
-    "loop"
     "object"
     "par"))
+
+; break
+(command
+  . (identifier) @keyword.return
+  . (_)* @string @spell
+  (#eq? @keyword.return
+    "break"))
+
+; loop
+(command
+  . (identifier) @keyword.repeat
+  . (_)* @string @spell
+  (#any-of? @keyword.repeat
+    "loop"))
+
+; conditional
+(command
+  . (identifier) @keyword.conditional
+  . (_)* @string @spell
+  (#any-of? @keyword.conditional
+    "alt"
+    "opt"
+    "else"))
