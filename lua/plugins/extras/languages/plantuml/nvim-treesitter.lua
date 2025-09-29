@@ -9,14 +9,19 @@ return {
     ---@diagnostic disable-next-line: param-type-mismatch
     table.insert(opts.ensure_installed, "plantuml")
 
-    ---@diagnostic disable-next-line: inject-field
-    require("nvim-treesitter.parsers").plantuml = {
-      install_info = {
-        url = "https://github.com/Decodetalkers/tree_sitter_plantuml.git",
-        files = { "src/parser.c" },
-        branch = "gh-pages",
-      },
-    }
+    vim.api.nvim_create_autocmd("User", {
+      pattern = "TSUpdate",
+      callback = function()
+        ---@diagnostic disable-next-line: inject-field, missing-fields
+        require("nvim-treesitter.parsers").plantuml = {
+          ---@diagnostic disable-next-line: missing-fields
+          install_info = {
+            url = "https://github.com/Decodetalkers/tree_sitter_plantuml",
+            branch = "gh-pages",
+          },
+        }
+      end,
+    })
     return opts
   end,
 }

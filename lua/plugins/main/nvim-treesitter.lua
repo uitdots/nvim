@@ -32,13 +32,23 @@ return {
       disable = {
         dart = true,
         yaml = true,
+        noice = true,
+        snacks_notif = true,
       },
     },
     highlight = {
       enabled = true,
+      disable = {
+        noice = true,
+        snacks_notif = true,
+      },
     },
     fold = {
       enabled = true,
+      disable = {
+        noice = true,
+        snacks_notif = true,
+      },
     },
   },
   opts_extend = {
