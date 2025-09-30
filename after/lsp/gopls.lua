@@ -35,6 +35,8 @@ return {
       end
     end
     vim.api.nvim_set_hl(0, "@lsp.type.string", {})
+    vim.api.nvim_set_hl(0, "@lsp.type.comment", {})
+    vim.api.nvim_set_hl(0, "@TSComment", {})
   end,
   settings = {
     gopls = {
