@@ -174,7 +174,10 @@
         (identifier) @variable)]
   . (
       (uniqkey) @punctuation.delimiter
-      (_)+ @string @spell
+      . [
+          (_)+ @string @spell
+          (_ (_)* @string @spell)+ @string @spell
+      ]
       (#eq? @punctuation.delimiter ":"))?
   (#not-any-of? @operator ":"))
 
