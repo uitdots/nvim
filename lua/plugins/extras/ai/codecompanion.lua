@@ -71,6 +71,17 @@ return {
   opts = {
     strategies = {
       chat = {
+        slash_commands = {
+          image = {
+            opts = {
+              dirs = {
+                "./assets/",
+                "~/Downloads/",
+                "~/Pictures/",
+              },
+            },
+          },
+        },
         keymaps = {
           regenerate = {
             modes = {
