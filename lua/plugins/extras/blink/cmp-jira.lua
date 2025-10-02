@@ -1,27 +1,25 @@
 ---@type LazySpec
 return {
-  "Kaiser-Yang/blink-cmp-git",
+  "https://gitlab.com/msvechla/cmp-jira.git",
+  cond = vim.env.JIRA_USER_API_KEY ~= nil,
   ft = "gitcommit",
   specs = {
     {
-      "saghen/blink.cmp",
-      ---@module 'blink-cmp'
+      "Saghen/blink.cmp",
+      ---@module 'blink.cmp'
       ---@type blink.cmp.Config
       opts = {
         sources = {
           providers = {
-            git = {
+            cmp_jira = {
               async = true,
-              module = "blink-cmp-git",
-              name = "Git",
-              --- @module 'blink-cmp-git'
-              --- @type blink-cmp-git.Options
-              opts = nil,
+              name = "cmp_jira",
+              module = "blink.compat.source",
             },
           },
           per_filetype = {
             gitcommit = {
-              "git",
+              "cmp_jira",
             },
           },
         },
@@ -31,5 +29,8 @@ return {
       },
     },
   },
-  dependencies = "saghen/blink.cmp",
+  dependencies = {
+    "Saghen/blink.cmp",
+    "Saghen/blink.compat",
+  },
 }
