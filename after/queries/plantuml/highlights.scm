@@ -242,9 +242,28 @@
    "control"
    "entity"
    "participant"
-   "queue"
-   "usecase")
+   "queue")
   (#eq? @keyword "as"))
+
+; for usecase
+; (command
+;   . (identifier) @type
+;   [
+;     (
+;       [
+;         (identifier) @variable
+;         (string) @variable @spell]
+;       . (
+;           (identifier) @keyword
+;           . [
+;               (identifier) @string @spell
+;               (string)])?)
+;     (
+;       (string)
+;       .
+;     )
+;   (#eq? @type "usecase")
+;   (#eq? @keyword "as"))
 
 ; usecase
 (command

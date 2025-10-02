@@ -142,6 +142,14 @@ syn match swagRouterPath "\s\+\S\+" contained
 syn match swagRouterBracket "[\[\]]" contained
 syn match swagRouterMethod "\(get\|post\|put\|delete\|head\|connect\|options\|patch\|trace\)" contained
 
+" from older version
+" syn match swagRouter "@Router\s\+\S\+\s\+\[\(get\|post\|put\|delete\|head\|connect\|options\|patch\|trace\)\]" contains=swagRouterKeyword,swagRouterPath,swagRouterBracket,swagRouterMethod contained
+" syn match swagRouterKeyword "@Router" contained
+" syn match swagRouterPath "\s\+\S\+" contained
+" syn match swagRouterBracket "[\[\]]" contained
+" syn match swagRouterMethod "\(get\|post\|put\|delete\|head\|connect\|options\|patch\|trace\)" contained
+
+
 " ============================================================================
 " Godoc pattern
 " ============================================================================
