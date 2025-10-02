@@ -18,7 +18,6 @@ return {
           },
           per_filetype = {
             tex = {
-              inherit_defaults = true,
               "vimtex",
             },
           },

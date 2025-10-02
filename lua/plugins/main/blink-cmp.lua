@@ -96,6 +96,10 @@ return {
   config = function(_, opts)
     opts.completion = opts.completion or {}
     opts.completion.menu = require("nvchad.blink").menu
+    local per_filetype = opts.sources.per_filetype
+    for ft in pairs(per_filetype) do
+      per_filetype[ft].inherit_defaults = true
+    end
     require("blink.cmp").setup(opts)
   end,
   keys = {

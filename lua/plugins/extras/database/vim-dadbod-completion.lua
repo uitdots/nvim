@@ -15,7 +15,6 @@ return {
         sources = {
           per_filetype = {
             sql = {
-              inherit_defaults = true,
               "dadbod",
             },
           },

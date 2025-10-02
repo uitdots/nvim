@@ -189,9 +189,7 @@ return {
       opts = {
         sources = {
           per_filetype = {
-            codecompanion = {
-              inherit_defaults = true,
-            },
+            codecompanion = {},
           },
         },
       },

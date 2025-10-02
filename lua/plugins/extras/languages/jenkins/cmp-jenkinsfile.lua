@@ -31,7 +31,6 @@ return {
             },
             per_filetype = {
               jenkins = {
-                inherit_defaults = true,
                 "jenkinsfile",
               },
             },

@@ -11,7 +11,6 @@ local kind_name = "Table" -- Because idk how to customise this, pick table
 ---@type LazySpec
 return {
   "ray-x/cmp-sql",
-  enabled = true,
   event = "InsertEnter",
   specs = {
     {

@@ -23,7 +23,6 @@ return {
         sources = {
           per_filetype = {
             lua = {
-              inherit_defaults = true,
               "lazydev",
             },
           },

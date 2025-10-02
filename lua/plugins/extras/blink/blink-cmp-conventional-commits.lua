@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "Kaiser-Yang/blink-cmp-git",
+  "disrupted/blink-cmp-conventional-commits",
   ft = "gitcommit",
   specs = {
     {
@@ -10,17 +10,17 @@ return {
       opts = {
         sources = {
           providers = {
-            git = {
-              module = "blink-cmp-git",
-              name = "Git",
-              --- @module 'blink-cmp-git'
-              --- @type blink-cmp-git.Options
+            conventional_commits = {
+              name = "Conventional Commits",
+              module = "blink-cmp-conventional-commits",
+              ---@module 'blink-cmp-conventional-commits'
+              ---@type blink-cmp-conventional-commits.Options
               opts = nil,
             },
           },
           per_filetype = {
             gitcommit = {
-              "git",
+              "conventional_commits",
             },
           },
         },
