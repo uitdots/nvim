@@ -13,14 +13,14 @@ return {
     {
       "<leader>aa",
       "<cmd>CodeCompanionActions<CR>",
-      desc = "AI | Actions",
+      desc = "CodeCompanion | Actions",
       mode = { "n", "v" },
       silent = true,
     },
     {
       "<leader>aa",
       "<cmd>CodeCompanionChat Add<CR>",
-      desc = "AI | Add Current to Chat",
+      desc = "CodeCompanion | Add Current to Chat",
       mode = "v",
       silent = true,
     },
@@ -32,14 +32,14 @@ return {
         end
         vim.cmd("CodeCompanionChat Toggle")
       end,
-      desc = "AI | Toggle Chat",
+      desc = "CodeCompanion | Toggle Chat",
       mode = "n",
       silent = true,
     },
     {
-      "<leader>ai",
+      "<leader>aI",
       "<cmd>CodeCompanion<CR>",
-      desc = "AI | Inline Chat",
+      desc = "CodeCompanion | Inline Chat",
       mode = { "n", "v" },
       silent = true,
     },

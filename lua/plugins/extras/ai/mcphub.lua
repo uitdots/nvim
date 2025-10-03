@@ -8,7 +8,7 @@ return {
     {
       "<leader>am",
       "<cmd>MCPHub<CR>",
-      desc = "AI | MCPHub",
+      desc = "MCPHhub | Toggle",
       silent = true,
     },
   },

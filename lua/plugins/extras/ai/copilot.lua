@@ -10,7 +10,7 @@ return {
       enabled = false,
     },
     suggestion = {
-      enabled = true,
+      enabled = ai_suggestion_enabled,
       auto_trigger = true,
       keymap = {
         accept_word = "<M-w>",
@@ -27,7 +27,7 @@ return {
   },
   keys = {
     {
-      "<leader>at",
+      "<leader>ai",
       function()
         vim.g.copilot_enabled = not vim.g.copilot_enabled
         if vim.g.copilot_enabled then
@@ -44,7 +44,7 @@ return {
           })
         end
       end,
-      desc = "AI | Toggle Completion (Copilot)",
+      desc = "Copilot | Toggle Inline Completion",
       silent = true,
     },
     {
@@ -57,14 +57,7 @@ return {
   config = function(_, opts)
     require("copilot").setup(opts)
 
-    if not ai_suggestion_enabled then
-      vim.g.copilot_enabled = false
-      pcall(function()
-        require("copilot.command").disable()
-      end)
-    else
-      vim.g.copilot_enabled = true
-    end
+    vim.g.copilot_enabled = ai_suggestion_enabled
 
     autocmd("User", {
       pattern = "BlinkCmpMenuOpen",

@@ -91,6 +91,7 @@ return {
   },
   opts_extend = {
     "sources.default",
+    "keymap.<Tab>",
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)
