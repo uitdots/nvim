@@ -37,7 +37,7 @@ return {
       silent = true,
     },
     {
-      "<leader>aI",
+      "<leader>ai",
       "<cmd>CodeCompanion<CR>",
       desc = "CodeCompanion | Inline Chat",
       mode = { "n", "v" },

@@ -10,7 +10,7 @@ return {
   } or nil,
   keys = {
     {
-      "<tab>",
+      "<Tab>",
       function()
         if not require("sidekick").nes_jump_or_apply() then
           return "<Tab>"
@@ -22,7 +22,12 @@ return {
     {
       "<leader>an",
       function()
-        require("sidekick.nes").toggle()
+        local nes = require("sidekick.nes")
+        nes.toggle()
+        vim.notify("Sidekick NES is " .. (nes.enabled and "enabled" or "disabled"), vim.log.levels.INFO, {
+          title = "Sidekick",
+          icon = "",
+        })
       end,
       mode = { "x", "n" },
       desc = "Sidekick | Toggle NES",
@@ -87,31 +92,4 @@ return {
     },
   },
   dependencies = "zbirenbaum/copilot.lua",
-  specs = {
-    {
-      "saghen/blink.cmp",
-      ---@module 'blink.cmp'
-      ---@param opts blink.cmp.Config?
-      ---@return blink.cmp.Config
-      opts = function(_, opts)
-        opts = opts or {}
-        opts.keymap = opts.keymap or {}
-
-        local copilot = {
-          function()
-            return require("sidekick").nes_jump_or_apply()
-          end,
-        }
-
-        if opts.keymap["<Tab>"] == nil then
-          opts.keymap["<Tab>"] = copilot
-        else
-          vim.list_extend(opts.keymap["<Tab>"], copilot, 1)
-        end
-
-        return opts
-      end,
-      optional = true,
-    },
-  },
 }
