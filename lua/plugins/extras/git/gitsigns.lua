@@ -8,7 +8,7 @@ return {
       function()
         require("gitsigns").preview_hunk_inline()
       end,
-      desc = "Git | Inline Preview Hunk",
+      desc = "GitSigns | Inline Preview Hunk",
       silent = true,
     },
     {
@@ -16,15 +16,15 @@ return {
       function()
         require("gitsigns").preview_hunk()
       end,
-      desc = "Git | Preview Hunk",
+      desc = "GitSigns | Preview Hunk",
       silent = true,
     },
     {
       "<leader>gb",
       function()
-        require("gitsigns").blame_line({ full = true })
+        require("gitsigns").blame_line()
       end,
-      desc = "Git | Blame Line",
+      desc = "GitSigns | Blame Line",
       silent = true,
     },
     {
@@ -32,7 +32,7 @@ return {
       function()
         require("gitsigns").toggle_current_line_blame()
       end,
-      desc = "Git | Blame Line",
+      desc = "GitSigns | Blame Line",
       silent = true,
     },
     {
@@ -40,7 +40,7 @@ return {
       function()
         require("gitsigns").select_hunk()
       end,
-      desc = "Git | Select Hunk",
+      desc = "GitSigns | Select Hunk",
       silent = true,
     },
     {
@@ -48,7 +48,7 @@ return {
       function()
         require("gitsigns").stage_hunk()
       end,
-      desc = "Git | Stage Hunk",
+      desc = "GitSigns | Stage Hunk",
       silent = true,
     },
     {
@@ -56,7 +56,7 @@ return {
       function()
         require("gitsigns").stage_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end,
-      desc = "Git | Stage Hunk",
+      desc = "GitSigns | Stage Hunk",
       silent = true,
       mode = "v",
     },
@@ -65,7 +65,7 @@ return {
       function()
         require("gitsigns").stage_buffer()
       end,
-      desc = "Git | Stage Buffer",
+      desc = "GitSigns | Stage Buffer",
       silent = true,
     },
     {
@@ -73,7 +73,7 @@ return {
       function()
         require("gitsigns").reset_hunk()
       end,
-      desc = "Git | Reset Hunk",
+      desc = "GitSigns | Reset Hunk",
       silent = true,
     },
     {
@@ -81,7 +81,7 @@ return {
       function()
         require("gitsigns").reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
       end,
-      desc = "Git | Reset Hunk",
+      desc = "GitSigns | Reset Hunk",
       silent = true,
       mode = "v",
     },
@@ -90,7 +90,7 @@ return {
       function()
         require("gitsigns").reset_buffer()
       end,
-      desc = "Git | Reset Buffer",
+      desc = "GitSigns | Reset Buffer",
       silent = true,
     },
     {
@@ -98,7 +98,7 @@ return {
       function()
         require("gitsigns").toggle_word_diff()
       end,
-      desc = "Git | Word Diff",
+      desc = "GitSigns | Word Diff",
       silent = true,
     },
     {
@@ -106,7 +106,7 @@ return {
       function()
         require("gitsigns").diffthis()
       end,
-      desc = "Git | Diff",
+      desc = "GitSigns | Diff",
       silent = true,
     },
     {
@@ -114,13 +114,30 @@ return {
       function()
         require("gitsigns").diffthis("~")
       end,
-      desc = "Git | Diff Last Commit",
+      desc = "GitSigns | Diff Last Commit",
+      silent = true,
+    },
+    {
+      "<leader>gj",
+      function()
+        require("gitsigns").nav_hunk("next")
+      end,
+      desc = "GitSigns | Next Hunk",
+      silent = true,
+    },
+    {
+      "<leader>gj",
+      function()
+        require("gitsigns").nav_hunk("prev")
+      end,
+      desc = "GitSigns | Previous Hunk",
       silent = true,
     },
   },
   opts = {
     signs_staged_enable = false,
     signcolumn = false,
+    numhl = true,
     watch_gitdir = {
       follow_files = false,
     },
