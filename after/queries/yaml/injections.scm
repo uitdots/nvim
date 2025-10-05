@@ -70,3 +70,14 @@
             (string_scalar) @injection.content)))))
   (#gsub! @injection.language ".*language?%s*[%:=]%s*([%w%p]+).*" "%1")
   (#set! "priority" 110))
+
+;;;;;;;;;;;; FOR GITHUB ACTION
+
+([
+  (string_scalar)
+  (block_scalar)
+  (double_quote_scalar)
+  (single_quote_scalar)
+] @injection.content
+  (#lua-match? @injection.content "[$]{{.*}}")
+  (#set! injection.language "ghactions"))
