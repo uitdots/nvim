@@ -105,9 +105,12 @@
  (#any-of? @keyword
    "again"
    "as"
+   "detach"
    "end"
    "endif"
+   "endswitch"
    "equals"
+   "kill"
    "over"
    "ref"
    "split"
@@ -306,7 +309,6 @@
     "break"
     "critical"
     "database"
-    "end"
     "group"
     "json"
     "object"
@@ -324,7 +326,8 @@
   . (identifier) @keyword.repeat
   . (_)* @string @spell
   (#any-of? @keyword.repeat
-    "loop"))
+    "loop"
+    "repeat"))
 
 ; conditional
 (command
