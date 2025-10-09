@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local ai_suggestion_enabled = require("preferences").options.others.ai_suggestion_enabled
 
 local function setup_autocmds()
   local group = augroup("CopilotCmp", { clear = true })
@@ -67,6 +68,14 @@ return {
     {
       "<leader>at",
       function()
+        require("copilot.suggestion").toggle_auto_trigger()
+      end,
+      desc = "Copilot | Toggle Buffer Suggestion",
+      silent = true,
+    },
+    {
+      "<leader>aT",
+      function()
         local is_disabled = require("copilot.client").is_disabled()
         require("copilot.command")[is_disabled and "enable" or "disable"]()
         vim.notify("Copilot is " .. (is_disabled and "enabled" or "disabled"), vim.log.levels.INFO, {
@@ -91,7 +100,11 @@ return {
   },
   config = function(_, opts)
     require("copilot").setup(opts)
-    setup_autocmds()
+    if ai_suggestion_enabled then
+      setup_autocmds()
+    else
+      require("copilot").disable()
+    end
   end,
   dependencies = {
     "saghen/blink.cmp",

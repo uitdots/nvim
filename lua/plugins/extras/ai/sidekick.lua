@@ -47,7 +47,7 @@ return {
       desc = "Sidekick | Select CLI",
     },
     {
-      "<leader>aT",
+      "<leader>a<C-t>",
       function()
         require("sidekick.cli").send({ msg = "{this}" })
       end,
