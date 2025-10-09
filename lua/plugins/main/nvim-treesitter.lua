@@ -1,3 +1,5 @@
+-- NOTE: Reference config from https://github.com/MeanderingProgrammer/treesitter-modules.nvim
+
 local is_executable = require("utils.executable").is_executable_cache
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
@@ -32,23 +34,15 @@ return {
       disable = {
         dart = true,
         yaml = true,
-        noice = true,
-        snacks_notif = true,
       },
     },
     highlight = {
       enabled = true,
-      disable = {
-        noice = true,
-        snacks_notif = true,
-      },
+      disable = {},
     },
     fold = {
       enabled = true,
-      disable = {
-        noice = true,
-        snacks_notif = true,
-      },
+      disable = {},
     },
   },
   opts_extend = {
@@ -70,15 +64,20 @@ return {
       desc = "Enable treesitter highlighting",
       callback = function(args)
         local buf = args.buf
-        local filetype = vim.api.nvim_get_option_value("filetype", { buf = buf })
-        if opts.highlight.enabled and not opts.highlight.disable[filetype] then
-          pcall(vim.treesitter.start)
+        local filetype = args.match
+        local language = vim.treesitter.language.get_lang(filetype) or filetype
+        if not vim.treesitter.language.add(language) then
+          return
         end
-        if opts.indent.enabled and not opts.indent.disable[filetype] then
+        if opts.highlight.enabled and not opts.highlight.disable[language] then
+          vim.treesitter.start(buf, language)
+        end
+        if opts.indent.enabled and not opts.indent.disable[language] then
           vim.bo[buf].autoindent = false
           vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end
-        if opts.fold.enabled and not opts.fold.disable[filetype] then
+        if opts.fold.enabled and not opts.fold.disable[language] then
+          vim.wo.foldmethod = "expr"
           vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         end
       end,
