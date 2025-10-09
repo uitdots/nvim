@@ -103,7 +103,7 @@ return {
     if ai_suggestion_enabled then
       setup_autocmds()
     else
-      require("copilot").disable()
+      require("copilot.command").disable()
     end
   end,
   dependencies = {
