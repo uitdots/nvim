@@ -26,9 +26,29 @@ return {
       },
       ["<C-e>"] = {
         "hide",
+        function()
+          if not package.loaded["copilot"] then
+            return
+          end
+          local suggestion = require("copilot.suggestion")
+          if suggestion.is_visible() then
+            suggestion.clear_preview()
+            return true
+          end
+        end,
         "fallback",
       },
       ["<Tab>"] = {
+        function()
+          if not package.loaded["copilot"] then
+            return
+          end
+          local suggestion = require("copilot.suggestion")
+          if suggestion.is_visible() then
+            suggestion.accept()
+            return true
+          end
+        end,
         function(cmp)
           if cmp.is_active() then
             return cmp.select_next()
@@ -91,12 +111,9 @@ return {
   },
   opts_extend = {
     "sources.default",
-    "keymap.<Tab>",
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)
-    opts.completion = opts.completion or {}
-    opts.completion.menu = require("nvchad.blink").menu
     local per_filetype = opts.sources.per_filetype
     for ft in pairs(per_filetype) do
       per_filetype[ft].inherit_defaults = true

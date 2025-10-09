@@ -197,5 +197,15 @@ return {
         lsp.capabilities = vim.tbl_deep_extend("keep", lsp.capabilities, nvchad_capabilities)
       end,
     },
+    {
+      "saghen/blink.cmp",
+      ---@param opts? blink.cmp.Config
+      opts = function(_, opts)
+        opts = opts or {}
+        opts.completion = opts.completion or {}
+        opts.completion.menu = require("nvchad.blink").menu
+        return opts
+      end,
+    },
   },
 }

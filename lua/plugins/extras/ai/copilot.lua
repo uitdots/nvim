@@ -66,7 +66,7 @@ return {
   },
   keys = {
     {
-      "<leader>at",
+      "<leader>as",
       function()
         require("copilot.suggestion").toggle_auto_trigger()
       end,
@@ -74,17 +74,18 @@ return {
       silent = true,
     },
     {
-      "<leader>aT",
+      "<leader>at",
       function()
         local is_disabled = require("copilot.client").is_disabled()
-        require("copilot.command")[is_disabled and "enable" or "disable"]()
         vim.notify("Copilot is " .. (is_disabled and "enabled" or "disabled"), vim.log.levels.INFO, {
           title = "Copilot",
           icon = "",
         })
         if is_disabled then
+          require("copilot.command").enable()
           setup_autocmds()
         else
+          require("copilot.command").disable()
           clear_autocmds()
         end
       end,
@@ -109,36 +110,5 @@ return {
   dependencies = {
     "saghen/blink.cmp",
     optional = true,
-  },
-  specs = {
-    {
-      "saghen/blink.cmp",
-      ---@module 'blink.cmp'
-      ---@param opts blink.cmp.Config?
-      ---@return blink.cmp.Config
-      opts = function(_, opts)
-        opts = opts or {}
-        opts.keymap = opts.keymap or {}
-
-        local copilot = {
-          function()
-            local suggestion = require("copilot.suggestion")
-            if suggestion.is_visible() then
-              suggestion.accept()
-              return true
-            end
-          end,
-        }
-
-        if opts.keymap["<Tab>"] == nil then
-          opts.keymap["<Tab>"] = copilot
-        else
-          vim.list_extend(opts.keymap["<Tab>"], copilot, 1)
-        end
-
-        return opts
-      end,
-      optional = true,
-    },
   },
 }

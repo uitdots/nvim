@@ -40,14 +40,14 @@ return {
       desc = "Sidekick | Toggle CLI",
     },
     {
-      "<leader>as",
+      "<leader>aS",
       function()
         require("sidekick.cli").select({ filter = { installed = true } })
       end,
       desc = "Sidekick | Select CLI",
     },
     {
-      "<leader>a<C-t>",
+      "<leader>aT",
       function()
         require("sidekick.cli").send({ msg = "{this}" })
       end,
