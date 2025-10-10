@@ -6,7 +6,7 @@ return {
     {
       "<leader>dd",
       function()
-        require("dapui").toggle()
+        require("dapui").toggle({ reset = true })
       end,
       desc = "Debug | Dap UI",
       silent = true,
