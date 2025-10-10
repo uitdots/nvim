@@ -49,20 +49,12 @@ return {
             return true
           end
         end,
-        function(cmp)
-          if cmp.is_active() then
-            return cmp.select_next()
-          end
-        end,
+        "select_next",
         "snippet_forward",
         "fallback",
       },
       ["<S-Tab>"] = {
-        function(cmp)
-          if cmp.is_active() then
-            return cmp.select_prev()
-          end
-        end,
+        "select_prev",
         "snippet_backward",
         "fallback",
       },
