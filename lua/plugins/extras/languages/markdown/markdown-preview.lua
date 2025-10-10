@@ -2,7 +2,7 @@ local ft = require("utils.filetypes").markdown
 
 ---@type LazySpec
 return {
-  "iamcco/markdown-preview.nvim",
+  "UtkarshKunwar/markdown-preview.nvim",
   keys = {
     {
       "<leader>wp",
