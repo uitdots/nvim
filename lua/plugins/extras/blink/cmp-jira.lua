@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "https://gitlab.com/msvechla/cmp-jira.git",
-  cond = vim.env.JIRA_USER_API_KEY ~= nil,
   ft = "gitcommit",
   specs = {
     {
@@ -33,4 +32,11 @@ return {
     "Saghen/blink.cmp",
     "Saghen/blink.compat",
   },
+  config = function(_, opts)
+    if vim.env.JIRA_USER_API_KEY == nil or vim.env.JIRA_WORKSPACE_URL == nil or vim.env.JIRA_USER_EMAIL == nil then
+      vim.notify("Not enough environment variable provided to use cmp_jira", vim.log.level.ERROR, { title = "cmp_jira" })
+      return
+    end
+    require("cmp_jira").setup(opts)
+  end,
 }
