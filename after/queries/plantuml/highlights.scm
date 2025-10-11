@@ -59,12 +59,12 @@
 
 ; doing something with var
 (command
-  . (identifier) @function.cal
+  . (identifier) @function.call
   . [
       (identifier) @variable
       (block
         (identifier) @variable)]
-  (#any-of? @function.cal
+  (#any-of? @function.call
     "activate"
     "deactivate"
     "remove"))
@@ -101,22 +101,58 @@
    "rectangle"))
 
 (command
- (identifier) @keyword
- (#any-of? @keyword
-   "again"
-   "as"
-   "detach"
-   "end"
-   "endif"
-   "endswitch"
-   "equals"
-   "kill"
-   "over"
-   "ref"
-   "split"
-   "start"
-   "stop"
-   "then"))
+  (identifier) @keyword
+  (#any-of? @keyword
+    "again"
+    "as"
+    "detach"
+    "end"
+    "endif"
+    "endswitch"
+    "equals"
+    "is"
+    "kill"
+    "not"
+    "over"
+    "ref"
+    "split"
+    "start"
+    "stop"
+    "then"))
+
+; loop
+(command
+  . (identifier) @keyword.repeat
+  . (_)* @string @spell
+  (#any-of? @keyword.repeat
+    "loop"
+    "repeat"))
+
+; repeat while
+(command
+  . (identifier) @keyword.repeat.repeat
+  . [
+      ((method
+        (identifier) @keyword.repeat.while))
+      ((identifier) @keyword.repeat.while
+      . (block
+          (identifier)+ @string @spell))]
+  . (identifier) @keyword.operator.is
+  . [
+      ((block
+          (identifier)+ @string @spell))
+      (method
+        (identifier))]
+  . (identifier) @keyword.operator.not
+  . [
+      ((block
+          (identifier)+ @string @spell))
+      (method
+        (identifier))]
+  (#eq? @keyword.repeat.repeat "repeat")
+  (#eq? @keyword.repeat.while "while")
+  (#eq? @keyword.operator.is "is")
+  (#eq? @keyword.operator.not "not"))
 
 ; for if elseif with empty ()
 (method
@@ -135,6 +171,15 @@
     "if"
     "then"))
 
+; conditional
+(command
+  . (identifier) @keyword.conditional
+  . (_)* @string @spell
+  (#any-of? @keyword.conditional
+    "alt"
+    "else"
+    "opt"))
+
 ((identifier) @boolean
   (#any-of? @boolean
     "true"
@@ -142,9 +187,12 @@
 
 ; : hehe ;
 (command
-  (uniqkey) @punctuation.delimiter.colon
-  (_)* @string @spell
-  (uniqkey) @punctuation.delimiter.semicolon
+  . (identifier)? @keyword
+  . (uniqkey) @punctuation.delimiter.colon
+  . (_)* @string @spell
+  . (uniqkey) @punctuation.delimiter.semicolon
+  (#any-of? @keyword
+    "backward")
   (#eq? @punctuation.delimiter.colon ":")
   (#eq? @punctuation.delimiter.semicolon ";"))
 
@@ -320,20 +368,3 @@
   . (_)* @string @spell
   (#eq? @keyword.return
     "break"))
-
-; loop
-(command
-  . (identifier) @keyword.repeat
-  . (_)* @string @spell
-  (#any-of? @keyword.repeat
-    "loop"
-    "repeat"))
-
-; conditional
-(command
-  . (identifier) @keyword.conditional
-  . (_)* @string @spell
-  (#any-of? @keyword.conditional
-    "alt"
-    "opt"
-    "else"))
