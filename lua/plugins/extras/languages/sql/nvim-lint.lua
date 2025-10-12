@@ -17,7 +17,7 @@ return {
       }
     )
 
-    lint.linters_by_ft.postgresql = {
+    lint.linters_by_ft.pgsql = {
       "pg_sqlfluff",
     }
   end,

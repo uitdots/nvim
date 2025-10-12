@@ -6,6 +6,11 @@ return {
     ensure_installed = {
       "sql",
     },
+    highlight = {
+      disable = {
+        pgsql = true,
+      }
+    }
   },
   opts_extend = {
     "ensure_installed",

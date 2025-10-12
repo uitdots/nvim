@@ -87,22 +87,18 @@ return {
         "buffer",
         "omni",
       },
-      --[[
-        providers = {
-          -- https://cmp.saghen.dev/configuration/reference.html#providers
-          -- Allow buffer even LSP has suggestions
-          lsp = {
-            fallbacks = {},
-          },
-          buffer = {
-            score_offset = -5,
+      providers = {
+        lsp = {
+          fallbacks = { -- for extending, so I declare here
+            "buffer",
           },
         },
-        ]]
+      },
     },
   },
   opts_extend = {
     "sources.default",
+    "sources.providers.lsp.fallbacks",
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)

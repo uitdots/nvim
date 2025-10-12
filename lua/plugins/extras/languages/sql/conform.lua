@@ -14,7 +14,7 @@ return {
     })
 
     opts.formatters_by_ft = opts.formatters_by_ft or {}
-    opts.formatters_by_ft.postgresql = {
+    opts.formatters_by_ft.pgsql = {
       "pg_sqlfluff",
     }
     return opts

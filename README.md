@@ -262,13 +262,11 @@ There are some keymaps you should know in this config (and native neovim keymaps
   >  NVIM_NO_IDE=1 lazygit # commit, quick edit
   > ```
 - Working with `sql`:
-  - Use compound filetype
-  - Set the file type `sql` or `plsql` for treesitter highlighting, then the **custom filetype** after it _(for linter and formatter attach to)_
+  - With PostgreSQL or PLpgSQL,..., set ft to `pgsql` and not using treesitter, but [lifepillar/pgsql.vim](https://github.com/lifepillar/pgsql.vim/)
     > Ex:
     >
-    > - `sql.postgresql`, `plsql.postgresql`
     > - ```yaml
-    >   # vim: set ft=sql.postgresql:
+    >   # vim: set ft=pgsql:
     >   ```
 - Working with `latex`:
   - on Arch:

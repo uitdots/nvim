@@ -6,14 +6,14 @@ return {
   version = "v2.*",
   keys = {
     {
-      "<C-n>",
+      "<M-n>",
       "<Plug>luasnip-next-choice",
       desc = "Insert | LuaSnip Next Choice",
       silent = true,
       mode = { "i", "s" },
     },
     {
-      "<C-p>",
+      "<M-p>",
       "<Plug>luasnip-prev-choice",
       desc = "Insert | LuaSnip Prev Choice",
       silent = true,
