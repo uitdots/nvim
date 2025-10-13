@@ -12,9 +12,6 @@ return {
             dadbod = {
               name = "Dadbod",
               module = "vim_dadbod_completion.blink",
-              fallbacks = {
-                "sql",
-              }
             },
           },
           per_filetype = {

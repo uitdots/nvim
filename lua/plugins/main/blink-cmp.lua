@@ -12,6 +12,10 @@ return {
     appearance = {
       nerd_font_variant = "normal",
     },
+    snippets = {
+      score_offset = -5,
+      preset = "luasnip",
+    },
     keymap = {
       preset = "none",
       ["<C-space>"] = {
@@ -94,17 +98,32 @@ return {
           },
         },
       },
+      per_filetype = {
+        sql = {
+          "lsp",
+          "path",
+          "snippets",
+          "buffer",
+        },
+      },
     },
   },
   opts_extend = {
     "sources.default",
+    "sources.per_filetype.sql",
     "sources.providers.lsp.fallbacks",
   },
   ---@param opts blink.cmp.Config
   config = function(_, opts)
     local per_filetype = opts.sources.per_filetype
+    ---@type table<string, true>
+    local exclude_inherit_fts = {
+      sql = true,
+    }
     for ft in pairs(per_filetype) do
-      per_filetype[ft].inherit_defaults = true
+      if not exclude_inherit_fts[ft] then
+        per_filetype[ft].inherit_defaults = true
+      end
     end
     require("blink.cmp").setup(opts)
   end,
