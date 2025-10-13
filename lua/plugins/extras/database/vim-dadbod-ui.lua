@@ -25,15 +25,5 @@ return {
       silent = true,
     },
   },
-  dependencies = {
-    "tpope/vim-dadbod",
-    {
-      "kristijanhusak/vim-dadbod-completion",
-      optional = true,
-    },
-    {
-      "saghen/blink.cmp",
-      optional = true,
-    },
-  },
+  dependencies = "tpope/vim-dadbod",
 }

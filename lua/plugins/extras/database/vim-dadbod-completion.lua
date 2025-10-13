@@ -1,11 +1,6 @@
 ---@type LazySpec
 return {
   "kristijanhusak/vim-dadbod-completion",
-  ft = {
-    "sql",
-    "mysql",
-    "plsql",
-  },
   specs = {
     {
       "saghen/blink.cmp",
@@ -13,20 +8,26 @@ return {
       ---@type blink.cmp.Config
       opts = {
         sources = {
+          providers = {
+            dadbod = {
+              name = "Dadbod",
+              module = "vim_dadbod_completion.blink",
+              fallbacks = {
+                "sql",
+              }
+            },
+          },
           per_filetype = {
             sql = {
               "dadbod",
             },
           },
-          providers = {
-            dadbod = {
-              name = "Dadbod",
-              module = "vim_dadbod_completion.blink",
-            },
-          },
         },
       },
-      optional = true,
+      opts_extend = {
+        "sources.per_filetype.sql",
+      },
     },
   },
+  dependencies = "tpope/vim-dadbod",
 }

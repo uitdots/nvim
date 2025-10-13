@@ -11,7 +11,6 @@ local allowed_filetypes_nodes = {
 ---@type LazySpec
 return {
   "KevinNitroG/blink-sql.nvim",
-  event = "InsertEnter",
   specs = {
     {
       "Saghen/blink.cmp",
@@ -57,10 +56,16 @@ return {
           default = {
             "sql",
           },
+          per_filetype = {
+            sql = {
+              "dadbod",
+            },
+          },
         },
       },
       opts_extend = {
         "sources.default",
+        "sources.per_filetype.sql",
         "sources.providers.lsp.fallbacks",
       },
     },
