@@ -5,7 +5,7 @@ return {
     ---@type Mason.Package[]
     ensure_installed = {
       "nil",
-      "nixfmt",
+      "alejandra",
     },
   },
   opts_extend = {
