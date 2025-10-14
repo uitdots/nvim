@@ -1,5 +1,6 @@
 local exclude_find = {
   "%.dart_tool/",
+  "%.direnv/",
   "%.egg-info/",
   "%.git/",
   "%.gradle/",
