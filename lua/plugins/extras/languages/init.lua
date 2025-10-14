@@ -16,7 +16,6 @@ return {
   },
   {
     import = "plugins.extras.languages.config",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.cs",
@@ -24,19 +23,15 @@ return {
   },
   {
     import = "plugins.extras.languages.css",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.d2",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.docker",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.env",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.dart",
@@ -44,11 +39,9 @@ return {
   },
   {
     import = "plugins.extras.languages.git",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.github",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.gitlab",
@@ -56,19 +49,15 @@ return {
   },
   {
     import = "plugins.extras.languages.go",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.grafana",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.groovy",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.hcl",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.helm",
@@ -76,11 +65,9 @@ return {
   },
   {
     import = "plugins.extras.languages.html",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.http",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.java",
@@ -92,15 +79,12 @@ return {
   },
   {
     import = "plugins.extras.languages.json",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.just",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.kbd",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.kotlin",
@@ -108,31 +92,28 @@ return {
   },
   {
     import = "plugins.extras.languages.kubernetes",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.latex",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.lua",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.make",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.markdown",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.nginx",
     enabled = false,
   },
   {
+    import = "plugins.extras.languages.nix",
+  },
+  {
     import = "plugins.extras.languages.plantuml",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.powershell",
@@ -140,11 +121,9 @@ return {
   },
   {
     import = "plugins.extras.languages.python",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.react",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.rust",
@@ -152,11 +131,9 @@ return {
   },
   {
     import = "plugins.extras.languages.shell",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.sql",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.tailwind",
@@ -164,26 +141,20 @@ return {
   },
   {
     import = "plugins.extras.languages.terraform",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.toml",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.typescript",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.vim",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.xml",
-    enabled = true,
   },
   {
     import = "plugins.extras.languages.yaml",
-    enabled = true,
   },
 }
