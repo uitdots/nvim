@@ -21,7 +21,7 @@ return {
   ---@module 'mason'
   ---@type MasonSettings
   opts = {
-    PATH = "skip",
+    PATH = "append",
     ui = {
       check_outdated_packages_on_open = false,
       backdrop = 100,

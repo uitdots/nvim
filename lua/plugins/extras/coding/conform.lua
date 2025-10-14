@@ -129,4 +129,10 @@ return {
 
     require("conform").setup(opts)
   end,
+  dependencies = {
+    {
+      "mason-org/mason.nvim",
+      optional = true,
+    },
+  },
 }

@@ -64,4 +64,10 @@ return {
       desc = "LSP | Lint Others",
     },
   },
+  dependencies = {
+    {
+      "mason-org/mason.nvim",
+      optional = true,
+    },
+  },
 }
