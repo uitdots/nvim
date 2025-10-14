@@ -7,11 +7,12 @@ local M = {
       "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
     },
     exclude = {
-      "ts_ls",
       "dartls",
-      "rust_analyzer",
       "jdtls",
+      "rust_analyzer",
       "sqls",
+      "stylua",
+      "ts_ls",
     },
   },
 
