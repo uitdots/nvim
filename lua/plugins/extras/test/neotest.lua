@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "nvim-neotest/neotest",
-  enabled = true,
   opts = {
     status = {
       virtual_text = true,
@@ -115,48 +114,9 @@ return {
       desc = "Neotest | Debug Current File",
     },
   },
-  ---@param opts PluginsOpts.NeotestOpts
-  config = function(_, opts)
-    ---Taken from lazyvim
-    if opts.adapters then
-      local adapters = {}
-      for name, config in pairs(opts.adapters or {}) do
-        ---@type neotest.Adapter | table
-        local adapter = require(name)
-
-        if config ~= false then
-          ---@type table?
-          local adapter_opts
-          local adapter_opts_type = type(config)
-          if adapter_opts_type == "table" then
-            adapter_opts = config
-          elseif adapter_opts_type == "function" then
-            adapter_opts = config()
-          end
-          local meta = getmetatable(adapter)
-          if adapter.setup then
-            adapter.setup(adapter_opts)
-          elseif adapter.adapter then
-            adapter.adapter(adapter_opts)
-            adapter = adapter.adapter
-          elseif meta and meta.__call then
-            adapter = adapter(adapter_opts)
-          else
-            error("Adapter " .. name .. " does not support setup")
-          end
-        end
-
-        adapters[#adapters + 1] = adapter
-      end
-      opts.adapters = adapters
-    end
-
-    require("neotest").setup(opts)
-  end,
   dependencies = {
     "nvim-neotest/nvim-nio",
     "nvim-lua/plenary.nvim",
-    "antoinemadec/FixCursorHold.nvim",
     "nvim-treesitter/nvim-treesitter",
   },
 }

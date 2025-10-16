@@ -1,19 +1,17 @@
 ---@type LazySpec
 return {
   "nvim-neotest/neotest",
-  sepc = {
+  specs = {
     {
       "marilari88/neotest-vitest",
       specs = {
         {
           "nvim-neotest/neotest",
-          ---@type PluginsOpts.NeotestOpts
-          ---@diagnostic disable-next-line: missing-fields
-          opts = {
-            adapters = {
-              ["neotest-vitest"] = false,
-            },
-          },
+          opts = function(_, opts)
+            opts = opts or {}
+            opts.adapters = opts.adapters or {}
+            table.insert(opts.adapters, require("neotest-vitest")())
+          end,
         },
       },
     },
