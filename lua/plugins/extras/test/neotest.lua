@@ -16,14 +16,14 @@ return {
       function()
         require("neotest").run.attach()
       end,
-      desc = "Test | Attach",
+      desc = "Neotest | Attach",
     },
     {
       "<leader>TF",
       function()
         require("neotest").run.run(vim.uv.cwd())
       end,
-      desc = "Test | All Files",
+      desc = "Neotest | All Files",
     },
     {
       "<leader>Ts",
@@ -32,42 +32,42 @@ return {
           suite = true,
         })
       end,
-      desc = "Test | Suite",
+      desc = "Neotest | Suite",
     },
     {
       "<leader>TO",
       function()
         require("neotest").output_panel.toggle()
       end,
-      desc = "Test | Toggle Output Panel",
+      desc = "Neotest | Toggle Output Panel",
     },
     {
       "<leader>TT",
       function()
         require("neotest").summary.toggle()
       end,
-      desc = "Test | Toggle Summary",
+      desc = "Neotest | Toggle Summary",
     },
     {
       "<leader>Tf",
       function()
         require("neotest").run.run(vim.fn.expand("%"))
       end,
-      desc = "Test | File",
+      desc = "Neotest | File",
     },
     {
       "<leader>Tl",
       function()
         require("neotest").run.run_last()
       end,
-      desc = "Test | Last",
+      desc = "Neotest | Last",
     },
     {
       "<leader>Tn",
       function()
         require("neotest").run.run()
       end,
-      desc = "Test | Nearest",
+      desc = "Neotest | Nearest",
     },
     {
       "<leader>To",
@@ -77,21 +77,21 @@ return {
           auto_close = true,
         })
       end,
-      desc = "Test | Output",
+      desc = "Neotest | Output",
     },
     {
       "<leader>Ts",
       function()
         require("neotest").run.stop()
       end,
-      desc = "Test | Stop",
+      desc = "Neotest | Stop",
     },
     {
       "<leader>Tw",
       function()
         require("neotest").watch.toggle(vim.fn.expand("%"))
       end,
-      desc = "Test | Toggle Watch",
+      desc = "Neotest | Toggle Watch",
     },
     {
       "<leader>Td",
@@ -101,7 +101,7 @@ return {
           strategy = "dap",
         })
       end,
-      desc = "Test | Debug Nearest",
+      desc = "Neotest | Debug Nearest",
     },
     {
       "<leader>Td",
@@ -112,7 +112,7 @@ return {
           strategy = "dap",
         })
       end,
-      desc = "Test | Debug Current File",
+      desc = "Neotest | Debug Current File",
     },
   },
   ---@param opts PluginsOpts.NeotestOpts
