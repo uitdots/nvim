@@ -8,4 +8,7 @@ return {
   filetypes = {
     "go",
   },
+  root_markers = {
+    "go.mod",
+  },
 }
