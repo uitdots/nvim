@@ -36,7 +36,6 @@ return {
         require("lint").try_lint({
           "codespell",
           "cspell",
-          "trivy",
         }, {
           ignore_errors = true,
         })
