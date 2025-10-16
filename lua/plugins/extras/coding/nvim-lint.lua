@@ -1,20 +1,4 @@
-local is_executable = require("utils.executable").is_executable
 local debounce = require("utils.helpers").debounce
-local filter_availabled_external = require("preferences").options.others.filter_availabled_external
-
-local function filter_avaiable()
-  local lint = require("lint")
-  for filetype, linters in pairs(lint.linters_by_ft or {}) do
-    lint.linters_by_ft[filetype] = vim.tbl_filter(function(linter)
-      local cmd = lint.linters[linter].cmd
-      -- This because nvim lint has some..., but seem that string is more used than func so prefer string first
-      if type(cmd) == "string" then
-        return is_executable(lint.linters[linter].cmd)
-      end
-      return is_executable(lint.linters[linter].cmd())
-    end, linters)
-  end
-end
 
 ---@type LazySpec
 return {
@@ -32,10 +16,6 @@ return {
     }
   end,
   config = function()
-    if filter_availabled_external then
-      filter_avaiable()
-    end
-
     vim.api.nvim_create_autocmd({
       "BufWinEnter",
       "BufWritePost",
