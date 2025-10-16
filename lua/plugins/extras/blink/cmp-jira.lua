@@ -34,7 +34,7 @@ return {
   },
   config = function(_, opts)
     if vim.env.JIRA_USER_API_KEY == nil or vim.env.JIRA_WORKSPACE_URL == nil or vim.env.JIRA_USER_EMAIL == nil then
-      vim.notify("Not enough environment variable provided to use cmp_jira", vim.log.level.ERROR, { title = "cmp_jira" })
+      vim.notify("Not enough environment variable provided to use cmp_jira, no setup", vim.log.levels.INFO, { title = "cmp_jira" })
       return
     end
     require("cmp_jira").setup(opts)
