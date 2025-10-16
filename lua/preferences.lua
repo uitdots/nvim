@@ -12,6 +12,7 @@ local M = {
       "rust_analyzer",
       "sqls",
       "stylua",
+      "swaggo_ls",
       "ts_ls",
     },
   },
