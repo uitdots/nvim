@@ -4,8 +4,9 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
-      "gopls",
+      "gofumpt",
       "golangci-lint",
+      "gopls",
     },
   },
   opts_extend = {
