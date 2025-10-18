@@ -1,3 +1,9 @@
+---@type table<string, false>
+local exclude_omni_filetypes = {
+  sql = false,
+  pgsql = false,
+}
+
 ---@type LazySpec
 return {
   "saghen/blink.cmp",
@@ -92,18 +98,15 @@ return {
         "omni",
       },
       providers = {
+        omni = {
+          enabled = function()
+            return exclude_omni_filetypes[vim.bo.filetype]
+          end,
+        },
         lsp = {
           fallbacks = { -- for extending, so I declare here
             "buffer",
           },
-        },
-      },
-      per_filetype = {
-        sql = {
-          "lsp",
-          "path",
-          "snippets",
-          "buffer",
         },
       },
     },
@@ -116,14 +119,8 @@ return {
   ---@param opts blink.cmp.Config
   config = function(_, opts)
     local per_filetype = opts.sources.per_filetype
-    ---@type table<string, true>
-    local exclude_inherit_fts = {
-      sql = true,
-    }
     for ft in pairs(per_filetype) do
-      if not exclude_inherit_fts[ft] then
-        per_filetype[ft].inherit_defaults = true
-      end
+      per_filetype[ft].inherit_defaults = true
     end
     require("blink.cmp").setup(opts)
   end,
