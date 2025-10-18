@@ -22,6 +22,7 @@ return {
               },
             }
             table.insert(opts.adapters, require("neotest-golang")(test_opts))
+            return opts
           end,
         },
       },

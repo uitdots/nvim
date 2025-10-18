@@ -16,6 +16,7 @@ return {
               jestCommand = require("neotest-jest.jest-util").getJestCommand(vim.fn.expand("%:p:h")),
             }
             table.insert(opts.adapters, require("neotest-jest")(test_opts))
+            return opts
           end,
         },
       },

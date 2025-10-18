@@ -10,7 +10,8 @@ return {
           opts = function(_, opts)
             opts = opts or {}
             opts.adapters = opts.adapters or {}
-            table.insert(opts.adapters, require("neotest-vitest")())
+            table.insert(opts.adapters, require("neotest-vitest"))
+            return opts
           end,
         },
       },
