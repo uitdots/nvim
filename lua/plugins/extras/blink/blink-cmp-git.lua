@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "Kaiser-Yang/blink-cmp-git",
-  ft = "gitcommit",
   specs = {
     {
       "saghen/blink.cmp",

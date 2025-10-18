@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "https://gitlab.com/msvechla/cmp-jira.git",
-  ft = "gitcommit",
   specs = {
     {
       "Saghen/blink.cmp",

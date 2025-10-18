@@ -2,7 +2,6 @@
 return {
   "MahanRahmati/blink-nerdfont.nvim",
   enabled = false,
-  event = "InsertEnter",
   specs = {
     {
       "saghen/blink.cmp",
@@ -10,14 +9,14 @@ return {
       ---@type blink.cmp.Config
       opts = {
         sources = {
-          default = {
-            "nerdfont",
-          },
           providers = {
             nerdfont = {
               module = "blink-nerdfont",
               name = "Nerd Fonts",
             },
+          },
+          default = {
+            "nerdfont",
           },
         },
       },
