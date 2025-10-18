@@ -167,7 +167,7 @@ return {
       desc = "Find | Smart",
     },
     {
-      "<leader><leader>",
+      "<leader>ff",
       function()
         Snacks.picker.files({
           hidden = true,
@@ -178,7 +178,7 @@ return {
       desc = "General | Find Files",
     },
     {
-      "<leader>ff",
+      "<leader>fa",
       function()
         Snacks.picker.files({
           hidden = true,
@@ -220,7 +220,7 @@ return {
       desc = "Find | Notification History",
     },
     {
-      "<leader>fa",
+      "<leader>fA",
       function()
         Snacks.picker.autocmds()
       end,
