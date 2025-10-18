@@ -12,6 +12,16 @@ return {
     },
     keymaps = {
       close = "<C-c>",
+      move_up = {
+        "<Up>",
+        "<C-p>",
+        "<S-Tab>",
+      },
+      move_down = {
+        "<Down>",
+        "<C-n>",
+        "<Tab>",
+      },
     },
   },
   keys = {
