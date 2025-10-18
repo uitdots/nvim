@@ -28,5 +28,6 @@ return {
       silent = true,
     },
   },
+  config = function() end, -- For other to hook with lazy's opts, which will trigger config
   dependencies = "tpope/vim-dadbod",
 }
