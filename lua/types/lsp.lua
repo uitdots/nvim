@@ -371,3 +371,4 @@
 
 ---@alias Lsp.Others
 ---| '"sonarlint"'
+---| '"swaggo_ls"'

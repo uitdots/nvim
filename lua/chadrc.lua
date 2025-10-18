@@ -147,7 +147,6 @@ M.base46 = {
     "lsp",
     "markview",
     "mason",
-    "navic",
     "nvcheatsheet",
     "nvimtree",
     "nvshades",
