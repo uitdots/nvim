@@ -76,6 +76,14 @@ return {
         "select_next",
         "fallback_to_mappings",
       },
+      ["<Up>"] = {
+        "select_prev",
+        "fallback_to_mappings",
+      },
+      ["<Down>"] = {
+        "select_next",
+        "fallback_to_mappings",
+      },
       ["<C-b>"] = {
         "scroll_documentation_up",
         "fallback",
@@ -115,6 +123,9 @@ return {
         draw = {
           treesitter = { "lsp" },
         },
+      },
+      documentation = {
+        treesitter_highlighting = true,
       },
     },
   },
