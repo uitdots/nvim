@@ -22,6 +22,7 @@ return {
     limits = {
       exclude_append = {
         "*.lua",
+        "*Dockerfile*",
       },
     },
   },
