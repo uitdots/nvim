@@ -110,6 +110,13 @@ return {
         },
       },
     },
+    completion = {
+      menu = {
+        draw = {
+          treesitter = { "lsp" },
+        },
+      },
+    },
   },
   opts_extend = {
     "sources.default",

@@ -199,11 +199,12 @@ return {
     },
     {
       "saghen/blink.cmp",
+      ---@module 'blink.cmp'
       ---@param opts? blink.cmp.Config
       opts = function(_, opts)
         opts = opts or {}
         opts.completion = opts.completion or {}
-        opts.completion.menu = require("nvchad.blink").menu
+        opts.completion.menu = vim.tbl_deep_extend("force", opts.completion.menu or {}, require("nvchad.blink").menu)
         return opts
       end,
     },
