@@ -1,9 +1,6 @@
 ---@type LazySpec
 return {
-  -- "folke/noice.nvim",
-  -- Temporary use another noice because Folke is offline
-  "Kayzels/noice.nvim",
-  branch = "fix-scrollbar",
+  "folke/noice.nvim",
   event = "VeryLazy",
   ---@module 'noice'
   ---@type NoiceConfig
