@@ -8,7 +8,13 @@ return {
   },
   --- @module 'blink.pairs'
   --- @type blink.pairs.Config
-  opts = nil,
+  opts = {
+    highlights = {
+      matchparen = {
+        enabled = false,
+      },
+    },
+  },
   config = true,
   dependencies = "saghen/blink.download",
 }

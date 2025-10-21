@@ -1,11 +1,13 @@
+local g = vim.g
+
 ---@type LazySpec
 return {
   "andymass/vim-matchup",
   event = "VeryLazy",
   init = function()
-    vim.g.matchup_matchparen_offscreen = {
+    g.matchup_matchparen_offscreen = {
       method = "", ---@type "status" | "popup" | "status_manual" | "scrolloff" | ""
     }
-    vim.g.matchup_matchparen_enabled = 0 ---@type 0 | 1 Toggle highlight
+    g.matchup_matchparen_enabled = 0 ---@type 0 | 1 Toggle highlight
   end,
 }
