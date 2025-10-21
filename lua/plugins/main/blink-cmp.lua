@@ -70,19 +70,19 @@ return {
       },
       ["<C-p>"] = {
         "select_prev",
-        "fallback_to_mappings",
+        "fallback",
       },
       ["<C-n>"] = {
         "select_next",
-        "fallback_to_mappings",
+        "fallback",
       },
       ["<Up>"] = {
         "select_prev",
-        "fallback_to_mappings",
+        "fallback",
       },
       ["<Down>"] = {
         "select_next",
-        "fallback_to_mappings",
+        "fallback",
       },
       ["<C-b>"] = {
         "scroll_documentation_up",
