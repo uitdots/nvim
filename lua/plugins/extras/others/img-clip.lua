@@ -9,5 +9,9 @@ return {
       desc = "Utils | Paste Image from System Clipboard",
     },
   },
-  config = true,
+  opts = {
+    default = {
+      verbose = false,
+    },
+  },
 }
