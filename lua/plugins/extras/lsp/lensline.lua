@@ -23,6 +23,7 @@ return {
       exclude_append = {
         "*.lua",
         "*Dockerfile*",
+        "*CodeCompanion*",
       },
     },
   },

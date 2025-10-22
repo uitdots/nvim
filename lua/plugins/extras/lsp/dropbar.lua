@@ -1,6 +1,8 @@
+---@type table<string, true>
 local disable_fts = {
   codecompanion = true,
   help = true,
+  [""] = true,
 }
 
 ---@type LazySpec
