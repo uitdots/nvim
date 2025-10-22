@@ -3,6 +3,7 @@
 local is_executable = require("utils.executable").is_executable_cache
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local bo = vim.bo
 
 ---@type LazySpec
 return {
@@ -38,11 +39,9 @@ return {
     },
     highlight = {
       enabled = true,
-      disable = {},
     },
     fold = {
       enabled = true,
-      disable = {},
     },
   },
   opts_extend = {
@@ -55,6 +54,7 @@ return {
     ts.install(opts.ensure_installed)
 
     opts.highlight.disable = opts.highlight.disable or {}
+    opts.highlight.still_vim_syntax = opts.highlight.still_vim_syntax or {}
     opts.indent.disable = opts.indent.disable or {}
     opts.fold.disable = opts.fold.disable or {}
 
@@ -71,10 +71,13 @@ return {
         end
         if opts.highlight.enabled and not opts.highlight.disable[language] then
           vim.treesitter.start(buf, language)
+          if not opts.highlight.still_vim_syntax[language] then
+            bo[buf].syntax = "OFF"
+          end
         end
         if opts.indent.enabled and not opts.indent.disable[language] then
-          vim.bo[buf].autoindent = false
-          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          bo[buf].autoindent = false
+          bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end
         if opts.fold.enabled and not opts.fold.disable[language] then
           vim.wo.foldmethod = "expr"
