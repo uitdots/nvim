@@ -10,9 +10,16 @@ return {
     o.foldlevelstart = 99
     o.foldenable = true
   end,
-  ---@module 'nvim-origami'
+  ---@module 'origami'
   ---@type Origami.config
   opts = {
+    autoFold = {
+      enabled = true,
+      ---@type lsp.FoldingRangeKind[]
+      kinds = {
+        "imports",
+      },
+    },
     foldKeymaps = {
       setup = false,
     },
