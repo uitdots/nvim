@@ -1,4 +1,5 @@
-local fts = vim.list_extend({
+local bo = vim.bo
+local filetypes = vim.list_extend({
   "codecompanion",
   "html",
   "tex",
@@ -19,10 +20,13 @@ return {
     preview = {
       enable = false,
       enable_hybrid_mode = true,
-      filetypes = fts,
-      ignore_buftypes = {
-        -- "nofile", -- FIXME: idk but removing "nofile" makes markview work
-      },
+      filetypes = filetypes,
+      -- https://github.com/OXY2DEV/markview.nvim/issues/272
+      condition = function(buffer)
+        local ft, bt = bo[buffer].ft, bo[buffer].bt
+        vim.notify(ft .. " " .. bt)
+        return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
+      end,
       icon_provider = "devicons",
       modes = {
         "n",
@@ -43,24 +47,21 @@ return {
     {
       "<leader>wv",
       "<cmd>Markview toggle<cr>",
-      desc = "Writing | Toggle Markview (local)",
-      ft = fts,
+      desc = "Markview | Toggle (local)",
+      ft = filetypes,
       silent = true,
     },
     {
-      "<leader>mV",
+      "<leader>wV",
       "<cmd>Markview Toggle<cr>",
-      desc = "Writing | Toggle Markview",
-      ft = fts,
+      desc = "Markview | Toggle",
+      ft = filetypes,
       silent = true,
     },
   },
   dependencies = {
     "nvim-tree/nvim-web-devicons",
-    {
-      "saghen/blink.cmp",
-      optional = true,
-    },
+    "saghen/blink.cmp",
   },
   specs = {
     {

@@ -7,7 +7,7 @@ return {
     {
       "<leader>wp",
       "<cmd>MarkdownPreviewToggle<cr>",
-      desc = "Writing | Toggle Markdown Preview",
+      desc = "MarkdownPreview | Toggle",
       ft = ft,
       silent = true,
     },
@@ -22,7 +22,7 @@ return {
           vim.notify("Light Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         end
       end,
-      desc = "Writing | Toggle Markdown Preview Theme",
+      desc = "MarkdownPreview | Toggle Theme",
       ft = ft,
       silent = true,
     },

@@ -1,4 +1,5 @@
 local autocmd = vim.api.nvim_create_autocmd
+local wo = vim.wo
 
 ---@type LazySpec
 return {
@@ -72,9 +73,9 @@ return {
       pattern = "codecompanion",
       callback = function()
         vim.schedule(function()
-          vim.wo.number = false
-          vim.wo.relativenumber = false
-          vim.wo.foldenable = false
+          wo.number = false
+          wo.relativenumber = false
+          wo.foldenable = false
         end)
       end,
       desc = "Window Options for CodeCompanion",
@@ -152,6 +153,10 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-treesitter/nvim-treesitter",
     {
+      "OXY2DEV/markview.nvim",
+      optional = true,
+    },
+    {
       "echasnovski/mini.diff",
       optional = true,
     },
@@ -168,14 +173,18 @@ return {
     {
       "OXY2DEV/markview.nvim",
       optional = true,
+      ---@module 'markview'
+      ---@param opts? markview.config
       opts = function(_, opts)
+        opts = opts or {}
+        opts.preview = opts.preview or {}
+        opts.preview.ignore_buftypes = opts.preview.ignore_buftypes or {}
+
         autocmd("FileType", {
           pattern = "codecompanion",
-          callback = function()
-            vim.schedule(function()
-              vim.cmd("Markview enable")
-              vim.cmd("Markview hybridEnable")
-            end)
+          callback = function(args)
+            vim.cmd("Markview enable " .. args.buf)
+            vim.cmd("Markview hybridEnable " .. args.buf)
           end,
         })
         return opts

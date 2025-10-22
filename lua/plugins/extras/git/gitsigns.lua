@@ -126,7 +126,7 @@ return {
       silent = true,
     },
     {
-      "<leader>gj",
+      "<leader>gk",
       function()
         require("gitsigns").nav_hunk("prev")
       end,
