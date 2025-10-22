@@ -119,7 +119,7 @@ return {
       toggles = {
         dim = false,
         git_signs = true,
-        mini_diff_signs = true,
+        mini_diff_signs = false,
         diagnostics = true,
         inlay_hints = true,
       },
@@ -149,7 +149,7 @@ return {
           },
         })
       end,
-      desc = "Find | Visual Selection or Word",
+      desc = "Snacks | Visual Selection or Word",
       mode = { "n", "x" },
     },
     {
@@ -157,14 +157,14 @@ return {
       function()
         Snacks.picker.spelling()
       end,
-      desc = "Find | Spelling",
+      desc = "Snacks | Spelling",
     },
     {
       "<leader>f<C-s>",
       function()
         Snacks.picker.smart()
       end,
-      desc = "Find | Smart",
+      desc = "Snacks | Smart",
     },
     {
       "<leader>ff",
@@ -175,7 +175,7 @@ return {
           exclude = exclude_find,
         })
       end,
-      desc = "General | Find Files",
+      desc = "Snacks | Find Files",
     },
     {
       "<leader>fa",
@@ -185,14 +185,14 @@ return {
           ignored = true,
         })
       end,
-      desc = "Find | All Files",
+      desc = "Snacks | All Files",
     },
     {
       "<leader>fb",
       function()
         Snacks.picker.buffers()
       end,
-      desc = "Find | Buffers",
+      desc = "Snacks | Buffers",
     },
     {
       "<leader>fw",
@@ -203,147 +203,147 @@ return {
           },
         })
       end,
-      desc = "Find | Words",
+      desc = "Snacks | Words",
     },
     {
       "<leader>fC",
       function()
         Snacks.picker.command_history()
       end,
-      desc = "Find | Command History",
+      desc = "Snacks | Command History",
     },
     {
       "<leader>fn",
       function()
         Snacks.picker.notifications()
       end,
-      desc = "Find | Notification History",
+      desc = "Snacks | Notification History",
     },
     {
       "<leader>fA",
       function()
         Snacks.picker.autocmds()
       end,
-      desc = "Find | Autocommands",
+      desc = "Snacks | Autocommands",
     },
     {
       "<leader>fg",
       function()
         Snacks.picker.git_files()
       end,
-      desc = "Find | Git Files",
+      desc = "Snacks | Git Files",
     },
     {
       "<leader>fr",
       function()
         Snacks.picker.recent()
       end,
-      desc = "Find | Recent",
+      desc = "Snacks | Recent",
     },
     {
       "<leader>fR",
       function()
         Snacks.picker.resume()
       end,
-      desc = "Find | Resume",
+      desc = "Snacks | Resume",
     },
     {
-      "<leader>fB",
+      "<leader>f/",
       function()
         Snacks.picker.lines()
       end,
-      desc = "Find | Buffer Lines",
+      desc = "Snacks | Buffer Lines",
     },
     {
       '<leader>f"',
       function()
         Snacks.picker.registers()
       end,
-      desc = "Find | Registers",
+      desc = "Snacks | Registers",
     },
     {
-      "<leader>f/",
+      "<leader>f?",
       function()
         Snacks.picker.search_history()
       end,
-      desc = "Find | Search History",
+      desc = "Snacks | Search History",
     },
     {
       "<leader>fc",
       function()
         Snacks.picker.commands()
       end,
-      desc = "Find | Commands",
+      desc = "Snacks | Commands",
     },
     {
       "<leader>fh",
       function()
         Snacks.picker.help()
       end,
-      desc = "Find | Help Pages",
+      desc = "Snacks | Help Pages",
     },
     {
       "<leader>fH",
       function()
         Snacks.picker.highlights()
       end,
-      desc = "Find | Highlights",
+      desc = "Snacks | Highlights",
     },
     {
       "<leader>fi",
       function()
         Snacks.picker.icons()
       end,
-      desc = "Find | Icons",
+      desc = "Snacks | Icons",
     },
     {
       "<leader>fk",
       function()
         Snacks.picker.keymaps()
       end,
-      desc = "Find | Keymaps",
+      desc = "Snacks | Keymaps",
     },
     {
       "<leader>fl",
       function()
         Snacks.picker.loclist()
       end,
-      desc = "Find | Location List",
+      desc = "Snacks | Location List",
     },
     {
       "<leader>fm",
       function()
         Snacks.picker.marks()
       end,
-      desc = "Find | Marks",
+      desc = "Snacks | Marks",
     },
     {
       "<leader>fM",
       function()
         Snacks.picker.man()
       end,
-      desc = "Find | Man Pages",
+      desc = "Snacks | Man Pages",
     },
     {
       "<leader>fp",
       function()
         Snacks.picker.lazy()
       end,
-      desc = "Find | Plugin Spec",
+      desc = "Snacks | Plugin Spec",
     },
     {
       "<leader>fq",
       function()
         Snacks.picker.qflist()
       end,
-      desc = "Find | Quickfix List",
+      desc = "Snacks | Quickfix List",
     },
     {
       "<leader>fu",
       function()
         Snacks.picker.undo()
       end,
-      desc = "Find | Undo History",
+      desc = "Snacks | Undo History",
     },
 
     -- Git
