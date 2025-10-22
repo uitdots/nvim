@@ -59,6 +59,10 @@ return {
     opts.fold.disable = opts.fold.disable or {}
 
     local group = augroup("treesitter", {})
+    local installed_parsers = {}
+    for _, v in ipairs(ts.get_installed("parsers")) do
+      installed_parsers[v] = true
+    end
 
     autocmd("FileType", {
       desc = "Enable treesitter highlighting",
@@ -69,7 +73,7 @@ return {
         if not vim.treesitter.language.add(language) then
           return
         end
-        if opts.highlight.enabled and not opts.highlight.disable[language] then
+        if opts.highlight.enabled and not opts.highlight.disable[language] and installed_parsers[language] then
           vim.treesitter.start(buf, language)
           if not opts.highlight.still_vim_syntax[language] then
             bo[buf].syntax = "OFF"
