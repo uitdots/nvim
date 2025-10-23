@@ -70,10 +70,10 @@ return {
         local buf = args.buf
         local filetype = args.match
         local language = vim.treesitter.language.get_lang(filetype) or filetype
-        if not vim.treesitter.language.add(language) then
+        if not (vim.treesitter.language.add(language) and installed_parsers[language]) then
           return
         end
-        if opts.highlight.enabled and not opts.highlight.disable[language] and installed_parsers[language] then
+        if opts.highlight.enabled and not opts.highlight.disable[language] then
           vim.treesitter.start(buf, language)
           if not opts.highlight.still_vim_syntax[language] then
             bo[buf].syntax = "OFF"
