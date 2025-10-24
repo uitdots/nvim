@@ -14,7 +14,7 @@ return {
           require("duck")[selection]()
         end)
       end,
-      desc = "Utils | Select Duck",
+      desc = "Duck | Select",
       silent = true,
     },
   },

@@ -18,7 +18,7 @@ return {
     {
       "<leader>uR",
       "<cmd>RegexplainerShowPopup<cr>",
-      desc = "Utils | Toggle Regexplainer",
+      desc = "Regexplainer | Toggle",
       silent = true,
     },
   },

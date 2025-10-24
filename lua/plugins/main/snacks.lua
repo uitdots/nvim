@@ -198,7 +198,7 @@ return {
           exclude = exclude_find,
         })
       end,
-      desc = "General | Find Files",
+      desc = "Snacks | Find Files",
     },
     {
       "<leader>fa",
@@ -375,49 +375,49 @@ return {
       function()
         Snacks.picker.git_branches()
       end,
-      desc = "Git | Find Branches",
+      desc = "Snacks | Find Branches",
     },
     {
       "<leader>g<M-b>",
       function()
         Snacks.gitbrowse()
       end,
-      desc = "Git | Browse",
+      desc = "Snacks | Browse",
     },
     {
       "<leader>gL",
       function()
         Snacks.picker.git_log()
       end,
-      desc = "Git | Find Log",
+      desc = "Snacks | Find Log",
     },
     {
       "<leader>gl",
       function()
         Snacks.picker.git_log_line()
       end,
-      desc = "Git | Find Log Line",
+      desc = "Snacks | Find Log Line",
     },
     {
       "<leader>g<C-s>",
       function()
         Snacks.picker.git_status()
       end,
-      desc = "Git | Find Status",
+      desc = "Snacks | Find Status",
     },
     {
       "<leader>g<C-d>",
       function()
         Snacks.picker.git_diff()
       end,
-      desc = "Git | Find Diff",
+      desc = "Snacks | Find Diff",
     },
     {
       "<leader>gL",
       function()
         Snacks.picker.git_log_file()
       end,
-      desc = "Git | Find Log File",
+      desc = "Snacks | Find Log File",
     },
 
     -- Options
@@ -430,21 +430,21 @@ return {
           Snacks.dim.enable()
         end
       end,
-      desc = "Options | Dim",
+      desc = "Snacks | Dim",
     },
     {
       "<leader>oz",
       function()
         Snacks.zen()
       end,
-      desc = "Options | Zen",
+      desc = "Snacks | Zen",
     },
     {
       "<leader>oZ",
       function()
         Snacks.zen.zoom()
       end,
-      desc = "Options | Zoom",
+      desc = "Snacks | Zoom",
     },
 
     -- Neovim
@@ -453,7 +453,7 @@ return {
       function()
         Snacks.notifier.show_history()
       end,
-      desc = "Neovim | Notification History",
+      desc = "Snack | Notification History",
       silent = true,
     },
     {
@@ -461,15 +461,15 @@ return {
       function()
         Snacks.notifier.hide()
       end,
-      desc = "Neovim | Hide Notification",
+      desc = "Snack | Hide Notification",
       silent = true,
     },
     {
-      "<leader>ni",
+      "<leader>uI",
       function()
         Snacks.image.hover()
       end,
-      desc = "Neovim | Show Current Image",
+      desc = "Snack | Show Current Image",
       silent = true,
     },
     -- Bufdelete
@@ -478,7 +478,7 @@ return {
       function()
         Snacks.bufdelete.delete()
       end,
-      desc = "General | Close Buffer",
+      desc = "Snacks | Close Buffer",
       silent = true,
     },
     {
@@ -486,7 +486,7 @@ return {
       function()
         Snacks.bufdelete.other()
       end,
-      desc = "General | Close Other Buffers",
+      desc = "Snacks | Close Other Buffers",
       silent = true,
     },
     {
@@ -494,7 +494,7 @@ return {
       function()
         Snacks.bufdelete.all()
       end,
-      desc = "General | Close Buffers",
+      desc = "Snacks | Close Buffers",
       silent = true,
     },
   },

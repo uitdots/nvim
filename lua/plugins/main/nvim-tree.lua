@@ -5,13 +5,13 @@ return {
     {
       "<leader>e",
       "<cmd>NvimTreeToggle<cr>",
-      desc = "General | Toggle NvimTree",
+      desc = "NvimTree | Toggle",
       silent = true,
     },
     {
       "<leader><Tab>",
       "<cmd>NvimTreeFindFile<cr>",
-      desc = "General | NvimTree Find Current",
+      desc = "NvimTree | Find Current",
       silent = true,
     },
   },

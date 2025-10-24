@@ -9,7 +9,7 @@ return {
           toggle = true,
         })
       end,
-      desc = "Query | Query",
+      desc = "JQ | Query",
       ft = {
         "bigfile",
         "json",

@@ -20,7 +20,7 @@ return {
         function()
           require("base46").load_all_highlights()
         end,
-        desc = "Utils | Refresh UI (NvChad)",
+        desc = "NvUi | Refresh",
         silent = true,
       },
       {
@@ -29,7 +29,7 @@ return {
           require("base46").toggle_theme()
           vim.notify(vim.g.icon_toggled and "Light" or "Dark", vim.log.levels.INFO, { title = "Theme", id = "base46_theme", icon = "󰔎" })
         end,
-        desc = "Options | Toggle Theme",
+        desc = "NvUi | Toggle Theme",
         silent = true,
       },
       {
@@ -38,7 +38,7 @@ return {
           require("base46").toggle_transparency()
           vim.notify(require("nvconfig").base46.transparency and "Enabled" or "Disabled", vim.log.levels.INFO, { title = "Transparency", id = "base46_transparency", icon = "󰗌" })
         end,
-        desc = "Options | Toggle Transparency",
+        desc = "NvUi | Toggle Transparency",
         silent = true,
       },
     },

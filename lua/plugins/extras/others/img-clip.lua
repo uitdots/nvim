@@ -6,7 +6,7 @@ return {
     {
       "<leader>up",
       "<cmd>PasteImage<CR>",
-      desc = "Utils | Paste Image from System Clipboard",
+      desc = "ImgClip | Paste from S-Clip",
     },
   },
   opts = {

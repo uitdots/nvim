@@ -152,7 +152,8 @@ return {
           icon = "",
         })
       end,
-      desc = "Options | Toggle Completion",
+      desc = "Blink | Toggle Completion",
+      silent = true,
     },
   },
 }

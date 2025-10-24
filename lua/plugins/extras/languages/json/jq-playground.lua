@@ -6,7 +6,7 @@ return {
     {
       "<leader>qj",
       "<cmd>JqPlayground<CR>",
-      desc = "Query | Json",
+      desc = "JqPlayground | Toggle",
       silent = true,
       ft = {
         "json",

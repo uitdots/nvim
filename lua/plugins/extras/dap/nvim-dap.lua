@@ -10,7 +10,7 @@ return {
       function()
         require("dap").continue()
       end,
-      desc = "Debug | Continue",
+      desc = "Dap | Continue",
       silent = true,
     },
     {
@@ -18,7 +18,7 @@ return {
       function()
         require("dap").clear_breakpoints()
       end,
-      desc = "Debug | Clear Breakpoints",
+      desc = "Dap | Clear Breakpoints",
       silent = true,
     },
     {
@@ -26,7 +26,7 @@ return {
       function()
         require("dap").step_over()
       end,
-      desc = "Debug | Step Over",
+      desc = "Dap | Step Over",
       silent = true,
     },
     {
@@ -34,7 +34,7 @@ return {
       function()
         require("dap").step_into()
       end,
-      desc = "Debug | Step Into",
+      desc = "Dap | Step Into",
       silent = true,
     },
     {
@@ -42,7 +42,7 @@ return {
       function()
         require("dap").step_out()
       end,
-      desc = "Debug | Step Out",
+      desc = "Dap | Step Out",
       silent = true,
     },
     {
@@ -50,7 +50,7 @@ return {
       function()
         require("dap").toggle_breakpoint()
       end,
-      desc = "Debug | Breakpoint",
+      desc = "Dap | Breakpoint",
       silent = true,
     },
     {
@@ -58,7 +58,7 @@ return {
       function()
         require("dap").disconnect()
       end,
-      desc = "Debug | Disconnect",
+      desc = "Dap | Disconnect",
       silent = true,
     },
     {
@@ -66,7 +66,7 @@ return {
       function()
         require("dap").set_breakpoint(vim.fn.input("Breakpoint condition: "))
       end,
-      desc = "Debug | Breakpoint Condition",
+      desc = "Dap | Breakpoint Condition",
       silent = true,
     },
     {
@@ -74,7 +74,7 @@ return {
       function()
         require("dap").run_last()
       end,
-      desc = "Debug | Run Last",
+      desc = "Dap | Run Last",
       silent = true,
     },
     {
@@ -82,63 +82,63 @@ return {
       function()
         require("dapui").eval()
       end,
-      desc = "Debug | Evaluate",
+      desc = "Dap | Evaluate",
     },
     {
       "<leader>dg",
       function()
         require("dap").goto_()
       end,
-      desc = "Debug | Go to Line (No Execute)",
+      desc = "Dap | Go to Line (No Execute)",
     },
     {
       "<leader>dj",
       function()
         require("dap").down()
       end,
-      desc = "Debug | Down",
+      desc = "Dap | Down",
     },
     {
       "<leader>dk",
       function()
         require("dap").up()
       end,
-      desc = "Debug | Up",
+      desc = "Dap | Up",
     },
     {
       "<leader>dp",
       function()
         require("dap").pause()
       end,
-      desc = "Debug | Pause",
+      desc = "Dap | Pause",
     },
     {
       "<leader>dr",
       function()
         require("dap").repl.toggle()
       end,
-      desc = "Debug | Toggle REPL",
+      desc = "Dap | Toggle REPL",
     },
     {
       "<leader>ds",
       function()
         require("dap").session()
       end,
-      desc = "Debug | Session",
+      desc = "Dap | Session",
     },
     {
       "<leader>dt",
       function()
         require("dap").terminate()
       end,
-      desc = "Debug | Terminate",
+      desc = "Dap | Terminate",
     },
     {
       "<leader>dw",
       function()
         require("dap.ui.widgets").hover()
       end,
-      desc = "Debug | Widgets",
+      desc = "Dap | Widgets",
     },
   },
   ---This plugin doesn't have setup

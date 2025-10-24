@@ -24,7 +24,7 @@ return {
         end
         vim.cmd("DBUIToggle")
       end,
-      desc = "Query | Toggle DBUI",
+      desc = "DBUI | Toggle DBUI",
       silent = true,
     },
   },

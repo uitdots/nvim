@@ -14,13 +14,13 @@ return {
     {
       "<leader>oH",
       "<cmd>CloakToggle<cr>",
-      desc = "Options | Toggle Cloak",
+      desc = "Cloak | Toggle",
       silent = true,
     },
     {
       "<leader>oh",
       "<cmd>CloakPreviewLine<cr>",
-      desc = "Options | Cloak Preview Line",
+      desc = "Cloak | Preview Line",
       silent = true,
     },
   },

@@ -8,7 +8,7 @@ return {
       function()
         require("dapui").toggle({ reset = true })
       end,
-      desc = "Debug | Dap UI",
+      desc = "DapUI | Toggle",
       silent = true,
     },
   },

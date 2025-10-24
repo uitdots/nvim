@@ -8,7 +8,7 @@ return {
       function()
         return require("pantran").motion_translate({ mode = "hover" })
       end,
-      desc = "Utils | Translate Hover",
+      desc = "Pantran | Hover",
       silent = true,
       expr = true,
       noremap = true,
@@ -19,7 +19,7 @@ return {
       function()
         return require("pantran").motion_translate()
       end,
-      desc = "Utils | Translate Interactive",
+      desc = "Pantran | Interactive",
       silent = true,
       expr = true,
       noremap = true,

@@ -6,7 +6,7 @@ return {
     {
       "<leader>qv",
       "<cmd>Videre<CR>",
-      desc = "Query | Videre",
+      desc = "Videre | Toggle",
       silent = true,
       ft = {
         "bigfile",

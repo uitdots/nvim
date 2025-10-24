@@ -11,7 +11,7 @@ return {
     {
       "<leader>ui",
       "<cmd>GuessIndent<CR>",
-      desc = "Utils | Fix Indent",
+      desc = "GuessIndent | Fix",
       silent = true,
     },
   },

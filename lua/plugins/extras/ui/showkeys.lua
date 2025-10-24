@@ -7,7 +7,7 @@ return {
     {
       "<leader>uk",
       "<cmd>ShowkeysToggle<cr>",
-      desc = "Utils | Showkey",
+      desc = "Showkey | Toggle",
       silent = true,
     },
   },

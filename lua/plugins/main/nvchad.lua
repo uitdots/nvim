@@ -45,7 +45,7 @@ return {
     {
       "<leader>nc",
       "<cmd>NvCheatsheet<cr>",
-      desc = "Neovim | Cheatsheet",
+      desc = "NvChad | Cheatsheet",
       silent = true,
     },
     {

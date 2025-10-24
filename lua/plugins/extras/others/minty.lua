@@ -9,13 +9,13 @@ return {
     {
       "<leader>uh",
       "<cmd>Huefy<cr>",
-      desc = "Utils | Minty Huefy",
+      desc = "Minty | Huefy",
       silent = true,
     },
     {
       "<leader>us",
       "<cmd>Shades<cr>",
-      desc = "Utils | Minty Shades",
+      desc = "Minty | Shades",
       silent = true,
     },
   },
