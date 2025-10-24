@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "dmtrKovalenko/fff.nvim",
+  lazy = false,
   build = function()
     require("fff.download").download_or_build_binary()
   end,
@@ -30,8 +31,7 @@ return {
       function()
         require("fff").find_files()
       end,
-      desc = "FFFind files",
+      desc = "General | FFFind files",
     },
   },
-  lazy = false,
 }

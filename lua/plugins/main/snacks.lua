@@ -172,7 +172,7 @@ return {
           },
         })
       end,
-      desc = "Snacks | Visual Selection or Word",
+      desc = "Snacks | Grep String",
       mode = { "n", "x" },
     },
     {
