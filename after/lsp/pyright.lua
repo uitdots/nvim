@@ -1,9 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.pyright
+  ---@module 'codesettings'
+  ---@type lsp.pyright
   settings = {
     python = {
       analysis = {

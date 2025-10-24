@@ -1,14 +1,11 @@
----@module 'neoconf'
-
 ---@type LazySpec
 return {
   "b0o/schemastore.nvim",
   opts = function()
     vim.lsp.config("yamlls", {
-      ---@type lspconfig.settings.jsonls
-      ---@diagnostic disable-next-line: missing-fields
+      ---@module 'codesettings'
+      ---@type lsp.jsonls
       settings = {
-        ---@diagnostic disable-next-line: missing-fields
         json = {
           schemas = require("schemastore").json.schemas({
             extra = {

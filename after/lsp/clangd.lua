@@ -1,6 +1,3 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 local gcc_path = require("utils.executable").get_path_from_executable("gcc")
 
 ---@type vim.lsp.Config
@@ -26,4 +23,7 @@ return {
     "--function-arg-placeholders",
     "--header-insertion=iwyu",
   },
+  ---@module 'codesettings'
+  ---@type lsp.clangd
+  settings = nil,
 }

@@ -1,9 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.cssls
+  ---@module 'codesettings'
+  ---@type lsp.cssls
   settings = {
     css = {
       lint = {

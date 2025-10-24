@@ -1,5 +1,3 @@
----@diagnostic disable: missing-fields
-
 local lsp_utils = require("utils.lsp")
 
 local inlayhint_opts

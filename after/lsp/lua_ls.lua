@@ -1,13 +1,11 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 local lsp_utils = require("utils.lsp")
 
 local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("lua_ls")
 
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.lua_ls
+  ---@module 'codesettings'
+  ---@type lsp.lua_ls
   settings = {
     Lua = {
       semantic = {

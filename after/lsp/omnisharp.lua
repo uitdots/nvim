@@ -1,6 +1,3 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 local get_executable = require("utils.executable")
 
 ---@type vim.lsp.Config
@@ -9,7 +6,8 @@ return {
     "dotnet",
     get_executable("OmniSharp.dll", "packages/omnisharp/libexec"),
   },
-  ---@type lspconfig.settings.omnisharp
+  ---@module 'codesettings'
+  ---@type lsp.omnisharp
   settings = {
     FormattingOptions = {
       EnableEditorConfigSupport = true,

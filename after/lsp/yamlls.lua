@@ -1,9 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.yamlls
+  ---@module 'codesettings'
+  ---@type lsp.yamlls
   settings = {
     yaml = {
       customTags = {

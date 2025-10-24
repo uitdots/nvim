@@ -15,10 +15,6 @@ return {
           mods = { "ui" },
         },
         {
-          path = "neoconf.nvim/types/lsp.lua",
-          mods = { "neoconf" },
-        },
-        {
           path = "snacks.nvim",
           words = { "Snacks" },
         },

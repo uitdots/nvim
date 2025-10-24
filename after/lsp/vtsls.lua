@@ -1,10 +1,8 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 local lsp = require("configs.lsp")
 local lsp_utils = require("utils.lsp")
 
----@type _.lspconfig.settings.vtsls.InlayHints
+---@module 'codesettings'
+---@type lsp.vtsls.InlayHints
 local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("vtsls") then
   inlayhint_opts = {
@@ -51,7 +49,7 @@ return {
       client.server_capabilities.semanticTokensProvider = nil
     end
   end,
-  ---@type lspconfig.settings.vtsls
+  ---@type lsp.vtsls
   settings = {
     javascript = {
       preferences = {

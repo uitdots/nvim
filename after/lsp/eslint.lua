@@ -1,9 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.eslint
+  ---@module 'codesettings'
+  ---@type lsp.eslint
   settings = {
     codeAction = {
       disableRuleComment = {
@@ -22,6 +20,7 @@ return {
     quiet = true,
     run = "onSave",
   },
+  ---@diagnostic disable-next-line: missing-fields
   flags = {
     allow_incremental_sync = false,
     debounce_text_changes = 1000,

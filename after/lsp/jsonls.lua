@@ -1,12 +1,10 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
   init_options = {
     provideFormatter = false,
   },
-  ---@type lspconfig.settings.jsonls
+  ---@module 'codesettings'
+  ---@type lsp.jsonls
   settings = {
     json = {
       validate = {

@@ -1,9 +1,7 @@
----@diagnostic disable: missing-fields
----@module 'neoconf'
-
 ---@type vim.lsp.Config
 return {
-  ---@type lspconfig.settings.basedpyright
+  ---@module 'codesettings'
+  ---@type lsp.basedpyright
   settings = {
     basedpyright = {
       -- If use Ruff's import organizer, uncomment

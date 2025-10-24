@@ -1,5 +1,3 @@
----@diagnostic disable: missing-fields
-
 local allow_filenames = {
   "build.gradle",
   "build.gradle.kts",

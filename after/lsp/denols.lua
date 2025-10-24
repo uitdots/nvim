@@ -1,5 +1,3 @@
----@diagnostic disable: missing-fields
-
 ---@type vim.lsp.Config
 return {
   root_markers = {
@@ -7,4 +5,7 @@ return {
     "deno.jsonc",
   },
   workspace_required = true,
+  ---@module 'codesettings'
+  ---@type lsp.denols
+  settings = nil,
 }
