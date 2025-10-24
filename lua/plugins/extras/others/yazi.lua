@@ -9,22 +9,22 @@ return {
     {
       "<leader>f<C-y>",
       "<cmd>Yazi<cr>",
-      desc = "File | Yazi Current File",
+      desc = "Yazi | Current File",
       mode = { "n", "v" },
     },
     {
       "<leader>fY",
       "<cmd>Yazi cwd<cr>",
-      desc = "File | Yazi Current Dir",
+      desc = "Yazi | Current Dir",
     },
     {
       "<leader>fy",
       "<cmd>Yazi toggle<cr>",
-      desc = "File | Yazi",
+      desc = "Yazi | Toggle",
     },
   },
   ---@module 'yazi'
   ---@type YaziConfig
-  ---@diagnostic disable-next-line: missing-fields
-  opts = {},
+  opts = nil,
+  config = true,
 }

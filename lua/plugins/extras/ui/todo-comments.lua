@@ -6,7 +6,7 @@ return {
     {
       "<leader>fT",
       "<cmd>TodoTelescope<cr>",
-      desc = "Find | Todo",
+      desc = "Telescope | Todo",
       silent = true,
     },
     {

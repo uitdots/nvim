@@ -6,9 +6,20 @@ return {
     {
       "<leader>ut",
       function()
+        return require("pantran").motion_translate({ mode = "hover" })
+      end,
+      desc = "Utils | Translate Hover",
+      silent = true,
+      expr = true,
+      noremap = true,
+      mode = { "n", "x" },
+    },
+    {
+      "<leader>uT",
+      function()
         return require("pantran").motion_translate()
       end,
-      desc = "Utils | Translate",
+      desc = "Utils | Translate Interactive",
       silent = true,
       expr = true,
       noremap = true,
@@ -23,9 +34,6 @@ return {
           default_target = "vi",
         },
       },
-    },
-    command = {
-      default_mode = "hover",
     },
     window = {
       window_config = {

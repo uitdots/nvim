@@ -5,7 +5,7 @@ return {
     {
       "<leader>fo",
       "<CMD>Oil --float<CR>",
-      desc = "File | Toggle Oil",
+      desc = "Oil | Toggle",
       silent = true,
     },
   },

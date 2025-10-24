@@ -80,7 +80,7 @@ return {
         require("telescope").extensions.themes.themes()
         -- require("nvchad.themes").open()
       end,
-      desc = "Find | Themes",
+      desc = "Telescope | Themes",
     },
     {
       "<leader>nc",
@@ -91,7 +91,7 @@ return {
     {
       "<leader>f<C-t>",
       "<cmd>Telescope terms<cr>",
-      desc = "Find | Terminal",
+      desc = "Telescope | Terminal",
       silent = true,
     },
     {
