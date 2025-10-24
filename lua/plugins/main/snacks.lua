@@ -26,7 +26,7 @@ local exclude_find = {
 ---@type LazySpec
 return {
   "folke/snacks.nvim",
-  enabled = true,
+  event = "VeryLazy",
   init = function()
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#nvim-tree
     local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
@@ -472,15 +472,35 @@ return {
       desc = "Neovim | Show Current Image",
       silent = true,
     },
+    -- Bufdelete
+    {
+      "<leader>c",
+      function()
+        Snacks.bufdelete.delete()
+      end,
+      desc = "General | Close Buffer",
+      silent = true,
+    },
+    {
+      "<leader>C",
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = "General | Close Other Buffers",
+      silent = true,
+    },
+    {
+      "<leader><M-c>",
+      function()
+        Snacks.bufdelete.all()
+      end,
+      desc = "General | Close Buffers",
+      silent = true,
+    },
   },
   specs = {
     {
-      "neovim/nvim-lspconfig",
-      dependencies = "folke/snacks.nvim",
-    },
-    {
-      --TODO: Change to folke noice nvim later
-      "noice.nvim",
+      "folke/noice.nvim",
       optional = true,
       dependencies = "folke/snacks.nvim",
     },

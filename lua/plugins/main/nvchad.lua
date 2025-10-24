@@ -35,46 +35,6 @@ return {
       silent = true,
     },
     {
-      "<leader>c",
-      function()
-        require("nvchad.tabufline").close_buffer()
-      end,
-      desc = "General | Close Buffer",
-      silent = true,
-    },
-    {
-      "<leader>C",
-      function()
-        require("nvchad.tabufline").closeAllBufs(false)
-      end,
-      desc = "General | Close Other Buffers",
-      silent = true,
-    },
-    {
-      "<leader><M-c>",
-      function()
-        require("nvchad.tabufline").closeAllBufs(true)
-      end,
-      desc = "General | Close Buffers",
-      silent = true,
-    },
-    {
-      "<leader>nh",
-      function()
-        require("nvchad.tabufline").closeBufs_at_direction("left")
-      end,
-      desc = "Neovim | Close Buffers from Left",
-      silent = true,
-    },
-    {
-      "<leader>nl",
-      function()
-        require("nvchad.tabufline").closeBufs_at_direction("right")
-      end,
-      desc = "Neovim | Close Buffers from Right",
-      silent = true,
-    },
-    {
       "<leader>ft",
       function()
         require("telescope").extensions.themes.themes()
