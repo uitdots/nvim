@@ -190,7 +190,7 @@ return {
       desc = "Snacks | Smart",
     },
     {
-      "<leader>ff",
+      "<leader><leader>",
       function()
         Snacks.picker.files({
           hidden = true,
@@ -198,7 +198,7 @@ return {
           exclude = exclude_find,
         })
       end,
-      desc = "Snacks | Find Files",
+      desc = "General | Find Files",
     },
     {
       "<leader>fa",
