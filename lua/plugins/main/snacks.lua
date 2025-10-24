@@ -1,3 +1,7 @@
+local map = vim.keymap.set
+local autocmd = vim.api.nvim_create_autocmd
+local exclude_lsps = require("configs.lsp.autocmds").exclude_lsps
+
 local exclude_find = {
   "%.dart_tool/",
   "%.direnv/",
@@ -26,7 +30,7 @@ return {
   init = function()
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#nvim-tree
     local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
-    vim.api.nvim_create_autocmd("User", {
+    autocmd("User", {
       pattern = "NvimTreeSetup",
       callback = function()
         local events = require("nvim-tree.api").events
@@ -40,7 +44,7 @@ return {
     })
 
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#oilnvim
-    vim.api.nvim_create_autocmd("User", {
+    autocmd("User", {
       pattern = "OilActionsPost",
       callback = function(event)
         if event.data.actions.type == "move" then
@@ -48,8 +52,27 @@ return {
         end
       end,
     })
+
+    autocmd("LspAttach", {
+      callback = function(args)
+        local bufnr = args.buf
+        local client = vim.lsp.get_client_by_id(args.data.client_id)
+        if not client or exclude_lsps[client.name] then
+          return
+        end
+
+        map("n", "gD", Snacks.picker.lsp_declarations, { desc = "LSP | Go to Declarations", buffer = bufnr })
+        map("n", "gd", Snacks.picker.lsp_definitions, { desc = "LSP | Go to Definition", buffer = bufnr })
+        map("n", "grS", Snacks.picker.lsp_workspace_symbols, { desc = "LSP | Workspace Symbols", buffer = bufnr })
+        map("n", "gri", Snacks.picker.lsp_implementations, { desc = "LSP | Go to Implementations", buffer = bufnr })
+        map("n", "grr", Snacks.picker.lsp_references, { desc = "LSP | Go to references", buffer = bufnr })
+        map("n", "gO", Snacks.picker.lsp_symbols, { desc = "LSP | Symbols", buffer = bufnr })
+        map("n", "grt", Snacks.picker.lsp_type_definitions, { desc = "LSP | Go to Type Definition", buffer = bufnr })
+        map("n", "gro", Snacks.picker.lsp_outgoing_calls, { desc = "LSP | Outgoing Calls", buffer = bufnr })
+        map("n", "gri", Snacks.picker.lsp_incoming_calls, { desc = "LSP | Incomming Calls", buffer = bufnr })
+      end,
+    })
   end,
-  ---@module 'snacks'
   ---@type snacks.Config
   opts = {
     animate = {

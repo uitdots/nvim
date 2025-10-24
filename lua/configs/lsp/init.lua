@@ -55,13 +55,10 @@ M.opts = {
   on_init = M.on_init,
 }
 
----@private
-function M.setup_auto_cmds() end
-
 function M.setup()
   vim.lsp.inlay_hint.enable(inlay_hint_enabled)
   M.global_keymaps()
-  require("configs.lsp.autocmds")
+  require("configs.lsp.autocmds").setup()
   vim.lsp.config("*", M.opts)
 end
 
