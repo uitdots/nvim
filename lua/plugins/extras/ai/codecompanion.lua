@@ -28,13 +28,12 @@ return {
     {
       "<leader>ac",
       function()
+        vim.cmd("CodeCompanionChat Toggle")
         if vim.g.nvdash_displayed then
           require("nvchad.tabufline").close_buffer(vim.g.nvdash_buf)
         end
-        vim.cmd("CodeCompanionChat Toggle")
       end,
       desc = "CodeCompanion | Toggle Chat",
-      mode = "n",
       silent = true,
     },
     {
