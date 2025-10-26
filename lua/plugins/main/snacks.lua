@@ -109,6 +109,11 @@ return {
           backdrop = false,
         },
       },
+      formatters = {
+        file = {
+          filename_first = true,
+        },
+      },
     },
     notifier = {
       enabled = true,
