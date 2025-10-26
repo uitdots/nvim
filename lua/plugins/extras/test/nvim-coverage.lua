@@ -42,5 +42,12 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     auto_reload = true,
+    ---@diagnostic disable-next-line: missing-fields
+    summary = {
+      window = {
+        winblend = 0,
+      },
+    },
   },
+  dependencies = "nvim-lua/plenary.nvim",
 }

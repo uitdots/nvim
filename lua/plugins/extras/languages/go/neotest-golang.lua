@@ -14,6 +14,9 @@ return {
             ---@type NeotestGolangOptions
             ---@diagnostic disable-next-line: missing-fields
             local test_opts = {
+              env = {
+                CGO_ENABLED = 1,
+              },
               go_test_args = {
                 "-v",
                 "-race",
