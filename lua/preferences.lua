@@ -74,7 +74,7 @@ local M = {
 
     others = {
       auto_format_enabled = true,
-      ai_suggestion_enabled = false,
+      ai_suggestion_enabled = true,
       filter_availabled_external = true,
     },
   },
