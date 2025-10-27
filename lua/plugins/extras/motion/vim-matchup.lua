@@ -3,7 +3,6 @@ local g = vim.g
 ---@type LazySpec
 return {
   "andymass/vim-matchup",
-  event = "VeryLazy",
   init = function()
     g.matchup_matchparen_offscreen = {
       method = "", ---@type "status" | "popup" | "status_manual" | "scrolloff" | ""
