@@ -7,7 +7,7 @@ return {
   opts = function(_, opts)
     opts = opts or {}
     opts.formatters = opts.formatters or {}
-    opts.formatters.pg_sqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
+    opts.formatters.pgsqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
       append_args = {
         "--dialect=postgres",
       },
@@ -15,7 +15,7 @@ return {
 
     opts.formatters_by_ft = opts.formatters_by_ft or {}
     opts.formatters_by_ft.pgsql = {
-      "pg_sqlfluff",
+      "pgsqlfluff",
     }
     return opts
   end,

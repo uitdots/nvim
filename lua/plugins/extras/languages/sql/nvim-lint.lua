@@ -4,7 +4,7 @@ return {
   opts = function()
     local lint = require("lint")
 
-    lint.linters.pg_sqlfluff = vim.tbl_deep_extend(
+    lint.linters.pgsqlfluff = vim.tbl_deep_extend(
       "force",
       ---@diagnostic disable-next-line: param-type-mismatch
       lint.linters.sqlfluff,
@@ -18,7 +18,7 @@ return {
     )
 
     lint.linters_by_ft.pgsql = {
-      "pg_sqlfluff",
+      "pgsqlfluff",
     }
   end,
   optional = true,
