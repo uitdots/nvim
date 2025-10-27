@@ -1,3 +1,5 @@
+vim.treesitter.language.register("sql", "pgsql")
+
 ---@type LazySpec
 return {
   "nvim-treesitter/nvim-treesitter",
@@ -9,8 +11,8 @@ return {
     highlight = {
       disable = {
         pgsql = true,
-      }
-    }
+      },
+    },
   },
   opts_extend = {
     "ensure_installed",

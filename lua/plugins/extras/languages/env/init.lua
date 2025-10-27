@@ -1,3 +1,5 @@
+vim.treesitter.language.register("bash", "dotenv")
+
 vim.filetype.add({
   pattern = {
     [".*/%.env"] = "dotenv",
