@@ -1,6 +1,7 @@
 local bo = vim.bo
 local filetypes = vim.list_extend({
   "codecompanion",
+  "help",
   "html",
   "tex",
   "typst",
