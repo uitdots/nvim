@@ -8,9 +8,12 @@ return {
     opts = opts or {}
     opts.formatters = opts.formatters or {}
     opts.formatters.pgsqlfluff = vim.tbl_extend("force", require("conform.formatters.sqlfluff"), {
-      append_args = {
+      args = {
+        "fix",
         "--dialect=postgres",
+        "$FILENAME",
       },
+      stdin = false,
     })
 
     opts.formatters_by_ft = opts.formatters_by_ft or {}
