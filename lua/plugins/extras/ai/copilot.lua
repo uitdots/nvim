@@ -37,6 +37,10 @@ end
 ---@type LazySpec
 return {
   "zbirenbaum/copilot.lua",
+  event = ai_suggestion_enabled and {
+    "BufRead",
+    "BufNewFile",
+  } or nil,
   cmd = "Copilot",
   ---@module 'copilot'
   ---@type CopilotConfig
