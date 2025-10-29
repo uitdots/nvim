@@ -12,10 +12,9 @@ return {
   ---@module 'dropbar'
   ---@type dropbar_configs_t
   opts = {
-    -- TODO: Maybe filter for java kotlin
     sources = {
       path = {
-        -- max_depth = 16,
+        max_depth = 0,
       },
     },
     bar = {
