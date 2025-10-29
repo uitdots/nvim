@@ -117,6 +117,7 @@ return {
     },
     notifier = {
       enabled = true,
+      top_down = false,
     },
     quickfile = {
       enabled = false,
