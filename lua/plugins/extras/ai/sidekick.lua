@@ -33,6 +33,14 @@ return {
       desc = "Sidekick | Toggle NES",
     },
     {
+      "<C-.>",
+      function()
+        require("sidekick.cli").toggle()
+      end,
+      mode = { "n", "x", "i", "t" },
+      desc = "Sidekick | Toggle",
+    },
+    {
       "<leader>aC",
       function()
         require("sidekick.cli").toggle()
@@ -45,6 +53,13 @@ return {
         require("sidekick.cli").select({ filter = { installed = true } })
       end,
       desc = "Sidekick | Select CLI",
+    },
+    {
+      "<leader>ad",
+      function()
+        require("sidekick.cli").close()
+      end,
+      desc = "Sidekick | Dettach CLI Session",
     },
     {
       "<leader>aT",
@@ -63,20 +78,19 @@ return {
       desc = "Sidekick | Send Selected",
     },
     {
+      "<leader>af",
+      function()
+        require("sidekick.cli").send({ msg = "{file}" })
+      end,
+      desc = "Sidekick | Send File",
+    },
+    {
       "<leader>aP",
       function()
         require("sidekick.cli").prompt()
       end,
       mode = { "n", "x" },
       desc = "Sidekick | Select Prompt",
-    },
-    {
-      "<C-.>",
-      function()
-        require("sidekick.cli").focus()
-      end,
-      mode = { "n", "x", "i", "t" },
-      desc = "Sidekick | Switch Focus",
     },
   },
   ---@module 'sidekick'
