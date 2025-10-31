@@ -77,6 +77,7 @@ return {
   opts = {
     animate = {
       enabled = false,
+      fps = 60,
     },
     bigfile = {
       enabled = true,
@@ -126,7 +127,7 @@ return {
       enabled = false,
     },
     scroll = {
-      enabled = false,
+      enabled = true,
     },
     statuscolumn = {
       enabled = true,
