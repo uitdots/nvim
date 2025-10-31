@@ -6,6 +6,7 @@ return {
     ensure_installed = {
       "gofumpt",
       "golangci-lint",
+      "golangci-lint-langserver",
       "gopls",
     },
   },
