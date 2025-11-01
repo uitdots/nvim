@@ -27,6 +27,7 @@ local exclude_find = {
 return {
   "folke/snacks.nvim",
   event = "VeryLazy",
+  lazy = vim.fn.argc(-1) == 0,
   init = function()
     -- https://github.com/folke/snacks.nvim/blob/main/docs/rename.md#nvim-tree
     local prev = { new_name = "", old_name = "" } -- Prevents duplicate events
@@ -76,7 +77,6 @@ return {
   ---@type snacks.Config
   opts = {
     animate = {
-      enabled = false,
       fps = 60,
     },
     bigfile = {
