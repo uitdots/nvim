@@ -1,9 +1,10 @@
+local lsp = vim.lsp
 local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 local lsp_utils = require("utils.lsp")
 local map = vim.keymap.set
 local notify_utils = require("utils.notify")
-local lsp_action = require("utils.lsp").action
+local action = require("utils.lsp").action
 
 local M = {}
 
@@ -26,25 +27,25 @@ function M.setup_keymaps()
         return
       end
 
-      map("n", "<leader>lao", lsp_action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
-      map("n", "<leader>las", lsp_action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
-      map("n", "<leader>lau", lsp_action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
+      map("n", "<leader>lao", action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
+      map("n", "<leader>las", action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
+      map("n", "<leader>lau", action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
 
       map("n", "<leader>lS", function()
         lsp_utils.toggle_semantic_tokens(bufnr)
       end, { desc = "LSP | Toggle Semantic Tokens", silent = true })
       map("n", "<leader>lL", function()
-        vim.lsp.codelens.run()
+        lsp.codelens.run()
       end, { desc = "LSP | Run Codelens", silent = true })
       map("n", "<leader>lc", function()
-        vim.lsp.codelens.clear()
+        lsp.codelens.clear()
       end, { desc = "LSP | Clear Codelens", silent = true })
 
-      map("n", "grW", vim.lsp.buf.remove_workspace_folder, { desc = "LSP | Remove workspace folder", buffer = bufnr })
-      map("n", "grn", vim.lsp.buf.rename, { desc = "LSP | Rename", buffer = bufnr })
-      map("n", "grw", vim.lsp.buf.add_workspace_folder, { desc = "LSP | Add workspace folder", buffer = bufnr })
+      map("n", "grW", lsp.buf.remove_workspace_folder, { desc = "LSP | Remove workspace folder", buffer = bufnr })
+      map("n", "grn", lsp.buf.rename, { desc = "LSP | Rename", buffer = bufnr })
+      map("n", "grw", lsp.buf.add_workspace_folder, { desc = "LSP | Add workspace folder", buffer = bufnr })
       map("n", "gr<C-w>", function()
-        vim.notify(vim.lsp.buf.list_workspace_folders(), vim.log.levels.INFO, { title = "LSP workspace folders" })
+        vim.notify(vim.inspect(lsp.buf.list_workspace_folders()), vim.log.levels.INFO, { title = "LSP workspace folders" })
       end, { desc = "LSP | List workspace folders", buffer = bufnr })
     end,
     group = augroup("lsp-keymaps", {}),

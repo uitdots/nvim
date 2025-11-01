@@ -4,7 +4,9 @@ local semantic_tokens = require("preferences").options.semantic_tokens
 local M = {}
 
 -- https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/util/lsp.lua
+---@type table<lsp.CodeActionKind, fun()>
 M.action = setmetatable({}, {
+  ---@param action lsp.CodeActionKind
   __index = function(tbl, action)
     local fn = function()
       vim.lsp.buf.code_action({
