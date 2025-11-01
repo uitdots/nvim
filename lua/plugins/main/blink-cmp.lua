@@ -46,9 +46,20 @@ return {
             return true
           end
         end,
+        function()
+          if not package.loaded["copilot"] then
+            return
+          end
+          local suggestion = require("copilot.suggestion")
+          if not suggestion.is_visible() then
+            suggestion.update_preview()
+            return true
+          end
+        end,
         "fallback",
       },
       ["<Tab>"] = {
+        "select_next",
         function()
           if not package.loaded["copilot"] then
             return
@@ -59,7 +70,6 @@ return {
             return true
           end
         end,
-        "select_next",
         "snippet_forward",
         "fallback",
       },

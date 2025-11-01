@@ -25,7 +25,7 @@ local function setup_autocmds()
         return
       end
       vim.b[args.buf].copilot_suggestion_hidden = false
-      suggestion.update_preview()
+      -- suggestion.update_preview()
     end,
   })
 end
