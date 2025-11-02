@@ -90,6 +90,7 @@ opt.whichwrap:append("<>[]hl")
 o.autoread = true
 o.confirm = true
 o.exrc = true
+o.secure = true
 o.spelloptions = "camel"
 
 -- Uncomment these options to enable pwsh for Windows
