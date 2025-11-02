@@ -1,12 +1,16 @@
-local M = {}
+local api = vim.api
+local o = vim.o
+local bo = vim.bo
 
----@private
----@type integer?
-M.current_bufnr = nil
+local M = {}
 
 ---@private
 ---@type string?
 M.state = nil
+
+---@private
+---@type true?
+M.have_setup_autocmd = nil
 
 ---@private
 ---@type boolean?
@@ -16,23 +20,18 @@ M.ok = nil
 ---@module 'lint'
 M.lint = nil
 
+---@private
+---@param bufnr number
 ---@return nil
-function M.set_state()
-  local bufnr = vim.api.nvim_get_current_buf()
-
-  if bufnr == M.current_bufnr then
-    return
-  end
-  M.current_bufnr = bufnr
-
-  local linters = M.lint._resolve_linter_by_ft(vim.bo.filetype)
+function M.set_state(bufnr)
+  local linters = M.lint._resolve_linter_by_ft(bo[bufnr].filetype)
 
   if #linters == 0 then
     M.state = nil
     return
   end
 
-  if vim.o.columns < 100 then
+  if o.columns < 100 then
     M.state = "%#St_gitIcons#  "
     return
   end
@@ -40,10 +39,25 @@ function M.set_state()
   M.state = string.format("%%#St_gitIcons# %s ", table.concat(linters, ", "))
 end
 
+---@private
+function M.setup()
+  if M.have_setup_autocmd then
+    return
+  end
+  M.have_setup_autocmd = true
+  M.set_state(api.nvim_get_current_buf())
+  api.nvim_create_autocmd({
+    "BufEnter",
+  }, {
+    callback = function(args)
+      M.set_state(args.buf)
+    end,
+  })
+end
+
 ---@return string?
 return function()
   if M.ok then
-    M.set_state()
     return M.state
   end
 
@@ -59,6 +73,6 @@ return function()
     return
   end
 
-  M.set_state()
+  M.setup()
   return M.state
 end
