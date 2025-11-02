@@ -33,6 +33,14 @@ return {
       desc = "Sidekick | Toggle NES",
     },
     {
+      "<leader>au",
+      function()
+        require("sidekick.nes").update()
+      end,
+      mode = { "x", "n" },
+      desc = "Sidekick | Update NES",
+    },
+    {
       "<C-.>",
       function()
         require("sidekick.cli").toggle()
