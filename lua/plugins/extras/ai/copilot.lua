@@ -4,7 +4,7 @@ local ai_suggestion_enabled = require("preferences").options.others.ai_suggestio
 
 local function setup_autocmds()
   local group = augroup("CopilotCmp", { clear = true })
-  local suggestion = require("copilot.suggestion")
+  -- local suggestion = require("copilot.suggestion")
   local client = require("copilot.client")
   autocmd("User", {
     group = group,
@@ -60,6 +60,9 @@ return {
         accept_line = "<M-S-l>",
       },
     },
+    filetypes = {
+      yaml = true,
+    },
     server_opts_overrides = {
       settings = {
         telemetry = {
@@ -70,7 +73,7 @@ return {
   },
   keys = {
     {
-      "<leader>as",
+      "<leader>ab",
       function()
         require("copilot.suggestion").toggle_auto_trigger()
       end,

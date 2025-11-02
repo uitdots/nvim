@@ -56,7 +56,7 @@ return {
       desc = "Sidekick | Toggle CLI",
     },
     {
-      "<leader>aS",
+      "<leader>as",
       function()
         require("sidekick.cli").select({ filter = { installed = true } })
       end,
