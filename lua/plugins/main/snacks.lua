@@ -334,6 +334,13 @@ return {
       desc = "Snacks | Keymaps",
     },
     {
+      "<leader>f<C-t>",
+      function()
+        Snacks.picker.tags()
+      end,
+      desc = "Snacks | Tags",
+    },
+    {
       "<leader>fl",
       function()
         Snacks.picker.loclist()

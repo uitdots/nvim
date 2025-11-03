@@ -49,7 +49,7 @@ return {
       silent = true,
     },
     {
-      "<leader>f<C-t>",
+      "<leader>f<M-t>",
       "<cmd>Telescope terms<cr>",
       desc = "Telescope | Terminal",
       silent = true,
