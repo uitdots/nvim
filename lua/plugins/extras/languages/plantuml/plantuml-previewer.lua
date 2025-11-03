@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "weirongxu/plantuml-previewer.vim",
-  event = "VeryLazy",
   keys = {
     {
       "<leader>wp",
