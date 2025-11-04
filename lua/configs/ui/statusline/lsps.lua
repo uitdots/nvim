@@ -43,9 +43,10 @@ function M.setup_autocmd()
   end
   M.have_setup_autocmd = true
   api.nvim_create_autocmd({
+    "BufEnter",
     "LspAttach",
     "LspDetach",
-    "BufEnter",
+    "VimResized",
   }, {
     callback = function(args)
       M.set_state(args.buf)

@@ -1,3 +1,5 @@
+local loaded = package.loaded
+
 local M = {}
 
 ---@type boolean?
@@ -18,7 +20,7 @@ return function()
   end
 
   if M.ok == nil then
-    if package.loaded["noice"] == nil then
+    if loaded["noice"] == nil then
       return
     else
       local noice

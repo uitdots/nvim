@@ -1,6 +1,6 @@
 local api = vim.api
 local o = vim.o
-local bo = vim.bo
+local loaded = package.loaded
 
 local M = {}
 
@@ -50,6 +50,7 @@ function M.setup()
   M.set_state(api.nvim_get_current_buf())
   api.nvim_create_autocmd({
     "BufEnter",
+    "VimResized",
   }, {
     callback = function(args)
       M.set_state(args.buf)
@@ -64,7 +65,7 @@ return function()
   end
 
   if M.ok == nil then
-    if package.loaded["conform"] == nil then
+    if loaded.conform == nil then
       return
     else
       M.ok, M.conform = pcall(require, "conform")
