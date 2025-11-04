@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "max397574/better-escape.nvim",
+  enabled = false,
   event = "InsertEnter",
   opts = {
     default_mappings = false,
