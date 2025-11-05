@@ -8,8 +8,8 @@ return {
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = "chezmoitmpl",
-      callback = function()
-        vim.cmd("TSBufDisable highlight")
+      callback = function(args)
+        vim.treesitter.stop(args.buf)
       end,
     })
   end,
