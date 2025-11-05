@@ -25,7 +25,6 @@ return {
       -- https://github.com/OXY2DEV/markview.nvim/issues/272
       condition = function(buffer)
         local ft, bt = bo[buffer].ft, bo[buffer].bt
-        vim.notify(ft .. " " .. bt)
         return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
       end,
       icon_provider = "devicons",
