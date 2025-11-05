@@ -61,5 +61,8 @@ return {
       lsp_doc_border = vim.o.winborder, -- May remove this in the future if noice use vim.o.winborder by default
     },
   },
+  opts_extend = {
+    "routes",
+  },
   dependencies = "MunifTanjim/nui.nvim",
 }
