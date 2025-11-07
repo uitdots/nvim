@@ -76,9 +76,6 @@ return {
   end,
   ---@type snacks.Config
   opts = {
-    animate = {
-      fps = 60,
-    },
     bigfile = {
       enabled = true,
     },
@@ -127,7 +124,7 @@ return {
       enabled = false,
     },
     scroll = {
-      enabled = true,
+      enabled = false,
     },
     statuscolumn = {
       enabled = true,
