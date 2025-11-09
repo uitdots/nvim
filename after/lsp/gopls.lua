@@ -42,6 +42,7 @@ return {
     gopls = {
       hints = inlayhint_opts,
       semanticTokens = true,
+      gofumpt = true,
     },
   },
 }
