@@ -20,7 +20,6 @@ return {
     },
     snippets = {
       score_offset = -5,
-      preset = "luasnip",
     },
     keymap = {
       preset = "none",
@@ -164,6 +163,24 @@ return {
       end,
       desc = "Blink | Toggle Completion",
       silent = true,
+    },
+  },
+  specs = {
+    {
+      "L3MON4D3/LuaSnip",
+      specs = {
+        {
+          "saghen/blink.cmp",
+          ---@module 'blink.cmp'
+          ---@type blink.cmp.Config
+          opts = {
+            snippets = {
+              preset = "luasnip",
+            },
+          },
+        },
+      },
+      optional = true,
     },
   },
 }
