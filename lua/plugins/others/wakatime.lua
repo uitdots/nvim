@@ -8,9 +8,6 @@ local home = require("utils.os").home
 return {
   "wakatime/vim-wakatime",
   event = vim.fn.filereadable(string.format("%s/.wakatime.cfg", home)) == 1 and "VeryLazy" or nil,
-  init = function()
-    vim.g.loaded_wakatime = true
-  end,
   ---@module 'wakatime'
   ---@type wakatime.Config
   opts = nil,
@@ -21,5 +18,8 @@ return {
       desc = "WakaTime | Today",
     },
   },
-  config = true,
+  -- init = function()
+  --   vim.g.loaded_wakatime = true
+  -- end,
+  -- config = true,
 }
