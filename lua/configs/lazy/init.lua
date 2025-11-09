@@ -8,12 +8,4 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 -- load plugins
-require("lazy").setup({
-  {
-    "NvChad/NvChad",
-    optional = true,
-  },
-  {
-    import = "plugins.init",
-  },
-}, require("configs.lazy.config"))
+require("lazy").setup("plugins.init", require("configs.lazy.config"))

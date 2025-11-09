@@ -26,12 +26,12 @@ return {
 
   change_detection = {
     enabled = true,
-    notify = false,
+    notify = true,
   },
 
   checker = {
     enabled = true,
-    notify = false,
+    notify = true,
     frequency = 604800, -- 7 days
   },
 
