@@ -156,6 +156,7 @@ return {
         local nvchad_capabilities = require("nvchad.configs.lspconfig").capabilities
         lsp.capabilities = vim.tbl_deep_extend("keep", lsp.capabilities, nvchad_capabilities)
       end,
+      optional = true,
     },
     {
       "saghen/blink.cmp",
