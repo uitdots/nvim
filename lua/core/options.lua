@@ -84,7 +84,7 @@ o.timeoutlen = 500
 o.updatetime = 100
 o.virtualedit = "block"
 opt.whichwrap:append("<>[]hl")
-opt.iskeyword:append(".")
+opt.iskeyword:remove(".")
 
 -- Other
 o.autoread = true
