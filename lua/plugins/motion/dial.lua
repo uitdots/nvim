@@ -86,6 +86,7 @@ return {
         augend.constant.new({ elements = { "Enabled", "Disabled" }, word = true, cyclic = true }),
         augend.constant.new({ elements = { "Left", "Right" }, word = false, cyclic = true }),
         augend.constant.new({ elements = { "On", "Off" }, word = true, cyclic = true }),
+        augend.constant.new({ elements = { "TRUE", "FALSE" }, word = true, cyclic = true }),
         augend.constant.new({ elements = { "True", "False" }, word = true, cyclic = true }),
         augend.constant.new({ elements = { "Yes", "No" }, word = true, cyclic = true }),
         augend.constant.new({ elements = { "and", "or" }, word = true, cyclic = true }),
