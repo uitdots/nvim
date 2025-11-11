@@ -1,6 +1,7 @@
 local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
+local opt_local = vim.opt_local
 local preferences = require("preferences")
 
 -- General Settings
@@ -69,10 +70,11 @@ autocmd("ModeChanged", {
 autocmd("FileType", {
   pattern = "*",
   callback = function()
-    vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+    opt_local.formatoptions:remove({ "c", "r", "o" })
+    opt_local.iskeyword:remove({ ".", "-" })
   end,
   group = general,
-  desc = "Disable New Line Comment",
+  desc = "Disable New Line Comment, add '.-' to iskeyword",
 })
 
 autocmd("FileType", {
@@ -91,7 +93,7 @@ local wrap_opts = preferences.options.wrap
 autocmd("FileType", {
   pattern = wrap_opts.revert,
   callback = function()
-    vim.opt_local.wrap = not wrap_opts.default
+    opt_local.wrap = not wrap_opts.default
   end,
   group = general,
   desc = string.format("%s Wrap in these filetypes", wrap_opts.default and "Disable" or "Enable"),
