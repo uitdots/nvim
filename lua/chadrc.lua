@@ -225,6 +225,22 @@ M.base46.hl_add = {
   GlanceListNormal = { bg = "one_bg", fg = "base05" },
   GlanceListFilepath = { fg = "light_grey" },
   GlancePreviewNormal = { bg = "black2" },
+
+  ---Neotest
+  NeotestPassed = { fg = "green" },
+  NeotestFailed = { fg = "red" },
+  NeotestTarget = { fg = "pink" },
+  NeotestRunning = { fg = "yellow" },
+  NeotestSkipped = { fg = "cyan" },
+  NeotestWatching = { fg = "orange" },
+  NeotestNamespace = { fg = "purple" },
+  NeotestIndent = { fg = "line" },
+  NeotestDir = { link = "Directory" },
+  NeotestFile = { fg = "white" },
+  NeotestAdapterName = { fg = "red" },
+  NeotestExpandMarker = { fg = "grey" },
+  NeotestMarked = { fg = "dark_purple" },
+  NeotestWinSelect = { bg = "cyan" },
 }
 
 return M
