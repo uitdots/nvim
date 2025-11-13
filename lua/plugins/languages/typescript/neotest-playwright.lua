@@ -3,7 +3,8 @@ return {
   "nvim-neotest/neotest",
   specs = {
     {
-      "thenbe/neotest-playwright",
+      "StevanFreeborn/neotest-playwright",
+      branch = "fork",
       cmd = {
         "NeotestPlaywrightPreset",
         "NeotestPlaywrightProject",
@@ -19,6 +20,11 @@ return {
           desc = "Neotest | Playwright Show Attachment",
         },
       },
+      config = function()
+        require("neotest-playwright.preset").create_preset_command()
+        require("neotest-playwright.project").create_project_command()
+        require("neotest-playwright.commands").create_refresh_command()
+      end,
       specs = {
         {
           "nvim-neotest/neotest",
