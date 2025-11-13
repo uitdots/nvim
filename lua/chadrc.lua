@@ -224,6 +224,7 @@ M.base46.hl_add = {
   GlanceListCursorLine = { bg = "grey" },
   GlanceListNormal = { bg = "one_bg", fg = "base05" },
   GlanceListFilepath = { fg = "light_grey" },
+  GlancePreviewNormal = { bg = "black2" },
 }
 
 return M

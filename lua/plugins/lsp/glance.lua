@@ -28,13 +28,23 @@ return {
       silent = true,
     },
   },
+  ---@module 'glance'
+  ---@type GlanceOpts
+  ---@diagnostic disable-next-line: missing-fields
+  opts = {
+    ---@diagnostic disable-next-line: missing-fields
+    theme = {
+      enable = false,
+    },
+  },
   specs = {
     {
       "folke/trouble.nvim",
       specs = {
         {
           "DNLHC/glance.nvim",
-          ---@class GlanceOpts
+          ---@type GlanceOpts
+          ---@diagnostic disable-next-line: missing-fields
           opts = {
             use_trouble_qf = true,
           },
@@ -43,5 +53,4 @@ return {
       optional = true,
     },
   },
-  config = true,
 }
