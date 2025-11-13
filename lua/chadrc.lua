@@ -4,6 +4,11 @@ local nvdash_config = require("configs.ui.nvdash")
 ---@type ChadrcConfig
 local M = {}
 
+M.colorify = {
+  enabled = true,
+  mode = "bg",
+}
+
 M.ui = {
   telescope = {
     style = "bordered",
