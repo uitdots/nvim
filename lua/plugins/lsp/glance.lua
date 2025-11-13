@@ -29,14 +29,29 @@ return {
     },
   },
   ---@module 'glance'
-  ---@type GlanceOpts
-  ---@diagnostic disable-next-line: missing-fields
-  opts = {
+  ---@param opts GlanceOpts
+  ---@return GlanceOpts
+  opts = function(_, opts)
+    opts = opts or {}
+    local actions = require("glance").actions
+
+    ---@type GlanceOpts
     ---@diagnostic disable-next-line: missing-fields
-    theme = {
-      enable = false,
-    },
-  },
+    local _opts = {
+      ---@diagnostic disable-next-line: missing-fields
+      theme = {
+        enable = false,
+      },
+      ---@diagnostic disable-next-line: missing-fields
+      mappings = {
+        list = {
+          ["<C-f>"] = actions.preview_scroll_win(10),
+          ["<C-b>"] = actions.preview_scroll_win(-10),
+        },
+      },
+    }
+    return vim.tbl_deep_extend("force", opts, _opts)
+  end,
   specs = {
     {
       "folke/trouble.nvim",
