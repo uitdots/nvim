@@ -4,5 +4,6 @@ return {
   event = "FileType qf",
   ---@module "quicker"
   ---@type quicker.SetupOptions
-  opts = {},
+  opts = nil,
+  config = true,
 }

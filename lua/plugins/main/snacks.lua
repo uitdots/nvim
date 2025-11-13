@@ -148,7 +148,7 @@ return {
         git_signs = true,
         mini_diff_signs = false,
         diagnostics = true,
-        inlay_hints = true,
+        inlay_hints = false,
       },
       zoom = {
         show = {

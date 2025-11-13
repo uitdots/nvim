@@ -33,7 +33,16 @@ return {
                 enable_dynamic_test_discovery = true,
                 get_playwright_binary = function()
                   local fname = vim.api.nvim_buf_get_name(0)
-                  return vim.fs.find("node_modules/.bin/playwright", { path = fname, upward = true })[1]
+                  local bin = vim.fs.find("node_modules/.bin/playwright", { path = fname, upward = true })[1]
+                  if bin then
+                    return bin
+                  else
+                    return "playwright"
+                  end
+                end,
+                get_playwright_config = function()
+                  local fname = vim.api.nvim_buf_get_name(0)
+                  return vim.fs.find("/playwright.config.ts", { path = fname, upward = true })[1]
                 end,
               },
             }
