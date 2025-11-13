@@ -4,6 +4,11 @@ return {
   specs = {
     {
       "thenbe/neotest-playwright",
+      cmd = {
+        "NeotestPlaywrightPreset",
+        "NeotestPlaywrightProject",
+        "NeotestPlaywrightRefresh",
+      },
       specs = {
         {
           "nvim-neotest/neotest",
