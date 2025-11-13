@@ -206,6 +206,19 @@ M.base46.hl_add = {
 
   ---Mini
   MiniIndentscopeSymbol = { link = "IblChar" },
+
+  ---Glance
+  GlanceBorderTop = { link = "PmenuBorder" },
+  GlanceBorderBottom = { link = "PmenuBorder" },
+  GlancePreviewBorderBottom = { link = "FloatBorder" },
+  GlancePreviewEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
+  GlanceListEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
+  GlanceWinBarFilepath = { fg = "light_grey", bg = "one_bg2" },
+  GlanceWinBarFilename = { fg = "white", bg = "one_bg2" },
+  GlanceWinBarTitle = { fg = "green", bg = "one_bg2" },
+  GlanceListCursorLine = { bg = "grey" },
+  GlanceListNormal = { bg = "one_bg", fg = "base05" },
+  GlanceListFilepath = { fg = "light_grey" },
 }
 
 return M
