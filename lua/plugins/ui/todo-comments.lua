@@ -5,8 +5,11 @@ return {
   keys = {
     {
       "<leader>fT",
-      "<cmd>TodoTelescope<cr>",
-      desc = "Telescope | Todo",
+      function()
+        ---@diagnostic disable-next-line: undefined-field
+        Snacks.picker.todo_comments()
+      end,
+      desc = "Snacks | Todo",
       silent = true,
     },
     {
@@ -25,4 +28,5 @@ return {
     },
   },
   config = true,
+  dependencies = "folke/snacks.nvim",
 }
