@@ -32,11 +32,8 @@ return {
                 persist_project_selection = false,
                 enable_dynamic_test_discovery = true,
                 get_playwright_binary = function()
-                  local bin_path = vim.fn.exepath("playwright")
-                  if bin_path ~= "" then
-                    return bin_path
-                  end
-                  return vim.loop.cwd() .. "/node_modules/.bin/playwright"
+                  local fname = vim.api.nvim_buf_get_name(0)
+                  return vim.fs.find("node_modules/.bin/playwright", { path = fname, upward = true })[1]
                 end,
               },
             }
