@@ -10,7 +10,6 @@ local ft_no_navigate = {
 ---@type LazySpec
 return {
   "NvChad/NvChad",
-  lazy = false, -- Because this contains colorscheme
   branch = "v2.5",
   keys = {
     {
