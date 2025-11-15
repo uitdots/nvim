@@ -1,4 +1,3 @@
-local bo = vim.bo
 local filetypes = vim.list_extend({
   "codecompanion",
   "help",
@@ -23,10 +22,10 @@ return {
       enable_hybrid_mode = true,
       filetypes = filetypes,
       -- https://github.com/OXY2DEV/markview.nvim/issues/272
-      condition = function(buffer)
-        local ft, bt = bo[buffer].ft, bo[buffer].bt
-        return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
-      end,
+      -- condition = function(buffer)
+      --   local ft, bt = bo[buffer].ft, bo[buffer].bt
+      --   return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
+      -- end,
       icon_provider = "devicons",
       modes = {
         "n",

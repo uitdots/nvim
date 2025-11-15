@@ -71,11 +71,10 @@ return {
     autocmd("FileType", {
       pattern = "codecompanion",
       callback = function()
-        vim.schedule(function()
-          wo.number = false
-          wo.relativenumber = false
-          wo.foldenable = false
-        end)
+        local win = vim.api.nvim_get_current_win()
+        wo[win].number = false
+        wo[win].relativenumber = false
+        wo[win].foldenable = false
       end,
       desc = "Window Options for CodeCompanion",
     })
@@ -160,10 +159,6 @@ return {
       optional = true,
     },
     {
-      "OXY2DEV/markview.nvim",
-      optional = true,
-    },
-    {
       "HakonHarnes/img-clip.nvim",
       optional = true,
     },
@@ -182,8 +177,9 @@ return {
         autocmd("FileType", {
           pattern = "codecompanion",
           callback = function(args)
-            vim.cmd("Markview enable " .. args.buf)
-            vim.cmd("Markview hybridEnable " .. args.buf)
+            local markview_cmd = require("markview.commands")
+            markview_cmd.enable(args.buf)
+            markview_cmd.hybridEnable(args.buf)
           end,
         })
         return opts
