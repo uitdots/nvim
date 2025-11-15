@@ -49,6 +49,11 @@ return {
           ["<C-b>"] = actions.preview_scroll_win(-10),
         },
       },
+      border = {
+        enable = true,
+        top_char = "▁",
+        bottom_char = "▔",
+      },
     }
     return vim.tbl_deep_extend("force", opts, _opts)
   end,

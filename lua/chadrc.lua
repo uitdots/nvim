@@ -213,9 +213,9 @@ M.base46.hl_add = {
   MiniIndentscopeSymbol = { link = "IblChar" },
 
   ---Glance
-  GlanceBorderTop = { link = "PmenuBorder" },
-  GlanceBorderBottom = { link = "PmenuBorder" },
-  GlancePreviewBorderBottom = { link = "FloatBorder" },
+  GlanceBorderTop = { link = "FloatBorder", bg = "none" },
+  GlanceBorderBottom = { link = "FloatBorder", bg = "none" },
+  GlancePreviewBorderBottom = { link = "FloatBorder", bg = "none" },
   GlancePreviewEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
   GlanceListEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
   GlanceWinBarFilepath = { fg = "light_grey", bg = "one_bg2" },
