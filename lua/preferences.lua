@@ -39,6 +39,7 @@ local M = {
       tab = {
         [2] = {
           "alloy",
+          "tex",
         },
         [8] = {
           "go",
