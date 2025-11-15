@@ -58,6 +58,10 @@ return {
     opts.indent.disable = opts.indent.disable or {}
     opts.fold.disable = opts.fold.disable or {}
 
+    local treesitter = vim.treesitter
+    local vim_ts_language = treesitter.language
+    local vim_ts_query_get = treesitter.query.get
+
     local group = augroup("treesitter", {})
     local installed_parsers = {}
     for _, v in ipairs(ts.get_installed("parsers")) do
@@ -69,21 +73,21 @@ return {
       callback = function(args)
         local buf = args.buf
         local filetype = args.match
-        local language = vim.treesitter.language.get_lang(filetype) or filetype
-        if not (vim.treesitter.language.add(language) and installed_parsers[language]) then
+        local language = vim_ts_language.get_lang(filetype) or filetype
+        if not (vim_ts_language.add(language) and installed_parsers[language]) then
           return
         end
-        if opts.highlight.enabled and not opts.highlight.disable[language] then
-          vim.treesitter.start(buf, language)
+        if opts.highlight.enabled and not opts.highlight.disable[language] and vim_ts_query_get(language, "highlights") then
+          treesitter.start(buf, language)
           if not opts.highlight.still_vim_syntax[language] then
             bo[buf].syntax = "OFF"
           end
         end
-        if opts.indent.enabled and not opts.indent.disable[language] then
+        if opts.indent.enabled and not opts.indent.disable[language] and vim_ts_query_get(language, "indents") then
           bo[buf].autoindent = false
           bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end
-        if opts.fold.enabled and not opts.fold.disable[language] then
+        if opts.fold.enabled and not opts.fold.disable[language] and vim_ts_query_get(language, "folds") then
           vim.wo.foldmethod = "expr"
           vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
         end
