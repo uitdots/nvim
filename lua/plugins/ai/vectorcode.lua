@@ -8,10 +8,6 @@ return {
   ---@diagnostic disable-next-line: missing-fields
   opts = {
     async_backend = "lsp",
-    ---@diagnostic disable-next-line: missing-fields
-    on_setup = {
-      lsp = true,
-    },
   },
   dependencies = "nvim-lua/plenary.nvim",
   specs = {
