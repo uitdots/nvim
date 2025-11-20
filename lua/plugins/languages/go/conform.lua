@@ -10,13 +10,14 @@ return {
         args = {
           "-file",
           "$FILENAME",
-          "-C",
         },
+        stdin = false,
       },
     },
     formatters_by_ft = {
       go = {
         "formattag",
+        lsp_format = "last",
       },
     },
   },
