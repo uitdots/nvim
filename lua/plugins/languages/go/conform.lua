@@ -16,6 +16,7 @@ return {
     },
     formatters_by_ft = {
       go = {
+        "gofumpt",
         "formattag",
         lsp_format = "last",
       },

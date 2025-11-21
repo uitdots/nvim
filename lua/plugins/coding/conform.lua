@@ -122,6 +122,8 @@ return {
       end
     end, { desc = "Toggle Autoformat", bang = true })
   end,
+  ---@module 'conform'
+  ---@param opts conform.setupOpts
   config = function(_, opts)
     if filter_availabled_external then
       filter_available(opts)
