@@ -13,6 +13,7 @@ return {
 
     lint.linters_by_ft["*"] = {
       "cspell",
+      "codespell",
     }
   end,
   config = function()
@@ -23,6 +24,17 @@ return {
     }, {
       callback = debounce(function()
         require("lint").try_lint(nil, {
+          ignore_errors = true,
+        })
+      end, 1000),
+    })
+
+    vim.api.nvim_create_autocmd({
+      "BufWinEnter",
+      "BufWritePost",
+    }, {
+      callback = debounce(function()
+        require("lint").try_lint("codespell", {
           ignore_errors = true,
         })
       end, 1000),
