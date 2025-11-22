@@ -1,8 +1,11 @@
+local is_executable = require("utils.executable").is_executable
+
 ---@type LazySpec
 return {
   "Davidyz/VectorCode",
   version = "*",
-  build = "uv tool upgrade 'vectorcode[lsp,mcp,intel]'",
+  enabled = is_executable("vectorcode"),
+  build = "uv tool upgrade vectorcode",
   ---@module 'vectorcode'
   ---@type VectorCode.Opts
   ---@diagnostic disable-next-line: missing-fields
