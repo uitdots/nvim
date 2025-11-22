@@ -13,8 +13,8 @@ return {
     },
   },
   opts = {
-    auto_approve = false,
-    auto_toggle_mcp_servers = true,
+    auto_approve = true,
+    auto_toggle_mcp_servers = false,
     ui = {
       window = {
         border = vim.o.winborder,
