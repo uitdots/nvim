@@ -142,7 +142,13 @@ return {
     },
   },
   ---This plugin doesn't have setup
-  config = function() end,
+  config = function()
+    -- TODO: setup it right
+    local sign = vim.fn.sign_define
+    sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint" })
+    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition" })
+    sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint" })
+  end,
   dependencies = {
     {
       "jay-babu/mason-nvim-dap.nvim",
