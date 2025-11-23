@@ -126,6 +126,9 @@ return {
     import = "plugins.languages.react",
   },
   {
+    import = "plugins.languages.redis",
+  },
+  {
     import = "plugins.languages.rust",
     enabled = false,
   },
