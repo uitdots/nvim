@@ -18,6 +18,7 @@ return {
     g.db_ui_use_nvim_notify = 1
     g.db_ui_show_help = 0
     g.db_ui_show_database_icon = 1
+    g.db_ui_disable_progress_bar = 1
   end,
   keys = {
     {
@@ -35,7 +36,10 @@ return {
   config = function()
     -- when this issue is closed: https://github.com/kristijanhusak/vim-dadbod-ui/issues/344
     autocmd("FileType", {
-      pattern = "jq",
+      pattern = {
+        "jq",
+        "redis",
+      },
       callback = function()
         map("n", "<Leader>W", "<Plug>(DBUI_SaveQuery)", { desc = "DBUI | Save Query", silent = true })
         map("n", "<Leader>E", "<Plug>(DBUI_EditBindParameters)", { desc = "DBUI | Edit Bind Parameters", silent = true })
