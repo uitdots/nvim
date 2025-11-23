@@ -1,4 +1,5 @@
 -- https://github.com/mfussenegger/nvim-dap/wiki/Debug-Adapter-installation
+local sign = vim.fn.sign_define
 
 ---@type LazySpec
 return {
@@ -143,11 +144,11 @@ return {
   },
   ---This plugin doesn't have setup
   config = function()
-    -- TODO: setup it right
-    local sign = vim.fn.sign_define
     sign("DapBreakpoint", { text = "●", texthl = "DapBreakpoint" })
-    sign("DapBreakpointCondition", { text = "●", texthl = "DapBreakpointCondition" })
+    sign("DapBreakpointCondition", { text = "", texthl = "DapBreakpointCondition" })
     sign("DapLogPoint", { text = "◆", texthl = "DapLogPoint" })
+    sign("DapStopped", { text = "", texthl = "DapStopped" })
+    sign("DapBreakpointRejected", { text = "", texthl = "DapBreakpointRejected" })
   end,
   dependencies = {
     {
