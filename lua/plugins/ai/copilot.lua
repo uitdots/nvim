@@ -62,6 +62,7 @@ return {
     },
     filetypes = {
       yaml = true,
+      codecompanion = false,
     },
     server_opts_overrides = {
       settings = {
