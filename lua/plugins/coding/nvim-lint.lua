@@ -1,4 +1,5 @@
 local debounce = require("utils.helpers").debounce
+local bo = vim.bo
 
 ---@type LazySpec
 return {
@@ -10,19 +11,30 @@ return {
     lint.linters_by_ft.gitcommit = {
       "commitlint",
     }
-
-    lint.linters_by_ft["*"] = {
-      "cspell",
-      "codespell",
-    }
   end,
   config = function()
+    local lint = require("lint")
+    ---@type table<string, table<string, true>>
+    local excludes = {
+      spellcheck = {
+        codecompanion = true,
+        bigfile = true,
+      },
+    }
+
     vim.api.nvim_create_autocmd({
       "BufWinEnter",
       "BufWritePost",
+      "CursorHold",
       "InsertLeave",
     }, {
-      callback = debounce(function()
+      ---@param args vim.api.keyset.create_autocmd.callback_args
+      callback = debounce(function(args)
+        local buftype = bo[args.buf].buftype
+        local filetype = bo[args.buf].filetype
+        if buftype ~= "" or excludes.spellcheck[filetype] then
+          return
+        end
         require("lint").try_lint(nil, {
           ignore_errors = true,
         })
@@ -34,7 +46,7 @@ return {
       "BufWritePost",
     }, {
       callback = debounce(function()
-        require("lint").try_lint("codespell", {
+        lint.try_lint("codespell", {
           ignore_errors = true,
         })
       end, 1000),
