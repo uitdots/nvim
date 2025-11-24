@@ -70,11 +70,16 @@ return {
 
     autocmd("FileType", {
       pattern = "codecompanion",
-      callback = function()
-        local win = vim.api.nvim_get_current_win()
-        wo[win].number = false
-        wo[win].relativenumber = false
-        wo[win].foldenable = false
+      callback = function(arg)
+        local buf = arg.buf
+        for _, win in ipairs(vim.api.nvim_list_wins()) do
+          if vim.api.nvim_win_get_buf(win) == buf then
+            local _wo = wo[win]
+            _wo.number = false
+            _wo.relativenumber = false
+            _wo.foldenable = false
+          end
+        end
       end,
       desc = "Window Options for CodeCompanion",
     })
