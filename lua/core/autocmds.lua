@@ -2,18 +2,27 @@ local fn = vim.fn
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local opt_local = vim.opt_local
+local bo = vim.bo
 local preferences = require("preferences")
 
 -- General Settings
 local general = augroup("General", {})
 
 local indent_opts = preferences.options.indent
+
 for chars, fts in pairs(indent_opts.space) do
   autocmd("FileType", {
     desc = string.format("Space %s", chars),
     pattern = fts,
-    command = string.format("setlocal tabstop=%s shiftwidth=%s expandtab", chars, chars, chars),
     group = general,
+    callback = function(args)
+      local buf = args.buf
+      ---@diagnostic disable-next-line: assign-type-mismatch
+      bo[buf].tabstop = tonumber(chars)
+      ---@diagnostic disable-next-line: assign-type-mismatch
+      bo[buf].shiftwidth = tonumber(chars)
+      bo[buf].expandtab = true
+    end,
   })
 end
 
@@ -21,8 +30,19 @@ for chars, fts in pairs(indent_opts.tab) do
   autocmd("FileType", {
     desc = string.format("Tab %s", chars),
     pattern = fts,
-    command = string.format([[setlocal tabstop=%s shiftwidth=%s noexpandtab listchars=tab:\ \ ,lead:·]], chars, chars, chars),
     group = general,
+    callback = function(args)
+      local buf = args.buf
+      ---@diagnostic disable-next-line: assign-type-mismatch
+      bo[buf].tabstop = tonumber(chars)
+      ---@diagnostic disable-next-line: assign-type-mismatch
+      bo[buf].shiftwidth = tonumber(chars)
+      bo[buf].expandtab = false
+      vim.opt_local.listchars = {
+        tab = "  ",
+        lead = "·",
+      }
+    end,
   })
 end
 
