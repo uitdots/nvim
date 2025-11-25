@@ -41,9 +41,10 @@ return {
     }, {
       ---@param args vim.api.keyset.create_autocmd.callback_args
       callback = debounce(function(args)
-        local buftype = bo[args.buf].buftype
-        local filetype = bo[args.buf].filetype
-        if buftype ~= "" or excludes.spellcheck[filetype] then
+        if not vim.api.nvim_buf_is_loaded(args.buf) then
+          return
+        end
+        if bo[args.buf].buftype ~= "" or excludes.spellcheck[bo[args.buf].filetype] then
           return
         end
         lint.try_lint("codespell", {
