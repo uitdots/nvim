@@ -28,13 +28,7 @@ return {
       "CursorHold",
       "InsertLeave",
     }, {
-      ---@param args vim.api.keyset.create_autocmd.callback_args
-      callback = debounce(function(args)
-        local buftype = bo[args.buf].buftype
-        local filetype = bo[args.buf].filetype
-        if buftype ~= "" or excludes.spellcheck[filetype] then
-          return
-        end
+      callback = debounce(function()
         require("lint").try_lint(nil, {
           ignore_errors = true,
         })
@@ -45,7 +39,13 @@ return {
       "BufWinEnter",
       "BufWritePost",
     }, {
-      callback = debounce(function()
+      ---@param args vim.api.keyset.create_autocmd.callback_args
+      callback = debounce(function(args)
+        local buftype = bo[args.buf].buftype
+        local filetype = bo[args.buf].filetype
+        if buftype ~= "" or excludes.spellcheck[filetype] then
+          return
+        end
         lint.try_lint("codespell", {
           ignore_errors = true,
         })
