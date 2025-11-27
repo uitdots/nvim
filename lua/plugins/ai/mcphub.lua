@@ -21,7 +21,7 @@ return {
       },
     },
   },
-  build = "npm install -g mcp-hub@latest",
+  build = is_executable("mise") and "mise upgrade npm:mcp-hub@latest" or "npm install -g mcp-hub@latest",
   dependencies = "nvim-lua/plenary.nvim",
   specs = {
     {

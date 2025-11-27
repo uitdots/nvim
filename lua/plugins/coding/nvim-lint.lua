@@ -38,6 +38,8 @@ return {
     vim.api.nvim_create_autocmd({
       "BufWinEnter",
       "BufWritePost",
+      "CursorHold",
+      "InsertLeave",
     }, {
       ---@param args vim.api.keyset.create_autocmd.callback_args
       callback = debounce(function(args)
