@@ -102,7 +102,7 @@ return {
       silent = true,
     },
     {
-      "<leader>gd",
+      "<leader>gD",
       function()
         require("gitsigns").diffthis()
       end,
@@ -110,7 +110,7 @@ return {
       silent = true,
     },
     {
-      "<leader>gD",
+      "<leader>g<C-d>",
       function()
         require("gitsigns").diffthis("~")
       end,
