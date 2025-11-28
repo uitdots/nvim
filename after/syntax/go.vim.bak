@@ -5,7 +5,7 @@
 syn cluster goCommentGroup add=goSwagAnnotation
 
 " Swag annotation regions - match the entire comment line including "//"
-syn match goSwagAnnotation "//\s*@\(title\|version\|description\|tag\|termsOfService\|contact\|license\|host\|BasePath\|accept\|produce\|query\|schemes\|externalDocs\|x-\|securityDefinitions\|securitydefinitions\|in\|name\|tokenUrl\|authorizationurl\|scope\|Summary\|Description\|ID\|Tags\|Accept\|Produce\|Security\|deprecated\|Param\|Success\|Failure\|response\|Header\|Router\|deprecatedrouter\)\S*.*$" contains=goSwagComment,swagGeneral,swagOperation,swagParam,swagSecurity,swagRouter,swagStatus contained containedin=goComment
+syn match goSwagAnnotation "//\s*@\(title\|version\|description\|tag\|termsOfService\|contact\|license\|host\|BasePath\|accept\|produce\|query\|schemes\|externalDocs\|x-\|securityDefinitions\|securitydefinitions\|in\|name\|tokenUrl\|authorizationurl\|scope\|Summary\|Description\|ID\|Tags\|Accept\|Produce\|Security\|deprecated\|Param\|Success\|Failure\|response\|Header\|Router\|deprecatedrouter\).*$" contains=goSwagComment,swagGeneral,swagOperation,swagParam,swagSecurity,swagRouter,swagStatus contained containedin=goComment
 syn match goSwagComment "^//\s*" contained
 
 " ============================================================================
@@ -204,42 +204,3 @@ hi def link swagRouterMethod Function
 " Godoc
 hi def link swagGodocText Comment
 hi def link swagGodocKeyword Bold
-
-" ============================================================================
-" Neovim-specific configuration to override LSP and Tree-sitter
-" ============================================================================
-
-" Force syntax highlighting priority (add this at the end of the file)
-if has('nvim')
-  " Set syntax priority higher than semantic tokens
-  syn sync fromstart
-
-  " Ensure our highlight groups take precedence
-  hi! link goSwagComment Comment
-  hi! link swagGeneralKeyword Type
-  hi! link swagGeneralValue String
-  hi! link swagSecurityKeyword Type
-  hi! link swagSecurityValue Identifier
-  hi! link swagOperationKeyword Type
-  hi! link swagOperationValue String
-  hi! link swagParamKeyword Type
-  hi! link swagParamName Identifier
-  hi! link swagParamLocation Function
-  hi! link swagParamType Keyword
-  hi! link swagParamRequired Constant
-  hi! link swagParamDesc String
-  hi! link swagParamAttributeName Function
-  hi! link swagParamAttributeValue Constant
-  hi! link swagStatusKeyword Type
-  hi! link swagStatusCode Number
-  hi! link swagStatusBrace Special
-  hi! link swagStatusType Keyword
-  hi! link swagStatusModel Type
-  hi! link swagStatusComment String
-  hi! link swagRouterKeyword Type
-  hi! link swagRouterPath String
-  hi! link swagRouterBracket Special
-  hi! link swagRouterMethod Function
-  hi! link swagGodocText Comment
-  hi! link swagGodocKeyword Bold
-endif
