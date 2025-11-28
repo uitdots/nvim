@@ -51,19 +51,19 @@ return {
       pattern = "CodeCompanionRequest*",
       callback = function(request)
         if request.match == "CodeCompanionRequestStarted" then
-          vim.notify("Request started...", vim.log.levels.INFO, {
-            title = "CodeCompanion",
-            icon = "󱙺",
-            id = "codecompanion_request_start",
-          })
-          -- vim.g.codecompanion_requesting = true
+          -- vim.notify("Request started...", vim.log.levels.INFO, {
+          --   title = "CodeCompanion",
+          --   icon = "󱙺",
+          --   id = "codecompanion_request_start",
+          -- })
+          vim.g.codecompanion_requesting = true
         elseif request.match == "CodeCompanionRequestFinished" then
-          vim.notify("Request finished", vim.log.levels.INFO, {
-            title = "CodeCompanion",
-            icon = "󱙺",
-            id = "codecompanion_request_end",
-          })
-          -- vim.g.codecompanion_requesting = nil
+          -- vim.notify("Request finished", vim.log.levels.INFO, {
+          --   title = "CodeCompanion",
+          --   icon = "󱙺",
+          --   id = "codecompanion_request_end",
+          -- })
+          vim.g.codecompanion_requesting = nil
         end
       end,
     })

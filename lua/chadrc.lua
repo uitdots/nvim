@@ -39,7 +39,7 @@ M.ui = {
       "formatters",
       "separator",
       -- "python_venv",
-      -- "codecompanion",
+      "codecompanion",
       "macro_recording",
       "auto_format",
       "end_of_line",
