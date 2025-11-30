@@ -241,6 +241,10 @@ M.base46.hl_add = {
   NeotestExpandMarker = { fg = "grey" },
   NeotestMarked = { fg = "dark_purple" },
   NeotestWinSelect = { bg = "cyan" },
+
+  --- nvim-corage
+  CoverageCovered = { fg = "green", bg = "none" },
+  CoverageUncovered = { fg = "red", bg = "none" },
 }
 
 return M
