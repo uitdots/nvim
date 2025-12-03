@@ -172,7 +172,9 @@ M.base46.hl_override = {
 
   Visual = M.base46.transparency and { bg = "one_bg3" } or nil,
 
-  FlashLabel = { bg = "red", fg = "black" },
+  FlashLabel = { bg = "grey", fg = "white" },
+  FlashMatch = { bg = "blue", fg = "black" },
+  FlashCurrent = { bg = "yellow", fg = "black" },
 }
 
 M.base46.hl_add = {
