@@ -168,7 +168,7 @@ M.base46 = {
 }
 
 M.base46.hl_override = {
-  Search = { bg = "blue" },
+  Search = M.base46.theme == "catppuccin" and { bg = "blue" } or nil,
 
   Visual = M.base46.transparency and { bg = "one_bg3" } or nil,
 

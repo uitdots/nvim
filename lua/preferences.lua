@@ -43,6 +43,9 @@ local M = {
         },
         [8] = {
           "go",
+          "gomod",
+          "gosum",
+          "gowork",
         },
       },
     },
