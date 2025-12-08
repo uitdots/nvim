@@ -70,7 +70,7 @@ return {
         map("n", "gO", Snacks.picker.lsp_symbols, { desc = "LSP | Symbols", buffer = bufnr })
         -- map("n", "grt", Snacks.picker.lsp_type_definitions, { desc = "LSP | Go to Type Definition", buffer = bufnr })
         map("n", "gro", Snacks.picker.lsp_outgoing_calls, { desc = "LSP | Outgoing Calls", buffer = bufnr })
-        map("n", "grI", Snacks.picker.lsp_incoming_calls, { desc = "LSP | Incomming Calls", buffer = bufnr })
+        map("n", "grI", Snacks.picker.lsp_incoming_calls, { desc = "LSP | Incoming Calls", buffer = bufnr })
       end,
     })
   end,
