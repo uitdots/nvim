@@ -23,7 +23,7 @@ M.ui = {
   statusline = {
     theme = "default",
     separator_style = "default",
-    ---NOTE: The more modules, the more it run everytime neovim rerender. use only you need
+    ---NOTE: The more modules, the more it run every time neovim rerender. use only you need
     order = {
       "mode",
       "file",
@@ -215,18 +215,18 @@ M.base46.hl_add = {
   MiniIndentscopeSymbol = { link = "IblChar" },
 
   ---Glance
-  GlanceBorderTop = { link = "FloatBorder", bg = "none" },
-  GlanceBorderBottom = { link = "FloatBorder", bg = "none" },
-  GlancePreviewBorderBottom = { link = "FloatBorder", bg = "none" },
-  GlancePreviewEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
-  GlanceListEndOfBuffer = { fg = "one_bg", bg = "one_bg" },
-  GlanceWinBarFilepath = { fg = "light_grey", bg = "one_bg2" },
-  GlanceWinBarFilename = { fg = "base05", bg = "one_bg2" },
-  GlanceWinBarTitle = { fg = "green", bg = "one_bg2" },
+  GlanceBorderTop = { fg = "line", bg = "none" },
+  GlanceBorderBottom = { fg = "line", bg = "none" },
+  GlancePreviewBorderBottom = { fg = "line", bg = "none" },
+  GlancePreviewEndOfBuffer = { fg = "black2", bg = "black2" },
+  GlanceListEndOfBuffer = { fg = "black2", bg = "black2" },
+  GlanceWinBarFilepath = { fg = "light_grey", bg = "black2" },
+  GlanceWinBarFilename = { fg = "base05", bg = "black2" },
+  GlanceWinBarTitle = { fg = "green", bg = "black2" },
   GlanceListCursorLine = { bg = "grey" },
-  GlanceListNormal = { bg = "one_bg", fg = "base05" },
+  GlanceListNormal = { bg = "black2", fg = "base05" },
   GlanceListFilepath = { fg = "light_grey" },
-  GlancePreviewNormal = { bg = "black2" },
+  GlancePreviewNormal = { bg = "black" },
 
   ---Neotest
   NeotestPassed = { fg = "green" },
