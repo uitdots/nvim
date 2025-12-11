@@ -18,11 +18,11 @@ return {
       keymaps = {
         select_textobject = {
           ["a<C-s>"] = { query = "@local.scope", query_group = "locals", desc = "TSTextObject | Language Scope" },
-          ["a<M-c>"] = { query = "@conditional.outer", desc = "TSTextObject | Arround Condition" },
-          ["aC"] = { query = "@comment.outer", desc = "TSTextObject | Arround Comment" },
+          ["a<M-c>"] = { query = "@conditional.outer", desc = "TSTextObject | Around Condition" },
+          ["aC"] = { query = "@comment.outer", desc = "TSTextObject | Around Comment" },
           ["aa"] = { query = "@parameter.outer", desc = "TSTextObject | Outer Argument/Parameter" },
-          ["ac"] = { query = "@class.outer", desc = "TSTextObject | Arround Class" },
-          ["af"] = { query = "@function.outer", desc = "TSTextObject | Arround Function/Method" },
+          ["ac"] = { query = "@class.outer", desc = "TSTextObject | Around Class" },
+          ["af"] = { query = "@function.outer", desc = "TSTextObject | Around Function/Method" },
           ["i<M-c>"] = { query = "@conditional.inner", desc = "TSTextObject | Inner Condition" },
           ["iC"] = { query = "@comment.outer", desc = "TSTextObject | Inner Comment" },
           ["ia"] = { query = "@parameter.inner", desc = "TSTextObject | Inner Argument/Parameter" },
@@ -52,7 +52,7 @@ return {
           ["]c"] = { query = "@class.outer", desc = "TSTextObject | Next Class Start" },
           ["]f"] = { query = "@function.outer", desc = "TSTextObject | Next Function/Method Start" },
           ["]r"] = { query = "@return.outer", desc = "TSTextObject | Next Return" },
-          ["]z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Next Fold Start" },
+          ["]F"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Next Fold Start" },
         },
         goto_previous_start = {
           ["[<C-l>"] = { query = "@loop.*", desc = "TSTextObject | Previous Loop Start" },
@@ -62,7 +62,7 @@ return {
           ["[c"] = { query = "@class.outer", desc = "TSTextObject | Previous Class Start" },
           ["[f"] = { query = "@function.outer", desc = "TSTextObject | Previous Function/Method Start" },
           ["[r"] = { query = "@return.outer", desc = "TSTextObject | Previous Return" },
-          ["[z"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Previous Fold Start" },
+          ["[F"] = { query = "@fold", query_group = "folds", desc = "TSTextObject | Previous Fold Start" },
         },
       },
     },
