@@ -23,7 +23,15 @@ return {
                 "-race",
                 "-count=1",
                 "-coverprofile=" .. vim.fn.getcwd() .. "/coverage.out",
+                "-tags=integration",
               },
+              go_list_args = { "-tags=integration" },
+              dap_go_opts = {
+                delve = {
+                  build_flags = { "-tags=integration" },
+                },
+              },
+              testify_enabled = true,
             }
             table.insert(opts.adapters, require("neotest-golang")(adapter_opts))
             return opts

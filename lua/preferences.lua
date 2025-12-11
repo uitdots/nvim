@@ -58,6 +58,7 @@ local M = {
         "log",
         "markdown",
         "mason",
+        "neotest-summary",
       },
     },
 
