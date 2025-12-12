@@ -16,7 +16,7 @@ return {
             ---@diagnostic disable-next-line: missing-fields
             local adapter_opts = {
               env = {
-                CGO_ENABLED = 1,
+                CGO_ENABLED = "1",
               },
               go_test_args = {
                 "-v",
@@ -31,7 +31,6 @@ return {
                   build_flags = { "-tags=integration" },
                 },
               },
-              testify_enabled = true,
             }
             table.insert(opts.adapters, require("neotest-golang")(adapter_opts))
             return opts
