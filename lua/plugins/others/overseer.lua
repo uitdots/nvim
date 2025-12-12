@@ -5,20 +5,14 @@ return {
     "OverseerOpen",
     "OverseerClose",
     "OverseerToggle",
-    "OverseerSaveBundle",
-    "OverseerLoadBundle",
-    "OverseerDeleteBundle",
-    "OverseerRunCmd",
     "OverseerRun",
-    "OverseerInfo",
-    "OverseerBuild",
-    "OverseerQuickAction",
+    "OverseerShell",
     "OverseerTaskAction",
-    "OverseerClearCache",
   },
   ---You must not declare to patch the dap here, see below to patch dap
   ---@module 'overseer'
   ---@type overseer.Config
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
     templates = { "builtin", "default" },
     component_aliases = {
@@ -35,62 +29,32 @@ return {
   keys = {
     {
       "<leader>rr",
-      "<cmd>OverseerRun<cr>",
+      "<cmd>OverseerRun<CR>",
       desc = "Overseer | Run",
       silent = true,
     },
     {
       "<leader>rt",
-      "<cmd>OverseerToggle<cr>",
+      "<cmd>OverseerToggle<CR>",
       desc = "Overseer | Toggle",
       silent = true,
     },
     {
-      "<leader>ri",
-      "<cmd>OverseerInfo<cr>",
-      desc = "Overseer | Info",
-      silent = true,
-    },
-    {
-      "<leader>rb",
-      "<cmd>OverseerBuild<cr>",
-      desc = "Overseer | Build",
-      silent = true,
-    },
-    {
-      "<leader>rA",
-      "<cmd>OverseerTaskAction<cr>",
-      desc = "Overseer | Run Task Action",
-      silent = true,
-    },
-    {
       "<leader>ra",
-      "<cmd>OverseerQuickAction<cr>",
-      desc = "Overseer | Run quick action",
+      "<cmd>OverseerTaskAction<CR>",
+      desc = "Overseer | Task Action",
       silent = true,
     },
     {
       "<leader>rs",
-      "<cmd>OverseerSaveBundle<cr>",
-      desc = "Overseer | Save Bundle",
+      "<cmd>OverseerShell<CR>",
+      desc = "Overseer | Task Action",
       silent = true,
     },
     {
-      "<leader>rL",
-      "<cmd>OverseerLoadBundle<cr>",
-      desc = "Overseer | Load Bundle",
-      silent = true,
-    },
-    {
-      "<leader>rL",
-      "<cmd>OverseerRestartLast<cr>",
+      "<leader>rl",
+      "<cmd>OverseerRestartLast<CR>",
       desc = "Overseer | Restart Last",
-      silent = true,
-    },
-    {
-      "<leader>rd",
-      "<cmd>OverseerDeleteBundle<cr>",
-      desc = "Overseer | Delete Bundle",
       silent = true,
     },
   },
