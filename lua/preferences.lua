@@ -51,14 +51,14 @@ local M = {
     },
 
     wrap = {
-      default = true,
+      default = false,
       revert = {
-        "grug-far",
-        "lazy",
-        "log",
-        "markdown",
-        "mason",
-        "neotest-summary",
+        -- "grug-far",
+        -- "lazy",
+        -- "log",
+        -- "markdown",
+        -- "mason",
+        -- "neotest-summary",
       },
     },
 
