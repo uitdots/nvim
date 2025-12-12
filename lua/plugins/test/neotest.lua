@@ -10,6 +10,12 @@ return {
     output = {
       open_on_run = true,
     },
+    discovery = {
+      enabled = false,
+    },
+    summary = {
+      animated = false,
+    },
   },
   keys = {
     {
