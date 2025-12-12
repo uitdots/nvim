@@ -110,14 +110,16 @@ autocmd("FileType", {
 -- })
 
 local wrap_opts = preferences.options.wrap
-autocmd("FileType", {
-  pattern = wrap_opts.revert,
-  callback = function()
-    opt_local.wrap = not wrap_opts.default
-  end,
-  group = general,
-  desc = string.format("%s Wrap in these filetypes", wrap_opts.default and "Disable" or "Enable"),
-})
+if #wrap_opts.revert ~= 0 then
+  autocmd("FileType", {
+    pattern = wrap_opts.revert,
+    callback = function()
+      opt_local.wrap = not wrap_opts.default
+    end,
+    group = general,
+    desc = string.format("%s Wrap in these filetypes", wrap_opts.default and "Disable" or "Enable"),
+  })
+end
 
 autocmd("BufReadPre", {
   desc = "Disable inlay hint file patterns",

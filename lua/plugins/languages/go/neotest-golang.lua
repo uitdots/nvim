@@ -1,3 +1,5 @@
+local is_executable = require("utils.executable").is_executable
+
 ---@type LazySpec
 return {
   "nvim-neotest/neotest",
@@ -15,6 +17,7 @@ return {
             ---@type NeotestGolangOptions
             ---@diagnostic disable-next-line: missing-fields
             local adapter_opts = {
+              runner = is_executable("gotestsum") and "gotestsum" or "go",
               env = {
                 CGO_ENABLED = "1",
               },
