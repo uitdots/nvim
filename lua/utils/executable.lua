@@ -1,3 +1,5 @@
+local fn = vim.fn
+
 local M = {}
 
 ---Return the full executable path if exist in Mason path or in $PATH
@@ -13,14 +15,14 @@ function M.get_executable(path, opts)
 
   if masons then
     for mason in ipairs(masons) do
-      local mason_file = vim.fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
+      local mason_file = fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
       if mason_file ~= "" or #mason_file ~= 0 then
         return mason_file
       end
     end
   end
 
-  local full_path = vim.fn.globpath(vim.o.runtimepath, path, false, list)
+  local full_path = fn.globpath(vim.o.runtimepath, path, false, list)
   if full_path ~= "" or #full_path ~= 0 then
     return full_path
   end
@@ -30,18 +32,15 @@ end
 ---@param executable string executable file
 ---@return string | nil
 function M.get_path_from_executable(executable)
-  local path = vim.fn.fnamemodify(vim.fn.exepath(executable), ":h")
+  local path = fn.fnamemodify(vim.fn.exepath(executable), ":h")
   return path == "." and nil or path
 end
 
 ---Check if executable exist in PATH or Mason
----@param executable string?
+---@param executable string
 ---@return boolean
 function M.is_executable(executable)
-  if executable == nil or executable == "" then
-    return false
-  end
-  return vim.fn.executable(executable) == 1
+  return fn.executable(executable) == 1
 end
 
 ---@type table<string, boolean>
@@ -62,7 +61,7 @@ end
 ---@param prompt string
 ---@param callback fun(selected_executable: string)
 function M.executable_picker(prompt, callback)
-  local executables = vim.fn.systemlist({ "fd", "--hidden", "--no-ignore", "--type", "x" })
+  local executables = fn.systemlist({ "fd", "--hidden", "--no-ignore", "--type", "x" })
 
   if #executables == 0 then
     vim.notify("No executable files found", vim.log.levels.WARN)

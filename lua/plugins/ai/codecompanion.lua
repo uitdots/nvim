@@ -46,6 +46,7 @@ return {
   },
   init = function()
     vim.cmd("cab cc CodeCompanion")
+    vim.g.codecompanion_yolo_mode = true
 
     autocmd({ "User" }, {
       pattern = "CodeCompanionRequest*",

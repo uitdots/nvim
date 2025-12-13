@@ -67,7 +67,7 @@ return {
       function()
         require("sidekick.cli").close()
       end,
-      desc = "Sidekick | Dettach CLI Session",
+      desc = "Sidekick | Detach CLI Session",
     },
     {
       "<leader>aT",
