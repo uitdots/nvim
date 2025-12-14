@@ -1,5 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local wo = vim.wo
+local fn = vim.fn
 
 ---@type LazySpec
 return {
@@ -86,7 +87,7 @@ return {
     })
   end,
   opts = {
-    strategies = {
+    interaction = {
       chat = {
         slash_commands = {
           image = {
@@ -108,19 +109,18 @@ return {
         },
       },
     },
-    prompt_library = {
-      ["Justfile docs"] = {
-        strategy = "chat",
-        description = "Ask about Justfile documentation",
-        opts = {},
-        context = {
-          {
-            type = "url",
-            url = "https://raw.githubusercontent.com/casey/just/refs/heads/master/README.md",
-          },
+    rules = {
+      opts = {
+        chat = {
+          enabled = false,
         },
-        prompts = {
-          {},
+      },
+    },
+    prompt_library = {
+      markdown = {
+        dirs = {
+          fn.getcwd() .. "/.prompts",
+          fn.stdpath("config") .. "/prompts",
         },
       },
     },
