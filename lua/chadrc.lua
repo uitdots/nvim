@@ -174,7 +174,7 @@ M.base46.hl_override = {
 }
 
 if M.base46.theme == "catppuccin" then
-  M.base46.hl_override.Search = { fg = "NONE", bg = "one_bg3" }
+  M.base46.hl_override.Search = { fg = "NONE", bg = "one_bg2" }
 end
 
 M.base46.hl_add = {
