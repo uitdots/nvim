@@ -15,6 +15,14 @@ return {
       ["mason-null-ls"] = false,
       ["mason-nvim-dap"] = false,
     },
+    ---@type Mason.Package[]
+    ensure_installed = {
+      "typos",
+      "typos-lsp",
+    },
+  },
+  opts_extend = {
+    "ensure_installed",
   },
   dependencies = "mason-org/mason.nvim",
 }
