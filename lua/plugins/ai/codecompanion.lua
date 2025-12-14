@@ -80,6 +80,7 @@ return {
             _wo.number = false
             _wo.relativenumber = false
             _wo.foldenable = false
+            _wo.signcolumn = "no"
           end
         end
       end,
