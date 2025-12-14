@@ -168,14 +168,14 @@ M.base46 = {
 }
 
 M.base46.hl_override = {
-  Search = M.base46.theme == "catppuccin" and { bg = "blue" } or nil,
-
-  Visual = M.base46.transparency and { bg = "one_bg3" } or nil,
-
   FlashLabel = { bg = "grey", fg = "white" },
   FlashMatch = { bg = "blue", fg = "black" },
   FlashCurrent = { bg = "yellow", fg = "black" },
 }
+
+if M.base46.theme == "catppuccin" then
+  M.base46.hl_override.Search = { fg = "white", bg = "one_bg3" }
+end
 
 M.base46.hl_add = {
   FloatBorder = { fg = "grey_fg" },
