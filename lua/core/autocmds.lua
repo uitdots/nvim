@@ -109,6 +109,15 @@ autocmd("FileType", {
 --   desc = "Enable Spell check in these filetypes",
 -- })
 
+autocmd("FileType", {
+  pattern = {
+    "codecompanion",
+  },
+  command = "setlocal nospell",
+  group = general,
+  desc = "Disable Spell check in these filetypes",
+})
+
 local wrap_opts = preferences.options.wrap
 if #wrap_opts.revert ~= 0 then
   autocmd("FileType", {
