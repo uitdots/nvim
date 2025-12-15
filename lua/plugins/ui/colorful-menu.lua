@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "xzbdmw/colorful-menu.nvim",
-  enable = false,
   config = true,
   specs = {
     {
