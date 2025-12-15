@@ -128,11 +128,6 @@ return {
       },
     },
     completion = {
-      menu = {
-        draw = {
-          treesitter = { "lsp" },
-        },
-      },
       documentation = {
         treesitter_highlighting = true,
       },
