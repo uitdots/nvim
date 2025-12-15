@@ -81,6 +81,7 @@ return {
             _wo.relativenumber = false
             _wo.foldenable = false
             _wo.signcolumn = "no"
+            _wo.foldcolumn = "0"
           end
         end
       end,
