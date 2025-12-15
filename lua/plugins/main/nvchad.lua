@@ -72,7 +72,7 @@ return {
     {
       "<leader><C-t>v",
       function()
-        require("nvchad.term").toggle({ pos = "vsp", id = "veritcal" })
+        require("nvchad.term").toggle({ pos = "vsp", id = "vertical" })
       end,
       desc = "Terminal | Vertical Toggle",
       silent = true,
@@ -166,6 +166,7 @@ return {
         opts = opts or {}
         opts.completion = opts.completion or {}
         opts.completion.menu = vim.tbl_deep_extend("force", opts.completion.menu or {}, require("nvchad.blink").menu)
+        opts.completion.menu.scrollbar = true
         return opts
       end,
     },
