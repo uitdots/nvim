@@ -4,6 +4,7 @@ return {
   specs = {
     {
       "Davidyz/codecompanion-dap.nvim",
+      enabled = false,
       dependencies = "mfussenegger/nvim-dap",
       specs = {
         {
