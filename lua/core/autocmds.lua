@@ -97,26 +97,26 @@ autocmd("FileType", {
   desc = "Disable New Line Comment, add '.-' to iskeyword",
 })
 
--- autocmd("FileType", {
---   pattern = {
---     "gitcommit",
---     "markdown",
---     "tex",
---     "text",
---   },
---   command = "setlocal spell",
---   group = general,
---   desc = "Enable Spell check in these filetypes",
--- })
-
 autocmd("FileType", {
   pattern = {
-    "codecompanion",
+    "gitcommit",
+    "markdown",
+    "tex",
+    "text",
   },
-  command = "setlocal nospell",
+  command = "setlocal spell",
   group = general,
-  desc = "Disable Spell check in these filetypes",
+  desc = "Enable Spell check in these filetypes",
 })
+
+-- autocmd("FileType", {
+--   pattern = {
+--     "codecompanion",
+--   },
+--   command = "setlocal nospell",
+--   group = general,
+--   desc = "Disable Spell check in these filetypes",
+-- })
 
 local wrap_opts = preferences.options.wrap
 if #wrap_opts.revert ~= 0 then

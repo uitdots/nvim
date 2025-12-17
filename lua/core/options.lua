@@ -91,7 +91,7 @@ o.confirm = true
 o.exrc = true
 o.secure = true
 o.spelloptions = "camel"
-o.spell = true
+-- o.spell = true
 
 -- Uncomment these options to enable pwsh for Windows
 -- o.shell = vim.fn.executable "pwsh" and "pwsh" or "powershell"
