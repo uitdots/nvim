@@ -2,5 +2,9 @@
 return {
   "sQVe/sort.nvim",
   event = "VeryLazy",
-  config = true,
+  opts = {
+    mappings = {
+      motion = false,
+    },
+  },
 }
