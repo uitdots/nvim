@@ -120,6 +120,9 @@ return {
     enabled = is_windows,
   },
   {
+    import = "plugins.languages.proto",
+  },
+  {
     import = "plugins.languages.python",
   },
   {
