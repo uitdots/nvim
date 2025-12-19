@@ -55,6 +55,7 @@ return {
   },
   {
     import = "plugins.languages.groovy",
+    enabled = false,
   },
   {
     import = "plugins.languages.hcl",
@@ -111,6 +112,10 @@ return {
   },
   {
     import = "plugins.languages.nix",
+    enabled = false,
+  },
+  {
+    import = "plugins.languages.openapi",
   },
   {
     import = "plugins.languages.plantuml",
