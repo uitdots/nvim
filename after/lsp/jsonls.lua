@@ -1,5 +1,10 @@
 ---@type vim.lsp.Config
 return {
+  filetypes = {
+    "json",
+    "json.openapi",
+    "jsonc",
+  },
   init_options = {
     provideFormatter = false,
   },

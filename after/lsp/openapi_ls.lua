@@ -3,6 +3,5 @@ return {
   cmd = { "openapi-language-server" },
   filetypes = {
     "yaml.openapi",
-    "json.openapi",
   },
 }
