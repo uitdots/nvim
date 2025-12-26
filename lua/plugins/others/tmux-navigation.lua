@@ -1,10 +1,10 @@
-local filter_availabled_external = require("preferences").options.others.filter_availabled_external
+local filter_available_external = require("preferences").options.others.filter_available_external
 local is_executable = require("utils.executable").is_executable
 
 ---@type LazySpec
 return {
   "alexghergh/nvim-tmux-navigation",
-  enabled = not filter_availabled_external or is_executable("tmux"),
+  enabled = not filter_available_external or is_executable("tmux"),
   cond = vim.env.TMUX ~= nil,
   event = "VeryLazy",
   opts = {

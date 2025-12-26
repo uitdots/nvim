@@ -1,10 +1,10 @@
-local filter_availabled_external = require("preferences").options.others.filter_availabled_external
+local filter_available_external = require("preferences").options.others.filter_available_external
 local is_executable = require("utils.executable").is_executable
 
 ---@type LazySpec
 return {
   "mikavilpas/yazi.nvim",
-  enabled = not filter_availabled_external or is_executable("yazi"),
+  enabled = not filter_available_external or is_executable("yazi"),
   keys = {
     {
       "<leader>f<C-y>",

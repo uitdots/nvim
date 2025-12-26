@@ -80,7 +80,7 @@ local M = {
     others = {
       auto_format_enabled = true,
       ai_suggestion_enabled = true,
-      filter_availabled_external = true,
+      filter_available_external = true,
     },
   },
 }

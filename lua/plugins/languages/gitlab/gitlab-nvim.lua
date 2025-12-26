@@ -4,7 +4,7 @@
 return {
   "harrisoncramer/gitlab.nvim",
   enabled = false,
-  -- enabled = not filter_availabled_external or is_executable("go"),
+  -- enabled = not filter_available_external or is_executable("go"),
   build = function()
     require("gitlab.server").build(true)
   end,

@@ -1,5 +1,5 @@
 local command = vim.api.nvim_create_user_command
-local filter_availabled_external = require("preferences").options.others.filter_availabled_external
+local filter_available_external = require("preferences").options.others.filter_available_external
 local is_executable = require("utils.executable").is_executable_cache
 
 local ignore_format_patterns = {
@@ -125,7 +125,7 @@ return {
   ---@module 'conform'
   ---@param opts conform.setupOpts
   config = function(_, opts)
-    if filter_availabled_external then
+    if filter_available_external then
       filter_available(opts)
     end
 

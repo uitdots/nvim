@@ -1,4 +1,4 @@
-local filter_availabled_external = require("preferences").options.others.filter_availabled_external
+local filter_available_external = require("preferences").options.others.filter_available_external
 local is_executable = require("utils.executable").is_executable
 local lsp = require("configs.lsp")
 local lsps = require("preferences").lsp.force
@@ -13,7 +13,7 @@ end
 
 local function setup_custom_lsps()
   for _, server_name in pairs(lsps) do
-    if filter_availabled_external == false or filter_executable(server_name) then
+    if filter_available_external == false or filter_executable(server_name) then
       vim.lsp.config(server_name, lsp.opts)
       vim.lsp.enable(server_name)
     end

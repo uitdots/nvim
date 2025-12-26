@@ -52,4 +52,4 @@
 ---Enable AI Suggestion on typing by default
 ---@field ai_suggestion_enabled boolean
 ---Filter out the lsps, linters, formatters,... (if it can)
----@field filter_availabled_external boolean
+---@field filter_available_external boolean
