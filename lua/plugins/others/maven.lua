@@ -9,9 +9,9 @@ return {
   },
   keys = {
     {
-      "<localleader>lm",
+      "<localleader>jm",
       "<cmd>Maven<CR>",
-      desc = "LPS | Maven",
+      desc = "Java | Maven",
     },
   },
   dependencies = "nvim-lua/plenary.nvim",

@@ -4,7 +4,9 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
+      "checkstyle",
       "java-debug-adapter",
+      "jdtls",
     },
   },
   opts_extend = {

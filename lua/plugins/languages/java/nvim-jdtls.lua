@@ -33,8 +33,8 @@ return {
 
     local lombok_jar = get_executable("lombok.jar", {
       masons = {
-        "share/lombok-nightly",
         "packages/jdtls",
+        "share/lombok-nightly",
       },
     })
     if lombok_jar then
@@ -118,12 +118,6 @@ return {
     ---@type vim.lsp.Config
     local jdtls_lspconfig = {
       cmd = cmd,
-      workspace_required = true,
-      root_markers = {
-        "gradlew",
-        ".git",
-        "mvnw",
-      },
       settings = {
         java = {
           inlayHints = {
@@ -144,6 +138,17 @@ return {
           },
         },
       },
+      handlers = {
+        -- https://github.com/CcccX2017/nvim/blob/d6bda5614c12926b92e88bc5bf48f069bc024da7/lua/plugins/java.lua#L34
+        -- https://www.reddit.com/r/neovim/comments/1jbzqp5/comment/mi4ox6v/
+        ["$/progress"] = function(_, result, ctx)
+          local message = result.value.message or ""
+          if message:find("Validate documents") or message:find("Publish Diagnostics") or message:find("Building") then
+            return
+          end
+          return vim.lsp.handlers["$/progress"](_, result, ctx)
+        end,
+      },
       capabilities = lsp.capabilities,
       on_attach = on_attach,
       on_init = lsp.on_init,
@@ -152,7 +157,7 @@ return {
       },
     }
 
-    opts.lspconfig = vim.tbl_deep_extend("force", opts.lspconfig, jdtls_lspconfig)
+    opts.lspconfig = vim.tbl_deep_extend("force", opts.lspconfig, vim.lsp.config.jdtls, jdtls_lspconfig)
 
     return opts
   end,

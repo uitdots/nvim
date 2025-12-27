@@ -32,6 +32,7 @@ return {
       { "<leader>u", group = "Utils", mode = { "n", "v" }, icon = { icon = "", color = "blue" } },
       { "<leader>w", group = "Writing", icon = { icon = "", color = "cyan" } },
       { "<localleader>\\", group = "Multi Cursor", icon = { icon = "󰗧", color = "purple" } },
+      { "<localleader>j", group = "Java", icon = { icon = "", color = "cyan" } },
       { "<localleader>l", group = "Latex", icon = { icon = "", color = "cyan" } },
       { "<localleader>s", group = "SQL", icon = { icon = "", color = "cyan" } },
     },

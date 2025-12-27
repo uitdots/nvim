@@ -72,7 +72,6 @@ return {
   },
   {
     import = "plugins.languages.java",
-    enabled = false,
   },
   {
     import = "plugins.languages.jenkins",
@@ -89,7 +88,6 @@ return {
   },
   {
     import = "plugins.languages.kotlin",
-    enabled = false,
   },
   {
     import = "plugins.languages.kubernetes",

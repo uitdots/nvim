@@ -9,9 +9,9 @@ return {
   },
   keys = {
     {
-      "<localleader>lg",
+      "<localleader>jg",
       "<cmd>Gradle<CR>",
-      desc = "LPS | Gradle",
+      desc = "Java | Gradle",
     },
   },
   config = true,
