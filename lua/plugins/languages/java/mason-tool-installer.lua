@@ -7,6 +7,7 @@ return {
       "checkstyle",
       "java-debug-adapter",
       "jdtls",
+      "vscode-spring-boot-tools",
     },
   },
   opts_extend = {

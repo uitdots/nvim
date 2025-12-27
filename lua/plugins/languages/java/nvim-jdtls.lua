@@ -168,8 +168,13 @@ return {
       if type(bundle) == "function" then
         bundle_item = bundle()
       end
-      ---@diagnostic disable-next-line: param-type-mismatch
-      table.insert(opts.lspconfig.init_options.bundles, bundle_item)
+      if type(bundle_item) == "table" then
+        ---@diagnostic disable-next-line: param-type-mismatch
+        vim.list_extend(opts.lspconfig.init_options.bundles, bundle_item)
+      else
+        ---@diagnostic disable-next-line: param-type-mismatch
+        table.insert(opts.lspconfig.init_options.bundles, bundle_item)
+      end
     end
 
     vim.api.nvim_create_autocmd("FileType", {
