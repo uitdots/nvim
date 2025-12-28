@@ -16,6 +16,7 @@ return {
     "Testing",
   },
   source = {
+    -- renovate:datasource=maven
     id = "pkg:generic/org.junit.platform/junit-platform-console-standalone@6.0.1",
     download = {
       files = {

@@ -13,6 +13,7 @@ return {
     "LSP",
   },
   source = {
+    -- renovate:extractVersion=^swaggo-language-server-v(?<version>.+)$
     id = "pkg:golang/github.com/takaaa220/swaggo-ide/swaggo-language-server@swaggo-language-server-v0.0.3",
     -- id = "pkg:golang/github.com/takaaa220/swaggo-ide/swaggo-language-server@latest",
   },

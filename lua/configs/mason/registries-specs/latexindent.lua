@@ -15,6 +15,7 @@ return {
     "Formatter",
   },
   source = {
+    -- renovate:extractVersion=^V(?<version>.+)$
     id = "pkg:github/cmhughes/latexindent.pl@V3.24.6",
     asset = {
       {

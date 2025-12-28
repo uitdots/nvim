@@ -1,0 +1,66 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":semanticCommits",
+    ":automergeBranch",
+    ":automergeMinor",
+    ":skipStatusChecks",
+    ":timezone(Asia/Ho_Chi_Minh)",
+    ":disableRateLimiting"
+  ],
+  "schedule": ["* * * * 0,6"],
+  "enabledManagers": ["regex"],
+  "regexManagers": [
+    {
+      "description": "Update Mason registry specs - GitHub releases",
+      "fileMatch": ["^lua/configs/mason/registries-specs/.+\\.lua$"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "name = \"(?<depName>.+)\"",
+        "id = \"pkg:github\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
+        "# renovate:datasource=(?<datasource>[^,\\n]+)",
+        "# renovate:versioning=(?<versioning>[^,\\n]+)",
+        "# renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
+      ],
+      "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
+      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{/if}}"
+    },
+    {
+      "description": "Update Mason registry specs - Go modules",
+      "fileMatch": ["^lua/configs/mason/registries-specs/.+\\.lua$"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "name = \"(?<depName>.+)\"",
+        "id = \"pkg:golang\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
+        "# renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
+      ],
+      "datasourceTemplate": "go",
+      "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{/if}}"
+    },
+    {
+      "description": "Update Mason registry specs - npm packages",
+      "fileMatch": ["^lua/configs/mason/registries-specs/.+\\.lua$"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "name = \"(?<depName>.+)\"",
+        "id = \"pkg:npm\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\""
+      ],
+      "datasourceTemplate": "npm"
+    },
+    {
+      "description": "Update Mason registry specs - Maven packages",
+      "fileMatch": ["^lua/configs/mason/registries-specs/.+\\.lua$"],
+      "matchStringsStrategy": "combination",
+      "matchStrings": [
+        "name = \"(?<depName>.+)\"",
+        "id = \"pkg:generic\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
+        "# renovate:datasource=(?<datasource>[^,\\n]+)",
+        "# renovate:versioning=(?<versioning>[^,\\n]+)"
+      ],
+      "datasourceTemplate": "{{{datasource}}}",
+      "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
+    }
+  ]
+}
