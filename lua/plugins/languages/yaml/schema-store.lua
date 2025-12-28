@@ -1,6 +1,10 @@
 ---@type LazySpec
 return {
   "b0o/schemastore.nvim",
+  event = {
+    "BufReadPre *.yml,*.yaml",
+    "BufNewFile *.yml,*.yaml",
+  },
   opts = function()
     vim.lsp.config("yamlls", {
       ---@module 'codesettings'

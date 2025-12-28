@@ -158,6 +158,9 @@ return {
     import = "plugins.languages.typescript",
   },
   {
+    import = "plugins.languages.utils",
+  },
+  {
     import = "plugins.languages.vim",
   },
   {

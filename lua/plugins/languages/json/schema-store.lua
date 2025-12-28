@@ -1,8 +1,12 @@
 ---@type LazySpec
 return {
   "b0o/schemastore.nvim",
+  event = {
+    "BufReadPre *.json,*.jsonc",
+    "BufNewFile *.json,*.jsonc",
+  },
   opts = function()
-    vim.lsp.config("yamlls", {
+    vim.lsp.config("jsonls", {
       ---@module 'codesettings'
       ---@type lsp.jsonls
       settings = {
