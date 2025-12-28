@@ -4,7 +4,6 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
-      "checkstyle",
       "gradle-language-server",
       "java-debug-adapter",
       "java-test",

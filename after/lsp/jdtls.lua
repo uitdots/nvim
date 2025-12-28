@@ -84,11 +84,12 @@ end
 
 ---return string
 local get_bundles_dap = function()
-  local jars = vim.fn.glob("com.microsoft.java.debug.plugin.jar", false, false)
-  if jars == "" then
+  ---@type string
+  local jar = vim.fn.glob("$MASON/share/java-debug-adapter/com.microsoft.java.debug.plugin.jar", false, false)
+  if jar == "" then
     return
   end
-  return jars
+  return jar
 end
 
 local get_bundles = function()
