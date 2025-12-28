@@ -8,6 +8,7 @@ return {
       "java-debug-adapter",
       "java-test",
       "jdtls",
+      "junit",
       "vscode-spring-boot-tools",
     },
   },
