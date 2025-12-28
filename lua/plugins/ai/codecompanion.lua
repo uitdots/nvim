@@ -102,6 +102,30 @@ return {
             },
           },
         },
+        tools = {
+          cmd_runner = {
+            opts = {
+              require_approval_before = true,
+            },
+          },
+          delete_file = {
+            opts = {
+              require_approval_before = true,
+            },
+          },
+          groups = {
+            read_only = {
+              description = "Read-only tools for searching and reading files",
+              tools = {
+                "file_search",
+                "get_changed_files",
+                "grep_search",
+                "read_file",
+              },
+              prompt = "You have access to read-only tools: ${tools}",
+            },
+          },
+        },
         keymaps = {
           regenerate = {
             modes = {
