@@ -15,6 +15,16 @@ return {
       validate = {
         enable = true,
       },
+      schemas = require("schemastore").json.schemas({
+        extra = {
+          {
+            name = "CodeCompanion Workspace Schema",
+            description = "",
+            fileMatch = "codecompanion-workspace.json",
+            url = "https://raw.githubusercontent.com/olimorris/codecompanion.nvim/refs/heads/main/lua/codecompanion/workspace-schema.json",
+          },
+        },
+      }),
     },
   },
 }

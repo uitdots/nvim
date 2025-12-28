@@ -4,6 +4,7 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
+      "gradle-language-server",
       "kotlin-lsp",
       "ktlint",
     },

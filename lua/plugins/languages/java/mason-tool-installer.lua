@@ -5,7 +5,9 @@ return {
     ---@type Mason.Package[]
     ensure_installed = {
       "checkstyle",
+      "gradle-language-server",
       "java-debug-adapter",
+      "java-test",
       "jdtls",
       "vscode-spring-boot-tools",
     },

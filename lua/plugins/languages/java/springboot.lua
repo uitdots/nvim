@@ -37,5 +37,4 @@ return {
     },
   },
   config = true,
-  dependencies = "mfussenegger/nvim-jdtls",
 }

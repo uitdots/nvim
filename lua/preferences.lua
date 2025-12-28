@@ -8,7 +8,6 @@ local M = {
     },
     exclude = {
       "dartls",
-      "jdtls",
       "rust_analyzer",
       "sqls",
       "stylua",

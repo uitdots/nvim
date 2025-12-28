@@ -28,6 +28,11 @@ return {
       customTags = {
         "!reference sequence",
       },
+      schemaStore = {
+        enable = false,
+        url = "",
+      },
+      schemas = require("schemastore").yaml.schemas(),
     },
   },
 }
