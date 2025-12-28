@@ -1,3 +1,5 @@
+---@module 'types.neovim'
+
 ---@diagnostic disable: duplicate-doc-field, duplicate-doc-alias
 
 ---@meta _

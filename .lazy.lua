@@ -8,7 +8,15 @@ return {
     ---@diagnostic disable-next-line: missing-fields
     opts = {
       library = {
-        string.format("%s/lua/types", vim.fn.stdpath("config")),
+        string.format("%s/lua/types/lazy", vim.fn.stdpath("config")),
+        {
+          path = string.format("%s/lua/types/treesitter", vim.fn.stdpath("config")),
+          files = { "nvim-treesitter.lua" },
+        },
+        {
+          path = string.format("%s/lua/types/mason", vim.fn.stdpath("config")),
+          files = { "mason-tool-installer.lua" },
+        },
         "lazy.nvim",
         {
           path = "ui/nvchad_types",

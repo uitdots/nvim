@@ -5,7 +5,8 @@ return {
   ft = "lua",
   ---@module 'lazydev'
   ---@type lazydev.Config
-  opts = {},
+  opts = nil,
+  config = true,
   dependencies = {
     "Bilal2453/luvit-meta", -- optional `vim.uv` typings
     {
