@@ -3,21 +3,6 @@ local home = require("utils.os").home
 local lsp_utils = require("utils.lsp")
 local os = require("utils.os").os
 
----Get the latest mise Java installation path
----@return string?
-local get_mise_latest_java = function()
-  local mise_java_latest = home .. "/.local/share/mise/installs/java/latest"
-  local stat = vim.uv.fs_stat(mise_java_latest)
-  if stat then
-    -- Resolve symlink to get actual path
-    local real_path = vim.uv.fs_realpath(mise_java_latest)
-    if real_path and is_valid_jdk(real_path) then
-      return real_path
-    end
-  end
-  return nil
-end
-
 ---@return string[]
 local get_cmd = function()
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ":p:h:t")
@@ -158,6 +143,19 @@ local get_runtimes = function()
   return runtimes
 end
 
+---@return string|vim.NIL
+local get_latest_java = function()
+  local mise_java_latest = home .. "/.local/share/mise/installs/java/latest"
+  local stat = vim.uv.fs_stat(mise_java_latest)
+  if stat then
+    local real_path = vim.uv.fs_realpath(mise_java_latest)
+    if real_path and is_valid_jdk(real_path) then
+      return real_path
+    end
+  end
+  return vim.NIL
+end
+
 local get_format = function()
   local path = vim.fn.stdpath("data") .. "/lazy/java-google-styleguide/intellij-java-google-style.xml"
   local existed = vim.loop.fs_stat(path)
@@ -286,17 +284,10 @@ return {
       return vim.lsp.handlers["$/progress"](_, result, ctx)
     end,
   },
-  cmd_env = (function()
-    local env = {
-      JAVA_OPTS = vim.env.JAVA_OPTS or "-Xmx8g", -- For 8GB of ram? :P
-    }
-    -- Set JAVA_HOME to latest mise Java if available
-    local latest_java = get_mise_latest_java()
-    if latest_java then
-      env.JAVA_HOME = latest_java
-    end
-    return env
-  end)(),
+  cmd_env = {
+    JAVA_OPTS = vim.env.JAVA_OPTS or "-Xmx8g", -- For 8GB of ram? :P
+    JAVA_HOME = get_latest_java(),
+  },
   init_options = {
     bundles = get_bundles(),
     extendedClientCapabilities = get_jdtls_extended_client_capabilities(),
