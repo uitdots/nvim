@@ -44,15 +44,6 @@ function M.delayed_start(fn, ms, default_value)
   end
 end
 
--- TODO: Maybe move this to another utils
-function M.open_spell_sugestion()
-  local col = vim.fn.col(".")
-  local line = vim.fn.getline(".")
-  if col <= #line and line:sub(col, col):match("%a") then
-    vim.cmd("Telescope spell_suggest")
-  end
-end
-
 ---@generic T
 ---@param items T[]
 ---@param predicate fun(items: T):boolean
@@ -87,7 +78,7 @@ function M.get_child_folders(path, opts)
     if type == "directory" then
       local full_path = string.format("%s/%s", path, name)
       local stat = vim.uv.fs_stat(full_path)
-      if stat and (follow_symlink or not stat.type == "link") then
+      if stat and (follow_symlink or not (stat.type == "link")) then
         table.insert(folders, full_path)
       end
     end
