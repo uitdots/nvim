@@ -19,9 +19,9 @@
       "matchStrings": [
         "name = \"(?<depName>.+)\"",
         "id = \"pkg:github\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
-        "# renovate:datasource=(?<datasource>[^,\\n]+)",
-        "# renovate:versioning=(?<versioning>[^,\\n]+)",
-        "# renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
+        "-- renovate:datasource=(?<datasource>[^,\\n]+)",
+        "-- renovate:versioning=(?<versioning>[^,\\n]+)",
+        "-- renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
       ],
       "datasourceTemplate": "{{#if datasource}}{{{datasource}}}{{else}}github-releases{{/if}}",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}",
@@ -34,7 +34,7 @@
       "matchStrings": [
         "name = \"(?<depName>.+)\"",
         "id = \"pkg:golang\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
-        "# renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
+        "-- renovate:extractVersion=(?<extractVersion>[^,\\n]+)"
       ],
       "datasourceTemplate": "go",
       "extractVersionTemplate": "{{#if extractVersion}}{{{extractVersion}}}{{/if}}"
@@ -56,8 +56,8 @@
       "matchStrings": [
         "name = \"(?<depName>.+)\"",
         "id = \"pkg:generic\\/(?<packageName>.+)@(?<currentValue>[^\\s\\?#]+)\"",
-        "# renovate:datasource=(?<datasource>[^,\\n]+)",
-        "# renovate:versioning=(?<versioning>[^,\\n]+)"
+        "-- renovate:datasource=(?<datasource>[^,\\n]+)",
+        "-- renovate:versioning=(?<versioning>[^,\\n]+)"
       ],
       "datasourceTemplate": "{{{datasource}}}",
       "versioningTemplate": "{{#if versioning}}{{{versioning}}}{{else}}semver{{/if}}"
