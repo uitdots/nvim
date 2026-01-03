@@ -21,6 +21,7 @@ local M = {
       default = 2,
       space = {
         [4] = {
+          "bzl",
           "c",
           "cpp",
           "cs",
