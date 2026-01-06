@@ -32,7 +32,9 @@ return {
     "Saghen/blink.compat",
   },
   config = function(_, opts)
-    if vim.env.JIRA_USER_API_KEY == nil or vim.env.JIRA_WORKSPACE_URL == nil or vim.env.JIRA_USER_EMAIL == nil then
+    local env = vim.env
+
+    if env.JIRA_USER_API_KEY == nil or env.JIRA_WORKSPACE_URL == nil or env.JIRA_USER_EMAIL == nil then
       vim.notify("Not enough environment variable provided to use cmp_jira, no setup", vim.log.levels.INFO, { title = "cmp_jira" })
       return
     end
