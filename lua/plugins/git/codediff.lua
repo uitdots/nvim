@@ -1,12 +1,12 @@
 ---@type LazySpec
 return {
-  "esmuellert/vscode-diff.nvim",
+  "esmuellert/codediff.nvim",
   cmd = "CodeDiff",
   keys = {
     {
       "<leader>gd",
       "<cmd>CodeDiff<CR>",
-      desc = "VSCode Diff | View",
+      desc = "CodeDiff | Toggle",
     },
   },
   config = true,
