@@ -17,8 +17,7 @@ return {
     },
     ---@type Mason.Package[]
     ensure_installed = {
-      "typos",
-      "typos-lsp",
+      "harper-ls",
     },
   },
   opts_extend = {
