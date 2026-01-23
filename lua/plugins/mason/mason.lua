@@ -28,7 +28,7 @@ return {
     },
     registries = {
       "github:mason-org/mason-registry",
-      "lua:configs.mason.registries.common",
+      "github:uitdots/mason-registry",
     },
   },
   opts_extend = {

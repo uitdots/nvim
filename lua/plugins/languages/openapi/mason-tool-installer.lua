@@ -5,6 +5,7 @@ return {
     ---@type Mason.Package[]
     ensure_installed = {
       "openapi-language-server",
+      "redocly-language-server",
     },
   },
   opts_extend = {

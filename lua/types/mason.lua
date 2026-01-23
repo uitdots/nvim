@@ -1,6 +1,6 @@
 ---@meta _
 
----@alias Mason.Package string | Mason.RegistryPackage
+---@alias Mason.Package string | Mason.RegistryPackage | Mason.UitDotsRegistryPackage
 
 ---Command: `r !curl -Ls https://api.github.com/repos/mason-org/mason-registry/contents/packages/ |  jq '.[] | select(.type == "dir") | .name' -r | sort | sed "s/.*/---| '\"&\"'/"`
 ---@alias Mason.RegistryPackage
@@ -567,3 +567,13 @@
 ---| '"zprint"'
 ---| '"zprint-clj"'
 ---| '"zuban"'
+
+---Command: `r !curl -Ls https://api.github.com/repos/uitdots/mason-registry/contents/packages/ |  jq '.[] | select(.type == "dir") | .name' -r | sort | sed "s/.*/---| '\"&\"'/"`
+---@alias Mason.UitDotsRegistryPackage
+---| '"formattag"'
+---| '"junit"'
+---| '"latexindent"'
+---| '"openapi-language-server"'
+---| '"redocly-language-server"'
+---| '"spectral"'
+---| '"swaggo-language-server"'
