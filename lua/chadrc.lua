@@ -174,7 +174,7 @@ M.base46.hl_override = {
 }
 
 if M.base46.theme == "catppuccin" then
-  M.base46.hl_override.Search = { fg = "NONE", bg = "one_bg3" }
+  M.base46.hl_override.Search = { fg = "NONE", bg = "one_bg2" }
 end
 
 M.base46.hl_add = {
@@ -247,6 +247,11 @@ M.base46.hl_add = {
   --- nvim-corage
   CoverageCovered = { fg = "green", bg = "none" },
   CoverageUncovered = { fg = "red", bg = "none" },
+
+  --- nvim-hlslens
+  HlSearchNear = { fg = "black", bg = "base0A", bold = true },
+  HlSearchLens = { fg = "base0A", bg = "one_bg2" },
+  HlSearchLensNear = { link = "HlSearchNear" },
 }
 
 return M

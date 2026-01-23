@@ -11,6 +11,7 @@ return {
     },
     messages = {
       enabled = true,
+      view_search = false,
     },
     notify = {
       enabled = false,
