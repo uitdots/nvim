@@ -89,7 +89,7 @@ return {
     })
   end,
   opts = {
-    interaction = {
+    interactions = {
       chat = {
         slash_commands = {
           image = {
