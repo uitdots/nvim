@@ -17,7 +17,6 @@ return {
           ---@diagnostic disable-next-line: missing-fields
           install_info = {
             url = "https://github.com/DanWlker/tree-sitter-go_tags",
-            branch = "tree-sitter-1.25.5",
             queries = "queries",
           },
         }
