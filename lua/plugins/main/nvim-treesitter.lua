@@ -54,7 +54,6 @@ return {
     ts.install(opts.ensure_installed)
 
     opts.highlight.disable = opts.highlight.disable or {}
-    opts.highlight.still_vim_syntax = opts.highlight.still_vim_syntax or {}
     opts.indent.disable = opts.indent.disable or {}
     opts.fold.disable = opts.fold.disable or {}
 
@@ -79,9 +78,6 @@ return {
         end
         if opts.highlight.enabled and not opts.highlight.disable[language] and vim_ts_query_get(language, "highlights") then
           treesitter.start(buf, language)
-          if not opts.highlight.still_vim_syntax[language] then
-            bo[buf].syntax = "OFF"
-          end
         end
         if opts.indent.enabled and not opts.indent.disable[language] and vim_ts_query_get(language, "indents") then
           bo[buf].autoindent = false
