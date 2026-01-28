@@ -157,7 +157,7 @@ A fast and highly customisable Neovim IDE with lazy loading, and modular configu
 >
 > We all know how to do that
 >
-> You shouldn't entering nvim for now. Use `nvim --clean ./lua/plugins/extras/languages/init.lua` or another editor to edit the [`lua/plugins/extras/languages/init.lua`](./lua/plugins/extras/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
+> You shouldn't enter nvim for now. Use `nvim --clean ./lua/plugins/languages/init.lua` or another editor to edit the [`lua/plugins/languages/init.lua`](./lua/plugins/languages/init.lua)!!! Otherwise you will install tons of plugins and requirements from what I'm using.
 
 ### Structure
 
