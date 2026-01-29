@@ -249,8 +249,8 @@ M.base46.hl_add = {
   CoverageUncovered = { fg = "red", bg = "none" },
 
   --- nvim-hlslens
-  HlSearchNear = { fg = "black", bg = "base0A", bold = true },
-  HlSearchLens = { fg = "base0A", bg = "one_bg2" },
+  HlSearchNear = { fg = "black", bg = "base0A" },
+  HlSearchLens = { fg = "base0A", bg = "one_bg" },
   HlSearchLensNear = { link = "HlSearchNear" },
 }
 
