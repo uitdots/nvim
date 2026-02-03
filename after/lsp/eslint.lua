@@ -3,22 +3,27 @@ return {
   ---@module 'codesettings'
   ---@type lsp.eslint
   settings = {
-    codeAction = {
-      disableRuleComment = {
-        enable = true,
-        location = "separateLine",
-      },
-      showDocumentation = {
+    eslint = {
+      autoFixOnSave = true,
+      format = {
         enable = false,
       },
+      quiet = true,
+      run = "onSave",
+      codeAction = {
+        disableRuleComment = {
+          enable = true,
+          location = "separateLine",
+        },
+        showDocumentation = {
+          enable = false,
+        },
+      },
+      codeActionsOnSave = {
+        enable = true,
+        mode = "all",
+      },
     },
-    codeActionOnSave = {
-      enable = false,
-      mode = "all",
-    },
-    format = false,
-    quiet = true,
-    run = "onSave",
   },
   ---@diagnostic disable-next-line: missing-fields
   flags = {
