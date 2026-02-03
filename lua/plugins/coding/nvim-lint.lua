@@ -22,7 +22,7 @@ return {
         require("lint").try_lint(nil, {
           ignore_errors = true,
         })
-      end, 1000),
+      end, 500),
     })
   end,
   keys = {
