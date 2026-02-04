@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "Equilibris/nx.nvim",
+  "Sewb21/nx.nvim",
   keys = {
     {
       "<leader>un",
