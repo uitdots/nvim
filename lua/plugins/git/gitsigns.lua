@@ -32,7 +32,7 @@ return {
       function()
         require("gitsigns").toggle_current_line_blame()
       end,
-      desc = "GitSigns | Blame Line",
+      desc = "GitSigns | Toggle Virtual Blame",
       silent = true,
     },
     {
