@@ -12,17 +12,25 @@ return {
     }
   end,
   config = function()
+    local try_lint = function()
+      require("lint").try_lint(nil, {
+        ignore_errors = true,
+      })
+    end
+
     vim.api.nvim_create_autocmd({
       "BufWinEnter",
       "BufWritePost",
       "CursorHold",
       "InsertLeave",
     }, {
-      callback = debounce(function()
-        require("lint").try_lint(nil, {
-          ignore_errors = true,
-        })
-      end, 500),
+      callback = debounce(try_lint, 500),
+    })
+
+    vim.api.nvim_create_autocmd({
+      "CursorHoldI",
+    }, {
+      callback = debounce(try_lint, 1000),
     })
   end,
   keys = {

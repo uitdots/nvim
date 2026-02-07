@@ -4,4 +4,5 @@ vim.diagnostic.config({
   float = {
     source = true,
   },
+  update_in_insert = true,
 })
