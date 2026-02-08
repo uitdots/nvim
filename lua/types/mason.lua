@@ -570,6 +570,8 @@
 
 ---Command: `r !curl -Ls https://api.github.com/repos/uitdots/mason-registry/contents/packages/ |  jq '.[] | select(.type == "dir") | .name' -r | sort | sed "s/.*/---| '\"&\"'/"`
 ---@alias Mason.UitDotsRegistryPackage
+---| '"atlas"'
+---| '"atlas-community"'
 ---| '"formattag"'
 ---| '"junit"'
 ---| '"latexindent"'
