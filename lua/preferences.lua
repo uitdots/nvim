@@ -29,11 +29,9 @@ local M = {
           "hyprland",
           "java",
           "jenkins",
+          "just",
           "kotlin",
           "python",
-        },
-        [2] = {
-          "just",
         },
       },
       tab = {
