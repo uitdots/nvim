@@ -2,7 +2,7 @@
 return {
   filetypes = {
     "json",
-    "json*",
+    "jsonc",
   },
   init_options = {
     provideFormatter = false,
