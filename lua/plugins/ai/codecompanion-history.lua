@@ -22,6 +22,16 @@ return {
                 memory = {
                   auto_create_memories_on_summary_generation = false,
                 },
+                title_generation_opts = {
+                  adapter = "copilot",
+                  model = "GPT-4.1",
+                },
+                summary = {
+                  generation_opts = {
+                    adapter = "copilot",
+                    model = "GPT-4.1",
+                  },
+                },
               },
             },
           },
