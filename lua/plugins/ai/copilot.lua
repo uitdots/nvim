@@ -60,6 +60,14 @@ return {
         accept_line = "<M-S-l>",
       },
     },
+    ---@diagnostic disable-next-line: missing-fields
+    nes = {
+      enabled = true,
+      ---@diagnostic disable-next-line: missing-fields
+      keymap = {
+        accept_and_goto = "<Tab>",
+      },
+    },
     filetypes = {
       codecompanion = false,
       markdown = true,
@@ -117,7 +125,15 @@ return {
     end
   end,
   dependencies = {
-    "saghen/blink.cmp",
-    optional = true,
+    {
+      "saghen/blink.cmp",
+      optional = true,
+    },
+    {
+      "copilotlsp-nvim/copilot-lsp",
+      init = function()
+        vim.g.copilot_nes_debounce = 500
+      end,
+    },
   },
 }
