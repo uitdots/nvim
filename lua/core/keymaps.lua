@@ -102,7 +102,7 @@ map("v", "<", "<gv", { desc = "General | Indent backward", silent = true })
 map("v", ">", ">gv", { desc = "General | Indent forward", silent = true })
 
 -- Terminal
-map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
+-- map("t", "<C-x>", "<C-\\><C-N>", { desc = "Terminal | Escape Terminal Mode", silent = true })
 
 -- Plugins
 map("n", "<leader>pc", "<cmd>Lazy clean<cr>", { desc = "Plugin | Clean", silent = false })
