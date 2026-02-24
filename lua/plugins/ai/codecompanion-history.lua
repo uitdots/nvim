@@ -24,12 +24,12 @@ return {
                 },
                 title_generation_opts = {
                   adapter = "copilot",
-                  model = "GPT-4.1",
+                  model = "gpt-4.1",
                 },
                 summary = {
                   generation_opts = {
                     adapter = "copilot",
-                    model = "GPT-4.1",
+                    model = "gpt-4.1",
                   },
                 },
               },
