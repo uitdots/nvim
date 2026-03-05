@@ -21,7 +21,11 @@ return {
   },
   ---@module 'otter'
   ---@type OtterConfig
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
+    extensions = {
+      plantuml = "plantuml",
+    },
     verbose = {
       no_code_found = true,
     },
