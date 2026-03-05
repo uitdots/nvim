@@ -14,7 +14,7 @@ function M.get_executable(path, opts)
   local list = opts.list or false
 
   if masons then
-    for mason in ipairs(masons) do
+    for _, mason in pairs(masons) do
       local mason_file = fn.glob(string.format("$MASON/%s/%s", mason, path), false, list)
       if mason_file ~= "" or #mason_file ~= 0 then
         return mason_file
