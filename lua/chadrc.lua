@@ -27,8 +27,8 @@ M.ui = {
     order = {
       "mode",
       "file",
-      "harpoon",
       "git",
+      "harpoon",
       "%=",
       -- "lsp_msg", -- Yeah I use snacks already?
       -- "%=",
