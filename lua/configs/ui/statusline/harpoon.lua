@@ -14,7 +14,7 @@ M.have_setup_autocmd = nil
 ---@module 'harpoon'
 M.harpoon = nil
 
-M.fmtstr = "%%#St_Harpoon#󰛢 %d"
+M.fmtstr = "%%#St_Harpoon# 󰛢 %d"
 
 ---@private
 ---@param bufnr number

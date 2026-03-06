@@ -183,7 +183,7 @@ M.base46.hl_add = {
   St_Percent_icon = { fg = "black", bg = "blue" },
   St_Percent_sep = { fg = "blue", bg = "lightbg" },
   St_Percent_text = { link = "St_percent_sep" },
-  St_Harpoon = { fg = "light_grey", bg = "black", bold = true },
+  St_Harpoon = { fg = "light_grey", bold = true },
 
   ---Snacks
   SnacksIndent = { link = "IblChar" },
