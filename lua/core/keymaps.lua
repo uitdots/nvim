@@ -69,24 +69,6 @@ map({ "n", "v" }, "<C-k>", "<C-w>k", { desc = "General | Go to lower window", si
 map({ "n", "v" }, "<C-h>", "<C-w>h", { desc = "General | Go to left window", silent = true })
 map({ "n", "v" }, "<C-l>", "<C-w>l", { desc = "General | Go to right window", silent = true })
 
-for i = 1, 9, 1 do
-  map("n", string.format("<M-%s>", i), function()
-    api.nvim_set_current_buf(t.bufs[i])
-  end, { desc = string.format("General | Go to Buff %s", i), silent = true })
-end
-map("n", "<M-0>", function()
-  api.nvim_set_current_buf(t.bufs[10])
-end, { desc = "General | Go to Buff 10", silent = true })
-
--- map("n", "<leader>w", function()
---   if vim.bo.buftype == "terminal" then
---     cmd("Bdelete!")
---     cmd("silent! close")
---   elseif #api.nvim_list_wins() > 1 then
---     cmd("silent! close")
---   end
--- end, { desc = "General | Safe Close Window", silent = true })
-
 map("n", "<C-Up>", "<cmd>resize +2<CR>", { desc = "General | Add size at the top", silent = true })
 map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the bottom", silent = true })
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "General | Add size at the left", silent = true })

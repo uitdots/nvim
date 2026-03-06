@@ -27,6 +27,7 @@ M.ui = {
     order = {
       "mode",
       "file",
+      "harpoon",
       "git",
       "%=",
       -- "lsp_msg", -- Yeah I use snacks already?
@@ -51,15 +52,7 @@ M.ui = {
   },
 
   tabufline = {
-    enabled = true,
-    lazyload = true,
-    order = {
-      -- "treeOffset",
-      "buffers",
-      "tabs",
-      "btns",
-    },
-    modules = require("configs.ui.tabufline"),
+    enabled = false,
   },
 }
 
@@ -190,6 +183,7 @@ M.base46.hl_add = {
   St_Percent_icon = { fg = "black", bg = "blue" },
   St_Percent_sep = { fg = "blue", bg = "lightbg" },
   St_Percent_text = { link = "St_percent_sep" },
+  St_Harpoon = { fg = "light_grey", bg = "black", bold = true },
 
   ---Snacks
   SnacksIndent = { link = "IblChar" },

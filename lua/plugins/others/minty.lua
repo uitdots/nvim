@@ -7,7 +7,7 @@ return {
   },
   keys = {
     {
-      "<leader>uh",
+      "<leader>uH",
       "<cmd>Huefy<cr>",
       desc = "Minty | Huefy",
       silent = true,
