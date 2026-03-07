@@ -1,45 +1,8 @@
-local ai_suggestion_enabled = require("preferences").options.others.ai_suggestion_enabled
-
 ---@type LazySpec
 return {
   "folke/sidekick.nvim",
   cmd = "Sidekick",
-  event = ai_suggestion_enabled and {
-    "BufRead",
-    "BufNewFile",
-  } or nil,
   keys = {
-    {
-      "<Tab>",
-      function()
-        if not require("sidekick").nes_jump_or_apply() then
-          return "<Tab>"
-        end
-      end,
-      expr = true,
-      desc = "Sidekick | Goto/Apply Next Edit Suggestion",
-    },
-    {
-      "<leader>an",
-      function()
-        local nes = require("sidekick.nes")
-        nes.toggle()
-        vim.notify("Sidekick NES is " .. (nes.enabled and "enabled" or "disabled"), vim.log.levels.INFO, {
-          title = "Sidekick",
-          icon = "",
-        })
-      end,
-      mode = { "x", "n" },
-      desc = "Sidekick | Toggle NES",
-    },
-    {
-      "<leader>au",
-      function()
-        require("sidekick.nes").update()
-      end,
-      mode = { "x", "n" },
-      desc = "Sidekick | Update NES",
-    },
     {
       "<C-.>",
       function()
@@ -104,9 +67,6 @@ return {
   ---@module 'sidekick'
   ---@type sidekick.Config
   opts = {
-    nes = {
-      enabled = ai_suggestion_enabled,
-    },
     copilot = {
       status = {
         enabled = false,

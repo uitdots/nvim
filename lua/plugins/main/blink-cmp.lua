@@ -69,6 +69,11 @@ return {
             return true
           end
         end,
+        function()
+          if vim.b[vim.api.nvim_get_current_buf()].nes_state then
+            return require("copilot-lsp.nes").apply_pending_nes() and require("copilot-lsp.nes").walk_cursor_end_edit()
+          end
+        end,
         "snippet_forward",
         "fallback",
       },
