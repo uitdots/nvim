@@ -2,6 +2,7 @@
 return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
+  lazy = false, -- it is loaded by statusline though
   keys = {
     {
       "<M-a>",
