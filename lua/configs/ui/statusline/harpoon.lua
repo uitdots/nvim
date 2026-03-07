@@ -14,7 +14,7 @@ M.have_setup_autocmd = nil
 ---@module 'harpoon'
 M.harpoon = nil
 
-M.fmtstr = "%%#St_Harpoon# 󰛢 %d"
+M.fmtstr = "%%#St_Harpoon# 󰛢 %d/%d"
 
 ---@private
 ---@param bufnr number
@@ -28,23 +28,12 @@ function M.set_state(bufnr)
 
   local relative_path = vim.fn.fnamemodify(full_path, ":.")
 
-  local list = M.harpoon:list()
-  ---@type number?
-  local index
-
-  for i, item in ipairs(list.items) do
-    if item.value == relative_path then
-      index = i
-      break
-    end
-  end
-
-  if not index then
+  local _, index = M.harpoon:list():get_by_value(relative_path)
+  if index then
+    M.state = string.format(M.fmtstr, index, M.harpoon:list():length())
+  else
     M.state = nil
-    return
   end
-
-  M.state = string.format(M.fmtstr, index)
 end
 
 ---@private
