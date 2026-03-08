@@ -3,11 +3,17 @@ local g = vim.g
 
 ---@type LazySpec
 return {
-  "UtkarshKunwar/markdown-preview.nvim",
+  "ZiYang-oyxy/markdown-preview.nvim",
   keys = {
     {
       "<leader>wp",
-      "<cmd>MarkdownPreviewToggle<cr>",
+      function()
+        vim.cmd("MarkdownPreviewToggle")
+        vim.notify(vim.b.MarkdownPreviewToggleBool == 1 and "Started" or "Stopped", vim.log.levels.INFO, {
+          title = "Markdown Preview",
+          id = "markdown_preview",
+        })
+      end,
       desc = "MarkdownPreview | Toggle",
       ft = ft,
       silent = true,
@@ -15,11 +21,11 @@ return {
     {
       "<leader>wt",
       function()
-        if vim.g.mkdp_theme == "light" then
-          vim.g.mkdp_theme = "dark"
+        if g.mkdp_theme == "light" then
+          g.mkdp_theme = "dark"
           vim.notify("Dark Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         else
-          vim.g.mkdp_theme = "light"
+          g.mkdp_theme = "light"
           vim.notify("Light Mode", vim.log.levels.INFO, { title = "Markdown Preview", id = "markdown_preview" })
         end
       end,
