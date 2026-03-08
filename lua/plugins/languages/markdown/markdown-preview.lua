@@ -30,7 +30,7 @@ return {
   },
   build = ":call mkdp#util#install()",
   ft = ft,
-  enabled = true,
+  enabled = false,
   init = function()
     g.mkdp_refresh_slow = 1
     g.mkdp_auto_close = false

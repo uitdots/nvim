@@ -1,42 +1,32 @@
 local ft = require("utils.filetypes").markdown
+local is_executable = require("utils.executable").is_executable_cache
 
 ---@type LazySpec
 return {
-  "brianhuster/live-preview.nvim",
-  enabled = false,
-  cmd = "LivePreview",
+  "hostmyapps-git/live-preview.nvim",
+  enabled = is_executable("pnpm") or is_executable("npm"),
+  build = string.format("%s install --prefix .", is_executable("pnpm") and "pnpm" or "npm"),
+  lazy = false,
+  cmd = {
+    "LivePreview",
+    "LivePreviewStop",
+    "LivePreviewDebug",
+    "LivePreviewHelper",
+  },
   keys = {
     {
       "<leader>wp",
-      function()
-        if require("livepreview").is_running() then
-          vim.cmd("LivePreview close")
-        else
-          vim.cmd("LivePreview start")
-        end
-      end,
+      "<cmd>LivePreview<CR>",
       desc = "LivePreview | Toggle",
       ft = ft,
       silent = true,
     },
-    {
-      "<leader>wP",
-      "<cmd>LivePreview pick<CR>",
-      desc = "LivePreview | Pick",
-      ft = ft,
-      silent = true,
-    },
   },
-  opts = function()
-    ---@module 'livepreview'
-    ---@type LivePreviewConfig
-    return {
-      picker = require("livepreview.config").pickers.snacks,
+  init = function()
+    vim.g.live_preview_options = {
+      plantuml = {
+        server = "https://www.plantuml.com/plantuml",
+      },
     }
   end,
-  config = function(_, opts)
-    require("livepreview.config").set(opts)
-    vim.cmd("runtime! plugin/livepreview.lua")
-  end,
-  dependencies = "folke/snacks.nvim",
 }
