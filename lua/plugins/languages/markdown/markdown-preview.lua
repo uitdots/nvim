@@ -41,7 +41,6 @@ return {
     g.mkdp_refresh_slow = 1
     g.mkdp_auto_close = false
     g.mkdp_open_to_the_world = 1 -- Open for other to access
-    g.mkdp_port = 65530
     g.mkdp_preview_options = {
       hide_yaml_meta = 0,
       uml = {
