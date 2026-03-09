@@ -43,67 +43,74 @@ return {
       desc = "Harpoon | Previous",
     },
     {
-      "<M-1>",
+      "<M-q>",
       function()
         require("harpoon"):list():select(1)
       end,
       desc = "Harpoon | 1",
     },
     {
-      "<M-2>",
+      "<M-w>",
       function()
         require("harpoon"):list():select(2)
       end,
       desc = "Harpoon | 2",
     },
     {
-      "<M-3>",
+      "<M-e>",
       function()
         require("harpoon"):list():select(3)
       end,
       desc = "Harpoon | 3",
     },
     {
-      "<M-4>",
+      "<M-r>",
       function()
         require("harpoon"):list():select(4)
       end,
       desc = "Harpoon | 4",
     },
     {
-      "<M-5>",
+      "<M-t>",
       function()
         require("harpoon"):list():select(5)
       end,
       desc = "Harpoon | 5",
     },
     {
-      "<M-6>",
+      "<M-y>",
       function()
         require("harpoon"):list():select(6)
       end,
       desc = "Harpoon | 6",
     },
     {
-      "<M-7>",
+      "<M-u>",
       function()
         require("harpoon"):list():select(7)
       end,
       desc = "Harpoon | 7",
     },
     {
-      "<M-8>",
+      "<M-i>",
       function()
         require("harpoon"):list():select(8)
       end,
       desc = "Harpoon | 8",
     },
     {
-      "<M-9>",
+      "<M-o>",
       function()
         require("harpoon"):list():select(9)
       end,
       desc = "Harpoon | 9",
+    },
+    {
+      "<M-p>",
+      function()
+        require("harpoon"):list():select(10)
+      end,
+      desc = "Harpoon | 10",
     },
   },
   ---@module 'harpoon'
@@ -112,5 +119,14 @@ return {
   config = function(_, opts)
     require("harpoon"):setup(opts)
   end,
-  dependencies = "nvim-lua/plenary.nvim",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+  },
+  specs = {
+    {
+      "rmagatti/auto-session",
+      optional = true,
+      dependencies = "ThePrimeagen/harpoon", -- Has to load before session plugin
+    },
+  },
 }
