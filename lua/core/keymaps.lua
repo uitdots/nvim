@@ -74,6 +74,15 @@ map("n", "<C-Down>", "<cmd>resize -2<CR>", { desc = "General | Add size at the b
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>", { desc = "General | Add size at the left", silent = true })
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>", { desc = "General | Add size at the right", silent = true })
 
+for i = 1, 9, 1 do
+  map("n", string.format("<M-%s>", i), function()
+    api.nvim_set_current_buf(t.bufs[i])
+  end, { desc = string.format("General | Go to Buff %s", i), silent = true })
+end
+map("n", "<M-0>", function()
+  api.nvim_set_current_buf(t.bufs[10])
+end, { desc = "General | Go to Buff 10", silent = true })
+
 -- map("n", "<Left>", "<cmd>tabprevious<CR>", { desc = "General | Go to previous tab", silent = true })
 -- map("n", "<Right>", "<cmd>tabnext<CR>", { desc = "General | Go to next tab", silent = true })
 -- map("n", "<Up>", "<cmd>tabnew<CR>", { desc = "General | New tab", silent = true })
