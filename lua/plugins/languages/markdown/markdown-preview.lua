@@ -3,7 +3,7 @@ local g = vim.g
 
 ---@type LazySpec
 return {
-  "ZiYang-oyxy/markdown-preview.nvim",
+  "UtkarshKunwar/markdown-preview.nvim",
   keys = {
     {
       "<leader>wp",
