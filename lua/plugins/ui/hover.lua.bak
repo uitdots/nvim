@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "lewis6991/hover.nvim",
-  enabled = false,
   event = "VeryLazy",
   init = function()
     vim.o.mousemoveevent = true

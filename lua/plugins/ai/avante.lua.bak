@@ -4,7 +4,6 @@ local is_windows = require("utils.os").is_windows
 ---@type LazySpec
 return {
   "yetone/avante.nvim",
-  enabled = false,
   version = false, -- Never set this value to "*"! Never!
   opts = {
     provider = "copilot", ---@type "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string

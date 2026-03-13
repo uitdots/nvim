@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "MahanRahmati/blink-nerdfont.nvim",
-  enabled = false,
   specs = {
     {
       "saghen/blink.cmp",

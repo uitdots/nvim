@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "erooke/blink-cmp-latex",
-  enabled = false,
   specs = {
     {
       "saghen/blink.cmp",

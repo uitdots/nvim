@@ -3,7 +3,6 @@ local ft = require("utils.filetypes").markdown
 ---@type LazySpec
 return {
   "brianhuster/live-preview.nvim",
-  enabled = false,
   cmd = "LivePreview",
   keys = {
     {

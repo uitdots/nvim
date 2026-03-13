@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "artemave/workspace-diagnostics.nvim",
-  enabled = false,
   event = {
     "BufRead",
     "BufNewFile",

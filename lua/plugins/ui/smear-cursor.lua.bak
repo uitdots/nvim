@@ -1,7 +1,6 @@
 ---@type LazySpec
 return {
   "sphamba/smear-cursor.nvim",
-  enabled = false,
   event = "VeryLazy",
   opts = {
     -- Smear cursor when switching buffers or windows.

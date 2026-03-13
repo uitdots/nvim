@@ -18,7 +18,6 @@ local allowed_ts_types = {
 ---@type LazySpec
 return {
   "moyiz/blink-emoji.nvim",
-  enabled = false,
   specs = {
     {
       "saghen/blink.cmp",

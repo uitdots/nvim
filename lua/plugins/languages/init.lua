@@ -2,25 +2,21 @@ local is_windows = require("utils.os").is_windows
 
 ---@type LazySpec
 return {
-  {
-    import = "plugins.languages.ansible",
-    enabled = false,
-  },
-  {
-    import = "plugins.languages.assembly",
-    enabled = false,
-  },
-  {
-    import = "plugins.languages.c",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.ansible",
+  -- },
+  -- {
+  --   import = "plugins.languages.assembly",
+  -- },
+  -- {
+  --   import = "plugins.languages.c",
+  -- },
   {
     import = "plugins.languages.config",
   },
-  {
-    import = "plugins.languages.cs",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.cs",
+  -- },
   {
     import = "plugins.languages.css",
   },
@@ -33,37 +29,33 @@ return {
   {
     import = "plugins.languages.env",
   },
-  {
-    import = "plugins.languages.dart",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.dart",
+  -- },
   {
     import = "plugins.languages.git",
   },
   {
     import = "plugins.languages.github",
   },
-  {
-    import = "plugins.languages.gitlab",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.gitlab",
+  -- },
   {
     import = "plugins.languages.go",
   },
   {
     import = "plugins.languages.grafana",
   },
-  {
-    import = "plugins.languages.groovy",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.groovy",
+  -- },
   {
     import = "plugins.languages.hcl",
   },
-  {
-    import = "plugins.languages.helm",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.helm",
+  -- },
   {
     import = "plugins.languages.html",
   },
@@ -73,10 +65,9 @@ return {
   {
     import = "plugins.languages.java",
   },
-  {
-    import = "plugins.languages.jenkins",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.jenkins",
+  -- },
   {
     import = "plugins.languages.json",
   },
@@ -104,14 +95,12 @@ return {
   {
     import = "plugins.languages.markdown",
   },
-  {
-    import = "plugins.languages.nginx",
-    enabled = false,
-  },
-  {
-    import = "plugins.languages.nix",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.nginx",
+  -- },
+  -- {
+  --   import = "plugins.languages.nix",
+  -- },
   {
     import = "plugins.languages.openapi",
   },
@@ -120,7 +109,6 @@ return {
   },
   {
     import = "plugins.languages.powershell",
-    enabled = is_windows,
   },
   {
     import = "plugins.languages.proto",
@@ -134,20 +122,18 @@ return {
   {
     import = "plugins.languages.redis",
   },
-  {
-    import = "plugins.languages.rust",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.rust",
+  -- },
   {
     import = "plugins.languages.shell",
   },
   {
     import = "plugins.languages.sql",
   },
-  {
-    import = "plugins.languages.tailwind",
-    enabled = false,
-  },
+  -- {
+  --   import = "plugins.languages.tailwind",
+  -- },
   {
     import = "plugins.languages.terraform",
   },

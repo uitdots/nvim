@@ -3,7 +3,6 @@
 ---@type LazySpec
 return {
   "debugloop/telescope-undo.nvim",
-  enabled = false,
   keys = {
     {
       "<leader>fu",
