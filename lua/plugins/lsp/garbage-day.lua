@@ -2,5 +2,9 @@
 return {
   "Zeioth/garbage-day.nvim",
   event = "LspAttach",
-  config = true,
+  opts = {
+    excluded_lsp_clients = {
+      "copilot",
+    },
+  },
 }
