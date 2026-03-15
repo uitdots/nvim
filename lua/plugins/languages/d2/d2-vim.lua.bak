@@ -9,6 +9,7 @@ return {
   init = function()
     g.loaded_d2 = 1
     g.d2_fmt_autosave = 0
+    g.d2_ascii_autorender = 0
   end,
   keys = {
     {
