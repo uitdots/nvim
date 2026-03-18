@@ -4,7 +4,7 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
-      "lua-language-server@3.16.4",
+      "lua-language-server",
       "stylua",
     },
   },
