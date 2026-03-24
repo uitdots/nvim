@@ -52,6 +52,9 @@ return {
           border = vim.o.winborder,
         },
       },
+      open_file = {
+        resize_window = false,
+      },
     },
   },
   dependencies = "nvim-tree/nvim-web-devicons",
