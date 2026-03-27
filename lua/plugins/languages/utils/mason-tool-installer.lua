@@ -4,7 +4,7 @@ return {
   opts = {
     ---@type Mason.Package[]
     ensure_installed = {
-      "taplo",
+      "ecfg",
     },
   },
   opts_extend = {

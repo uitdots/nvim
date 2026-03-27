@@ -13,6 +13,7 @@ local M = {
       "sqls",
       "stylua",
       "swaggo_ls",
+      "harper_ls",
       "vtsls",
     },
   },
