@@ -2,8 +2,7 @@ local ai_suggestion_enabled = require("preferences").options.others.ai_suggestio
 
 ---@type LazySpec
 return {
-  "haus20xx/sidekick.nvim",
-  branch = "fix/nes-inline-diff-trailing-newline",
+  "folke/sidekick.nvim",
   cmd = "Sidekick",
   event = ai_suggestion_enabled and {
     "BufRead",

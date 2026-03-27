@@ -5,7 +5,7 @@ return {
   config = true,
   specs = {
     {
-      "sidekick.nvim",
+      "folke/sidekick.nvim",
       opts = function(_, opts)
         local autocmd = vim.api.nvim_create_autocmd
 
