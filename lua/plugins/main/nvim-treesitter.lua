@@ -72,6 +72,12 @@ return {
       callback = function(args)
         local buf = args.buf
         local filetype = args.match
+
+        -- TODO: This should be refactored as API, but lower perf
+        if string.match(filetype, "chezmoitmpl") then
+          return
+        end
+
         local language = vim_ts_language.get_lang(filetype) or filetype
         if not (vim_ts_language.add(language) and installed_parsers[language]) then
           return
