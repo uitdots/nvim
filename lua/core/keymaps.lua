@@ -108,6 +108,10 @@ map("n", "<leader>pp", "<cmd>Lazy profile<cr>", { desc = "Plugin | Profile", sil
 map("n", "<leader>pu", "<cmd>Lazy update<cr>", { desc = "Plugin | Update", silent = true })
 
 -- Neovim
+map("n", "<leader>nu", function()
+  require("undotree").open()
+end, { desc = "Neovim | Undotree", silent = true })
+
 map("n", "<leader>nI", function()
   cmd("Inspect")
 end, { desc = "Neovim | Inspect", silent = true })
