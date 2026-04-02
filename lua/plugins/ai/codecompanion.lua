@@ -5,6 +5,7 @@ local fn = vim.fn
 ---@type LazySpec
 return {
   "olimorris/codecompanion.nvim",
+  version = "*",
   cmd = {
     "CodeCompanion",
     "CodeCompanionActions",

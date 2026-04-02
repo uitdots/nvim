@@ -158,7 +158,7 @@ end
 
 local get_format = function()
   local path = vim.fn.stdpath("data") .. "/lazy/java-google-styleguide/intellij-java-google-style.xml"
-  local existed = vim.loop.fs_stat(path)
+  local existed = vim.uv.fs_stat(path)
   return {
     enabled = true,
     settings = {
