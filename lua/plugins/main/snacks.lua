@@ -24,6 +24,24 @@ local exclude_find = {
   "obj/",
 }
 
+---@type nil|true
+local extend_exclude_already
+
+local function extend_exclude()
+  if extend_exclude_already then
+    return
+  end
+
+  ---@type nil|string[]
+  local snacks_exclude = vim.g.snack_exclude_find
+  if snacks_exclude then
+    vim.list_extend(snacks_exclude, exclude_find)
+    vim.notify("Extended Snacks exclude_find with custom excludes", vim.log.levels.INFO, { title = "Snacks" })
+  end
+
+  extend_exclude_already = true
+end
+
 ---@type LazySpec
 return {
   "folke/snacks.nvim",
@@ -197,13 +215,25 @@ return {
     {
       "<leader><leader>",
       function()
+        extend_exclude()
+        Snacks.picker.files({
+          show_empty = false,
+          exclude = exclude_find,
+        })
+      end,
+      desc = "Snacks | Find Files",
+    },
+    {
+      "<leader>ff",
+      function()
+        extend_exclude()
         Snacks.picker.files({
           hidden = true,
           ignored = true,
           exclude = exclude_find,
         })
       end,
-      desc = "Snacks | Find Files",
+      desc = "Snacks | Find All Files",
     },
     {
       "<leader>fa",
