@@ -1,6 +1,7 @@
 ---@type LazySpec
 return {
   "nvim-tree/nvim-tree.lua",
+  version = "*",
   keys = {
     {
       "<leader>e",
