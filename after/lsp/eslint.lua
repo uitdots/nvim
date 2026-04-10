@@ -15,9 +15,6 @@ return {
           enable = true,
           location = "separateLine",
         },
-        showDocumentation = {
-          enable = false,
-        },
       },
       codeActionsOnSave = {
         enable = true,

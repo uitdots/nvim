@@ -62,9 +62,9 @@ return {
   {
     import = "plugins.languages.http",
   },
-  {
-    import = "plugins.languages.java",
-  },
+  -- {
+  --   import = "plugins.languages.java",
+  -- },
   -- {
   --   import = "plugins.languages.jenkins",
   -- },
@@ -142,6 +142,9 @@ return {
   },
   {
     import = "plugins.languages.typescript",
+  },
+  {
+    import = "plugins.languages.typst",
   },
   {
     import = "plugins.languages.utils",
