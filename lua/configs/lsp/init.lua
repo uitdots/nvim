@@ -1,6 +1,7 @@
 local map = vim.keymap.set
 local inlay_hint_enabled = require("preferences").options.inlay_hint.client
 local semantic_tokens_enabled = require("preferences").options.semantic_tokens.client
+local lsp = vim.lsp
 
 local M = {}
 
@@ -15,8 +16,8 @@ function M.global_keymaps()
     })
   end, { desc = "LSP | Toggle Underline", silent = true })
   map("n", "<leader>lh", function()
-    local enabled = not vim.lsp.inlay_hint.is_enabled()
-    vim.lsp.inlay_hint.enable(enabled)
+    local enabled = not lsp.inlay_hint.is_enabled()
+    lsp.inlay_hint.enable(enabled)
     vim.notify(enabled and "Enabled" or "Disabled", vim.log.levels.INFO, {
       title = "LSP Inlay Hint",
       id = "neovim_lsp_inlay_hint",
@@ -56,10 +57,11 @@ M.opts = {
 }
 
 function M.setup()
-  vim.lsp.inlay_hint.enable(inlay_hint_enabled)
+  lsp.inlay_hint.enable(inlay_hint_enabled)
+  lsp.codelens.enable(true)
   M.global_keymaps()
   require("configs.lsp.autocmds").setup()
-  vim.lsp.config("*", M.opts)
+  lsp.config("*", M.opts)
 end
 
 return M

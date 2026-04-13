@@ -41,6 +41,9 @@ function M.setup_keymaps()
       map("n", "gr<C-w>", function()
         vim.notify(vim.inspect(lsp.buf.list_workspace_folders()), vim.log.levels.INFO, { title = "LSP workspace folders" })
       end, { desc = "LSP | List workspace folders", buffer = bufnr })
+      map("n", "<leader>lc", function()
+        lsp.codelens.enable(not lsp.codelens.is_enabled())
+      end, { desc = "LSP | Toggle codelens", buffer = bufnr })
     end,
     group = augroup("lsp-keymaps", {}),
   })

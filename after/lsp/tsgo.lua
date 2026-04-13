@@ -7,7 +7,7 @@ local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("tsgo") then
   inlayhint_opts = {
     parameterNames = {
-      enabled = "all", ---@type 'none' | 'literals' | 'all'
+      enabled = "all",
     },
     parameterTypes = {
       enabled = true,

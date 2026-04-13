@@ -41,7 +41,11 @@ return {
   settings = {
     gopls = {
       hints = inlayhint_opts,
-      semanticTokens = true,
+      semanticTokens = semantic_tokens_enabled,
+      codelenses = {
+        test = true,
+      },
+      usePlaceholders = true,
     },
   },
 }
