@@ -6,7 +6,7 @@ return {
     {
       "<leader>ts",
       "<cmd>TSJToggle<cr>",
-      desc = "Treesitter | Toggle Split",
+      desc = "TSJ | Toggle Split",
       silent = true,
     },
   },

@@ -58,7 +58,6 @@ M.opts = {
 
 function M.setup()
   lsp.inlay_hint.enable(inlay_hint_enabled)
-  lsp.codelens.enable(true)
   M.global_keymaps()
   require("configs.lsp.autocmds").setup()
   lsp.config("*", M.opts)

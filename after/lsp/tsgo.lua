@@ -43,11 +43,21 @@ return {
     javascript = {
       ---@diagnostic disable-next-line: assign-type-mismatch
       inlayHints = inlayhint_opts,
+      -- referencesCodeLens = {
+      --   enabled = true,
+      --   showOnAllFunctions = true,
+      -- },
     },
     typescript = {
-      preferences = {
-        importModuleSpecifier = "non-relative",
-      },
+      -- referencesCodeLens = {
+      --   enabled = true,
+      --   showOnAllFunctions = true,
+      -- },
+      -- implementationsCodeLens = {
+      --   enabled = true,
+      --   showOnAllClassMethods = true,
+      --   showOnInterfaceMethods = true,
+      -- },
       ---@diagnostic disable-next-line: assign-type-mismatch
       inlayHints = inlayhint_opts,
     },

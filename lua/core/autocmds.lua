@@ -152,7 +152,6 @@ vim.api.nvim_create_autocmd("FileType", {
     "dbout",
     "gitsigns.blame",
     "help",
-    "lspinfo",
     "neotest-output",
     "neotest-output-panel",
     "neotest-summary",

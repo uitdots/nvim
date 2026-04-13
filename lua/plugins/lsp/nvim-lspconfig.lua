@@ -30,7 +30,7 @@ return {
   keys = {
     {
       "<leader>li",
-      "<cmd>LspInfo<cr>",
+      "<cmd>checkhealth vim.lsp<CR>",
       desc = "LSP | Info",
       silent = true,
     },

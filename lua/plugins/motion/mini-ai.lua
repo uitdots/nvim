@@ -9,6 +9,12 @@ return {
         a = false,
         gG = extra.gen_ai_spec.buffer(),
       },
+      mappings = {
+        around_next = "aN",
+        inside_next = "iN",
+        around_last = "aL",
+        inside_last = "iL",
+      },
     }
   end,
   dependencies = "nvim-mini/mini.extra",
