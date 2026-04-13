@@ -37,11 +37,13 @@ return {
         enabled = false,
       },
     },
+    ---@type NoiceRouteConfig[]
     routes = {
       -- https://github.com/folke/noice.nvim/issues/1097
       {
         filter = {
           event = "msg_show",
+          ---@diagnostic disable-next-line: assign-type-mismatch
           kind = { "shell_out", "shell_err" },
         },
         view = "notify",
@@ -55,12 +57,13 @@ return {
     health = {
       checker = false,
     },
+    ---@type NoicePresets
     presets = {
       bottom_search = false,
       command_palette = true,
       long_message_to_split = false,
       inc_rename = false,
-      lsp_doc_border = vim.o.winborder, -- May remove this in the future if noice use vim.o.winborder by default
+      lsp_doc_border = true,
     },
   },
   opts_extend = {
