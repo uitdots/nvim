@@ -45,7 +45,6 @@ return {
       codelenses = {
         test = true,
       },
-      usePlaceholders = true,
     },
   },
 }
