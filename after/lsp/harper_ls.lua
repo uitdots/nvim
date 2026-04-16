@@ -3,6 +3,9 @@ return {
   settings = {
     ["harper-ls"] = {
       dialect = "British",
+      linters = {
+        ToDoHyphen = false,
+      },
     },
   },
   flags = {
