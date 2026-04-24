@@ -9,8 +9,7 @@ end
 ---@type LazySpec
 return {
   "mistricky/codesnap.nvim",
-  enabled = vim.fn.has("win32") == 0,
-  build = "make",
+  version = "*",
   cmd = {
     "CodeSnap",
     "CodeSnapSave",
@@ -66,14 +65,18 @@ return {
     },
   },
   opts = {
-    bg_theme = "summer",
-    bg_x_padding = 10,
-    bg_y_padding = 8,
-    code_font_family = "JetBrainsMono Nerd Font",
-    mac_window_bar = true,
-    title = "",
+    show_line_number = false,
     watermark = "",
-    has_line_number = true,
-    watermark_font_family = "JetBrainsMono Nerd Font",
+    snapshot_config = {
+      window = {
+        mac_window_bar = true,
+      },
+    },
+    code_config = {
+      font_family = "JetBrainsMono Nerd Font",
+      breadcrumbs = {
+        enable = false,
+      },
+    },
   },
 }
