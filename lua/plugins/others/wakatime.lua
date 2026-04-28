@@ -18,8 +18,8 @@ return {
       desc = "WakaTime | Today",
     },
   },
-  -- init = function()
-  --   vim.g.loaded_wakatime = true
-  -- end,
-  -- config = true,
+  init = function()
+    vim.g.loaded_wakatime = true
+  end,
+  config = true,
 }
