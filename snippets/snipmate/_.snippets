@@ -1,14 +1,23 @@
 snippet vim-ft Vim Set Filetype for A File
-	vim:ft=${0:Filetype}
+  vim:ft=${0:Filetype}
 
 snippet vim-ffu Vim Set Fileformat to Unix for A File
-	vim:fileformat=unix
+  vim:fileformat=unix
 
 snippet vim-set
   vim:set ${0:Option}=${1:Value}:
 
 snippet vim-sh Vim Set Options for Shell scripting
-	vim:set fileformat=unix filetype:sh
+  vim:set fileformat=unix filetype:sh
 
 snippet vim-bash Vim Set Options for Bash scripting
-	vim:set fileformat=unix filetype:bash
+  vim:set fileformat=unix filetype:bash
+
+snippet empty-uuid Generate an empty UUID
+  00000000-0000-0000-0000-000000000000
+
+snippet empty-uuidv4 Generate an empty UUIDv4
+  00000000-0000-4000-0000-000000000000
+
+snippet empty-uuidv7 Generate an empty UUIDv7
+  00000000-0000-7000-0000-000000000000
