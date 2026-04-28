@@ -1,24 +1,39 @@
-local os_utils = require("utils.os")
-local get_executable = require("utils.executable").get_executable
-local DapAdapter = require("configs.dap.dap_adapter")
+---@class CPPDBGAdapter
+---@field _status boolean|nil
+local M = {}
+M.__index = M
 
-local M = DapAdapter.new()
+---@module "dap"
+M.dap = require("dap")
 
-function M:get_adapter()
-  local adapter = get_executable("OpenDebugAD7", { masons = "packages/cpptools/extension/debugAdapters/bin" })
-  ---@cast adapter string?
-  return adapter
-end
+---@param self CPPDBGAdapter
+---@return boolean
+function M:setup()
+  if self._status ~= nil then
+    return self._status
+  end
 
-function M:setup(adapter)
+  local finder = require("utils.executable").get_executable
+  local path = finder("OpenDebugAD7", { masons = "packages/cpptools/extension/debugAdapters/bin" })
+  if type(path) ~= "string" or path == "" then
+    self._status = false
+    return false
+  end
+
   self.dap.adapters.cppdbg = {
-    id = "cppdbg",
     type = "executable",
-    command = adapter,
+    command = path,
     options = {
-      detached = os_utils.is_windows and false or nil,
+      detached = require("utils.os").is_windows and false or nil,
     },
   }
+
+  self._status = true
+  return true
 end
 
-return M
+return setmetatable(M, {
+  __call = function(self)
+    return self:setup()
+  end,
+})

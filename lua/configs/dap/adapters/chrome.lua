@@ -1,25 +1,35 @@
-local home = require("utils.os").home
-local get_executable = require("utils.executable").get_executable
-local DapAdapter = require("configs.dap.dap_adapter")
+---@class ChromeDapAdapter
+local M = {}
+M.__index = M
 
-local M = DapAdapter.new()
+M.dap = require("dap")
 
-function M:get_adapter()
-  -- TODO: I don't know where it out, currently I cannot download it from mason
-  local adapter = get_executable("chromeDebug.js", { masons = "packages/vscode-chrome-debug/out/src" })
-  ---@cast adapter string?
-  return adapter
-end
+---@param self ChromeDapAdapter
+---@return boolean
+function M:setup()
+  if self._status ~= nil then
+    return self._status
+  end
 
-function M:setup(adapter)
+  local finder = require("utils.executable").get_executable
+  local path = finder("chromeDebug.js", { masons = "packages/vscode-chrome-debug/out/src" })
+  if type(path) ~= "string" or path == "" then
+    self._status = false
+    return false
+  end
+
   self.dap.adapters.chrome = {
-    id = "chrome",
     type = "executable",
     command = "node",
-    args = {
-      string.format("%s/%s", home, adapter),
-    },
+    args = { require("utils.os").home .. "/" .. path },
   }
+
+  self._status = true
+  return true
 end
 
-return M
+return setmetatable(M, {
+  __call = function(self)
+    return self:setup()
+  end,
+})

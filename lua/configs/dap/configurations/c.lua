@@ -1,15 +1,20 @@
 local dap = require("dap")
 local cppdbg = require("configs.dap.adapters.cppdbg")
-local is_executable = require("utils.executable").is_executable_cache
-local dap_utils = require("configs.dap.utils")
 
----@type dap.Configuration[]
+local function program_path()
+  return vim.fn.input({
+    prompt = "Program path: ",
+    default = vim.fn.getcwd() .. "/",
+    completion = "file",
+  })
+end
+
 local configurations = {
   {
     name = "Launch file",
     type = "cppdbg",
     request = "launch",
-    program = dap_utils.executable_picker,
+    program = "${file}",
     cwd = "${workspaceFolder}",
     stopAtEntry = true,
   },
@@ -21,16 +26,15 @@ local configurations = {
     miDebuggerServerAddress = "localhost:1234",
     miDebuggerPath = "gdb",
     cwd = "${workspaceFolder}",
-    program = dap_utils.executable_picker,
+    program = program_path,
   },
 }
 
 return function()
-  if not is_executable("gdb") then
+  if not require("utils.executable").is_executable_cache("gdb") then
     return
   end
-  local status = cppdbg()
-  if status then
+  if cppdbg() then
     dap.configurations.c = configurations
     dap.configurations.cpp = configurations
   end

@@ -1,25 +1,36 @@
-local home = require("utils.os").home
-local get_executable = require("utils.executable").get_executable
-local DapAdapter = require("configs.dap.dap_adapter")
+---@class FirefoxDapAdapter
+---@field _status boolean|nil
+local M = {}
+M.__index = M
 
-local M = DapAdapter.new()
+M.dap = require("dap")
 
-function M:get_adapter()
-  -- TODO: Check later
-  local adapter = get_executable("adapter.bundle.js", { masons = "vscode-firefox-debug/dist" })
-  ---@cast adapter string?
-  return adapter
-end
+---@param self FirefoxDapAdapter
+---@return boolean
+function M:setup()
+  if self._status ~= nil then
+    return self._status
+  end
 
-function M:setup(adapter)
+  local finder = require("utils.executable").get_executable
+  local path = finder("adapter.bundle.js", { masons = "vscode-firefox-debug/dist" })
+  if type(path) ~= "string" or path == "" then
+    self._status = false
+    return false
+  end
+
   self.dap.adapters.firefox = {
-    id = "firefox",
     type = "executable",
     command = "node",
-    args = {
-      string.format("%s/%s", home, adapter),
-    },
+    args = { require("utils.os").home .. "/" .. path },
   }
+
+  self._status = true
+  return true
 end
 
-return M
+return setmetatable(M, {
+  __call = function(self)
+    return self:setup()
+  end,
+})
