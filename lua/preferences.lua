@@ -5,6 +5,7 @@ local M = {
   lsp = {
     force = {
       "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
+      "nxls",
     },
     exclude = {
       "dartls",
@@ -33,6 +34,7 @@ local M = {
           "jenkins",
           "just",
           "kotlin",
+          "mmd",
           "python",
         },
       },

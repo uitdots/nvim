@@ -6,15 +6,14 @@ local lsps = require("preferences").lsp.force
 ---@param server_name string
 local function filter_executable(server_name)
   local success, result = pcall(function()
-    is_executable(vim.lsp.config[server_name].cmd[1])
+    return is_executable(vim.lsp.config[server_name].cmd[1])
   end)
-  return not success or result
+  return success and result
 end
 
 local function setup_custom_lsps()
   for _, server_name in pairs(lsps) do
     if filter_available_external == false or filter_executable(server_name) then
-      vim.lsp.config(server_name, lsp.opts)
       vim.lsp.enable(server_name)
     end
   end
@@ -39,4 +38,5 @@ return {
     lsp.setup()
     setup_custom_lsps()
   end,
+  dependencies = "mason-org/mason.nvim",
 }
