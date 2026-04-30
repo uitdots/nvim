@@ -56,7 +56,7 @@ return {
       auto_trigger = true,
       ---@diagnostic disable-next-line: missing-fields
       keymap = {
-        accept_word = "<M-w>",
+        accept_word = "<M-f>",
         accept_line = "<M-S-l>",
       },
     },
