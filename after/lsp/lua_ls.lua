@@ -4,8 +4,8 @@ local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("lua_ls")
 
 ---@type vim.lsp.Config
 return {
-  ---@module 'codesettings'
-  ---@type lsp.lua_ls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.lua_ls
   settings = {
     Lua = {
       semantic = {

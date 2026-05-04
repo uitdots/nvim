@@ -23,7 +23,7 @@ return {
     "--function-arg-placeholders",
     "--header-insertion=iwyu",
   },
-  ---@module 'codesettings'
-  ---@type lsp.clangd
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.clangd
   settings = nil,
 }

@@ -6,8 +6,8 @@ return {
     "dotnet",
     get_executable("OmniSharp.dll", "packages/omnisharp/libexec"),
   },
-  ---@module 'codesettings'
-  ---@type lsp.omnisharp
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.omnisharp
   settings = {
     FormattingOptions = {
       EnableEditorConfigSupport = true,

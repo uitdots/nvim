@@ -1,7 +1,7 @@
 ---@type vim.lsp.Config
 return {
-  ---@module 'codesettings'
-  ---@type lsp.basedpyright
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.basedpyright
   settings = {
     basedpyright = {
       -- If use Ruff's import organizer, uncomment

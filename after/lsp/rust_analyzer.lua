@@ -1,7 +1,7 @@
 local lsp_utils = require("utils.lsp")
 
----@module 'codesettings'
----@type lsp.rust_analyzer.InlayHints
+---@module 'lspconfig'
+---@type _.lspconfig.settings.rust_analyzer.RustAnalyzer.InlayHints
 local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("rust_analyzer") then
   inlayhint_opts = {
@@ -36,7 +36,8 @@ end
 
 ---@type vim.lsp.Config
 return {
-  ---@type lsp.rust_analyzer
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.rust_analyzer
   settings = {
     inlayHints = inlayhint_opts,
   },

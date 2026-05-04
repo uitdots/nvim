@@ -1,6 +1,5 @@
 local lsp_utils = require("utils.lsp")
 
----@module 'codesettings'
 local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("gopls") then
   inlayhint_opts = {
@@ -37,7 +36,8 @@ return {
     -- vim.api.nvim_set_hl(0, "@lsp.type.comment", {}) -- I tried to highlight using vim syntax for comment but ...
     -- vim.api.nvim_set_hl(0, "@TSComment", {})
   end,
-  ---@type lsp.gopls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.gopls
   settings = {
     gopls = {
       hints = inlayhint_opts,

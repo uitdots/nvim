@@ -14,8 +14,8 @@ return {
     end
     on_dir()
   end,
-  ---@module 'codesettings'
-  ---@type lsp.yamlls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.yamlls
   settings = {
     yaml = {
       customTags = {

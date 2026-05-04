@@ -1,7 +1,8 @@
 ---@type vim.lsp.Config
 return {
-  ---@module 'codesettings'
-  ---@type lsp.eslint
+  before_init = function(params, config) end,
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.eslint
   settings = {
     eslint = {
       autoFixOnSave = true,

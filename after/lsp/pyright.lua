@@ -1,7 +1,7 @@
 ---@type vim.lsp.Config
 return {
-  ---@module 'codesettings'
-  ---@type lsp.pyright
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.pyright
   settings = {
     python = {
       analysis = {

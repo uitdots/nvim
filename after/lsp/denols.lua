@@ -5,7 +5,7 @@ return {
     "deno.jsonc",
   },
   workspace_required = true,
-  ---@module 'codesettings'
-  ---@type lsp.denols
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.denols
   settings = nil,
 }

@@ -1,8 +1,8 @@
 local lsp = require("configs.lsp")
 local lsp_utils = require("utils.lsp")
 
----@module 'codesettings'
----@type lsp.vtsls.InlayHints
+---@module 'lspconfig'
+---@type _.lspconfig.settings.vtsls.Typescript.InlayHints | _.lspconfig.settings.vtsls.Javascript.InlayHints
 local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("tsgo") then
   inlayhint_opts = {
@@ -38,10 +38,11 @@ return {
       client.server_capabilities.semanticTokensProvider = nil
     end
   end,
-  ---@type lsp.vtsls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.vtsls
   settings = {
     javascript = {
-      ---@diagnostic disable-next-line: assign-type-mismatch
+      ---@cast inlayhint_opts _.lspconfig.settings.vtsls.Javascript.InlayHints
       inlayHints = inlayhint_opts,
       -- referencesCodeLens = {
       --   enabled = true,
@@ -58,7 +59,7 @@ return {
       --   showOnAllClassMethods = true,
       --   showOnInterfaceMethods = true,
       -- },
-      ---@diagnostic disable-next-line: assign-type-mismatch
+      ---@cast inlayhint_opts _.lspconfig.settings.vtsls.Typescript.InlayHints
       inlayHints = inlayhint_opts,
     },
   },

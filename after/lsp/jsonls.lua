@@ -7,8 +7,8 @@ return {
   init_options = {
     provideFormatter = false,
   },
-  ---@module 'codesettings'
-  ---@type lsp.jsonls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.jsonls
   settings = {
     json = {
       validate = {

@@ -229,8 +229,8 @@ end
 ---@type vim.lsp.Config
 return {
   cmd = get_cmd(),
-  ---@module 'codesettings'
-  ---@type lsp.jdtls
+  ---@module 'lspconfig'
+  ---@type lspconfig.settings.jdtls
   settings = {
     java = {
       signatureHelp = {
