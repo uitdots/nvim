@@ -151,14 +151,6 @@ return {
       optional = true,
     },
     {
-      "neovim/nvim-lspconfig",
-      opts = function()
-        local nvchad_capabilities = require("nvchad.configs.lspconfig").capabilities
-        lsp.capabilities = vim.tbl_deep_extend("keep", lsp.capabilities, nvchad_capabilities)
-      end,
-      optional = true,
-    },
-    {
       "saghen/blink.cmp",
       ---@module 'blink.cmp'
       ---@param opts? blink.cmp.Config

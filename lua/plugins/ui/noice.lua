@@ -21,8 +21,7 @@ return {
     },
     lsp = {
       hover = {
-        enabled = true,
-        silent = true,
+        enabled = false,
       },
       documentation = {
         enabled = false,

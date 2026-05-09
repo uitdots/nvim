@@ -15,32 +15,39 @@ return {
   event = "VeryLazy",
   -- ft = ft,
   ---@module 'markview'
-  ---@type markview.config
-  opts = {
-    preview = {
-      enable = false,
-      enable_hybrid_mode = true,
-      filetypes = filetypes,
-      -- https://github.com/OXY2DEV/markview.nvim/issues/272
-      -- condition = function(buffer)
-      --   local ft, bt = bo[buffer].ft, bo[buffer].bt
-      --   return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
-      -- end,
-      icon_provider = "devicons",
-      modes = {
-        "n",
-        "no",
-        "c",
-        "v",
-        "V",
-        "i",
+  ---@param opts markview.config?
+  ---@return markview.config
+  opts = function(_, opts)
+    local markview = require("markview")
+    ---@type markview.config
+    local _opts = {
+      preview = {
+        enable = false,
+        enable_hybrid_mode = true,
+        filetypes = filetypes,
+        -- https://github.com/OXY2DEV/markview.nvim/issues/272
+        -- condition = function(buffer)
+        --   local ft, bt = bo[buffer].ft, bo[buffer].bt
+        --   return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
+        -- end,
+        icon_provider = "devicons",
+        modes = {
+          "n",
+          "no",
+          "c",
+          "v",
+          "V",
+          "i",
+        },
+        hybrid_modes = {
+          "i",
+        },
+        map_gx = false,
       },
-      hybrid_modes = {
-        "i",
-      },
-      map_gx = false,
-    },
-  },
+    }
+    require("configs.lsp.marview_hover").setup()
+    return vim.tbl_deep_extend("force", opts or {}, _opts)
+  end,
   cmd = "Markview",
   keys = {
     {
