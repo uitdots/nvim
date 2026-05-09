@@ -26,6 +26,7 @@ end
 
 function M.setup()
   lsp.inlay_hint.enable(inlay_hint_enabled)
+  lsp.linked_editing_range.enable()
   M.global_keymaps()
   require("configs.lsp.autocmds").setup()
 end
