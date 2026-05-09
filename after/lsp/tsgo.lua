@@ -1,4 +1,3 @@
-local lsp = require("configs.lsp")
 local lsp_utils = require("utils.lsp")
 
 ---@module 'lspconfig'
@@ -31,9 +30,7 @@ local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("tsgo")
 
 ---@type vim.lsp.Config
 return {
-  on_init = function(client, init_result)
-    lsp.on_init(client, init_result)
-
+  on_init = function(client)
     if not semantic_tokens_enabled then
       client.server_capabilities.semanticTokensProvider = nil
     end
