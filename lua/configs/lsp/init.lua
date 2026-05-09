@@ -1,6 +1,5 @@
 local map = vim.keymap.set
 local inlay_hint_enabled = require("preferences").options.inlay_hint.client
-local semantic_tokens_enabled = require("preferences").options.semantic_tokens.client
 local lsp = vim.lsp
 
 local M = {}
@@ -25,42 +24,10 @@ function M.global_keymaps()
   end, { desc = "LSP | Toggle InlayHint", silent = true })
 end
 
----@type elem_or_list<fun(client: vim.lsp.Client, init_result: lsp.InitializeResult)>
-function M.on_init(client)
-  if not semantic_tokens_enabled and client:supports_method("textDocument/semanticTokens") then
-    client.server_capabilities.semanticTokensProvider = nil
-  end
-end
-
----https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/lsp/init.lua For file rename capabilities
----@type lsp.ClientCapabilities
-M.capabilities = {
-  workspace = {
-    fileOperations = {
-      didRename = true,
-      willRename = true,
-    },
-  },
-  textDocument = {
-    foldingRange = {
-      dynamicRegistration = false,
-      lineFoldingOnly = true,
-    },
-  },
-}
-
----@type vim.lsp.Config
----@diagnostic disable-next-line: missing-fields
-M.opts = {
-  capabilities = M.capabilities,
-  on_init = M.on_init,
-}
-
 function M.setup()
   lsp.inlay_hint.enable(inlay_hint_enabled)
   M.global_keymaps()
   require("configs.lsp.autocmds").setup()
-  lsp.config("*", M.opts)
 end
 
 return M
