@@ -1,0 +1,3 @@
+[submodule "vscode-nestjs-snippets"]
+	path = snippets/vscode-nestjs-snippets
+	url = https://github.com/ashinzekene/vscode-nestjs-snippets

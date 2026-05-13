@@ -60,6 +60,7 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load({
       path = {
         "snippets/vscode",
+        "snippets/vscode-nestjs-snippets/snippets",
       },
     })
 

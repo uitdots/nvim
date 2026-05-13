@@ -1,5 +1,5 @@
 {
-  "name": "Custom VSCode snippets",
+  "name": "customvscodesnippets",
   "contributes": {
     "snippets": []
   }
