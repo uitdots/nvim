@@ -1,6 +1,10 @@
 ---@type LazySpec
 return {
   "xvzc/chezmoi.nvim",
+  cmd = {
+    "ChezmoiEdit",
+    "ChezmoiList",
+  },
   init = function()
     local exclude_patterns = {
       [[.*chezmoi.*chezmoi.*]],
