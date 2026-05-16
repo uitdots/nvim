@@ -12,7 +12,10 @@ function M:setup()
   end
 
   local finder = require("utils.executable").get_executable
-  local path = finder("chromeDebug.js", { masons = "packages/vscode-chrome-debug/out/src" })
+  local path = finder("js-debug-adapter", { masons = "packages/js-debug-adapter" })
+  if not path then
+    path = finder("chromeDebug.js", { masons = "packages/vscode-chrome-debug/out/src" })
+  end
   if type(path) ~= "string" or path == "" then
     self._status = false
     return false
