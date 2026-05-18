@@ -45,7 +45,7 @@ return {
         map_gx = false,
       },
     }
-    require("configs.lsp.marview_hover").setup()
+    -- require("configs.lsp.marview_hover").setup()
     return vim.tbl_deep_extend("force", opts or {}, _opts)
   end,
   cmd = "Markview",
