@@ -187,7 +187,7 @@ return {
   keys = {
     -- Find
     {
-      "<leader>fs",
+      "<leader>fS",
       function()
         Snacks.picker.grep_word({
           layout = {
@@ -199,7 +199,7 @@ return {
       mode = { "n", "x" },
     },
     {
-      "<leader>fS",
+      "<leader>f<M-s>",
       function()
         Snacks.picker.spelling()
       end,
@@ -211,17 +211,6 @@ return {
         Snacks.picker.smart()
       end,
       desc = "Snacks | Smart",
-    },
-    {
-      "<leader><leader>",
-      function()
-        extend_exclude()
-        Snacks.picker.files({
-          show_empty = false,
-          exclude = exclude_find,
-        })
-      end,
-      desc = "Snacks | Find Files",
     },
     {
       "<leader>ff",
@@ -285,7 +274,7 @@ return {
       desc = "Snacks | Autocommands",
     },
     {
-      "<leader>fg",
+      "<leader>fG",
       function()
         Snacks.picker.git_files()
       end,
