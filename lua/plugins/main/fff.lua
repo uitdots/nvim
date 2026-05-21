@@ -7,13 +7,20 @@ return {
   end,
   ---@module 'fff'
   ---@type FffConfig
+  ---@diagnostic disable-next-line: missing-fields
   opts = {
     prompt = "> ",
+    ---@diagnostic disable-next-line: missing-fields
     layout = {
       prompt_position = "top",
     },
+    ---@diagnostic disable-next-line: missing-fields
     keymaps = {
+      ---@diagnostic disable-next-line: assign-type-mismatch
       close = { "<C-c>" },
+    },
+    hl = {
+      matched = "TelescopeMatching",
     },
   },
   keys = {
@@ -25,23 +32,20 @@ return {
       desc = "FFF | Files",
     },
     {
-      "<leader>fg",
+      "<leader>fw",
       function()
         require("fff").live_grep()
       end,
-      desc = "FFF | Grep",
-    },
-    {
-      "<leader>fz",
-      function()
-        require("fff").live_grep({ grep = { modes = { "fuzzy", "plain" } } })
-      end,
-      desc = "FFF | Live FFFuzy Grep",
+      desc = "FFF | Grep Words",
     },
     {
       "<leader>fs",
       function()
-        require("fff").live_grep({ query = vim.fn.expand("<cword>") })
+        local s_pos = vim.fn.getpos("v")
+        local e_pos = vim.fn.getpos(".")
+        local lines = vim.fn.getregion(s_pos, e_pos, { type = vim.fn.mode() })
+        local text = table.concat(lines, "\n")
+        require("fff").live_grep({ query = vim.fn.expand(text) })
       end,
       desc = "FFF | Search String",
     },

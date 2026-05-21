@@ -242,7 +242,7 @@ return {
       desc = "Snacks | Buffers",
     },
     {
-      "<leader>fw",
+      "<leader>fW",
       function()
         Snacks.picker.grep({
           layout = {
@@ -250,7 +250,7 @@ return {
           },
         })
       end,
-      desc = "Snacks | Words",
+      desc = "Snacks | Grep Words",
     },
     {
       "<leader>fC",
