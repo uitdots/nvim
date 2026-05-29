@@ -48,6 +48,7 @@ return {
         require("fff").live_grep({ query = vim.fn.expand(text) })
       end,
       desc = "FFF | Search String",
+      mode = "v",
     },
   },
 }
