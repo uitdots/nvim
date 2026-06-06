@@ -3,7 +3,8 @@ local is_executable = require("utils.executable").is_executable_cache
 ---@type LazySpec
 return {
   "ravitemer/mcphub.nvim",
-  enabled = is_executable("npm"),
+  enabled = false,
+  -- enabled = is_executable("npm"),
   keys = {
     {
       "<leader>am",
