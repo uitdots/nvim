@@ -1,4 +1,3 @@
-local lsp = require("configs.lsp")
 local ft_no_navigate = {
   "dap-view",
   "dbui",
@@ -6,6 +5,16 @@ local ft_no_navigate = {
   "codecompanion",
   "avante",
 }
+
+------@param cmd string
+---local open_term = function(cmd)
+---  require("nvchad.term").runner({
+---    pos = "sp",
+---    cmd = cmd,
+---    id = "code-runner",
+---    clear_cmd = false,
+---  })
+---end
 
 ---@type LazySpec
 return {
@@ -117,19 +126,10 @@ return {
       desc = "Terminal | Float New",
       silent = true,
     },
-    -- Use builtin runner, because this is suck
     -- {
-    --   "<leader>Tr",
+    --   "<F5>",
     --   function()
-    --     local open_term = function(cmd)
-    --       require("nvchad.term").runner({
-    --         pos = "sp",
-    --         cmd = cmd,
-    --         id = "code-runner",
-    --         clear_cmd = false,
-    --       })
-    --     end
-    --     require("configs.code-runner").run(open_term)
+    --     require("configs.runner").run(open_term)
     --   end,
     --   desc = "Terminal | Code Runner",
     --   silent = true,
