@@ -53,6 +53,9 @@ return {
         options = {
           lang_to_formatters = {
             json = is_executable("jq") and { "jq" } or nil,
+            go = {},
+            typescript = { "prettier" },
+            javascript = { "prettier" },
           },
         },
       },
