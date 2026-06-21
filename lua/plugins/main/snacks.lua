@@ -344,9 +344,13 @@ return {
       desc = "Snacks | Icons",
     },
     {
-      "<leader>fk",
+      "<C-p>",
       function()
-        Snacks.picker.keymaps()
+        Snacks.picker.keymaps({
+          layout = {
+            preset = "dropdown",
+          },
+        })
       end,
       desc = "Snacks | Keymaps",
     },
