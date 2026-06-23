@@ -32,6 +32,10 @@ return {
     "nvim-tree/nvim-web-devicons",
   },
   opts = {
+    show_guides = true,
+    guides = {
+      last_item = "╰─",
+    },
     filter_kind = {
       -- https://microsoft.github.io/language-server-protocol/specifications/lsp/3.17/specification/#symbolKind
       "Array",
