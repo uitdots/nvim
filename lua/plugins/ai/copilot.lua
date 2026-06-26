@@ -83,7 +83,7 @@ return {
       silent = true,
     },
     {
-      "<leader>at",
+      "<leader>aT",
       function()
         local is_disabled = require("copilot.client").is_disabled()
         vim.notify("Copilot is " .. (is_disabled and "enabled" or "disabled"), vim.log.levels.INFO, {
