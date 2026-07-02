@@ -2,10 +2,6 @@
 return {
   "samiulsami/go-deep.nvim",
   build = ':lua require("go_deep").build()',
-  ---@module 'go_deep'
-  ---@type go_deep.Config
-  opts = nil,
-  config = true,
   specs = {
     {
       "saghen/blink.cmp",
@@ -17,6 +13,9 @@ return {
             go_deep = {
               module = "go_deep.blink",
               async = true,
+              ---@module 'go_deep'
+              ---@type go_deep.Config
+              opts = nil,
             },
           },
           per_filetype = {
