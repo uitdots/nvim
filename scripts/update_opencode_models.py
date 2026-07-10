@@ -110,6 +110,7 @@ def generate_lua(models: dict) -> str:
     out.append("-- Do not edit manually.")
     out.append("-- Update: python3 scripts/update_opencode_models.py")
     out.append("")
+    out.append("---@type CodeCompanion.OpenCode.Models")
     out.append("local M = {}")
     out.append("")
 

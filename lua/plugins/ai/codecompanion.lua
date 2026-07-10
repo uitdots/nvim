@@ -90,6 +90,11 @@ return {
     })
   end,
   opts = {
+    display = {
+      chat = {
+        show_settings = false,
+      },
+    },
     adapters = {
       http = {
         opencode_zen = function()

@@ -2,6 +2,7 @@
 -- Do not edit manually.
 -- Update: python3 scripts/update_opencode_models.py
 
+---@type CodeCompanion.OpenCode.Models
 local M = {}
 
 M["big-pickle"] = {
