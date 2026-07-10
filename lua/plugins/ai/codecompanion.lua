@@ -103,6 +103,7 @@ return {
     interactions = {
       chat = {
         adapter = "opencode_zen",
+        completion_provider = "blink",
         slash_commands = {
           image = {
             opts = {
@@ -115,16 +116,6 @@ return {
           },
         },
         tools = {
-          cmd_runner = {
-            opts = {
-              require_approval_before = true,
-            },
-          },
-          delete_file = {
-            opts = {
-              require_approval_before = true,
-            },
-          },
           groups = {
             read_only = {
               description = "Read-only tools for searching and reading files",
