@@ -316,6 +316,10 @@ local function form_parameters(self, params, messages)
 end
 
 ---OpenCode Zen - curated models via OpenCode's AI gateway
+--- NOTE: Zen gateway does NOT unify routing. This adapter sends everything to
+--- /v1/chat/completions via openai_compatible. Works for: DeepSeek, Grok, MiniMax,
+--- GLM, Kimi, free models. BROKEN for: Claude (/v1/messages), GPT-5.x (/v1/responses),
+--- Gemini (/v1/models/{id}) — these need separate adapters or a routing layer.
 ---@return CodeCompanion.HTTPAdapter
 function M.opencode_zen()
   local adapter = require("codecompanion.adapters").extend("openai_compatible", {

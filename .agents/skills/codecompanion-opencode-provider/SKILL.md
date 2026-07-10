@@ -119,3 +119,15 @@ python3 scripts/update_opencode_models.py --check  # CI verify
 3. **OpenAI `include` param** — May not work via chat completions endpoint; verify with real call
 4. **URL derivation** — `openai_compatible` appends `/chat/completions` to `env.url` automatically
 5. **Schema merging** — Use `vim.tbl_extend("force", ...)` not `"keep"` to override base fields
+6. **Zen gateway does NOT unify routing** — The gateway requires provider-specific endpoints:
+
+| Model Family | Endpoint | Format |
+|---|---|---|
+| DeepSeek, Grok, MiniMax, GLM, Kimi, free models | `/v1/chat/completions` | OpenAI Chat Completions ✅ works |
+| Claude + Qwen paid | `/v1/messages` | Anthropic Messages API ❌ 404 |
+| GPT-5.x | `/v1/responses` | OpenAI Responses API ❌ wrong format |
+| Gemini | `/v1/models/{model-id}` | Google Gemini API ❌ wrong format |
+
+Our adapters extend `openai_compatible` → always sends to `/v1/chat/completions`.
+This works for DeepSeek/Grok/MiniMax/GLM/Kimi/free models. **Claude/GPT-5.x/Gemini
+will fail** — they need separate adapters or a routing layer (not yet implemented).
