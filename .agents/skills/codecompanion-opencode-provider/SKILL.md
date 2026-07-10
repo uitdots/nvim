@@ -103,9 +103,14 @@ Always use `type = "enum"` (not `type = "string"`) for fields with `choices`.
 ## Updating models
 
 ```bash
-python3 scripts/update_opencode_models.py          # regenerate
-python3 scripts/update_opencode_models.py --check   # CI verify
+python3 scripts/update_opencode_models.py          # regenerate (minimal: only used fields)
+python3 scripts/update_opencode_models.py --all    # regenerate with all fields
+python3 scripts/update_opencode_models.py --check  # CI verify
 ```
+
+**Minimal mode** (default) only emits fields used by the adapter: `provider`, `capabilities.reasoning`, `variants`. This keeps the file small (609 lines vs 1284 for all fields).
+
+**All mode** (`--all`) emits everything: `name`, `family`, `capabilities.*`, `limit`, `cost`.
 
 ## Common pitfalls
 

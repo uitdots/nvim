@@ -1,3 +1,4 @@
 spell/*.spl
 lazy-lock.json
 tmp
+__pycache__/

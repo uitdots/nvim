@@ -2,13 +2,20 @@
 """Generate opencode_models.lua from `opencode models --verbose`.
 
 Usage:
-    python3 scripts/update_opencode_models.py [--check]
+    python3 scripts/update_opencode_models.py [--check] [--all]
 
 Flags:
     --check   Verify the generated file is up-to-date (exit 1 if stale)
+    --all     Emit all fields (default: only fields used by the adapter)
 
 Output:
     lua/configs/codecompanion/opencode_models.lua
+
+Fields used by the adapter (minimal mode):
+    provider, capabilities.reasoning, variants
+
+Additional fields (--all mode):
+    name, family, capabilities.{toolcall,attachment,temperature}, limit, cost
 """
 
 import subprocess
@@ -103,7 +110,7 @@ def lua_value(val) -> str:
     return str(val)
 
 
-def generate_lua(models: dict) -> str:
+def generate_lua(models: dict, emit_all: bool) -> str:
     """Generate Lua source from parsed model data."""
     out = []
     out.append("-- Auto-generated from `opencode models --verbose`")
@@ -116,37 +123,40 @@ def generate_lua(models: dict) -> str:
 
     for model_id in sorted(models.keys()):
         model = models[model_id]
-        name = model.get("name", model_id)
-        family = model.get("family", "")
         npm = model.get("api", {}).get("npm", "")
         provider = detect_provider(npm)
         caps = model.get("capabilities", {})
-        limit = model.get("limit", {})
         variants = model.get("variants", {})
+        name = model.get("name", model_id)
+        family = model.get("family", "")
+        limit = model.get("limit", {})
         cost = model.get("cost", {})
 
         out.append('M["' + model_id + '"] = {')
-        out.append("  name = " + lua_value(name) + ",")
-        out.append("  family = " + lua_value(family) + ",")
         out.append("  provider = " + lua_value(provider) + ",")
+
+        if emit_all:
+            out.append("  name = " + lua_value(name) + ",")
+            out.append("  family = " + lua_value(family) + ",")
 
         out.append("  capabilities = {")
         out.append("    reasoning = " + lua_value(caps.get("reasoning", False)) + ",")
-        out.append("    toolcall = " + lua_value(caps.get("toolcall", False)) + ",")
-        out.append("    attachment = " + lua_value(caps.get("attachment", False)) + ",")
-        out.append("    temperature = " + lua_value(caps.get("temperature", False)) + ",")
+        if emit_all:
+            out.append("    toolcall = " + lua_value(caps.get("toolcall", False)) + ",")
+            out.append("    attachment = " + lua_value(caps.get("attachment", False)) + ",")
+            out.append("    temperature = " + lua_value(caps.get("temperature", False)) + ",")
         out.append("  },")
 
-        out.append("  limit = {")
-        out.append("    context = " + lua_value(limit.get("context", 0)) + ",")
-        out.append("    output = " + lua_value(limit.get("output", 0)) + ",")
-        out.append("  },")
-
-        if cost:
-            out.append("  cost = {")
-            out.append("    input = " + lua_value(cost.get("input", 0)) + ",")
-            out.append("    output = " + lua_value(cost.get("output", 0)) + ",")
+        if emit_all:
+            out.append("  limit = {")
+            out.append("    context = " + lua_value(limit.get("context", 0)) + ",")
+            out.append("    output = " + lua_value(limit.get("output", 0)) + ",")
             out.append("  },")
+            if cost:
+                out.append("  cost = {")
+                out.append("    input = " + lua_value(cost.get("input", 0)) + ",")
+                out.append("    output = " + lua_value(cost.get("output", 0)) + ",")
+                out.append("  },")
 
         if variants:
             out.append("  variants = {")
@@ -165,6 +175,7 @@ def generate_lua(models: dict) -> str:
 
 def main():
     check_mode = "--check" in sys.argv
+    emit_all = "--all" in sys.argv
 
     try:
         result = subprocess.run(
@@ -188,7 +199,7 @@ def main():
         print("Error: No opencode models found in output", file=sys.stderr)
         sys.exit(1)
 
-    lua_source = generate_lua(models)
+    lua_source = generate_lua(models, emit_all)
 
     if check_mode:
         try:
@@ -205,7 +216,8 @@ def main():
         os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
         with open(OUTPUT_PATH, "w") as f:
             f.write(lua_source)
-        print("Generated " + OUTPUT_PATH + " with " + str(len(models)) + " models")
+        mode = "all" if emit_all else "minimal"
+        print("Generated " + OUTPUT_PATH + " with " + str(len(models)) + " models (" + mode + ")")
 
 
 if __name__ == "__main__":
