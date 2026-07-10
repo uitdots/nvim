@@ -30,6 +30,7 @@ return {
       { "<leader>s", group = "Snapshot", mode = "x", icon = { icon = "", color = "grey" } },
       { "<leader>t", group = "Treesitter", mode = { "n", "v" }, icon = { icon = "", color = "yellow" } },
       { "<leader>u", group = "Utils", mode = { "n", "v" }, icon = { icon = "", color = "blue" } },
+      { "<leader>uu", group = "Undo", mode = "x", icon = { icon = "", color = "blue" } },
       { "<leader>w", group = "Writing", icon = { icon = "", color = "cyan" } },
       { "<localleader>\\", group = "Multi Cursor", icon = { icon = "󰗧", color = "purple" } },
       { "<localleader>j", group = "Java", icon = { icon = "", color = "cyan" } },
