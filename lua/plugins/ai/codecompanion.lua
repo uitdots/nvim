@@ -90,8 +90,19 @@ return {
     })
   end,
   opts = {
+    adapters = {
+      http = {
+        opencode_zen = function()
+          return require("configs.codecompanion.opencode_adapters").opencode_zen()
+        end,
+        opencode_go = function()
+          return require("configs.codecompanion.opencode_adapters").opencode_go()
+        end,
+      },
+    },
     interactions = {
       chat = {
+        adapter = "opencode_zen",
         slash_commands = {
           image = {
             opts = {
@@ -134,6 +145,9 @@ return {
             },
           },
         },
+      },
+      inline = {
+        adapter = "opencode_zen",
       },
     },
     rules = {
