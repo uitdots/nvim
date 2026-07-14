@@ -4,10 +4,10 @@ local ai_suggestion_enabled = require("preferences").options.others.ai_suggestio
 return {
   "folke/sidekick.nvim",
   cmd = "Sidekick",
-  event = ai_suggestion_enabled and {
+  event = {
     "BufRead",
     "BufNewFile",
-  } or nil,
+  },
   keys = {
     {
       "<Tab>",

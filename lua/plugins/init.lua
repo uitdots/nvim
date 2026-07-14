@@ -5,7 +5,6 @@ local is_executable = require("utils.executable").is_executable
 return {
   {
     import = "plugins.ai",
-    cond = ide_mode,
   },
   {
     import = "plugins.blink",
