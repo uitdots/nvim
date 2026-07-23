@@ -3,7 +3,7 @@
 ---lua_ls check type for first type?? so we must let `string` before anything else
 ---@alias Lsp string | Lsp.NvimLspconfig | Lsp.Others
 
----Command: `r !curl -Ls https://api.github.com/repos/neovim/nvim-lspconfig/contents/lsp/ |  jq '.[] | select(.type == "file") | .name' -r | sort | sed "s/\.lua$//; s/.*/---| '\"&\"'/"`
+---Command: `r !curl -Ls https://api.github.com/repos/neovim/nvim-lspconfig/contents/lsp/ | jq '.[] | select(.type == "file") | .name' -r | sort | sed "s/\.lua$//; s/.*/---| '\"&\"'/"`
 ---@alias Lsp.NvimLspconfig
 ---| '"ada_ls"'
 ---| '"agda_ls"'

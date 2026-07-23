@@ -7,7 +7,6 @@ return {
     ensure_installed = {
       "editorconfig",
       "ssh_config",
-      "tmux",
     },
   },
   opts_extend = {
