@@ -44,8 +44,13 @@ return {
       width = 40,
     },
     renderer = {
-      highlight_git = false,
+      highlight_git = true,
       root_folder_label = ":~:s?$?",
+      icons = {
+        show = {
+          git = false,
+        },
+      },
     },
     actions = {
       file_popup = {
