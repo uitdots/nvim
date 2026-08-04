@@ -1,23 +1,5 @@
-local filter_available_external = require("preferences").options.others.filter_available_external
-local is_executable = require("utils.executable").is_executable
 local lsp = require("configs.lsp")
-local lsps = require("preferences").lsp.force
-
----@param server_name string
-local function filter_executable(server_name)
-  local success, result = pcall(function()
-    return is_executable(vim.lsp.config[server_name].cmd[1])
-  end)
-  return success and result
-end
-
-local function setup_custom_lsps()
-  for _, server_name in pairs(lsps) do
-    if filter_available_external == false or filter_executable(server_name) then
-      vim.lsp.enable(server_name)
-    end
-  end
-end
+local lsps_force = require("preferences").lsp.force
 
 ---@type LazySpec
 return {
@@ -36,7 +18,7 @@ return {
   },
   config = function()
     lsp.setup()
-    setup_custom_lsps()
+    vim.lsp.enable(lsps_force)
   end,
   dependencies = "mason-org/mason.nvim",
 }

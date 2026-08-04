@@ -6,10 +6,10 @@ local M = {
     force = {
       "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
       "nxls",
+      "tsc", -- until this is closed: https://github.com/neovim/nvim-lspconfig/issues/4467
     },
     exclude = {
       "dartls",
-      -- "tsgo",
       "rust_analyzer",
       "sqls",
       "stylua",
