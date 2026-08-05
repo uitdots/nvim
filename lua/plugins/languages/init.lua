@@ -2,9 +2,9 @@ local is_windows = require("utils.os").is_windows
 
 ---@type LazySpec
 return {
-  -- {
-  --   import = "plugins.languages.ansible",
-  -- },
+  {
+    import = "plugins.languages.ansible",
+  },
   -- {
   --   import = "plugins.languages.assembly",
   -- },

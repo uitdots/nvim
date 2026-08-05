@@ -1,3 +1,4 @@
+--- Disabled because it force ansible filetype, but we need yaml.ansible
 ---@type LazySpec
 return {
   "pearofducks/ansible-vim",
