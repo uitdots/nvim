@@ -1,3 +1,5 @@
+-- By lsp already, and I don't need it fix implicitly
+-- Prettier also work with yaml already
 ---@type LazySpec
 return {
   "stevearc/conform.nvim",
@@ -7,7 +9,7 @@ return {
     formatters_by_ft = {
       ansible = {
         "prettier",
-        "ansible-lint",
+        -- "ansible-lint", -- by lsp already
       },
     },
   },

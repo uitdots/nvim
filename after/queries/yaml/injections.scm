@@ -71,8 +71,7 @@
   (#gsub! @injection.language ".*language?%s*[%:=]%s*([%w%p]+).*" "%1")
   (#set! "priority" 110))
 
-;;;;;;;;;;;; FOR GITHUB ACTION
-
+; Github Actions
 ([
   (string_scalar)
   (block_scalar)

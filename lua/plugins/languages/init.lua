@@ -69,6 +69,9 @@ return {
   --   import = "plugins.languages.jenkins",
   -- },
   {
+    import = "plugins.languages.jinja",
+  },
+  {
     import = "plugins.languages.json",
   },
   {

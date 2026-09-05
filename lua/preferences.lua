@@ -4,7 +4,7 @@
 local M = {
   lsp = {
     force = {
-      "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
+      -- "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
       "nxls",
       "tsc", -- until this is closed: https://github.com/neovim/nvim-lspconfig/issues/4467
     },

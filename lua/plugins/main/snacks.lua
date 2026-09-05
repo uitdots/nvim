@@ -281,14 +281,14 @@ return {
       desc = "Snacks | Git Files",
     },
     {
-      "<leader>fr",
+      "<leader>fR",
       function()
         Snacks.picker.recent()
       end,
       desc = "Snacks | Recent",
     },
     {
-      "<leader>fR",
+      "<leader>fr",
       function()
         Snacks.picker.resume()
       end,
@@ -530,6 +530,23 @@ return {
         Snacks.bufdelete.all()
       end,
       desc = "Snacks | Close Buffers",
+      silent = true,
+    },
+    -- Stratch
+    {
+      "<leader>.",
+      function()
+        Snacks.scratch()
+      end,
+      desc = "Toggle Scratch Buffer",
+      silent = true,
+    },
+    {
+      "<leader>f.",
+      function()
+        Snacks.scratch.select()
+      end,
+      desc = "Select Scratch Buffer",
       silent = true,
     },
   },
