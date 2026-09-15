@@ -62,9 +62,9 @@ return {
   {
     import = "plugins.languages.http",
   },
-  -- {
-  --   import = "plugins.languages.java",
-  -- },
+  {
+    import = "plugins.languages.java",
+  },
   -- {
   --   import = "plugins.languages.jenkins",
   -- },
