@@ -1,6 +1,3 @@
--- This is not right because we cache it using bufnr
--- Update, isn't it right? idk
-
 local nvim_get_current_buf = vim.api.nvim_get_current_buf
 
 local M = {}
@@ -19,13 +16,20 @@ M.fileformats = {
 ---@private
 ---@type string
 M.state = nil
+M.state = ""
 
 ---@return string?
 return function()
   local bufnr = nvim_get_current_buf()
 
   if bufnr ~= M.current_bufnr then
-    M.state = string.format("%%#St_gitIcons#%s  ", M.fileformats[vim.bo.fileformat])
+    M.current_bufnr = bufnr
+    local format = M.fileformats[vim.bo.fileformat] or nil
+    if format == nil then
+      M.state = ""
+    else
+      M.state = string.format("%%#St_gitIcons#%s  ", format)
+    end
   end
 
   return M.state
