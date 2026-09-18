@@ -2,17 +2,19 @@ vim.filetype.add({
   filename = {
     ["atlas.hcl"] = "atlas-config",
   },
-  pattern = {
-    [".*/*.my.hcl"] = "atlas-schema-mysql",
-    [".*/*.pg.hcl"] = "atlas-schema-postgresql",
-    [".*/*.lt.hcl"] = "atlas-schema-sqlite",
-    [".*/*.ch.hcl"] = "atlas-schema-clickhouse",
-    [".*/*.ms.hcl"] = "atlas-schema-mssql",
-    [".*/*.rs.hcl"] = "atlas-schema-redshift",
-    [".*/*.test.hcl"] = "atlas-test",
-    [".*/*.plan.hcl"] = "atlas-plan",
-    [".*/*.rule.hcl"] = "atlas-rule",
-  },
+  -- NOTE: This below should be placed in project, otherwise it will overwrite the terraform
+
+  --   pattern = {
+  --     [".*/*.my.hcl"] = "atlas-schema-mysql",
+  --     [".*/*.pg.hcl"] = "atlas-schema-postgresql",
+  --     [".*/*.lt.hcl"] = "atlas-schema-sqlite",
+  --     [".*/*.ch.hcl"] = "atlas-schema-clickhouse",
+  --     [".*/*.ms.hcl"] = "atlas-schema-mssql",
+  --     [".*/*.rs.hcl"] = "atlas-schema-redshift",
+  --     [".*/*.test.hcl"] = "atlas-test",
+  --     [".*/*.plan.hcl"] = "atlas-plan",
+  --     [".*/*.rule.hcl"] = "atlas-rule",
+  --   },
 })
 
 local register = vim.treesitter.language.register
