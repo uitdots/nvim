@@ -112,5 +112,14 @@ return {
         enabled = false,
       },
     },
+    cli = {
+      tools = {
+        -- HACK: Because sidekick doesn't support agy
+        -- https://github.com/folke/sidekick.nvim/issues/321
+        antigravity = {
+          cmd = { "agy" },
+        }
+      }
+    }
   },
 }
