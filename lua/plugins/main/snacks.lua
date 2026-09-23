@@ -187,7 +187,7 @@ return {
   keys = {
     -- Find
     {
-      "<leader>fS",
+      "<leader>fs",
       function()
         Snacks.picker.grep_word({
           layout = {
@@ -199,21 +199,21 @@ return {
       mode = { "n", "x" },
     },
     {
-      "<leader>f<M-s>",
+      "<leader>f<C-s>",
       function()
         Snacks.picker.spelling()
       end,
       desc = "Snacks | Spelling",
     },
     {
-      "<leader>f<C-s>",
+      "<leader>fS",
       function()
         Snacks.picker.smart()
       end,
       desc = "Snacks | Smart",
     },
     {
-      "<leader>ff",
+      "<leader><leader>",
       function()
         extend_exclude()
         Snacks.picker.files({
@@ -222,7 +222,7 @@ return {
           exclude = exclude_find,
         })
       end,
-      desc = "Snacks | Find All Files",
+      desc = "Snacks | Find Files",
     },
     {
       "<leader>fa",
@@ -232,7 +232,7 @@ return {
           ignored = true,
         })
       end,
-      desc = "Snacks | All Files",
+      desc = "Snacks | Files no Exclude",
     },
     {
       "<leader>fb",
@@ -242,7 +242,7 @@ return {
       desc = "Snacks | Buffers",
     },
     {
-      "<leader>fW",
+      "<leader>fw",
       function()
         Snacks.picker.grep({
           layout = {
