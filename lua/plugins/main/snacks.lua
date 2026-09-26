@@ -274,7 +274,7 @@ return {
       desc = "Snacks | Autocommands",
     },
     {
-      "<leader>fG",
+      "<leader>fg",
       function()
         Snacks.picker.git_files()
       end,
