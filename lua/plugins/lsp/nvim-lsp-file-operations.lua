@@ -7,8 +7,5 @@ return {
     } --[[@as vim.lsp.Config]])
     return opts
   end,
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-tree.lua",
-  },
+  dependencies = "nvim-tree/nvim-tree.lua",
 }
