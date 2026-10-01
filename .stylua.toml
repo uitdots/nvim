@@ -1,6 +1,7 @@
+#:schema https://www.schemastore.org/stylua.json
 column_width = 500
 line_endings = "Unix"
-indent_type = "Spaces"
+indent_type = "Tabs"
 indent_width = 2
 quote_style = "AutoPreferDouble"
 call_parentheses = "Always"
