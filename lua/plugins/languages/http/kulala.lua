@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "mistweaverco/kulala.nvim",
+  "dont-be-evil-company/kulala.nvim",
   keys = {
     { "<leader>qs", desc = "Send request" },
     { "<leader>qa", desc = "Send all requests" },
