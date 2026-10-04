@@ -6,20 +6,20 @@ local home = require("utils.os").home
 -- You only need to do this once.
 -- To disable, remove "~./wakatime.cfg".
 return {
-  "wakatime/vim-wakatime",
-  event = vim.fn.filereadable(string.format("%s/.wakatime.cfg", home)) == 1 and "VeryLazy" or nil,
-  ---@module 'wakatime'
-  ---@type wakatime.Config
-  opts = nil,
-  keys = {
-    {
-      "<leader>uw",
-      "<cmd>WakaTimeToday<CR>",
-      desc = "WakaTime | Today",
-    },
-  },
-  init = function()
-    vim.g.loaded_wakatime = true
-  end,
-  config = true,
+	"wakatime/vim-wakatime",
+	event = vim.fn.filereadable(string.format("%s/.wakatime.cfg", home)) == 1 and "VeryLazy" or nil,
+	---@module 'wakatime'
+	---@type wakatime.Config
+	opts = nil,
+	keys = {
+		{
+			"<leader>uw",
+			"<cmd>WakaTimeToday<CR>",
+			desc = "WakaTime | Today",
+		},
+	},
+	init = function()
+		vim.g.loaded_wakatime = true
+	end,
+	config = true,
 }

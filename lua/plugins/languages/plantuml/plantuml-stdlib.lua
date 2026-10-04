@@ -1,4 +1,4 @@
 ---@type LazySpec
 return {
-  "plantuml/plantuml-stdlib",
+	"plantuml/plantuml-stdlib",
 }

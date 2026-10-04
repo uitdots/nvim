@@ -2,30 +2,30 @@ local lsp_utils = require("utils.lsp")
 
 local inlayhint_opts
 if lsp_utils.is_inlay_hint_enabled("texlab") then
-  inlayhint_opts = {
-    labelDefinitions = true,
-    labelReferences = true,
-    maxLength = nil, ---@type boolean
-  }
+	inlayhint_opts = {
+		labelDefinitions = true,
+		labelReferences = true,
+		maxLength = nil, ---@type boolean
+	}
 end
 ---@type vim.lsp.Config
 return {
-  ---Setting is from here: https://github.com/latex-lsp/texlab/wiki/Configuration
-  settings = {
-    texlab = {
-      build = {
-        onSave = false,
-        forwardSearchAfter = true,
-      },
-      forwardSearch = {
-        executable = "zathura",
-        args = { "--synctex-forward", "%l:1:%f", "%p" },
-      },
-      chktex = {
-        onOpenAndSave = true,
-        onEdit = true,
-      },
-      inlayHints = inlayhint_opts,
-    },
-  },
+	---Setting is from here: https://github.com/latex-lsp/texlab/wiki/Configuration
+	settings = {
+		texlab = {
+			build = {
+				onSave = false,
+				forwardSearchAfter = true,
+			},
+			forwardSearch = {
+				executable = "zathura",
+				args = { "--synctex-forward", "%l:1:%f", "%p" },
+			},
+			chktex = {
+				onOpenAndSave = true,
+				onEdit = true,
+			},
+			inlayHints = inlayhint_opts,
+		},
+	},
 }

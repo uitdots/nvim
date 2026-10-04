@@ -1,3 +1,3 @@
 return {
-  default = "node %",
+	default = "node %",
 }

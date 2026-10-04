@@ -1,3 +1,3 @@
 return {
-  default = "go run %",
+	default = "go run %",
 }

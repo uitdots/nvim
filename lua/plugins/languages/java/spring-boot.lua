@@ -1,4 +1,4 @@
 ---@type LazySpec
 return {
-  "JavaHello/spring-boot.nvim",
+	"JavaHello/spring-boot.nvim",
 }

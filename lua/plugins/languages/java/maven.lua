@@ -1,4 +1,4 @@
 ---@type LazySpec
 return {
-  "eatgrass/maven.nvim",
+	"eatgrass/maven.nvim",
 }

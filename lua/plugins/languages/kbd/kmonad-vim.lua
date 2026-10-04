@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "kmonad/kmonad-vim",
-  enabled = true,
-  lazy = false,
+	"kmonad/kmonad-vim",
+	enabled = true,
+	lazy = false,
 }

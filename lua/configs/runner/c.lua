@@ -1,4 +1,4 @@
 return {
-  gcc = "gcc % -o $fileBase && $fileBase",
-  clang = "clang % -o $fileBase && $fileBase",
+	gcc = "gcc % -o $fileBase && $fileBase",
+	clang = "clang % -o $fileBase && $fileBase",
 }

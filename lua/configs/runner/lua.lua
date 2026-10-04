@@ -1,3 +1,3 @@
 return {
-  default = "lua %",
+	default = "lua %",
 }

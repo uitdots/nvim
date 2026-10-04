@@ -1,7 +1,7 @@
 vim.filetype.add({
-  pattern = {
-    [".*Jenkinsfile.*"] = "jenkins",
-  },
+	pattern = {
+		[".*Jenkinsfile.*"] = "jenkins",
+	},
 })
 
 ---@type LazySpec

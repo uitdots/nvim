@@ -1,49 +1,49 @@
 ---@type LazySpec
 return {
-  "yorickpeterse/nvim-window",
-  keys = {
-    {
-      "<C-w><C-j>",
-      function()
-        require("nvim-window").pick()
-      end,
-      desc = "Pick a window",
-    },
-  },
-  opts = {
-    chars = {
-      "a",
-      "s",
-      "d",
-      "f",
-      "g",
+	"yorickpeterse/nvim-window",
+	keys = {
+		{
+			"<C-w><C-j>",
+			function()
+				require("nvim-window").pick()
+			end,
+			desc = "Pick a window",
+		},
+	},
+	opts = {
+		chars = {
+			"a",
+			"s",
+			"d",
+			"f",
+			"g",
 
-      "q",
-      "w",
-      "e",
-      "r",
-      "t",
+			"q",
+			"w",
+			"e",
+			"r",
+			"t",
 
-      "c",
-      "v",
+			"c",
+			"v",
 
-      "h",
-      "j",
-      "k",
-      "l",
+			"h",
+			"j",
+			"k",
+			"l",
 
-      "y",
-      "u",
-      "i",
-      "o",
-      "p",
+			"y",
+			"u",
+			"i",
+			"o",
+			"p",
 
-      "z",
-      "x",
+			"z",
+			"x",
 
-      "b",
-      "n",
-      "m",
-    },
-  },
+			"b",
+			"n",
+			"m",
+		},
+	},
 }

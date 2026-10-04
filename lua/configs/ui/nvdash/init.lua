@@ -6,9 +6,9 @@ local M = {}
 
 ---@type Headers
 M.headers = setmetatable({}, {
-  __index = function(_, key)
-    return require(string.format("configs.ui.nvdash.headers.%s", key))
-  end,
+	__index = function(_, key)
+		return require(string.format("configs.ui.nvdash.headers.%s", key))
+	end,
 })
 
 return M

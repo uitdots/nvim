@@ -1,6 +1,6 @@
 ---@type LazySpec
 return {
-  "folke/ts-comments.nvim",
-  event = "VeryLazy",
-  config = true,
+	"folke/ts-comments.nvim",
+	event = "VeryLazy",
+	config = true,
 }

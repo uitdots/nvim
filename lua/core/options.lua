@@ -38,17 +38,17 @@ o.winborder = "rounded"
 o.list = true
 
 opt.fillchars = {
-  eob = " ",
-  fold = " ",
-  foldclose = "",
-  foldopen = "",
-  foldsep = " ",
-  lastline = " ",
+	eob = " ",
+	fold = " ",
+	foldclose = "",
+	foldopen = "",
+	foldsep = " ",
+	lastline = " ",
 }
 opt.listchars:append({
-  trail = "·",
-  nbsp = "•",
-  tab = "→ ",
+	trail = "·",
+	nbsp = "•",
+	tab = "→ ",
 })
 
 -- UI while editing
@@ -103,6 +103,6 @@ o.spelloptions = "camel"
 
 -- Replace builtin grep with ripgrep
 if is_executable("rg") then
-  local rgignore = string.format("%s/.config/ripgrep/.rgignore", home)
-  o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file " .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/ignore")
+	local rgignore = string.format("%s/.config/ripgrep/.rgignore", home)
+	o.grepprg = "rg --vimgrep --no-heading --smart-case --ignore-file " .. (vim.fn.filereadable(rgignore) == 1 and rgignore or vim.fn.stdpath("config") .. "/.config/ripgrep/ignore")
 end

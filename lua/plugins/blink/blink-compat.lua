@@ -1,5 +1,5 @@
 ---@type LazySpec
 return {
-  "Saghen/blink.compat",
-  optional = true,
+	"Saghen/blink.compat",
+	optional = true,
 }

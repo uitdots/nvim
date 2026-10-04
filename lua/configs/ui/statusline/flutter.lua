@@ -5,7 +5,7 @@ local format = string.format
 
 ---@return string?
 return function()
-  if g.flutter_tools_decorations and g.flutter_tools_decorations.app_version then
-    return format("%%#St_gitIcons# %s  ", o.columns > 100 and g.flutter_tools_decorations.app_version or "")
-  end
+	if g.flutter_tools_decorations and g.flutter_tools_decorations.app_version then
+		return format("%%#St_gitIcons# %s  ", o.columns > 100 and g.flutter_tools_decorations.app_version or "")
+	end
 end

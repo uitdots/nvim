@@ -1,62 +1,62 @@
 ---@type LazySpec
 return {
-  "nvim-tree/nvim-tree.lua",
-  version = "*",
-  keys = {
-    {
-      "<leader>e",
-      "<cmd>NvimTreeToggle<cr>",
-      desc = "NvimTree | Toggle",
-      silent = true,
-    },
-    {
-      "<leader><Tab>",
-      "<cmd>NvimTreeFindFile<cr>",
-      desc = "NvimTree | Find Current",
-      silent = true,
-    },
-  },
-  cmd = {
-    "NvimTreeOpen",
-    "NvimTreeToggle",
-    "NvimTreeFocus",
-    "NvimTreeFindFile",
-    "NvimTreeFindFileToggle",
-  },
-  opts = {
-    filters = {
-      dotfiles = true,
-      custom = {
-        ".*.ruff_cache$",
-        ".*.spec$",
-        ".*LICENSE.*",
-        ".*__pycache__$",
-        ".DS_Store",
-        "thumbs.db",
-        ".*.egg-info", -- python's stuff
-      },
-    },
-    sync_root_with_cwd = true,
-    view = {
-      cursorline = true,
-      number = true,
-      relativenumber = true,
-      width = 40,
-    },
-    renderer = {
-      highlight_git = true,
-      root_folder_label = ":~:s?$?",
-      icons = {
-        show = {
-          git = false,
-        },
-      },
-    },
-    actions = {
-      open_file = {
-        resize_window = false,
-      },
-    },
-  },
-  dependencies = "nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-tree.lua",
+	version = "*",
+	keys = {
+		{
+			"<leader>e",
+			"<cmd>NvimTreeToggle<cr>",
+			desc = "NvimTree | Toggle",
+			silent = true,
+		},
+		{
+			"<leader><Tab>",
+			"<cmd>NvimTreeFindFile<cr>",
+			desc = "NvimTree | Find Current",
+			silent = true,
+		},
+	},
+	cmd = {
+		"NvimTreeOpen",
+		"NvimTreeToggle",
+		"NvimTreeFocus",
+		"NvimTreeFindFile",
+		"NvimTreeFindFileToggle",
+	},
+	opts = {
+		filters = {
+			dotfiles = true,
+			custom = {
+				".*.ruff_cache$",
+				".*.spec$",
+				".*LICENSE.*",
+				".*__pycache__$",
+				".DS_Store",
+				"thumbs.db",
+				".*.egg-info", -- python's stuff
+			},
+		},
+		sync_root_with_cwd = true,
+		view = {
+			cursorline = true,
+			number = true,
+			relativenumber = true,
+			width = 40,
+		},
+		renderer = {
+			highlight_git = true,
+			root_folder_label = ":~:s?$?",
+			icons = {
+				show = {
+					git = false,
+				},
+			},
+		},
+		actions = {
+			open_file = {
+				resize_window = false,
+			},
+		},
+	},
+	dependencies = "nvim-tree/nvim-web-devicons",
 }

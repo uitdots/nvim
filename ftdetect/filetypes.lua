@@ -1,6 +1,6 @@
 vim.filetype.add({
-  extension = {
-    ["templ"] = "templ",
-    ["regex"] = "regex",
-  },
+	extension = {
+		["templ"] = "templ",
+		["regex"] = "regex",
+	},
 })

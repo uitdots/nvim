@@ -2,19 +2,19 @@ vim.treesitter.language.register("sql", "pgsql")
 
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
-  ---@type PluginsOpts.TSConfig
-  opts = {
-    ensure_installed = {
-      "sql",
-    },
-    highlight = {
-      disable = {
-        pgsql = true,
-      },
-    },
-  },
-  opts_extend = {
-    "ensure_installed",
-  },
+	"nvim-treesitter/nvim-treesitter",
+	---@type PluginsOpts.TSConfig
+	opts = {
+		ensure_installed = {
+			"sql",
+		},
+		highlight = {
+			disable = {
+				pgsql = true,
+			},
+		},
+	},
+	opts_extend = {
+		"ensure_installed",
+	},
 }

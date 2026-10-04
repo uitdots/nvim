@@ -1,9 +1,9 @@
 ---@type LazySpec
 return {
-  "mfussenegger/nvim-lint",
-  optional = true,
-  -- Because we should use eslint lsp :P
-  --[[
+	"mfussenegger/nvim-lint",
+	optional = true,
+	-- Because we should use eslint lsp :P
+	--[[
   opts = function()
     local lint = require("lint")
 

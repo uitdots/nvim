@@ -1,71 +1,71 @@
 ---@type LazyConfig
 return {
-  defaults = {
-    lazy = true,
-  },
-  install = {
-    colorscheme = {
-      "nvchad",
-    },
-  },
+	defaults = {
+		lazy = true,
+	},
+	install = {
+		colorscheme = {
+			"nvchad",
+		},
+	},
 
-  rock = {
-    hererocks = true,
-  },
+	rock = {
+		hererocks = true,
+	},
 
-  ui = {
-    backdrop = 100,
-    border = vim.o.winborder,
-    icons = {
-      ft = "",
-      lazy = "󰂠 ",
-      loaded = "",
-      not_loaded = "",
-    },
-  },
+	ui = {
+		backdrop = 100,
+		border = vim.o.winborder,
+		icons = {
+			ft = "",
+			lazy = "󰂠 ",
+			loaded = "",
+			not_loaded = "",
+		},
+	},
 
-  change_detection = {
-    enabled = false,
-    notify = true,
-  },
+	change_detection = {
+		enabled = false,
+		notify = true,
+	},
 
-  checker = {
-    enabled = true,
-    notify = true,
-    frequency = 604800, -- 7 days
-  },
+	checker = {
+		enabled = true,
+		notify = true,
+		frequency = 604800, -- 7 days
+	},
 
-  performance = {
-    rtp = {
-      disabled_plugins = {
-        "2html_plugin",
-        "tohtml",
-        "getscript",
-        "getscriptPlugin",
-        "gzip",
-        "logipat",
-        "netrw",
-        "netrwPlugin",
-        "netrwSettings",
-        "netrwFileHandlers",
-        "matchit",
-        "tar",
-        "tarPlugin",
-        "rrhelper",
-        "spellfile_plugin",
-        "vimball",
-        "vimballPlugin",
-        "zip",
-        "zipPlugin",
-        "tutor",
-        "rplugin",
-        "syntax",
-        "synmenu",
-        "optwin",
-        "compiler",
-        "bugreport",
-        "ftplugin",
-      },
-    },
-  },
+	performance = {
+		rtp = {
+			disabled_plugins = {
+				"2html_plugin",
+				"tohtml",
+				"getscript",
+				"getscriptPlugin",
+				"gzip",
+				"logipat",
+				"netrw",
+				"netrwPlugin",
+				"netrwSettings",
+				"netrwFileHandlers",
+				"matchit",
+				"tar",
+				"tarPlugin",
+				"rrhelper",
+				"spellfile_plugin",
+				"vimball",
+				"vimballPlugin",
+				"zip",
+				"zipPlugin",
+				"tutor",
+				"rplugin",
+				"syntax",
+				"synmenu",
+				"optwin",
+				"compiler",
+				"bugreport",
+				"ftplugin",
+			},
+		},
+	},
 }

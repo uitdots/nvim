@@ -1,13 +1,13 @@
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
-  ---@type PluginsOpts.TSConfig
-  opts = {
-    ensure_installed = {
-      "python",
-    },
-  },
-  opts_extend = {
-    "ensure_installed",
-  },
+	"nvim-treesitter/nvim-treesitter",
+	---@type PluginsOpts.TSConfig
+	opts = {
+		ensure_installed = {
+			"python",
+		},
+	},
+	opts_extend = {
+		"ensure_installed",
+	},
 }

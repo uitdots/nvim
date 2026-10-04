@@ -1,20 +1,20 @@
 vim.filetype.add({
-  filename = {
-    ["atlas.hcl"] = "atlas-config",
-  },
-  -- NOTE: This below should be placed in project, otherwise it will overwrite the terraform
+	filename = {
+		["atlas.hcl"] = "atlas-config",
+	},
+	-- NOTE: This below should be placed in project, otherwise it will overwrite the terraform
 
-  --   pattern = {
-  --     [".*/*.my.hcl"] = "atlas-schema-mysql",
-  --     [".*/*.pg.hcl"] = "atlas-schema-postgresql",
-  --     [".*/*.lt.hcl"] = "atlas-schema-sqlite",
-  --     [".*/*.ch.hcl"] = "atlas-schema-clickhouse",
-  --     [".*/*.ms.hcl"] = "atlas-schema-mssql",
-  --     [".*/*.rs.hcl"] = "atlas-schema-redshift",
-  --     [".*/*.test.hcl"] = "atlas-test",
-  --     [".*/*.plan.hcl"] = "atlas-plan",
-  --     [".*/*.rule.hcl"] = "atlas-rule",
-  --   },
+	--   pattern = {
+	--     [".*/*.my.hcl"] = "atlas-schema-mysql",
+	--     [".*/*.pg.hcl"] = "atlas-schema-postgresql",
+	--     [".*/*.lt.hcl"] = "atlas-schema-sqlite",
+	--     [".*/*.ch.hcl"] = "atlas-schema-clickhouse",
+	--     [".*/*.ms.hcl"] = "atlas-schema-mssql",
+	--     [".*/*.rs.hcl"] = "atlas-schema-redshift",
+	--     [".*/*.test.hcl"] = "atlas-test",
+	--     [".*/*.plan.hcl"] = "atlas-plan",
+	--     [".*/*.rule.hcl"] = "atlas-rule",
+	--   },
 })
 
 local register = vim.treesitter.language.register
@@ -32,15 +32,15 @@ register("hcl", "atlas-rule")
 
 ---@type LazySpec
 return {
-  "WhoIsSethDaniel/mason-tool-installer.nvim",
-  opts = {
-    ---@type Mason.Package[]
-    ensure_installed = {
-      "atlas",
-    },
-  },
-  opts_extend = {
-    "ensure_installed",
-  },
-  optional = true,
+	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	opts = {
+		---@type Mason.Package[]
+		ensure_installed = {
+			"atlas",
+		},
+	},
+	opts_extend = {
+		"ensure_installed",
+	},
+	optional = true,
 }

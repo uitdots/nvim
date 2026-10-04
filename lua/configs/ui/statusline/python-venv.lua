@@ -15,48 +15,48 @@ M.have_setup_autocmd = nil
 ---@param variable string
 ---@return string|nil
 local function get_venv_name(variable)
-  local venv = os.getenv(variable)
-  if not venv or venv == "" then
-    return nil
-  end
-  return venv:match("([^/\\]+)$")
+	local venv = os.getenv(variable)
+	if not venv or venv == "" then
+		return nil
+	end
+	return venv:match("([^/\\]+)$")
 end
 
 ---@private
 ---@param bufnr number
 function M.set_status(bufnr)
-  local ft = bo[bufnr].filetype
-  if ft ~= "python" then
-    M.status = nil
-    return
-  end
+	local ft = bo[bufnr].filetype
+	if ft ~= "python" then
+		M.status = nil
+		return
+	end
 
-  local venv = get_venv_name("CONDA_DEFAULT_ENV") or get_venv_name("VIRTUAL_ENV")
-  if not venv then
-    M.status = nil
-    return
-  end
-  M.status = string.format("%%#St_gitIcons# %s ", venv)
+	local venv = get_venv_name("CONDA_DEFAULT_ENV") or get_venv_name("VIRTUAL_ENV")
+	if not venv then
+		M.status = nil
+		return
+	end
+	M.status = string.format("%%#St_gitIcons# %s ", venv)
 end
 
 ---@private
 function M.setup()
-  if M.have_setup_autocmd then
-    return
-  end
-  M.have_setup_autocmd = true
-  M.set_status(api.nvim_get_current_buf())
-  api.nvim_create_autocmd({
-    "BufEnter",
-  }, {
-    callback = function(args)
-      M.set_status(args.buf)
-    end,
-  })
+	if M.have_setup_autocmd then
+		return
+	end
+	M.have_setup_autocmd = true
+	M.set_status(api.nvim_get_current_buf())
+	api.nvim_create_autocmd({
+		"BufEnter",
+	}, {
+		callback = function(args)
+			M.set_status(args.buf)
+		end,
+	})
 end
 
 ---@return string|nil
 return function()
-  M.setup()
-  return M.status
+	M.setup()
+	return M.status
 end

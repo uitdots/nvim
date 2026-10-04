@@ -8,9 +8,9 @@ M.current_bufnr = nil
 
 ---@private
 M.fileformats = {
-  unix = "",
-  dos = "",
-  mac = "",
+	unix = "",
+	dos = "",
+	mac = "",
 }
 
 ---@private
@@ -20,17 +20,17 @@ M.state = ""
 
 ---@return string?
 return function()
-  local bufnr = nvim_get_current_buf()
+	local bufnr = nvim_get_current_buf()
 
-  if bufnr ~= M.current_bufnr then
-    M.current_bufnr = bufnr
-    local format = M.fileformats[vim.bo.fileformat] or nil
-    if format == nil then
-      M.state = ""
-    else
-      M.state = string.format("%%#St_gitIcons#%s  ", format)
-    end
-  end
+	if bufnr ~= M.current_bufnr then
+		M.current_bufnr = bufnr
+		local format = M.fileformats[vim.bo.fileformat] or nil
+		if format == nil then
+			M.state = ""
+		else
+			M.state = string.format("%%#St_gitIcons#%s  ", format)
+		end
+	end
 
-  return M.state
+	return M.state
 end

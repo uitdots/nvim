@@ -1,4 +1,4 @@
 ---@type LazySpec
 return {
-  "python/typeshed",
+	"python/typeshed",
 }

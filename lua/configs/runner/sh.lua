@@ -1,3 +1,3 @@
 return {
-  default = "sh %",
+	default = "sh %",
 }

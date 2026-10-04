@@ -1,5 +1,5 @@
 return {
-  "default.cpp",
-  "default.go",
-  "default.nodejs",
+	"default.cpp",
+	"default.go",
+	"default.nodejs",
 }

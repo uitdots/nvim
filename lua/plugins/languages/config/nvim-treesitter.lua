@@ -1,15 +1,15 @@
 ---@type LazySpec
 return {
-  "nvim-treesitter/nvim-treesitter",
+	"nvim-treesitter/nvim-treesitter",
 
-  ---@type PluginsOpts.TSConfig
-  opts = {
-    ensure_installed = {
-      "editorconfig",
-      "ssh_config",
-    },
-  },
-  opts_extend = {
-    "ensure_installed",
-  },
+	---@type PluginsOpts.TSConfig
+	opts = {
+		ensure_installed = {
+			"editorconfig",
+			"ssh_config",
+		},
+	},
+	opts_extend = {
+		"ensure_installed",
+	},
 }

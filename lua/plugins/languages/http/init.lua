@@ -1,7 +1,7 @@
 vim.filetype.add({
-  extension = {
-    ["http"] = "http",
-  },
+	extension = {
+		["http"] = "http",
+	},
 })
 
 ---@type LazySpec

@@ -1,78 +1,78 @@
 local filetypes = vim.list_extend({
-  "codecompanion",
-  "help",
-  "html",
-  "tex",
-  "typst",
-  "xhtml",
-  "yaml",
+	"codecompanion",
+	"help",
+	"html",
+	"tex",
+	"typst",
+	"xhtml",
+	"yaml",
 }, require("utils.filetypes").markdown)
 
 ---@type LazySpec
 return {
-  "OXY2DEV/markview.nvim",
-  lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
-  event = "VeryLazy",
-  -- ft = ft,
-  ---@module 'markview'
-  ---@param opts markview.config?
-  ---@return markview.config
-  opts = function(_, opts)
-    local markview = require("markview")
-    ---@type markview.config
-    local _opts = {
-      preview = {
-        enable = false,
-        enable_hybrid_mode = true,
-        filetypes = filetypes,
-        -- https://github.com/OXY2DEV/markview.nvim/issues/272
-        -- condition = function(buffer)
-        --   local ft, bt = bo[buffer].ft, bo[buffer].bt
-        --   return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
-        -- end,
-        icon_provider = "devicons",
-        modes = {
-          "n",
-          "no",
-          "c",
-          "v",
-          "V",
-          "i",
-        },
-        hybrid_modes = {
-          "i",
-        },
-        map_gx = false,
-      },
-    }
-    -- require("configs.lsp.marview_hover").setup()
-    return vim.tbl_deep_extend("force", opts or {}, _opts)
-  end,
-  cmd = "Markview",
-  keys = {
-    {
-      "<leader>wv",
-      "<cmd>Markview toggle<cr>",
-      desc = "Markview | Toggle (local)",
-      ft = filetypes,
-      silent = true,
-    },
-    {
-      "<leader>wV",
-      "<cmd>Markview Toggle<cr>",
-      desc = "Markview | Toggle",
-      ft = filetypes,
-      silent = true,
-    },
-  },
-  dependencies = {
-    "nvim-tree/nvim-web-devicons",
-    "saghen/blink.cmp",
-  },
-  specs = {
-    {
-      "nvim-treesitter/nvim-treesitter",
-      dependencies = "OXY2DEV/markview.nvim",
-    },
-  },
+	"OXY2DEV/markview.nvim",
+	lazy = true, -- Author require this load before nvim-treesitter, but it make blink not lazyloading
+	event = "VeryLazy",
+	-- ft = ft,
+	---@module 'markview'
+	---@param opts markview.config?
+	---@return markview.config
+	opts = function(_, opts)
+		local markview = require("markview")
+		---@type markview.config
+		local _opts = {
+			preview = {
+				enable = false,
+				enable_hybrid_mode = true,
+				filetypes = filetypes,
+				-- https://github.com/OXY2DEV/markview.nvim/issues/272
+				-- condition = function(buffer)
+				--   local ft, bt = bo[buffer].ft, bo[buffer].bt
+				--   return (bt == "nofile" and ft == "codecompanion") or bt ~= "nofile"
+				-- end,
+				icon_provider = "devicons",
+				modes = {
+					"n",
+					"no",
+					"c",
+					"v",
+					"V",
+					"i",
+				},
+				hybrid_modes = {
+					"i",
+				},
+				map_gx = false,
+			},
+		}
+		-- require("configs.lsp.marview_hover").setup()
+		return vim.tbl_deep_extend("force", opts or {}, _opts)
+	end,
+	cmd = "Markview",
+	keys = {
+		{
+			"<leader>wv",
+			"<cmd>Markview toggle<cr>",
+			desc = "Markview | Toggle (local)",
+			ft = filetypes,
+			silent = true,
+		},
+		{
+			"<leader>wV",
+			"<cmd>Markview Toggle<cr>",
+			desc = "Markview | Toggle",
+			ft = filetypes,
+			silent = true,
+		},
+	},
+	dependencies = {
+		"nvim-tree/nvim-web-devicons",
+		"saghen/blink.cmp",
+	},
+	specs = {
+		{
+			"nvim-treesitter/nvim-treesitter",
+			dependencies = "OXY2DEV/markview.nvim",
+		},
+	},
 }

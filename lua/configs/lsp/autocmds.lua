@@ -11,61 +11,61 @@ local M = {}
 
 ---@type table<Lsp, true>
 M.exclude_lsps = {
-  gh_actions_ls = true,
-  gradle_ls = true,
-  sonarlint = true,
-  swaggo = true,
-  yamlls = true,
+	gh_actions_ls = true,
+	gradle_ls = true,
+	sonarlint = true,
+	swaggo = true,
+	yamlls = true,
 }
 
 ---@private
 function M.setup_keymaps()
-  autocmd("LspAttach", {
-    ---@param args vim.api.keyset.create_autocmd.callback_args | {data: vim.event.lspattach.data}
-    callback = function(args)
-      local bufnr = args.buf
-      local client = vim.lsp.get_client_by_id(args.data.client_id)
-      if not client or M.exclude_lsps[client.name] then
-        return
-      end
+	autocmd("LspAttach", {
+		---@param args vim.api.keyset.create_autocmd.callback_args | {data: vim.event.lspattach.data}
+		callback = function(args)
+			local bufnr = args.buf
+			local client = vim.lsp.get_client_by_id(args.data.client_id)
+			if not client or M.exclude_lsps[client.name] then
+				return
+			end
 
-      map("n", "<leader>lao", action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
-      map("n", "<leader>las", action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
-      map("n", "<leader>lau", action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
+			map("n", "<leader>lao", action["source.organizeImports"], { desc = "LSP Action | Organise Imports", buffer = bufnr })
+			map("n", "<leader>las", action["source.sortImports"], { desc = "LSP Action | Sort Imports", buffer = bufnr })
+			map("n", "<leader>lau", action["source.removeUnusedImports"], { desc = "LSP Action | Remove Unused Imports", buffer = bufnr })
 
-      map("n", "<leader>ls", function()
-        lsp_utils.toggle_semantic_tokens(bufnr)
-      end, { desc = "LSP | Toggle Semantic Tokens", silent = true })
+			map("n", "<leader>ls", function()
+				lsp_utils.toggle_semantic_tokens(bufnr)
+			end, { desc = "LSP | Toggle Semantic Tokens", silent = true })
 
-      map("n", "grW", lsp.buf.remove_workspace_folder, { desc = "LSP | Remove workspace folder", buffer = bufnr })
-      map("n", "grn", lsp.buf.rename, { desc = "LSP | Rename", buffer = bufnr })
-      map("n", "grw", lsp.buf.add_workspace_folder, { desc = "LSP | Add workspace folder", buffer = bufnr })
-      map("n", "gr<C-w>", function()
-        vim.notify(vim.inspect(lsp.buf.list_workspace_folders()), vim.log.levels.INFO, { title = "LSP workspace folders" })
-      end, { desc = "LSP | List workspace folders", buffer = bufnr })
-      map("n", "<leader>lc", function()
-        lsp.codelens.enable(not lsp.codelens.is_enabled())
-      end, { desc = "LSP | Toggle codelens", buffer = bufnr })
-    end,
-    group = augroup("lsp-keymaps", {}),
-  })
+			map("n", "grW", lsp.buf.remove_workspace_folder, { desc = "LSP | Remove workspace folder", buffer = bufnr })
+			map("n", "grn", lsp.buf.rename, { desc = "LSP | Rename", buffer = bufnr })
+			map("n", "grw", lsp.buf.add_workspace_folder, { desc = "LSP | Add workspace folder", buffer = bufnr })
+			map("n", "gr<C-w>", function()
+				vim.notify(vim.inspect(lsp.buf.list_workspace_folders()), vim.log.levels.INFO, { title = "LSP workspace folders" })
+			end, { desc = "LSP | List workspace folders", buffer = bufnr })
+			map("n", "<leader>lc", function()
+				lsp.codelens.enable(not lsp.codelens.is_enabled())
+			end, { desc = "LSP | Toggle codelens", buffer = bufnr })
+		end,
+		group = augroup("lsp-keymaps", {}),
+	})
 end
 
 ---@private
 M.setup_semantic_tokens = function()
-  autocmd("LspAttach", {
-    ---@param args vim.api.keyset.create_autocmd.callback_args | {data: vim.event.lspattach.data}
-    callback = function(args)
-      local client = vim.lsp.get_client_by_id(args.data.client_id)
-      if not client then
-        return
-      end
-      if not semantic_tokens_enabled and client:supports_method("textDocument/semanticTokens") then
-        client.server_capabilities.semanticTokensProvider = nil
-      end
-    end,
-    group = augroup("lsp-semantic-tokens", {}),
-  })
+	autocmd("LspAttach", {
+		---@param args vim.api.keyset.create_autocmd.callback_args | {data: vim.event.lspattach.data}
+		callback = function(args)
+			local client = vim.lsp.get_client_by_id(args.data.client_id)
+			if not client then
+				return
+			end
+			if not semantic_tokens_enabled and client:supports_method("textDocument/semanticTokens") then
+				client.server_capabilities.semanticTokensProvider = nil
+			end
+		end,
+		group = augroup("lsp-semantic-tokens", {}),
+	})
 end
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md#-examples
@@ -75,43 +75,43 @@ M.progress = vim.defaulttable()
 
 ---@private
 function M.setup_lsp_progress()
-  autocmd("LspProgress", {
-    ---@param ev {data: vim.event.lspprogress.data}
-    callback = function(ev)
-      local client = vim.lsp.get_client_by_id(ev.data.client_id)
-      local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
-      if not client or type(value) ~= "table" then
-        return
-      end
-      local p = M.progress[client.id]
+	autocmd("LspProgress", {
+		---@param ev {data: vim.event.lspprogress.data}
+		callback = function(ev)
+			local client = vim.lsp.get_client_by_id(ev.data.client_id)
+			local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
+			if not client or type(value) ~= "table" then
+				return
+			end
+			local p = M.progress[client.id]
 
-      for i = 1, #p + 1 do
-        if i == #p + 1 or p[i].token == ev.data.params.token then
-          p[i] = {
-            token = ev.data.params.token,
-            msg = ("[%3d%%] %s%s"):format(value.kind == "end" and 100 or value.percentage or 100, value.title or "", value.message and (" **%s**"):format(value.message) or ""),
-            done = value.kind == "end",
-          }
-          break
-        end
-      end
+			for i = 1, #p + 1 do
+				if i == #p + 1 or p[i].token == ev.data.params.token then
+					p[i] = {
+						token = ev.data.params.token,
+						msg = ("[%3d%%] %s%s"):format(value.kind == "end" and 100 or value.percentage or 100, value.title or "", value.message and (" **%s**"):format(value.message) or ""),
+						done = value.kind == "end",
+					}
+					break
+				end
+			end
 
-      local messages = {} ---@type string[]
-      M.progress[client.id] = vim.tbl_filter(function(v)
-        return table.insert(messages, v.msg) or not v.done
-      end, p)
-      local message = table.concat(messages, "\n")
+			local messages = {} ---@type string[]
+			M.progress[client.id] = vim.tbl_filter(function(v)
+				return table.insert(messages, v.msg) or not v.done
+			end, p)
+			local message = table.concat(messages, "\n")
 
-      notify_utils.processing({ id = "lsp_progress", message = message, title = client.name, is_done = #M.progress[client.id] == 0 })
-    end,
-    group = augroup("lsp-progress", {}),
-  })
+			notify_utils.processing({ id = "lsp_progress", message = message, title = client.name, is_done = #M.progress[client.id] == 0 })
+		end,
+		group = augroup("lsp-progress", {}),
+	})
 end
 
 function M.setup()
-  M.setup_keymaps()
-  M.setup_semantic_tokens()
-  M.setup_lsp_progress()
+	M.setup_keymaps()
+	M.setup_semantic_tokens()
+	M.setup_lsp_progress()
 end
 
 return M

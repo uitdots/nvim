@@ -1,5 +1,5 @@
 ---@type LazySpec
 return {
-  "aklt/plantuml-syntax",
-  lazy = false,
+	"aklt/plantuml-syntax",
+	lazy = false,
 }

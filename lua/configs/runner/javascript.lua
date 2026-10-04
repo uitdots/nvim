@@ -1,3 +1,3 @@
 return {
-  node = "node %",
+	node = "node %",
 }

@@ -2,13 +2,13 @@
 
 ---@type vim.lsp.Config
 return {
-  cmd = {
-    "swaggo-language-server",
-  },
-  filetypes = {
-    "go",
-  },
-  root_markers = {
-    "go.mod",
-  },
+	cmd = {
+		"swaggo-language-server",
+	},
+	filetypes = {
+		"go",
+	},
+	root_markers = {
+		"go.mod",
+	},
 }

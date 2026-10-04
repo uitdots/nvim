@@ -2,93 +2,93 @@
 
 ---@type Preferences
 local M = {
-  lsp = {
-    force = {
-      -- "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
-      "nxls",
-      "tsc", -- until this is closed: https://github.com/neovim/nvim-lspconfig/issues/4467
-    },
-    exclude = {
-      "dartls",
-      "rust_analyzer",
-      "sqls",
-      "stylua",
-      "swaggo_ls",
-      "harper_ls",
-      "vtsls",
-    },
-  },
+	lsp = {
+		force = {
+			-- "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
+			"nxls",
+			"tsc", -- until this is closed: https://github.com/neovim/nvim-lspconfig/issues/4467
+		},
+		exclude = {
+			"dartls",
+			"rust_analyzer",
+			"sqls",
+			"stylua",
+			"swaggo_ls",
+			"harper_ls",
+			"vtsls",
+		},
+	},
 
-  options = {
-    indent = {
-      default = 2,
-      space = {
-        [4] = {
-          "bzl",
-          "c",
-          "cpp",
-          "cs",
-          "groovy",
-          "hyprland",
-          "java",
-          "jenkins",
-          "just",
-          "kotlin",
-          "mmd",
-          "python",
-        },
-      },
-      tab = {
-        [2] = {
-          "alloy",
-          "tex",
-          "lua",
-        },
-        [4] = {
-          "make"
-        },
-        [8] = {
-          "go",
-          "gomod",
-          "gosum",
-          "gowork",
-        },
-      },
-    },
+	options = {
+		indent = {
+			default = 2,
+			space = {
+				[4] = {
+					"bzl",
+					"c",
+					"cpp",
+					"cs",
+					"groovy",
+					"hyprland",
+					"java",
+					"jenkins",
+					"just",
+					"kotlin",
+					"mmd",
+					"python",
+				},
+			},
+			tab = {
+				[2] = {
+					"alloy",
+					"tex",
+					"lua",
+				},
+				[4] = {
+					"make",
+				},
+				[8] = {
+					"go",
+					"gomod",
+					"gosum",
+					"gowork",
+				},
+			},
+		},
 
-    wrap = {
-      default = false,
-      revert = {
-        -- "grug-far",
-        -- "lazy",
-        -- "log",
-        -- "markdown",
-        -- "mason",
-        -- "neotest-summary",
-      },
-    },
+		wrap = {
+			default = false,
+			revert = {
+				-- "grug-far",
+				-- "lazy",
+				-- "log",
+				-- "markdown",
+				-- "mason",
+				-- "neotest-summary",
+			},
+		},
 
-    inlay_hint = {
-      server_default = true,
-      servers = true,
-      client = false,
-    },
+		inlay_hint = {
+			server_default = true,
+			servers = true,
+			client = false,
+		},
 
-    semantic_tokens = {
-      server_default = true,
-      servers = {
-        gopls = true,
-        vtsls = false,
-      },
-      client = true,
-    },
+		semantic_tokens = {
+			server_default = true,
+			servers = {
+				gopls = true,
+				vtsls = false,
+			},
+			client = true,
+		},
 
-    others = {
-      auto_format_enabled = true,
-      ai_suggestion_enabled = true,
-      filter_available_external = true,
-    },
-  },
+		others = {
+			auto_format_enabled = true,
+			ai_suggestion_enabled = true,
+			filter_available_external = true,
+		},
+	},
 }
 
 return M

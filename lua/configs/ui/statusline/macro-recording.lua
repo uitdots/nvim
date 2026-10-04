@@ -3,7 +3,7 @@ local recording_string = "%#St_cwd_sep#  "
 
 ---@return string?
 return function()
-  if reg_recording() ~= "" then
-    return recording_string
-  end
+	if reg_recording() ~= "" then
+		return recording_string
+	end
 end
