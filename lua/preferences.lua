@@ -78,7 +78,6 @@ local M = {
 			server_default = true,
 			servers = {
 				gopls = true,
-				vtsls = false,
 			},
 			client = true,
 		},
