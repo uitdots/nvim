@@ -1,0 +1,105 @@
+---@meta _
+
+---@alias Language
+---| "ansible"
+---| "assembly"
+---| "c"
+---| "config"
+---| "cs"
+---| "css"
+---| "d2"
+---| "dart"
+---| "docker"
+---| "env"
+---| "git"
+---| "github"
+---| "gitlab"
+---| "go"
+---| "grafana"
+---| "graphql"
+---| "groovy"
+---| "hcl"
+---| "helm"
+---| "html"
+---| "http"
+---| "java"
+---| "jenkins"
+---| "jinja"
+---| "json"
+---| "just"
+---| "kbd"
+---| "kotlin"
+---| "kubernetes"
+---| "latex"
+---| "lua"
+---| "make"
+---| "markdown"
+---| "nginx"
+---| "nix"
+---| "openapi"
+---| "plantuml"
+---| "powershell"
+---| "proto"
+---| "python"
+---| "react"
+---| "redis"
+---| "rust"
+---| "shell"
+---| "sql"
+---| "tailwind"
+---| "terraform"
+---| "toml"
+---| "typescript"
+---| "typst"
+---| "utils"
+---| "vim"
+---| "xml"
+---| "yaml"
+
+---@class (exact) Prefs
+---Language modules under plugins/languages to import
+---@field languages Language[]
+---@field lsp Prefs.Lsp
+---@field options Prefs.Options Options for configuration
+
+---@class (exact) Prefs.Lsp
+---External LSPs to setup
+---@field force Lsp[]
+---Exclude those LSPs (from Mason auto setup)
+---@field exclude Lsp[]
+
+---@class (exact) Prefs.Options
+---@field indent Prefs.Options.Indent
+---@field wrap Prefs.Options.Wrap
+---@field inlay_hint Prefs.Options.InlayHint
+---@field others Prefs.Options.Others
+
+-- FIXME: It's quite bruh here, how about tab instead of space (noexpandtab)
+--
+---@class (exact) Prefs.Options.Indent
+---@field default number
+---Values are filetypes
+---@field space table<number, string[]>
+---Values are filetypes
+---@field tab table<number, string[]>
+
+---@class (exact) Prefs.Options.Wrap
+---@field default boolean
+---Filetypes to revert to default wrap setting
+---@field revert string[]
+
+---@class (exact) Prefs.Options.InlayHint
+---Fallback for language servers not declared in "servers"
+---@field server_default boolean
+---Enable inlay hints for specific servers
+---@field servers boolean | table<string, boolean>
+---Enable inlay hints for Neovim client
+---@field client boolean
+
+---@class (exact) Prefs.Options.Others
+---@field auto_format_enabled boolean
+---Enable AI Suggestion on typing by default
+---@field ai_suggestion_enabled boolean
+
+---@type Prefs
+Prefs = nil

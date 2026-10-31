@@ -1,12 +1,66 @@
--- WARN: You need to fill all of them. Even empty list/table
-
----@type Preferences
+---@type Prefs
 local M = {
+	languages = {
+		-- "ansible",
+		-- "assembly",
+		-- "c",
+		"config",
+		-- "cs",
+		-- "css",
+		-- "d2",
+		-- "dart",
+		-- "docker",
+		"env",
+		"git",
+		"github",
+		-- "gitlab",
+		-- "go",
+		-- "grafana",
+		-- "graphql",
+		-- "groovy",
+		-- "hcl",
+		-- "helm",
+		-- "html",
+		-- "http",
+		-- "java",
+		-- "jenkins",
+		-- "jinja",
+		"json",
+		-- "just",
+		-- "kbd",
+		-- "kotlin",
+		-- "kubernetes",
+		-- "latex",
+		"lua",
+		-- "make",
+		"markdown",
+		-- "nginx",
+		-- "nix",
+		-- "openapi",
+		-- "plantuml",
+		-- "powershell",
+		-- "proto",
+		"python",
+		-- "react",
+		-- "redis",
+		-- "rust",
+		-- "shell",
+		-- "sql",
+		-- "tailwind",
+		-- "terraform",
+		"toml",
+		"typescript",
+		-- "typst",
+		"utils",
+		"vim",
+		-- "xml",
+		"yaml",
+	},
+
 	lsp = {
 		force = {
 			-- "sonarlint", -- NOTE: nvim-lspconfig doesn't support it yet
 			"nxls",
-			"tsc", -- until this is closed: https://github.com/neovim/nvim-lspconfig/issues/4467
 		},
 		exclude = {
 			"dartls",
@@ -15,7 +69,6 @@ local M = {
 			"stylua",
 			"swaggo_ls",
 			"harper_ls",
-			"vtsls",
 		},
 	},
 
@@ -74,18 +127,9 @@ local M = {
 			client = false,
 		},
 
-		semantic_tokens = {
-			server_default = true,
-			servers = {
-				gopls = true,
-			},
-			client = true,
-		},
-
 		others = {
 			auto_format_enabled = true,
 			ai_suggestion_enabled = true,
-			filter_available_external = true,
 		},
 	},
 }

@@ -1,4 +1,4 @@
-require("preferences")
+require("prefs")
 require("core.globals")
 require("core.env")
 require("core.options")

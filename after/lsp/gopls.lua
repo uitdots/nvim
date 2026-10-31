@@ -13,13 +13,11 @@ if lsp_utils.is_inlay_hint_enabled("gopls") then
 	}
 end
 
-local semantic_tokens_enabled = lsp_utils.is_semantic_tokens_enabled("gopls")
-
 ---@type vim.lsp.Config
 return {
 	on_attach = function(client)
 		-- Idk I got from https://github.com/golang/go/issues/54531#issuecomment-1464982242
-		if semantic_tokens_enabled and not client.server_capabilities.semanticTokensProvider then
+		if not client.server_capabilities.semanticTokensProvider then
 			local semantic = client.config.capabilities.textDocument.semanticTokens
 			if semantic ~= nil then
 				client.server_capabilities.semanticTokensProvider = {
@@ -41,7 +39,7 @@ return {
 	settings = {
 		gopls = {
 			hints = inlayhint_opts,
-			semanticTokens = semantic_tokens_enabled,
+			semanticTokens = true,
 			codelenses = {
 				test = true,
 			},

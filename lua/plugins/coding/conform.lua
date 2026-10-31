@@ -1,22 +1,9 @@
 local command = vim.api.nvim_create_user_command
-local filter_available_external = require("preferences").options.others.filter_available_external
 local is_executable = require("utils.executable").is_executable_cache
 
 local ignore_format_patterns = {
 	"/node_modules/",
 }
-
----@param opts conform.setupOpts
-local function filter_available(opts)
-	for filetype, formatters in pairs(opts.formatters_by_ft) do
-		---@cast formatters string[]
-		opts.formatters_by_ft[filetype] = function(bufnr)
-			return vim.tbl_filter(function(formatter)
-				return require("conform").get_formatter_info(formatter, bufnr).available
-			end, formatters)
-		end
-	end
-end
 
 ---@type LazySpec
 return {
@@ -124,15 +111,6 @@ return {
 				end
 			end
 		end, { desc = "Toggle Autoformat", bang = true })
-	end,
-	---@module 'conform'
-	---@param opts conform.setupOpts
-	config = function(_, opts)
-		if filter_available_external then
-			filter_available(opts)
-		end
-
-		require("conform").setup(opts)
 	end,
 	dependencies = {
 		{

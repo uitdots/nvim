@@ -1,5 +1,5 @@
 local lsp = require("configs.lsp")
-local lsps_force = require("preferences").lsp.force
+local lsps_force = Prefs.lsp.force
 
 ---@type LazySpec
 return {

@@ -9,7 +9,7 @@ return {
 	---@type MasonLspconfigSettings
 	opts = {
 		automatic_enable = {
-			exclude = require("preferences").lsp.exclude,
+			exclude = Prefs.lsp.exclude,
 		},
 	},
 	dependencies = {

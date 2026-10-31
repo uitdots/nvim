@@ -1,5 +1,4 @@
-local inlay_hint = require("preferences").options.inlay_hint
-local semantic_tokens = require("preferences").options.semantic_tokens
+local inlay_hint = Prefs.options.inlay_hint
 
 local M = {}
 
@@ -50,22 +49,6 @@ function M.is_inlay_hint_enabled(server_name)
 	end
 
 	return inlay_hint.server_default or false
-end
-
----Check if semantic tokens should be enabled for a specific server
----@param server_name Lsp
----@return boolean
-function M.is_semantic_tokens_enabled(server_name)
-	if semantic_tokens.servers == true then
-		return true
-	end
-
-	local server_setting = semantic_tokens.servers[server_name]
-	if server_setting ~= nil then
-		return server_setting
-	end
-
-	return semantic_tokens.server_default or false
 end
 
 return M

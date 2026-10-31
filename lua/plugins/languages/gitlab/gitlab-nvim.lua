@@ -1,10 +1,7 @@
--- local is_executable = require("utils.executable").is_executable_cache
-
 ---@type LazySpec
 return {
 	"harrisoncramer/gitlab.nvim",
 	enabled = false,
-	-- enabled = not filter_available_external or is_executable("go"),
 	build = function()
 		require("gitlab.server").build(true)
 	end,

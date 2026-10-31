@@ -5,7 +5,6 @@ local lsp_utils = require("utils.lsp")
 local map = vim.keymap.set
 local notify_utils = require("utils.notify")
 local action = require("utils.lsp").action
-local semantic_tokens_enabled = require("preferences").options.semantic_tokens.client
 
 local M = {}
 
@@ -51,23 +50,6 @@ function M.setup_keymaps()
 	})
 end
 
----@private
-M.setup_semantic_tokens = function()
-	autocmd("LspAttach", {
-		---@param args vim.api.keyset.create_autocmd.callback_args | {data: vim.event.lspattach.data}
-		callback = function(args)
-			local client = vim.lsp.get_client_by_id(args.data.client_id)
-			if not client then
-				return
-			end
-			if not semantic_tokens_enabled and client:supports_method("textDocument/semanticTokens") then
-				client.server_capabilities.semanticTokensProvider = nil
-			end
-		end,
-		group = augroup("lsp-semantic-tokens", {}),
-	})
-end
-
 -- https://github.com/folke/snacks.nvim/blob/main/docs/notifier.md#-examples
 ---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
 ---@private
@@ -110,7 +92,6 @@ end
 
 function M.setup()
 	M.setup_keymaps()
-	M.setup_semantic_tokens()
 	M.setup_lsp_progress()
 end
 

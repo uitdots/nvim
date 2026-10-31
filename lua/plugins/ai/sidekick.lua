@@ -1,4 +1,4 @@
-local ai_suggestion_enabled = require("preferences").options.others.ai_suggestion_enabled
+local ai_suggestion_enabled = Prefs.options.others.ai_suggestion_enabled
 
 ---@type LazySpec
 return {

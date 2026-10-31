@@ -1,6 +1,6 @@
 local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
-local ai_suggestion_enabled = require("preferences").options.others.ai_suggestion_enabled
+local ai_suggestion_enabled = Prefs.options.others.ai_suggestion_enabled
 
 local function setup_autocmds()
 	local group = augroup("CopilotCmp", { clear = true })

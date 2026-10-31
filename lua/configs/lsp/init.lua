@@ -1,5 +1,5 @@
 local map = vim.keymap.set
-local inlay_hint_enabled = require("preferences").options.inlay_hint.client
+local inlay_hint_enabled = Prefs.options.inlay_hint.client
 local lsp = vim.lsp
 
 local M = {}

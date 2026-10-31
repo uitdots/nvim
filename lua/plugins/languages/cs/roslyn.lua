@@ -1,6 +1,4 @@
-local filter_available_external = require("preferences").options.others.filter_available_external
-local is_executable = require("utils.executable").is_executable
-local inlay_hint = require("preferences").options.inlay_hint
+local inlay_hint = Prefs.options.inlay_hint
 
 local inlayhint_opts
 if inlay_hint.servers == true or inlay_hint.servers.roslyn or inlay_hint.server_default then
@@ -23,7 +21,6 @@ end
 ---@type LazySpec
 return {
 	"seblyng/roslyn.nvim",
-	enabled = not filter_available_external or is_executable("dotnet"),
 	ft = "cs",
 	cmd = "Roslyn",
 	---@module 'roslyn.config'

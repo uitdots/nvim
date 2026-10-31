@@ -3,12 +3,11 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 local opt_local = vim.opt_local
 local bo = vim.bo
-local preferences = require("preferences")
 
 -- General Settings
 local general = augroup("General", {})
 
-local indent_opts = preferences.options.indent
+local indent_opts = Prefs.options.indent
 
 for chars, fts in pairs(indent_opts.space) do
 	autocmd("FileType", {
@@ -118,7 +117,7 @@ autocmd("FileType", {
 --   desc = "Disable Spell check in these filetypes",
 -- })
 
-local wrap_opts = preferences.options.wrap
+local wrap_opts = Prefs.options.wrap
 if #wrap_opts.revert ~= 0 then
 	autocmd("FileType", {
 		pattern = wrap_opts.revert,

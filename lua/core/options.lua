@@ -4,7 +4,7 @@ local opt = vim.opt
 local o = vim.o
 local g = vim.g
 local is_executable = require("utils.executable").is_executable
-local preferences_options = require("preferences").options
+local preferences_options = Prefs.options
 local home = require("utils.os").home
 
 g.mapleader = " "
