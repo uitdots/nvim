@@ -2,7 +2,7 @@ local ai_suggestion_enabled = Prefs.options.others.ai_suggestion_enabled
 
 ---@type LazySpec
 return {
-	"folke/sidekick.nvim",
+	"joelazar/sidekick.nvim",
 	cmd = "Sidekick",
 	event = {
 		"BufRead",
