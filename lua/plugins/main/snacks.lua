@@ -35,7 +35,7 @@ local function extend_exclude()
 	---@type nil|string[]
 	local snacks_exclude = vim.g.snack_exclude_find
 	if snacks_exclude then
-		vim.list_extend(snacks_exclude, exclude_find)
+		vim.list_extend(exclude_find, snacks_exclude)
 		vim.notify("Extended Snacks exclude_find with custom excludes", vim.log.levels.INFO, { title = "Snacks" })
 	end
 
