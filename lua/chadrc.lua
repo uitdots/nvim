@@ -143,6 +143,7 @@ M.base46 = {
 		"blankline",
 		"blink",
 		"codeactionmenu",
+		"codecompanion",
 		"dap",
 		"defaults",
 		"devicons",
@@ -158,6 +159,7 @@ M.base46 = {
 		"nvshades",
 		"rainbowdelimiters",
 		"semantic_tokens",
+		"snacks",
 		"statusline",
 		"syntax",
 		"telescope",
@@ -192,20 +194,6 @@ M.base46.hl_add = {
 	St_Percent_sep = { fg = "blue", bg = "lightbg" },
 	St_Percent_text = { link = "St_percent_sep" },
 	St_Harpoon = { fg = "light_grey", bold = true },
-
-	---Snacks
-	SnacksIndent = { link = "IblChar" },
-	-- SnacksIndentScope = { link = "IblScopeChar" },
-	SnacksIndentScope = { fg = "light_grey" }, -- It's too dark :(
-	SnacksNormal = { link = "TelescopeNormal" },
-	SnacksPickerDir = { fg = "light_grey" },
-	SnacksPickerListTitle = { link = "TelescopeResultsTitle" },
-	SnacksPickerMatch = { link = "TelescopeMatching" },
-	SnacksPickerPreviewTitle = { link = "TelescopePreviewTitle" },
-	SnacksPickerPrompt = { link = "TelescopePromptPrefix" },
-	SnacksPickerSelect = { link = "TelescopeSelection" },
-	SnacksPickerTitle = { link = "TelescopePromptTitle" },
-	SnacksPickerToggle = { fg = "black", bg = "red" },
 
 	---Noice
 	NoiceVirtualText = { fg = "lavender" },
