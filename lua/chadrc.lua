@@ -154,6 +154,7 @@ M.base46 = {
 		"lsp",
 		"markview",
 		"mason",
+		"neotest",
 		"nvcheatsheet",
 		"nvimtree",
 		"nvshades",
@@ -202,7 +203,7 @@ M.base46.hl_add = {
 	TreesitterContext = { bg = "black2" },
 
 	---Mini
-	MiniIndentscopeSymbol = { link = "IblChar" },
+	MiniIndentscopeSymbol = { link = "IblScope" },
 
 	---Glance
 	GlanceBorderTop = { fg = "line", bg = "none" },
@@ -217,23 +218,6 @@ M.base46.hl_add = {
 	GlanceListNormal = { bg = "black2", fg = "base05" },
 	GlanceListFilepath = { fg = "light_grey" },
 	GlancePreviewNormal = { bg = "black" },
-
-	---Neotest
-	---NOTE: Already support in https://github.com/NvChad/base46/commit/da79cdfbda7b6f76c35709000efac180e33b5eef
-	-- NeotestPassed = { fg = "green" },
-	-- NeotestFailed = { fg = "red" },
-	-- NeotestTarget = { fg = "pink" },
-	-- NeotestRunning = { fg = "yellow" },
-	-- NeotestSkipped = { fg = "cyan" },
-	-- NeotestWatching = { fg = "orange" },
-	-- NeotestNamespace = { fg = "purple" },
-	-- NeotestIndent = { fg = "line" },
-	-- NeotestDir = { link = "Directory" },
-	-- NeotestFile = { fg = "base05" },
-	-- NeotestAdapterName = { fg = "red" },
-	-- NeotestExpandMarker = { fg = "grey" },
-	-- NeotestMarked = { fg = "dark_purple" },
-	-- NeotestWinSelect = { bg = "cyan" },
 
 	--- nvim-corage
 	CoverageCovered = { fg = "green", bg = "none" },
