@@ -5,4 +5,12 @@ return {
 		"helm",
 		"yaml.helm-values",
 	},
+	settings = {
+		yamlls = {
+			enabled = true,
+			---@module 'lspconfig'
+			---@type _.lspconfig.settings.yamlls.Yaml
+			config = nil,
+		},
+	},
 }
