@@ -6,7 +6,7 @@ return {
 		ensure_installed = {
 			"js-debug-adapter",
 			"prettier",
-			"typescript-language-server",
+			"tsc",
 		},
 	},
 	opts_extend = {
