@@ -5,6 +5,7 @@ return {
 		---@type Mason.Package[]
 		ensure_installed = {
 			"kube-linter",
+			"helm-ls",
 		},
 	},
 	opts_extend = {
