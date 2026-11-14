@@ -25,7 +25,16 @@ return {
 				enable = false,
 				url = "",
 			},
-			schemas = require("schemastore").yaml.schemas(),
+			schemas = require("schemastore").yaml.schemas({
+				extra = {
+					{
+						fileMatch = ".github/actions/*",
+						description = "GitHub Actions - actions",
+						name = "GitHub Actions - actions",
+						url = "https://www.schemastore.org/github-action.json",
+					},
+				},
+			}),
 		},
 	},
 }
