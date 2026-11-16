@@ -4,7 +4,7 @@ local auto_session = false
 return {
 	"rmagatti/auto-session",
 	lazy = not auto_session,
-	cmds = not auto_session and "Autosession" or nil,
+	cmd = not auto_session and "Autosession" or nil,
 	keys = {
 		{
 			"<leader>sS",

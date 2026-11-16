@@ -1,10 +1,11 @@
 return {
 	"emrearmagan/atlas.nvim",
+	cmd = "Atlas",
 	---@module 'atlas'
 	---@type AtlasConfig
 	opts = {
 		ui = {
-			picker = "snack",
+			picker = "snacks",
 		},
 	},
 	dependencies = {
