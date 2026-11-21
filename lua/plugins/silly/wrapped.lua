@@ -4,7 +4,7 @@ return {
 	cmd = "NvimWrapped",
 	keys = {
 		{
-			"<leader>uW",
+			"<leader>u<C-w>",
 			"<cmd>NvimWrapped<CR>",
 			desc = "Wrapped | Open",
 			silent = true,

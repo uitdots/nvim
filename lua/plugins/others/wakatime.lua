@@ -13,7 +13,7 @@ return {
 	opts = nil,
 	keys = {
 		{
-			"<leader>uw",
+			"<leader>uW",
 			"<cmd>WakaTimeToday<CR>",
 			desc = "WakaTime | Today",
 		},
