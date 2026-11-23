@@ -1,0 +1,14 @@
+---@type LazySpec
+return {
+	"WhoIsSethDaniel/mason-tool-installer.nvim",
+	opts = {
+		---@type Mason.Package[]
+		ensure_installed = {
+			"azure-pipelines-language-server",
+		},
+	},
+	opts_extend = {
+		"ensure_installed",
+	},
+	optional = true,
+}

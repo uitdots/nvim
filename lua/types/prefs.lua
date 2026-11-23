@@ -3,6 +3,7 @@
 ---@alias Language
 ---| "ansible"
 ---| "assembly"
+---| "azure"
 ---| "c"
 ---| "config"
 ---| "cs"

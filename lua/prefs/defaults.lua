@@ -3,6 +3,7 @@ local M = {
 	languages = {
 		-- "ansible",
 		-- "assembly",
+		-- "azure",
 		-- "c",
 		"config",
 		-- "cs",
