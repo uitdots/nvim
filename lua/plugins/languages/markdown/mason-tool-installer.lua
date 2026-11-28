@@ -3,7 +3,9 @@ return {
 	"WhoIsSethDaniel/mason-tool-installer.nvim",
 	opts = {
 		---@type Mason.Package[]
-		ensure_installed = {},
+		ensure_installed = {
+			"mdx-analyzer",
+		},
 	},
 	opts_extend = {
 		"ensure_installed",
